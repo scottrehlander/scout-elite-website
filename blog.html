@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Scout Elite</title>
+    <meta name="description" content="Stay updated with the latest Scout Elite features, tutorials, and insights from our team.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1 class="logo"><a href="index.html">Scout Elite</a></h1>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="support.html" class="nav-link">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blog.html" class="nav-link active">Blog</a>
+                    </li>
+                </ul>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Blog Hero Section -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="blog-hero-content">
+                    <h1 class="blog-title">Scout Elite Blog</h1>
+                    <p class="blog-subtitle">Stay updated with the latest features, tutorials, and insights to help you get the most out of Scout Elite.</p>
+                    
+                    <div class="blog-categories">
+                        <button class="category-btn active" data-category="all">All Posts</button>
+                        <button class="category-btn" data-category="features">New Features</button>
+                        <button class="category-btn" data-category="tutorials">Tutorials</button>
+                        <button class="category-btn" data-category="tips">Tips & Tricks</button>
+                        <button class="category-btn" data-category="updates">Updates</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Post -->
+        <section class="featured-post">
+            <div class="container">
+                <div class="featured-post-card">
+                    <div class="featured-post-content">
+                        <div class="post-meta">
+                            <span class="post-category">New Features</span>
+                            <span class="post-date">December 8, 2024</span>
+                        </div>
+                        <h2 class="featured-post-title">Introducing Advanced Analytics Dashboard</h2>
+                        <p class="featured-post-excerpt">Our new analytics dashboard provides deeper insights into your scouting data with interactive charts, custom reports, and real-time statistics. Learn how to leverage these powerful new features.</p>
+                        <a href="#" class="read-more-btn">Read More</a>
+                    </div>
+                    <div class="featured-post-image">
+                        <div class="post-image-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="blog-posts">
+            <div class="container">
+                <div class="posts-grid" id="posts-grid">
+                    <!-- Blog posts will be dynamically loaded here -->
+                </div>
+                
+                <div class="load-more-container">
+                    <button class="btn btn-secondary" id="load-more-btn">Load More Posts</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Signup -->
+        <section class="newsletter-signup">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">Stay Updated</h2>
+                    <p class="newsletter-subtitle">Get the latest Scout Elite news, feature updates, and tips delivered to your inbox.</p>
+                    
+                    <form class="newsletter-form" id="newsletter-form">
+                        <div class="newsletter-input-group">
+                            <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </div>
+                        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Scout Elite</h3>
+                    <p class="footer-description">Advanced scouting solutions for competitive teams and organizations.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="support.html">Contact Us</a></li>
+                        <li><a href="blog.html">Documentation</a></li>
+                        <li><a href="blog.html">Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Scout Elite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/blog.js"></script>
+</body>
+</html>
