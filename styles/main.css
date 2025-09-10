@@ -483,6 +483,34 @@ main {
     color: var(--text-muted);
 }
 
+/* Glider.js carousel styles for Scout Elite Live */
+.glider {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.glider-slide {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 12px;
+}
+.glider-slide:last-child {
+    margin-right: 0;
+}
+.glider-slide img {
+    max-width: 100%;
+    height: auto;
+    max-height: 480px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--secondary-bg);
+    display: block;
+}
+
+/* Pricing Section */
+#pricing {
+    scroll-margin-top: 80px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -546,6 +574,11 @@ main {
         grid-template-columns: 1fr;
         gap: var(--space-6);
         text-align: center;
+    }
+
+    .footer-description {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .section-title {
