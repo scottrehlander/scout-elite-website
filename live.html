@@ -10,39 +10,73 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <script src="scripts/glider.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.Glider) {
-                new Glider(document.querySelector('.glider'), {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    draggable: true,
-                    dots: '.glider-dots',
-                    arrows: {
-                        prev: '.glider-prev',
-                        next: '.glider-next'
-                    },
-                    responsive: [
-                        {
-                            breakpoint: 600,
-                            settings: {
-                                slidesToShow: 4,
-                                slidesToScroll: 1
-                            }
-                        },
-                        {
-                            breakpoint: 900,
-                            settings: {
-                                slidesToShow: 5,
-                                slidesToScroll: 1
-                            }
-                        }
-                    ]
+                                <!-- Modal Dialog for Google Play Beta Notice -->
+                                <div id="beta-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(10,10,10,0.75); align-items:center; justify-content:center;">
+                                    <div style="background:var(--card-bg); color:var(--text-primary); border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:400px; width:90%; padding:2.5rem 2rem 2rem 2rem; position:relative; text-align:center;">
+                                        <button id="close-beta-modal" style="position:absolute; top:18px; right:18px; background:none; border:none; color:var(--text-secondary); font-size:1.5rem; cursor:pointer;">&times;</button>
+                                        <h3 style="margin-bottom:1rem; color:#fff; font-size:1.25rem;">Android Beta</h3>
+                                        <p style="margin-bottom:1.5rem; color:var(--text-secondary);">The Scout Elite Live app is currently in Beta for Android. If you are interested in helping test, please send us a message on the <a href="support.html" style="color:var(--accent-primary); text-decoration:underline;">Support</a> page.</p>
+                                        <button id="modal-support-btn" class="btn btn-primary" style="margin-top:0.5rem;">Go to Support</button>
+                                    </div>
+                                </div>
+                                <script src="scripts/glider.min.js"></script>
+                <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    // Glider.js carousel
+                    if (window.Glider) {
+                        new Glider(document.querySelector('.glider'), {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            draggable: true,
+                            dots: '.glider-dots',
+                            arrows: {
+                                prev: '.glider-prev',
+                                next: '.glider-next'
+                            },
+                            responsive: [
+                                {
+                                    breakpoint: 600,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        slidesToScroll: 1
+                                    }
+                                },
+                                {
+                                    breakpoint: 900,
+                                    settings: {
+                                        slidesToShow: 3,
+                                        slidesToScroll: 1
+                                    }
+                                }
+                            ]
+                        });
+                    }
+
+                    // Modal for Google Play badge
+                    function showBetaModal() {
+                        document.getElementById('beta-modal').style.display = 'flex';
+                        document.body.style.overflow = 'hidden';
+                    }
+                    function hideBetaModal() {
+                        document.getElementById('beta-modal').style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                    // Attach click to all Google Play badges
+                    document.querySelectorAll('a[href*="play.google.com"]').forEach(function(link) {
+                        link.addEventListener('click', function(e) {
+                            showBetaModal();
+                            e.preventDefault();
+                        });
+                    });
+                    document.getElementById('close-beta-modal').addEventListener('click', hideBetaModal);
+                    document.getElementById('beta-modal').addEventListener('click', function(e) {
+                        if (e.target === this) hideBetaModal();
+                    });
+                    document.getElementById('modal-support-btn').addEventListener('click', function() {
+                        window.location.href = 'support.html';
+                    });
                 });
-            }
-        });
-    </script>
+                </script>
 </head>
 <body>
     <header class="header">
@@ -79,7 +113,7 @@
                             <a href="https://play.google.com/apps/testing/com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
                                 <img src="img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
                             </a>
-                            <a href="#" target="_blank" rel="noopener" style="flex:1;">
+                            <a href="https://apps.apple.com/us/app/scout-elite-live/id6738608200" target="_blank" rel="noopener" style="flex:1;">
                                 <img src="img/app-store-badge-sm.png" alt="Download on the App Store" style="width:100%; max-width:220px; height:auto; display:block;" />
                             </a>
                         </div>
@@ -143,7 +177,7 @@
                         <a href="https://play.google.com/apps/testing/com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
                             <img src="img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
                         </a>
-                        <a href="#" target="_blank" rel="noopener" style="flex:1;">
+                        <a href="https://apps.apple.com/us/app/scout-elite-live/id6738608200" target="_blank" rel="noopener" style="flex:1;">
                             <img src="img/app-store-badge-sm.png" alt="Download on the App Store" style="width:100%; max-width:220px; height:auto; display:block;" />
                         </a>
                     </div>
