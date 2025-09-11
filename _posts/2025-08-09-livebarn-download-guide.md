@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "How to Download Game Video Segments from LiveBarn"
-date: 2025-09-11
+date: 2025-08-09
 categories: [tutorials]
 tags: [livebarn, video, guide]
 author: "Scout Elite Team"

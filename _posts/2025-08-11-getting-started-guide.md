@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to Scout Elite: Getting Started Guide"
-date: 2025-09-11
+date: 2025-08-11
 categories: [tutorials]
 tags: [getting started, overview]
 author: "Scout Elite Team"

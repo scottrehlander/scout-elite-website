@@ -29,21 +29,17 @@ permalink: /blog.html
     <div class="featured-post-card">
       <div class="featured-post-content">
         <div class="post-meta">
-          <span class="post-category">New Features</span>
           <span class="post-date">December 8, 2024</span>
         </div>
-        <h2 class="featured-post-title">Introducing Advanced Analytics Dashboard</h2>
-        <p class="featured-post-excerpt">Our new analytics dashboard provides deeper insights into your scouting data with interactive charts, custom reports, and real-time statistics. Learn how to leverage these powerful new features.</p>
-        <a href="#" class="read-more-btn">Read More</a>
+        <a href="/features/2025/09/11/the-scout-elite-manifesto.html"><h2 class="featured-post-title">Why I’m Building Scout Elite: Leveling the Playing Field in Youth Hockey</h2></a>
+        <p class="featured-post-excerpt">This isn’t just about hockey. It’s about fairness. It’s about giving every kid, regardless of the patch on their jersey, the chance to learn from their mistakes, celebrate their progress, and grow as players and people.</p>
+        <a href="/features/2025/09/11/the-scout-elite-manifesto.html" class="read-more-btn">Read More</a>
       </div>
-      <div class="featured-post-image">
-        <div class="post-image-placeholder">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3 3H21C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M8 12L10.5 14.5L16 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
+        <div class="featured-post-image" style="padding: 25px">
+          <div class="post-image-placeholder" style="width:100%;height:100%;overflow:hidden;">
+            <a href="/features/2025/09/11/the-scout-elite-manifesto.html"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+          </div>
         </div>
-      </div>
     </div>
   </div>
 </section>

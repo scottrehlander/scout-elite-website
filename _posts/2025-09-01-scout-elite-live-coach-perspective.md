@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scout Elite Live: What It Does and What's Next"
-date: 2025-09-11
+date: 2025-09-01
 categories: [features]
 tags: [scout elite live, app, roadmap]
 author: "Coach Scott"
