@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/styles/main.css' | relative_url }}">
+    {% if page.url == '/support.html' %}
+    <link rel="stylesheet" href="{{ '/styles/support.css' | relative_url }}">
+    {% endif %}
+    {% if page.url == '/blog.html' %}
+    <link rel="stylesheet" href="{{ '/styles/blog.css' | relative_url }}">
+    {% endif %}
+    {% if page.layout == 'post' or page.categories contains 'blog' or page.categories contains 'features' or page.categories contains 'tutorials' or page.categories contains 'tips' or page.categories contains 'updates' %}
+    <link rel="stylesheet" href="{{ '/styles/post.css' | relative_url }}">
+    {% endif %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="{{ '/' | relative_url }}"><h1 class="logo">Scout Elite</h1></a>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ '/#pricing' | relative_url }}" class="nav-link">Pricing</a></li>
+                    <li class="nav-item"><a href="{{ '/scout-elite-live' | relative_url }}" class="nav-link">Scout Elite Live</a></li>
+                    <li class="nav-item"><a href="{{ '/support' | relative_url }}" class="nav-link">Support</a></li>
+                    <li class="nav-item"><a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a></li>
+                </ul>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {{ content }}
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">Scout Elite</h3>
+                    <p class="footer-description">Advanced youth sports video analysis solutions for competitive teams and organizations.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                        <li><a href="{{ '/#pricing' | relative_url }}">Pricing</a></li>
+                        <li><a href="{{ '/scout-elite-live' | relative_url }}">Scout Elite Live</a></li>
+                        <li><a href="{{ '/support' | relative_url }}">Support</a></li>
+                        <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-heading">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{ '/support' | relative_url }}">Contact Us</a></li>
+                        <li><a href="{{ '/blog' | relative_url }}">Documentation</a></li>
+                        <li><a href="{{ '/blog' | relative_url }}">Updates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ site.time | date: '%Y' }} Scout Elite. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ '/scripts/main.js' | relative_url }}"></script>
+</body>
+</html>
