@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Support | Scout Elite
+title: Support
 permalink: /support.html
 ---
 

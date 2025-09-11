@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Scout Elite Live
+title: Live Mobile App
 permalink: /scout-elite-live.html
 ---
 

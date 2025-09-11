@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Scout Elite - Advanced Scouting Solutions
-description: Scout Elite provides advanced scouting solutions for competitive teams and organizations.
+title: Home
+description: Scout Elite provides advanced video analysis solutions for hockey teams of all skill level.
 ---
 
 <!-- Hero Section -->
