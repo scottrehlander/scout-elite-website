@@ -6,7 +6,7 @@ categories: [features]
 tags: [scout elite live, app, roadmap]
 author: "Coach Scott"
 excerpt: "A coach's honest overview of what Scout Elite Live can do today, and a look at the next features coming soon."
-image: "/img/blog/coaches-perspective-1.jpg"
+image: "/img/blog/coach-scott-nstar.jpg"
 ---
 
 As a youth hockey coach, I use Scout Elite Live to make my job easier and help my players learn. Here’s what the app can do right now, and what’s coming next.
