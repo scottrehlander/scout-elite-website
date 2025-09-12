@@ -115,7 +115,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                     
     </div>
     <div style="text-align:center; margin-top:4em;">
-        <p class="how-to-cta" style="margin-top:1.5em;"><a href="https://scout-elite.com/request-an-invite" class="btn btn-primary">Try Scout Elite Live Today</a></p>
+        <p class="how-to-cta" style="margin-top:1.5em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Try Scout Elite Live Today</a></p>
     </div>
 </section>
 
