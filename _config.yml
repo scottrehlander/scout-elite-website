@@ -6,3 +6,9 @@ collections:
   pages:
     output: true
     permalink: /:name/
+
+plugins:
+  - jekyll-seo-tag
+
+whitelist:
+  - jekyll-seo-tag

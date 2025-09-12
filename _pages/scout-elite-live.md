@@ -1,4 +1,4 @@
----
+description: Discover how Scout Elite Live empowers youth and minor hockey teams with advanced video analysis tools and mobile event tagging.
 layout: default
 title: Live Mobile App
 permalink: /scout-elite-live.html

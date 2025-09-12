@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "How to Download Game Video Segments from LiveBarn"
+seo_title: "Youth and minor hockey analysis for LiveBarn downaloded videos"
+seo_description: "How to download LiveBarn videos to perform effective youth and minor hockey analysis"
 date: 2025-08-09
 categories: [tutorials]
 tags: [livebarn, video, guide]

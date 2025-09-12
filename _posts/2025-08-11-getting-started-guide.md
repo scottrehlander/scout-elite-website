@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Welcome to Scout Elite: Getting Started Guide"
+seo_title: "Youth and minor hockey analysis for parents and coaches"
+seo_description: "Getting started with Scout Elite, an effective youth and minor hockey video analysis app."
 date: 2025-08-11
 categories: [tutorials]
 tags: [getting started, overview]

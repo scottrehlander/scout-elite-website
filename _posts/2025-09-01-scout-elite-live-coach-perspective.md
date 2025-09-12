@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Scout Elite Live: What It Does and What's Next"
+seo_title: "Youth and Minor Hockey Video Analysis Easy To Use and Cost-effective/Cheap"
+seo_description: "Features that are coming next for Scout Elite, the leading youth and minor hockey analysis software solution"
 date: 2025-09-01
 categories: [features]
 tags: [scout elite live, app, roadmap]
