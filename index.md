@@ -12,7 +12,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
             <p class="hero-subtitle">Uncover the winning edge as you gain unparalleled insights from in-depth game film review, allowing you to fine-tune strategies, pinpoint strengths, and address weaknesses, all while harnessing the power of visual learning to dominate your sport like never before.</p>
             <div class="hero-cta">
                 <a href="#features" class="btn btn-primary">Why Scout Elite?</a>
-                <a href="https://scout-elite.com/request-an-invite" class="btn btn-secondary">Request an Invite</a>
+                <a href="https://xpress.scout-elite.com/" class="btn btn-secondary">Log in to Xpress</a>
             </div>
         </div>
         <div class="hero-visual">
@@ -159,15 +159,6 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Customized Clip Collections</td>
                         <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
-                    </tr>
-                    <tr>
-                        <td style="background:none;"></td>
-                        <td style="text-align:center; padding:24px 0; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">
-                            <a href="https://scout-elite.com/request-an-invite" class="btn btn-primary" style="width:90%; max-width:200px;">Request Analyst Invite</a>
-                        </td>
-                        <td style="text-align:center; padding:24px 0; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">
-                            <a href="https://scout-elite.com/request-an-invite" class="btn btn-primary" style="width:90%; max-width:200px;">Request Athlete Invite</a>
-                        </td>
                     </tr>
                 </tbody>
             </table>
