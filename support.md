@@ -112,6 +112,10 @@ permalink: /support.html
                     <textarea rows="2" class="input" maxlength="500" id="MESSAGE" name="MESSAGE" autocomplete="off"  data-required="true" required></textarea>
                     <span class="error-message"></span>
                   </div>
+                  <div style="padding: 8px 0;">
+                  <div class="g-recaptcha-v3" data-sitekey="6LcL6MYrAAAAADjA0jj8hMyGQff3J6OSSBXWooBG" style="display: none"></div>
+                  </div>
+
                   <div class="form-group">
                     <button class="btn btn-primary submit-btn sib-form-block__button sib-form-block__button-with-loader" type="submit">
                       <span class="btn-text">Send Message</span>
@@ -157,6 +161,7 @@ permalink: /support.html
 </script>
 
 <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcL6MYrAAAAADjA0jj8hMyGQff3J6OSSBXWooBG&hl=en" async defer></script>
 
 
 <!-- END - We recommend to place the above code in footer or bottom of your website html  -->
