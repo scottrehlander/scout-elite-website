@@ -11,7 +11,7 @@ image: "/img/blog/coach-scott-and-jack.jpg"
 
 Youth hockey is one of the most rewarding experiences I had as a child. It teaches resilience, teamwork, and discipline. It creates lifelong friendships. But it’s also a system that, from a very early age, decides who gets the keys to long-term development and who gets left behind.  
 
-At just six years old, kids are split into “elite” tracks and “town” programs. The difference is staggering. Elite programs get the best ice time, access to NHL-level coaches, and a culture built on competition and improvement. Town programs often rely on volunteer parents, some great, some not so great, but without the structure or resources that kids at the same age on elite teams enjoy.  
+At just six years old, kids are split into “elite” tracks and “town” programs. The difference is staggering. Elite programs get the best ice time, access to high level coaches, and a culture built on competition and improvement. Town programs often rely on volunteer parents, some great, some not so great, but without the structure or resources that kids at the same age on elite teams enjoy.  
 
 What happens is predictable. The kids who already had a small edge at age six snowball their advantage. They get better coaching, better development, and more opportunities. Meanwhile, other kids who might have had the same or even greater long-term potential are left playing catch-up.  Sometimes they do catch up... but more often, they never do.  
 

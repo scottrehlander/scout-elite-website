@@ -31,13 +31,13 @@ permalink: /blog.html
         <div class="post-meta">
           <span class="post-date">December 8, 2024</span>
         </div>
-        <a href="/features/2025/09/11/the-scout-elite-manifesto.html"><h2 class="featured-post-title">Why I’m Building Scout Elite: Leveling the Playing Field in Youth Hockey</h2></a>
+        <a href="/updates/2024/12/08/the-scout-elite-manifesto.html"><h2 class="featured-post-title">Why I’m Building Scout Elite: Leveling the Playing Field in Youth Hockey</h2></a>
         <p class="featured-post-excerpt">This isn’t just about hockey. It’s about fairness. It’s about giving every kid, regardless of the patch on their jersey, the chance to learn from their mistakes, celebrate their progress, and grow as players and people.</p>
-        <a href="/features/2025/09/11/the-scout-elite-manifesto.html" class="read-more-btn">Read More</a>
+        <a href="/updates/2024/12/08/the-scout-elite-manifesto.html" class="read-more-btn">Read More</a>
       </div>
         <div class="featured-post-image" style="padding: 25px">
           <div class="post-image-placeholder" style="width:100%;height:100%;overflow:hidden;">
-            <a href="/features/2025/09/11/the-scout-elite-manifesto.html"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+            <a href="/updates/2024/12/08/the-scout-elite-manifesto.html"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
           </div>
         </div>
     </div>
