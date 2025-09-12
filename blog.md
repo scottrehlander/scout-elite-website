@@ -1,4 +1,5 @@
-description: Stay updated with the latest in youth and minor hockey video analysis, features, tutorials, and tips from Scout Elite.
+---
+description: "Stay updated with the latest in youth and minor hockey video analysis, features, tutorials, and tips from Scout Elite."
 layout: default
 title: Blog
 permalink: /blog.html
