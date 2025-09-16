@@ -16,7 +16,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
             </div>
         </div>
         <div class="hero-visual">
-            <img src="https://scout-elite.com/wp-content/uploads/2023/08/EzScoutHeaderImage3.png" alt="Scout Elite Hockey Video Analysis" class="hero-image" style="max-width: 480px; width: 100%; border-radius: 1rem; box-shadow: 0 4px 32px rgba(0,0,0,0.12);">
+            <img src="img/EzScoutHeaderImage3.png" alt="Scout Elite Hockey Video Analysis" class="hero-image" style="max-width: 540px; width: 100%; border-radius: 1rem; box-shadow: 0 4px 32px rgba(0,0,0,0.12);">
         </div>
     </div>
 </section>
