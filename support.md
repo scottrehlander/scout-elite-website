@@ -58,7 +58,7 @@ permalink: /support/
                         </div>
                         <div class="contact-details">
                             <h3>Documentation</h3>
-                            <p>Check out our <a href="blog.html">blog</a> for guides, tutorials, and feature updates.</p>
+                            <p>Check out our <a href="/blog/">blog</a> for guides, tutorials, and feature updates.</p>
                         </div>
                     </div>
                 </div>
@@ -180,7 +180,7 @@ permalink: /support/
             </div>
             <div class="faq-item">
                 <h3>Is there a mobile app?</h3>
-                <p>Yes! Scout Elite Live is offered as a mobile applications for both iOS and Android devices. Game analysis can be viewed on the web in a mobile-friendly format directly in <a href="https://xpress.scout-elite.com">Scout Elite Xpress</a>.</p>
+                <p>Yes! Scout Elite Live is offered as a mobile applications for both iOS and Android devices. Game analysis can be viewed on the web in a mobile-friendly format directly in <a target="_blank" href="https://xpress.scout-elite.com">Scout Elite Xpress</a>.</p>
             </div>
             <div class="faq-item">
                 <h3>What kind of support do you offer?</h3>

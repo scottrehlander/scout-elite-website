@@ -14,10 +14,10 @@ permalink: /scout-elite-live/
             <div class="hero-cta">
                 <div style="display:flex; flex-direction:row; gap:18px; align-items:center; width:100%; max-width:480px; margin:0 auto;">
                     <a href="https://play.google.com/apps/testing/com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
-                        <img src="img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
+                        <img src="/img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
                     </a>
                     <a href="https://apps.apple.com/us/app/scout-elite-live/id6738608200" target="_blank" rel="noopener" style="flex:1;">
-                        <img src="img/app-store-badge-sm.png" alt="Download on the App Store" style="width:100%; max-width:220px; height:auto; display:block;" />
+                        <img src="/img/app-store-badge-sm.png" alt="Download on the App Store" style="width:100%; max-width:220px; height:auto; display:block;" />
                     </a>
                 </div>
                 <div style="margin-top: 1.25rem; text-align:center; width:100%;">
@@ -26,7 +26,7 @@ permalink: /scout-elite-live/
             </div>
         </div>
         <div class="hero-visual">
-            <img src="img/Header for website SEL.png" alt="Scout Elite Live" class="hero-image" style="max-width: 480px; width: 100%; border-radius: 1rem;" />
+            <img src="/img/Header for website SEL.png" alt="Scout Elite Live" class="hero-image" style="max-width: 480px; width: 100%; border-radius: 1rem;" />
         </div>
     </div>
 </section>
@@ -65,12 +65,12 @@ permalink: /scout-elite-live/
         <div style="position:relative;">
             <button class="glider-prev" aria-label="Previous" style="position:absolute; left:0; top:50%; transform:translateY(-50%); z-index:2; background:var(--secondary-bg); color:var(--text-primary); border:none; font-size:2rem; border-radius:50%; width:40px; height:40px; cursor:pointer;">‹</button>
             <div class="glider" style="margin:0 48px;">
-                <div class="glider-slide"><img src="img/scout-elite-title.png" alt="App screenshot 1" /></div>
-                <div class="glider-slide"><img src="img/scout-elite-screenshot1.png" alt="App screenshot 2" /></div>
-                <div class="glider-slide"><img src="img/scout-elite-screenshot2.png" alt="App screenshot 3" /></div>
-                <div class="glider-slide"><img src="img/scout-elite-screenshot3.png" alt="App screenshot 4" /></div>
-                <div class="glider-slide"><img src="img/scout-elite-screenshot4.png" alt="App screenshot 5" /></div>
-                <div class="glider-slide"><img src="img/scout-elite-screenshot-5.png" alt="App screenshot 6" /></div>
+                <div class="glider-slide"><img src="/img/scout-elite-title.png" alt="App screenshot 1" /></div>
+                <div class="glider-slide"><img src="/img/scout-elite-screenshot1.png" alt="App screenshot 2" /></div>
+                <div class="glider-slide"><img src="/img/scout-elite-screenshot2.png" alt="App screenshot 3" /></div>
+                <div class="glider-slide"><img src="/img/scout-elite-screenshot3.png" alt="App screenshot 4" /></div>
+                <div class="glider-slide"><img src="/img/scout-elite-screenshot4.png" alt="App screenshot 5" /></div>
+                <div class="glider-slide"><img src="/img/scout-elite-screenshot-5.png" alt="App screenshot 6" /></div>
             </div>
             <button class="glider-next" aria-label="Next" style="position:absolute; right:0; top:50%; transform:translateY(-50%); z-index:2; background:var(--secondary-bg); color:var(--text-primary); border:none; font-size:2rem; border-radius:50%; width:40px; height:40px; cursor:pointer;">›</button>
             <div class="glider-dots" style="text-align:center; margin-top:1.5rem;"></div>
@@ -78,10 +78,10 @@ permalink: /scout-elite-live/
         <!-- App Store Badges Below Carousel -->
         <div style="display:flex; flex-direction:row; gap:18px; align-items:center; width:100%; max-width:480px; margin:2rem auto 0 auto; justify-content:center;">
             <a href="https://play.google.com/apps/testing/com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
-                <img src="img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
+                <img src="/img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
             </a>
             <a href="https://apps.apple.com/us/app/scout-elite-live/id6738608200" target="_blank" rel="noopener" style="flex:1;">
-                <img src="img/app-store-badge-sm.png" alt="Download on the App Store" style="width:100%; max-width:220px; height:auto; display:block;" />
+                <img src="/img/app-store-badge-sm.png" alt="Download on the App Store" style="width:100%; max-width:220px; height:auto; display:block;" />
             </a>
         </div>
     </div>
@@ -92,12 +92,12 @@ permalink: /scout-elite-live/
     <div style="background:var(--card-bg); color:var(--text-primary); border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:400px; width:90%; padding:2.5rem 2rem 2rem 2rem; position:relative; text-align:center;">
         <button id="close-beta-modal" style="position:absolute; top:18px; right:18px; background:none; border:none; color:var(--text-secondary); font-size:1.5rem; cursor:pointer;">&times;</button>
         <h3 style="margin-bottom:1rem; color:#fff; font-size:1.25rem;">Android Beta</h3>
-        <p style="margin-bottom:1.5rem; color:var(--text-secondary);">The Scout Elite Live app is currently in Beta for Android. If you are interested in helping test, please send us a message on the <a href="support.html" style="color:var(--accent-primary); text-decoration:underline;">Support</a> page.</p>
+        <p style="margin-bottom:1.5rem; color:var(--text-secondary);">The Scout Elite Live app is currently in Beta for Android. If you are interested in helping test, please send us a message on the <a href="/support/" style="color:var(--accent-primary); text-decoration:underline;">Support</a> page.</p>
         <button id="modal-support-btn" class="btn btn-primary" style="margin-top:0.5rem;">Go to Support</button>
     </div>
 </div>
 
-<script src="scripts/glider.min.js"></script>
+<script src="/scripts/glider.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Glider.js carousel
@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (e.target === this) hideBetaModal();
     });
     document.getElementById('modal-support-btn').addEventListener('click', function() {
-        window.location.href = 'support.html';
+        window.location.href = '/support/';
     });
 });
 </script>

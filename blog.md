@@ -38,7 +38,7 @@ permalink: /blog/
       </div>
         <div class="featured-post-image" style="padding: 25px">
           <div class="post-image-placeholder" style="width:100%;height:100%;overflow:hidden;">
-            <a href="/updates/2024/12/08/the-scout-elite-manifesto.html"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+            <a href="/blog/2024/12/08/the-scout-elite-manifesto/"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
           </div>
         </div>
     </div>
