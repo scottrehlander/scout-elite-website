@@ -12,11 +12,11 @@ description: Scout Elite provides advanced video analysis solutions for youth an
             <p class="hero-subtitle">Uncover the winning edge as you gain unparalleled insights from in-depth game film review, allowing you to fine-tune strategies, pinpoint strengths, and address weaknesses, all while harnessing the power of visual learning to dominate your sport like never before.</p>
             <div class="hero-cta">
                 <a href="#features" class="btn btn-primary">Why Scout Elite?</a>
-                <a href="https://xpress.scout-elite.com/" class="btn btn-secondary">Log in to Xpress</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/" class="btn btn-secondary">Log in to Xpress</a>
             </div>
         </div>
         <div class="hero-visual">
-            <img src="img/EzScoutHeaderImage3.png" alt="Scout Elite Hockey Video Analysis" class="hero-image" style="max-width: 540px; width: 100%; border-radius: 1rem; box-shadow: 0 4px 32px rgba(0,0,0,0.12);">
+            <img src="/img/EzScoutHeaderImage3.png" alt="Scout Elite Hockey Video Analysis" class="hero-image" style="max-width: 540px; width: 100%; border-radius: 1rem; box-shadow: 0 4px 32px rgba(0,0,0,0.12);">
         </div>
     </div>
 </section>
