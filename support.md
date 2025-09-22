@@ -2,11 +2,7 @@
 description: "Get support for Scout Elite's youth and minor hockey video analysis platform, including features, tutorials, and technical help."
 layout: default
 title: Support
-permalink: /support.html
----iption: "Get support for Scout Elite’s youth and minor hockey video analysis platform, including features, tutorials, and technical help."
-layout: default
-title: Support
-permalink: /support.html
+permalink: /support/
 ---
 
 <!-- Support Hero Section -->

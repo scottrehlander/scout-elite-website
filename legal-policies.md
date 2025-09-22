@@ -2,7 +2,7 @@
 description: "Legal policies for Scout Elite Live"
 layout: default
 title: Scout Elite Legal Policies
-permalink: /legal-policies.html
+permalink: /legal-policies/
 ---
 
 <section class="how-to-use" style="background: var(--primary-bg); padding: 64px 0;">
