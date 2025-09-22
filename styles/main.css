@@ -1,3 +1,7 @@
+/* Indent bulleted lists for legal policies and all pages */
+ul {
+    padding-left: 2.5em;
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
