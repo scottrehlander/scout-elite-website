@@ -33,7 +33,7 @@ Why? Because coaching is about timing and focus. As an example, let's imagine th
 
 They're probably not wrong *in a vaccum*. Additional pressure might create a turnover.  It may even be the most effictive strategy given the current team dynamic, but they may be undermining what the coach is actually trying to teach in that moment.
 
-Parents need visibility into *what* their kids are working on and *why*. They need to see the clips, hear the context, and learn alongside their kids. That’s how they can actually help, instead of unintentionally holding their child back.  
+Parents need visibility into *what* their kids are working on and *why*. They need to see the clips, hear the context, and learn alongside their kids. That’s how they can actually help, instead of unintentionally holding their child, and the team, back.  
 
 ## The Scout Elite Solution  
 
