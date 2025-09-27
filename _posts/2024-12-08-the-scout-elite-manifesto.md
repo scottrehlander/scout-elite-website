@@ -29,7 +29,9 @@ The result? Once again, only the elite kids get this advantage.
 
 There’s another layer to this problem. Parents want to support their kids, but often they don’t know *how*. On the ride home, they give advice, sometimes even the right advice, but it can be counterproductive.  
 
-Why? Because coaching is about timing and focus. As an example, let's imagine a situation where the coach is trying to implement a 1-2-2 neutral zone forecheck for the first time, emphasizing patience and steering the puck wide. A parent may get frustrated with their child when they appear to be hanging back, instead of being aggresive on the puck carrier.  On the ride home, they tell their child that they need to be more aggressive. They're probably not wrong *in a vaccum*. That pressure might create a turnover.  It may even be the most effictive strategy within the current team dynamic, but they may be undermining what the coach is actually trying to teach in that moment.
+Why? Because coaching is about timing and focus. As an example, let's imagine the coach is trying to implement a 1-2-2 neutral zone forecheck for the first time, emphasizing patience and steering the puck wide. A parent may get frustrated with their child when they see them hanging back, instead of being aggresive. They tell their child, as general feedback, that they need to be more aggressive in the neutral zone. 
+
+They're probably not wrong *in a vaccum*. Additional pressure might create a turnover.  It may even be the most effictive strategy given the current team dynamic, but they may be undermining what the coach is actually trying to teach in that moment.
 
 Parents need visibility into *what* their kids are working on and *why*. They need to see the clips, hear the context, and learn alongside their kids. That’s how they can actually help, instead of unintentionally holding their child back.  
 
@@ -42,7 +44,7 @@ Here’s how it works:
 - **Mobile Game Tracking** – During games, coaches or parents can log events in real-time such as shots, goals, faceoffs, penalties, turnovers in just a few taps. You get instant statistics that tell the story of the game as it unfolds.  
 - **Automatic Video Clipping** – Those live events link directly to your uploaded game video. Instead of spending hours rewatching, the app auto-clips every relevant moment. Coaches and analysts save time, parents get highlights, and players see exactly what they did.  
 - **Shared Learning** – Coaches can run live video sessions with parents and players together or curate sets of clips for players and families to review asynchronously. That means everyone is on the same page, reinforcing the right lessons at the right time.  
-- **Affordable Access** – For $12.99/month per analyst and $4.99/month per athlete, families can access the same level of video-powered learning that elite programs have, at a fraction of the cost. No hidden fees, no expensive team packages.  
+- **Affordable Access** – For an affordable price, families can access the same level of video-powered learning that elite programs have, at a fraction of the cost. No hidden fees, no expensive team packages.  
 
 ## Why This Matters  
 
