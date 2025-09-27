@@ -29,7 +29,7 @@ The result? Once again, only the elite kids get this advantage.
 
 There’s another layer to this problem. Parents want to support their kids, but often they don’t know *how*. On the ride home, they give advice, sometimes even the right advice, but it can be counterproductive.  
 
-Why? Because coaching is about timing and focus. If the team is working on being an aggressive F1 forechecker, and a parent tells their child to hang back high to be more defensive, they’re not wrong *in a vacuum*, but they may be undermining what the coach is actually trying to teach in that moment.  
+Why? Because coaching is about timing and focus. As an example, let's imagine a situation where the coach is trying to implement a 1-2-2 neutral zone forecheck for the first time, emphasizing patience and steering the puck wide. A parent may get frustrated with their child when they appear to be hanging back, instead of being aggresive on the puck carrier.  On the ride home, they tell their child that they need to be more aggressive. They're probably not wrong *in a vaccum*. That pressure might create a turnover.  It may even be the most effictive strategy within the current team dynamic, but they may be undermining what the coach is actually trying to teach in that moment.
 
 Parents need visibility into *what* their kids are working on and *why*. They need to see the clips, hear the context, and learn alongside their kids. That’s how they can actually help, instead of unintentionally holding their child back.  
 
