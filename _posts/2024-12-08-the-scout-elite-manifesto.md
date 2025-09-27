@@ -43,8 +43,8 @@ Here’s how it works:
 
 - **Mobile Game Tracking** – During games, coaches or parents can log events in real-time such as shots, goals, faceoffs, penalties, turnovers in just a few taps. You get instant statistics that tell the story of the game as it unfolds.  
 - **Automatic Video Clipping** – Those live events link directly to your uploaded game video. Instead of spending hours rewatching, the app auto-clips every relevant moment. Coaches and analysts save time, parents get highlights, and players see exactly what they did.  
-- **Shared Learning** – Coaches can run live video sessions with parents and players together or curate sets of clips for players and families to review asynchronously. That means everyone is on the same page, reinforcing the right lessons at the right time.  
-- **Affordable Access** – For an affordable price, families can access the same level of video-powered learning that elite programs have, at a fraction of the cost. No hidden fees, no expensive team packages.  
+- **Shared Learning** – Coaches can run live video sessions with parents and players together or curate sets of clips for players and families to review on their own time. That means everyone is on the same page, reinforcing the right lessons at the right time.  
+- **Affordable Access** – Families of athletes at all skill levels can access the same video-powered learning that elite programs have, at a fraction of the cost. No hidden fees, no expensive team packages.  
 
 ## Why This Matters  
 
