@@ -176,7 +176,7 @@ permalink: /support/
         <div class="faq-grid">
             <div class="faq-item">
                 <h3>How do I get started with Scout Elite?</h3>
-                <p>Getting started is easy! Just <a target="_blank" href="https://xpress.scout-elite.com/account/register">Create Your Account</a> in Scout Elite Xpress and choose one of our cost-effective subscription plans or download the app on the iOS App Store or Google Play.</p>
+                <p>Getting started is easy! Just <a target="_blank" href="https://xpress.scout-elite.com/">Create Your Account</a> in Scout Elite Xpress and choose one of our cost-effective subscription plans or download the app on the iOS App Store or Google Play.</p>
             </div>
             <div class="faq-item">
                 <h3>Is there a mobile app?</h3>

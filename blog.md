@@ -76,20 +76,3 @@ permalink: /blog/
     </div>
   </div>
 </section>
-
-<!-- Newsletter Signup -->
-<section class="newsletter-signup">
-  <div class="container">
-    <div class="newsletter-content">
-      <h2 class="newsletter-title">Stay Updated</h2>
-      <p class="newsletter-subtitle">Get the latest Scout Elite news, feature updates, and tips delivered to your inbox.</p>
-      <form class="newsletter-form" id="newsletter-form">
-        <div class="newsletter-input-group">
-          <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
-          <button type="submit" class="btn btn-primary">Subscribe</button>
-        </div>
-        <p class="newsletter-privacy">We respect your privacy. Unsubscribe at any time.</p>
-      </form>
-    </div>
-  </div>
-</section>
