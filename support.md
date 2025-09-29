@@ -90,7 +90,7 @@ permalink: /support/
                   <h2>Send us a message</h2>
                   <div class="form-group">  
                     <label for="EMAIL" data-required="*">Email *</label>
-                    <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" data-required="true" required />
+                    <input class="input" type="email" id="EMAIL" name="EMAIL" autocomplete="off" data-required="true" required />
                     <span class="error-message"></span>
                   </div>
                   <div class="form-group">
