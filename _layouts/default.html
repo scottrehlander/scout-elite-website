@@ -62,7 +62,87 @@
     <main>
         {{ content }}
     </main>
-    <footer class="footer">
+        <!-- Newsletter Subscribe Form (Reusable, Brevo) -->
+        <section class="newsletter-section">
+            <h2>Subscribe to Our Newsletter</h2>
+            <form id="brevo-subscribe-form" action="https://YOUR_BREVO_FORM_ENDPOINT" method="POST" target="brevo_iframe" novalidate>
+                <input type="email" name="EMAIL" id="brevo-newsletter-email" placeholder="Enter your email" required>
+                <button type="submit" id="brevo-newsletter-submit">Subscribe</button>
+                <div id="brevo-newsletter-success" class="brevo-message success" style="display:none;"></div>
+                <div id="brevo-newsletter-error" class="brevo-message error" style="display:none;"></div>
+            </form>
+            <iframe name="brevo_iframe" style="display:none;"></iframe>
+            <style>
+                .newsletter-section {
+                    max-width: 400px;
+                    margin: 2em auto 2.5em auto;
+                    padding: 2em 1.5em;
+                    background: #f8f9fa;
+                    border-radius: 12px;
+                    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+                    text-align: center;
+                }
+                .newsletter-section h2 {
+                    margin-bottom: 1em;
+                    font-size: 1.4em;
+                    color: #222;
+                }
+                #brevo-subscribe-form {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                #brevo-newsletter-email {
+                    width: 100%;
+                    max-width: 260px;
+                    padding: 0.7em 1em;
+                    margin-bottom: 1em;
+                    border: 1px solid #bbb;
+                    border-radius: 6px;
+                    font-size: 1em;
+                    transition: border 0.2s;
+                }
+                #brevo-newsletter-email:focus {
+                    border-color: #0074d9;
+                    outline: none;
+                }
+                #brevo-newsletter-submit {
+                    padding: 0.7em 2.2em;
+                    background: #0074d9;
+                    color: #fff;
+                    border: none;
+                    border-radius: 6px;
+                    font-size: 1em;
+                    cursor: pointer;
+                    margin-bottom: 1em;
+                    transition: background 0.2s;
+                }
+                #brevo-newsletter-submit:hover,
+                #brevo-newsletter-submit:focus {
+                    background: #005fa3;
+                }
+                .brevo-message {
+                    width: 100%;
+                    max-width: 320px;
+                    margin: 0.5em auto 0 auto;
+                    padding: 0.7em 1em;
+                    border-radius: 6px;
+                    font-size: 1em;
+                    display: none;
+                }
+                .brevo-message.success {
+                    background: #e6f9ed;
+                    color: #1a7f37;
+                    border: 1px solid #b7e4c7;
+                }
+                .brevo-message.error {
+                    background: #fff0f0;
+                    color: #b30000;
+                    border: 1px solid #f5b7b7;
+                }
+            </style>
+        </section>
+        <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
