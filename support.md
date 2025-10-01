@@ -10,7 +10,7 @@ permalink: /support/
     <div class="container">
         <div class="support-hero-content">
             <h1 class="support-title">How can we help you?</h1>
-            <p class="support-subtitle">Get in touch with our team for questions about Scout Elite, feature requests, or business inquiries.</p>
+            <p class="support-subtitle">Get in touch with our team for questions about Scout Elite, feature requests, data deletion, or business inquiries.</p>
         </div>
     </div>
 </section>
