@@ -145,31 +145,37 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Clip Creation & Organization</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Review Sessions</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Sharing Features</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Live Support</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
                     <tr>
                         <td style="font-size: 1.25em; font-weight: bold !important; text-align:left; color: var(--accent-hover); padding:18px 12px; font-weight:500; background:none;">&nbsp;</td>
-                        <td style="font-size: 1.25em; font-weight: bold !important; color: var(--accent-hover);
-                            text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);
-                        ">Free 14 Day Trial</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);
+                        "><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Free 14 Day Trial</a></td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
+                    <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div style="text-align:center; margin-top:3em;">
+                            <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create an Account and Subscribe!</a></p>
+                        </div>
+                    </td>
                 </tbody>
             </table>
         </div>

@@ -32,5 +32,5 @@ Review Sessions are about making video analysis more accessible, more organized,
 - **Smarter live imports** - Scout Elite Live now auto-tags clips from tracked events, saving coaches and analysts even more time.  
 - **New login options** - Sign in quickly using your Google Account or a Magic Link.
 
-## Scout Elite Live - Now available
-[Scout Elite Live](/scout-elite-live), our mobile app for real-time event and statistics tracking, is now **live on the App Store** and in the final stages of publishing on Google Play. If you’d like to start using the Android app today, just reach out to us on the [support](/support) page.  
+## Scout Elite Live App - Available at No Cost
+[Scout Elite Live](/scout-elite-live), our mobile app for real-time event and statistics tracking, is now live and available for free on the [App Store](https://apps.apple.com/us/app/scout-elite-live/id6738608200){:target="_blank"} and [Google Play](https://play.google.com/store/apps/details?id=com.scout_elite.live){:target="_blank"}.

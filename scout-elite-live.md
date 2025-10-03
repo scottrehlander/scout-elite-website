@@ -13,7 +13,7 @@ permalink: /scout-elite-live/
             <p class="hero-subtitle">Tag events as they happen to auto-clip your game video. Deliver focused, engaging reviews for every player.</p>
             <div class="hero-cta">
                 <div style="display:flex; flex-direction:row; gap:18px; align-items:center; width:100%; max-width:480px; margin:0 auto;">
-                    <a href="https://play.google.com/apps/testing/com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
+                    <a href="https://play.google.com/store/apps/details?id=com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
                         <img src="/img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
                     </a>
                     <a href="https://apps.apple.com/us/app/scout-elite-live/id6738608200" target="_blank" rel="noopener" style="flex:1;">
@@ -77,7 +77,7 @@ permalink: /scout-elite-live/
         </div>
         <!-- App Store Badges Below Carousel -->
         <div style="display:flex; flex-direction:row; gap:18px; align-items:center; width:100%; max-width:480px; margin:2rem auto 0 auto; justify-content:center;">
-            <a href="https://play.google.com/apps/testing/com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
+            <a href="https://play.google.com/store/apps/details?id=com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
                 <img src="/img/google-play-badge.png" alt="Get it on Google Play" style="width:100%; max-width:220px; height:auto; display:block;" />
             </a>
             <a href="https://apps.apple.com/us/app/scout-elite-live/id6738608200" target="_blank" rel="noopener" style="flex:1;">
@@ -86,16 +86,6 @@ permalink: /scout-elite-live/
         </div>
     </div>
 </section>
-
-<!-- Modal Dialog for Google Play Beta Notice -->
-<div id="beta-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(10,10,10,0.75); align-items:center; justify-content:center;">
-    <div style="background:var(--card-bg); color:var(--text-primary); border-radius:1rem; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:400px; width:90%; padding:2.5rem 2rem 2rem 2rem; position:relative; text-align:center;">
-        <button id="close-beta-modal" style="position:absolute; top:18px; right:18px; background:none; border:none; color:var(--text-secondary); font-size:1.5rem; cursor:pointer;">&times;</button>
-        <h3 style="margin-bottom:1rem; color:#fff; font-size:1.25rem;">Android Beta</h3>
-        <p style="margin-bottom:1.5rem; color:var(--text-secondary);">The Scout Elite Live app is currently in Beta for Android. If you are interested in helping test, please send us a message on the <a href="/support/" style="color:var(--accent-primary); text-decoration:underline;">Support</a> page.</p>
-        <button id="modal-support-btn" class="btn btn-primary" style="margin-top:0.5rem;">Go to Support</button>
-    </div>
-</div>
 
 <script src="/scripts/glider.min.js"></script>
 <script>
@@ -129,29 +119,5 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         });
     }
-
-    // Modal for Google Play badge
-    function showBetaModal() {
-        document.getElementById('beta-modal').style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-    function hideBetaModal() {
-        document.getElementById('beta-modal').style.display = 'none';
-        document.body.style.overflow = '';
-    }
-    // Attach click to all Google Play badges
-    document.querySelectorAll('a[href*="play.google.com"]').forEach(function(link) {
-        link.addEventListener('click', function(e) {
-            showBetaModal();
-            e.preventDefault();
-        });
-    });
-    document.getElementById('close-beta-modal').addEventListener('click', hideBetaModal);
-    document.getElementById('beta-modal').addEventListener('click', function(e) {
-        if (e.target === this) hideBetaModal();
-    });
-    document.getElementById('modal-support-btn').addEventListener('click', function() {
-        window.location.href = '/support/';
-    });
 });
 </script>
