@@ -119,10 +119,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
     </div>
 </section>
 
-
-
 <!-- Pricing/Invite Section -->
-<!-- Testimonials Section -->
 <section id="pricing" class="pricing-invite" style="background: var(--secondary-bg); padding: 64px 0 64px 0;">
     <div class="container">
         <div class="pricing-table-wrapper" style="overflow-x:auto;">
@@ -130,39 +127,51 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                 <thead>
                     <tr>
                         <th style="width:32%; background:none; border:none;text-align:left;vertical-align:top"><h1>Pricing</h1></th>
-                        <th style="min-width:220px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">Analyst<br><span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$12.99</span><span style="font-size:1rem; color:var(--text-secondary);">per user/month</span></th>
-                        <th style="min-width:220px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">Athlete<br><span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$4.99</span><span style="font-size:1rem; color:var(--text-secondary);">per user/month</span></th>
+                        <th style="min-width:220px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
+                            Analyst<br>
+                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$12.99/mo</span>
+                        </th>
+                        <th style="min-width:220px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
+                            Athlete<br>
+                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$4.99/mo</span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Direct Live Support</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Video Uploads</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">100GB</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">10GB</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Video Event Tagging</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Clip Creation & Organization</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Live Notetaking</td>
-                        <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Review Sessions</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Basic Stat Tracking</td>
-                        <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Sharing Features</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Customized Clip Collections</td>
-                        <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg);border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Live Support</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✓</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 1.25em; font-weight: bold !important; text-align:left; color: var(--accent-hover); padding:18px 12px; font-weight:500; background:none;">&nbsp;</td>
+                        <td style="font-size: 1.25em; font-weight: bold !important; color: var(--accent-hover);
+                            text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);
+                        ">Free 14 Day Trial</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
                 </tbody>
             </table>
-            <p class="invite-note" style="margin-top:2em; text-align:center;">Scout Elite Xpress is currently invite-only.</p>
         </div>
     </div>
 </section>
