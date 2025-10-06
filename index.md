@@ -170,12 +170,13 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
                     <tr>
-                    <td></td>
-                    <td colspan="2">
-                        <div style="text-align:center; margin-top:3em;">
-                            <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create an Account and Subscribe!</a></p>
-                        </div>
-                    </td>
+                        <td></td>
+                        <td colspan="2">
+                            <div style="text-align:center; margin-top:3em;">
+                                <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create an Account and Subscribe!</a></p>
+                            </div>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
