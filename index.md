@@ -154,7 +154,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Sharing Features</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Advanced Sharing Features</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
