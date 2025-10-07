@@ -4,7 +4,7 @@ title: "Why I’m Building Scout Elite: Leveling the Playing Field in Youth Hock
 seo_title: "Youth and minor hockey, elite kids shouldn't get all the opportunity"
 seo_description: "A manifesto describing what is wrong with youth hockey and one step we can take to fix it"
 date: 2024-12-08
-categories: [updates]
+categories: [insights]
 tags: [scout elite live, app, roadmap]
 author: "Coach Scott"
 excerpt: "Talent is everywhere, opportunity isn't.  Let's change that, together."
