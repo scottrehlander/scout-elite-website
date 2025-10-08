@@ -36,7 +36,7 @@ permalink: /legal-policies/
         <p>Services are intended for users 13+ only. Under-13 athlete accounts must be managed by a coach, parent, or guardian.</p>
 
         <h3>Contact</h3>
-        <p>Email: <a href="mailto:scott@scout-elite.com">scott@scout-elite.com</a></p>
+        <p>Email: <a href="/support">Scout Elite Support</a></p>
         </details>
 
         <details>
@@ -85,7 +85,7 @@ permalink: /legal-policies/
         <p>We strive for reliable Services but cannot guarantee uninterrupted access. Temporary downtime does not entitle users to refunds or credits.</p>
 
         <h3>Contact</h3>
-        <p>Email: <a href="mailto:scott@scout-elite.com">scott@scout-elite.com</a></p>
+        <p>Email: <a href="/support">Scout Elite Support</a></p>
         </details>
     </div>
 </section>
