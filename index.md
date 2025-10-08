@@ -32,17 +32,17 @@ description: Scout Elite provides advanced video analysis solutions for youth an
             <div class="feature-card">
                 <h3 class="feature-title">Easy to Use</h3>
                 <p class="feature-description">An intuitive interface with useful features, seamless playback controls, efficient video review, and effective organization for users of all skill levels.</p>
-                <a href="https://scout-elite.com/request-an-invite" class="btn btn-link">Learn More</a>
+                <a href="/how-it-works/" class="btn btn-link">Learn More</a>
             </div>
             <div class="feature-card">
                 <h3 class="feature-title">Enables Directed Learning</h3>
                 <p class="feature-description">Provides a crucial tool for teams and athletes to dissect performances, analyze strategies, and make informed decisions to enhance gameplay and achieve optimal results.</p>
-                <a href="https://scout-elite.com/request-an-invite" class="btn btn-link">Learn More</a>
+                <a href="/how-it-works/" class="btn btn-link">Learn More</a>
             </div>
             <div class="feature-card">
                 <h3 class="feature-title">Promotes Team Character</h3>
                 <p class="feature-description">Fosters communication, encourages players to take ownership, highlights both successes and areas for improvement, and cultivates accountability and camaraderie.</p>
-                <a href="https://scout-elite.com/request-an-invite" class="btn btn-link">Learn More</a>
+                <a href="/how-it-works/" class="btn btn-link">Learn More</a>
             </div>
         </div>
     </div>
@@ -53,11 +53,12 @@ description: Scout Elite provides advanced video analysis solutions for youth an
 <section class="how-to-use" style="background: var(--primary-bg); padding: 64px 0;">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">How it Works</h2>
+            <h2 class="section-title">Innovation for Youth Hockey</h2>
             <p class="section-subtitle">
                     Scout Elite Live streamlines the entire video analysis process for coaches, athletes, and parents—making learning faster, more focused, and more impactful.
             </p>
         </div>
+        
         <div class="how-to-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
                 <div class="feature-card" style="max-width:340px; text-align:center;">
                     <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
@@ -102,6 +103,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                     <p>Video analysis shouldn't be exclusive to elite teams with big budgets.</p>
                 </div>
         </div>
+                
         <div class="section-header" style="margin-top:4em;">
             <h2 class="section-title">Efficient Video Reviews Made Easy</h2>
             <p class="section-subtitle">
@@ -173,7 +175,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                         <td></td>
                         <td colspan="2">
                             <div style="text-align:center; margin-top:3em;">
-                                <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create an Account and Subscribe!</a></p>
+                                <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create an Account and Subscribe</a></p>
                             </div>
                         </td>
                     </tr>
