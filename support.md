@@ -58,7 +58,7 @@ permalink: /support/
                         </div>
                         <div class="contact-details">
                             <h3>Documentation</h3>
-                            <p>Check out our <a href="/blog/">blog</a> for guides, tutorials, and feature updates.</p>
+                            <p>Check out our <a href="/blog">blog</a> for guides, tutorials, and feature updates.</p>
                         </div>
                     </div>
                 </div>

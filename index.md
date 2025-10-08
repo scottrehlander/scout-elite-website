@@ -32,17 +32,17 @@ description: Scout Elite provides advanced video analysis solutions for youth an
             <div class="feature-card">
                 <h3 class="feature-title">Easy to Use</h3>
                 <p class="feature-description">An intuitive interface with useful features, seamless playback controls, efficient video review, and effective organization for users of all skill levels.</p>
-                <a href="/how-it-works/" class="btn btn-link">Learn More</a>
+                <a href="/how-it-works" class="btn btn-link">Learn More</a>
             </div>
             <div class="feature-card">
                 <h3 class="feature-title">Enables Directed Learning</h3>
                 <p class="feature-description">Provides a crucial tool for teams and athletes to dissect performances, analyze strategies, and make informed decisions to enhance gameplay and achieve optimal results.</p>
-                <a href="/how-it-works/" class="btn btn-link">Learn More</a>
+                <a href="/how-it-works" class="btn btn-link">Learn More</a>
             </div>
             <div class="feature-card">
                 <h3 class="feature-title">Promotes Team Character</h3>
                 <p class="feature-description">Fosters communication, encourages players to take ownership, highlights both successes and areas for improvement, and cultivates accountability and camaraderie.</p>
-                <a href="/how-it-works/" class="btn btn-link">Learn More</a>
+                <a href="/how-it-works" class="btn btn-link">Learn More</a>
             </div>
         </div>
     </div>
