@@ -76,6 +76,10 @@
     padding-left: var(--space-6);
     margin-bottom: var(--space-8);
 }
+.blog-post-content ol {
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-8);
+}
 
 .blog-post-footer {
     text-align: center;
