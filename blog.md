@@ -72,7 +72,7 @@ permalink: /blog/
       {% endfor %}
     </div>
     <div class="load-more-container">
-      <button class="btn btn-secondary" id="load-more-btn">Load More Posts</button>
+      <button class="btn btn-secondary" style="pointer-events: none; opacity: .5" id="load-more-btn">Load More Posts</button>
     </div>
   </div>
 </section>
