@@ -26,7 +26,7 @@ Scout Elite will change that for you.
 
 ### With Scout Elite You Can...
 - Upload your clips in seconds - keeping them in a centralized place for review later
-- Clip collaboratively – anyone can track the game's moments on their own devices and share them with you later
+- Clip collaboratively - anyone can track the game's moments on their own devices and share them with you later
 - Gone are the days of scrubbing through hours of game videos. Scout Elite makes this completely unnecessary.
 - Organize teaching moments into targeted review sessions by player, position, or strategy  
 - Share review sessions that both players and parents can rewatch on their own time
@@ -44,7 +44,7 @@ Scout Elite will change that for you.
 
 **You see the effort. Scout Elite helps you capture the progress.**
 
-Too often, great moments get lost on phones or forgotten. Players miss how their efforts contribute to the team. Scout Elite helps families stay connected to the development process – with clips that matter.
+Too often, great moments get lost on phones or forgotten. Players miss how their efforts contribute to the team. Scout Elite helps families stay connected to the development process with the clips that matter.
 
 ### Why You’ll Love It
 - Keep highlights organized and easy to find  
