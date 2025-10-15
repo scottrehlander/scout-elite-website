@@ -5,12 +5,176 @@ description: Discover the Scout Elite workflow from capturing video to sharing f
 permalink: /how-it-works/
 ---
 
+
+<script>
+    function startTeamCoachTour() {
+        introJs().setOptions({
+            steps: [
+            {
+                title: 'Step 1 - Video Upload',
+                element: document.querySelector('[data-intro="video-sharing"]'),
+                intro: "<strong>Start with Live Game Videos</strong><br /> Upload game video to your Video Library or ask others to upload and share it with you. You can include both full game videos and shorter individual clips."
+            },
+            { 
+                title: 'Step 2 - Create a Clip Session',
+                element: document.querySelector('[data-intro="clip-sessions"]'),
+                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Session. Use this session to annotate and tag new clips."
+            },
+            { 
+                title: 'Step 3 - Create Your Clips',
+                element: document.querySelector('[data-intro="manual-clipping"]'),
+                intro: "<strong>Find Key Moments</strong><br /> Use advanced clipping tools to find important moments and annotate them by adding a description and tags."
+            },
+            { 
+                title: 'Step 4 <small>(optional)</small> - Automatic Clipping',
+                element: document.querySelector('[data-intro="automatic-clipping"]'),
+                intro: "<strong>Scout Elite Live</strong><br /> If <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a> was used to track game events, ask your helpers to publish the game from their mobile devices and share it with you. Import the game events and notes into a Clip Session to automatically create clips for your game video."
+            },
+            { 
+                title: 'Step 5 - Organize Clips for Review',
+                element: document.querySelector('[data-intro="review-sessions"]'),
+                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review Session. Use this Review Sesssion as a guide for live presentation or share it for the team to review on their own time. Review Sessions remain accessible forever and can be used as a tool to direct learning in the future."
+            },
+            ]
+        }).oncomplete(function() {
+            setTimeout(showTrialModal, 500);
+        }).start();
+    }
+
+    function startParentTour() {
+        introJs().setOptions({
+            steps: [
+            {
+                title: 'Video Upload',
+                element: document.querySelector('[data-intro="video-sharing"]'),
+                intro: "<strong>Start with Live Game Videos or Clips</strong><br /> Upload video to your Video Library and share it with others. You can include both full game videos and shorter individual clips."
+            },
+            { 
+                title: 'Clip Sessions',
+                element: document.querySelector('[data-intro="clip-sessions"]'),
+                intro: "<strong>Create Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Session. Use this session to create your clips that can be used to direct the learning of your athlete or build comprehensive highlight reels."
+            },
+            { 
+                title: 'Scout Elite Live',
+                element: document.querySelector('[data-intro="sel-game-reports"]'),
+                intro: "<strong>Track Important Moments</strong><br /> Use <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a>, a free mobile app, to track your team and athlete's performance. Take notes on key moments.<br/><br/> Publish the game to view and share the game report and use it to automatically import clips."
+            },
+            { 
+                title: 'Review Sessions',
+                element: document.querySelector('[data-intro="review-sessions"]'),
+                intro: "<strong>Organize Your Clips</strong><br /> Review Sessions organize oyur clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
+            }
+            ]
+        }).oncomplete(function() {
+            setTimeout(showTrialModal, 500);
+        }).start();
+    }
+    function startSkillsCoachTour() {
+        introJs().setOptions({
+            steps: [
+            {
+                title: 'Step 1 - Video Upload',
+                element: document.querySelector('[data-intro="video-sharing"]'),
+                intro: "<strong>Start with Live Game Videos</strong><br /> Ask your client to sign up for Scout Elite to share their videos with you, or have them send you the videos for you to add to your personal Video Library."
+            },
+            { 
+                title: 'Step 2 - Create a Clip Session',
+                element: document.querySelector('[data-intro="clip-sessions"]'),
+                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Session. Use this session to annotate and tag new clips."
+            },
+            { 
+                title: 'Step 3 - Organize Clips for Review',
+                element: document.querySelector('[data-intro="review-sessions"]'),
+                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review Session and share it with your client. Use this Review Sesssion as a guide for your live presentation. Review Sessions remain accessible forever, so your clients can review it themselves later and you can reference them in future discussions."
+            }
+            ]
+        }).oncomplete(function() {
+            setTimeout(showTrialModal, 500);
+        }).start();
+    }
+
+    // Modal functions
+    function showTrialModal() {
+        const modal = document.getElementById('trial-modal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideTrialModal() {
+        const modal = document.getElementById('trial-modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    // Add event listeners when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('trial-modal');
+        const closeBtn = modal.querySelector('.modal-close');
+        
+        closeBtn.addEventListener('click', hideTrialModal);
+        
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                hideTrialModal();
+            }
+        });
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                hideTrialModal();
+            }
+        });
+    });
+</script>
+
+<!-- Trial Modal -->
+<div id="trial-modal" class="modal-overlay">
+    <div class="modal-content">
+        <button class="modal-close" onclick="hideTrialModal()">&times;</button>
+        <h2 class="modal-title">Ready to Start Your Scout Elite Journey?</h2>
+        <p>Scout Elite gives you everything you need to easily capture game moments, create focused analysis sessions, and share professional video reviews with your team. All in a straight-forward easy-to-use package.</p>
+        <p>Whether you're coaching individual athletes or managing an entire squad, Scout Elite makes video analysis simple and effective.</p>
+        
+        <div class="modal-features">
+            <div class="modal-feature">
+                <span>🎯</span>
+                <div><strong>14-day free trial</strong></div>
+            </div>
+            <div class="modal-feature">
+                <span>📹</span>
+                <div><strong>Video uploads</strong> - Full game footage and clips</div>
+            </div>
+            <div class="modal-feature">
+                <span>✂️</span>
+                <div><strong>Clip creation & organization</strong> - Build focused sessions</div>
+            </div>
+            <div class="modal-feature">
+                <span>📋</span>
+                <div><strong>Review sessions</strong> - Direct your team&apos;s learning</div>
+            </div>
+            <div class="modal-feature">
+                <span>🚀</span>
+                <div><strong>Advanced sharing tools</strong> - Share your work</div>
+            </div>
+            <div class="modal-feature">
+                <span>📱</span>
+                <div><strong>Mobile app included</strong> - Scout Elite Live for iOS & Android</div>
+            </div>
+        </div>
+        
+        <div class="modal-cta">
+            <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" onclick="hideTrialModal()" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your 14 Day Free Trial</a>
+        </div>
+    </div>
+</div>
+
 <!-- Hero Section -->
-<section class="hero" style="background: var(--primary-bg);">
+<section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 0 0 !important;">
     <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:48px;">
-        <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;">
+        <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
             <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">Collaborative Video Review</h1>
             <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">See how Scout Elite takes you from capturing moments in the game to sharing focused reviews with your team. Each step is designed to make learning and improvement easy for coaches, skills analysts, athletes, and parents.</p>
+            <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
         </div>
         <div class="hero-visual" style="flex:1 1 340px; min-width:220px; max-width:540px; text-align:center;">
             <img src="/img/Scout-Elite-how-it-works-hero.png"
@@ -20,7 +184,68 @@ permalink: /how-it-works/
     </div>
 </section>
 
-<section class="explore-process" class="features" style="background: var(--secondary-bg);">
+<!-- Role Tour Icons -->
+<section style="padding: 4rem 0; background: var(--secondary-bg);">
+    <div class="container">
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+            <h2 class="section-title">How Scout Elite Works</h2>
+            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Choose your role to explore features designed for you by parent coaches with a step-by-step walkthrough.</p>
+        </div>
+        
+        <div style="display:flex; justify-content:center; align-items:stretch; gap:2rem; flex-wrap:wrap; max-width:800px; margin:0 auto;">
+            <button class="tour-btn" onclick="startTeamCoachTour()" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); cursor:pointer; transition:all 0.3s ease; flex:1; min-width:200px; max-width:240px; box-shadow:var(--shadow-sm); height:200px;">
+                <div class="tour-btn-inner">
+                    <div class="tour-btn-front">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                        <span style="color:var(--text-primary); font-weight:600; font-size:1.1rem; text-align:center;">Team Coach</span>
+                    </div>
+                    <div class="tour-btn-back">
+                        <h3>Team Coach</h3>
+                        <p>Manage team-wide video review sessions, coordinate with assistants, and create comprehensive game analysis for the entire squad.</p>
+                    </div>
+                </div>
+            </button>
+
+            <button class="tour-btn" onclick="startSkillsCoachTour()" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); cursor:pointer; transition:all 0.3s ease; flex:1; min-width:200px; max-width:240px; box-shadow:var(--shadow-sm); height:200px;">
+                <div class="tour-btn-inner">
+                    <div class="tour-btn-front">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span style="color:var(--text-primary); font-weight:600; font-size:1.1rem; text-align:center;">Skills Coach</span>
+                    </div>
+                    <div class="tour-btn-back">
+                        <h3>Skills Coach</h3>
+                        <p>Work one-on-one with athletes to analyze technique, create focused clip sessions, and track individual skill development progress.</p>
+                    </div>
+                </div>
+            </button>
+                        
+            <button class="tour-btn" onclick="startParentTour()" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); cursor:pointer; transition:all 0.3s ease; flex:1; min-width:200px; max-width:240px; box-shadow:var(--shadow-sm); height:200px;">
+                <div class="tour-btn-inner">
+                    <div class="tour-btn-front">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--text-primary)" class="bi bi-people" viewBox="0 0 16 16">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                        </svg>
+                        <span style="color:var(--text-primary); font-weight:600; font-size:1.1rem; text-align:center;">Parent</span>
+                    </div>
+                    <div class="tour-btn-back">
+                        <h3>Parent</h3>
+                        <p>Stay connected with your team's progress, contribute by sharing moments, and maintain personal highlight reels for your athletes.</p>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="explore-process" style="padding: 4rem 0; margin-bottom:2.5rem;">
     <div class="container">
         <div class="section-header" style="text-align:center;">
             <h2 class="section-title">An End-to-End Solution</h2>
@@ -35,14 +260,15 @@ permalink: /how-it-works/
 </section>
 
 <!-- Capture Events Section -->
-<section class="capture-events" style="background: var(--primary-bg); padding: 4rem 0; margin-bottom:2.5rem;">
+<section class="capture-events" style="background: var(--primary-bg); padding: 2rem 0; margin-bottom:2.5rem;">
     <div class="container" style="max-width:900px; margin:0 auto;">
-        <div class="section-header">
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
             <h2 class="section-title">Capture Events</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">How you can capture clips for game videos</p>
+            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Flexible options to prepare for review</p>
         </div>
-            <!-- Mobile App Option -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;">
+        
+        <!-- Mobile App Option -->
+        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="automatic-clipping">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
                 <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
@@ -56,7 +282,7 @@ permalink: /how-it-works/
         </div>
 
         <!-- Video Clip Sessions Option -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;">
+        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;" data-intro="manual-clipping">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-video3" viewBox="0 0 16 16">
                     <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2"/>
@@ -72,7 +298,7 @@ permalink: /how-it-works/
 </section>
 
 <!-- Review and Organize Section -->
-<section class="review-organize" style="background: var(--secondary-bg); padding: 4rem 0; margin-bottom:2.5rem;">
+<section class="review-organize" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
     <div class="container" style="max-width:900px; margin:0 auto;">
         <div class="section-header" style="text-align:center; margin-bottom:3rem;">
             <h2 class="section-title">Review and Organize</h2>
@@ -80,7 +306,7 @@ permalink: /how-it-works/
         </div>
         
         <!-- Clip Sessions -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;">
+        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="clip-sessions">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="2" y="6" width="20" height="12" rx="2" fill="white"/>
@@ -97,7 +323,7 @@ permalink: /how-it-works/
         </div>
 
         <!-- Review Sessions -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;">
+        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="review-sessions">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="3" y="5" width="18" height="14" rx="2" fill="white"/>
@@ -115,10 +341,11 @@ permalink: /how-it-works/
 </section>
 
 <!-- Share your Review Section -->
-<section class="share-review" style="background: var(--primary-bg); padding: 4rem 0; margin-bottom:2.5rem;">
+<section class="share-review" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
     <div class="container" style="max-width:900px; margin:0 auto;">
-        <div class="section-header">
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
             <h2 class="section-title">Share with Your Team</h2>
+            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Collaborate and share with your team to direct learning</p>
         </div>
         
         <!-- Session Sharing -->
@@ -135,7 +362,7 @@ permalink: /how-it-works/
         </div>
 
         <!-- Scout Elite Live Report Sharing -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;">
+        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;" data-intro="sel-game-reports">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="3" y="4" width="18" height="14" rx="2" fill="white"/>
@@ -153,7 +380,7 @@ permalink: /how-it-works/
         </div>
 
         <!-- Video Sharing -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;">
+        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;"  data-intro="video-sharing">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="2" y="6" width="20" height="12" rx="2" fill="white"/>

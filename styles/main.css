@@ -661,3 +661,202 @@ main {
         align-items: center;
     }
 }
+
+.introjs-tooltiptext {
+    color: var(--text-secondary) !important;
+}
+
+.introjs-tooltip {
+    background-color: var(--secondary-bg) !important;
+}
+
+.introjs-button {
+    background-color: var(--accent-primary) !important;
+    color: white !important;
+    border: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.introjs-tooltip {
+    border: 1px solid var(--border-color) !important;
+    min-width: 600px !important;
+}
+
+/* Role Card Flip Animation */
+.tour-btn {
+    perspective: 1000px;
+    position: relative;
+    height: 200px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.tour-btn-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+}
+
+.tour-btn:hover .tour-btn-inner {
+    transform: rotateY(180deg);
+}
+
+.tour-btn-front,
+.tour-btn-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+}
+
+.tour-btn-front {
+    z-index: 2;
+}
+
+.tour-btn-back {
+    transform: rotateY(180deg);
+    text-align: center;
+    gap: 1rem;
+}
+
+.tour-btn-back h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.tour-btn-back p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.tour-btn:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* Call to Action Button */
+.cta-button:hover {
+    background: var(--accent-hover) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 122, 204, 0.3);
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(0.8) translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+    background: var(--border-color);
+    color: var(--text-primary);
+}
+
+.modal-title {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.modal-features {
+    margin: 2rem 0;
+}
+
+.modal-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.modal-feature strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.modal-cta {
+    text-align: center;
+    margin-top: 2.5rem;
+}
