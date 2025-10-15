@@ -8,8 +8,8 @@ description: Scout Elite provides advanced video analysis solutions for youth an
 <section id="home" class="hero" style="background: var(--primary-bg);">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Elevate Your Team with Effective Video Analysis</h1>
-            <p class="hero-subtitle">Uncover the winning edge as you gain unparalleled insights from in-depth game film review, allowing you to fine-tune strategies, pinpoint strengths, and address weaknesses, all while harnessing the power of visual learning to dominate your sport like never before.</p>
+            <h1 class="hero-title">Elevate Your Team with Simple and Effective Video Analysis</h1>
+            <p class="hero-subtitle">Uncover the winning edge as you gain insights from in-depth game film review, allowing you to fine-tune strategies, pinpoint strengths, and address weaknesses, all while harnessing the power of visual learning to dominate your sport like never before.</p>
             <div class="hero-cta">
                 <a href="#features" class="btn btn-primary">Why Scout Elite?</a>
                 <a target="_blank" href="https://xpress.scout-elite.com/" class="btn btn-secondary">Log in to Xpress</a>
@@ -26,12 +26,12 @@ description: Scout Elite provides advanced video analysis solutions for youth an
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">Why is Scout Elite the best choice for your team?</h2>
-            <p class="section-subtitle">Intuitive, powerful, cost-effective, and designed for youth hockey teams to maximize learning and fun.</p>
+            <p class="section-subtitle">Easy to use and cost-effective. Created by parent coaches for youth hockey teams to maximize learning and fun.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
                 <h3 class="feature-title">Easy to Use</h3>
-                <p class="feature-description">An intuitive interface with useful features, seamless playback controls, efficient video review, and effective organization for users of all skill levels.</p>
+                <p class="feature-description">An intuitive interface with useful features, seamless playback controls, efficient video review, and effective organization - designed for teams of all skill levels.</p>
                 <a href="/how-it-works" class="btn btn-link">Learn More</a>
             </div>
             <div class="feature-card">
@@ -55,7 +55,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
         <div class="section-header">
             <h2 class="section-title">Innovation for Youth Hockey</h2>
             <p class="section-subtitle">
-                    Scout Elite Live streamlines the entire video analysis process for coaches, athletes, and parents—making learning faster, more focused, and more impactful.
+                    Scout Elite Live streamlines the entire video analysis process for coaches, athletes, and parents - making learning faster, more focused, and more impactful.
             </p>
         </div>
         
@@ -85,7 +85,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                         </svg>
                     </div>
                     <h3>Targeted Review Sessions</h3>
-                    <p>Build focused review sessions for specific groups—like Defense or Goalies—so athletes only see what matters to them. This keeps sessions short, relevant, and engaging, maximizing learning and attention for every player.</p>
+                    <p>Build focused review sessions for specific group, like Defense or Goalies, so athletes only see what matters to them. This keeps sessions short, relevant, and engaging, maximizing learning and attention for every player.</p>
                 </div>
                 <div class="feature-card" style="max-width:340px; text-align:center;">
                     <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">

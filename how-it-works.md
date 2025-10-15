@@ -172,7 +172,7 @@ permalink: /how-it-works/
 <section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 0 0 !important;">
     <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:48px;">
         <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
-            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">Collaborative Video Review</h1>
+            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">Simple, Collaborative Video Review</h1>
             <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">See how Scout Elite takes you from capturing moments in the game to sharing focused reviews with your team. Each step is designed to make learning and improvement easy for coaches, skills analysts, athletes, and parents.</p>
             <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
         </div>
@@ -249,7 +249,7 @@ permalink: /how-it-works/
     <div class="container">
         <div class="section-header" style="text-align:center;">
             <h2 class="section-title">An End-to-End Solution</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Event capture is a collaborative effort, allowing anyone to contribute valuable footage. All data is seamlessly shared with the coaching staff, who review key clips and moments, then approve a final Review Session for distribution to the team.</p>
+            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Event capture can be a collaborative effort, allowing anyone to contribute valuable footage. All data is seamlessly shared with the coaching staff, who review key clips and moments, then approve a final Review Session for distribution to the team.</p>
         </div>
         <div class="analysis-method-img-container" style="width:100%; max-width:940px; margin:0 auto; text-align:center;">
             <img src="/img/Scout-Elite-video-analysis-workflow.png"
