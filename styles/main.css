@@ -680,7 +680,11 @@ main {
 
 .introjs-tooltip {
     border: 1px solid var(--border-color) !important;
-    min-width: 600px !important;
+}
+@media (min-width: 768px) {
+    .introjs-tooltip {
+        min-width: 600px !important;
+    }
 }
 
 /* Role Card Flip Animation */
