@@ -7,17 +7,17 @@ date: 2025-10-20
 categories: [features]
 tags: [video, easy-to-use]
 author: "Scout Elite Team"
-excerpt: "We are listening, and our first updates based on direct user feedback is now ready."
+excerpt: "Things are moving quickly and we are listening. Based on your feedback, our first updates to Scout Elite Xpress are now ready."
 image: "/img/blog/easy-to-use-video-analysis-collab.png"
 ---
 
 ## Scout Elite Update: Cliping Sessions & Reviews
 
-Things are moving fast here at **Scout Elite**! Based on your feedback, we've made some changes to help you save time and get the most out of your video analysis experience.
+Things are moving quickly here at **Scout Elite**! Based on your feedback, we've made some changes to help you save time and get the most out of your video analysis experience.
 
 ### What's New?
 
-**Clip Sessions** and **Review Sessions** are now separated from the old "Analysis Hub."  
+**Clip Sessions** and **Reviews** are now separated from the old "Analysis Hub."  
 This means:
 
 - **Clearer Navigation:** You can now find your Clip Sessions and Reviews in dedicated views, making it easier to jump right into what matters most.

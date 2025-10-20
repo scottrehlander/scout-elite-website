@@ -20,7 +20,7 @@ A web-based video review and annotation tool.
 
 ![Scout Elite Logo](/img/app-screenshots/video-anaysis-clip-session-1.png)
 
-In Scout Elite Xpress, you can upload your game videos and tag them with custom notes at specific time points. Annotations are added as “Clips” to a game video. Use the Game Video review session page to perform in-depth analysis with your coaches, team, or group of players for a single game. If you’d like to organize clips across games for a specific area of focus, you can add them into named clip collections and use them to optimize the time it takes to complete a review session.
+In Scout Elite Xpress, you can upload your game videos and tag them with custom notes at specific time points. Annotations are added as “Clips” to a game video. Use the Reviews page to perform in-depth analysis with your coaches, team, or group of players for a single game. If you’d like to organize clips across games for a specific area of focus, you can add them into named clip collections and use them to optimize the time it takes to complete a Review.
 
 ### Scout Elite Live
 <div style="float:left; margin: 0 var(--space-6) var(--space-6) 0; max-width: 220px;">

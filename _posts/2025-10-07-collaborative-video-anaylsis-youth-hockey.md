@@ -57,7 +57,7 @@ That's exactly what we set out to build - a collaborative video clipping system 
 ## Real-World Impact: What We've Seen
 
 ### For Coaches
-- 90% reduction in time spent creating video review sessions
+- 90% reduction in time spent creating video reviews
 - Better athlete development through instant clip sharing  
 - More focus on directed learning instead of video editing busy work  
 
@@ -83,10 +83,10 @@ See what clips teammates have created. Build on each other's work. Create themed
 Works perfectly on phones, tablets, and laptops. Coaches can clip from the bench and parents from the stands.  
 
 **Simple Organization**  
-Clips can organized by tags and shared into target review sessions for athletes, parents, and coaches. No more lost files or forgotten highlights. Videos stay easily accessible, even ones from seasons past.
+Clips can organized by tags and shared into target reviews for athletes, parents, and coaches. No more lost files or forgotten highlights. Videos stay easily accessible, even ones from seasons past.
 
 **Easy Sharing**  
-Share individual videos or complete review sessions with specific people or the whole team. Control who sees what.  
+Share individual videos or complete reviews with specific people or the whole team. Control who sees what.  
 
 ## The Bigger Picture: Democratizing Video Creation
 

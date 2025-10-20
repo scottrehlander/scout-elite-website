@@ -84,8 +84,8 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                             <circle cx="24" cy="24" r="3.5" fill="var(--text-primary)"/>
                         </svg>
                     </div>
-                    <h3>Targeted Review Sessions</h3>
-                    <p>Build focused review sessions for specific group, like Defense or Goalies, so athletes only see what matters to them. This keeps sessions short, relevant, and engaging, maximizing learning and attention for every player.</p>
+                    <h3>Targeted Reviews</h3>
+                    <p>Build focused reviews for specific group, like Defense or Goalies, so athletes only see what matters to them. This keeps sessions short, relevant, and engaging, maximizing learning and attention for every player.</p>
                 </div>
                 <div class="feature-card" style="max-width:340px; text-align:center;">
                     <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
@@ -151,7 +151,7 @@ description: Scout Elite provides advanced video analysis solutions for youth an
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Review Sessions</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Reviews</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>

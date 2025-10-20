@@ -21,7 +21,7 @@ What happens is predictable. The kids who already had a small edge at age six sn
 
 Video analysis is one of the clearest examples of this divide. At the elite level, teams use video constantly. Players watch their shifts, review mistakes, and learn from good habits. Coaches use video as a tool for teaching concepts like forechecking systems or defensive positioning. It’s one of the most powerful ways to accelerate development.  
 
-But video analysis is expensive. It takes hours to rewatch games, clip shifts, and create review sessions. The tools that do exist are built for pros and colleges. They’re priced accordingly and assume you have staff dedicated to breaking down games. Most youth programs, especially at the town level, simply can’t afford it.  
+But video analysis is expensive. It takes hours to rewatch games, clip shifts, and create reviews. The tools that do exist are built for pros and colleges. They’re priced accordingly and assume you have staff dedicated to breaking down games. Most youth programs, especially at the town level, simply can’t afford it.  
 
 The result? Once again, only the elite kids get this advantage.  
 

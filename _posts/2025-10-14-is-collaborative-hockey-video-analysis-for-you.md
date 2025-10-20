@@ -28,8 +28,8 @@ Scout Elite will change that for you.
 - Upload your clips in seconds - keeping them in a centralized place for review later
 - Clip collaboratively - anyone can track the game's moments on their own devices and share them with you later
 - Gone are the days of scrubbing through hours of game videos. Scout Elite makes this completely unnecessary.
-- Organize teaching moments into targeted review sessions by player, position, or strategy  
-- Share review sessions that both players and parents can rewatch on their own time
+- Organize teaching moments into targeted reviews by player, position, or strategy  
+- Share reviews that both players and parents can rewatch on their own time
 - Easily reference past sessions and use them to show progress or reinforce lessons past
 
 ### How to Use Scout Elite to Clip Game Video
@@ -37,7 +37,7 @@ Scout Elite will change that for you.
 2. Obtain and upload the full game video  
 3. Publish clips from your mobile device(s)
 4. Review, annotate, and refine the clips
-5. Build an anaylsis session from the game, or create targeted review sessions that span a range of games
+5. Build an anaylsis session from the game, or create targeted reviews that span a range of games
 6. Present to your team in person or share it with them to review on their own time 
 
 ## Parents
@@ -55,7 +55,7 @@ Too often, great moments get lost on phones or forgotten. Players miss how their
 
 ### How Parents Can Use Scout Elite
 1. Upload or import clips  
-2. Add them to personalhighlight reels or review sessions 
+2. Add them to personalhighlight reels or reviews 
 3. Share with coaches, family, or friends  
 
 
@@ -86,7 +86,7 @@ Traditional editing software is bulky, desktop-only, and painful to share from. 
 
 ### Why You’ll Love It
 - Centralized video workspace - all your client footage in one place  
-- Create and share professional review sessions in minutes  
+- Create and share professional reviews in minutes  
 - Deliver feedback asynchronously or in live sessions  
 - Keep your analysis organized for future reference  
 - Simplify your workflow and strengthen client relationships  

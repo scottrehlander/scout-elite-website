@@ -33,7 +33,7 @@ permalink: /how-it-works/
             { 
                 title: 'Step 5 - Organize Clips for Review',
                 element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review Session. Use this Review Sesssion as a guide for live presentation or share it for the team to review on their own time. Review Sessions remain accessible forever and can be used as a tool to direct learning in the future."
+                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review. Use this Review as a guide for live presentation or share it for the team to review on their own time. Reviews remain accessible forever and can be used as a tool to direct learning in the future."
             },
             ]
         }).oncomplete(function() {
@@ -60,9 +60,9 @@ permalink: /how-it-works/
                 intro: "<strong>Track Important Moments</strong><br /> Use <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a>, a free mobile app, to track your team and athlete's performance. Take notes on key moments.<br/><br/> Publish the game to view and share the game report and use it to automatically import clips."
             },
             { 
-                title: 'Review Sessions',
+                title: 'Reviews',
                 element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Organize Your Clips</strong><br /> Review Sessions organize oyur clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
+                intro: "<strong>Organize Your Clips</strong><br /> Reviews organize oyur clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
             }
             ]
         }).oncomplete(function() {
@@ -85,7 +85,7 @@ permalink: /how-it-works/
             { 
                 title: 'Step 3 - Organize Clips for Review',
                 element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review Session and share it with your client. Use this Review Sesssion as a guide for your live presentation. Review Sessions remain accessible forever, so your clients can review it themselves later and you can reference them in future discussions."
+                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review and share it with your client. Use this Review as a guide for your live presentation. Reviews remain accessible forever, so your clients can review it themselves later and you can reference them in future discussions."
             }
             ]
         }).oncomplete(function() {
@@ -150,7 +150,7 @@ permalink: /how-it-works/
             </div>
             <div class="modal-feature">
                 <span>📋</span>
-                <div><strong>Review sessions</strong> - Direct your team&apos;s learning</div>
+                <div><strong>Reviews</strong> - Direct your team&apos;s learning</div>
             </div>
             <div class="modal-feature">
                 <span>🚀</span>
@@ -206,7 +206,7 @@ permalink: /how-it-works/
                     </div>
                     <div class="tour-btn-back">
                         <h3>Team Coach</h3>
-                        <p>Manage team-wide video review sessions, coordinate with assistants, and create comprehensive game analysis for the entire squad.</p>
+                        <p>Manage team-wide video reviews, coordinate with assistants, and create comprehensive game analysis for the entire squad.</p>
                     </div>
                 </div>
             </button>
@@ -249,7 +249,7 @@ permalink: /how-it-works/
     <div class="container">
         <div class="section-header" style="text-align:center;">
             <h2 class="section-title">An End-to-End Solution</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Event capture can be a collaborative effort, allowing anyone to contribute valuable footage. All data is seamlessly shared with the coaching staff, who review key clips and moments, then approve a final Review Session for distribution to the team.</p>
+            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Event capture can be a collaborative effort, allowing anyone to contribute valuable footage. All data is seamlessly shared with the coaching staff, who review key clips and moments, then approve a final Review for distribution to the team.</p>
         </div>
         <div class="analysis-method-img-container" style="width:100%; max-width:940px; margin:0 auto; text-align:center;">
             <img src="/img/Scout-Elite-video-analysis-workflow.png"
@@ -322,7 +322,7 @@ permalink: /how-it-works/
             </div>
         </div>
 
-        <!-- Review Sessions -->
+        <!-- Reviews -->
         <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="review-sessions">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -333,8 +333,8 @@ permalink: /how-it-works/
                 </svg>
             </div>
             <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Review Sessions</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Coaches compile clips into focused review sessions for team viewing. Only the selected clips are included to maintain focus. Add supplementary videos from skills coaches or professionals, categorize content, and order your clips for clear flow.</p>
+                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Reviews</h3>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Coaches compile clips into focused Reviews for team viewing. Only the selected clips are included to maintain focus. Add supplementary videos from skills coaches or professionals, categorize content, and order your clips for clear flow.</p>
             </div>
         </div>
     </div>
@@ -357,7 +357,7 @@ permalink: /how-it-works/
             </div>
             <div style="flex:1; min-width:280px;">
                 <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Sessions</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip sessions can be shared to anyone in the analyst role. Some teams stop here and just share the Clip Sessions with their team live and in-person or via a screen sharing app.  Review sessions can be shared and viewed by anyone, and are locked from editing by anyone in the athlete role.</p>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip sessions can be shared to anyone in the analyst role. Some teams stop here and just share the Clip Sessions with their team live and in-person or via a screen sharing app.  Reviews can be shared and viewed by anyone, and are locked from editing by anyone in the athlete role.</p>
             </div>
         </div>
 
