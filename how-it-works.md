@@ -356,8 +356,8 @@ permalink: /how-it-works/
                 </svg>
             </div>
             <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Sessions</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip sessions can be shared to anyone in the analyst role. Some teams stop here and just share the Clip Sessions with their team live and in-person or via a screen sharing app.  Reviews can be shared and viewed by anyone, and are locked from editing by anyone in the athlete role.</p>
+                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Analysis Reviews</h3>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip sessions can be shared to anyone in the analyst role. Some teams stop here and just share the Clip Sessions with their team live and in-person or via a screen sharing app.  Targeted Reviews can be created by and shared with anyone and are read-only for anyone in the athlete role.</p>
             </div>
         </div>
 
