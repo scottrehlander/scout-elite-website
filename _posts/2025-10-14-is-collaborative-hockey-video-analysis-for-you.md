@@ -95,7 +95,7 @@ Traditional editing software is bulky, desktop-only, and painful to share from. 
 1. Upload game videos or, even better, ask your clients to and share them with you
 2. If you have videos with the potential for multiple clips, add them to a Clip Session to generate your clips
 3. Annotate and analyze key moments
-4. Categorize the clips into a targeted analysis sesssion
+4. Categorize the clips into a targeted analysis session
 5. Share with players or parents for follow-up  
 
 ## Collborate and Improve
