@@ -4,8 +4,12 @@ title: Scout Elite - Video Analysis Solutions for Youth and Minor Hockey
 url: https://scout-elite.com
 baseurl: ''
 
-
-
+collections:
+  pages:
+    output: true
+  landing-pages:
+    output: true
+    permalink: /:path/
 
 plugins:
   - jekyll-seo-tag
