@@ -1,0 +1,356 @@
+---
+layout: default
+title: Streamline Your Skills Coaching Business - Scout Elite for Skills Coaches
+description: Stop wasting hours on video editing. Scout Elite gives skills coaches a professional platform to review, annotate, and deliver feedback that parents can access forever.
+permalink: /lp/20251022-skills-coach-1/
+---
+
+<style>
+/* Hide step SVGs on mobile */
+@media (max-width: 768px) {
+    .step-visual {
+        display: none !important;
+    }
+    
+    .step-container {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
+
+<!-- Hero Section - Above the Fold -->
+<section class="hero" style="background: var(--primary-bg); padding: 80px 0 64px 0;">
+    <div class="container">
+        <div class="hero-content" style="max-width: 640px; margin: 0 auto; text-align: center;">
+            <h1 class="hero-title" style="font-size: 3rem; line-height: 1.1; margin-bottom: 1.5rem;">Stop Wrestling With Video Editors. Start Coaching.</h1>
+            <p class="hero-subtitle" style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-secondary);">Scout Elite gives skills coaches a professional platform to organize client footage, create annotated reviews, and deliver lasting value - with fully featured, integrated video editing and annotation tools.</p>
+            <div class="hero-cta" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Free 14-Day Trial</a>
+                <a href="#how-it-works" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2rem;">See How It Works</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Setup in minutes • Cancel anytime</p>
+        </div>
+        <div class="hero-visual">
+            <img src="/img/EzScoutHeaderImage3.png" alt="Scout Elite Skills Coaching Platform" style="max-width: 100%; width: 100%; border-radius: 1rem; box-shadow: 0 4px 32px rgba(0,0,0,0.12);">
+        </div>
+    </div>
+</section>
+
+<!-- Problem Statement -->
+<section style="background: var(--secondary-bg); padding: 64px 0;">
+    <div class="container" style="max-width: 900px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">If any of these describe you, we can help.</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📧</div>
+                <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">Disorganized Client Footage</h3>
+                <p style="color: var(--text-secondary);">Parents send videos via email, text, and cloud links - scattered, unnamed, and impossible to organize efficiently</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⏰</div>
+                <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">Video Editing Tools That Don't Travel with You</h3>
+                <p style="color: var(--text-secondary);">Combing through footage, cutting clips, adding annotations in complex editing software steals time from actual coaching</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔄</div>
+                <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">Inconsistent Client Experience</h3>
+                <p style="color: var(--text-secondary);">Every new interaction feels like starting from scratch - no standardized process means more work and less professional presentation</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💨</div>
+                <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">Feedback Disappears</h3>
+                <p style="color: var(--text-secondary);">Live sessions are valuable, but once they're over, there's no permanent record parents can review and reference.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Solution Overview -->
+<section id="how-it-works" style="background: var(--primary-bg); padding: 64px 0;">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="section-title">A Professional Platform Built for Skills Coaches</h2>
+            <p class="section-subtitle" style="max-width: 700px; margin: 1rem auto 0;">Scout Elite handles the technical work so you can focus on delivering elite coaching.</p>
+        </div>
+        
+        <div style="display: grid; gap: 3rem; max-width: 1000px; margin: 0 auto;">
+            <!-- Step 1 -->
+            <div class="step-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <div style="display: inline-block; background: var(--accent-color); color: white; font-weight: 700; padding: 0.5rem 1rem; border-radius: 2rem; margin-bottom: 1rem;">Step 1</div>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Parents Upload Directly</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Give parents a link to upload their footage directly to your Scout Elite workspace. No more email attachments, Dropbox links, or scattered files. Everything arrives organized in one place.</p>
+                    <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.75rem;">✓ Simple, standardized upload for clients</li>
+                        <li style="margin-bottom: 0.75rem;">✓ All footage easily organized</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Parents can even clip or pre-tag moments they want reviewed</li>
+                    </ul>
+                </div>
+                <div class="step-visual" style="background: var(--card-bg); padding: 3rem; border-radius: 1rem; text-align: center;">
+                    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="60" r="25" stroke="var(--text-primary)" stroke-width="3" fill="var(--secondary-bg)"/>
+                        <rect x="60" y="110" width="80" height="60" rx="10" stroke="var(--text-primary)" stroke-width="4" fill="var(--secondary-bg)"/>
+                        <line x1="100" y1="85" x2="100" y2="110" stroke="var(--accent-color)" stroke-width="3"/>
+                        <path d="M100 100 L105 105 L95 105 Z" fill="var(--accent-color)"/>
+                    </svg>
+                    <p style="margin-top: 1rem; font-weight: 600;">Client Upload Portal</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div class="step-visual" style="background: var(--card-bg); padding: 3rem; border-radius: 1rem; text-align: center; order: 1;">
+                    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="40" y="40" width="120" height="80" rx="10" stroke="var(--text-primary)" stroke-width="4" fill="var(--secondary-bg)"/>
+                        <rect x="60" y="60" width="35" height="25" rx="4" fill="var(--accent-color)" opacity="0.3"/>
+                        <rect x="105" y="60" width="35" height="25" rx="4" fill="var(--accent-color)" opacity="0.3"/>
+                        <rect x="60" y="90" width="35" height="20" rx="4" fill="var(--accent-color)" opacity="0.3"/>
+                        <line x1="50" y1="140" x2="90" y2="140" stroke="var(--accent-color)" stroke-width="3"/>
+                        <circle cx="95" cy="140" r="4" fill="var(--accent-color)"/>
+                    </svg>
+                    <p style="margin-top: 1rem; font-weight: 600;">Fast Clipping & Annotation</p>
+                </div>
+                <div style="order: 2;">
+                    <div style="display: inline-block; background: var(--accent-color); color: white; font-weight: 700; padding: 0.5rem 1rem; border-radius: 2rem; margin-bottom: 1rem;">Step 2</div>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Clip and Annotate In-Platform</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Use Scout Elite's intuitive tools to create clips and add your coaching notes - all in your browser. No video editing software, no export/import, no technical headaches. Just pure coaching.</p>
+                    <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.75rem;">✓ Fast browser-based clipping tools</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Add annotations and coaching notes</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Organize clips by skill or focus area</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                <div>
+                    <div style="display: inline-block; background: var(--accent-color); color: white; font-weight: 700; padding: 0.5rem 1rem; border-radius: 2rem; margin-bottom: 1rem;">Step 3</div>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Deliver Professional Review Sessions</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Build custom review sessions with your annotated clips. Share with parents that they can access anytime, forever. Your coaching insights become a permanent, searchable resource.</p>
+                    <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.75rem;">✓ Create structured review sessions</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Parents access reviews anytime, on any device</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Permanent record of your coaching value</li>
+                    </ul>
+                </div>
+                <div class="step-visual" style="background: var(--card-bg); padding: 3rem; border-radius: 1rem; text-align: center;">
+                    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="50" y="40" width="100" height="70" rx="8" fill="var(--accent-color)" opacity="0.2"/>
+                        <circle cx="100" cy="130" r="8" fill="var(--text-primary)"/>
+                        <line x1="100" y1="110" x2="60" y2="150" stroke="var(--accent-color)" stroke-width="3"/>
+                        <line x1="100" y1="110" x2="140" y2="150" stroke="var(--accent-color)" stroke-width="3"/>
+                        <circle cx="60" cy="150" r="8" fill="var(--text-primary)"/>
+                        <circle cx="140" cy="150" r="8" fill="var(--text-primary)"/>
+                        <path d="M85 55 L90 65 L80 65 Z" fill="white"/>
+                    </svg>
+                    <p style="margin-top: 1rem; font-weight: 600;">Permanent Review Access</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Your Free Trial</a>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits -->
+<section style="background: var(--secondary-bg); padding: 64px 0;">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="section-title">Why Skills Coaches Choose Scout Elite</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto;">
+            <div class="feature-card" style="padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">⚡</div>
+                <h3 style="margin-bottom: 1rem;">Reclaim Your Time</h3>
+                <p style="color: var(--text-secondary);">Stop spending hours in video editing software. Scout Elite's purpose-built tools let you clip and annotate 5x faster than traditional editors.</p>
+            </div>
+            <div class="feature-card" style="padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎯</div>
+                <h3 style="margin-bottom: 1rem;">Consistent Client Experience</h3>
+                <p style="color: var(--text-secondary);">Every client gets the same professional workflow - from upload to delivery. Standardize your process and look more professional.</p>
+            </div>
+            <div class="feature-card" style="padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💎</div>
+                <h3 style="margin-bottom: 1rem;">Demonstrate Lasting Value</h3>
+                <p style="color: var(--text-secondary);">Your coaching insights don't disappear after the session. Parents can review your feedback forever, making your service more valuable.</p>
+            </div>
+            <div class="feature-card" style="padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">📊</div>
+                <h3 style="margin-bottom: 1rem;">Track Client Progress</h3>
+                <p style="color: var(--text-secondary);">Build a library of reviews for each client. Easy to reference previous sessions and show improvement over time.</p>
+            </div>
+            <div class="feature-card" style="padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🤝</div>
+                <h3 style="margin-bottom: 1rem;">Connect With Team Coaches</h3>
+                <p style="color: var(--text-secondary);">Scout Elite team coaches regularly need game footage clipped. We can help connect you with new business opportunities.</p>
+            </div>
+            <div class="feature-card" style="padding: 2rem;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">💰</div>
+                <h3 style="margin-bottom: 1rem;">Affordable Professional Tools</h3>
+                <p style="color: var(--text-secondary);">Enterprise-quality video analysis platform at $12.99/month. No expensive software licenses or per-client fees.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Business Opportunity -->
+<section style="background: var(--primary-bg); padding: 64px 0;">
+    <div class="container" style="max-width: 900px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">Grow Your Skills Coaching Business</h2>
+            <p class="section-subtitle">Become a certified Scout Elite Skills Coach and get connected with our network</p>
+        </div>
+        
+        <div style="background: var(--card-bg); padding: 3rem; border-radius: 1rem; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
+            <div style="display: grid; gap: 2rem;">
+                <div style="display: flex; gap: 1.5rem; align-items: start;">
+                    <div style="background: var(--accent-color); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 1.25rem;">1</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Get Listed in Our Directory</h3>
+                        <p style="color: var(--text-secondary);">We can connect Scout Elite parents looking for skills coaching with you from our verified coach directory.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1.5rem; align-items: start;">
+                    <div style="background: var(--accent-color); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 1.25rem;">2</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Connect With Team Coaches</h3>
+                        <p style="color: var(--text-secondary);">Team coaches using Scout Elite often need help clipping game footage. We facilitate these connections for additional revenue opportunities.</p>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 1.5rem; align-items: start;">
+                    <div style="background: var(--accent-color); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 1.25rem;">3</div>
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Build Your Reputation</h3>
+                        <p style="color: var(--text-secondary);">Every review session you create becomes a permanent showcase of your coaching expertise. Parents can share your work with others.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+                <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Ready to join the Scout Elite coaching network?</p>
+                <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Your Free Trial</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video Demo -->
+<section style="background: var(--secondary-bg); padding: 64px 0;">
+    <div class="container" style="max-width: 900px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">See Scout Elite in Action</h2>
+            <p class="section-subtitle">Watch how skills coaches streamline their workflow with Scout Elite</p>
+        </div>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.25); background: var(--card-bg);">
+            <iframe src="https://www.youtube.com/embed/GAhEaEStDec" title="Scout Elite Overview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section id="pricing" style="background: var(--primary-bg); padding: 64px 0;">
+    <div class="container" style="max-width: 800px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">Professional Tools, Affordable Price</h2>
+            <p class="section-subtitle">Everything you need to run a professional skills coaching business</p>
+        </div>
+        
+        <div style="background: var(--card-bg); border-radius: 1rem; padding: 3rem; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Analyst Plan</h3>
+            <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent-color);">$12.99<span style="font-size: 1.25rem; font-weight: 400; color: var(--text-secondary);">/month</span></div>
+            
+            <ul style="list-style: none; padding: 0; margin: 2rem 0; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto;">
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>100GB video storage</span>
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>Client upload portal</span>
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>Fast clipping and annotation tools</span>
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>Unlimited review sessions</span>
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>Professional sharing capabilities</span>
+                </li>
+                <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>Access to coaching network</span>
+                </li>
+                <li style="padding: 0.75rem 0; display: flex; align-items: center;">
+                    <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
+                    <span>Priority support</span>
+                </li>
+            </ul>
+
+            <div style="background: var(--accent-color); background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%); color: white; padding: 1.5rem; border-radius: 0.75rem; margin: 2rem 0;">
+                <div style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">Free 14-Day Trial</div>
+                <div style="font-size: 0.95rem; opacity: 0.95;">Full access • No credit card required • Cancel anytime</div>
+            </div>
+
+            <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; width: 100%; max-width: 400px; display: inline-block;">Start Your Free Trial</a>
+            
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">One simple price covers unlimited clients and review sessions</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section style="background: var(--secondary-bg); padding: 64px 0;">
+    <div class="container" style="max-width: 800px;">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">Common Questions</h2>
+        </div>
+        
+        <div style="display: grid; gap: 1.5rem;">
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
+                <h3 style="margin-bottom: 1rem;">How difficult is Scout Elite to learn?</h3>
+                <p style="color: var(--text-secondary);">Most skills coaches are comfortable using Scout Elite within their first session. The interface is intuitive and purpose-built for coaching workflows, not general video editing.</p>
+            </div>
+            
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
+                <h3 style="margin-bottom: 1rem;">Can I use this with clients who aren't on Scout Elite?</h3>
+                <p style="color: var(--text-secondary);">Yes! You can share your sessions live with parents that do not have an account.  For only $4.99/month, they can access the sessions themselves in a read-only format.</p>
+            </div>
+            
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
+                <h3 style="margin-bottom: 1rem;">How do I get connected with team coaches who need clipping help?</h3>
+                <p style="color: var(--text-secondary);">Once you're a Scout Elite Analyst, reach out to our support team. We actively connect team coaches looking for clipping services with qualified skills coaches in our network.</p>
+            </div>
+            
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
+                <h3 style="margin-bottom: 1rem;">What if I have more than 100GB of client footage?</h3>
+                <p style="color: var(--text-secondary);">Contact us about additional storage.  It's easy for us to setup and the charge is $9.99/month for every additional 100GB. We can accommodate larger storage needs for active skills coaching businesses.</p>
+            </div>
+            
+            <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
+                <h3 style="margin-bottom: 1rem;">Can I charge clients for my services while using Scout Elite?</h3>
+                <p style="color: var(--text-secondary);">Absolutely! Scout Elite is your professional platform. You set your own rates and billing with clients. We just provide the tools to deliver better service.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section style="background: var(--accent-color); background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-hover) 100%); color: white; padding: 80px 0;">
+    <div class="container" style="max-width: 800px; text-align: center;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: white;">Ready to Elevate Your Skills Coaching?</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.95;">Join skills coaches who've streamlined their workflow and grown their business with Scout Elite.</p>
+        <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Free 14-Day Trial</a>
+        <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;">Setup in minutes • Cancel anytime</p>
+    </div>
+</section>
