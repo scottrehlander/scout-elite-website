@@ -62,7 +62,7 @@ permalink: /how-it-works/
             { 
                 title: 'Reviews',
                 element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Organize Your Clips</strong><br /> Reviews organize oyur clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
+                intro: "<strong>Organize Your Clips</strong><br /> Reviews organize your clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
             }
             ]
         }).oncomplete(function() {
