@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "My Vision for Jr. Falcons 2013 Elite"
+title: "Vision for Jr. Falcons 2013 Elite"
 seo_title: "Jr. Falcons 2013 Elite Hockey - Preparing Players for High School Success"
 seo_description: "Coach Scott Rehlander's vision for developing 13O players into successful high school hockey players and young adults through intentional coaching at Bentley Arena."
 date: 2026-01-25
@@ -8,7 +8,7 @@ categories: [coaching]
 tags: [jr falcons, elite hockey, player development, high school prep]
 author: "Coach Scott"
 excerpt: "My commitment to developing Jr. Falcons 2013 Elite players into successful hockey players and young adults through culture, structure, and technology."
-image: "/img/blog/coach-scott-and-jack.jpg"
+image: "/img/blog/jr_falcons_walkout.jpg"
 ---
 
 I'm excited to share my vision for the **Jr. Falcons 2013 Elite** team as we prepare for the 2026-27 season. This isn't just about winning games, it's about preparing young athletes for success at the high school level and beyond, both on the ice and in life.
@@ -31,7 +31,7 @@ High school coaches notice these things. They notice players who know how to car
 
 ## The Structure: Intentional Development
 
-Every practice will have a purpose. No "skate around and see what happens" sessions. Every drill, every rep, every teaching moment will be directed by what we see in games and what our players need to succeed at the next level.
+Every practice will have a purpose. No "we'll figure it out in the locker room" sessions. Every drill, every rep, every teaching moment will be directed by what we see in games and what our players need to succeed at the next level.
 
 ### How We'll Develop Players
 
@@ -41,13 +41,13 @@ Hockey is a game of habits. We'll build good ones through purposeful, high-quali
 **2. The Playbook**  
 Players will receive a succinct, professional playbook that outlines our systems, strategies, and expectations. This isn't a novel, it's a reference guide they can use to prepare for practices and games. Parents will have access too, so everyone understands what we're teaching.
 
-*[Playbook PDF will be available for registered families]*
+**[Download Example Playbook (PDF)](/img/blog/Central%20Mass%20Cobras%202024%2012U%20Playbook.pdf){:target="_blank"}** - This is an example from a previous team I coached. The Jr. Falcons playbook will follow a similar structure, tailored to our systems and the E9 level.
 
 **3. Learning Sessions**  
 Hockey IQ wins games. We'll hold regular learning sessions, some via Zoom for flexibility, others in the locker room for team bonding, where we break down game concepts, review video, and develop the mental side of the game.
 
 **4. Video Analysis with Scout Elite**  
-I built [Scout Elite](https://www.scoutelitehockey.com) specifically for this purpose. We'll use video to accelerate learning in ways that weren't possible even a few years ago.
+I built [Scout Elite](https://scout-elite.com/blog/2024/12/08/the-scout-elite-manifesto/) specifically for this purpose. We'll use video to accelerate learning in ways that weren't possible even a few years ago.
 
 Players will:
 - Review their own shifts and see exactly what they did well and what needs work
