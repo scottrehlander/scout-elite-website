@@ -10,6 +10,9 @@ collections:
   landing-pages:
     output: true
     permalink: /:path/
+  help:
+    output: true
+    permalink: /help/:path/
 
 plugins:
   - jekyll-seo-tag

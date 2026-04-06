@@ -16,6 +16,12 @@
     {% if page.url == '/support/' %}
     <link rel="stylesheet" href="{{ '/styles/support.css' | relative_url }}">
     {% endif %}
+    {% if page.url == '/help/' %}
+    <link rel="stylesheet" href="{{ '/styles/kb.css' | relative_url }}">
+    {% endif %}
+    {% if page.layout == 'kb-article' %}
+    <link rel="stylesheet" href="{{ '/styles/kb.css' | relative_url }}">
+    {% endif %}
     {% if page.url == '/blog/' %}
     <link rel="stylesheet" href="{{ '/styles/blog.css' | relative_url }}">
     {% endif %}
@@ -61,6 +67,7 @@
                     <li class="nav-item"><a href="{{ '/how-it-works' | relative_url }}" class="nav-link">How it Works</a></li>
                     <li class="nav-item"><a href="{{ '/scout-elite-live' | relative_url }}" class="nav-link">Scout Elite Live</a></li>
                     <li class="nav-item"><a href="{{ '/support' | relative_url }}" class="nav-link">Support</a></li>
+                    <li class="nav-item"><a href="{{ '/help' | relative_url }}" class="nav-link">Help</a></li>
                     <li class="nav-item"><a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="https://xpress.scout-elite.com/" target="_blank" class="nav-link nav-login">Log In</a></li>
                 </ul>
