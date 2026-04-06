@@ -128,54 +128,69 @@ description: Scout Elite provides advanced video analysis solutions for youth an
             <table class="pricing-table" style="width:100%; border-collapse:separate; border-spacing:0; background:none; color:var(--text-primary); font-family:inherit;">
                 <thead>
                     <tr>
-                        <th style="width:32%; background:none; border:none;text-align:left;vertical-align:top"><h1>Pricing</h1></th>
-                        <th style="min-width:220px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
-                            Analyst<br>
-                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$12.99/mo</span>
+                        <th style="width:25%; background:none; border:none;text-align:left;vertical-align:top"><h1>Pricing</h1></th>
+                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
+                            Starter<br>
+                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">Free</span>
                         </th>
-                        <th style="min-width:220px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
-                            Athlete<br>
+                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
+                            Solo<br>
                             <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$4.99/mo</span>
+                        </th>
+                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
+                            Pro<br>
+                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$12.99/mo</span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Video Uploads</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">100GB</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">10GB</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">100GB</td>
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Clip Creation & Organization</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Reviews</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Advanced Sharing</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Sharing & Teams</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Live Support</td>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">AI Detection</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Priority Support</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
                         <td style="font-size: 1.25em; font-weight: bold !important; text-align:left; color: var(--accent-hover); padding:18px 12px; font-weight:500; background:none;">&nbsp;</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);
-                        "><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Free 14 Day Trial</a></td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Sign Up Free</a></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Free 14-Day Trial</a></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Free 14-Day Trial</a></td>
                     </tr>
                     <tr>
                         <td></td>
-                        <td colspan="2">
+                        <td colspan="3">
                             <div style="text-align:center; margin-top:3em;">
-                                <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create an Account and Subscribe</a></p>
+                                <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create a Free Account</a></p>
                             </div>
                         </td>
                     </tr>

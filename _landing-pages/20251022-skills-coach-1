@@ -25,7 +25,7 @@ permalink: /lp/20251022-skills-coach-1/
             <h1 class="hero-title" style="font-size: 3rem; line-height: 1.1; margin-bottom: 1.5rem;">Stop Wrestling With Video Editors. Start Coaching.</h1>
             <p class="hero-subtitle" style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-secondary);">Scout Elite gives skills coaches a professional platform to organize client footage, create annotated reviews, and deliver lasting value - with fully featured, integrated video editing and annotation tools.</p>
             <div class="hero-cta" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Free 14-Day Trial</a>
+                <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Free 14-Day Trial</a>
                 <a href="#how-it-works" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2rem;">See How It Works</a>
             </div>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Setup in minutes • Cancel anytime</p>
@@ -152,7 +152,7 @@ permalink: /lp/20251022-skills-coach-1/
         </div>
 
         <div style="text-align: center; margin-top: 4rem;">
-            <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Your Free Trial</a>
+            <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Your Free Trial</a>
         </div>
     </div>
 </section>
@@ -235,7 +235,7 @@ permalink: /lp/20251022-skills-coach-1/
             
             <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
                 <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Ready to join the Scout Elite coaching network?</p>
-                <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Your Free Trial</a>
+                <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Your Free Trial</a>
             </div>
         </div>
     </div>
@@ -263,7 +263,7 @@ permalink: /lp/20251022-skills-coach-1/
         </div>
         
         <div style="background: var(--card-bg); border-radius: 1rem; padding: 3rem; text-align: center; box-shadow: 0 4px 24px rgba(0,0,0,0.1);">
-            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Analyst Plan</h3>
+            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Pro Plan</h3>
             <div style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: var(--accent-color);">$12.99<span style="font-size: 1.25rem; font-weight: 400; color: var(--text-secondary);">/month</span></div>
             
             <ul style="list-style: none; padding: 0; margin: 2rem 0; text-align: left; max-width: 400px; margin-left: auto; margin-right: auto;">
@@ -302,7 +302,7 @@ permalink: /lp/20251022-skills-coach-1/
                 <div style="font-size: 0.95rem; opacity: 0.95;">Full access • No credit card required • Cancel anytime</div>
             </div>
 
-            <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; width: 100%; max-width: 400px; display: inline-block;">Start Your Free Trial</a>
+            <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; width: 100%; max-width: 400px; display: inline-block;">Start Your Free Trial</a>
             
             <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">One simple price covers unlimited clients and review sessions</p>
         </div>
@@ -324,12 +324,12 @@ permalink: /lp/20251022-skills-coach-1/
             
             <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
                 <h3 style="margin-bottom: 1rem;">Can I use this with clients who aren't on Scout Elite?</h3>
-                <p style="color: var(--text-secondary);">Yes! You can share your sessions live with parents that do not have an account.  For only $4.99/month, they can access the sessions themselves in a read-only format.</p>
+                <p style="color: var(--text-secondary);">Yes! You can share your sessions live with parents that do not have an account.  For only $4.99/month on the Solo plan, they can access the sessions themselves in a read-only format.</p>
             </div>
             
             <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
                 <h3 style="margin-bottom: 1rem;">How do I get connected with team coaches who need clipping help?</h3>
-                <p style="color: var(--text-secondary);">Once you're a Scout Elite Analyst, reach out to our support team. We actively connect team coaches looking for clipping services with qualified skills coaches in our network.</p>
+                <p style="color: var(--text-secondary);">Once you're a Scout Elite Pro subscriber, reach out to our support team. We actively connect team coaches looking for clipping services with qualified skills coaches in our network.</p>
             </div>
             
             <div style="background: var(--card-bg); padding: 2rem; border-radius: 0.75rem;">
@@ -350,7 +350,7 @@ permalink: /lp/20251022-skills-coach-1/
     <div class="container" style="max-width: 800px; text-align: center;">
         <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: white;">Ready to Elevate Your Skills Coaching?</h2>
         <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.95;">Join skills coaches who've streamlined their workflow and grown their business with Scout Elite.</p>
-        <a href="https://xpress.scout-elite.com/account/register?plan=analyst" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Free 14-Day Trial</a>
+        <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Free 14-Day Trial</a>
         <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;">Setup in minutes • Cancel anytime</p>
     </div>
 </section>
