@@ -21,14 +21,12 @@ permalink: /help/
 
         {% assign categories = "getting-started,video-library,clip-projects,reviews,tagging,sharing-teams,scout-elite-live,billing" | split: "," %}
         {% assign category_names = "Getting Started,Video Library,Clip Projects,Reviews,Tagging & Organization,Sharing & Teams,Scout Elite Live,Billing & Subscription" | split: "," %}
-        {% assign category_icons = "🚀,📹,✂️,📋,🏷️,👥,📱,💳" | split: "," %}
 
         {% for cat in categories %}
             {% assign cat_articles = site.help | where: "category", cat | sort: "order" %}
             {% if cat_articles.size > 0 %}
             <div class="kb-category">
                 <div class="kb-category-header">
-                    <span class="kb-category-icon">{{ category_icons[forloop.index0] }}</span>
                     <h2 class="kb-category-title">{{ category_names[forloop.index0] }}</h2>
                 </div>
                 <div class="kb-articles-grid">
