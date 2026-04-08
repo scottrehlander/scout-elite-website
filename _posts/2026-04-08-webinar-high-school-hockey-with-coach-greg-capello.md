@@ -27,7 +27,7 @@ Coach Greg (aka "Cap") brings a wealth of coaching experience at every level of 
 
 - **Current Varsity Head Coach** - Algonquin Regional High School (D1 MIAA)
 - **Former Prep School Coach** - St. Mark's School and Worcester Academy
-- **Owner of X3 Hockey** - providing skills sessions and coaching to youth hockey players
+- **Owner of [X3 Hockey](https://www.x3hockey.com/){:target="_blank" rel="noopener"}** - providing skills sessions and coaching to youth hockey players
 
 His unique perspective spanning prep school, public school, and youth development makes him the perfect person to break down what young players and their families need to know about high school hockey.
 
