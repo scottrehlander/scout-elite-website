@@ -17,6 +17,7 @@ permalink: /blog/
         <button class="category-btn" data-category="tutorials">Tutorials</button>
         <button class="category-btn" data-category="tips">Tips & Tricks</button>
         <button class="category-btn" data-category="insights">Insights</button>
+        <button class="category-btn" data-category="events">Events</button>
       </div>
     </div>
   </div>
