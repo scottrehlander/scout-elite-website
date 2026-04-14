@@ -33,7 +33,7 @@ One of the strongest themes throughout the conversation: **understanding the gam
 
 Coach Greg emphasized that players who are "headsy" - who know positioning, make smart decisions, and understand how to play without the puck - can be effective as freshmen even if they're smaller. These players know how to win battles, support the puck intelligently, and make the simple plays that keep their team moving forward.
 
-> "The better players in youth hockey were not always the better players in high school. Being in the right place, moving the puck in smart ways, and being agressive and winning battles are key."
+The better players in youth hockey were not always the better players in high school. Being in the right place, moving the puck in smart ways, and being aggressive and winning battles are key.
 
 **For players:** Focus on learning the *why* behind every play. Study the game. Understand systems and positioning. This knowledge translates directly to high school success.
 
@@ -76,7 +76,7 @@ The timeline typically includes:
 
 **For families:** Have realistic expectations about the timeline. Playing junior hockey isn't a setback - it's a normal and necessary step in development for most players pursuing college hockey.
 
-### 5. Youth to High School: Expect Firmer Skills and Better Battles
+### 5. Youth to High School: Expect Firmer Skills and Tougher Battles
 
 The biggest differences from youth hockey to high school:
 
