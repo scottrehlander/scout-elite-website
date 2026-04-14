@@ -3,7 +3,7 @@ layout: post
 title: "High School Hockey Insights: Webinar Recording & Recap with Coach Greg Capello"
 seo_title: "High School Hockey Webinar Recording - Coach Greg Capello Q&A on Player Development & Tryouts"
 seo_description: "Watch the full recording of our webinar with Coach Greg Capello (X3 Hockey, Algonquin HS) covering high school hockey tryouts, player development, path to college hockey, and practical advice for players and parents."
-date: 2026-04-15
+date: 2026-04-13
 categories: [events]
 tags: [webinar, high school hockey, player development, coaching, tryouts, recording]
 author: "Coach Scott"
