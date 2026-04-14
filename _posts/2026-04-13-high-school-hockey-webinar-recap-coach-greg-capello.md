@@ -27,13 +27,13 @@ If you missed the live session or want to revisit the conversation, **the full r
 
 ## 7 Key Takeaways from Coach Greg Capello
 
-### 1. Hockey IQ Beats Size Every Time
+### 1. Hockey IQ Beats Skill
 
 One of the strongest themes throughout the conversation: **understanding the game matters more than physical attributes**.
 
-Coach Greg emphasized that players who are "headsy" - who know positioning, make smart decisions, and understand how to play without the puck - can be effective as freshmen even if they're smaller. These players know how to avoid heavy contact, support the puck intelligently, and make the simple plays that keep their team moving forward.
+Coach Greg emphasized that players who are "headsy" - who know positioning, make smart decisions, and understand how to play without the puck - can be effective as freshmen even if they're smaller. These players know how to win battles, support the puck intelligently, and make the simple plays that keep their team moving forward.
 
-> "The better players in youth hockey were the better players and could make a difference as a freshman, because they were headsy... They were in the right place, they moved the puck in smart ways, they avoided the heavy contact, but were able to play well defensively because they understood."
+> "The better players in youth hockey were not always the better players in high school. Being in the right place, moving the puck in smart ways, and being agressive and winning battles are key."
 
 **For players:** Focus on learning the *why* behind every play. Study the game. Understand systems and positioning. This knowledge translates directly to high school success.
 
@@ -47,7 +47,7 @@ His advice for goaltenders:
 - **Be patient for opportunities** - Playing time may be limited initially, but being ready when your chance comes is everything
 - **Focus on puck handling** - Many younger goalies struggle with confidence leaving the net and making decisions with the puck
 
-> "You just got to compete wherever you're at, and show that you belong."
+> "You just got to compete and show that you belong."
 
 ### 3. Model Your Game After Smart, Responsible NHL Players
 
@@ -93,7 +93,7 @@ The biggest differences from youth hockey to high school:
 **Thinking Skills:**
 - Better positional awareness
 - Smarter decision-making under pressure
-- Understanding *when* to make certain plays vs. forcing plays every shift
+- Communicating with your teammates
 
 ### 6. Tryouts: Just Be Effective in Competition
 
@@ -166,7 +166,5 @@ Whether you're a current youth player preparing for high school, a parent trying
 Thank you to everyone who attended live, and special thanks to **Coach Greg Capello** for his time, honesty, and commitment to developing young players both on and off the ice.
 
 ---
-
-*Have questions about playing at the high school level? Reach out through our [support page](/support) or connect with us on social media.*
 
 *Interested in how video analysis can help your player develop hockey IQ? Learn more about [Scout Elite and how it works](/how-it-works).*
