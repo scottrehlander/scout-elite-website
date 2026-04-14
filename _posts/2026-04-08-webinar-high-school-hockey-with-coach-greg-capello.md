@@ -11,6 +11,11 @@ excerpt: "Join us for a free webinar on 4/112/2026 with Coach Greg Capello as we
 image: "/img/blog/webinar-high-school-hockey.jpg"
 ---
 
+<div style="background: #e8f4fd; border-left: 4px solid #3B82F6; padding: 1.5em; margin: 2em 0; border-radius: 8px;">
+  <p style="margin: 0 0 0.5em 0; font-weight: 600; color: #1e3a8a; font-size: 1.1em;">📹 Webinar Complete!</p>
+  <p style="margin: 0; color: #1e40af;">This webinar took place on April 11, 2026. <strong><a href="/blog/2026/04/15/high-school-hockey-webinar-recap-coach-greg-capello" style="color: #3B82F6;">Watch the full recording and read the complete recap with key takeaways →</a></strong></p>
+</div>
+
 ## Free Live Webinar: What It Takes to Play High School Hockey
 
 **Saturday, April 11, 2026 - 9:00 AM ET via Zoom**
@@ -25,7 +30,7 @@ Join **Coach Scott**, the head coach of the Bentley Jr. Falcons 2013 Elite team 
 
 Coach Greg (aka "Cap") brings a wealth of coaching experience at every level of high school hockey:
 
-- **Current Varsity Head Coach** - Algonquin Regional High School (D1 MIAA)
+- **Current Varsity Head Coach** - Algonquin Regional High School (MIAA)
 - **Former Prep School Coach** - St. Mark's School and Worcester Academy
 - **Owner of [X3 Hockey](https://www.x3hockey.com/){:target="_blank" rel="noopener"}** - providing skills sessions and coaching to youth hockey players
 
