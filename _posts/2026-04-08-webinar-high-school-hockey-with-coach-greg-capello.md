@@ -11,21 +11,22 @@ excerpt: "Join us for a free webinar on 4/112/2026 with Coach Greg Capello as we
 image: "/img/blog/webinar-high-school-hockey.jpg"
 ---
 
+<div style="background: var(--accent-primary); border-left: 4px solid #1e40af; padding: 1.5em; margin: 2em 0; border-radius: 8px;">
+  <p style="margin: 0 0 0.5em 0; font-weight: 600; color: white; font-size: 1.1em;">📹 Webinar Complete!</p>
+  <p style="margin: 0; color: white;">This webinar took place on April 11, 2026. <strong><a href="/blog/2026/04/13/high-school-hockey-webinar-recap-coach-greg-capello" style="color: white; text-decoration: underline;">Watch the full recording and read the complete recap with key takeaways →</a></strong></p>
+</div>
+
 ## Free Live Webinar: What It Takes to Play High School Hockey
 
 **Saturday, April 11, 2026 - 9:00 AM ET via Zoom**
 
 Join **Coach Scott**, the head coach of the Bentley Jr. Falcons 2013 Elite team for a live conversation with **Coach Greg Capello**.
 
-<div style="margin: 1.5em 0; text-align: center;">
-	<a href="https://forms.gle/WdGzc1VFeGygpWVR6" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;">Register for the Webinar</a>
-</div>
-
 ## About Coach Greg Capello
 
 Coach Greg (aka "Cap") brings a wealth of coaching experience at every level of high school hockey:
 
-- **Current Varsity Head Coach** - Algonquin Regional High School (D1 MIAA)
+- **Current Varsity Head Coach** - Algonquin Regional High School (MIAA)
 - **Former Prep School Coach** - St. Mark's School and Worcester Academy
 - **Owner of [X3 Hockey](https://www.x3hockey.com/){:target="_blank" rel="noopener"}** - providing skills sessions and coaching to youth hockey players
 
@@ -52,16 +53,14 @@ After the initial conversation between Coach Scott and Coach Greg, we'll open it
 - **Parents** who want to understand the path and how to support their player
 - Anyone interested in learning what high school hockey coaches value most
 
-## Register Now
+## Event Details
 
 📅 **Date:** Saturday, April 11, 2026
 🕘 **Time:** 9:00 AM ET
-💻 **Location:** Virtual - Zoom (link provided upon registration)
+💻 **Location:** Virtual - Zoom
 💰 **Cost:** Free
 
-**[Register Here](https://forms.gle/WdGzc1VFeGygpWVR6){:target="_blank" rel="noopener"}**
-
-Space may be limited. Register early to secure your spot.
+*This event has concluded. [Watch the full recording here](/blog/2026/04/13/high-school-hockey-webinar-recap-coach-greg-capello).*
 
 ---
 
