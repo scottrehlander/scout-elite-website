@@ -60,7 +60,7 @@ redirect_from:
                         </div>
                         <div class="contact-details">
                             <h3>Documentation</h3>
-                            <p>Check out our <a href="/blog">blog</a> for guides, tutorials, and feature updates.</p>
+                            <p>Check out our <a href="/blog">blog</a> for guides, tutorials, and feature updates. Or browse the <a href="/help/">Help Center</a> for step-by-step instructions.</p>
                         </div>
                     </div>
                 </div>

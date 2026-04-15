@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Top New England Boys Hockey Programs Ranked: 10U, 12U & 14U"
-seo_title: "Top New England Boys Hockey Programs by Age Group | 10U 12U 14U"
+display_title: "Top New England Boys Hockey Programs Ranked: 10U, 12U & 14U"
+title: "Top New England Boys Hockey Programs by Age Group | 10U 12U 14U"
 description: "The definitive ranked list of New England boys hockey programs at 10U, 12U, and 14U using MyHockeyRankings national data. Includes an interactive map of team locations across Massachusetts, Connecticut, Rhode Island, New Hampshire, Maine, and Vermont."
 date: 2026-04-15
 categories: [insights]
@@ -221,3 +221,6 @@ Scout Elite was built for exactly this - youth and minor hockey parents and coac
 <div style="margin: 1.5em 0; text-align: center;">
 	<a href="https://xpress.scout-elite.com/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;">Sign Up for Scout Elite - Free 14 Day Trial</a>
 </div>
+---
+
+**Related reading:** Want to understand how these programs and leagues are structured? [New England Boys Hockey Leagues Explained: E9, EHF, VHL & AAA →](/blog/2026/04/15/massachusetts-club-hockey-leagues-e9-ehf-guide/)

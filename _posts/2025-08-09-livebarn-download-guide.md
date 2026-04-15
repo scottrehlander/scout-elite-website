@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "How to Download Game Video Segments from LiveBarn"
-seo_title: "Youth and minor hockey analysis for LiveBarn downaloded videos"
+display_title: "How to Download Game Video Segments from LiveBarn"
+title: "How to Download LiveBarn Videos for Youth Hockey Video Analysis"
 description: "How to download LiveBarn videos to perform effective youth and minor hockey analysis"
 date: 2025-08-09
 categories: [tutorials]
@@ -20,3 +20,7 @@ Head over to [LiveBarn](https://www.livebarn.com/) and find the first video of t
 **Important Note:**
 
 Sometimes LiveBarn cuts up the 30 minute video chunks into smaller segments. It is important that you check the duration of each video before you download. If the end of the current video does not reach the full duration of the 30 minute window that was selected in LiveBarn, you will need to jump to the end of that video and let it play until the next segment starts. Once the next segment starts you can download the segment just as you had above.
+
+---
+
+**Ready to upload your video?** [Step-by-step guide: Uploading Videos to Scout Elite →](/help/uploading-videos/) — covers drag-and-drop upload, supported formats, and organizing your video library.

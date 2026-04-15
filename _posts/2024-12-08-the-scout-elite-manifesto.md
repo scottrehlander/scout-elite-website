@@ -1,14 +1,16 @@
 ---
 layout: post
-title: "Why I’m Building Scout Elite: Leveling the Playing Field in Youth Hockey"
-seo_title: "Youth and minor hockey, elite kids shouldn't get all the opportunity"
+display_title: "Why I’m Building Scout Elite: Leveling the Playing Field in Youth Hockey"
+title: "The Scout Elite Manifesto: Democratizing Youth Hockey Video Analysis"
 description: "A manifesto describing what is wrong with youth hockey and one step we can take to fix it"
 date: 2024-12-08
 categories: [insights]
 tags: [scout elite live, app, roadmap]
 author: "Coach Scott"
-excerpt: "Talent is everywhere, opportunity isn't.  Let's change that, together."redirect_from:
-  - /updates/2024/12/08/the-scout-elite-manifesto.htmlimage: "/img/blog/coach-scott-and-jack.jpg"
+excerpt: "Talent is everywhere, opportunity isn't.  Let's change that, together."
+redirect_from:
+  - /updates/2024/12/08/the-scout-elite-manifesto.html
+image: "/img/blog/coach-scott-and-jack.jpg"
 ---
 
 Youth hockey is one of the most rewarding experiences I had as a child. It teaches resilience, teamwork, and discipline. It creates lifelong friendships. But it’s also a system that, from a very early age, decides who gets the keys to long-term development and who gets left behind.  
@@ -61,3 +63,6 @@ At Scout Elite, we believe in **leveling the playing field**. Every kid deserves
 We’re not here to replace great coaching. We’re here to amplify it, make it accessible, and bridge the gap between the resources of the elite and the potential of every player.  
 
 Because talent is everywhere. Opportunity isn’t. That’s what we’re here to fix.  
+---
+
+**Ready to see how it works?** [Learn how Scout Elite works →](/how-it-works/) or [download Scout Elite Live for free →](/scout-elite-live/)

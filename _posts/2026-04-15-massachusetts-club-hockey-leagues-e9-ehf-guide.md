@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "New England Boys Hockey Leagues Explained: E9, EHF, VHL, and AAA"
-seo_title: "Massachusetts Boys Club Hockey Leagues Explained: E9, EHF, VHL & AAA Guide"
+display_title: "New England Boys Hockey Leagues Explained: E9, EHF, VHL, and AAA"
+title: "Massachusetts Boys Club Hockey Leagues Explained: E9, EHF, VHL & AAA Guide"
 description: "The complete parent's guide to Massachusetts boys youth club hockey - E9, EHF, VHL, and AAA. Divisions, history, parity tournaments, tryout timing, and how to give your son the best shot."
 date: 2026-04-14
 categories: [insights]
@@ -225,3 +225,7 @@ At Scout Elite, we built our platform specifically for youth and minor hockey pa
 
 
 *Have questions about navigating the Massachusetts youth hockey landscape? Or want to share something I got wrong or missed? Reach out - I'm always happy to talk hockey.*
+
+---
+
+**Related reading:** [Top New England Boys Hockey Programs Ranked at 10U, 12U & 14U →](/blog/2026/04/15/top-new-england-boys-hockey-programs-ranked/)

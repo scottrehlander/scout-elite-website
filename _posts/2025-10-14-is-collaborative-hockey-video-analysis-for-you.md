@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Can Everyone Contribute to Team Video Analysis?"
-seo_title: "Youth and minor hockey, a video analyis tool where everyone can help"
+display_title: "Can Everyone Contribute to Team Video Analysis?"
+title: "Collaborative Youth Hockey Video Analysis: How Coaches, Parents & Volunteers Can Contribute"
 description: "You don't need to do it alone anymore, get help in capturing and annotating your game videos"
 date: 2025-10-14
 categories: [tutorials]

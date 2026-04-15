@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Welcome to Scout Elite: Getting Started Guide"
-seo_title: "Youth and minor hockey analysis for parents and coaches"
+display_title: "Welcome to Scout Elite: Getting Started Guide"
+title: "Getting Started with Scout Elite: Youth Hockey Video Analysis for Coaches & Parents"
 description: "Getting started with Scout Elite, an effective youth and minor hockey video analysis app."
 date: 2025-08-11
 categories: [tutorials]
@@ -38,3 +38,10 @@ Set up rosters and lines to make the selection of players for events fast and si
 
 ## The Power of Two
 You can use both apps independently, but when combining Live and Xpress, you no longer need to review your games to annotate the events. Publish your game from Scout Elite Live to Scout Elite Xpress then upload your game video and the magic happens. Your game videos will be annotated automatically, saving valuable time and effort while providing unparalleled insight to all of the users in your organization.
+
+---
+
+**Next steps:**
+- [Download Scout Elite Live →](/scout-elite-live/) — free on iOS and Android
+- [Step-by-step Help Center →](/help/) — guides for uploading video, creating clips, building reviews, and more
+- [See how it all works →](/how-it-works/)

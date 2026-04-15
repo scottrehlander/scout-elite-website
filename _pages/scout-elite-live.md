@@ -87,6 +87,18 @@ permalink: /scout-elite-live/
     </div>
 </section>
 
+<section style="background: var(--secondary-bg); padding: var(--space-12) 0;">
+    <div class="container" style="text-align:center;">
+        <h2 style="margin-bottom:1rem;">Want to Learn More?</h2>
+        <p style="margin-bottom:1.5rem; color:var(--text-secondary);">See the full Scout Elite platform, read step-by-step guides, or explore the blog.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+            <a href="/how-it-works/" class="btn btn-primary">How It Works</a>
+            <a href="/help/scout-elite-live-overview/" class="btn btn-secondary">Help: Using Scout Elite Live</a>
+            <a href="/blog/" class="btn btn-secondary">Blog &amp; Tutorials</a>
+        </div>
+    </div>
+</section>
+
 <script src="/scripts/glider.min.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {

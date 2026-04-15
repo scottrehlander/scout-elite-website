@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Introducing Reviews - Smarter, Easier Team Video Analysis"
-seo_title: "Organized Minor/Youth Hockey Video Analysis"
+display_title: "Introducing Reviews - Smarter, Easier Team Video Analysis"
+title: "Organized Youth Hockey Video Analysis: Introducing Reviews in Scout Elite"
 description: "The latest features in Scout Elite Xpress, the best youth hockey video analysis solution."
 date: 2025-10-01
 categories: [features]
@@ -26,7 +26,25 @@ Now, when you sit down with your team, you can walk through the successful clips
 For parents, this can truly be a game-changer. It means they can be more involved in their child's development, even if their schedules are busy or they can't attend every practice or game. Parents get a window into what their child is learning, the feedback they're receiving, and the specific skills or moments being highlighted by coaches. This transparency helps parents support their athlete more effectively at home, reinforce key lessons, and celebrate progress together. It also fosters better communication between families and coaches, making everyone feel more connected to the team's goals and growth. Ultimately, giving parents access to Reviews empowers them to be active partners in their child's hockey journey, building confidence and understanding for both athlete and family.
 
 Reviews are about making video analysis more accessible, more organized, and more impactful for every team. We can’t wait to see how you use them to teach, learn, and grow the game.
+## How to Create Your First Review
 
+Getting started with Reviews is straightforward:
+
+1. **Create a Clip Project** — Upload your game video and tag key moments as clips with Scout Elite Xpress (or auto-import from Scout Elite Live).
+2. **Open Reviews** — Navigate to the Reviews section from your Scout Elite Xpress dashboard.
+3. **Create a new Review** — Give it a name (e.g., "Defensive Zone Exits — Week 3") and select the clips you want to include.
+4. **Auto-organized by tag** — Clips are automatically grouped under their tag categories. A "Breakout" clip goes under Breakout, a "Penalty Kill" clip under Penalty Kill, and so on.
+5. **Share or present** — Share the Review link with players and parents for async review, or open it on a screen for in-person team sessions.
+
+## Review Use Cases for Youth Hockey Coaches
+
+**Defensive breakdowns** — Tag all neutral zone turnovers across three games. Pull them into a single Review. Show the pattern in one focused session instead of jumping between game footage.
+
+**Individual player development** — Filter clips by player and build a personal Review. Share it directly with the player and their family so they can watch on their own time.
+
+**Positive reinforcement** — Build a Review of great moments. Players need to see what they're doing right, not just what needs work.
+
+**Pre-game preparation** — Review opponent tendencies by building a clip collection from scouting footage and sharing it before game day.
 ## Other new features in this release
 - **Enhanced mobile support** - Review clips on the go with a smoother mobile experience.  
 - **Smarter live imports** - Scout Elite Live now auto-tags clips from tracked events, saving coaches and analysts even more time.  

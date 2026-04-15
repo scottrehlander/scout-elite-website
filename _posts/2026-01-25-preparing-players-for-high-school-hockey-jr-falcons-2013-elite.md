@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Vision for Jr. Falcons 2013 Elite"
-seo_title: "Jr. Falcons 2013 Elite Hockey - Preparing Players for High School Success"
+display_title: "Vision for Jr. Falcons 2013 Elite"
+title: "Jr. Falcons - Preparing Players for High School Success"
 description: "Coach Scott Rehlander's vision for developing 13O players into successful high school hockey players and young adults through intentional coaching at Bentley Arena."
 date: 2026-01-25
 categories: [coaching]
 tags: [jr falcons, elite hockey, player development, high school prep]
 author: "Coach Scott"
-excerpt: "My commitment to developing Jr. Falcons 2013 Elite players into successful hockey players and young adults through culture, structure, and technology."
+excerpt: "My commitment to developing Jr. Falcons into successful hockey players and young adults through culture, structure, and technology."
 image: "/img/blog/jr_falcons_walkout.jpg"
 ---
 
