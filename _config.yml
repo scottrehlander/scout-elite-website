@@ -18,6 +18,20 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+defaults:
+  - scope:
+      path: "img"
+    values:
+      sitemap: false
+  - scope:
+      path: "scripts"
+    values:
+      sitemap: false
+  - scope:
+      path: "styles"
+    values:
+      sitemap: false
+
 whitelist:
   - jekyll-seo-tag
   - jekyll-sitemap
