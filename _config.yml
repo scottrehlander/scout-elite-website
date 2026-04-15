@@ -17,6 +17,7 @@ collections:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from
 
 defaults:
   - scope:
@@ -35,3 +36,4 @@ defaults:
 whitelist:
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-redirect-from

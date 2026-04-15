@@ -2,7 +2,7 @@
 layout: post
 title: "Making Video Analysis Event Easier - A New Release is Live"
 seo_title: "Easy to use video analysis for youth and minor hockey"
-seo_description: "How Scout Elite made it even easier to clip and share youth hockey game videos"
+description: "How Scout Elite made it even easier to clip and share youth hockey game videos"
 date: 2025-10-20
 categories: [features]
 tags: [video, easy-to-use]

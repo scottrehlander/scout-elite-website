@@ -3,6 +3,10 @@ description: "Stay updated with the latest in youth and minor hockey video analy
 layout: default
 title: Blog
 permalink: /blog/
+redirect_from:
+  - /blog.html
+  - /tag/how-to/
+  - /tag/how-to/feed/
 ---
 
 <!-- Blog Hero Section -->

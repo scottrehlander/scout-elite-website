@@ -2,7 +2,7 @@
 layout: post
 title: "Can Everyone Contribute to Team Video Analysis?"
 seo_title: "Youth and minor hockey, a video analyis tool where everyone can help"
-seo_description: "You don't need to do it alone anymore, get help in capturing and annotating your game videos"
+description: "You don't need to do it alone anymore, get help in capturing and annotating your game videos"
 date: 2025-10-14
 categories: [tutorials]
 tags: [scout elite live, app, help]

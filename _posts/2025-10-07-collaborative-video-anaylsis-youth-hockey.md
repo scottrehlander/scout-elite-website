@@ -2,7 +2,7 @@
 layout: post
 title: "Online Video Clipping, a Game-Changer for Youth and Minor Hockey"
 seo_title: "The Value of Collaborative Youth Hockey Video Analysis"
-seo_description: "Thoughts on why it is important to collaborate on video analysis, and how it can be made eaiser."
+description: "Thoughts on why it is important to collaborate on video analysis, and how it can be made eaiser."
 date: 2025-10-07
 categories: [insights]
 tags: [scout elite, app]

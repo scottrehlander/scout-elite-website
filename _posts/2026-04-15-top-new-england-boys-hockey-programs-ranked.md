@@ -2,7 +2,7 @@
 layout: post
 title: "Top New England Boys Hockey Programs Ranked: 10U, 12U & 14U"
 seo_title: "Top New England Boys Hockey Programs by Age Group | 10U 12U 14U"
-seo_description: "The definitive ranked list of New England boys hockey programs at 10U, 12U, and 14U using MyHockeyRankings national data. Includes an interactive map of team locations across Massachusetts, Connecticut, Rhode Island, New Hampshire, Maine, and Vermont."
+description: "The definitive ranked list of New England boys hockey programs at 10U, 12U, and 14U using MyHockeyRankings national data. Includes an interactive map of team locations across Massachusetts, Connecticut, Rhode Island, New Hampshire, Maine, and Vermont."
 date: 2026-04-15
 categories: [insights]
 tags: [Massachusetts hockey programs, New England hockey teams, E9 hockey teams, EHF hockey teams, 10U hockey, 12U hockey, 14U hockey, top hockey programs Massachusetts, youth hockey rankings, AAA hockey New England, bantam hockey Massachusetts, peewee hockey Massachusetts, squirt hockey Massachusetts]

@@ -2,7 +2,7 @@
 layout: post
 title: "Introducing Reviews - Smarter, Easier Team Video Analysis"
 seo_title: "Organized Minor/Youth Hockey Video Analysis"
-seo_description: "The latest features in Scout Elite Xpress, the best youth hockey video analysis solution."
+description: "The latest features in Scout Elite Xpress, the best youth hockey video analysis solution."
 date: 2025-10-01
 categories: [features]
 tags: [scout elite, app]

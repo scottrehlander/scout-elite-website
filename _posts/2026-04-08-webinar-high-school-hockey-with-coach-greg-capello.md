@@ -2,7 +2,7 @@
 layout: post
 title: "Conversations with Coaches - Coach Cap"
 seo_title: "Free Webinar - High School Hockey Insights with Coach Greg Capello of X3 Hockey & Algonquin"
-seo_description: "Join Coach Scott and Coach Greg Capello for a free live webinar on what it takes to play high school hockey - tryouts, expectations, player development, and Q&A for players and parents."
+description: "Join Coach Scott and Coach Greg Capello for a free live webinar on what it takes to play high school hockey - tryouts, expectations, player development, and Q&A for players and parents."
 date: 2026-04-08
 categories: [events]
 tags: [webinar, high school hockey, player development, coaching, tryouts]

@@ -2,12 +2,14 @@
 layout: post
 title: "How to Download Game Video Segments from LiveBarn"
 seo_title: "Youth and minor hockey analysis for LiveBarn downaloded videos"
-seo_description: "How to download LiveBarn videos to perform effective youth and minor hockey analysis"
+description: "How to download LiveBarn videos to perform effective youth and minor hockey analysis"
 date: 2025-08-09
 categories: [tutorials]
 tags: [livebarn, video, guide]
 author: "Scout Elite Team"
 excerpt: "Step-by-step instructions for downloading full game video segments from LiveBarn for use in Scout Elite."
+redirect_from:
+  - /tutorials/2025/08/09/livebarn-download-guide.html
 image: "/img/blog/livebarn-video-download-guide-img1.png"
 ---
 

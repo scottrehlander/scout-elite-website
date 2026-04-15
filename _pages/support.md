@@ -3,6 +3,8 @@ description: "Get support for Scout Elite's youth and minor hockey video analysi
 layout: default
 title: Support
 permalink: /support/
+redirect_from:
+  - /support.html
 ---
 
 <!-- Support Hero Section -->
