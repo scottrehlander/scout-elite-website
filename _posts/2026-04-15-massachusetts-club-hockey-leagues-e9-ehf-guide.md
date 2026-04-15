@@ -4,7 +4,7 @@ title: "New England Boys Hockey Leagues Explained: E9, EHF, VHL, and AAA"
 seo_title: "Massachusetts Boys Club Hockey Leagues Explained: E9, EHF, VHL & AAA Guide"
 seo_description: "The complete parent's guide to Massachusetts boys youth club hockey - E9, EHF, VHL, and AAA. Divisions, history, parity tournaments, tryout timing, and how to give your son the best shot."
 date: 2026-04-14
-categories: [hockey]
+categories: [insights]
 tags: [E9 hockey, EHF hockey, Massachusetts youth hockey, boys hockey, boys club hockey, club hockey, AAA hockey, New England hockey, hockey tryouts, VHL hockey, youth hockey parent guide, Massachusetts boys hockey, youth hockey leagues]
 author: "Coach Scott"
 excerpt: "If you're trying to make sense of Massachusetts boys hockey, this is the guide you've been looking for."
