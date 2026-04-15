@@ -84,3 +84,29 @@
 .blog-post-footer {
     text-align: center;
 }
+
+/* Tables */
+.blog-post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--space-8) 0;
+    font-size: var(--font-size-base);
+    overflow-x: auto;
+    display: block;
+}
+.blog-post-content table thead tr {
+    background: #1a2535;
+    color: white;
+    text-align: left;
+}
+.blog-post-content table th,
+.blog-post-content table td {
+    padding: 0.65em 1em;
+    border: 1px solid var(--border-color, #dde2e8);
+    vertical-align: top;
+    white-space: normal;
+    min-width: 90px;
+}
+.blog-post-content table tbody tr:nth-child(even) {
+    background: var(--secondary-bg, #f8f9fb);
+}
