@@ -22,7 +22,7 @@ This is especially useful if you're:
 - **New to the New England area** and unsure which organizations have national standing
 - **Comparing leagues** (EHF vs. E9 vs. Independent) and want to see which produces more nationally-ranked teams
 
-> **A quick note on MHR ratings:** MyHockeyRankings uses a performance-based algorithmic rating (similar to chess Elo). A rating in the **high 90s** means you're competing with the best programs in the country. **92-96** is solidly national AAA level. **90-92** is strong regional AAA. The rating accounts for opponent strength, not just wins and losses. [Full methodology here.](https://myhockeyrankings.com/how-to){:target="_blank" rel="noopener"}
+> **A quick note on MHR ratings:** MyHockeyRankings uses a performance-based algorithmic rating (similar to chess Elo). A rating in the **high 90s** means you're competing with the best programs in the country. **92-96** is solidly national AAA level. **90-92** is strong regional AAA. The rating accounts for opponent strength, not just wins and losses. All rankings and ratings below reflect MHR data as of **April 15, 2026**. [Full methodology here.](https://myhockeyrankings.com/how-to){:target="_blank" rel="noopener"}
 
 
 ## Where Are These Programs Located?
@@ -109,7 +109,7 @@ The map below shows the approximate home location of every New England program t
 
 14U Bantam is the age group where national rankings start carrying serious weight. College scouts begin paying attention, and the gap between programs starts to really separate. Here's every New England program that cracked the national top 100 at 14U in 2024-25.
 
-*Source: [MHR USA 14U All Rankings](https://myhockeyrankings.com/rank.php?y=2025&v=114){:target="_blank" rel="noopener"}*
+*Source: [MHR USA 14U All Rankings](https://myhockeyrankings.com/rank.php?y=2025&v=114){:target="_blank" rel="noopener"} — data as of 4/15/2026*
 
 | US Rank | Program | Home | League | MHR Rating |
 |---|---|---|---|---|
@@ -136,7 +136,7 @@ The map below shows the approximate home location of every New England program t
 
 12U Peewee is where many families start to feel the pressure of the club hockey landscape. Programs are more defined, team rosters are more locked in, and this is often the first age where coaches are building real systems.
 
-*Source: [MHR USA 12U All Rankings](https://myhockeyrankings.com/rank.php?y=2025&v=124){:target="_blank" rel="noopener"}*
+*Source: [MHR USA 12U All Rankings](https://myhockeyrankings.com/rank.php?y=2025&v=124){:target="_blank" rel="noopener"} — data as of 4/15/2026*
 
 | US Rank | Program | Home | League | MHR Rating |
 |---|---|---|---|---|
@@ -163,7 +163,7 @@ The map below shows the approximate home location of every New England program t
 
 10U is youth hockey at its most formative. The rankings here matter less for the players and more for parents trying to understand where their son is developing relative to the country. That said, the results are genuinely remarkable.
 
-*Source: [MHR USA 10U All Rankings](https://myhockeyrankings.com/rank.php?y=2025&a=1&v=122){:target="_blank" rel="noopener"}*
+*Source: [MHR USA 10U All Rankings](https://myhockeyrankings.com/rank.php?y=2025&a=1&v=122){:target="_blank" rel="noopener"} — data as of 4/15/2026*
 
 | Approx. US Rank | Program | Home | League | MHR Rating |
 |---|---|---|---|---|

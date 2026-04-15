@@ -207,7 +207,7 @@ Speaking of high school hockey - if you're thinking about that transition and wa
 | E9 | Red | A-AA | 76–81 |
 | VHL | AAA/AA | Town Travel Hockey | varies |
 
-*MHR average ratings are approximate ranges across age groups and seasons. Individual age groups vary. Sources: [EHF on MHR](https://myhockeyrankings.com/league-info?l=109){:target="_blank" rel="noopener"} · [E9 on MHR](https://myhockeyrankings.com/league-info?l=567){:target="_blank" rel="noopener"}  
+*MHR average ratings are approximate ranges across age groups and seasons. Individual age groups vary. Data as of 4/15/2026. Sources: [EHF on MHR](https://myhockeyrankings.com/league-info?l=109){:target="_blank" rel="noopener"} · [E9 on MHR](https://myhockeyrankings.com/league-info?l=567){:target="_blank" rel="noopener"}  
 †EHF uses "National" and "American" division names at 15U and above.
 
 
