@@ -3,7 +3,6 @@ layout: default
 title: "Blog Post"
 ---
 
-{% seo %}
 <article class="blog-post-article">
   <div class="container">
     <header class="blog-post-header">
@@ -19,6 +18,67 @@ title: "Blog Post"
     <div class="blog-post-content">
       {{ content }}
     </div>
+    <script>
+      (function() {
+        function updateExternalLinks(root) {
+          var anchors = root.querySelectorAll('a[href]');
+
+          anchors.forEach(function(anchor) {
+            var href = anchor.getAttribute('href');
+
+            if (!href || href.startsWith('#') || href.startsWith('/')) {
+              return;
+            }
+
+            try {
+              var url = new URL(href, window.location.origin);
+
+              if (url.origin !== window.location.origin) {
+                anchor.setAttribute('target', '_blank');
+
+                var rel = anchor.getAttribute('rel') || '';
+                var relParts = rel.split(/\s+/).filter(Boolean);
+
+                ['noopener', 'noreferrer'].forEach(function(value) {
+                  if (!relParts.includes(value)) {
+                    relParts.push(value);
+                  }
+                });
+
+                anchor.setAttribute('rel', relParts.join(' '));
+              }
+            } catch (error) {
+              // Ignore malformed URLs and leave the link unchanged.
+            }
+          });
+        }
+
+        function initializeExternalLinks() {
+          var content = document.querySelector('.blog-post-content');
+
+          if (!content) {
+            return;
+          }
+
+          updateExternalLinks(content);
+
+          var observer = new MutationObserver(function() {
+            updateExternalLinks(content);
+          });
+
+          observer.observe(content, {
+            childList: true,
+            subtree: true
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initializeExternalLinks);
+        } else {
+          initializeExternalLinks();
+        }
+      })();
+    </script>
     <footer class="blog-post-footer">
       <a href="{{ '/blog' | relative_url }}" class="btn btn-secondary">← Back to Blog</a>
     </footer>

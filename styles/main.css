@@ -112,6 +112,54 @@ a:hover {
     color: var(--accent-hover);
 }
 
+/* Shared guide-series block */
+.guide-series-block {
+    margin: var(--space-8) 0;
+    padding: 1.25rem 1.4rem;
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-primary);
+    border-radius: var(--radius-xl);
+    background: #161616;
+    box-shadow: var(--shadow-md);
+}
+
+.guide-series-title {
+    margin: 0 0 0.45rem 0;
+    color: var(--text-primary);
+    font-size: var(--font-size-lg);
+}
+
+.guide-series-intro {
+    margin: 0 0 0.9rem 0;
+    color: var(--text-secondary);
+}
+
+.guide-series-list {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.guide-series-list li {
+    margin-bottom: 0.45rem;
+    color: var(--text-secondary);
+}
+
+.guide-series-list li:last-child {
+    margin-bottom: 0;
+}
+
+.guide-series-list strong {
+    color: var(--text-primary);
+}
+
+.guide-series-list a {
+    color: var(--accent-primary);
+}
+
+.guide-series-list a:hover {
+    color: var(--accent-hover);
+}
+
 /* Layout Components */
 .container {
     max-width: 1200px;

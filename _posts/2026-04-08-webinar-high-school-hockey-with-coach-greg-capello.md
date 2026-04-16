@@ -62,6 +62,12 @@ After the initial conversation between Coach Scott and Coach Greg, we'll open it
 
 *This event has concluded. [Watch the full recording here](/blog/2026/04/13/high-school-hockey-webinar-recap-coach-greg-capello).*
 
+## Related Guides for Massachusetts Hockey Families
+
+If part of your high school planning process is figuring out where youth league competition fits into the bigger picture, the clean starting point is the [Massachusetts youth hockey league guide](/blog/2026/04/14/massachusetts-club-hockey-leagues-e9-ehf-guide/). From there, you can drill into the Massachusetts-only EHF, E9, and PHL organization pages.
+
+{% include ma-hockey-guide-series.html %}
+
 ---
 
 *Have questions before the event? Reach out to us through our [support page](/support).*

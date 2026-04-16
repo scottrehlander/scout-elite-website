@@ -44,11 +44,13 @@ The EHF breaks into four primary divisions:
 
 ### EHF Elite: The Pinnacle
 
+If you want the organization-by-organization Massachusetts view instead of just the league overview, the companion page is here: [Massachusetts EHF Hockey Teams: Complete Map and Guide for Parents →](/blog/2026/04/16/massachusetts-ehf-hockey-teams-map-guide/)
+
 EHF Elite is the highest level of boys youth club hockey in Massachusetts and arguably in all of New England. Many EHF Elite teams rank in the top 10 nationally in USA Hockey rankings. When people outside of New England hear this, they're often skeptical - and honestly, that skepticism is understandable. In most of the United States, "AAA travel hockey" means spending $20,000–$30,000 per season flying your player to a new city every weekend to find teams worthy of competing with. There simply isn't enough competition locally to form a true AAA *league*.
 
 Massachusetts is different. We have enough elite-level programs concentrated in a small enough area that we can field an entire AAA-caliber league - one with weekly intra-divisional games and a playoff structure. This is genuinely rare and hard to find outside of big hockey markets in the US and Canada.
 
-The numbers back this up. [MyHockeyRankings (MHR)](https://myhockeyrankings.com/league-info?l=109){:target="_blank" rel="noopener"} - the independent national rating system used widely across youth hockey - shows EHF Elite (and National) divisions carrying **average team ratings of 91–96**, with top teams frequently pushing into the high 90s. For context, those are numbers that compete with the best programs anywhere in the country.
+The numbers back this up. [MyHockeyRankings (MHR)](https://myhockeyrankings.com/league-info?l=109){:target="_blank" rel="noopener"} - the independent national rating system used widely across youth hockey - shows EHF Elite (and National) divisions carrying **average team ratings of 91–96**, with top teams frequently pushing into the high 90s. For context, those are numbers that compete with the best programs anywhere in the country. You can see the full team-by-team breakdown in the [New England boys hockey programs ranked by age group](/blog/2026/04/15/top-new-england-boys-hockey-programs-ranked/).
 
 **The catch:** EHF Elite is a closed division. Only the "founding" organizations are permitted to field Elite teams. There is no promotion path from Platinum to Elite, no parity tournament, no back door. If you're not already in Elite, you're not getting in. Period.
 
@@ -81,6 +83,8 @@ The **BHL (Boston Hockey League)** ran parallel to the E9 and housed the next ti
 
 ### 2025-26 and Beyond: The New Structure
 
+If you want the Massachusetts-only organization map for this league, start here: [Massachusetts E9 Hockey Teams: Complete Map and Guide for Parents →](/blog/2026/04/16/massachusetts-e9-hockey-teams-map-guide/)
+
 Everything changed in the 2025-26 season. **The E9 brand absorbed the BHL**, and all teams became "E9" teams. The BHL brand, for all practical purposes, disappeared. This was a logical consolidation - one organization, one brand - but it created enormous confusion for anyone who'd spent years understanding what an "E9 team" meant.
 
 Here's the new E9 division structure as of 2025-26:
@@ -107,7 +111,7 @@ For those who like the data: [MHR's E9 league page](https://myhockeyrankings.com
 
 Not every high-level program in Massachusetts operates within the EHF or E9 framework. There are **independent "AAA" teams** that build their schedule through adhoc arrangements - scheduling games against New England opponents and sometimes traveling regionally.
 
-These teams sometimes come out of organizations embedded in the **PHL (Premier Hockey League)**, a less competitive club league. When a team within a PHL organization outgrows the competition around them, rather than navigating parity into the EHF or E9, they'll sometimes go independent and build their own schedule.
+These teams sometimes come out of organizations embedded in the **PHL (Premier Hockey League)**, a less competitive club league. When a team within a PHL organization outgrows the competition around them, rather than navigating parity into the EHF or E9, they'll sometimes go independent and build their own schedule. If you want the Massachusetts-only PHL organization map, use the companion page here: [Massachusetts PHL Hockey Teams: Complete Map and Guide for Parents →](/blog/2026/04/16/massachusetts-phl-hockey-teams-map-guide/)
 
 The **Boston Ice Dogs** are a well-known example of a team that operates as an independent first - not because they couldn't get into a league, but because their organizational model is built around independence.
 
@@ -228,4 +232,4 @@ At Scout Elite, we built our platform specifically for youth and minor hockey pa
 
 ---
 
-**Related reading:** [Top New England Boys Hockey Programs Ranked at 10U, 12U & 14U →](/blog/2026/04/15/top-new-england-boys-hockey-programs-ranked/)
+{% include ma-hockey-guide-series.html current="overview" %}

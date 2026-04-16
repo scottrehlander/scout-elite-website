@@ -41,12 +41,18 @@ redirect_from:
         <p class="featured-post-excerpt">This isn’t just about hockey. It’s about fairness. It’s about giving every kid, regardless of the patch on their jersey, the chance to learn from their mistakes, celebrate their progress, and grow as players and people.</p>
         <a href="/blog/2024/12/08/the-scout-elite-manifesto/" class="read-more-btn">Read More</a>
       </div>
-        <div class="featured-post-image" style="padding: 25px">
-          <div class="post-image-placeholder" style="width:100%;height:100%;overflow:hidden;">
-            <a href="/blog/2024/12/08/the-scout-elite-manifesto/"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-          </div>
+      <div class="featured-post-image" style="padding: 25px">
+        <div class="post-image-placeholder" style="width:100%;height:100%;overflow:hidden;">
+          <a href="/blog/2024/12/08/the-scout-elite-manifesto/"><img src="/img/beach-maddie.jpg" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
         </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="blog-guide-series-section">
+  <div class="container">
+    {% include ma-hockey-guide-series.html %}
   </div>
 </section>
 

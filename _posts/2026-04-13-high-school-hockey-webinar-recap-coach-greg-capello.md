@@ -165,6 +165,12 @@ Whether you're a current youth player preparing for high school, a parent trying
 
 Thank you to everyone who attended live, and special thanks to **Coach Greg Capello** for his time, honesty, and commitment to developing young players both on and off the ice.
 
+## Related Guides for Massachusetts Hockey Families
+
+If you're trying to pair Coach Cap's high school advice with a better understanding of the Massachusetts youth landscape underneath it, start with the [Massachusetts youth hockey league guide](/blog/2026/04/14/massachusetts-club-hockey-leagues-e9-ehf-guide/). From there, the EHF, E9, and PHL companion pages make it easier to compare organizations and league environments.
+
+{% include ma-hockey-guide-series.html %}
+
 ---
 
 *Interested in how video analysis can help your player develop hockey IQ? Learn more about [Scout Elite and how it works](/how-it-works).*

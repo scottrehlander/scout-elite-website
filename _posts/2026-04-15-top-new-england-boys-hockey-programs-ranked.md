@@ -17,6 +17,8 @@ image: "/img/blog/beanpot-trophy.jpg"
 
 I pulled every New England and Massachusetts boys program that appeared in the [MyHockeyRankings (MHR)](https://myhockeyrankings.com/){:target="_blank" rel="noopener"} national top 100 at **10U (Squirt)**, **12U (Peewee)**, and **14U (Bantam)** for the 2024-25 season. I've organized them by age group, mapped them geographically, and added context about league affiliation so you know who's competing where.
 
+If you want the Massachusetts-only league breakdowns that sit underneath this broader regional view, use the companion pages for the [EHF](/blog/2026/04/16/massachusetts-ehf-hockey-teams-map-guide/), [E9](/blog/2026/04/16/massachusetts-e9-hockey-teams-map-guide/), and [PHL](/blog/2026/04/16/massachusetts-phl-hockey-teams-map-guide/). For the full picture of how those leagues relate to each other, see the [Massachusetts youth hockey leagues guide](/blog/2026/04/14/massachusetts-club-hockey-leagues-e9-ehf-guide/).
+
 This is especially useful if you're:
 - **A parent** trying to understand which programs are worth pursuing at tryouts
 - **New to the New England area** and unsure which organizations have national standing
@@ -223,4 +225,4 @@ Scout Elite was built for exactly this - youth and minor hockey parents and coac
 </div>
 ---
 
-**Related reading:** Want to understand how these programs and leagues are structured? [New England Boys Hockey Leagues Explained: E9, EHF, VHL & AAA →](/blog/2026/04/15/massachusetts-club-hockey-leagues-e9-ehf-guide/)
+{% include ma-hockey-guide-series.html current="rankings" %}

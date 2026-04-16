@@ -93,6 +93,8 @@ The goal is simple: when parents understand the development process, they become
 
 The Jr. Falcons 2013 Elite will compete in the **E9 league**, with our goal being to parity into the **E9 White North division**. This is the highest level of competition that will challenge our players while providing opportunities for meaningful development.
 
+If you're a family trying to decode where the E9 fits relative to the EHF, PHL, and the broader Massachusetts landscape, start with the [Massachusetts youth hockey league guide](/blog/2026/04/14/massachusetts-club-hockey-leagues-e9-ehf-guide/). If you want the Massachusetts-only organization map for the E9 itself, use the [E9 companion page](/blog/2026/04/16/massachusetts-e9-hockey-teams-map-guide/).
+
 We're not chasing the "highest level" for ego purposes. We're choosing competition that serves our mission: preparing players for success.
 
 ## The Timeline: Building Our Core
@@ -115,6 +117,8 @@ The hockey landscape has changed dramatically over the past 15 years. The game i
 That's exactly what we're building.
 
 I'm committed to bringing a modern, intentional approach to coaching that prepares players for this reality. With AAA experience, a structured development plan, cutting-edge technology, and an unwavering commitment to culture and character, the Jr. Falcons 2013 Elite will be a program that high school coaches notice, and that players look back on as a defining chapter in their hockey journey.
+
+{% include ma-hockey-guide-series.html %}
 
 ## Next Steps
 
