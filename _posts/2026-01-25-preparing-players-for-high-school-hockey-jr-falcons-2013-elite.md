@@ -47,7 +47,7 @@ Players will receive a succinct, professional playbook that outlines our systems
 Hockey IQ wins games. We'll hold regular learning sessions, some via Zoom for flexibility, others in the locker room for team bonding, where we break down game concepts, review video, and develop the mental side of the game.
 
 **4. Video Analysis with Scout Elite**  
-I built [Scout Elite](https://scout-elite.com/blog/2024/12/08/the-scout-elite-manifesto/) specifically for this purpose. We'll use video to accelerate learning in ways that weren't possible even a few years ago.
+I built [Scout Elite](/blog/2024/12/08/the-scout-elite-manifesto/) specifically for this purpose. We'll use video to accelerate learning in ways that weren't possible even a few years ago.
 
 Players will:
 - Review their own shifts and see exactly what they did well and what needs work

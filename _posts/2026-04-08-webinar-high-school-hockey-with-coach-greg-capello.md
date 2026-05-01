@@ -70,4 +70,4 @@ If part of your high school planning process is figuring out where youth league 
 
 ---
 
-*Have questions before the event? Reach out to us through our [support page](/support).*
+*Have questions before the event? Reach out to us through our [support page](/support/).*
