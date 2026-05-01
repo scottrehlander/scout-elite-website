@@ -19,8 +19,8 @@ permalink: /help/
 <section class="kb-categories">
     <div class="container">
 
-        {% assign categories = "getting-started,video-library,clip-projects,reviews,tagging,sharing-teams,scout-elite-live,billing" | split: "," %}
-        {% assign category_names = "Getting Started,Video Library,Clip Projects,Reviews,Tagging & Organization,Sharing & Teams,Scout Elite Live,Billing & Subscription" | split: "," %}
+        {% assign categories = "getting-started,video-library,clip-projects,reviews,coaching-development,tagging,sharing-teams,scout-elite-live,billing" | split: "," %}
+        {% assign category_names = "Getting Started,Video Library,Clip Projects,Reviews,Coaching & Development,Tagging & Organization,Sharing & Teams,Scout Elite Live,Billing & Subscription" | split: "," %}
 
         {% for cat in categories %}
             {% assign cat_articles = site.help | where: "category", cat | sort: "order" %}
