@@ -9,8 +9,8 @@ last_modified_at: 2026-04-15
 <section id="home" class="hero" style="background: var(--primary-bg);">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Stop spending late nights on the work that doesn&rsquo;t make your players better.</h1>
-            <p class="hero-subtitle">Scout Elite clips your games, drafts your player development plans, and builds your team playbooks &mdash; so the hours you save go back into actual coaching. Built by parent coaches for youth hockey teams.</p>
+            <h1 class="hero-title">Stop spending your Sunday nights prepping for player development.</h1>
+            <p class="hero-subtitle">Scout Elite handles video clipping, individual player reports, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>
                 <a href="/how-it-works" class="btn btn-secondary">See How It Works</a>
@@ -18,7 +18,7 @@ last_modified_at: 2026-04-15
             <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
         </div>
         <div class="hero-visual">
-            <img src="/img/app-screenshots/scout-elite-clip-project-screenshot.png" alt="Scout Elite Clip Project workspace — game video with tagged clips and timeline" class="hero-image" style="max-width: 540px; width: 100%; border-radius: 1rem; box-shadow: 0 12px 36px rgba(0,0,0,0.35); border: 1px solid var(--border-color);">
+            <img src="/img/app-screenshots/scout-elite-home-header-img-ss-8.png" alt="Scout Elite Clip Project workspace — game video with tagged clips and timeline" class="hero-image" style="max-width: 540px; width: 100%; border-radius: var(--radius-xl);">
         </div>
     </div>
 </section>
