@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 display_title: "New England Boys Hockey Leagues Explained: E9, EHF, VHL, and AAA"
 title: "Massachusetts Youth Hockey Leagues Explained: E9, EHF, VHL & AAA Guide for Boys"
@@ -224,7 +224,7 @@ At Scout Elite, we built our platform specifically for youth and minor hockey pa
 **If you're a parent or coach in the Massachusetts hockey world, we'd love to have you take a look.**
 
 <div style="margin: 1.5em 0; text-align: center;">
-	<a href="https://xpress.scout-elite.com/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;">Sign Up for Scout Elite - Free 14 Day Trial</a>
+	<a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;" data-try-placement="blog-post-cta">Try Scout Elite Free &rarr; No Signup</a>
 </div>
 
 

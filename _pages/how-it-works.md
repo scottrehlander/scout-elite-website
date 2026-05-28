@@ -1,8 +1,9 @@
 ---
 layout: default
-title: How it Works
-description: Discover the Scout Elite workflow from capturing video to sharing focused reviews with your team.
+title: "How Scout Elite Works — Video, Reviews, Playbooks & AI Reports"
+description: "The complete Scout Elite workflow — live game tagging, video clipping, team reviews, interactive playbooks, and AI player reports. Built for youth hockey coaches."
 permalink: /how-it-works/
+last_modified_at: 2026-05-28
 ---
 
 
@@ -16,9 +17,9 @@ permalink: /how-it-works/
                 intro: "<strong>Start with Live Game Videos</strong><br /> Upload game video to your Video Library or ask others to upload and share it with you. You can include both full game videos and shorter individual clips."
             },
             { 
-                title: 'Step 2 - Create a Clip Session',
+                title: 'Step 2 - Create a Clip Project',
                 element: document.querySelector('[data-intro="clip-sessions"]'),
-                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Session. Use this session to annotate and tag new clips."
+                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to annotate and tag new clips."
             },
             { 
                 title: 'Step 3 - Create Your Clips',
@@ -28,12 +29,22 @@ permalink: /how-it-works/
             { 
                 title: 'Step 4 <small>(optional)</small> - Automatic Clipping',
                 element: document.querySelector('[data-intro="automatic-clipping"]'),
-                intro: "<strong>Scout Elite Live</strong><br /> If <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a> was used to track game events, ask your helpers to publish the game from their mobile devices and share it with you. Import the game events and notes into a Clip Session to automatically create clips for your game video."
+                intro: "<strong>Scout Elite Live</strong><br /> If <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a> was used to track game events, ask your helpers to publish the game from their mobile devices and share it with you. Import the game events and notes into a Clip Project to automatically create clips for your game video."
             },
             { 
                 title: 'Step 5 - Organize Clips for Review',
                 element: document.querySelector('[data-intro="review-sessions"]'),
                 intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review. Use this Review as a guide for live presentation or share it for the team to review on their own time. Reviews remain accessible forever and can be used as a tool to direct learning in the future."
+            },
+            {
+                title: 'Step 6 - Document Your System with a Playbook',
+                element: document.querySelector('[data-intro="playbooks"]'),
+                intro: "<strong>Teach the System</strong><br /> Use <a target=\"_blank\" href=\"/features/playbooks/\">Playbooks</a> to combine sport-specific diagrams, real-game video clips, and coaching notes into one living document. Share it with the team so everyone references the same source of truth all season."
+            },
+            {
+                title: 'Step 7 - Draft Reports with the AI Assistant',
+                element: document.querySelector('[data-intro="ai-reports"]'),
+                intro: "<strong>Game &amp; Player Reports in Minutes</strong><br /> After review, use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Reports</a> to chat your way to a polished post-game breakdown or a personal development plan for any player &mdash; without staring at a blank doc on a Sunday night."
             },
             ]
         }).oncomplete(function() {
@@ -50,9 +61,9 @@ permalink: /how-it-works/
                 intro: "<strong>Start with Live Game Videos or Clips</strong><br /> Upload video to your Video Library and share it with others. You can include both full game videos and shorter individual clips."
             },
             { 
-                title: 'Clip Sessions',
+                title: 'Clip Projects',
                 element: document.querySelector('[data-intro="clip-sessions"]'),
-                intro: "<strong>Create Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Session. Use this session to create your clips that can be used to direct the learning of your athlete or build comprehensive highlight reels."
+                intro: "<strong>Create Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to create your clips that can be used to direct the learning of your athlete or build comprehensive highlight reels."
             },
             { 
                 title: 'Scout Elite Live',
@@ -63,6 +74,11 @@ permalink: /how-it-works/
                 title: 'Reviews',
                 element: document.querySelector('[data-intro="review-sessions"]'),
                 intro: "<strong>Organize Your Clips</strong><br /> Reviews organize your clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
+            },
+            {
+                title: 'Player Development Reports',
+                element: document.querySelector('[data-intro="ai-reports"]'),
+                intro: "<strong>A Plan for Your Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to generate a personal development plan &mdash; things they can do on their own outside of practice (stick handling, shooting, study). It&rsquo;s the answer to &ldquo;what should they work on?&rdquo; already written down."
             }
             ]
         }).oncomplete(function() {
@@ -78,14 +94,19 @@ permalink: /how-it-works/
                 intro: "<strong>Start with Live Game Videos</strong><br /> Ask your client to sign up for Scout Elite to share their videos with you, or have them send you the videos for you to add to your personal Video Library."
             },
             { 
-                title: 'Step 2 - Create a Clip Session',
+                title: 'Step 2 - Create a Clip Project',
                 element: document.querySelector('[data-intro="clip-sessions"]'),
-                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Session. Use this session to annotate and tag new clips."
+                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to annotate and tag new clips."
             },
             { 
                 title: 'Step 3 - Organize Clips for Review',
                 element: document.querySelector('[data-intro="review-sessions"]'),
                 intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review and share it with your client. Use this Review as a guide for your live presentation. Reviews remain accessible forever, so your clients can review it themselves later and you can reference them in future discussions."
+            },
+            {
+                title: 'Step 4 - Hand Off a Development Plan',
+                element: document.querySelector('[data-intro="ai-reports"]'),
+                intro: "<strong>Take-Home Work for Each Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to draft a personalized at-home development plan after each session. It turns your one-hour session into a week of focused practice between visits."
             }
             ]
         }).oncomplete(function() {
@@ -137,28 +158,28 @@ permalink: /how-it-works/
         
         <div class="modal-features">
             <div class="modal-feature">
-                <span>🎯</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>14-day free trial</strong></div>
             </div>
             <div class="modal-feature">
-                <span>📹</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>Video uploads</strong> - Full game footage and clips</div>
             </div>
             <div class="modal-feature">
-                <span>✂️</span>
-                <div><strong>Clip creation & organization</strong> - Build focused sessions</div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <div><strong>Clip creation &amp; organization</strong> - Build focused sessions</div>
             </div>
             <div class="modal-feature">
-                <span>📋</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>Reviews</strong> - Direct your team&apos;s learning</div>
             </div>
             <div class="modal-feature">
-                <span>🚀</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>Advanced sharing tools</strong> - Share your work</div>
             </div>
             <div class="modal-feature">
-                <span>📱</span>
-                <div><strong>Mobile app included</strong> - Scout Elite Live for iOS & Android</div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <div><strong>Mobile app included</strong> - Scout Elite Live for iOS &amp; Android</div>
             </div>
         </div>
         
@@ -172,8 +193,8 @@ permalink: /how-it-works/
 <section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 0 0 !important;">
     <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:48px;">
         <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
-            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">Simple, Collaborative Video Review</h1>
-            <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">See how Scout Elite takes you from capturing moments in the game to sharing focused reviews with your team. Each step is designed to make learning and improvement easy for coaches, skills analysts, athletes, and parents.</p>
+            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">One Platform. Every Step of Player Development.</h1>
+            <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">Scout Elite connects every step of your player development workflow, from live game tagging and video clipping to focused team reviews, interactive playbooks, and AI-generated player reports.</p>
             <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
         </div>
         <div class="hero-visual" style="flex:1 1 340px; min-width:220px; max-width:540px; text-align:center;">
@@ -222,7 +243,7 @@ permalink: /how-it-works/
                     </div>
                     <div class="tour-btn-back">
                         <h3>Skills Coach</h3>
-                        <p>Work one-on-one with athletes to analyze technique, create focused clip sessions, and track individual skill development progress.</p>
+                        <p>Work one-on-one with athletes to analyze technique, create focused clip projects, and track individual skill development progress.</p>
                     </div>
                 </div>
             </button>
@@ -277,11 +298,11 @@ permalink: /how-it-works/
             </div>
             <div style="flex:1; min-width:280px;">
                 <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Automatic Collaborative Clipping</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Use <a href="/scout-elite-live/">Scout Elite Live</a>, our free mobile app for iOS and Android, to log events and custom notes as the game unfolds. Event markers are shared with coaches and automatically linked to video clips, which can later be edited and annotated by analysts or coaching staff. Events captured by anyone can be combined into a single clip session for review.</p>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Use <a href="/scout-elite-live/">Scout Elite Live</a>, our free mobile app for iOS and Android, to log events and custom notes as the game unfolds. Event markers are shared with coaches and automatically linked to video clips, which can later be edited and annotated by analysts or coaching staff. Events captured by anyone can be combined into a single clip project for review.</p>
             </div>
         </div>
 
-        <!-- Video Clip Sessions Option -->
+        <!-- Video Clip Projects Option -->
         <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;" data-intro="manual-clipping">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-video3" viewBox="0 0 16 16">
@@ -302,10 +323,10 @@ permalink: /how-it-works/
     <div class="container" style="max-width:900px; margin:0 auto;">
         <div class="section-header" style="text-align:center; margin-bottom:3rem;">
             <h2 class="section-title">Review and Organize</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Use the Analysis Hub to create and organize clips</p>
+            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Build the raw material in Clip Projects, then curate it into focused Reviews for the team.</p>
         </div>
         
-        <!-- Clip Sessions -->
+        <!-- Clip Projects -->
         <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="clip-sessions">
             <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -317,7 +338,7 @@ permalink: /how-it-works/
                 </svg>
             </div>
             <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Clip Sessions</h3>
+                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Clip Projects</h3>
                 <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Create clips from full or partial game videos. Tag clips, add notes and telestrations, trim start and end times, and organize your content. Videos from your library can be combined into a single session, and sessions can be shared with other coaches for collaborative editing.</p>
             </div>
         </div>
@@ -340,6 +361,47 @@ permalink: /how-it-works/
     </div>
 </section>
 
+<!-- Coach & Develop Section -->
+<section class="coach-develop" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
+    <div class="container" style="max-width:900px; margin:0 auto;">
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+            <h2 class="section-title">Coach &amp; Develop</h2>
+            <p class="section-subtitle" style="max-width:600px; margin:0 auto;">Game review is half the picture. Playbooks teach the system, AI Reports tell each player what to work on.</p>
+        </div>
+
+        <!-- Playbooks -->
+        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="playbooks">
+            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="12" cy="12" rx="9" ry="6" stroke="white" stroke-width="1.8" fill="none"/>
+                    <circle cx="12" cy="12" r="1.6" fill="white"/>
+                    <path d="M5 12 L19 12" stroke="white" stroke-width="1.2" stroke-dasharray="2 2"/>
+                </svg>
+            </div>
+            <div style="flex:1; min-width:280px;">
+                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Playbooks <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Build a structured, document-style playbook that combines <a href="/features/playbooks/">sport-specific diagrams, embedded video clips, and rich text</a>. Replace the whiteboard photos in your group chat with a living system the whole team can reference all season &mdash; and update whenever you tweak it.</p>
+            </div>
+        </div>
+
+        <!-- AI Reports -->
+        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;" data-intro="ai-reports">
+            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 5 H16 a2 2 0 0 1 2 2 V14 a2 2 0 0 1 -2 2 H9 L5 20 V16 H4 a2 2 0 0 1 -2 -2 V7 a2 2 0 0 1 2 -2 z" stroke="white" stroke-width="1.6" fill="none"/>
+                    <circle cx="7" cy="11" r="0.9" fill="white"/>
+                    <circle cx="10.5" cy="11" r="0.9" fill="white"/>
+                    <circle cx="14" cy="11" r="0.9" fill="white"/>
+                </svg>
+            </div>
+            <div style="flex:1; min-width:280px;">
+                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">AI Reports <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Chat your way to a polished <a href="/features/ai-reports/">Game Report or Player Development Plan</a>. Tell the AI the score and what happened &mdash; or what a specific player needs to work on &mdash; and a structured document drafts itself in a live preview as you talk. Refine in plain English. Save and share.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Share your Review Section -->
 <section class="share-review" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
     <div class="container" style="max-width:900px; margin:0 auto;">
@@ -357,7 +419,7 @@ permalink: /how-it-works/
             </div>
             <div style="flex:1; min-width:280px;">
                 <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Analysis Reviews</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip sessions can be shared to anyone in the analyst role. Some teams stop here and just share the Clip Sessions with their team live and in-person or via a screen sharing app.  Targeted Reviews can be created by and shared with anyone and are read-only for anyone in the athlete role.</p>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip Projects can be shared with anyone in the analyst role. Some teams stop here and just share the Clip Projects with their team live and in-person or via a screen sharing app.  Targeted Reviews can be created by and shared with anyone and are read-only for anyone in the athlete role.</p>
             </div>
         </div>
 

@@ -129,10 +129,10 @@ sitemap: false
             <div class="step-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
                 <div>
                     <div style="display: inline-block; background: var(--accent-color); color: white; font-weight: 700; padding: 0.5rem 1rem; border-radius: 2rem; margin-bottom: 1rem;">Step 3</div>
-                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Deliver Professional Review Sessions</h3>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Build custom review sessions with your annotated clips. Share with parents that they can access anytime, forever. Your coaching insights become a permanent, searchable resource.</p>
+                    <h3 style="font-size: 1.75rem; margin-bottom: 1rem;">Deliver Professional Reviews</h3>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Build custom Reviews with your annotated clips. Share with parents that they can access anytime, forever. Your coaching insights become a permanent, searchable resource.</p>
                     <ul style="list-style: none; padding: 0; color: var(--text-secondary);">
-                        <li style="margin-bottom: 0.75rem;">✓ Create structured review sessions</li>
+                        <li style="margin-bottom: 0.75rem;">✓ Create structured Reviews</li>
                         <li style="margin-bottom: 0.75rem;">✓ Parents access reviews anytime, on any device</li>
                         <li style="margin-bottom: 0.75rem;">✓ Permanent record of your coaching value</li>
                     </ul>
@@ -229,7 +229,7 @@ sitemap: false
                     <div style="background: var(--accent-color); color: white; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-weight: 700; font-size: 1.25rem;">3</div>
                     <div>
                         <h3 style="margin-bottom: 0.5rem;">Build Your Reputation</h3>
-                        <p style="color: var(--text-secondary);">Every review session you create becomes a permanent showcase of your coaching expertise. Parents can share your work with others.</p>
+                        <p style="color: var(--text-secondary);">Every Review you create becomes a permanent showcase of your coaching expertise. Parents can share your work with others.</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +282,7 @@ sitemap: false
                 </li>
                 <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
                     <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
-                    <span>Unlimited review sessions</span>
+                    <span>Unlimited Reviews</span>
                 </li>
                 <li style="padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); display: flex; align-items: center;">
                     <span style="color: var(--accent-color); margin-right: 0.75rem; font-size: 1.25rem;">✓</span>
@@ -305,7 +305,7 @@ sitemap: false
 
             <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; width: 100%; max-width: 400px; display: inline-block;">Start Your Free Trial</a>
             
-            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">One simple price covers unlimited clients and review sessions</p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">One simple price covers unlimited clients and Reviews</p>
         </div>
     </div>
 </section>

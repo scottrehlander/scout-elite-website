@@ -1,5 +1,5 @@
 ---
-description: "Discover how Scout Elite Live empowers youth and minor hockey teams with advanced video analysis tools and mobile event tagging."
+description: "Free iOS and Android app for youth hockey coaches. Tag game events in real time and auto-sync clips to your video library for instant review."
 layout: default
 title: Scout Elite Live Mobile App
 permalink: /scout-elite-live/

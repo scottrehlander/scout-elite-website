@@ -73,6 +73,11 @@ ul {
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+
+    /* Fixed header layout — keep these three in sync. */
+    --try-strip-h: 38px;
+    --header-h: 70px;
+    --chrome-h: 108px; /* try-strip + header */
 }
 
 body {
@@ -167,18 +172,56 @@ a:hover {
     padding: 0 var(--space-4);
 }
 
+/* Sitewide top "Try Free" strip — sits above the fixed header.
+   Locked to --try-strip-h so the header below it never reveals a gap. */
+.try-strip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    height: var(--try-strip-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+    color: #ffffff;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    padding: 0 var(--space-4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    line-height: 1.2;
+}
+
+.try-strip a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease;
+}
+
+.try-strip a:hover {
+    border-bottom-color: #ffffff;
+}
+
+
 /* Header and Navigation */
 .header {
     background-color: var(--primary-bg);
     border-bottom: 1px solid var(--border-color);
     position: fixed;
-    top: 0;
+    top: var(--try-strip-h); /* sits flush below .try-strip */
     left: 0;
     right: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
     background-color: rgba(10, 10, 10, 0.9);
 }
+
 
 .nav-container {
     max-width: 1200px;
@@ -238,6 +281,134 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
 }
 
+/* Try Free button in the nav — visually distinct from the Log In button. */
+.nav-try {
+    font-size: small;
+    background: transparent;
+    color: var(--accent-hover) !important;
+    border: 1px solid var(--accent-hover);
+    padding: 0.45rem 0.9rem;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.nav-try:hover {
+    background-color: var(--accent-hover);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 153, 255, 0.3);
+}
+
+/* Features dropdown — CSS hover on desktop, expanded inline on mobile. */
+.nav-item--dropdown {
+    position: relative;
+}
+
+.nav-link--dropdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+}
+
+.nav-caret {
+    transition: transform 0.2s ease;
+}
+
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    min-width: 280px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+    padding: 0.5rem;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+    z-index: 1050;
+}
+
+/* Invisible bridge between nav link and dropdown so the menu doesn't close
+   while the cursor is moving across the gap. */
+.nav-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+}
+
+.nav-item--dropdown:hover .nav-dropdown,
+.nav-item--dropdown:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.nav-item--dropdown:hover .nav-caret,
+.nav-item--dropdown:focus-within .nav-caret {
+    transform: rotate(180deg);
+}
+
+.nav-dropdown li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-dropdown__link {
+    display: block;
+    padding: 0.7rem 0.85rem;
+    border-radius: 0.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+.nav-dropdown__link:hover {
+    background: rgba(0, 153, 255, 0.08);
+    color: var(--text-primary);
+}
+
+.nav-dropdown__title {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.nav-dropdown__desc {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin-top: 0.15rem;
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+.nav-dropdown__badge {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: rgba(0, 153, 255, 0.15);
+    color: var(--accent-hover);
+    padding: 1px 6px;
+    border-radius: 999px;
+    margin-left: 0.4rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
 .nav-toggle {
     display: none;
     flex-direction: column;
@@ -253,9 +424,9 @@ a:hover {
     transition: 0.3s;
 }
 
-/* Main Content */
+/* Main Content — clears both .try-strip and .header. */
 main {
-    margin-top: 70px;
+    margin-top: var(--chrome-h);
 }
 
 /* Hero Section */
@@ -272,6 +443,19 @@ main {
     grid-template-columns: 1fr 1fr;
     gap: var(--space-16);
     align-items: center;
+}
+
+/* Centered hero variant — for pages with no .hero-visual on the right. */
+.hero--centered .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    max-width: 820px;
+}
+.hero--centered .hero-content {
+    margin: 0 auto;
+}
+.hero--centered .hero-cta {
+    justify-content: center;
 }
 
 .hero-title {
@@ -590,7 +774,199 @@ main {
 
 /* Pricing Section */
 #pricing {
-    scroll-margin-top: 80px;
+    scroll-margin-top: calc(var(--chrome-h) + 12px); /* clears .try-strip + .header */
+}
+
+/* Pricing layout swap: table on desktop, stacked cards on mobile. */
+.pricing-cards {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .pricing-table-wrapper {
+        display: none;
+    }
+    .pricing-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+.pricing-card {
+    position: relative;
+    background: linear-gradient(180deg, #1f1f22 0%, #161618 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    padding: 1.75rem 1.5rem 1.5rem 1.5rem;
+    color: var(--text-primary);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.pricing-card--featured {
+    border-color: rgba(0, 153, 255, 0.55);
+    background: linear-gradient(180deg, #1a2433 0%, #14171c 100%);
+    box-shadow: 0 12px 36px rgba(0, 122, 204, 0.18), 0 2px 0 rgba(0, 153, 255, 0.35) inset;
+}
+
+.pricing-card__ribbon {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-hover);
+    color: #ffffff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4);
+}
+
+.pricing-card__header {
+    text-align: center;
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pricing-card__tier {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-hover);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.6rem;
+}
+
+.pricing-card__price {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.pricing-card__price-unit {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-left: 0.15rem;
+}
+
+.pricing-card__tagline {
+    margin-top: 0.65rem;
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.pricing-card__trial {
+    display: inline-block;
+    margin-top: 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-hover);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid rgba(0, 153, 255, 0.4);
+    border-radius: 999px;
+}
+
+.pricing-card__includes-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin: 0 0 0.85rem 0;
+}
+
+.pricing-card__features {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 1.5rem 0;
+}
+
+.pricing-card__features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    padding: 0.45rem 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.pricing-card__check {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.15rem;
+    height: 1.15rem;
+    border-radius: 50%;
+    background: rgba(0, 153, 255, 0.12);
+    color: var(--accent-hover);
+    margin-top: 0.15rem;
+}
+
+.pricing-card__check svg {
+    width: 0.7rem;
+    height: 0.7rem;
+}
+
+.pricing-card__cta {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 0.95rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    background-color: var(--accent-primary);
+    color: #ffffff;
+    border: 1px solid var(--accent-primary);
+    transition: all 0.2s ease;
+}
+
+.pricing-card__cta:hover {
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 122, 204, 0.25);
+}
+
+.pricing-card__cta--secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+.pricing-card__cta--secondary:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: var(--text-primary);
+    box-shadow: none;
+}
+
+.pricing-card__new {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: rgba(0, 153, 255, 0.15);
+    color: var(--accent-hover);
+    padding: 2px 7px;
+    border-radius: 999px;
+    margin-left: 0.4rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    vertical-align: middle;
 }
 
 /* Responsive Design */
@@ -598,7 +974,7 @@ main {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: var(--chrome-h); /* clears .try-strip + .header */
         flex-direction: column;
         background-color: var(--primary-bg);
         width: 100%;
@@ -630,9 +1006,57 @@ main {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    .nav-login {
+    .nav-login,
+    .nav-try {
         margin: var(--space-2) auto;
         display: inline-block;
+    }
+
+    /* On mobile, the Features dropdown expands inline inside the burger menu
+       — no hover, no positioning, just a clean nested list. */
+    .nav-dropdown {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0.5rem 0 0.75rem 0;
+        margin: 0 auto;
+        max-width: 280px;
+    }
+    .nav-dropdown::before {
+        display: none;
+    }
+    .nav-dropdown__link {
+        padding: 0.55rem 0.85rem;
+    }
+    .nav-dropdown__title {
+        font-size: 0.9rem;
+        text-align: left;
+    }
+    .nav-dropdown__desc {
+        text-align: left;
+    }
+    .nav-caret {
+        display: none; /* always-open on mobile, caret is misleading */
+    }
+
+    /* Tighter try-strip on phones so it never wraps to two lines.
+       Shrink --try-strip-h and --chrome-h together so the header
+       below stays flush against the strip's bottom edge. */
+    :root {
+        --try-strip-h: 32px;
+        --chrome-h: 102px; /* 32 + 70 */
+    }
+    .try-strip {
+        font-size: var(--font-size-xs);
+        padding: 0 var(--space-3);
+    }
+    .try-strip .try-strip-long {
+        display: none;
     }
 
     .hero .container {

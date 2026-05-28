@@ -19,7 +19,7 @@ Sharing is how you get your analysis in front of your team. You can share any co
 |---|---|
 | **Videos** | Watch the video in their Video Library |
 | **Clip Projects** | View the project and all its clips (read-only) |
-| **Reviews** | Play through the organized review session |
+| **Reviews** | Play through the organized Review |
 
 All sharing is **read-only** — the original owner keeps full control. Shared content appears in the recipient's own navigation (their Video Library, Clip Creator, or Reviews list).
 

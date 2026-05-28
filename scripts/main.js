@@ -28,6 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // /try click analytics — fires gtag + Clarity events with the placement
+    // (data-try-placement attribute) so we can A/B copy and measure which
+    // surfaces actually drive the anonymous-trial flow.
+    document.querySelectorAll('a[data-try-placement]').forEach(function(link) {
+        link.addEventListener('click', function() {
+            var placement = link.getAttribute('data-try-placement') || 'unknown';
+            try {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'try_click', {
+                        placement: placement,
+                        page_path: window.location.pathname
+                    });
+                }
+            } catch (e) { /* analytics never blocks the navigation */ }
+            try {
+                if (typeof clarity === 'function') {
+                    clarity('set', 'try_placement', placement);
+                    clarity('event', 'try_click_' + placement);
+                }
+            } catch (e) { /* analytics never blocks the navigation */ }
+        });
+    });
+
     // Smooth scrolling for anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
