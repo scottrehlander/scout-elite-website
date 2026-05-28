@@ -203,17 +203,23 @@ last_modified_at: 2026-05-28
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
             <div style="text-align: center; padding: 1.25rem;">
-                <div style="font-size: 2rem; margin-bottom: 0.75rem;">⏳</div>
+                <div style="display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:0.75rem; background:rgba(0,153,255,0.1); margin:0 auto 0.75rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
                 <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">An hour you don&rsquo;t have</h3>
                 <p style="color: var(--text-secondary);">Writing a thorough breakdown from scratch takes more time than the game itself.</p>
             </div>
             <div style="text-align: center; padding: 1.25rem;">
-                <div style="font-size: 2rem; margin-bottom: 0.75rem;">📝</div>
+                <div style="display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:0.75rem; background:rgba(0,153,255,0.1); margin:0 auto 0.75rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
                 <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">No template fits</h3>
                 <p style="color: var(--text-secondary);">Every game is different. Generic checklists end up feeling lazy or incomplete.</p>
             </div>
             <div style="text-align: center; padding: 1.25rem;">
-                <div style="font-size: 2rem; margin-bottom: 0.75rem;">👤</div>
+                <div style="display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:0.75rem; background:rgba(0,153,255,0.1); margin:0 auto 0.75rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
                 <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Players want personal feedback</h3>
                 <p style="color: var(--text-secondary);">Parents ask "what should they work on?" &mdash; and the honest answer takes time to write up.</p>
             </div>
@@ -302,7 +308,7 @@ last_modified_at: 2026-05-28
 <section style="background: var(--secondary-bg); padding: 64px 0;">
     <div class="container" style="max-width: 900px; text-align: center;">
         <h2 class="section-title" style="margin-bottom: 1.5rem;">What else is in Scout Elite</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 700px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 960px; margin: 0 auto;">
             <a href="/features/playbooks/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
                 <strong style="color: var(--accent-hover);">Playbooks &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Diagrams, video, and text in one shareable doc.</p>
@@ -311,9 +317,13 @@ last_modified_at: 2026-05-28
                 <strong style="color: var(--accent-hover);">Scout Elite Live &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Tag events on your phone, auto-clip the game video.</p>
             </a>
-            <a href="/how-it-works/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
-                <strong style="color: var(--accent-hover);">How it Works &rarr;</strong>
-                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">The full Scout Elite workflow, walked through by role.</p>
+            <a href="/features/video/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
+                <strong style="color: var(--accent-hover);">Video &amp; Reviews &rarr;</strong>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Upload footage, clip key moments, share focused team reviews.</p>
+            </a>
+            <a href="/features/teams/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
+                <strong style="color: var(--accent-hover);">Teams &amp; Sharing &rarr;</strong>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Invite your roster, share everything with one click.</p>
             </a>
         </div>
     </div>

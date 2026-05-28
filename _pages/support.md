@@ -1,7 +1,7 @@
 ---
-description: "Get support for Scout Elite's youth and minor hockey video analysis platform, including features, tutorials, and technical help."
+description: "Get help with Scout Elite — video uploads, clip projects, reviews, playbooks, AI reports, teams, and account setup."
 layout: default
-title: Support
+title: "Scout Elite Support & Help Center"
 permalink: /support/
 redirect_from:
   - /support.html

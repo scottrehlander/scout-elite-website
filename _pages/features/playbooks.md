@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hockey Playbooks with Video, Diagrams & Text
-description: "Scout Elite Playbooks let coaches build structured, document-style playbooks combining sport-specific diagrams, embedded video, and rich text. Share with the team in one click."
+description: "Build structured playbooks combining sport-specific diagrams, embedded video clips, and rich text. Share with your team in one click. Built for youth hockey coaches."
 permalink: /features/playbooks/
 last_modified_at: 2026-05-28
 ---
@@ -100,17 +100,23 @@ last_modified_at: 2026-05-28
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
             <div style="text-align: center; padding: 1.25rem;">
-                <div style="font-size: 2rem; margin-bottom: 0.75rem;">📷</div>
+                <div style="display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:0.75rem; background:rgba(0,153,255,0.1); margin:0 auto 0.75rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                </div>
                 <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Photos lose context</h3>
                 <p style="color: var(--text-secondary);">A diagram alone doesn&rsquo;t explain the read. Without a coach next to it, players forget half the message.</p>
             </div>
             <div style="text-align: center; padding: 1.25rem;">
-                <div style="font-size: 2rem; margin-bottom: 0.75rem;">📄</div>
+                <div style="display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:0.75rem; background:rgba(0,153,255,0.1); margin:0 auto 0.75rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+                </div>
                 <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">PDFs feel dead</h3>
                 <p style="color: var(--text-secondary);">Static documents can&rsquo;t show a real-game clip of the system working &mdash; the thing that actually makes it click.</p>
             </div>
             <div style="text-align: center; padding: 1.25rem;">
-                <div style="font-size: 2rem; margin-bottom: 0.75rem;">🔀</div>
+                <div style="display:flex; align-items:center; justify-content:center; width:48px; height:48px; border-radius:0.75rem; background:rgba(0,153,255,0.1); margin:0 auto 0.75rem;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                </div>
                 <h3 style="color: var(--text-primary); margin-bottom: 0.5rem;">Updates get lost</h3>
                 <p style="color: var(--text-secondary);">When you tweak the breakout in November, the photo from October is still the one in the group chat.</p>
             </div>
@@ -243,7 +249,7 @@ last_modified_at: 2026-05-28
 <section style="background: var(--primary-bg); padding: 64px 0;">
     <div class="container" style="max-width: 900px; text-align: center;">
         <h2 class="section-title" style="margin-bottom: 1.5rem;">What else is in Scout Elite</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 700px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 960px; margin: 0 auto;">
             <a href="/features/ai-reports/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none;">
                 <strong style="color: var(--accent-hover);">AI Reports &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Chat your way to a game breakdown or player plan.</p>
@@ -252,9 +258,13 @@ last_modified_at: 2026-05-28
                 <strong style="color: var(--accent-hover);">Scout Elite Live &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Tag events on your phone, auto-clip the game video.</p>
             </a>
-            <a href="/how-it-works/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none;">
-                <strong style="color: var(--accent-hover);">How it Works &rarr;</strong>
-                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">The full Scout Elite workflow, walked through by role.</p>
+            <a href="/features/video/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none;">
+                <strong style="color: var(--accent-hover);">Video &amp; Reviews &rarr;</strong>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Upload footage, clip key moments, share focused team reviews.</p>
+            </a>
+            <a href="/features/teams/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none;">
+                <strong style="color: var(--accent-hover);">Teams &amp; Sharing &rarr;</strong>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Invite your roster, share everything with one click.</p>
             </a>
         </div>
     </div>

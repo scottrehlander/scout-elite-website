@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 display_title: "Massachusetts Youth Hockey Teams: E9 Organizations Map and Guide"
 title: "Youth Hockey Organizations in MA: E9 Guide & Map"
@@ -192,7 +192,7 @@ If you're coaching one of these teams, or just trying to help your son learn fas
 Scout Elite lets you clip plays, organize teachable moments, and share them with players without needing a full video staff.
 
 <div style="margin: 1.5em 0; text-align: center;">
-	<a href="https://xpress.scout-elite.com/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;">Sign Up for Scout Elite - Free 14 Day Trial</a>
+	<a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;" data-try-placement="blog-post-cta">Try Scout Elite Free &rarr; No Signup</a>
 </div>
 
 ---

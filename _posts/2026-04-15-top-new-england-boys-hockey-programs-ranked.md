@@ -1,4 +1,4 @@
----
+﻿---
 layout: post
 display_title: "Top New England Boys Hockey Programs Ranked: 10U, 12U & 14U"
 title: "Top New England Youth Hockey Programs Ranked by Age Group | 10U 12U 14U"
@@ -221,7 +221,7 @@ Whether you're a coach at an EHF Elite program or a parent of a VHL town team, o
 Scout Elite was built for exactly this - youth and minor hockey parents and coaches who want real video analysis without a $10,000 platform or a full-time video staff. Clip games live from your phone, organize teaching moments into focused reviews, and share them directly with players.
 
 <div style="margin: 1.5em 0; text-align: center;">
-	<a href="https://xpress.scout-elite.com/" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;">Sign Up for Scout Elite - Free 14 Day Trial</a>
+	<a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;" data-try-placement="blog-post-cta">Try Scout Elite Free &rarr; No Signup</a>
 </div>
 ---
 

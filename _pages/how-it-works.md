@@ -1,8 +1,9 @@
 ---
 layout: default
-title: How it Works
-description: Discover the Scout Elite workflow from capturing video to sharing focused reviews with your team.
+title: "How Scout Elite Works — Video, Reviews, Playbooks & AI Reports"
+description: "The complete Scout Elite workflow — live game tagging, video clipping, team reviews, interactive playbooks, and AI player reports. Built for youth hockey coaches."
 permalink: /how-it-works/
+last_modified_at: 2026-05-28
 ---
 
 
@@ -157,28 +158,28 @@ permalink: /how-it-works/
         
         <div class="modal-features">
             <div class="modal-feature">
-                <span>🎯</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>14-day free trial</strong></div>
             </div>
             <div class="modal-feature">
-                <span>📹</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>Video uploads</strong> - Full game footage and clips</div>
             </div>
             <div class="modal-feature">
-                <span>✂️</span>
-                <div><strong>Clip creation & organization</strong> - Build focused sessions</div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <div><strong>Clip creation &amp; organization</strong> - Build focused sessions</div>
             </div>
             <div class="modal-feature">
-                <span>📋</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>Reviews</strong> - Direct your team&apos;s learning</div>
             </div>
             <div class="modal-feature">
-                <span>🚀</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
                 <div><strong>Advanced sharing tools</strong> - Share your work</div>
             </div>
             <div class="modal-feature">
-                <span>📱</span>
-                <div><strong>Mobile app included</strong> - Scout Elite Live for iOS & Android</div>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
+                <div><strong>Mobile app included</strong> - Scout Elite Live for iOS &amp; Android</div>
             </div>
         </div>
         
@@ -192,8 +193,8 @@ permalink: /how-it-works/
 <section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 0 0 !important;">
     <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:48px;">
         <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
-            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">Simple, Collaborative Video Review</h1>
-            <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">See how Scout Elite takes you from capturing moments in the game to sharing focused reviews with your team. Each step is designed to make learning and improvement easy for coaches, skills analysts, athletes, and parents.</p>
+            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">One Platform. Every Step of Player Development.</h1>
+            <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">Scout Elite connects every step of your player development workflow, from live game tagging and video clipping to focused team reviews, interactive playbooks, and AI-generated player reports.</p>
             <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
         </div>
         <div class="hero-visual" style="flex:1 1 340px; min-width:220px; max-width:540px; text-align:center;">

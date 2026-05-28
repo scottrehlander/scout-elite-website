@@ -97,20 +97,15 @@ last_modified_at: 2026-05-28
                 <p>The free mobile app for tagging events as they happen. Auto-clip your game video by importing the live-tagged moments. iOS and Android.</p>
                 <span class="features-index-card__link">Explore Scout Elite Live &rarr;</span>
             </a>
-            <a href="/how-it-works/" class="features-index-card">
-                <h2>Video Review &amp; Clip Workflow</h2>
-                <p>Upload, clip, tag, telestrate, and organize clips into focused team Reviews. The core workflow Scout Elite was built on.</p>
-                <span class="features-index-card__link">See How It Works &rarr;</span>
+            <a href="/features/video/" class="features-index-card">
+                <h2>Video Library, Clips &amp; Reviews</h2>
+                <p>Upload game footage, create clips with intuitive tools, and organize them into focused team Reviews. The core video workflow Scout Elite was built on.</p>
+                <span class="features-index-card__link">Explore Video Tools &rarr;</span>
             </a>
-            <a href="/help/scout-elite-live-overview/" class="features-index-card">
-                <h2>Live Game Reports</h2>
-                <p>Every game tagged in Scout Elite Live becomes a shareable report with team stats, scoring log, player stats, and time-series analytics.</p>
-                <span class="features-index-card__link">Read the docs &rarr;</span>
-            </a>
-            <a href="/help/managing-teams/" class="features-index-card">
+            <a href="/features/teams/" class="features-index-card">
                 <h2>Teams &amp; Sharing</h2>
-                <p>Create teams, invite players and parents, and share clips, reviews, playbooks, and reports with the whole group in one click. Available on Pro.</p>
-                <span class="features-index-card__link">Read the docs &rarr;</span>
+                <p>Create a team, invite your roster and parents, and share any review, playbook, or report with everyone in one click. Role-based access included.</p>
+                <span class="features-index-card__link">Explore Teams &rarr;</span>
             </a>
         </div>
     </div>

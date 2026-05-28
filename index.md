@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Home
-description: Scout Elite provides advanced video analysis solutions for youth and minor hockey teams, helping coaches and players improve performance.
+title: "Scout Elite — Hockey Video Analysis for Youth & Minor Hockey Coaches"
+description: "Scout Elite helps youth hockey coaches clip game footage, run focused team reviews, build interactive playbooks, and generate AI player reports."
 last_modified_at: 2026-04-15
 ---
 
