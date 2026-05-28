@@ -1,7 +1,7 @@
 ---
 layout: kb-article
 title: "Creating a Review"
-description: "Learn how to create Reviews in Scout Elite to organize clips into categories for structured team video review sessions."
+description: "Learn how to create Reviews in Scout Elite to organize clips into categories for structured team video playback."
 permalink: /help/creating-reviews/
 category: reviews
 order: 1

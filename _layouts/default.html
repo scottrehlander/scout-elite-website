@@ -55,6 +55,12 @@
   </script>
 </head>
 <body>
+    <!-- Sitewide "Try Free" strip — anonymous trial, no signup required. -->
+    <div class="try-strip" role="region" aria-label="Try Scout Elite free">
+        <span class="try-strip-bolt" aria-hidden="true">⚡</span>
+        <span class="try-strip-long">Take a 5-minute test drive — real clips, AI reports, no account needed. </span>
+        <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" data-try-placement="top-strip">Try Scout Elite Free &rarr;</a>
+    </div>
     <header class="header">
         <nav class="nav">
             <div class="nav-container">
@@ -63,12 +69,36 @@
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
+                    <li class="nav-item nav-item--dropdown">
+                        <a href="{{ '/features' | relative_url }}" class="nav-link nav-link--dropdown">
+                            Features
+                            <svg class="nav-caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5L5 6.5L8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <ul class="nav-dropdown" role="menu">
+                            <li role="none"><a role="menuitem" href="{{ '/features' | relative_url }}" class="nav-dropdown__link">
+                                <span class="nav-dropdown__title">Features Overview</span>
+                                <span class="nav-dropdown__desc">Everything in Scout Elite</span>
+                            </a></li>
+                            <li role="none"><a role="menuitem" href="{{ '/features/ai-reports' | relative_url }}" class="nav-dropdown__link">
+                                <span class="nav-dropdown__title">AI Reports <span class="nav-dropdown__badge">New</span></span>
+                                <span class="nav-dropdown__desc">Chat-built game &amp; player reports</span>
+                            </a></li>
+                            <li role="none"><a role="menuitem" href="{{ '/features/playbooks' | relative_url }}" class="nav-dropdown__link">
+                                <span class="nav-dropdown__title">Playbooks <span class="nav-dropdown__badge">New</span></span>
+                                <span class="nav-dropdown__desc">Diagrams, video, and text in one doc</span>
+                            </a></li>
+                            <li role="none"><a role="menuitem" href="{{ '/scout-elite-live' | relative_url }}" class="nav-dropdown__link">
+                                <span class="nav-dropdown__title">Scout Elite Live</span>
+                                <span class="nav-dropdown__desc">Tag events on your phone, auto-clip</span>
+                            </a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item"><a href="{{ '/#pricing' | relative_url }}" class="nav-link">Pricing</a></li>
                     <li class="nav-item"><a href="{{ '/how-it-works' | relative_url }}" class="nav-link">How it Works</a></li>
-                    <li class="nav-item"><a href="{{ '/scout-elite-live' | relative_url }}" class="nav-link">Scout Elite Live</a></li>
                     <li class="nav-item"><a href="{{ '/support' | relative_url }}" class="nav-link">Support</a></li>
                     <li class="nav-item"><a href="{{ '/help' | relative_url }}" class="nav-link">Help</a></li>
                     <li class="nav-item"><a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="https://xpress.scout-elite.com/try" target="_blank" class="nav-link nav-try" data-try-placement="nav">Try Free &rarr;</a></li>
                     <li class="nav-item"><a href="https://xpress.scout-elite.com/" target="_blank" class="nav-link nav-login">Log In</a></li>
                 </ul>
                 <div class="nav-toggle" id="nav-toggle">
@@ -334,11 +364,14 @@
                     <h4 class="footer-heading">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                        <li><a href="{{ '/features' | relative_url }}">Features</a></li>
+                        <li><a href="{{ '/features/ai-reports' | relative_url }}">AI Reports</a></li>
+                        <li><a href="{{ '/features/playbooks' | relative_url }}">Playbooks</a></li>
+                        <li><a href="{{ '/scout-elite-live' | relative_url }}">Scout Elite Live</a></li>
                         <li><a href="{{ '/#pricing' | relative_url }}">Pricing</a></li>
                         <li><a href="{{ '/how-it-works' | relative_url }}">How it Works</a></li>
-                        <li><a href="{{ '/scout-elite-live' | relative_url }}">Scout Elite Live</a></li>
-                        <li><a href="{{ '/support' | relative_url }}">Support</a></li>
                         <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                        <li><a href="{{ '/support' | relative_url }}">Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

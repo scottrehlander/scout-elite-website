@@ -9,15 +9,16 @@ last_modified_at: 2026-04-15
 <section id="home" class="hero" style="background: var(--primary-bg);">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Elevate Your Team with Simple and Effective Video Analysis</h1>
-            <p class="hero-subtitle">Uncover the winning edge as you gain insights from in-depth game film review, allowing you to fine-tune strategies, pinpoint strengths, and address weaknesses, all while harnessing the power of visual learning to dominate your sport like never before.</p>
+            <h1 class="hero-title">Stop spending late nights on the work that doesn&rsquo;t make your players better.</h1>
+            <p class="hero-subtitle">Scout Elite clips your games, drafts your player development plans, and builds your team playbooks &mdash; so the hours you save go back into actual coaching. Built by parent coaches for youth hockey teams.</p>
             <div class="hero-cta">
-                <a href="#features" class="btn btn-primary">Why Scout Elite?</a>
-                <a target="_blank" href="https://xpress.scout-elite.com/" class="btn btn-secondary">Log in to Xpress</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>
+                <a href="/how-it-works" class="btn btn-secondary">See How It Works</a>
             </div>
+            <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
         </div>
         <div class="hero-visual">
-            <img src="/img/EzScoutHeaderImage3.png" alt="Scout Elite Hockey Video Analysis" class="hero-image" style="max-width: 540px; width: 100%; border-radius: 1rem; box-shadow: 0 4px 32px rgba(0,0,0,0.12);">
+            <img src="/img/app-screenshots/scout-elite-clip-project-screenshot.png" alt="Scout Elite Clip Project workspace — game video with tagged clips and timeline" class="hero-image" style="max-width: 540px; width: 100%; border-radius: 1rem; box-shadow: 0 12px 36px rgba(0,0,0,0.35); border: 1px solid var(--border-color);">
         </div>
     </div>
 </section>
@@ -122,81 +123,188 @@ last_modified_at: 2026-04-15
     </div>
 </section>
 
-<!-- Pricing/Invite Section -->
-<section id="pricing" class="pricing-invite" style="background: var(--secondary-bg); padding: 64px 0 64px 0;">
+<!-- Pricing Section -->
+<section id="pricing" class="pricing-invite" style="background: var(--secondary-bg); padding: 64px 0;">
     <div class="container">
+        <div class="section-header" style="text-align:center; margin-bottom:2.5rem;">
+            <h1 class="section-title">Pricing</h1>
+            <p class="section-subtitle">Free for players and parents to view. Coaches start at $4.99/mo. Every paid plan includes a 14-day free trial.</p>
+            <p style="margin-top:0.75rem;"><a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" data-try-placement="pricing-intro" style="color:var(--accent-hover); font-weight:600;">Or try the full app first &mdash; no signup needed &rarr;</a></p>
+        </div>
+        <!-- Stacked tier cards (mobile only). -->
+        <div class="pricing-cards">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="pricing-card__header">
+                    <div class="pricing-card__tier">Starter</div>
+                    <div class="pricing-card__price">Free</div>
+                    <p class="pricing-card__tagline">For players &amp; parents. View everything your coach shares with you.</p>
+                </div>
+                <p class="pricing-card__includes-label">What's included:</p>
+                <ul class="pricing-card__features">
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> View shared clips, reviews &amp; playbooks</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Scout Elite Live mobile app</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 1 starter <a href="/help/creating-playbooks/" style="color:inherit;">Playbook</a> (3 sections)</li>
+                </ul>
+                <a href="https://xpress.scout-elite.com/account/register" class="pricing-card__cta pricing-card__cta--secondary">Sign Up Free</a>
+            </div>
+
+            <!-- Solo -->
+            <div class="pricing-card">
+                <div class="pricing-card__header">
+                    <div class="pricing-card__tier">Solo</div>
+                    <div class="pricing-card__price">$4.99<span class="pricing-card__price-unit">/mo</span></div>
+                    <p class="pricing-card__tagline">For individual coaches and analysts who want the full creation toolkit.</p>
+                    <span class="pricing-card__trial">14-day free trial</span>
+                </div>
+                <p class="pricing-card__includes-label">Everything in Starter, plus:</p>
+                <ul class="pricing-card__features">
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 10 GB of video uploads</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Clips, tagging &amp; telestration</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Reviews to organize clips by category</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Unlimited <a href="/help/creating-playbooks/" style="color:inherit;">Playbooks</a><span class="pricing-card__new">New</span></li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/help/creating-reports/" style="color:inherit;">AI Game &amp; Player Reports</a><span class="pricing-card__new">New</span></li>
+                </ul>
+                <a href="https://xpress.scout-elite.com/account/register?plan=solo" class="pricing-card__cta">Start Solo Trial</a>
+            </div>
+
+            <!-- Pro (featured) -->
+            <div class="pricing-card pricing-card--featured">
+                <div class="pricing-card__ribbon">Most popular</div>
+                <div class="pricing-card__header">
+                    <div class="pricing-card__tier">Pro</div>
+                    <div class="pricing-card__price">$12.99<span class="pricing-card__price-unit">/mo</span></div>
+                    <p class="pricing-card__tagline">For coaches running a full team. Share with everyone, every season.</p>
+                    <span class="pricing-card__trial">14-day free trial</span>
+                </div>
+                <p class="pricing-card__includes-label">Everything in Solo, plus:</p>
+                <ul class="pricing-card__features">
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 100 GB of video uploads</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Share clips, reviews, playbooks &amp; reports</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Create &amp; manage teams</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> AI clip detection from game video</li>
+                </ul>
+                <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="pricing-card__cta">Start Pro Trial</a>
+            </div>
+        </div>
+
         <div class="pricing-table-wrapper" style="overflow-x:auto;">
             <table class="pricing-table" style="width:100%; border-collapse:separate; border-spacing:0; background:none; color:var(--text-primary); font-family:inherit;">
                 <thead>
                     <tr>
-                        <th style="width:25%; background:none; border:none;text-align:left;vertical-align:top"><h1>Pricing</h1></th>
-                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
-                            Starter<br>
+                        <th style="width:25%; background:none; border:none;"></th>
+                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:28px 16px 16px 16px;">
+                            Starter
                             <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">Free</span>
+                            <span style="font-size:0.85rem; color:var(--text-secondary);">For players &amp; parents</span>
                         </th>
-                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
-                            Solo<br>
-                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$4.99/mo</span>
+                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:28px 16px 16px 16px;">
+                            Solo
+                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$4.99<span style="font-size:1rem; font-weight:500;">/mo</span></span>
+                            <span style="font-size:0.85rem; color:var(--accent-hover); font-weight:600;">14-day free trial</span>
                         </th>
-                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:32px 16px 16px 16px;">
-                            Pro<br>
-                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$12.99/mo</span>
+                        <th style="min-width:180px; border-radius:1.25rem 1.25rem 0 0; border:none; text-align:center; padding:28px 16px 16px 16px; background: rgba(0,153,255,0.08);">
+                            Pro
+                            <span style="font-size:2rem; font-weight:700; display:block; margin:0.5em 0 0.25em 0; color:var(--text-primary);">$12.99<span style="font-size:1rem; font-weight:500;">/mo</span></span>
+                            <span style="font-size:0.85rem; color:var(--accent-hover); font-weight:600;">14-day free trial</span>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
+                    <!-- Group: Capture -->
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Video Uploads</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">10GB</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">100GB</td>
+                        <td colspan="4" style="padding:24px 12px 8px 12px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); background:none; border:none;">Capture</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Clip Creation & Organization</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Video uploads</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">10 GB</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">100 GB</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Reviews</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Scout Elite Live mobile app</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Sharing & Teams</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">View shared content</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                    </tr>
+
+                    <!-- Group: Build -->
+                    <tr>
+                        <td colspan="4" style="padding:24px 12px 8px 12px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); background:none; border:none;">Build</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Clips, tagging &amp; telestration</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">AI Detection</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Reviews</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:18px 12px; font-weight:500; background:none;">Priority Support</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">—</td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;"><a href="/help/creating-playbooks/" style="color:inherit; border-bottom:1px dotted var(--text-secondary);">Playbooks</a> <span style="font-size:0.75rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:600;">NEW</span></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">1 playbook<br>3 sections</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;"><a href="/help/creating-reports/" style="color:inherit; border-bottom:1px dotted var(--text-secondary);">AI Reports</a> (Game + Player) <span style="font-size:0.75rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:600;">NEW</span></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                    </tr>
+
+                    <!-- Group: Share & Teams -->
+                    <tr>
+                        <td colspan="4" style="padding:24px 12px 8px 12px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); background:none; border:none;">Share &amp; Teams</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Share clips, reviews, playbooks &amp; reports</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td style="font-size: 1.25em; font-weight: bold !important; text-align:left; color: var(--accent-hover); padding:18px 12px; font-weight:500; background:none;">&nbsp;</td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Sign Up Free</a></td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Free 14-Day Trial</a></td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);"><a style="font-size: 1.1em !important; font-weight: bold !important; color: var(--accent-hover) !important;" href="https://xpress.scout-elite.com/">Free 14-Day Trial</a></td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Create &amp; manage teams</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
                     <tr>
-                        <td></td>
-                        <td colspan="3">
-                            <div style="text-align:center; margin-top:3em;">
-                                <p class="how-to-cta" style="margin-top:1em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Create a Free Account</a></p>
-                            </div>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">AI clip detection</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
+                    </tr>
+
+                    <!-- CTA row -->
+                    <tr>
+                        <td style="background:none;">&nbsp;</td>
+                        <td style="text-align:center; background: var(--card-bg); border-radius: 0 0 0 1.25rem; padding:20px 12px;">
+                            <a class="btn btn-secondary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register">Sign Up Free</a>
+                        </td>
+                        <td style="text-align:center; background: var(--card-bg); padding:20px 12px;">
+                            <a class="btn btn-primary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?plan=solo">Start Solo Trial</a>
+                        </td>
+                        <td style="text-align:center; background: var(--card-bg); border-radius: 0 0 1.25rem 0; padding:20px 12px;">
+                            <a class="btn btn-primary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?plan=pro">Start Pro Trial</a>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+        <div style="text-align:center; margin-top:2.5em;">
+            <p style="color: var(--text-secondary); margin-bottom:1em;">Not sure yet? Take a guided tour with no signup required.</p>
+            <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="pricing-footer">Try Scout Elite Free &rarr;</a>
         </div>
     </div>
 </section>

@@ -26,7 +26,7 @@ The Dashboard is your home base. When you first log in, you'll see quick-start c
 
 - **Upload a video** — get your game footage into the platform
 - **Create a Clip Project** — start building clips from your video
-- **Create a Review** — organize clips for team review sessions
+- **Create a Review** — organize clips into categories for focused team playback
 
 If you've been invited to any teams, pending invitations will also appear here so you can accept or decline them.
 
