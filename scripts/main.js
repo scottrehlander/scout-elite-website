@@ -2,28 +2,59 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const mobileMQ = window.matchMedia('(max-width: 768px)');
+
+    function syncBodyLock() {
+        document.body.classList.toggle('nav-open', navMenu.classList.contains('active'));
+    }
+
+    function closeMenu() {
+        navMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.querySelectorAll('.nav-item--dropdown.expanded').forEach(item => {
+            item.classList.remove('expanded');
+        });
+        syncBodyLock();
+    }
 
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             navToggle.classList.toggle('active');
+            if (!navMenu.classList.contains('active')) {
+                document.querySelectorAll('.nav-item--dropdown.expanded').forEach(item => {
+                    item.classList.remove('expanded');
+                });
+            }
+            syncBodyLock();
         });
 
-        // Close menu when clicking on a link
+        // Close menu when clicking on a link. On mobile, the Features dropdown
+        // link toggles inline expansion instead of navigating.
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
+            link.addEventListener('click', (e) => {
+                if (link.classList.contains('nav-link--dropdown') && mobileMQ.matches) {
+                    e.preventDefault();
+                    const item = link.closest('.nav-item--dropdown');
+                    if (item) item.classList.toggle('expanded');
+                    return;
+                }
+                closeMenu();
             });
+        });
+
+        // Sub-items inside the Features dropdown navigate to a new page —
+        // close the burger menu on tap so it doesn't linger if navigation is intercepted.
+        document.querySelectorAll('.nav-dropdown__link').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
 
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const isClickInsideNav = navMenu.contains(event.target) || navToggle.contains(event.target);
             if (!isClickInsideNav && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
+                closeMenu();
             }
         });
     }

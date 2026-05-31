@@ -281,6 +281,14 @@ a:hover {
     box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
 }
 
+/* Auth pair (Try Free + Log In). On desktop the wrapper is transparent so
+   each button is a flex child of .nav-menu, preserving the original layout.
+   On mobile (see media query below) the wrapper becomes a flex row pinned
+   to the top of the menu. */
+.nav-item--auth {
+    display: contents;
+}
+
 /* Try Free button in the nav — visually distinct from the Log In button. */
 .nav-try {
     font-size: small;
@@ -972,18 +980,32 @@ main {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
-        position: fixed;
+        /* Position relative to the fixed .header so the menu is always flush
+           against the header's bottom edge regardless of header height.
+           Fills the rest of the viewport so taps and scrolls don't fall
+           through to the page underneath. */
+        position: absolute;
         left: -100%;
-        top: var(--chrome-h); /* clears .try-strip + .header */
+        top: 100%;
         flex-direction: column;
         background-color: var(--primary-bg);
         width: 100%;
+        height: calc(100dvh - var(--chrome-h));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
         text-align: center;
-        transition: 0.3s;
+        transition: left 0.3s ease;
         box-shadow: var(--shadow-lg);
         border-top: 1px solid var(--border-color);
         padding: var(--space-4) 0;
-        gap: var(--space-4);
+        gap: var(--space-3);
+    }
+
+    /* When the burger menu is open, lock the page beneath so it doesn't
+       scroll in response to touches over the menu. */
+    body.nav-open {
+        overflow: hidden;
     }
 
     .nav-menu.active {
@@ -1006,32 +1028,61 @@ main {
         transform: translateY(-7px) rotate(-45deg);
     }
 
-    .nav-login,
-    .nav-try {
-        margin: var(--space-2) auto;
-        display: inline-block;
+    /* Lift the Try Free + Log In pair to the top of the menu and lay them out
+       side-by-side as equal-width tap targets. */
+    .nav-item--auth {
+        display: flex;
+        gap: var(--space-3);
+        order: -1;
+        padding: 0 var(--space-4) var(--space-2);
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: var(--space-2);
+    }
+    .nav-item--auth .nav-try,
+    .nav-item--auth .nav-login {
+        flex: 1;
+        margin: 0;
+        padding: 0.65rem 0.5rem;
+        text-align: center;
+        font-size: var(--font-size-base);
     }
 
-    /* On mobile, the Features dropdown expands inline inside the burger menu
-       — no hover, no positioning, just a clean nested list. */
+    /* Features dropdown is collapsed by default on mobile to keep the menu
+       short and the conversion CTAs above the fold. Tap the link to expand. */
     .nav-dropdown {
         position: static;
         transform: none;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
         background: transparent;
         border: none;
         box-shadow: none;
-        padding: 0.5rem 0 0.75rem 0;
+        padding: 0;
         margin: 0 auto;
-        max-width: 280px;
+        max-width: 320px;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+    .nav-item--dropdown.expanded .nav-dropdown {
+        display: block;
+        padding: 0.25rem 0 0.5rem 0;
+    }
+    .nav-item--dropdown:hover .nav-dropdown,
+    .nav-item--dropdown:focus-within .nav-dropdown {
+        /* Disable the desktop hover-open behavior on mobile. */
+        display: none;
+        transform: none;
+    }
+    .nav-item--dropdown.expanded:hover .nav-dropdown,
+    .nav-item--dropdown.expanded:focus-within .nav-dropdown {
+        display: block;
+        transform: none;
     }
     .nav-dropdown::before {
         display: none;
     }
     .nav-dropdown__link {
-        padding: 0.55rem 0.85rem;
+        padding: 0.5rem 0.85rem;
     }
     .nav-dropdown__title {
         font-size: 0.9rem;
@@ -1041,7 +1092,10 @@ main {
         text-align: left;
     }
     .nav-caret {
-        display: none; /* always-open on mobile, caret is misleading */
+        display: inline-block;
+    }
+    .nav-item--dropdown.expanded .nav-caret {
+        transform: rotate(180deg);
     }
 
     /* Tighter try-strip on phones so it never wraps to two lines.
