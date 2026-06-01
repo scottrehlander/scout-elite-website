@@ -423,14 +423,20 @@ a:hover {
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
+    background: transparent;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .nav-toggle .bar {
+    display: block;
     width: 25px;
     height: 3px;
     background-color: var(--text-primary);
     border-radius: var(--radius-sm);
-    transition: 0.3s;
+    /* Explicit properties only — shorthand 0.3s would include background-color
+       and cause a transparent→white flash on first paint in Android Chrome. */
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Main Content — clears both .try-strip and .header. */
@@ -989,6 +995,9 @@ main {
         left: -100%;
         top: 100%;
         flex-direction: column;
+        /* Reset the desktop align-items: center — in column direction, stretch
+           is correct so items fill the full menu width on all browsers. */
+        align-items: stretch;
         background-color: var(--primary-bg);
         width: 100%;
         height: calc(100dvh - var(--chrome-h));
@@ -1030,18 +1039,24 @@ main {
     }
 
     /* Lift the Try Free + Log In pair to the top of the menu and lay them out
-       side-by-side as equal-width tap targets. */
+       side-by-side as equal-width tap targets.
+       Grid instead of flex: the display:contents→flex switch via media query
+       has a layout bug in Android Chrome where the wrapper shrinks to content
+       width. Grid with 1fr columns is reliably full-width on all browsers. */
     .nav-item--auth {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         gap: var(--space-3);
         order: -1;
+        width: 100%;
         padding: 0 var(--space-4) var(--space-2);
         border-bottom: 1px solid var(--border-color);
         margin-bottom: var(--space-2);
     }
     .nav-item--auth .nav-try,
     .nav-item--auth .nav-login {
-        flex: 1;
+        display: block;
+        width: 100%;
         margin: 0;
         padding: 0.65rem 0.5rem;
         text-align: center;
