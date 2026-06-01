@@ -4,6 +4,7 @@ title: Scout Elite Features
 description: "Everything in Scout Elite — AI Reports, Playbooks, Scout Elite Live, and the full video review workflow. Built for youth and minor hockey."
 permalink: /features/
 last_modified_at: 2026-05-28
+utm_campaign: features-index
 ---
 
 <style>
@@ -69,7 +70,7 @@ last_modified_at: 2026-05-28
             <h1 class="hero-title">Everything in Scout Elite.</h1>
             <p class="hero-subtitle">From live game tagging to AI-built game reports, from interactive playbooks to focused team reviews &mdash; here&rsquo;s what coaches actually use.</p>
             <div class="hero-cta">
-                <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="features-index-hero">Try It Free &rarr; No Signup</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.utm_campaign }}&utm_content=features-index-hero" class="btn btn-primary" data-try-placement="features-index-hero">Try It Free &rarr; No Signup</a>
                 <a href="/#pricing" class="btn btn-secondary">See Pricing</a>
             </div>
         </div>
@@ -117,7 +118,7 @@ last_modified_at: 2026-05-28
         <h2 class="section-title">See it before you sign up.</h2>
         <p class="section-subtitle" style="max-width: 600px; margin: 1rem auto 0;">The Try Scout Elite flow drops you into a working app in your browser with a real game, a real review, and live AI report tools &mdash; no signup, no credit card.</p>
         <p style="margin-top: 2rem;">
-            <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="features-index-cta">Try Scout Elite Free &rarr;</a>
+            <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.utm_campaign }}&utm_content=features-index-cta" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="features-index-cta">Try Scout Elite Free &rarr;</a>
         </p>
     </div>
 </section>

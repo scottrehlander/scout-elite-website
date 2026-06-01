@@ -80,7 +80,7 @@ last_modified_at: 2026-05-28
             <h1 class="hero-title">Your team&rsquo;s playbook shouldn&rsquo;t live on a whiteboard photo.</h1>
             <p class="hero-subtitle">Scout Elite Playbooks combine sport-specific diagrams, embedded video, and rich text into a single living document. Build it once, share it with the team, update it whenever your system evolves.</p>
             <div class="hero-cta">
-                <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="feature-playbooks-hero">Try It Free &rarr; No Signup</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-playbooks-hero" class="btn btn-primary" data-try-placement="feature-playbooks-hero">Try It Free &rarr; No Signup</a>
                 <a href="/#pricing" class="btn btn-secondary">See Pricing</a>
             </div>
             <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">Free tier: 1 playbook, 3 sections. Unlimited on Solo ($4.99/mo).</p>
@@ -239,7 +239,7 @@ last_modified_at: 2026-05-28
         <h2 class="section-title">Try the editor before you commit.</h2>
         <p class="section-subtitle" style="max-width: 600px; margin: 1rem auto 0;">The Try Scout Elite flow drops you into a working playbook in your browser. Move the players around, add a clip, see how it feels.</p>
         <p style="margin-top: 2rem;">
-            <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-playbooks-cta">Try Scout Elite Free &rarr;</a>
+            <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-playbooks-cta" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-playbooks-cta">Try Scout Elite Free &rarr;</a>
         </p>
         <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No signup. No credit card. Loads a real playbook in your browser in under a minute.</p>
     </div>

@@ -61,5 +61,5 @@ These features are live right now. [Log in](https://xpress.scout-elite.com) to y
 Thank you to everyone who takes the time to send an email, report a bug, or suggest a feature. We are building this for you, so please keep the feedback coming!
 
 <div style="margin: 2em 0; text-align: center;">
-	<a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;" data-try-placement="blog-post-cta">Try Scout Elite Free &rarr; No Signup</a>
+	{% include xpress-cta.html placement="blog-post-cta" text="Try Scout Elite Free &rarr; No Signup" style="font-size:1.2em;padding:0.7em 2em;" %}
 </div>

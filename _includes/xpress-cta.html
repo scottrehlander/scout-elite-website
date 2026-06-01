@@ -1,0 +1,29 @@
+{%- comment -%}
+  _includes/xpress-cta.html
+  Renders a single <a> tag to xpress.scout-elite.com with UTM params baked in.
+
+  dest      : Destination path. Default: /try. May include existing query params,
+              e.g. /account/register?plan=solo — the separator is handled automatically.
+  placement : data-try-placement value. Also used as utm_content. Required.
+  text      : Link text. Default: "Try Scout Elite Free &rarr;"
+  class     : CSS class string. Default: "btn btn-primary"
+  style     : Inline style string. Optional.
+  onclick   : onclick handler value. Optional.
+  campaign  : utm_campaign override. Default: page.utm_campaign, then page.slug.
+  rel       : rel attribute. Default: "noopener"
+
+  Usage examples:
+    Hero CTA:
+      {% include xpress-cta.html placement="home-hero" text="Try It Free &rarr; No Signup" %}
+
+    Pricing button (with plan):
+      {% include xpress-cta.html dest="/account/register?plan=solo" placement="pricing-solo" text="Start Solo Trial" class="pricing-card__cta" %}
+
+    Blog post CTA (campaign auto-set to page.slug):
+      {% include xpress-cta.html placement="blog-post-cta" text="Try Scout Elite Free &rarr; No Signup" style="font-size:1.2em;padding:0.7em 2em;" %}
+{%- endcomment -%}
+{%- assign _dest = include.dest | default: "/try" -%}
+{%- if _dest contains "?" -%}{%- assign _sep = "&" -%}{%- else -%}{%- assign _sep = "?" -%}{%- endif -%}
+{%- assign _campaign = include.campaign | default: page.utm_campaign | default: page.slug -%}
+{%- assign _class = include.class | default: "btn btn-primary" -%}
+<a href="https://xpress.scout-elite.com{{ _dest }}{{ _sep }}utm_source=scout-elite&utm_medium=website&utm_campaign={{ _campaign }}&utm_content={{ include.placement }}" target="_blank" rel="{{ include.rel | default: "noopener" }}" class="{{ _class }}"{% if include.style %} style="{{ include.style }}"{% endif %}{% if include.onclick %} onclick="{{ include.onclick }}"{% endif %} data-try-placement="{{ include.placement }}">{{ include.text | default: "Try Scout Elite Free &rarr;" }}</a>

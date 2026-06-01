@@ -89,7 +89,7 @@ last_modified_at: 2026-05-28
             <h1 class="hero-title">The best teaching moment from Saturday&rsquo;s game is still on your phone.</h1>
             <p class="hero-subtitle">Scout Elite&rsquo;s video tools take you from raw game footage to an organized, shareable coaching session &mdash; without spending half your week in a video editor.</p>
             <div class="hero-cta">
-                <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="feature-video-hero">Try It Free &rarr; No Signup</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-video-hero" class="btn btn-primary" data-try-placement="feature-video-hero">Try It Free &rarr; No Signup</a>
                 <a href="/#pricing" class="btn btn-secondary">See Pricing</a>
             </div>
         </div>
@@ -295,7 +295,7 @@ last_modified_at: 2026-05-28
         <h2 class="section-title">See how fast you can go from footage to review.</h2>
         <p class="section-subtitle" style="max-width: 600px; margin: 1rem auto 0;">The Try Scout Elite flow loads a real game and a real review in your browser &mdash; no upload required, no signup.</p>
         <p style="margin-top: 2rem;">
-            <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-video-cta">Try Scout Elite Free &rarr;</a>
+            <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-video-cta" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-video-cta">Try Scout Elite Free &rarr;</a>
         </p>
         <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
     </div>

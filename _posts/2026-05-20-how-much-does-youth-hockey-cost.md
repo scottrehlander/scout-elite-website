@@ -392,7 +392,7 @@ These are the line items that don't appear in any tuition email but make up a si
 ---
 
 <div style="background:#f8f9fa;border-left:4px solid #a51c30;padding:1em 1.3em;margin:1.5em 0;border-radius:0 6px 6px 0">
-<strong>Getting the most from a costly investment?</strong> If you're spending $10,000+ on hockey, video review is one of the fastest development accelerators available. Scout Elite lets coaches clip plays, annotate moments, and share film with players between ice sessions - no production team needed. <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener">Try it free — no signup →</a>
+<strong>Getting the most from a costly investment?</strong> If you're spending $10,000+ on hockey, video review is one of the fastest development accelerators available. Scout Elite lets coaches clip plays, annotate moments, and share film with players between ice sessions - no production team needed. <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=blog-cost-cta" target="_blank" rel="noopener" data-try-placement="blog-cost-cta">Try it free — no signup →</a>
 </div>
 
 ---
@@ -802,7 +802,7 @@ One of the clearest accelerators at any level is **video review**. Players who c
 Scout Elite is built for exactly this. Clip plays, annotate moments, share with your player or your team in minutes. It works for house-league parents learning alongside their kids, for AAA coaching staffs running structured film sessions, and for everything in between.
 
 <div style="margin: 1.5em 0; text-align: center;">
-  <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:1.2em;padding:0.7em 2em;" data-try-placement="blog-post-cta">Try Scout Elite Free &rarr; No Signup</a>
+  {% include xpress-cta.html placement="blog-post-cta" text="Try Scout Elite Free &rarr; No Signup" style="font-size:1.2em;padding:0.7em 2em;" %}
 </div>
 
 ---

@@ -3,6 +3,7 @@ layout: default
 title: "Scout Elite — Hockey Video Analysis for Youth & Minor Hockey Coaches"
 description: "Scout Elite helps youth hockey coaches clip game footage, run focused team reviews, build interactive playbooks, and generate AI player reports."
 last_modified_at: 2026-04-15
+utm_campaign: homepage
 ---
 
 <!-- Hero Section -->
@@ -12,7 +13,7 @@ last_modified_at: 2026-04-15
             <h1 class="hero-title">Stop spending your Sunday nights prepping for player development.</h1>
             <p class="hero-subtitle">Scout Elite handles video clipping, individual player reports, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
             <div class="hero-cta">
-                <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=home-hero" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>
                 <a href="/how-it-works" class="btn btn-secondary">See How It Works</a>
             </div>
             <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
@@ -119,7 +120,7 @@ last_modified_at: 2026-04-15
                     
     </div>
     <div style="text-align:center; margin-top:4em;">
-        <p class="how-to-cta" style="margin-top:1.5em;"><a href="https://xpress.scout-elite.com/" class="btn btn-primary">Try Scout Elite Live Today</a></p>
+        <p class="how-to-cta" style="margin-top:1.5em;"><a href="https://xpress.scout-elite.com/?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-hero-live" class="btn btn-primary" data-try-placement="pricing-hero-live">Try Scout Elite Live Today</a></p>
     </div>
 </section>
 
@@ -129,7 +130,7 @@ last_modified_at: 2026-04-15
         <div class="section-header" style="text-align:center; margin-bottom:2.5rem;">
             <h1 class="section-title">Pricing</h1>
             <p class="section-subtitle">Free for players and parents to view. Coaches start at $4.99/mo. Every paid plan includes a 14-day free trial.</p>
-            <p style="margin-top:0.75rem;"><a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" data-try-placement="pricing-intro" style="color:var(--accent-hover); font-weight:600;">Or try the full app first &mdash; no signup needed &rarr;</a></p>
+            <p style="margin-top:0.75rem;"><a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-intro" target="_blank" rel="noopener" data-try-placement="pricing-intro" style="color:var(--accent-hover); font-weight:600;">Or try the full app first &mdash; no signup needed &rarr;</a></p>
         </div>
         <!-- Stacked tier cards (mobile only). -->
         <div class="pricing-cards">
@@ -146,7 +147,7 @@ last_modified_at: 2026-04-15
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Scout Elite Live mobile app</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 1 starter <a href="/help/creating-playbooks/" style="color:inherit;">Playbook</a> (3 sections)</li>
                 </ul>
-                <a href="https://xpress.scout-elite.com/account/register" class="pricing-card__cta pricing-card__cta--secondary">Sign Up Free</a>
+                <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-starter" class="pricing-card__cta pricing-card__cta--secondary" data-try-placement="pricing-starter">Sign Up Free</a>
             </div>
 
             <!-- Solo -->
@@ -165,7 +166,7 @@ last_modified_at: 2026-04-15
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Unlimited <a href="/help/creating-playbooks/" style="color:inherit;">Playbooks</a><span class="pricing-card__new">New</span></li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/help/creating-reports/" style="color:inherit;">AI Game &amp; Player Reports</a><span class="pricing-card__new">New</span></li>
                 </ul>
-                <a href="https://xpress.scout-elite.com/account/register?plan=solo" class="pricing-card__cta">Start Solo Trial</a>
+                <a href="https://xpress.scout-elite.com/account/register?plan=solo&utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-solo" class="pricing-card__cta" data-try-placement="pricing-solo">Start Solo Trial</a>
             </div>
 
             <!-- Pro (featured) -->
@@ -184,7 +185,7 @@ last_modified_at: 2026-04-15
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Create &amp; manage teams</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> AI clip detection from game video</li>
                 </ul>
-                <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="pricing-card__cta">Start Pro Trial</a>
+                <a href="https://xpress.scout-elite.com/account/register?plan=pro&utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-pro" class="pricing-card__cta" data-try-placement="pricing-pro">Start Pro Trial</a>
             </div>
         </div>
 
@@ -290,13 +291,13 @@ last_modified_at: 2026-04-15
                     <tr>
                         <td style="background:none;">&nbsp;</td>
                         <td style="text-align:center; background: var(--card-bg); border-radius: 0 0 0 1.25rem; padding:20px 12px;">
-                            <a class="btn btn-secondary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register">Sign Up Free</a>
+                            <a class="btn btn-secondary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-table-starter" data-try-placement="pricing-table-starter">Sign Up Free</a>
                         </td>
                         <td style="text-align:center; background: var(--card-bg); padding:20px 12px;">
-                            <a class="btn btn-primary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?plan=solo">Start Solo Trial</a>
+                            <a class="btn btn-primary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?plan=solo&utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-table-solo" data-try-placement="pricing-table-solo">Start Solo Trial</a>
                         </td>
                         <td style="text-align:center; background: var(--card-bg); border-radius: 0 0 1.25rem 0; padding:20px 12px;">
-                            <a class="btn btn-primary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?plan=pro">Start Pro Trial</a>
+                            <a class="btn btn-primary" style="display:inline-block; font-weight:600;" href="https://xpress.scout-elite.com/account/register?plan=pro&utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-table-pro" data-try-placement="pricing-table-pro">Start Pro Trial</a>
                         </td>
                     </tr>
                 </tbody>
@@ -304,7 +305,7 @@ last_modified_at: 2026-04-15
         </div>
         <div style="text-align:center; margin-top:2.5em;">
             <p style="color: var(--text-secondary); margin-bottom:1em;">Not sure yet? Take a guided tour with no signup required.</p>
-            <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="pricing-footer">Try Scout Elite Free &rarr;</a>
+            <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-footer" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="pricing-footer">Try Scout Elite Free &rarr;</a>
         </div>
     </div>
 </section>

@@ -91,7 +91,7 @@ last_modified_at: 2026-05-28
             <h1 class="hero-title">Stop forwarding the review link to 22 different people.</h1>
             <p class="hero-subtitle">Scout Elite Teams lets you share any review, playbook, or report with your entire roster &mdash; players and parents &mdash; in a single click. Role-based access keeps everyone in the right lane.</p>
             <div class="hero-cta">
-                <a target="_blank" href="https://xpress.scout-elite.com" class="btn btn-primary" data-try-placement="feature-teams-hero">Start Your Free Trial</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-teams-hero" class="btn btn-primary" data-try-placement="feature-teams-hero">Start Your Free Trial</a>
                 <a href="/#pricing" class="btn btn-secondary">See Pricing</a>
             </div>
         </div>
@@ -283,7 +283,7 @@ last_modified_at: 2026-05-28
         <h2 class="section-title">Get your whole team on the same page &mdash; literally.</h2>
         <p class="section-subtitle" style="max-width: 600px; margin: 1rem auto 0;">Start a 14-day free trial of Pro and set up your first team. No credit card required.</p>
         <p style="margin-top: 2rem;">
-            <a href="https://xpress.scout-elite.com" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-teams-cta">Start Your Free Trial &rarr;</a>
+            <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-teams-cta" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-teams-cta">Start Your Free Trial &rarr;</a>
         </p>
         <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Athletes and parents always join for free. Only the coach needs a Pro plan.</p>
     </div>

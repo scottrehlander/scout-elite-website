@@ -59,7 +59,7 @@
     <div class="try-strip" role="region" aria-label="Try Scout Elite free">
         <span class="try-strip-bolt" aria-hidden="true">⚡</span>
         <span class="try-strip-long">Take a 5-minute test drive — real clips, AI reports, no account needed. </span>
-        <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" data-try-placement="top-strip">Try Scout Elite Free &rarr;</a>
+        <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.utm_campaign | default: page.slug }}&utm_content=top-strip" target="_blank" rel="noopener" data-try-placement="top-strip">Try Scout Elite Free &rarr;</a>
     </div>
     <header class="header">
         <nav class="nav">
@@ -107,7 +107,7 @@
                     <li class="nav-item"><a href="{{ '/help' | relative_url }}" class="nav-link">Help</a></li>
                     <li class="nav-item"><a href="{{ '/blog' | relative_url }}" class="nav-link">Blog</a></li>
                     <li class="nav-item nav-item--auth">
-                        <a href="https://xpress.scout-elite.com/try" target="_blank" class="nav-link nav-try" data-try-placement="nav">Try Free &rarr;</a>
+                        {% include xpress-cta.html placement="nav" text="Try Free &rarr;" class="nav-link nav-try" %}
                         <a href="https://xpress.scout-elite.com/" target="_blank" class="nav-link nav-login">Log In</a>
                     </li>
                 </ul>

@@ -184,7 +184,7 @@ last_modified_at: 2026-05-28
         </div>
         
         <div class="modal-cta">
-            <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" onclick="hideTrialModal()" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your 14 Day Free Trial</a>
+            <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=trial-modal-cta" target="_blank" class="cta-button" onclick="hideTrialModal()" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your 14 Day Free Trial</a>
         </div>
     </div>
 </div>
@@ -195,7 +195,7 @@ last_modified_at: 2026-05-28
         <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
             <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">One Platform. Every Step of Player Development.</h1>
             <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">Scout Elite connects every step of your player development workflow, from live game tagging and video clipping to focused team reviews, interactive playbooks, and AI-generated player reports.</p>
-            <a href="https://xpress.scout-elite.com" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
+            <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=hero-cta" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
         </div>
         <div class="hero-visual" style="flex:1 1 340px; min-width:220px; max-width:540px; text-align:center;">
             <img src="/img/Scout-Elite-how-it-works-hero.png"

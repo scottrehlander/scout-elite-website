@@ -154,7 +154,7 @@ last_modified_at: 2026-05-28
             <h1 class="hero-title">Stop staring at a blank doc after every game.</h1>
             <p class="hero-subtitle">Scout Elite's AI Reports turn a few sentences into a polished post-game breakdown or a personal player development plan &mdash; in the time it takes to pour a coffee.</p>
             <div class="hero-cta">
-                <a target="_blank" href="https://xpress.scout-elite.com/try" class="btn btn-primary" data-try-placement="feature-ai-hero">Try It Free &rarr; No Signup</a>
+                <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-ai-hero" class="btn btn-primary" data-try-placement="feature-ai-hero">Try It Free &rarr; No Signup</a>
                 <a href="/#pricing" class="btn btn-secondary">See Pricing</a>
             </div>
             <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">Available on the Solo plan ($4.99/mo) with a 14-day free trial.</p>
@@ -298,7 +298,7 @@ last_modified_at: 2026-05-28
         <h2 class="section-title">Built for hockey, not a generic chatbot.</h2>
         <p class="section-subtitle" style="max-width: 700px; margin: 1rem auto 0;">Scout Elite&rsquo;s report builder is tuned for the kind of language a hockey coach actually uses. It knows what a 2-1-2 forecheck is. It knows the difference between a backcheck and a regroup. It doesn&rsquo;t write player plans that say "go to the gym three times a week" &mdash; because that&rsquo;s not what a 10-year-old needs.</p>
         <p style="margin-top: 2rem;">
-            <a href="https://xpress.scout-elite.com/try" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-ai-cta">Try a Real Report in Your Browser &rarr;</a>
+            <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-ai-cta" target="_blank" rel="noopener" class="btn btn-primary" data-try-placement="feature-ai-cta">Try a Real Report in Your Browser &rarr;</a>
         </p>
         <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No signup. No credit card. Loads a real report in under a minute.</p>
     </div>
