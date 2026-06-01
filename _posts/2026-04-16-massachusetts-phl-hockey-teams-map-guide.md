@@ -81,6 +81,8 @@ The goal here is simple: show you **who is in the PHL, where they're based, and 
 })();
 </script>
 
+{% include map-cta.html %}
+
 ## Every Massachusetts-Based PHL Organization
 
 There are **21 Massachusetts-based organizations** on the current MHR PHL league page. Compared with the [EHF](/blog/2026/04/16/massachusetts-ehf-hockey-teams-map-guide/) and [E9](/blog/2026/04/16/massachusetts-e9-hockey-teams-map-guide/) snapshots, the PHL picture looked broader, more uneven, and much less top-loaded around a handful of AAA-style teams.

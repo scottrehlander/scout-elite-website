@@ -104,6 +104,8 @@ The map below shows the approximate home location of every New England program t
 })();
 </script>
 
+{% include map-cta.html %}
+
 > **Map note:** Locations shown are approximate organizational home areas. Many programs use multiple rinks. Zoom in or click any marker for details.
 
 
