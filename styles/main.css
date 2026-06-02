@@ -24,23 +24,30 @@ ul {
 }
 
 :root {
-    /* Dark Theme Colors */
+    /* Brand Colors — Scout Elite zinc dark + electric cyan */
     --primary-bg: #0a0a0a;
     --secondary-bg: #1a1a1a;
     --card-bg: #2a2a2a;
     --border-color: #333333;
     --text-primary: #ffffff;
     --text-secondary: #b3b3b3;
-    --text-muted: #777777;
+    --text-muted: #6b8aaa;
     --accent-primary: #007acc;
     --accent-secondary: #005499;
     --accent-hover: #0099ff;
     --success: #28a745;
     --warning: #ffc107;
     --danger: #dc3545;
-    
+
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Montserrat', var(--font-family);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -90,7 +97,8 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
+    font-family: var(--font-heading);
+    font-weight: 700;
     line-height: 1.2;
     margin-bottom: var(--space-4);
 }
@@ -124,7 +132,7 @@ a:hover {
     border: 1px solid var(--border-color);
     border-top: 3px solid var(--accent-primary);
     border-radius: var(--radius-xl);
-    background: #161616;
+    background: var(--card-bg);
     box-shadow: var(--shadow-md);
 }
 
@@ -185,7 +193,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     gap: 0.4em;
-    background: linear-gradient(90deg, var(--accent-secondary) 0%, var(--accent-primary) 100%);
+    background: linear-gradient(90deg, #04192F 0%, #0066aa 100%);
     color: #ffffff;
     text-align: center;
     font-size: var(--font-size-sm);
@@ -233,21 +241,33 @@ a:hover {
     height: 70px;
 }
 
-.nav-brand .logo {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0;
-}
-
-.nav-brand .logo a {
-    color: var(--text-primary);
+.nav-brand__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
 }
 
-.nav-brand .logo a:hover {
-    color: var(--text-primary);
+.nav-logo {
+    display: block;
+    height: 44px;
+    width: auto;
 }
+
+.nav-wordmark {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.nav-wordmark strong {
+    font-weight: 700;
+}
+
 
 .nav-menu {
     display: flex;
@@ -279,7 +299,7 @@ a:hover {
     background-color: var(--accent-hover);
     color: white !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 122, 204, 0.3);
+    box-shadow: 0 4px 12px rgba(4, 25, 47, 0.20);
 }
 
 /* Auth pair (Try Free + Log In). On desktop the wrapper is transparent so
@@ -304,9 +324,9 @@ a:hover {
 
 .nav-try:hover {
     background-color: var(--accent-hover);
-    color: #ffffff !important;
+    color: white !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 153, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(4, 25, 47, 0.20);
 }
 
 /* Features dropdown — CSS hover on desktop, expanded inline on mobile. */
@@ -384,7 +404,7 @@ a:hover {
 }
 
 .nav-dropdown__link:hover {
-    background: rgba(0, 153, 255, 0.08);
+    background: rgba(51, 207, 255, 0.08);
     color: var(--text-primary);
 }
 
@@ -407,7 +427,7 @@ a:hover {
 .nav-dropdown__badge {
     display: inline-block;
     font-size: 0.6rem;
-    background: rgba(0, 153, 255, 0.15);
+    background: rgba(51, 207, 255, 0.15);
     color: var(--accent-hover);
     padding: 1px 6px;
     border-radius: 999px;
@@ -821,9 +841,9 @@ main {
 }
 
 .pricing-card--featured {
-    border-color: rgba(0, 153, 255, 0.55);
     background: linear-gradient(180deg, #1a2433 0%, #14171c 100%);
-    box-shadow: 0 12px 36px rgba(0, 122, 204, 0.18), 0 2px 0 rgba(0, 153, 255, 0.35) inset;
+    border-color: rgba(51, 207, 255, 0.55);
+    box-shadow: 0 12px 36px rgba(51, 207, 255, 0.18), 0 2px 0 rgba(51, 207, 255, 0.35) inset;
 }
 
 .pricing-card__ribbon {
@@ -839,14 +859,18 @@ main {
     letter-spacing: 0.1em;
     padding: 0.3rem 0.9rem;
     border-radius: 999px;
-    box-shadow: 0 4px 12px rgba(0, 153, 255, 0.4);
+    box-shadow: 0 4px 12px rgba(51, 207, 255, 0.4);
 }
 
 .pricing-card__header {
     text-align: center;
     padding-bottom: 1.25rem;
     margin-bottom: 1.25rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.pricing-card--featured .pricing-card__header {
+    border-bottom-color: rgba(255, 255, 255, 0.06);
 }
 
 .pricing-card__tier {
@@ -889,7 +913,7 @@ main {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     padding: 0.3rem 0.7rem;
-    border: 1px solid rgba(0, 153, 255, 0.4);
+    border: 1px solid rgba(51, 207, 255, 0.5);
     border-radius: 999px;
 }
 
@@ -924,7 +948,7 @@ main {
     width: 1.15rem;
     height: 1.15rem;
     border-radius: 50%;
-    background: rgba(0, 153, 255, 0.12);
+    background: rgba(51, 207, 255, 0.15);
     color: var(--accent-hover);
     margin-top: 0.15rem;
 }
@@ -973,7 +997,7 @@ main {
 .pricing-card__new {
     display: inline-block;
     font-size: 0.65rem;
-    background: rgba(0, 153, 255, 0.15);
+    background: rgba(51, 207, 255, 0.15);
     color: var(--accent-hover);
     padding: 2px 7px;
     border-radius: 999px;
@@ -1303,7 +1327,7 @@ main {
 .cta-button:hover {
     background: var(--accent-hover) !important;
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 122, 204, 0.3);
+    box-shadow: 0 8px 25px rgba(4, 25, 47, 0.18);
 }
 
 /* Modal Styles */

@@ -30,7 +30,7 @@
     {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
     
     <!-- intro.js -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css">
@@ -65,7 +65,10 @@
         <nav class="nav">
             <div class="nav-container">
                 <div class="nav-brand">
-                    <a href="{{ '/' | relative_url }}"><h1 class="logo">Scout Elite</h1></a>
+                    <a href="{{ '/' | relative_url }}" class="nav-brand__link">
+                        <img src="{{ '/img/brand/logo-mark-white.png' | relative_url }}" alt="" class="nav-logo">
+                        <span class="nav-wordmark" aria-label="Scout Elite"><strong>SCOUT</strong> ELITE</span>
+                    </a>
                 </div>
                 <ul class="nav-menu" id="nav-menu">
                     <li class="nav-item"><a href="{{ '/' | relative_url }}" class="nav-link">Home</a></li>
@@ -221,7 +224,7 @@
               display: inline-block;
               margin-top: 1em;
               min-width: 120px;
-              background-color: var(--accent-primary, #007acc);
+              background-color: var(--accent-primary, #33CFFF);
               color: #fff;
               border: none;
               border-radius: 6px;
@@ -232,7 +235,7 @@
               transition: background 0.2s;
             }
             .footer-newsletter #sib-form .btn-primary:hover {
-              background-color: var(--accent-hover, #0099ff);
+              background-color: var(--accent-hover, #66dbff);
             }
             .footer-newsletter #sib-form .btn-loading {
               margin-left: 0.5em;
