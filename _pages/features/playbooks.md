@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Hockey Playbooks with Video, Diagrams & Text
+title: "Youth & Minor Hockey Playbooks: Video & Diagrams"
 description: "Build structured playbooks combining sport-specific diagrams, embedded video clips, and rich text. Share with your team in one click. Built for youth hockey coaches."
 permalink: /features/playbooks/
 last_modified_at: 2026-05-28
@@ -77,7 +77,7 @@ last_modified_at: 2026-05-28
 <section class="hero" style="background: var(--primary-bg);">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Your team&rsquo;s playbook shouldn&rsquo;t live on a whiteboard photo.</h1>
+            <h1 class="hero-title">Build a playbook your players and parents will actually use.</h1>
             <p class="hero-subtitle">Scout Elite Playbooks combine sport-specific diagrams, embedded video, and rich text into a single living document. Build it once, share it with the team, update it whenever your system evolves.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-playbooks-hero" class="btn btn-primary" data-try-placement="feature-playbooks-hero">Try It Free &rarr; No Signup</a>

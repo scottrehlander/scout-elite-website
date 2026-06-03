@@ -1,7 +1,7 @@
 ---
 description: "Coaching tips, feature guides, and video analysis advice for youth and minor hockey coaches — from the Scout Elite team."
 layout: default
-title: "Scout Elite Blog — Coaching Tips & Video Analysis Guides"
+title: "Scout Elite Blog: Youth & Minor Hockey Coaching"
 permalink: /blog/
 redirect_from:
   - /blog.html

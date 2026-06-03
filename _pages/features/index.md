@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Scout Elite Features
+title: Scout Elite Features for Youth & Minor Hockey Coaches
 description: "Everything in Scout Elite — AI Reports, Playbooks, Scout Elite Live, and the full video review workflow. Built for youth and minor hockey."
 permalink: /features/
 last_modified_at: 2026-05-28

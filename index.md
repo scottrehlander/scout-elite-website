@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Scout Elite — Hockey Video Analysis for Youth & Minor Hockey Coaches"
+title: "Scout Elite: Video Analysis & Tools for Youth & Minor Hockey"
 description: "Scout Elite helps youth hockey coaches clip game footage, run focused team reviews, build interactive playbooks, and generate AI player reports."
 last_modified_at: 2026-04-15
 utm_campaign: homepage
@@ -10,7 +10,7 @@ utm_campaign: homepage
 <section id="home" class="hero" style="background: var(--primary-bg);">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Stop spending your Sunday nights prepping for player development.</h1>
+            <h1 class="hero-title">Your players improve when you can focus on coaching.</h1>
             <p class="hero-subtitle">Scout Elite handles video clipping, individual player reports, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=home-hero" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>

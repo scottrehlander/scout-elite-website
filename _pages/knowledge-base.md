@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Knowledge Base — Scout Elite Help Center"
+title: "Knowledge Base: Scout Elite Help Center"
 description: "Learn how to use Scout Elite for sports video analysis. Step-by-step guides for uploading videos, creating clips, building reviews, managing teams, and more."
 permalink: /help/
 ---

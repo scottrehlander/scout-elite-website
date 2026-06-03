@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "How Scout Elite Works — Video, Reviews, Playbooks & AI Reports"
+title: "How Scout Elite Works: Video, Reports & Playbooks for Coaches"
 description: "The complete Scout Elite workflow — live game tagging, video clipping, team reviews, interactive playbooks, and AI player reports. Built for youth hockey coaches."
 permalink: /how-it-works/
 last_modified_at: 2026-05-28

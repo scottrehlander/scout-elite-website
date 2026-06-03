@@ -1,6 +1,6 @@
 ---
 layout: default
-title: AI Game & Player Reports for Hockey Coaches
+title: AI Game & Player Development Reports for Hockey Coaches
 description: "Scout Elite's AI Reports turn a few sentences into a polished post-game breakdown or a personal player development plan. No templates, no blank pages, just chat."
 permalink: /features/ai-reports/
 last_modified_at: 2026-05-28
@@ -151,7 +151,7 @@ last_modified_at: 2026-05-28
 <section class="hero" style="background: var(--primary-bg);">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">Stop staring at a blank doc after every game.</h1>
+            <h1 class="hero-title">A polished post-game breakdown, ready before the next practice.</h1>
             <p class="hero-subtitle">Scout Elite's AI Reports turn a few sentences into a polished post-game breakdown or a personal player development plan &mdash; in the time it takes to pour a coffee.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=feature-ai-hero" class="btn btn-primary" data-try-placement="feature-ai-hero">Try It Free &rarr; No Signup</a>

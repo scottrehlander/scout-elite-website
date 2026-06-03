@@ -1,7 +1,7 @@
 ﻿---
 layout: post
 display_title: "Top New England Boys Hockey Programs Ranked: 10U, 12U & 14U"
-title: "Top New England Youth Hockey Programs Ranked by Age Group | 10U 12U 14U"
+title: "Top New England Youth Hockey Programs Ranked by Age Group: 10U, 12U, 14U"
 description: "The definitive ranked list of New England youth hockey programs at 10U, 12U, and 14U using MyHockeyRankings national data. Includes an interactive map of team locations across Massachusetts, Connecticut, Rhode Island, New Hampshire, Maine, and Vermont."
 date: 2026-04-15
 categories: [insights]

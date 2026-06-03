@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Hockey Video Library, Clip Projects & Team Reviews — Scout Elite
+title: "Youth & Minor Hockey Video Analysis, Clips & Reviews"
 description: "Upload game footage, create clips with intuitive tools, and organize them into focused team reviews. Scout Elite's core video workflow for youth hockey coaches."
 permalink: /features/video/
 last_modified_at: 2026-05-28
