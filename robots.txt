@@ -1,4 +1,22 @@
+# AI training crawlers — opt out of training datasets while remaining visible in AI-powered search
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+# All other crawlers (Googlebot, Bingbot, PerplexityBot, OAI-SearchBot, Claude-SearchBot, etc.)
 User-agent: *
-Disallow: /legal-policies
 Disallow: /404
+Disallow: /lp/
+
 Sitemap: https://scout-elite.com/sitemap.xml
