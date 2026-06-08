@@ -8,7 +8,7 @@ categories: [insights]
 tags: [MAHA hockey, Michigan youth hockey, MAHA AAA, Michigan Amateur Hockey Association, Michigan hockey tryouts, Tier I hockey, youth hockey parent guide, Little Caesars hockey, Oakland Jr Grizzlies, Honeybaked hockey, Belle Tire hockey, Compuware hockey, USA Hockey Nationals, AAA youth hockey, club hockey, Michigan hockey leagues, MAHA districts, Michigan hockey organizations]
 author: "Coach Scott"
 excerpt: "If you're trying to make sense of Michigan youth hockey - the levels, the organizations, the path to nationals - this is the guide you've been looking for."
-image: "/img/blog/finding-the-pass.jpg"
+image: "/img/blog/youth-hockey-through-net.png"
 ---
 
 If you've spent time in the Michigan youth hockey world, or you're a family from outside the state evaluating whether to make the move, you've probably heard a lot of names thrown around without much context. Little Caesars. Honeybaked. Oakland Jr Grizzlies. MAHA AAA. Tier I. Districts. States. Nationals.
