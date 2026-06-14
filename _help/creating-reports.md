@@ -38,3 +38,7 @@ The builder starts by asking what type of report you want to create. Once you pr
 
 - **Split vs. Read-Only View**: Once you are satisfied with a report, your changes are saved. Shared users access the report in a clean, centered document view.
 - **Sharing (Pro tier only)**: Like clip projects and playbooks, you can use the **Share** button to distribute the final report directly to coaches, parents, players, or full teams.
+
+## Next Step: Turn a Report into a Practice
+
+Once you have a Game Report, you can act on it. The [Practice Planning](/help/creating-practice-plans/) assistant reads the takeaways from your reports and drafts a timed, drill-by-drill session that targets them — so your next practice works on exactly what the game showed you.

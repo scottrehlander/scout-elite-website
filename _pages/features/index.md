@@ -68,7 +68,7 @@ utm_campaign: features-index
     <div class="container">
         <div class="hero-content">
             <h1 class="hero-title">Everything in Scout Elite.</h1>
-            <p class="hero-subtitle">From live game tagging to AI-built game reports, from interactive playbooks to focused team reviews &mdash; here&rsquo;s what coaches actually use.</p>
+            <p class="hero-subtitle">From live game tagging to AI-built game reports, from practice plans and interactive playbooks to focused team reviews &mdash; here&rsquo;s what coaches actually use.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.utm_campaign }}&utm_content=features-index-hero" class="btn btn-primary" data-try-placement="features-index-hero">Try It Free &rarr; No Signup</a>
                 <a href="/#pricing" class="btn btn-secondary">See Pricing</a>
@@ -81,6 +81,12 @@ utm_campaign: features-index
 <section style="background: var(--secondary-bg); padding: 64px 0;">
     <div class="container">
         <div class="features-index-grid">
+            <a href="/features/practice-planning/" class="features-index-card">
+                <span class="features-index-card__badge">New</span>
+                <h2>Practice Planning</h2>
+                <p>Turn your games, reviews, and reports into an intentional, timed practice &mdash; every drill with a purpose, from a drill library with real rink diagrams. Print it, run it live, share it with the staff.</p>
+                <span class="features-index-card__link">Explore Practice Planning &rarr;</span>
+            </a>
             <a href="/features/ai-reports/" class="features-index-card">
                 <span class="features-index-card__badge">New</span>
                 <h2>AI Game &amp; Player Reports</h2>

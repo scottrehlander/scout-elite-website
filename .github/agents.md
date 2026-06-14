@@ -3,6 +3,13 @@
 ## What this is
 Jekyll static site for Scout Elite, a hockey video analysis SaaS targeting youth and minor hockey coaches. Hosted on GitHub Pages at `scout-elite.com`. The app itself lives at `https://xpress.scout-elite.com`.
 
+## App source — ground truth for features
+The Scout Elite app source lives at `../scout-elite` (sibling directory). When you need to know what a feature actually does — capabilities, pricing tiers, limits, copy claims — read the source there rather than guessing. Useful anchors:
+- `src/app/lib/workflow-registry.ts` — feature list with `requiredTier` and beta flags
+- `src/app/lib/get-user-tier.ts` — free-tier limits (e.g. practice plans, custom drills)
+- `src/app/components/FeatureGate.tsx` — which actions gate at which tier
+- `supabase/migrations/` — schema, the source of truth for what a feature stores/can do
+
 ## Stack
 - **Jekyll** (Ruby). No Node.js, no npm, no build pipeline.
 - **Plugins:** `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-redirect-from`

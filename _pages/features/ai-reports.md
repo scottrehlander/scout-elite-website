@@ -309,6 +309,10 @@ last_modified_at: 2026-05-28
     <div class="container" style="max-width: 900px; text-align: center;">
         <h2 class="section-title" style="margin-bottom: 1.5rem;">What else is in Scout Elite</h2>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 960px; margin: 0 auto;">
+            <a href="/features/practice-planning/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
+                <strong style="color: var(--accent-hover);">Practice Planning &rarr;</strong>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Turn your report takeaways into the next practice.</p>
+            </a>
             <a href="/features/playbooks/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
                 <strong style="color: var(--accent-hover);">Playbooks &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Diagrams, video, and text in one shareable doc.</p>

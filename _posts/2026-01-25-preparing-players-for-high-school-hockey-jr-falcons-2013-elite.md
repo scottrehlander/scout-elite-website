@@ -31,7 +31,7 @@ High school coaches notice these things. They notice players who know how to car
 
 ## The Structure: Intentional Development
 
-Every practice will have a purpose. No "we'll figure it out in the locker room" sessions. Every drill, every rep, every teaching moment will be directed by what we see in games and what our players need to succeed at the next level.
+Every practice will have a purpose. No "we'll figure it out in the locker room" sessions. Every drill, every rep, every teaching moment will be directed by what we see in games and what our players need to succeed at the next level. This is exactly the workflow [Scout Elite's Practice Planning](/features/practice-planning/) is built for — it turns what we see in game review into a timed, drill-by-drill plan for the next skate.
 
 ### How We'll Develop Players
 

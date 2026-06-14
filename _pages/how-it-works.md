@@ -46,6 +46,11 @@ last_modified_at: 2026-05-28
                 element: document.querySelector('[data-intro="ai-reports"]'),
                 intro: "<strong>Game &amp; Player Reports in Minutes</strong><br /> After review, use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Reports</a> to chat your way to a polished post-game breakdown or a personal development plan for any player &mdash; without staring at a blank doc on a Sunday night."
             },
+            {
+                title: 'Step 8 - Plan the Next Practice',
+                element: document.querySelector('[data-intro="practice-plans"]'),
+                intro: "<strong>From Game Takeaways to the Next Skate</strong><br /> Use <a target=\"_blank\" href=\"/features/practice-planning/\">Practice Planning</a> to draft a timed session built around what the game showed you. The assistant pulls from a drill library with rink diagrams &mdash; print it for the bench or run it live at the rink."
+            },
             ]
         }).oncomplete(function() {
             setTimeout(showTrialModal, 500);
@@ -107,6 +112,11 @@ last_modified_at: 2026-05-28
                 title: 'Step 4 - Hand Off a Development Plan',
                 element: document.querySelector('[data-intro="ai-reports"]'),
                 intro: "<strong>Take-Home Work for Each Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to draft a personalized at-home development plan after each session. It turns your one-hour session into a week of focused practice between visits."
+            },
+            {
+                title: 'Step 5 - Plan Your Next Session',
+                element: document.querySelector('[data-intro="practice-plans"]'),
+                intro: "<strong>Build Each Session in Minutes</strong><br /> Use <a target=\"_blank\" href=\"/features/practice-planning/\">Practice Planning</a> to draft a timed session from a drill library with rink diagrams. Tune it to what each athlete needs, then print it or run it live on the ice."
             }
             ]
         }).oncomplete(function() {
@@ -366,7 +376,7 @@ last_modified_at: 2026-05-28
     <div class="container" style="max-width:900px; margin:0 auto;">
         <div class="section-header" style="text-align:center; margin-bottom:3rem;">
             <h2 class="section-title">Coach &amp; Develop</h2>
-            <p class="section-subtitle" style="max-width:600px; margin:0 auto;">Game review is half the picture. Playbooks teach the system, AI Reports tell each player what to work on.</p>
+            <p class="section-subtitle" style="max-width:600px; margin:0 auto;">Game review is half the picture. Playbooks teach the system, AI Reports tell each player what to work on, and Practice Plans turn it all into the next skate.</p>
         </div>
 
         <!-- Playbooks -->
@@ -397,6 +407,23 @@ last_modified_at: 2026-05-28
             <div style="flex:1; min-width:280px;">
                 <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">AI Reports <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
                 <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Chat your way to a polished <a href="/features/ai-reports/">Game Report or Player Development Plan</a>. Tell the AI the score and what happened &mdash; or what a specific player needs to work on &mdash; and a structured document drafts itself in a live preview as you talk. Refine in plain English. Save and share.</p>
+            </div>
+        </div>
+
+        <!-- Practice Planning -->
+        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;" data-intro="practice-plans">
+            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="6" y="4" width="12" height="16" rx="1.5" fill="white"/>
+                    <rect x="9" y="2.5" width="6" height="3.5" rx="1" fill="white" stroke="#3B82F6" stroke-width="1"/>
+                    <rect x="8.5" y="9" width="7" height="1" rx="0.5" fill="#3B82F6"/>
+                    <rect x="8.5" y="12" width="7" height="1" rx="0.5" fill="#3B82F6"/>
+                    <rect x="8.5" y="15" width="4" height="1" rx="0.5" fill="#3B82F6"/>
+                </svg>
+            </div>
+            <div style="flex:1; min-width:280px;">
+                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Practice Plans <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
+                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Close the loop with <a href="/features/practice-planning/">Practice Planning</a>. The practice assistant reads the takeaways from your game reports and drafts a timed session that targets them &mdash; pulling from a drill library with real rink diagrams. Print a clean sheet for the bench, run it live from your phone, and share it with your staff.</p>
             </div>
         </div>
     </div>

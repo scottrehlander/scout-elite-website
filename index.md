@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Scout Elite: Video Analysis & Tools for Youth & Minor Hockey"
-description: "Scout Elite helps youth hockey coaches clip game footage, run focused team reviews, build interactive playbooks, and generate AI player reports."
+description: "Scout Elite helps youth hockey coaches clip game footage, run focused team reviews, plan practices, build interactive playbooks, and generate AI player reports."
 last_modified_at: 2026-04-15
 utm_campaign: homepage
 ---
@@ -11,7 +11,7 @@ utm_campaign: homepage
     <div class="container">
         <div class="hero-content">
             <h1 class="hero-title">Your players improve when you can focus on coaching.</h1>
-            <p class="hero-subtitle">Scout Elite handles video clipping, individual player reports, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
+            <p class="hero-subtitle">Scout Elite handles video clipping, individual player reports, practice plans, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=home-hero" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>
                 <a href="/how-it-works" class="btn btn-secondary">See How It Works</a>
@@ -105,6 +105,21 @@ utm_campaign: homepage
                     <p>Parents can easily share game videos with coaches for expert analysis. Once reviewed, results and feedback are shared back, giving families actionable insights to help their athletes grow and succeed.</p>
                     <p>Video analysis shouldn't be exclusive to elite teams with big budgets.</p>
                 </div>
+                <div class="feature-card" style="max-width:340px; text-align:center;">
+                    <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
+                        <!-- Clipboard Icon -->
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="8" width="24" height="32" rx="3" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
+                            <rect x="18" y="5" width="12" height="7" rx="2" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
+                            <path d="M18 20H30" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M18 27H30" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M18 34H25" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Plan Your Next Practice</h3>
+                    <p>Turn what you saw in the game into the plan for the next skate. The <a href="/features/practice-planning/">practice assistant</a> drafts a timed session built around your game takeaways, with drills and rink diagrams ready to go.</p>
+                    <p>Print a clean sheet for the bench or run it live from your phone at the rink.</p>
+                </div>
         </div>
                 
         <div class="section-header" style="margin-top:4em;">
@@ -146,6 +161,7 @@ utm_campaign: homepage
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> View shared clips, reviews &amp; playbooks</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Scout Elite Live mobile app</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 1 starter <a href="/help/creating-playbooks/" style="color:inherit;">Playbook</a> (3 sections)</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/features/practice-planning/" style="color:inherit;">Practice planner</a> &mdash; 3 plans + drill library<span class="pricing-card__new">New</span></li>
                 </ul>
                 <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-starter" class="pricing-card__cta pricing-card__cta--secondary" data-try-placement="pricing-starter">Sign Up Free</a>
             </div>
@@ -163,6 +179,7 @@ utm_campaign: homepage
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 10 GB of video uploads</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Clips, tagging &amp; telestration</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Reviews to organize clips by category</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Unlimited <a href="/features/practice-planning/" style="color:inherit;">practice plans &amp; drills</a><span class="pricing-card__new">New</span></li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Unlimited <a href="/help/creating-playbooks/" style="color:inherit;">Playbooks</a><span class="pricing-card__new">New</span></li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/help/creating-reports/" style="color:inherit;">AI Game &amp; Player Reports</a><span class="pricing-card__new">New</span></li>
                 </ul>
@@ -181,7 +198,7 @@ utm_campaign: homepage
                 <p class="pricing-card__includes-label">Everything in Solo, plus:</p>
                 <ul class="pricing-card__features">
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 100 GB of video uploads</li>
-                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Share clips, reviews, playbooks &amp; reports</li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Share clips, reviews, playbooks, plans &amp; reports</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Create &amp; manage teams</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> AI clip detection from game video</li>
                 </ul>
@@ -264,12 +281,29 @@ utm_campaign: homepage
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>
                     </tr>
 
+                    <!-- Group: Plan -->
+                    <tr>
+                        <td colspan="4" style="padding:24px 12px 8px 12px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); background:none; border:none;">Plan</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;"><a href="/features/practice-planning/" style="color:inherit; border-bottom:1px dotted var(--text-secondary);">Practice plans</a> <span style="font-size:0.75rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:600;">NEW</span></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">3 plans</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Drill library <span style="font-size:0.75rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:600;">NEW</span></td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">Browse +<br>10 custom</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
+                    </tr>
+
                     <!-- Group: Share & Teams -->
                     <tr>
                         <td colspan="4" style="padding:24px 12px 8px 12px; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-muted); background:none; border:none;">Share &amp; Teams</td>
                     </tr>
                     <tr>
-                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Share clips, reviews, playbooks &amp; reports</td>
+                        <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;">Share clips, reviews, playbooks, plans &amp; reports</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">&mdash;</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">✔️</td>

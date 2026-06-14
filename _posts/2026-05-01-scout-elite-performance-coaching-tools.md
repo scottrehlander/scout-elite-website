@@ -42,6 +42,8 @@ You now have an AI assistant ready to help you quickly assemble [structured repo
 * **Game Reports:** Post-game breakdowns highlighting what worked, where the breakdowns happened, and key takeaways for the team.
 * **Player Development Reports:** Targeted reports outlining what a specific player can work on outside of team practice.
 
+> **Update:** Since this release, we've added [Practice Planning](/features/practice-planning/) to complete the loop. The practice assistant reads the takeaways from your game reports and drafts a timed, drill-by-drill session that targets them — so the next skate works on exactly what the game showed you.
+
 ### A Note on Pricing and Our New Free Tier
 
 I've always wanted Scout Elite to be a tool that the whole team can benefit from without nickel-and-diming families. Staying true to the [mission of Scout Elite](/blog/2024/12/08/the-scout-elite-manifesto/), we introduced a new **Free (Starter) Plan** to give everyone access to the learning tools they need.

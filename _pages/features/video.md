@@ -318,6 +318,10 @@ last_modified_at: 2026-05-28
                 <strong style="color: var(--accent-hover);">AI Reports &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Chat your way to a game breakdown or player plan.</p>
             </a>
+            <a href="/features/practice-planning/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
+                <strong style="color: var(--accent-hover);">Practice Planning &rarr;</strong>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Turn game takeaways into your next practice plan.</p>
+            </a>
             <a href="/features/teams/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
                 <strong style="color: var(--accent-hover);">Teams &amp; Sharing &rarr;</strong>
                 <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Invite your roster, share everything with one click.</p>
