@@ -26,7 +26,7 @@ Output goes to `_site/`. Never commit `_site/`.
 ## Directory structure
 ```
 _pages/           # Main site pages (features/, how-it-works.md, etc.)
-_pages/features/  # Feature sub-pages (ai-reports.md, playbooks.md, video.md)
+_pages/features/  # Feature sub-pages (practice-planning.md, ai-reports.md, playbooks.md, video.md, teams.md)
 _landing-pages/   # Persona landing pages (coach, parent, skills coach)
 _posts/           # Blog posts
 _help/            # Help / knowledge base articles
