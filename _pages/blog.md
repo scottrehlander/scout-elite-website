@@ -65,7 +65,7 @@ redirect_from:
         <div class="post-card category-{{ post.categories | join: ' category-' }}">
           <a href="{{ post.url | relative_url }}" class="post-card-link">
             {% if post.image %}
-              <div class="post-card-bgimg" style="background-image:url('{{ post.image }}');">
+              <div class="post-card-bgimg" style="background-image:url('{{ post.image.path | default: post.image }}');">
                 <div class="post-card-overlay">
                   <div class="post-meta">
                     <span class="post-category">{{ post.categories[0] | capitalize }}</span>

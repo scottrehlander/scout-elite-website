@@ -25,6 +25,9 @@
     {% if page.url == '/blog/' %}
     <link rel="stylesheet" href="{{ '/styles/blog.css' | relative_url }}">
     {% endif %}
+    {% if page.url == '/hockey-glossary/' %}
+    <link rel="stylesheet" href="{{ '/styles/post.css' | relative_url }}">
+    {% endif %}
     {% if page.layout == 'post' or page.categories contains 'blog' or page.categories contains 'features' or page.categories contains 'tutorials' or page.categories contains 'tips' or page.categories contains 'updates' %}
     <link rel="stylesheet" href="{{ '/styles/post.css' | relative_url }}">
     {% endif %}
@@ -391,6 +394,7 @@
                         <li><a href="{{ '/#pricing' | relative_url }}">Pricing</a></li>
                         <li><a href="{{ '/how-it-works' | relative_url }}">How it Works</a></li>
                         <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
+                        <li><a href="{{ '/hockey-glossary' | relative_url }}">Hockey Glossary</a></li>
                         <li><a href="{{ '/support' | relative_url }}">Support</a></li>
                     </ul>
                 </div>
@@ -409,6 +413,11 @@
             </div>
         </div>
     </footer>
+    {% if page.layout == 'post' %}
+    <!-- Site-wide hockey glossary tooltips on blog posts -->
+    <script>window.HOCKEY_GLOSSARY = window.HOCKEY_GLOSSARY || {{ site.data.hockey_glossary | jsonify }};</script>
+    <script src="{{ '/scripts/glossary-tooltips.js' | relative_url }}"></script>
+    {% endif %}
     <script src="{{ '/scripts/main.js' | relative_url }}"></script>
 </body>
 </html>

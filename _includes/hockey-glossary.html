@@ -1,0 +1,365 @@
+<!-- Searchable hockey glossary widget.
+     Data: _data/hockey_glossary.json (injected as window.HOCKEY_GLOSSARY below;
+     cards are also server-rendered for SEO and no-JS).
+     Drop into any page or post with the Liquid include tag for this file. -->
+<div class="glossary-tool" id="glossary-tool">
+  <div class="glossary-controls">
+    <input type="search" id="glossary-search" class="glossary-search" placeholder="Search hockey terms — try &quot;gap&quot;, &quot;forecheck&quot;, &quot;breakout&quot;…" autocomplete="off" aria-label="Search hockey terms" />
+    <div class="glossary-cats" id="glossary-cats" role="group" aria-label="Filter by category"></div>
+  </div>
+  <p class="glossary-count" id="glossary-count" aria-live="polite">{{ site.data.hockey_glossary | size }} hockey terms</p>
+  <div class="glossary-results" id="glossary-results">
+    {%- comment -%} Server-rendered for SEO / no-JS; the widget script re-renders these interactively on load. {%- endcomment -%}
+    {%- assign gloss_terms = site.data.hockey_glossary | sort: "t" -%}
+    {%- for term in gloss_terms -%}
+    {%- assign slug = term.t | slugify -%}
+    <div class="g-card" id="term-{{ slug }}">
+      <div class="g-card-head">
+        <h3 class="g-term">{{ term.t | escape }}</h3>
+        <div class="g-card-meta">
+          <span class="g-tag">{{ term.c | escape }}</span>
+          <button type="button" class="g-copy" data-slug="{{ slug }}" aria-label="Copy a shareable link to this definition" title="Copy link to this definition">🔗</button>
+        </div>
+      </div>
+      <p class="g-def">{{ term.d }}</p>
+      {%- if term.r and term.r.size > 0 -%}
+      <div class="g-related"><span class="g-related-label">Related:</span> {% for rel in term.r %}<button type="button" class="g-chip" data-term="{{ rel | escape }}">{{ rel | escape }}</button>{% endfor %}</div>
+      {%- endif -%}
+    </div>
+    {%- endfor -%}
+  </div>
+  <p class="glossary-empty" id="glossary-empty" hidden>No terms match that search. Try a shorter word — like <em>gap</em>, <em>rush</em>, or <em>zone</em>.</p>
+</div>
+
+<style>
+  .glossary-tool {
+    background: var(--secondary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5em;
+    margin: 1.5em 0 2.5em;
+  }
+  .glossary-search {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8em 1em;
+    font-size: 1.05em;
+    color: var(--text-primary);
+    background: var(--primary-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .glossary-search:focus { border-color: var(--accent-primary); }
+  .glossary-search::placeholder { color: var(--text-secondary); opacity: 0.8; }
+  .glossary-cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4em;
+    margin-top: 0.9em;
+  }
+  .glossary-cat {
+    font-size: 0.82em;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.35em 0.9em;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .glossary-cat:hover { color: var(--text-primary); border-color: var(--accent-primary); }
+  .glossary-cat.is-active {
+    color: #fff;
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+  }
+  .glossary-count {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+    margin: 1.1em 0 0.6em;
+  }
+  .glossary-results {
+    display: grid;
+    gap: 0.9em;
+    max-height: 900px;
+    overflow-y: auto;
+    padding-right: 0.5em;
+    /* fade the bottom edge so it reads as scrollable */
+    -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 calc(100% - 24px), transparent 100%);
+  }
+  .glossary-results::-webkit-scrollbar { width: 8px; }
+  .glossary-results::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 999px;
+  }
+  .glossary-results::-webkit-scrollbar-thumb:hover { background: var(--accent-primary); }
+  .g-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.1em 1.25em;
+    box-shadow: var(--shadow-sm);
+  }
+  .g-card--active {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 2px var(--accent-primary);
+  }
+  .g-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75em;
+    flex-wrap: wrap;
+    margin-bottom: 0.45em;
+  }
+  .g-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .g-copy {
+    font-size: 0.85em;
+    line-height: 1;
+    white-space: nowrap;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: all 0.15s ease;
+  }
+  .g-copy:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+  .g-copy.is-copied { color: var(--accent-primary); border-color: var(--accent-primary); }
+  .g-term {
+    margin: 0;
+    font-size: 1.15em;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: capitalize;
+  }
+  .g-tag {
+    font-size: 0.7em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    white-space: nowrap;
+  }
+  .g-def {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.97em;
+  }
+  .g-def em { color: var(--text-primary); font-style: italic; }
+  .g-related {
+    margin-top: 0.75em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4em;
+    font-size: 0.85em;
+    color: var(--text-secondary);
+  }
+  .g-related-label { font-weight: 600; }
+  .g-chip {
+    font-size: 0.95em;
+    color: var(--accent-primary);
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.2em 0.7em;
+    cursor: pointer;
+    text-transform: capitalize;
+    transition: all 0.15s ease;
+  }
+  .g-chip:hover { border-color: var(--accent-primary); background: var(--secondary-bg); }
+  .glossary-empty { color: var(--text-secondary); font-style: italic; }
+</style>
+
+<script>window.HOCKEY_GLOSSARY = window.HOCKEY_GLOSSARY || {{ site.data.hockey_glossary | jsonify }};</script>
+<script>
+(function() {
+  var TERMS = window.HOCKEY_GLOSSARY || [];
+
+  function slugify(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function(resolve) {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try { document.execCommand('copy'); } catch (e) { /* ignore */ }
+      document.body.removeChild(ta);
+      resolve();
+    });
+  }
+
+  var search = document.getElementById('glossary-search');
+  var catsBox = document.getElementById('glossary-cats');
+  var results = document.getElementById('glossary-results');
+  var count = document.getElementById('glossary-count');
+  var empty = document.getElementById('glossary-empty');
+  var tool = document.getElementById('glossary-tool');
+
+  var activeCat = 'All';
+  var cats = ['All'];
+  TERMS.forEach(function(x) { if (cats.indexOf(x.c) === -1) cats.push(x.c); });
+
+  cats.forEach(function(cat) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'glossary-cat' + (cat === 'All' ? ' is-active' : '');
+    b.textContent = cat;
+    b.addEventListener('click', function() {
+      activeCat = cat;
+      Array.prototype.forEach.call(catsBox.children, function(c) { c.classList.remove('is-active'); });
+      b.classList.add('is-active');
+      render();
+    });
+    catsBox.appendChild(b);
+  });
+
+  function render() {
+    var q = search.value.trim().toLowerCase();
+    var matches = TERMS.filter(function(x) {
+      if (activeCat !== 'All' && x.c !== activeCat) return false;
+      if (!q) return true;
+      return x.t.toLowerCase().indexOf(q) !== -1;
+    });
+
+    matches.sort(function(a, b) { return a.t.localeCompare(b.t); });
+    results.innerHTML = '';
+
+    matches.forEach(function(x) {
+      var slug = slugify(x.t);
+      var card = document.createElement('div');
+      card.className = 'g-card';
+      card.id = 'term-' + slug;
+
+      var related = '';
+      if (x.r && x.r.length) {
+        related = '<div class="g-related"><span class="g-related-label">Related:</span> ' +
+          x.r.map(function(rel) {
+            return '<button type="button" class="g-chip" data-term="' + rel + '">' + rel + '</button>';
+          }).join('') + '</div>';
+      }
+
+      card.innerHTML =
+        '<div class="g-card-head">' +
+          '<h3 class="g-term">' + x.t + '</h3>' +
+          '<div class="g-card-meta">' +
+            '<span class="g-tag">' + x.c + '</span>' +
+            '<button type="button" class="g-copy" data-slug="' + slug + '" ' +
+              'aria-label="Copy a shareable link to this definition" ' +
+              'title="Copy link to this definition">🔗</button>' +
+          '</div>' +
+        '</div>' +
+        '<p class="g-def">' + x.d + '</p>' + related;
+
+      results.appendChild(card);
+    });
+
+    empty.hidden = matches.length !== 0;
+    count.textContent = 'Showing ' + matches.length + ' of ' + TERMS.length + ' terms' +
+      (activeCat !== 'All' ? ' in ' + activeCat : '');
+  }
+
+  results.addEventListener('click', function(e) {
+    // Copy a shareable link to a single definition.
+    var copyBtn = e.target.closest('.g-copy');
+    if (copyBtn) {
+      var url = window.location.origin + '/hockey-glossary/#term-' + copyBtn.getAttribute('data-slug');
+      copyToClipboard(url).then(function() {
+        copyBtn.textContent = '✓ Copied';
+        copyBtn.classList.add('is-copied');
+        setTimeout(function() {
+          copyBtn.textContent = '🔗';
+          copyBtn.classList.remove('is-copied');
+        }, 1500);
+      });
+      return;
+    }
+
+    // Jump to a related term.
+    var chip = e.target.closest('.g-chip');
+    if (!chip) return;
+    activeCat = 'All';
+    Array.prototype.forEach.call(catsBox.children, function(c) {
+      c.classList.toggle('is-active', c.textContent === 'All');
+    });
+    search.value = chip.getAttribute('data-term');
+    render();
+    tool.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
+  search.addEventListener('input', render);
+
+  function hashSlug() {
+    return (window.location.hash || '').replace(/^#term-/, '');
+  }
+
+  // Center the active term's card in the viewport (so the fixed site header
+  // can't cover it) once layout has settled.
+  function scrollToActiveTerm() {
+    var card = document.getElementById('term-' + hashSlug());
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'auto', block: 'center' });
+    card.classList.add('g-card--active');
+  }
+
+  function applyHash() {
+    var slug = hashSlug();
+    if (!slug) return false;
+    var hit = TERMS.filter(function(x) { return slugify(x.t) === slug; })[0];
+    if (!hit) return false;
+    search.value = hit.t;
+    return true;
+  }
+
+  // Deep-linking: a #term-<slug> hash (shared link) or ?q=<term> (legacy)
+  // pre-filters the glossary to that term.
+  var jumpedToTerm = applyHash();
+  if (!jumpedToTerm) {
+    try {
+      var q = new URLSearchParams(window.location.search).get('q');
+      if (q) { search.value = q; }
+    } catch (e) { /* older browser — ignore */ }
+  }
+
+  render();
+
+  // Scroll AFTER the page has fully loaded — this runs after the browser's own
+  // fragment jump, so the collapsed (filtered) list can't strand us past the
+  // content. requestAnimationFrame waits for the post-render layout.
+  if (jumpedToTerm) {
+    if (document.readyState === 'complete') {
+      requestAnimationFrame(scrollToActiveTerm);
+    } else {
+      window.addEventListener('load', function() { requestAnimationFrame(scrollToActiveTerm); });
+    }
+  }
+
+  // Handle in-page hash changes (e.g. opening another copied link in the tab).
+  window.addEventListener('hashchange', function() {
+    if (applyHash()) {
+      render();
+      requestAnimationFrame(scrollToActiveTerm);
+    }
+  });
+})();
+</script>

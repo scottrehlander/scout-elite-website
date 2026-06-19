@@ -1,0 +1,543 @@
+[
+  {
+    "t": "agility",
+    "c": "Skating & Athleticism",
+    "d": "Quick, controlled changes of direction and body position in tight spaces.",
+    "r": [
+      "edge work"
+    ],
+    "tip": false
+  },
+  {
+    "t": "angling",
+    "c": "Defense",
+    "d": "Steering a puck carrier toward the boards or away from the middle by approaching on an angle with good stick and body position. Angling is about direction — the route you force the carrier to take.",
+    "r": [
+      "gap control",
+      "forecheck"
+    ],
+    "tip": true
+  },
+  {
+    "t": "backcheck",
+    "c": "Defense",
+    "d": "Skating hard back toward your own net to defend as the other team heads up ice with the puck, picking up attackers through the middle. The opposite of the forecheck.",
+    "r": [
+      "forecheck",
+      "gap control"
+    ],
+    "tip": true
+  },
+  {
+    "t": "backward skating",
+    "c": "Skating & Athleticism",
+    "d": "Skating in reverse with control and speed — essential for any defender facing an oncoming rush.",
+    "r": [
+      "skating transitions",
+      "gap control"
+    ],
+    "tip": true
+  },
+  {
+    "t": "balance",
+    "c": "Skating & Athleticism",
+    "d": "Holding a stable, athletic base on the edges through contact, turns, and stickhandling.",
+    "r": [],
+    "tip": false
+  },
+  {
+    "t": "board battles",
+    "c": "Puck Skills",
+    "d": "Two or more players fighting for the puck along the boards — won with body position and leverage more than raw strength.",
+    "r": [
+      "puck protection",
+      "compete",
+      "body checking"
+    ],
+    "tip": true
+  },
+  {
+    "t": "body checking",
+    "c": "Defense",
+    "d": "Legally using the body to separate an opponent from the puck — under control, with the right angle and technique. Under USA Hockey's ADM, body contact is taught at younger ages and full checking isn't introduced until 13U (Bantam).",
+    "r": [
+      "angling",
+      "board battles"
+    ],
+    "tip": true
+  },
+  {
+    "t": "breakaway",
+    "c": "Game Situations",
+    "d": "An attacker skating in alone on the goalie with no defender between them and the net — the cleanest scoring chance in hockey.",
+    "r": [
+      "odd-man rush",
+      "rush"
+    ],
+    "tip": true
+  },
+  {
+    "t": "breakout",
+    "c": "Team Play & Systems",
+    "d": "Moving the puck out of your own defensive zone, under pressure, into a clean exit. Distinct from a regroup, which resets possession in the neutral zone to attack again.",
+    "r": [
+      "regroup",
+      "defensive zone"
+    ],
+    "tip": true
+  },
+  {
+    "t": "communication",
+    "c": "Team Play & Systems",
+    "d": "Talking and signalling with teammates to coordinate coverage, support, and plays. The best players are loud.",
+    "r": [
+      "support"
+    ],
+    "tip": false
+  },
+  {
+    "t": "compete",
+    "c": "Team Play & Systems",
+    "d": "'Compete level' — the effort and battle a player brings: winning races, battles, and loose pucks. A coach yelling 'compete!' is talking about will, not skill.",
+    "r": [
+      "board battles"
+    ],
+    "tip": false
+  },
+  {
+    "t": "conditioning",
+    "c": "Skating & Athleticism",
+    "d": "Hockey-specific fitness — the anaerobic capacity to keep skating hard and thinking clearly late in a shift.",
+    "r": [],
+    "tip": false
+  },
+  {
+    "t": "crossovers",
+    "c": "Skating & Athleticism",
+    "d": "Crossing one skate over the other to build speed through turns and on starts.",
+    "r": [
+      "edge work"
+    ],
+    "tip": true
+  },
+  {
+    "t": "cycling",
+    "c": "Team Play & Systems",
+    "d": "Keeping possession deep in the offensive zone by moving the puck low-to-high and along the walls, waiting out the defense to open a chance. Distinct from the rush, which attacks with speed before the defense is set.",
+    "r": [
+      "offensive zone",
+      "rush"
+    ],
+    "tip": true
+  },
+  {
+    "t": "decision making",
+    "c": "Team Play & Systems",
+    "d": "Reading the play and choosing the right option — shoot, pass, carry, or support — at full game speed.",
+    "r": [
+      "head up play",
+      "support"
+    ],
+    "tip": false
+  },
+  {
+    "t": "defense (on/off the puck)",
+    "c": "Defense",
+    "d": "When your team does not have the puck. The ADM splits it into 'on the puck' (the defender pressuring the carrier — gap, angle, stick, body) and 'away from the puck' (covering assignments and taking away lanes).",
+    "r": [
+      "gap control",
+      "stick position"
+    ],
+    "tip": false
+  },
+  {
+    "t": "defensive positioning",
+    "c": "Defense",
+    "d": "Holding the right spot relative to the puck, your net, and your assignment in the defensive zone.",
+    "r": [
+      "defensive zone",
+      "support"
+    ],
+    "tip": false
+  },
+  {
+    "t": "defensive zone",
+    "c": "Game Situations",
+    "d": "The zone you're defending — the end with your own net in it.",
+    "r": [
+      "defensive positioning",
+      "breakout"
+    ],
+    "tip": true
+  },
+  {
+    "t": "deflections",
+    "c": "Shooting & Scoring",
+    "d": "Redirecting a shot or pass into the net with the stick blade at the net-front. Also called a tip.",
+    "r": [
+      "net-front presence",
+      "hand-eye"
+    ],
+    "tip": true
+  },
+  {
+    "t": "edge work",
+    "c": "Skating & Athleticism",
+    "d": "Control of the skate's inside and outside edges for tight turns, pivots, and balance — the foundation of all skating.",
+    "r": [],
+    "tip": true
+  },
+  {
+    "t": "even strength",
+    "c": "Special Teams",
+    "d": "Both teams with the same number of skaters on the ice (usually 5-on-5). The default state, as opposed to a power play or penalty kill.",
+    "r": [
+      "power play",
+      "penalty kill"
+    ],
+    "tip": true
+  },
+  {
+    "t": "faceoff",
+    "c": "Game Situations",
+    "d": "A draw between two players to start or restart play at one of the dots on the ice. Win the draw, win the puck.",
+    "r": [
+      "even strength"
+    ],
+    "tip": true
+  },
+  {
+    "t": "forecheck",
+    "c": "Team Play & Systems",
+    "d": "Pressuring the other team in their defensive zone to force a turnover and stop a clean breakout. The opposite of the backcheck.",
+    "r": [
+      "backcheck",
+      "angling"
+    ],
+    "tip": true
+  },
+  {
+    "t": "gap control",
+    "c": "Defense",
+    "d": "A defender's management of the distance between themselves and the attacker — closing the space to take away time and the angle on a rush. Distinct from angling (the direction you force); gap is the distance you keep.",
+    "r": [
+      "angling",
+      "rush defense",
+      "backward skating"
+    ],
+    "tip": true
+  },
+  {
+    "t": "goaltending",
+    "c": "Goaltending",
+    "d": "The goalie-specific skills: positioning, tracking the puck, controlling rebounds, and moving post-to-post.",
+    "r": [],
+    "tip": false
+  },
+  {
+    "t": "hand-eye",
+    "c": "Puck Skills",
+    "d": "The coordination to catch, bat, deflect, and handle pucks out of the air or in tight.",
+    "r": [
+      "deflections"
+    ],
+    "tip": false
+  },
+  {
+    "t": "head up play",
+    "c": "Puck Skills",
+    "d": "Carrying the puck while looking up to read the ice, instead of staring down at it. The hardest habit to teach and the most valuable.",
+    "r": [
+      "decision making"
+    ],
+    "tip": false
+  },
+  {
+    "t": "net-front presence",
+    "c": "Shooting & Scoring",
+    "d": "Winning and holding the space right in front of the goal to screen the goalie, tip shots, and bang in rebounds. Unglamorous, and where a lot of goals are scored.",
+    "r": [
+      "deflections",
+      "board battles"
+    ],
+    "tip": true
+  },
+  {
+    "t": "neutral zone",
+    "c": "Game Situations",
+    "d": "The middle of the ice, between the two blue lines, where regroups and transitions are fought over.",
+    "r": [
+      "regroup",
+      "transition",
+      "zone entry"
+    ],
+    "tip": true
+  },
+  {
+    "t": "odd-man rush",
+    "c": "Game Situations",
+    "d": "A rush with more attackers than defenders back — a 2-on-1 or 3-on-2. A prime scoring chance, and a coverage breakdown for the other team.",
+    "r": [
+      "rush",
+      "breakaway"
+    ],
+    "tip": true
+  },
+  {
+    "t": "offense (on/off the puck)",
+    "c": "Team Play & Systems",
+    "d": "When your team has the puck. The ADM splits it into 'on the puck' (the carrier — protecting it and making plays) and 'away from the puck' (everyone else — getting open and creating options).",
+    "r": [
+      "support",
+      "puck protection"
+    ],
+    "tip": false
+  },
+  {
+    "t": "offensive zone",
+    "c": "Game Situations",
+    "d": "The attacking end — the zone with the other team's net in it.",
+    "r": [
+      "cycling",
+      "net-front presence",
+      "forecheck"
+    ],
+    "tip": true
+  },
+  {
+    "t": "passing",
+    "c": "Puck Skills",
+    "d": "Moving the puck between teammates with accurate, catchable passes — forehand, backhand, and saucer — and receiving them cleanly.",
+    "r": [
+      "receiving",
+      "soft hands"
+    ],
+    "tip": false
+  },
+  {
+    "t": "penalty kill",
+    "c": "Special Teams",
+    "d": "Defending shorthanded while a teammate sits in the box. Often shortened to 'PK'.",
+    "r": [
+      "power play",
+      "even strength"
+    ],
+    "tip": true
+  },
+  {
+    "t": "power play",
+    "c": "Special Teams",
+    "d": "Playing with a one- or two-skater advantage while the other team serves a penalty. Often shortened to 'PP' or 'the man advantage'.",
+    "r": [
+      "penalty kill",
+      "even strength"
+    ],
+    "tip": true
+  },
+  {
+    "t": "puck control",
+    "c": "Puck Skills",
+    "d": "Handling the puck on the stick while skating — protecting and moving it under pressure.",
+    "r": [
+      "stick handling",
+      "soft hands",
+      "puck protection"
+    ],
+    "tip": true
+  },
+  {
+    "t": "puck protection",
+    "c": "Puck Skills",
+    "d": "Shielding the puck from a defender using body position, leverage, and the off-arm. Often described as 'keeping your body between the defender and the puck'.",
+    "r": [
+      "board battles",
+      "puck control"
+    ],
+    "tip": true
+  },
+  {
+    "t": "quick release",
+    "c": "Shooting & Scoring",
+    "d": "Getting a shot off fast, with little wind-up, to beat the goalie and shot-blockers before they're set.",
+    "r": [
+      "shooting"
+    ],
+    "tip": true
+  },
+  {
+    "t": "receiving",
+    "c": "Puck Skills",
+    "d": "Catching and settling a pass cleanly, ready to make the next play. A skill of its own, separate from passing.",
+    "r": [
+      "passing",
+      "soft hands"
+    ],
+    "tip": false
+  },
+  {
+    "t": "regroup",
+    "c": "Team Play & Systems",
+    "d": "Resetting possession in the neutral or defensive zone — often defenseman-to-defenseman — to attack again with speed and numbers. Distinct from a breakout, which is the structured exit out of your own zone under pressure.",
+    "r": [
+      "breakout",
+      "neutral zone"
+    ],
+    "tip": true
+  },
+  {
+    "t": "rush",
+    "c": "Game Situations",
+    "d": "An attack moving up the ice toward the offensive zone, usually right off a transition.",
+    "r": [
+      "rush offense",
+      "odd-man rush",
+      "zone entry"
+    ],
+    "tip": true
+  },
+  {
+    "t": "rush defense",
+    "c": "Defense",
+    "d": "Defending an attacking rush — using gap, angle, and an active stick to deny the zone entry and the odd-man chance.",
+    "r": [
+      "gap control",
+      "backcheck"
+    ],
+    "tip": true
+  },
+  {
+    "t": "rush offense",
+    "c": "Team Play & Systems",
+    "d": "Attacking off the rush with speed, support, and numbers to create odd-man and entry chances — before the defense is set. Distinct from cycling, which is sustained possession once you're already in the zone.",
+    "r": [
+      "rush",
+      "odd-man rush",
+      "zone entry"
+    ],
+    "tip": true
+  },
+  {
+    "t": "shooting",
+    "c": "Shooting & Scoring",
+    "d": "The family of shots — wrist, snap, slap, and backhand — put on net.",
+    "r": [
+      "shot accuracy",
+      "quick release"
+    ],
+    "tip": false
+  },
+  {
+    "t": "shot accuracy",
+    "c": "Shooting & Scoring",
+    "d": "Placing shots to hit a target and beat the goalie — not just hitting the net.",
+    "r": [
+      "shooting"
+    ],
+    "tip": false
+  },
+  {
+    "t": "skating transitions",
+    "c": "Skating & Athleticism",
+    "d": "Switching forward-to-backward and back without losing speed or balance — the footwork behind defending the rush and jumping into the attack. Distinct from possession transitions, which is about the puck changing teams.",
+    "r": [
+      "backward skating",
+      "agility",
+      "transition"
+    ],
+    "tip": true
+  },
+  {
+    "t": "soft hands",
+    "c": "Puck Skills",
+    "d": "Receiving and handling the puck smoothly — cushioning hard passes and making quick, deft moves. The opposite of 'hands of stone'.",
+    "r": [
+      "receiving",
+      "puck control"
+    ],
+    "tip": false
+  },
+  {
+    "t": "speed",
+    "c": "Skating & Athleticism",
+    "d": "Straight-line skating velocity — both explosive acceleration and top-end speed.",
+    "r": [],
+    "tip": false
+  },
+  {
+    "t": "stick handling",
+    "c": "Puck Skills",
+    "d": "Working the puck with the blade — dangles, toe drags, fakes — to beat a defender and keep the puck in tight. Closely tied to puck control, with the emphasis on stick skill.",
+    "r": [
+      "puck control",
+      "head up play"
+    ],
+    "tip": true
+  },
+  {
+    "t": "stick position",
+    "c": "Defense",
+    "d": "Using an active, well-placed stick to take away passing and shooting lanes. 'Stick on the ice' is the most common reminder in youth hockey.",
+    "r": [
+      "defensive positioning"
+    ],
+    "tip": true
+  },
+  {
+    "t": "stops and starts",
+    "c": "Skating & Athleticism",
+    "d": "Stopping sharply and re-accelerating in any direction — explosive change of pace.",
+    "r": [
+      "edge work"
+    ],
+    "tip": true
+  },
+  {
+    "t": "support",
+    "c": "Team Play & Systems",
+    "d": "Positioning to give the puck carrier a passing option and to recover loose pucks — playing as a connected five, not five individuals.",
+    "r": [
+      "communication",
+      "decision making"
+    ],
+    "tip": false
+  },
+  {
+    "t": "timing",
+    "c": "Team Play & Systems",
+    "d": "Arriving and releasing at the right moment — joining the rush, hitting a seam, jumping a route. Early kills the play; late misses it.",
+    "r": [
+      "support"
+    ],
+    "tip": false
+  },
+  {
+    "t": "transition",
+    "c": "Game Situations",
+    "d": "The moment a team switches between offense and defense (in either direction), including regroups and quick counters. The team that reacts to it fastest catches the other out of position.",
+    "r": [
+      "regroup",
+      "breakout"
+    ],
+    "tip": true
+  },
+  {
+    "t": "zone entry",
+    "c": "Team Play & Systems",
+    "d": "Crossing the offensive blue line with possession — by carry, pass, or controlled chip — rather than dumping it in and chasing. Distinct from a breakout, which is your own zone exit.",
+    "r": [
+      "rush",
+      "neutral zone"
+    ],
+    "tip": true
+  },
+  {
+    "t": "1-on-1",
+    "c": "Game Situations",
+    "d": "One attacker versus one defender — a battle or mini-rush that shows up everywhere, from drills to game-deciding moments.",
+    "r": [
+      "gap control",
+      "rush defense"
+    ],
+    "tip": true
+  }
+]
