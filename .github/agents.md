@@ -23,6 +23,10 @@ bundle exec jekyll serve
 ```
 Output goes to `_site/`. Never commit `_site/`.
 
+**Verify with `bundle exec jekyll build`** (~1s) — catches Liquid/template errors before serving.
+
+**Resizing/compressing images:** no ImageMagick or `sharp` on this machine — use PowerShell `System.Drawing` (GDI+). Hero/OG images → ~1200px-wide JPG, quality ~82.
+
 ## Directory structure
 ```
 _pages/           # Main site pages (features/, how-it-works.md, etc.)
@@ -57,10 +61,18 @@ SEO is handled by `jekyll-seo-tag` via `{% seo %}` in `_layouts/default.html`. I
 - `title` → `<title>`, `og:title`, `twitter:title`
 - `description` → `<meta name="description">`, `og:description`
 - `image` → `og:image`, `twitter:image` (use path string or `{path, alt}` object)
+  - **Gotcha:** when `image` is a `{path, alt}` object, listing/card templates must read `{{ post.image.path | default: post.image }}` — `post.image` alone dumps the raw hash (see `_pages/blog.md`).
 - `last_modified_at` → `<lastmod>` in sitemap.xml via `jekyll-sitemap`
 - `canonical_url` → overrides auto-generated canonical if needed
 
 If `image` is missing, social shares (Twitter/X, Slack, iMessage) show no thumbnail.
+
+## Liquid & data gotchas
+- **Liquid executes inside HTML comments.** A `{% include %}` of the same file in a comment = infinite recursion ("stack level too deep"). Keep Liquid tags out of comments.
+- **Shared JS data:** dataset lives in `_data/*.json` (single source), injected via `<script>window.X = {{ site.data.x | jsonify }}</script>`, and *also* server-rendered in HTML — don't rely on JS-only rendering for indexable content.
+
+## Hockey glossary system
+Searchable glossary at `/hockey-glossary/`. Single source `_data/hockey_glossary.json` feeds: the widget (`_includes/hockey-glossary.html`, server-rendered + JS-enhanced), site-wide post tooltips (`scripts/glossary-tooltips.js`, injected for `layout: post` in `default.html`), and `DefinedTermSet` JSON-LD. The concepts essay post links to it (kept separate to avoid keyword cannibalization).
 
 ## CSS conventions
 Dark theme. Use CSS custom properties — never hardcode colors.
