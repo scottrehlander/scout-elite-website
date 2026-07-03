@@ -13,8 +13,8 @@ last_modified_at: 2026-07-03
     <div class="container">
         <div class="hero-content" style="max-width: 640px; margin: 0 auto; text-align: left;">
             <h1 class="hero-title" style="margin-bottom: 1rem;">Hi &mdash; I'm Scott, the hockey dad with the app.</h1>
-            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.25rem;">If we met at <strong style="color:var(--text-primary);">Hockey &amp; Daughters</strong> or <strong style="color:var(--text-primary);">Hockey &amp; Sons</strong> at Gustavus, this is the page I mentioned. My daughter and I did the camp too &mdash; we're a hockey family from Massachusetts, and I coach my kids' teams back home.</p>
-            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.75rem;">I built Scout Elite because my coaching life was scattered across five tools: film in one place, practice plans in email, and a playbook that was a photo of a whiteboard in the group chat. It's everything I do in a week of coaching &mdash; film, clips, team reviews, practice plans, playbooks, player reports &mdash; in one app.</p>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.25rem;">If we met at <strong style="color:var(--text-primary);">Hockey &amp; Daughters</strong> or <strong style="color:var(--text-primary);">Hockey &amp; Sons</strong> at Gustavus, this is the page I mentioned. My kids and I did the camp too &mdash; we're a hockey family from Massachusetts, and I coach my kids' teams back home.</p>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.75rem;">I built Scout Elite because my coaching life was scattered across five tools: film in one place, practice plans in CoachThem, and a playbook that was an emailed PDF. I've been building this app to manage playere development for almost 5 years now &mdash; film, clips, team reviews, practice plans, playbooks, player reports.  Now I'm ready so share it.</p>
             <div class="hero-cta">
                 {% include xpress-cta.html placement="camp-hero" text="Try It Free &rarr; No Signup" %}
             </div>
@@ -26,12 +26,11 @@ last_modified_at: 2026-07-03
 <!-- What I'd have shown you -->
 <section style="background: var(--secondary-bg); padding: 56px 0;">
     <div class="container" style="max-width: 640px; margin: 0 auto;">
-        <h2 class="section-title" style="margin-bottom: 1.5rem;">What I'd have shown you rinkside</h2>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">What I might have shown you rinkside</h2>
         <div style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; display: flex; flex-direction: column; gap: 1rem;">
-            <p><strong style="color:var(--text-primary);">Sunday night</strong> the game film goes in. I clip the dozen moments that matter in about half an hour, and draw on a couple of them so the kids can actually see the gap or the missed support.</p>
-            <p><strong style="color:var(--text-primary);">Monday</strong> the team gets a review on their phones &mdash; just the clips I picked, organized by category. Viewing is free for every player and parent; only the coach pays.</p>
-            <p><strong style="color:var(--text-primary);">Tuesday</strong> the practice assistant drafts the skate around what the film showed &mdash; timed blocks, drills with real rink diagrams, a clean sheet for the bench.</p>
-            <p><strong style="color:var(--text-primary);">Parent-meeting week</strong>, the AI reports turn my notes into a player development plan in twenty minutes instead of a weekend.</p>
+            <p><strong style="color:var(--text-primary);">Monday</strong> the game film goes in and I use the AI assistant to log the game reports. I clip the dozen moments that matter in less than half an hour, and draw on a couple of them so the kids can actually see the gap or the missed support. Tag all their goals so they get to see their successes.</p>
+            <p><strong style="color:var(--text-primary);">Tuesday</strong> the team gets a review on their phones &mdash; just the clips I picked, organized by category. Viewing is free for every player and parent. The practice assistant drafts the practice plans around what the film and game report showed &mdash; timed blocks, drills with real rink diagrams, a clean sheet for the bench.</p>
+            <p><strong style="color:var(--text-primary);">Parent-meeting week</strong>, the AI reports turn my notes into a player development plan in minutes instead of a weekend.</p>
         </div>
     </div>
 </section>
