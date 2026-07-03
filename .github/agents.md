@@ -23,7 +23,18 @@ bundle exec jekyll serve
 ```
 Output goes to `_site/`. Never commit `_site/`.
 
+No Ruby on this machine (e.g. the n8n-1 Linux box)? Use Docker instead:
+```bash
+mkdir -p ~/.cache/scout-elite-gems && docker run --rm --user "$(id -u):$(id -g)" \
+  -e BUNDLE_PATH=/gems -e GEM_HOME=/gems -e HOME=/tmp \
+  -v ~/.cache/scout-elite-gems:/gems -v "$PWD:/site" -w /site -p 4000:4000 \
+  ruby:3 bash -c "bundle install --quiet && bundle exec jekyll serve --host 0.0.0.0 --watch"
+```
+LAN preview from other machines: `http://n8n-1:4000`.
+
 **Verify with `bundle exec jekyll build`** (~1s) — catches Liquid/template errors before serving.
+
+**Browser checks (n8n-1 box):** the `playwright` npm package isn't installed — `npm i playwright-core` in a scratch dir and launch Chromium with `executablePath: ~/.cache/ms-playwright/chromium-*/chrome-linux/chrome` and `--no-sandbox`. The Playwright MCP plugin fails here (it expects Google Chrome at /opt/google/chrome).
 
 **Resizing/compressing images:** no ImageMagick or `sharp` on this machine — use PowerShell `System.Drawing` (GDI+). Hero/OG images → ~1200px-wide JPG, quality ~82.
 
@@ -88,6 +99,10 @@ Key variables:
 
 ## Copy voice
 Direct and practical. Written by parent coaches for parent coaches. No fluff, no corporate tone. See `_pages/features/ai-reports.md` and `_pages/features/playbooks.md` for the established voice. Hero hooks lead with the coach's problem, not the feature name.
+
+**No em-dashes in site prose** — use commas, periods, or parentheses.
+
+**Positioning pillars (2026-07):** lead with the time save ("minutes, not evenings") and AI-assisted identity; work in "it learns your team / gets smarter as you use it" where relevant; never frame the tools as a required workflow or sequence (each works standalone, any order); audience is team coaches, skills coaches, and parents. Don't quote explicit before/after time numbers (no "2 minutes instead of 15").
 
 ## Key URLs
 - Production site: `https://scout-elite.com`
