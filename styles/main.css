@@ -1253,6 +1253,33 @@ main {
     }
 }
 
+/* Mobile: pin the tour tooltip to the bottom as a full-width sheet.
+   intro.js's element-anchored positioning pushes the tooltip (and its
+   close button) off the top of small viewports, and its follow-up scroll
+   can leave the highlighted element off-screen entirely. */
+@media (max-width: 767px) {
+    .introjs-tooltip {
+        position: fixed !important;
+        left: 12px !important;
+        right: 12px !important;
+        top: auto !important;
+        bottom: 12px !important;
+        margin: 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .introjs-tooltiptext {
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+
+    .introjs-arrow {
+        display: none !important;
+    }
+}
+
 /* Role Card Flip Animation */
 .tour-btn {
     perspective: 1000px;
@@ -1357,7 +1384,7 @@ main {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
-    padding: 3rem 2.5rem;
+    padding: 3rem 2.5rem 0;
     max-width: 600px;
     width: 90%;
     max-height: 90vh;
@@ -1426,7 +1453,32 @@ main {
     font-weight: 600;
 }
 
+/* Sticky footer: the primary action stays visible while the modal body
+   scrolls. The bar owns the modal's bottom padding (its container has
+   padding-bottom: 0) and its side margins must mirror the container's
+   side padding so it bleeds full-width. */
 .modal-cta {
     text-align: center;
-    margin-top: 2.5rem;
+    position: sticky;
+    bottom: 0;
+    margin: 2.5rem -2.5rem 0;
+    padding: 1rem 2.5rem 1.5rem;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 767px) {
+    .modal-content {
+        padding: 2rem 1.25rem 0;
+    }
+
+    .modal-title {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+    }
+
+    .modal-cta {
+        margin: 1.5rem -1.25rem 0;
+        padding: 0.9rem 1.25rem 1.25rem;
+    }
 }

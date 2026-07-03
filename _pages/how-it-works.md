@@ -3,62 +3,62 @@ layout: default
 title: "How Scout Elite Works: Video, Reports & Playbooks for Coaches"
 description: "The complete Scout Elite workflow — live game tagging, video clipping, team reviews, interactive playbooks, and AI player reports. Built for youth hockey coaches."
 permalink: /how-it-works/
-last_modified_at: 2026-05-28
+last_modified_at: 2026-07-03
 ---
 
 
 <script>
     function startTeamCoachTour() {
-        introJs().setOptions({
+        introJs.tour().setOptions({
             steps: [
             {
-                title: 'Step 1 - Video Upload',
+                title: 'Video Upload',
                 element: document.querySelector('[data-intro="video-sharing"]'),
                 intro: "<strong>Start with Live Game Videos</strong><br /> Upload game video to your Video Library or ask others to upload and share it with you. You can include both full game videos and shorter individual clips."
             },
             { 
-                title: 'Step 2 - Create a Clip Project',
+                title: 'Create a Clip Project',
                 element: document.querySelector('[data-intro="clip-sessions"]'),
                 intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to annotate and tag new clips."
             },
             { 
-                title: 'Step 3 - Create Your Clips',
+                title: 'Create Your Clips',
                 element: document.querySelector('[data-intro="manual-clipping"]'),
                 intro: "<strong>Find Key Moments</strong><br /> Use advanced clipping tools to find important moments and annotate them by adding a description and tags."
             },
             { 
-                title: 'Step 4 <small>(optional)</small> - Automatic Clipping',
+                title: 'Automatic Clipping <small>(optional)</small>',
                 element: document.querySelector('[data-intro="automatic-clipping"]'),
                 intro: "<strong>Scout Elite Live</strong><br /> If <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a> was used to track game events, ask your helpers to publish the game from their mobile devices and share it with you. Import the game events and notes into a Clip Project to automatically create clips for your game video."
             },
             { 
-                title: 'Step 5 - Organize Clips for Review',
+                title: 'Organize Clips for Review',
                 element: document.querySelector('[data-intro="review-sessions"]'),
                 intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review. Use this Review as a guide for live presentation or share it for the team to review on their own time. Reviews remain accessible forever and can be used as a tool to direct learning in the future."
             },
             {
-                title: 'Step 6 - Document Your System with a Playbook',
+                title: 'Document Your System with a Playbook',
                 element: document.querySelector('[data-intro="playbooks"]'),
                 intro: "<strong>Teach the System</strong><br /> Use <a target=\"_blank\" href=\"/features/playbooks/\">Playbooks</a> to combine sport-specific diagrams, real-game video clips, and coaching notes into one living document. Share it with the team so everyone references the same source of truth all season."
             },
             {
-                title: 'Step 7 - Draft Reports with the AI Assistant',
+                title: 'Draft Reports with the AI Assistant',
                 element: document.querySelector('[data-intro="ai-reports"]'),
                 intro: "<strong>Game &amp; Player Reports in Minutes</strong><br /> After review, use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Reports</a> to chat your way to a polished post-game breakdown or a personal development plan for any player &mdash; without staring at a blank doc on a Sunday night."
             },
             {
-                title: 'Step 8 - Plan the Next Practice',
+                title: 'Plan the Next Practice',
                 element: document.querySelector('[data-intro="practice-plans"]'),
                 intro: "<strong>From Game Takeaways to the Next Skate</strong><br /> Use <a target=\"_blank\" href=\"/features/practice-planning/\">Practice Planning</a> to draft a timed session built around what the game showed you. The assistant pulls from a drill library with rink diagrams &mdash; print it for the bench or run it live at the rink."
             },
             ]
-        }).oncomplete(function() {
+        }).onComplete(function() {
             setTimeout(showTrialModal, 500);
         }).start();
     }
 
     function startParentTour() {
-        introJs().setOptions({
+        introJs.tour().setOptions({
             steps: [
             {
                 title: 'Video Upload',
@@ -86,40 +86,40 @@ last_modified_at: 2026-05-28
                 intro: "<strong>A Plan for Your Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to generate a personal development plan &mdash; things they can do on their own outside of practice (stick handling, shooting, study). It&rsquo;s the answer to &ldquo;what should they work on?&rdquo; already written down."
             }
             ]
-        }).oncomplete(function() {
+        }).onComplete(function() {
             setTimeout(showTrialModal, 500);
         }).start();
     }
     function startSkillsCoachTour() {
-        introJs().setOptions({
+        introJs.tour().setOptions({
             steps: [
             {
-                title: 'Step 1 - Video Upload',
+                title: 'Video Upload',
                 element: document.querySelector('[data-intro="video-sharing"]'),
                 intro: "<strong>Start with Live Game Videos</strong><br /> Ask your client to sign up for Scout Elite to share their videos with you, or have them send you the videos for you to add to your personal Video Library."
             },
             { 
-                title: 'Step 2 - Create a Clip Project',
+                title: 'Create a Clip Project',
                 element: document.querySelector('[data-intro="clip-sessions"]'),
                 intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to annotate and tag new clips."
             },
             { 
-                title: 'Step 3 - Organize Clips for Review',
+                title: 'Organize Clips for Review',
                 element: document.querySelector('[data-intro="review-sessions"]'),
                 intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review and share it with your client. Use this Review as a guide for your live presentation. Reviews remain accessible forever, so your clients can review it themselves later and you can reference them in future discussions."
             },
             {
-                title: 'Step 4 - Hand Off a Development Plan',
+                title: 'Hand Off a Development Plan',
                 element: document.querySelector('[data-intro="ai-reports"]'),
                 intro: "<strong>Take-Home Work for Each Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to draft a personalized at-home development plan after each session. It turns your one-hour session into a week of focused practice between visits."
             },
             {
-                title: 'Step 5 - Plan Your Next Session',
+                title: 'Plan Your Next Session',
                 element: document.querySelector('[data-intro="practice-plans"]'),
                 intro: "<strong>Build Each Session in Minutes</strong><br /> Use <a target=\"_blank\" href=\"/features/practice-planning/\">Practice Planning</a> to draft a timed session from a drill library with rink diagrams. Tune it to what each athlete needs, then print it or run it live on the ice."
             }
             ]
-        }).oncomplete(function() {
+        }).onComplete(function() {
             setTimeout(showTrialModal, 500);
         }).start();
     }
@@ -162,9 +162,9 @@ last_modified_at: 2026-05-28
 <div id="trial-modal" class="modal-overlay">
     <div class="modal-content">
         <button class="modal-close" onclick="hideTrialModal()">&times;</button>
-        <h2 class="modal-title">Ready to Start Your Scout Elite Journey?</h2>
-        <p>Scout Elite gives you everything you need to easily capture game moments, create focused analysis sessions, and share professional video reviews with your team. All in a straight-forward easy-to-use package.</p>
-        <p>Whether you're coaching individual athletes or managing an entire squad, Scout Elite makes video analysis simple and effective.</p>
+        <h2 class="modal-title">Ready to Coach Smarter?</h2>
+        <p>Scout Elite closes the loop on player development. Clip the game, run a focused review, then let the AI assistant turn what you saw into player reports, practice plans, and playbooks your whole team can use.</p>
+        <p>Whether you're coaching individual athletes or managing an entire squad, Scout Elite handles the busywork so you can spend your time actually coaching.</p>
         
         <div class="modal-features">
             <div class="modal-feature">
@@ -173,28 +173,28 @@ last_modified_at: 2026-05-28
             </div>
             <div class="modal-feature">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Video uploads</strong> - Full game footage and clips</div>
+                <div><strong>Video clipping &amp; reviews</strong> - Full games to focused team sessions</div>
             </div>
             <div class="modal-feature">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Clip creation &amp; organization</strong> - Build focused sessions</div>
+                <div><strong>AI player reports</strong> - A development plan for every athlete</div>
             </div>
             <div class="modal-feature">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Reviews</strong> - Direct your team&apos;s learning</div>
+                <div><strong>Practice plans</strong> - Timed sessions with drills and rink diagrams</div>
             </div>
             <div class="modal-feature">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Advanced sharing tools</strong> - Share your work</div>
+                <div><strong>Playbooks</strong> - Diagrams, video, and notes in one living document</div>
             </div>
             <div class="modal-feature">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Mobile app included</strong> - Scout Elite Live for iOS &amp; Android</div>
+                <div><strong>Scout Elite Live included</strong> - Free companion app for iOS &amp; Android</div>
             </div>
         </div>
         
         <div class="modal-cta">
-            <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=trial-modal-cta" target="_blank" class="cta-button" onclick="hideTrialModal()" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your 14 Day Free Trial</a>
+            {% include xpress-cta.html placement="trial-modal-cta" text="Try It Now &rarr; No Signup" class="cta-button" onclick="hideTrialModal()" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);" %}
         </div>
     </div>
 </div>
@@ -205,7 +205,7 @@ last_modified_at: 2026-05-28
         <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
             <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">One Platform. Every Step of Player Development.</h1>
             <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">Scout Elite connects every step of your player development workflow, from live game tagging and video clipping to focused team reviews, interactive playbooks, and AI-generated player reports.</p>
-            <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign={{ page.slug }}&utm_content=hero-cta" target="_blank" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);">Start Your Trial Today</a>
+            {% include xpress-cta.html placement="hero-cta" text="Try It Now &rarr; No Signup" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);" %}
         </div>
         <div class="hero-visual" style="flex:1 1 340px; min-width:220px; max-width:540px; text-align:center;">
             <img src="/img/Scout-Elite-how-it-works-hero.png"
