@@ -41,13 +41,13 @@ last_modified_at: 2026-07-03
     <div class="container" style="max-width: 720px; margin: 0 auto;">
         <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 2.5rem 2rem; text-align: center;">
             <p style="font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.75rem;">For camp families</p>
-            <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-hover); margin-bottom: 0.75rem;">GUSTAVUS</div>
+            <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-hover); margin-bottom: 0.75rem;">GUSTAVUS-26-HOCKEY</div>
             <p style="color: var(--text-primary); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem;">90 days of Pro, on me. No credit card.</p>
             <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 480px; margin: 0 auto 1.75rem auto;">No catch &mdash; honest feedback from coaches like you is worth more to me than $13 a month. Tell me what's broken and what's missing.</p>
             <ol style="text-align: left; max-width: 460px; margin: 0 auto 1.75rem auto; color: var(--text-secondary); line-height: 1.7; padding-left: 1.4rem;">
                 <li>Create your free account</li>
                 <li>Open <strong style="color:var(--text-primary);">Account &rarr; Subscription</strong></li>
-                <li>Enter <strong style="color:var(--text-primary);">GUSTAVUS</strong> &mdash; skip the trial, the code replaces it</li>
+                <li>Enter <strong style="color:var(--text-primary);">GUSTAVUS-26-HOCKEY</strong> &mdash; skip the trial, the code replaces it</li>
             </ol>
             {% include xpress-cta.html dest="/account/register" placement="camp-code" text="Create Your Account &rarr;" %}
         </div>
