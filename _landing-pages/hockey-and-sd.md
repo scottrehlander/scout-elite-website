@@ -142,7 +142,7 @@ last_modified_at: 2026-07-03
                     </div>
                 </div>
             </div>
-            <p class="chat-mock__caption">This is a real screen. It's how I build Tuesday's skate.</p>
+            <p class="chat-mock__caption">This is how I build Tuesday's skate.</p>
         </div>
     </div>
 </section>
