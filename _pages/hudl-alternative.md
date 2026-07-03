@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Scout Elite vs HUDL: A Youth Hockey Coach's Comparison"
-description: "HUDL is built for programs with budgets. Scout Elite covers a youth hockey coach's whole week — film, clips, reviews, practice plans, playbooks, and AI reports — for $4.99–$12.99/mo. An honest comparison."
+description: "HUDL is built for programs with budgets. Scout Elite covers a youth hockey coach's whole week of film, clips, reviews, practice plans, playbooks, and AI reports for $4.99–$12.99/mo. An honest comparison."
 permalink: /hudl-alternative/
 utm_campaign: hudl-alternative
 last_modified_at: 2026-07-02
@@ -20,7 +20,7 @@ last_modified_at: 2026-07-02
     <div class="container">
         <div class="hero-content" style="max-width: 680px; margin: 0 auto; text-align: center;">
             <h1 class="hero-title">HUDL is built for programs with budgets. You're one coach with a parent-run team.</h1>
-            <p class="hero-subtitle">If your program already pays for HUDL, keep it &mdash; it's a good team video platform. But if you're a youth or club coach buying your own tools, you're probably not choosing between Scout Elite and HUDL. You're choosing between Scout Elite and a group chat full of whiteboard photos.</p>
+            <p class="hero-subtitle">If your program already pays for HUDL, keep it. It's a good team video platform. But if you're a youth or club coach buying your own tools, you're probably not choosing between Scout Elite and HUDL. You're choosing between Scout Elite and a group chat full of whiteboard photos.</p>
             <div class="hero-cta" style="justify-content: center;">
                 {% include xpress-cta.html placement="hudl-hero" text="Try Scout Elite Free &rarr; No Signup" %}
             </div>
@@ -34,7 +34,7 @@ last_modified_at: 2026-07-02
         <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 2rem;">
             <p style="font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.75rem;">The short version</p>
             <p style="color: var(--text-primary); font-size: 1.15rem; line-height: 1.7; margin-bottom: 1rem;"><strong>HUDL</strong> is a team video and recruiting platform, typically bought by a school or program as a per-team, per-season package.</p>
-            <p style="color: var(--text-primary); font-size: 1.15rem; line-height: 1.7; margin-bottom: 0;"><strong>Scout Elite</strong> is bought by the coach &mdash; $4.99&ndash;$12.99/month &mdash; and covers the parts of coaching HUDL doesn't: practice planning, drills, playbooks, and AI player reports, alongside the full film-review workflow. Players and parents view everything free.</p>
+            <p style="color: var(--text-primary); font-size: 1.15rem; line-height: 1.7; margin-bottom: 0;"><strong>Scout Elite</strong> is bought by the coach for $4.99&ndash;$12.99 a month, and covers the parts of coaching HUDL doesn't: practice planning, drills, playbooks, and AI player reports, alongside the full film-review workflow. Players and parents view everything free.</p>
         </div>
     </div>
 </section>
@@ -108,7 +108,7 @@ last_modified_at: 2026-07-02
                 </tbody>
             </table>
         </div>
-        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">HUDL column reflects our reading of publicly available HUDL product pages as of July 2026. Packages and features vary &mdash; confirm details with HUDL before buying.</p>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">HUDL column reflects our reading of publicly available HUDL product pages as of July 2026. Packages and features vary; confirm details with HUDL before buying.</p>
     </div>
 </section>
 
@@ -118,15 +118,15 @@ last_modified_at: 2026-07-02
         <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
             <div class="feature-card">
                 <h3 class="feature-title">When HUDL is the right call</h3>
-                <p class="feature-description">Your program or school pays for it. Your players are at the age where recruiting exposure matters and college coaches expect a HUDL highlight link. You want professional stat breakdowns delivered after every game. HUDL is genuinely good at all of that &mdash; nothing here replaces it.</p>
+                <p class="feature-description">Your program or school pays for it. Your players are at the age where recruiting exposure matters and college coaches expect a HUDL highlight link. You want professional stat breakdowns delivered after every game. HUDL is genuinely good at all of that, and nothing here replaces it.</p>
             </div>
             <div class="feature-card">
                 <h3 class="feature-title">When Scout Elite is</h3>
-                <p class="feature-description">You're a youth, club, or skills coach paying for your own tools. Your team's problem isn't recruiting exposure &mdash; it's that the review is in the group chat, the practice plan is in email, and the playbook is a photo of a whiteboard. You want the film to drive what happens at the next practice, not just live in a highlight reel.</p>
+                <p class="feature-description">You're a youth, club, or skills coach paying for your own tools. Your team's problem isn't recruiting exposure. It's that the review is in the group chat, the practice plan is in email, and the playbook is a photo of a whiteboard. You want the film to drive what happens at the next practice, not just live in a highlight reel.</p>
             </div>
         </div>
         <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 1rem; padding: 1.75rem 2rem; margin-top: 1.5rem;">
-            <p style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.7; margin: 0;"><strong>Plenty of coaches run both.</strong> HUDL handles the program's game film and recruiting; Scout Elite handles the coaching half &mdash; practice plans, playbooks, drills, and player development reports &mdash; for the price of a stick of tape.</p>
+            <p style="color: var(--text-primary); font-size: 1.05rem; line-height: 1.7; margin: 0;"><strong>Plenty of coaches run both.</strong> HUDL handles the program's game film and recruiting; Scout Elite handles the coaching half (practice plans, playbooks, drills, and player development reports) for the price of a stick of tape.</p>
         </div>
     </div>
 </section>
@@ -140,19 +140,19 @@ last_modified_at: 2026-07-02
         <div style="display:flex; flex-direction:column; gap:1.25rem;">
             <div>
                 <h3 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.4rem;">Can I switch (or start) mid-season?</h3>
-                <p style="color:var(--text-secondary); line-height:1.7;">Yes. There's no contract and no per-season commitment &mdash; it's a monthly subscription you can cancel anytime, and you can <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&amp;utm_medium=website&amp;utm_campaign=hudl-alternative&amp;utm_content=faq-try" target="_blank" rel="noopener" data-try-placement="faq-try">try the full app in your browser</a> before creating an account.</p>
+                <p style="color:var(--text-secondary); line-height:1.7;">Yes. There's no contract and no per-season commitment. It's a monthly subscription you can cancel anytime, and you can <a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&amp;utm_medium=website&amp;utm_campaign=hudl-alternative&amp;utm_content=faq-try" target="_blank" rel="noopener" data-try-placement="faq-try">try the full app in your browser</a> before creating an account.</p>
             </div>
             <div>
                 <h3 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.4rem;">Do my players and their parents have to pay?</h3>
-                <p style="color:var(--text-secondary); line-height:1.7;">No. Everything you share &mdash; reviews, playbooks, reports &mdash; is free to view for your whole roster. Only the coach pays.</p>
+                <p style="color:var(--text-secondary); line-height:1.7;">No. Everything you share (reviews, playbooks, reports) is free to view for your whole roster. Only the coach pays.</p>
             </div>
             <div>
                 <h3 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.4rem;">What about the game film I already have?</h3>
-                <p style="color:var(--text-secondary); line-height:1.7;">If you have the video file, you can upload it &mdash; full games or clips, from any camera or service. Rink camera subscriber? See our <a href="/blog/livebarn-download-guide/">guide to downloading your LiveBarn footage</a>.</p>
+                <p style="color:var(--text-secondary); line-height:1.7;">If you have the video file, you can upload it: full games or clips, from any camera or service. Rink camera subscriber? See our <a href="/blog/livebarn-download-guide/">guide to downloading your LiveBarn footage</a>.</p>
             </div>
             <div>
                 <h3 style="color:var(--text-primary); font-size:1.1rem; margin-bottom:0.4rem;">Am I locked in?</h3>
-                <p style="color:var(--text-secondary); line-height:1.7;">No. Your video is yours, and your drills are stored in an open, portable format &mdash; leaving with your work intact is a design goal, not a support ticket.</p>
+                <p style="color:var(--text-secondary); line-height:1.7;">No. Your video is yours, and your drills are stored in an open, portable format. Leaving with your work intact is a design goal, not a support ticket.</p>
             </div>
         </div>
     </div>
