@@ -155,6 +155,7 @@ last_modified_at: 2026-07-03
             <p><strong style="color:var(--text-primary);">Monday</strong> the game film goes in and I use the AI assistant to log the game reports. I clip the dozen moments that matter in less than half an hour, and draw on a couple of them so the kids can actually see the gap or the missed support. Tag all their goals so they get to see their successes.</p>
             <p><strong style="color:var(--text-primary);">Tuesday</strong> the team gets a review on their phones with just the clips I picked, organized by category. Viewing is free for every player and parent. The practice assistant drafts the practice plans around what the film and game report showed: timed blocks, drills with real rink diagrams, a clean sheet for the bench.</p>
             <p><strong style="color:var(--text-primary);">Parent-meeting week</strong>, the AI reports turn my notes into a player development plan in minutes instead of a weekend.</p>
+            <p>Wondering how it stacks up against HUDL? <a href="/hudl-alternative/" style="color: var(--accent-hover);">Here's my honest take.</a></p>
         </div>
     </div>
 </section>

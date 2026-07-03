@@ -39,6 +39,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css">
     <script src="https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js"></script>
 
+    {% if jekyll.environment == "production" %}
+    <!-- Analytics load ONLY in production builds (GitHub Pages sets JEKYLL_ENV=production),
+         so local previews never pollute GA4/Clarity. -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J2LE6QB20"></script>
     <script>
@@ -56,6 +59,7 @@
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "tmh4doxhi1");
   </script>
+    {% endif %}
 </head>
 <body>
     <!-- Sitewide "Try Free" strip — anonymous trial, no signup required. -->
@@ -392,6 +396,7 @@
                         <li><a href="{{ '/features/teams' | relative_url }}">Teams &amp; Sharing</a></li>
                         <li><a href="{{ '/scout-elite-live' | relative_url }}">Scout Elite Live</a></li>
                         <li><a href="{{ '/#pricing' | relative_url }}">Pricing</a></li>
+                        <li><a href="{{ '/hudl-alternative' | relative_url }}">Scout Elite vs HUDL</a></li>
                         <li><a href="{{ '/how-it-works' | relative_url }}">How it Works</a></li>
                         <li><a href="{{ '/blog' | relative_url }}">Blog</a></li>
                         <li><a href="{{ '/hockey-glossary' | relative_url }}">Hockey Glossary</a></li>

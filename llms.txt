@@ -24,6 +24,7 @@ Scout Elite helps coaches clip game footage, run focused team video reviews, pla
 - [Practice Planning](https://scout-elite.com/features/practice-planning/): AI drafts a timed practice plan from your game analysis. Pull from a drill library with real rink diagrams, coaching points, and ratings; print a bench sheet, share it with staff, or run it live from a phone.
 - [Video Analysis](https://scout-elite.com/features/video/): Upload game footage, clip key moments, tag by player or situation, add telestration drawings.
 - [Scout Elite Live](https://scout-elite.com/scout-elite-live/): Mobile app for live in-game event tracking (goals, penalties, custom notes). Events sync to video sessions for automatic clip creation.
+- [Scout Elite vs HUDL](https://scout-elite.com/hudl-alternative/): An honest comparison for youth hockey coaches: who buys each, what each covers, when to run both.
 - [Teams](https://scout-elite.com/features/teams/): Create a team, invite your roster and parents, and share any review, playbook, or report with everyone in one click. Role-based access keeps coaches in control.
 
 ## Pricing

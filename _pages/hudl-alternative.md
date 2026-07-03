@@ -7,13 +7,6 @@ utm_campaign: hudl-alternative
 last_modified_at: 2026-07-02
 ---
 
-<!-- DRAFT — Scott: review before publishing.
-     1) Verify the HUDL column claims against hudl.com's current packages (they change; the
-        footnote hedges, but the rows should still be right as of publish date).
-     2) No specific HUDL prices are stated on purpose — only the pricing *model*. Keep it that way
-        unless you want to maintain numbers.
-     3) Tone check: the page concedes HUDL's strengths (recruiting, stat services) deliberately —
-        coaches trust a comparison that isn't a hit piece. -->
 
 <!-- Hero -->
 <section class="hero" style="background: var(--primary-bg); padding: 72px 0 48px 0;">
