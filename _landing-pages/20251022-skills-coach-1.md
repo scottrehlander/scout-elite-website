@@ -4,6 +4,7 @@ title: Streamline Your Skills Coaching Business - Scout Elite for Skills Coaches
 description: Stop wasting hours on video editing. Scout Elite gives skills coaches a professional platform to review, annotate, and deliver feedback that parents can access forever.
 permalink: /lp/20251022-skills-coach-1/
 sitemap: false
+utm_campaign: landing-skills-coach
 ---
 
 <style>
@@ -26,7 +27,7 @@ sitemap: false
             <h1 class="hero-title" style="font-size: 3rem; line-height: 1.1; margin-bottom: 1.5rem;">Stop Wrestling With Video Editors. Start Coaching.</h1>
             <p class="hero-subtitle" style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-secondary);">Scout Elite gives skills coaches a professional platform to organize client footage, create annotated reviews, and deliver lasting value - with fully featured, integrated video editing and annotation tools.</p>
             <div class="hero-cta" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Free 14-Day Trial</a>
+                {% include xpress-cta.html dest="/account/register?plan=pro" placement="lp-hero" text="Start Free 14-Day Trial" style="font-size: 1.1rem; padding: 1rem 2rem;" %}
                 <a href="#how-it-works" class="btn btn-secondary" style="font-size: 1.1rem; padding: 1rem 2rem;">See How It Works</a>
             </div>
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Setup in minutes • Cancel anytime</p>
@@ -153,7 +154,7 @@ sitemap: false
         </div>
 
         <div style="text-align: center; margin-top: 4rem;">
-            <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Your Free Trial</a>
+            {% include xpress-cta.html dest="/account/register?plan=pro" placement="lp-how-it-works" text="Start Your Free Trial" style="font-size: 1.1rem; padding: 1rem 2.5rem;" %}
         </div>
     </div>
 </section>
@@ -236,7 +237,7 @@ sitemap: false
             
             <div style="margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
                 <p style="font-size: 1.1rem; margin-bottom: 1.5rem; color: var(--text-secondary);">Ready to join the Scout Elite coaching network?</p>
-                <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Start Your Free Trial</a>
+                {% include xpress-cta.html dest="/account/register?plan=pro" placement="lp-network" text="Start Your Free Trial" style="font-size: 1.1rem; padding: 1rem 2rem;" %}
             </div>
         </div>
     </div>
@@ -303,7 +304,7 @@ sitemap: false
                 <div style="font-size: 0.95rem; opacity: 0.95;">Full access • No credit card required • Cancel anytime</div>
             </div>
 
-            <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem; width: 100%; max-width: 400px; display: inline-block;">Start Your Free Trial</a>
+            {% include xpress-cta.html dest="/account/register?plan=pro" placement="lp-pricing" text="Start Your Free Trial" style="font-size: 1.1rem; padding: 1rem 2.5rem; width: 100%; max-width: 400px; display: inline-block;" %}
             
             <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-secondary);">One simple price covers unlimited clients and Reviews</p>
         </div>
@@ -351,7 +352,7 @@ sitemap: false
     <div class="container" style="max-width: 800px; text-align: center;">
         <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: white;">Ready to Elevate Your Skills Coaching?</h2>
         <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.95;">Join skills coaches who've streamlined their workflow and grown their business with Scout Elite.</p>
-        <a href="https://xpress.scout-elite.com/account/register?plan=pro" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2.5rem;">Start Free 14-Day Trial</a>
+        {% include xpress-cta.html dest="/account/register?plan=pro" placement="lp-footer" text="Start Free 14-Day Trial" style="font-size: 1.1rem; padding: 1rem 2.5rem;" %}
         <p style="margin-top: 1.5rem; font-size: 0.95rem; opacity: 0.9;">Setup in minutes • Cancel anytime</p>
     </div>
 </section>
