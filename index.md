@@ -2,7 +2,7 @@
 layout: default
 title: "Scout Elite: Video Analysis & Tools for Youth & Minor Hockey"
 description: "Scout Elite helps youth hockey coaches clip game footage, run focused team reviews, plan practices, build interactive playbooks, and generate AI player reports."
-last_modified_at: 2026-04-15
+last_modified_at: 2026-07-03
 utm_campaign: homepage
 ---
 
@@ -123,19 +123,19 @@ utm_campaign: homepage
         </div>
                 
         <div class="section-header" style="margin-top:4em;">
-            <h2 class="section-title">Efficient Video Reviews Made Easy</h2>
+            <h2 class="section-title">From Game Day to the Next Practice</h2>
             <p class="section-subtitle">
-                Designed by parent coaches that understand the unique challenges faced by young athletes, teams, and their families.
+                Video review is where it starts, not where it ends. Watch how one game becomes clips, a focused team review, player development reports, and the plan for your next skate.
             </p>
         </div>
         
         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.25); background: var(--card-bg);">
-            <iframe src="https://www.youtube.com/embed/GAhEaEStDec" title="Scout Elite Overview" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1rem;"></iframe>
+            <iframe src="https://www.youtube.com/embed/XkhwIlIs-ss" title="Coach Smarter: Scout Elite for Youth &amp; Minor Hockey Player Development" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1rem;"></iframe>
         </div>
                     
     </div>
     <div style="text-align:center; margin-top:4em;">
-        <p class="how-to-cta" style="margin-top:1.5em;"><a href="https://xpress.scout-elite.com/?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-hero-live" class="btn btn-primary" data-try-placement="pricing-hero-live">Try Scout Elite Live Today</a></p>
+        <p class="how-to-cta" style="margin-top:1.5em;">{% include xpress-cta.html placement="home-video-cta" text="Try Scout Elite Free &rarr; No Signup" %}</p>
     </div>
 </section>
 
