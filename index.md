@@ -11,7 +11,7 @@ utm_campaign: homepage
     <div class="container">
         <div class="hero-content">
             <h1 class="hero-title">Your players improve when you can focus on coaching.</h1>
-            <p class="hero-subtitle">Scout Elite handles video clipping, individual player reports, practice plans, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
+            <p class="hero-subtitle">Scout Elite's AI-assisted tools handle video clipping, individual player reports, practice plans, playbook setup, and review prep so you can spend that time actually coaching your team. Built by parent coaches for youth hockey.</p>
             <div class="hero-cta">
                 <a target="_blank" href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=home-hero" class="btn btn-primary" data-try-placement="home-hero">Try It Free &rarr; No Signup</a>
                 <a href="/how-it-works" class="btn btn-secondary">See How It Works</a>
@@ -24,126 +24,80 @@ utm_campaign: homepage
     </div>
 </section>
 
-<!-- Features Section -->
-<section id="features" class="features" style="background: var(--secondary-bg);">
+<!-- The development loop, in action (video) -->
+<section class="video-loop" style="background: var(--secondary-bg); padding: 64px 0;">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Why is Scout Elite the best choice for your team?</h2>
-            <p class="section-subtitle">Easy to use and cost-effective. Created by parent coaches for youth hockey teams to maximize learning and fun.</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <h3 class="feature-title">Easy to Use</h3>
-                <p class="feature-description">An intuitive interface with useful features, seamless playback controls, efficient video review, and effective organization - designed for teams of all skill levels.</p>
-                <a href="/how-it-works" class="btn btn-link">Learn More</a>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title">Enables Directed Learning</h3>
-                <p class="feature-description">Provides a crucial tool for teams and athletes to dissect performances, analyze strategies, and make informed decisions to enhance gameplay and achieve optimal results.</p>
-                <a href="/how-it-works" class="btn btn-link">Learn More</a>
-            </div>
-            <div class="feature-card">
-                <h3 class="feature-title">Promotes Team Character</h3>
-                <p class="feature-description">Fosters communication, encourages players to take ownership, highlights both successes and areas for improvement, and cultivates accountability and camaraderie.</p>
-                <a href="/how-it-works" class="btn btn-link">Learn More</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- How to use Scout Elite Section -->
-<section class="how-to-use" style="background: var(--primary-bg); padding: 64px 0;">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Innovation for Youth Hockey</h2>
-            <p class="section-subtitle">
-                    Scout Elite Live streamlines the entire video analysis process for coaches, athletes, and parents - making learning faster, more focused, and more impactful.
-            </p>
-        </div>
-        
-        <div class="how-to-grid" style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
-                <div class="feature-card" style="max-width:340px; text-align:center;">
-                    <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
-                        <!-- Clapperboard Icon -->
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="8" y="18" width="32" height="20" rx="3" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <rect x="8" y="10" width="32" height="10" rx="2" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <path d="M12 10L16 20" stroke="var(--text-primary)" stroke-width="2.5"/>
-                            <path d="M20 10L24 20" stroke="var(--text-primary)" stroke-width="2.5"/>
-                            <path d="M28 10L32 20" stroke="var(--text-primary)" stroke-width="2.5"/>
-                        </svg>
-                    </div>
-                    <h3>Live Game Event Clipping</h3>
-                    <p>Use the <strong>Scout Elite Live</strong> mobile app during games to instantly track goals, penalties, custom notes, and more. View game trends at a glance to direct your in-game strategy.</p>
-                    <p>After the game, import these live-tagged events into your video sessions to automatically create clips, saving hours of painstaking manual review.</p>
-                </div>
-                <div class="feature-card" style="max-width:340px; text-align:center;">
-                    <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
-                        <!-- Target Icon -->
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="24" cy="24" r="18" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <circle cx="24" cy="24" r="10" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <circle cx="24" cy="24" r="3.5" fill="var(--text-primary)"/>
-                        </svg>
-                    </div>
-                    <h3>Targeted Reviews</h3>
-                    <p>Build focused reviews for specific group, like Defense or Goalies, so athletes only see what matters to them. This keeps sessions short, relevant, and engaging, maximizing learning and attention for every player.</p>
-                </div>
-                <div class="feature-card" style="max-width:340px; text-align:center;">
-                    <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
-                        <!-- Share Icon -->
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="36" cy="12" r="4" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <circle cx="12" cy="24" r="4" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <circle cx="36" cy="36" r="4" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <line x1="15.7" y1="22.1" x2="32.3" y2="13.9" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
-                            <line x1="15.7" y1="25.9" x2="32.3" y2="34.1" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>Collaborate, Improve, Learn</h3>
-                    <p>Parents can easily share game videos with coaches for expert analysis. Once reviewed, results and feedback are shared back, giving families actionable insights to help their athletes grow and succeed.</p>
-                    <p>Video analysis shouldn't be exclusive to elite teams with big budgets.</p>
-                </div>
-                <div class="feature-card" style="max-width:340px; text-align:center;">
-                    <div class="feature-icon" style="background:transparent; margin: 0 auto 1.5rem auto;">
-                        <!-- Clipboard Icon -->
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="8" width="24" height="32" rx="3" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <rect x="18" y="5" width="12" height="7" rx="2" stroke="var(--text-primary)" stroke-width="2.5" fill="none"/>
-                            <path d="M18 20H30" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M18 27H30" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
-                            <path d="M18 34H25" stroke="var(--text-primary)" stroke-width="2.5" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h3>Plan Your Next Practice</h3>
-                    <p>Turn what you saw in the game into the plan for the next skate. The <a href="/features/practice-planning/">practice assistant</a> drafts a timed session built around your game takeaways, with drills and rink diagrams ready to go.</p>
-                    <p>Print a clean sheet for the bench or run it live from your phone at the rink.</p>
-                </div>
-        </div>
-                
-        <div class="section-header" style="margin-top:4em;">
             <h2 class="section-title">From Game Day to the Next Practice</h2>
             <p class="section-subtitle">
                 Video review is where it starts, not where it ends. Watch how one game becomes clips, a focused team review, player development reports, and the plan for your next skate.
             </p>
         </div>
-        
         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.25); background: var(--card-bg);">
             <iframe src="https://www.youtube.com/embed/XkhwIlIs-ss" title="Coach Smarter: Scout Elite for Youth &amp; Minor Hockey Player Development" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1rem;"></iframe>
         </div>
-                    
-    </div>
-    <div style="text-align:center; margin-top:4em;">
-        <p class="how-to-cta" style="margin-top:1.5em;">{% include xpress-cta.html placement="home-video-cta" text="Try Scout Elite Free &rarr; No Signup" %}</p>
+        <div style="text-align:center; margin-top:2.5em;">
+            {% include xpress-cta.html placement="home-video-cta" text="Try Scout Elite Free &rarr; No Signup" %}
+        </div>
     </div>
 </section>
+
+<!-- Value props: the jobs Scout Elite takes off a coach's plate -->
+<section class="coaching-jobs" style="background: var(--primary-bg); padding: 64px 0;">
+    <div class="container" style="max-width:860px;">
+        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+            <h2 class="section-title">Minutes, Not Evenings</h2>
+            <p class="section-subtitle" style="max-width:620px; margin:0 auto;">Everything a coach needs to develop players, in one easy place, with an AI assistant doing the heavy lifting. Use one tool or all of them, in any order.</p>
+        </div>
+
+        <div class="features-grid" style="grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));">
+            <div class="feature-card">
+                <h3 class="feature-title">Game film without the late night</h3>
+                <p class="feature-description">Tag moments live from the stands and the clips create themselves. A full game becomes a short, position-focused review the same night, ready to share with the team.</p>
+                <a href="/features/video/" class="btn btn-link">Video &amp; Reviews &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">A real answer to &ldquo;what should my kid work on?&rdquo;</h3>
+                <p class="feature-description">Tell the AI what you saw and a polished post-game report or personal development plan drafts itself while you chat. Specifics for every player on the roster, without an evening at the keyboard.</p>
+                <a href="/features/ai-reports/" class="btn btn-link">AI Reports &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">A full practice plan in minutes</h3>
+                <p class="feature-description">The assistant drafts a timed session with drills and real rink diagrams, built around what your games showed you. Adjust it in plain English, then print it for the bench or run it from your phone.</p>
+                <a href="/features/practice-planning/" class="btn btn-link">Practice Planning &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Your playbook, out of the Word doc</h3>
+                <p class="feature-description">Rink diagrams, real game clips, and coaching notes in one living Playbook. Tweak your system and update it in minutes, and the whole team sees it instantly, all season.</p>
+                <a href="/features/playbooks/" class="btn btn-link">Playbooks &rarr;</a>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top:3.5rem;">
+            <p style="color:var(--text-secondary); max-width:640px; margin:0 auto 0.75em;"><strong style="color:var(--text-primary);">And it gets smarter every week.</strong> Scout Elite learns your team as you use it: reports remember your players, practice plans know what you've been working on, and every new draft starts closer to done. That's the <a href="/blog/player-development-loop/">development loop</a> working for you.</p>
+            <p style="color:var(--text-secondary); max-width:640px; margin:0 auto 1.25em;">Team coach, skills coach, or hockey parent, <a href="/how-it-works/">it works the same way</a>.</p>
+            {% include xpress-cta.html placement="home-value-cta" text="Try It Now &rarr; No Signup" %}
+        </div>
+    </div>
+</section>
+
+<!-- Built by parent coaches -->
+<section style="background: var(--primary-bg); padding: 0 0 64px 0;">
+    <div class="container" style="max-width:860px;">
+        <div style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:2rem 2.5rem; text-align:center;">
+            <h2 style="color:var(--text-primary); font-size:1.4rem; margin-bottom:0.75rem;">Built by parent coaches, for parent coaches</h2>
+            <p style="color:var(--text-secondary); line-height:1.6; margin:0;">Scout Elite exists because video analysis and AI coaching tools shouldn't be exclusive to elite programs with big budgets. That's why it's free for players and parents, and coaches start at $4.99 a month.</p>
+        </div>
+    </div>
+</section>
+
+
 
 <!-- Pricing Section -->
 <section id="pricing" class="pricing-invite" style="background: var(--secondary-bg); padding: 64px 0;">
     <div class="container">
         <div class="section-header" style="text-align:center; margin-bottom:2.5rem;">
-            <h1 class="section-title">Pricing</h1>
+            <h2 class="section-title">Pricing</h2>
             <p class="section-subtitle">Free for players and parents to view. Coaches start at $4.99/mo. Every paid plan includes a 14-day free trial.</p>
             <p style="margin-top:0.75rem;"><a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-intro" target="_blank" rel="noopener" data-try-placement="pricing-intro" style="color:var(--accent-hover); font-weight:600;">Or try the full app first &mdash; no signup needed &rarr;</a></p>
         </div>
