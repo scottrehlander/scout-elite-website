@@ -10,13 +10,102 @@ last_modified_at: 2026-07-02
 
 <!-- Hero -->
 <section class="hero" style="background: var(--primary-bg); padding: 72px 0 48px 0;">
-    <div class="container">
-        <div class="hero-content" style="max-width: 680px; margin: 0 auto; text-align: center;">
+    <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:48px;">
+        <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:600px;">
             <h1 class="hero-title">HUDL is built for programs with budgets. You're one coach with a parent-run team.</h1>
             <p class="hero-subtitle">If your program already pays for HUDL, keep it. It's a good team video platform. But if you're a youth or club coach buying your own tools, you're probably not choosing between Scout Elite and HUDL. You're choosing between Scout Elite and a group chat full of whiteboard photos.</p>
-            <div class="hero-cta" style="justify-content: center;">
+            <div class="hero-cta">
                 {% include xpress-cta.html placement="hudl-hero" text="Try Scout Elite Free &rarr; No Signup" %}
             </div>
+        </div>
+        <div class="hero-visual" style="flex:1 1 320px; min-width:260px; max-width:460px; margin:0 auto;">
+            <svg viewBox="0 0 520 440" width="100%" role="img" aria-label="A single isolated video tool next to Scout Elite's connected loop of six coaching tools, drawn as a hockey faceoff circle" style="display:block;">
+                <style>
+                    .se-loop-ring { animation: se-dash 12s linear infinite; }
+                    @keyframes se-dash { to { stroke-dashoffset: -320; } }
+                    @media (prefers-reduced-motion: reduce) { .se-loop-ring { animation: none; } }
+                </style>
+
+                <!-- Faceoff circle hash marks -->
+                <g stroke="var(--border-color)" stroke-width="2">
+                    <line x1="290" y1="51" x2="290" y2="61"/>
+                    <line x1="330" y1="51" x2="330" y2="61"/>
+                    <line x1="290" y1="349" x2="290" y2="359"/>
+                    <line x1="330" y1="349" x2="330" y2="359"/>
+                </g>
+
+                <!-- The loop -->
+                <circle class="se-loop-ring" cx="310" cy="205" r="140" fill="none" stroke="var(--accent-primary)" stroke-width="1.5" stroke-dasharray="6 10" opacity="0.7"/>
+
+                <!-- Flow chevrons (clockwise) -->
+                <g fill="none" stroke="var(--accent-hover)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M -5 -4 L 3 0 L -5 4" transform="translate(380,83.8) rotate(30)"/>
+                    <path d="M -5 -4 L 3 0 L -5 4" transform="translate(380,326.2) rotate(150)"/>
+                    <path d="M -5 -4 L 3 0 L -5 4" transform="translate(170,205) rotate(270)"/>
+                </g>
+
+                <!-- Center faceoff dot -->
+                <circle cx="310" cy="205" r="16" fill="var(--accent-primary)" opacity="0.15"/>
+                <circle cx="310" cy="205" r="8" fill="var(--accent-primary)"/>
+
+                <!-- Extraction line: the one node a video platform sells -->
+                <line x1="100" y1="317" x2="164" y2="284" stroke="var(--border-color)" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>
+
+                <!-- Lone node: just video -->
+                <g>
+                    <circle cx="78" cy="330" r="24" fill="var(--card-bg)" stroke="var(--border-color)" stroke-width="2"/>
+                    <path d="M -3.5 -5.5 L 5.5 0 L -3.5 5.5 Z" transform="translate(78,330)" fill="none" stroke="var(--text-secondary)" stroke-width="1.8" stroke-linejoin="round"/>
+                </g>
+                <text x="78" y="374" text-anchor="middle" font-size="10.5" letter-spacing="0.14em" fill="var(--text-muted)" style="text-transform:uppercase;">Just video</text>
+
+                <!-- Loop nodes: video, clips, review, playbook, reports, practice -->
+                <!-- Video (lower-left) -->
+                <g transform="translate(188.8,275)">
+                    <circle r="27" fill="var(--card-bg)" stroke="var(--accent-primary)" stroke-width="2"/>
+                    <path d="M -3.5 -5.5 L 5.5 0 L -3.5 5.5 Z" fill="none" stroke="var(--text-primary)" stroke-width="1.8" stroke-linejoin="round"/>
+                </g>
+                <!-- Clips (upper-left) -->
+                <g transform="translate(188.8,135)" fill="none" stroke="var(--text-primary)" stroke-width="1.8" stroke-linecap="round">
+                    <circle r="27" fill="var(--card-bg)" stroke="var(--accent-primary)" stroke-width="2"/>
+                    <circle cx="-6.5" cy="6.5" r="3.2"/>
+                    <circle cx="-6.5" cy="-6.5" r="3.2"/>
+                    <line x1="-4" y1="4.5" x2="9" y2="-7"/>
+                    <line x1="-4" y1="-4.5" x2="9" y2="7"/>
+                </g>
+                <!-- Review (top) -->
+                <g transform="translate(310,65)" fill="none" stroke="var(--text-primary)" stroke-width="1.8" stroke-linecap="round">
+                    <circle r="27" fill="var(--card-bg)" stroke="var(--accent-primary)" stroke-width="2"/>
+                    <rect x="-9" y="-8" width="18" height="12" rx="1.5"/>
+                    <line x1="0" y1="4" x2="0" y2="8"/>
+                    <line x1="-4" y1="8" x2="4" y2="8"/>
+                </g>
+                <!-- Playbook (upper-right) -->
+                <g transform="translate(431.2,135)" fill="none" stroke="var(--text-primary)" stroke-width="1.8">
+                    <circle r="27" fill="var(--card-bg)" stroke="var(--accent-primary)" stroke-width="2"/>
+                    <ellipse rx="9.5" ry="6.5"/>
+                    <line x1="-9.5" y1="0" x2="9.5" y2="0" stroke-dasharray="2 2" stroke-width="1.2"/>
+                    <circle r="1.6" fill="var(--text-primary)" stroke="none"/>
+                </g>
+                <!-- AI Reports (lower-right) -->
+                <g transform="translate(431.2,275)" fill="none" stroke="var(--text-primary)" stroke-width="1.8">
+                    <circle r="27" fill="var(--card-bg)" stroke="var(--accent-primary)" stroke-width="2"/>
+                    <path d="M -6.5 -7.5 h 13 a 2.5 2.5 0 0 1 2.5 2.5 v 7 a 2.5 2.5 0 0 1 -2.5 2.5 h -6 l -4.5 4 v -4 h -2.5 a 2.5 2.5 0 0 1 -2.5 -2.5 v -7 a 2.5 2.5 0 0 1 2.5 -2.5 z" stroke-linejoin="round"/>
+                    <circle cx="-3.5" cy="-0.5" r="1.1" fill="var(--text-primary)" stroke="none"/>
+                    <circle cx="0" cy="-0.5" r="1.1" fill="var(--text-primary)" stroke="none"/>
+                    <circle cx="3.5" cy="-0.5" r="1.1" fill="var(--text-primary)" stroke="none"/>
+                </g>
+                <!-- Practice plan (bottom) -->
+                <g transform="translate(310,345)" fill="none" stroke="var(--text-primary)" stroke-width="1.8" stroke-linecap="round">
+                    <circle r="27" fill="var(--card-bg)" stroke="var(--accent-primary)" stroke-width="2"/>
+                    <rect x="-7" y="-9" width="14" height="18" rx="2"/>
+                    <rect x="-3.5" y="-11" width="7" height="4" rx="1.2" fill="var(--card-bg)"/>
+                    <line x1="-4" y1="-2" x2="4" y2="-2"/>
+                    <line x1="-4" y1="2" x2="4" y2="2"/>
+                    <line x1="-4" y1="6" x2="1" y2="6"/>
+                </g>
+
+                <text x="310" y="412" text-anchor="middle" font-size="10.5" letter-spacing="0.14em" fill="var(--text-muted)" style="text-transform:uppercase;">A coach's whole week</text>
+            </svg>
         </div>
     </div>
 </section>
