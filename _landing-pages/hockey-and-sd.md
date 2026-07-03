@@ -192,7 +192,7 @@ last_modified_at: 2026-07-03
 <section style="background: var(--primary-bg); padding: 56px 0;">
     <div class="container" style="max-width: 640px; margin: 0 auto;">
         <h2 class="section-title" style="margin-bottom: 1rem;">One more thing, if you coach</h2>
-        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.75; margin-bottom: 1.5rem;">I'm taking on <strong style="color:var(--text-primary);">25 founding coaches</strong> this season. You get Pro free through the whole season and a direct line to me. In return: a 15-minute call once a month telling me what's broken, and, if you end up loving it, a testimonial and a couple of your drills shared to the community library. That's the whole deal.</p>
+        <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.75; margin-bottom: 1.5rem;">I'm taking on <strong style="color:var(--text-primary);">five founding coaches</strong> this season, and I mean five. You get Pro free through the whole season and a direct line to me. In return: a 15-minute call once a month telling me what's broken, and, if you end up loving it, a testimonial and a couple of your drills shared to the community library. That's the whole deal.</p>
         <!-- TODO(GTM plan §4 Sunday): add the Calendly "15-min setup call" link here once created. -->
         <a href="/support/" class="btn btn-secondary">Get in Touch</a>
     </div>
