@@ -182,9 +182,8 @@ last_modified_at: 2026-07-03
 <section style="background: var(--secondary-bg); padding: 56px 0;">
     <div class="container" style="max-width: 860px; margin: 0 auto;">
         <h2 class="section-title" style="text-align:center; margin-bottom: 2rem;">Three minutes, if you'd rather watch</h2>
-        <!-- TODO(GTM plan §7): replace this interim overview embed with the 3-minute "Coach's Week" demo video once recorded (Sunday 7/5 task). -->
         <div style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.25); background: var(--card-bg);">
-            <iframe src="https://www.youtube.com/embed/GAhEaEStDec" title="Scout Elite Overview" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1rem;"></iframe>
+            <iframe src="https://www.youtube.com/embed/XkhwIlIs-ss" title="Coach Smarter: Scout Elite for Youth &amp; Minor Hockey Player Development" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:1rem;"></iframe>
         </div>
     </div>
 </section>
