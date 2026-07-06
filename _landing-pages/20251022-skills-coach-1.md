@@ -251,7 +251,7 @@ utm_campaign: landing-skills-coach
             <p class="section-subtitle">Watch how skills coaches streamline their workflow with Scout Elite</p>
         </div>
         <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 1rem; box-shadow: 0 8px 32px rgba(0,0,0,0.25); background: var(--card-bg);">
-            <iframe src="https://www.youtube.com/embed/GAhEaEStDec" title="Scout Elite Overview" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;"></iframe>
+            <iframe src="https://www.youtube.com/embed/XkhwIlIs-ss" title="Coach Smarter: Scout Elite for Youth &amp; Minor Hockey Player Development" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 1rem;"></iframe>
         </div>
     </div>
 </section>
