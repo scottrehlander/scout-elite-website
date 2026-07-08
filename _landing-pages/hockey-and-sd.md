@@ -8,141 +8,16 @@ utm_campaign: hockey-and-sd-2026
 last_modified_at: 2026-07-08
 ---
 
-<style>
-/* AI practice-assistant hero mockup — adapted from /features/practice-planning/ */
-.chat-mock {
-    max-width: 480px;
-    width: 100%;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    padding: 1.25rem;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
-    text-align: left;
-}
-.chat-mock__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 0.85rem;
-    margin-bottom: 0.85rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-.chat-mock__title { font-weight: 600; color: var(--text-primary); font-size: 0.95rem; }
-.chat-mock__badge {
-    font-size: 0.7rem;
-    color: var(--accent-hover);
-    background: rgba(0, 153, 255, 0.12);
-    padding: 2px 8px;
-    border-radius: 999px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-.chat-msg { display: flex; gap: 0.6rem; margin: 0.6rem 0; line-height: 1.45; font-size: 0.92rem; }
-.chat-msg--user { flex-direction: row-reverse; text-align: right; }
-.chat-msg__bubble {
-    max-width: 82%;
-    padding: 0.6rem 0.85rem;
-    border-radius: 0.85rem;
-    background: var(--secondary-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-}
-.chat-msg--user .chat-msg__bubble {
-    background: var(--accent-primary);
-    border-color: var(--accent-primary);
-    color: #ffffff;
-}
-.chat-mock__doc {
-    margin-top: 1.1rem;
-    background: var(--primary-bg);
-    border: 1px dashed var(--border-color);
-    border-radius: 0.75rem;
-    padding: 1rem 1.1rem;
-    text-align: left;
-}
-.chat-mock__doc-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 0.6rem;
-}
-.chat-mock__doc-head h4 { margin: 0; color: var(--text-primary); font-size: 0.95rem; }
-.chat-mock__doc-head span { color: var(--accent-hover); font-size: 0.78rem; font-weight: 700; }
-.plan-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    padding: 0.4rem 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-.plan-row__time {
-    flex-shrink: 0;
-    width: 52px;
-    color: var(--accent-hover);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-}
-.plan-row__body { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.4; }
-.plan-row__body strong { color: var(--text-primary); font-weight: 600; }
-.chat-mock__caption {
-    margin-top: 0.85rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
-}
-</style>
-
 <!-- Hero -->
 <section class="hero" style="background: var(--primary-bg); padding: 72px 0 48px 0;">
-    <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:48px;">
-        <div class="hero-content" style="flex:1 1 360px; min-width:280px; max-width:600px; text-align: left;">
+    <div class="container" style="max-width: 680px; margin: 0 auto;">
+        <div class="hero-content" style="text-align: left;">
             <h1 class="hero-title" style="margin-bottom: 1rem;">Hi, I'm Scott. The hockey dad with the app.</h1>
-            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.25rem;">If we met at <strong style="color:var(--text-primary);">Hockey &amp; Daughters</strong> or <strong style="color:var(--text-primary);">Hockey &amp; Sons</strong> at Gustavus, this is the page I mentioned. My kids and I did the camp too. We're a hockey family from Massachusetts, and I coach my kids' teams back home.</p>
-            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.75rem;">I built Scout Elite because my coaching life was scattered across five tools: film in one place, practice plans in CoachThem, and a playbook that was an emailed PDF. I've been building this app to manage player development for almost 5 years now: film, clips, team reviews, practice plans, playbooks, player reports. Now I'm ready to share it.</p>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.75rem;">If we met at <strong style="color:var(--text-primary);">Hockey &amp; Daughters</strong> or <strong style="color:var(--text-primary);">Hockey &amp; Sons</strong> at Gustavus, this is the page I mentioned. We're a hockey family from Massachusetts, my kids and I did the camp too, and I coach their teams back home. I've spent almost five years building Scout Elite to pull my coaching life out of five scattered tools: film, clips, team reviews, practice plans, playbooks, and player reports, all in one place.</p>
             <div class="hero-cta">
-                {% include xpress-cta.html placement="camp-hero" text="Try It Free &rarr; No Signup" %}
+                {% include xpress-cta.html dest="/account/register?promo=GUSTAVUS-26-HOCKEY" placement="camp-hero" text="Claim Your 90 Days of Pro &rarr;" %}
             </div>
-            <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">It loads a real game review in your browser in about ten seconds. No account, no credit card.</p>
-        </div>
-        <div class="hero-visual" style="flex:1 1 340px; min-width:280px; max-width:480px; display:flex; flex-direction:column; align-items:center;">
-            <div class="chat-mock">
-                <div class="chat-mock__header">
-                    <span class="chat-mock__title">Practice Assistant</span>
-                    <span class="chat-mock__badge">AI</span>
-                </div>
-                <div class="chat-msg chat-msg--user">
-                    <div class="chat-msg__bubble">Saturday's game report is in. Breakouts fell apart under the forecheck. 60 minutes, full ice Tuesday, 14 skaters.</div>
-                </div>
-                <div class="chat-msg">
-                    <div class="chat-msg__bubble">On it. Here's a 60-minute skate built from that report: breakout-heavy, with a competitive finish.</div>
-                </div>
-                <div class="chat-mock__doc">
-                    <div class="chat-mock__doc-head">
-                        <h4>Tuesday Practice: Breakouts</h4>
-                        <span>60 min</span>
-                    </div>
-                    <div class="plan-row">
-                        <span class="plan-row__time">0&ndash;10</span>
-                        <span class="plan-row__body"><strong>Warmup</strong>: edges &amp; puck touches</span>
-                    </div>
-                    <div class="plan-row">
-                        <span class="plan-row__time">10&ndash;25</span>
-                        <span class="plan-row__body"><strong>D-to-D breakout reps</strong>: both ends</span>
-                    </div>
-                    <div class="plan-row">
-                        <span class="plan-row__time">25&ndash;40</span>
-                        <span class="plan-row__body"><strong>Breakout vs 1-2-2 forecheck</strong>: live pressure</span>
-                    </div>
-                    <div class="plan-row">
-                        <span class="plan-row__time">40&ndash;60</span>
-                        <span class="plan-row__body"><strong>Small-area game</strong>: breakout to score</span>
-                    </div>
-                </div>
-            </div>
-            <p class="chat-mock__caption">This is how I build Tuesday's skate.</p>
+            <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">No credit card, nothing to cancel. The code applies automatically when you sign up from this page. Or {% include xpress-cta.html placement="camp-hero-try" text="poke around first, no account needed" class="camp-try-link" style="color: var(--accent-hover); text-decoration: underline;" %}.</p>
         </div>
     </div>
 </section>
@@ -184,13 +59,9 @@ last_modified_at: 2026-07-08
             <p style="font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.75rem;">For camp families</p>
             <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-hover); margin-bottom: 0.75rem;">GUSTAVUS-26-HOCKEY</div>
             <p style="color: var(--text-primary); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem;">90 days of Pro, on me. No credit card.</p>
-            <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 480px; margin: 0 auto 1.75rem auto;">No catch. Honest feedback from coaches like you is worth more to me than $13 a month. Tell me what's broken and what's missing.</p>
-            <ol style="text-align: left; max-width: 460px; margin: 0 auto 1.75rem auto; color: var(--text-secondary); line-height: 1.7; padding-left: 1.4rem;">
-                <li>Create your free account</li>
-                <li>Open <strong style="color:var(--text-primary);">Account &rarr; Subscription</strong></li>
-                <li>Enter <strong style="color:var(--text-primary);">GUSTAVUS-26-HOCKEY</strong> instead of starting the trial</li>
-            </ol>
-            {% include xpress-cta.html dest="/account/register" placement="camp-code" text="Create Your Account &rarr;" %}
+            <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 480px; margin: 0 auto 1.25rem auto;">No catch. Honest feedback from coaches like you is worth more to me than $13 a month. Tell me what's broken and what's missing.</p>
+            <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 480px; margin: 0 auto 1.75rem auto;">One click below and the code applies automatically when you create your account. Signing up on a different device? Enter the code under <strong style="color:var(--text-primary);">Account &rarr; Subscription</strong>.</p>
+            {% include xpress-cta.html dest="/account/register?promo=GUSTAVUS-26-HOCKEY" placement="camp-code" text="Claim Your 90 Days of Pro &rarr;" %}
         </div>
     </div>
 </section>
