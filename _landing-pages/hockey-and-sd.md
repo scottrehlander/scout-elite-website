@@ -5,7 +5,7 @@ description: "If we met at Hockey & Daughters or Hockey & Sons at Gustavus, this
 permalink: /lp/hockey-and-sd/
 sitemap: false
 utm_campaign: hockey-and-sd-2026
-last_modified_at: 2026-07-03
+last_modified_at: 2026-07-08
 ---
 
 <style>
@@ -147,16 +147,33 @@ last_modified_at: 2026-07-03
     </div>
 </section>
 
-<!-- What I'd have shown you -->
+<!-- What it does + reading list -->
 <section style="background: var(--secondary-bg); padding: 56px 0;">
     <div class="container" style="max-width: 640px; margin: 0 auto;">
-        <h2 class="section-title" style="margin-bottom: 1.5rem;">What I might have shown you rinkside</h2>
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">What Scout Elite actually does</h2>
         <div style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; display: flex; flex-direction: column; gap: 1rem;">
-            <p><strong style="color:var(--text-primary);">Monday</strong> the game film goes in and I use the AI assistant to log the game reports. I clip the dozen moments that matter in less than half an hour, and draw on a couple of them so the kids can actually see the gap or the missed support. Tag all their goals so they get to see their successes.</p>
-            <p><strong style="color:var(--text-primary);">Tuesday</strong> the team gets a review on their phones with just the clips I picked, organized by category. Viewing is free for every player and parent. The practice assistant drafts the practice plans around what the film and game report showed: timed blocks, drills with real rink diagrams, a clean sheet for the bench.</p>
-            <p><strong style="color:var(--text-primary);">Parent-meeting week</strong>, the AI reports turn my notes into a player development plan in minutes instead of a weekend.</p>
-            <p>Wondering how it stacks up against HUDL? <a href="/hudl-alternative/" style="color: var(--accent-hover);">Here's my honest take.</a></p>
+            <p>It turns the coaching busywork that eats your evenings into minutes. Game film becomes clips, clips become team reviews the kids watch on their phones, and the AI assistant drafts your game reports, player development plans, and practice plans from a few sentences in plain English. It learns your team as the season goes, so what it drafts sounds like your bench, not a template.</p>
+            <p>Every piece works on its own, in any order. Use what fits your season and skip the rest. Wondering how it stacks up against HUDL? <a href="/hudl-alternative/" style="color: var(--accent-hover);">Here's my honest take.</a></p>
+            <p style="margin-top: 0.5rem;"><strong style="color:var(--text-primary);">If you'd rather read the thinking behind it, start with these:</strong></p>
         </div>
+        <ul style="list-style: none; padding: 0; margin: 1.25rem 0 0 0; display: flex; flex-direction: column; gap: 1rem;">
+            <li style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 1rem 1.25rem;">
+                <a href="/blog/tracking-youth-hockey-stats/" style="color: var(--accent-hover); font-weight: 600;">Stop Tracking Stats. Start Writing Game Reports.</a>
+                <p style="margin: 0.35rem 0 0 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Why a short game report beats a season of spreadsheets for developing players.</p>
+            </li>
+            <li style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 1rem 1.25rem;">
+                <a href="/blog/player-development-loop/" style="color: var(--accent-hover); font-weight: 600;">The Player Development Loop</a>
+                <p style="margin: 0.35rem 0 0 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">The weekly cycle that turns games from tests into teachers, with or without software.</p>
+            </li>
+            <li style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 1rem 1.25rem;">
+                <a href="/blog/2026/04/13/high-school-hockey-webinar-recap-coach-greg-capello/" style="color: var(--accent-hover); font-weight: 600;">What High School Coaches Actually Look For</a>
+                <p style="margin: 0.35rem 0 0 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Recording and recap of our webinar with Coach Greg Capello on tryouts and development.</p>
+            </li>
+            <li style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; padding: 1rem 1.25rem;">
+                <a href="/blog/2024/12/08/the-scout-elite-manifesto/" style="color: var(--accent-hover); font-weight: 600;">The Scout Elite Manifesto</a>
+                <p style="margin: 0.35rem 0 0 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">Why I'm building this: leveling the playing field in youth hockey.</p>
+            </li>
+        </ul>
     </div>
 </section>
 
