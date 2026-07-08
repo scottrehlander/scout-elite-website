@@ -3,7 +3,7 @@ layout: default
 title: AI Game & Player Development Reports for Hockey Coaches
 description: "Scout Elite's AI Reports turn a few sentences into a polished post-game breakdown or a personal player development plan. No templates, no blank pages, just chat."
 permalink: /features/ai-reports/
-last_modified_at: 2026-05-28
+last_modified_at: 2026-07-08
 ---
 
 <style>
@@ -256,6 +256,7 @@ last_modified_at: 2026-05-28
                 </ul>
             </div>
         </div>
+        <p style="text-align: center; margin-top: 2.5rem; color: var(--text-secondary);">Wondering why reports beat a season of stat tracking? We wrote up the full argument, references and all: <a href="/blog/tracking-youth-hockey-stats/" style="color: var(--accent-hover);">Stop Tracking Stats. Start Writing Game Reports.</a></p>
     </div>
 </section>
 

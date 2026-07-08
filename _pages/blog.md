@@ -66,6 +66,9 @@ redirect_from:
           <a href="{{ post.url | relative_url }}" class="post-card-link">
             {% if post.image %}
               <div class="post-card-bgimg" style="background-image:url('{{ post.image.path | default: post.image }}');">
+            {% else %}
+              <div class="post-card-bgimg post-card-bgimg--noimg">
+            {% endif %}
                 <div class="post-card-overlay">
                   <div class="post-meta">
                     <span class="post-category">{{ post.categories[0] | capitalize }}</span>
@@ -75,9 +78,6 @@ redirect_from:
                   <span class="post-date">{{ post.date | date: '%B %d, %Y' }}</span>
                 </div>
               </div>
-            {% else %}
-              <div class="post-image-placeholder"></div>
-            {% endif %}
           </a>
         </div>
       {% endfor %}

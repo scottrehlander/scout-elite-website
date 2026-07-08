@@ -4,6 +4,7 @@ display_title: "Why I’m Building Scout Elite: Leveling the Playing Field in Yo
 title: "The Scout Elite Manifesto: Democratizing Youth Hockey Video Analysis"
 description: "A manifesto describing what is wrong with youth hockey and one step we can take to fix it"
 date: 2024-12-08
+last_modified_at: 2026-07-08
 categories: [insights]
 tags: [scout elite live, app, roadmap]
 author: "Coach Scott"
@@ -47,6 +48,12 @@ Here’s how it works:
 - **Automatic Video Clipping** – Those live events link directly to your uploaded game video. Instead of spending hours rewatching, the app auto-clips every relevant moment. Coaches and analysts save time, parents get highlights, and players see exactly what they did.  
 - **Shared Learning** – Coaches can run live video sessions with parents and players together or curate sets of clips for players and families to review on their own time. That means everyone is on the same page, reinforcing the right lessons at the right time.  
 - **Affordable Access** – Families of athletes at all skill levels can access the same video-powered learning that elite programs have, at a fraction of the cost. No hidden fees, no expensive team packages.  
+
+## Beyond Video (2026 Update)
+
+When I wrote this, Scout Elite was about democratizing video analysis. The mission hasn't changed, but the scope has, because the same gap between elite and town programs shows up everywhere else in coaching: the post-game report nobody has time to write, the practice plan built from a guess on a Sunday night, the playbook that lives in an emailed PDF.
+
+Scout Elite now covers the whole [player development loop](/blog/player-development-loop/). AI-assisted game reports and player development plans drafted from a few sentences in your own words. A practice planner that turns what you saw on Saturday into Tuesday's skate, with real rink diagrams. Playbooks where the system gets written down. And the video engine it all started with. Every piece works on its own, in any order, and all of it is priced for volunteer coaches and real families, not pro organizations.
 
 ## Why This Matters  
 

@@ -10,8 +10,8 @@ tags: [player development loop, youth hockey player development, hockey coaching
 author: "Coach Scott"
 excerpt: "Your team plays 40 games a season. How many of them actually change what happens at the next practice? Here's the weekly cycle that turns games from tests into teachers, and how to run it in real life."
 image:
-  path: /img/blog/on-the-bench.jpg
-  alt: "Two youth hockey players watching the ice from the bench"
+  path: /img/blog/getting-the-puck.jpg
+  alt: "A player striving for puck posession during a game"
 permalink: /blog/player-development-loop/
 ---
 
