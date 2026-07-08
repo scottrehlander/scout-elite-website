@@ -9,6 +9,9 @@ categories: [coaching]
 tags: [youth hockey stats, tracking hockey stats, hockey game reports, youth hockey player development, hockey analytics, hockey practice planning, AI game reports, youth hockey coaching]
 author: "Coach Scott"
 excerpt: "I've spent hundreds of hours tracking and analyzing youth hockey stats. Most of that time didn't make a single player better. Here's what the numbers hide, when tracking is actually worth it, and what to do instead."
+image:
+  path: /img/blog/maddie-alone.jpg
+  alt: "A youth hockey player in motion alone on the ice during a game"
 permalink: /blog/tracking-youth-hockey-stats/
 ---
 
