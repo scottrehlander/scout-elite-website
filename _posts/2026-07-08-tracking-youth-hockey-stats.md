@@ -1,15 +1,15 @@
 ---
 layout: post
 display_title: "Stop Tracking Stats. Start Writing Game Reports."
-title: "Youth Hockey Stats vs. Game Reports: What Actually Develops Players"
-description: "Why tracking comprehensive stats in youth hockey rarely pays back, what the numbers hide about your players, and why a short game report beats a season of spreadsheets for real development."
+title: "Tracking Youth Hockey Stats: Why Game Reports Develop Players Better"
+description: "Why tracking youth hockey stats rarely pays back, what the numbers hide about your players, and why short game reports develop players better."
 date: 2026-07-08
 last_modified_at: 2026-07-08
 categories: [coaching]
 tags: [youth hockey stats, tracking hockey stats, hockey game reports, youth hockey player development, hockey analytics, hockey practice planning, AI game reports, youth hockey coaching]
 author: "Coach Scott"
 excerpt: "I've spent hundreds of hours tracking and analyzing youth hockey stats. Most of that time didn't make a single player better. Here's what the numbers hide, when tracking is actually worth it, and what to do instead."
-permalink: /blog/youth-hockey-stats-vs-game-reports/
+permalink: /blog/tracking-youth-hockey-stats/
 ---
 
 I'll open with a confession: I have spent hundreds of hours tracking and analyzing youth hockey stats. Shots, goals, assists, zone time, you name it. Spreadsheets that would make an accountant proud.
@@ -40,7 +40,7 @@ You can do this. I've tried. And every layer of sophistication you add costs mor
 
 **The underlying data is bad.** Youth scoresheets routinely miss assists, especially the defenseman's breakout pass that started everything.[^1] One hockey dad who dug into this found score sheets so unreliable that he stopped treating them as a record of anything.[^4] Starman again: "At the youth level, it's skewed. How many youth hockey officials give second assists?"[^1]
 
-**Somebody has to do the tracking.** Comprehensive stats require a dedicated assistant or parent, every game, all season. That's a real cost in a volunteer program, and in my experience it doesn't pay back. The return on investment diminishes the more complicated the model gets, and the model has to get very complicated before it stops lying to you.
+**Somebody has to do the tracking.** Tracking hockey stats comprehensively requires a dedicated assistant or parent, every game, all season. That's a real cost in a volunteer program, and in my experience it doesn't pay back. The return on investment diminishes the more complicated the model gets, and the model has to get very complicated before it stops lying to you.
 
 Even if you did it all perfectly, you'd end up with a beautifully adjusted number that tells you *what* happened and still nothing about *why*, which is the only part you can coach.
 
@@ -54,7 +54,7 @@ And every family will pick their own favorite stat. Dad watches goals. Mom watch
 
 There's a coaching cost too, one that took me too long to see: stats don't feed practice planning. A stat line can tell you the power play went 1 for 5. It cannot tell you the entries were fine but the retrievals collapsed, which is the difference between practicing the right thing Tuesday and practicing a guess. Worse, a misleading stat line actively derails planning, because you spend ice time fixing a number instead of a behavior.
 
-### When tracking is actually worth it
+### When tracking stats is actually worth it
 
 I'm not going to pretend all tracking is useless, because the best coaching data I ever collected was a stat.
 
