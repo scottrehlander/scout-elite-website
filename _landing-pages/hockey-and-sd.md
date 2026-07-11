@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "From Scott, the Hockey Dad with the App"
-description: "If we met at Hockey & Daughters or Hockey & Sons at Gustavus, this is the page I mentioned. Try the app I built in your browser, and use the camp code for 90 days of Pro, free."
+description: "If we met at Hockey & Daughters or Hockey & Sons at Gustavus, this is the page I mentioned. Try the app I built in your browser, and use the camp code for 45 days of Pro, free."
 permalink: /lp/hockey-and-sd/
 sitemap: false
 utm_campaign: hockey-and-sd-2026
@@ -101,9 +101,9 @@ last_modified_at: 2026-07-08
         <div class="hero-content" style="flex:1 1 360px; min-width:280px; max-width:600px; text-align: left;">
             <h1 class="hero-title" style="margin-bottom: 1rem;">Hi, I'm Scott. The hockey dad with the app.</h1>
             <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.25rem;">If we met at <strong style="color:var(--text-primary);">Hockey &amp; Daughters</strong> or <strong style="color:var(--text-primary);">Hockey &amp; Sons</strong> at Gustavus, this is the page I mentioned. My kids and I did the camp too. We're a hockey family from Massachusetts, and I coach my kids' teams back home.</p>
-            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.75rem;">I built Scout Elite because my coaching life was scattered across five tools: film in one place, practice plans in CoachThem, and a playbook that was an emailed PDF. I've been building this app to manage player development for almost 5 years now: film, clips, team reviews, practice plans, playbooks, player reports. Now I'm ready to share it.</p>
+            <p style="color: var(--text-secondary); font-size: 1.15rem; line-height: 1.75; margin-bottom: 1.75rem;">I built Scout Elite because my coaching life was scattered across a bunch of tools: film in one place, game-specific details in a spreadsheet, practice plans in CoachThem, player feedback in Google Drive and a playbook that was a printed PDF. I've been building this app to manage player development for almost 5 years now: film, clips, team reviews, practice plans, playbooks, player and game reports. Now I'm ready to share it.</p>
             <div class="hero-cta">
-                {% include xpress-cta.html dest="/account/register?promo=GUSTAVUS-26-HOCKEY" placement="camp-hero" text="Try it Free with 90 Days of Pro &rarr;" %}
+                {% include xpress-cta.html dest="/account/register?promo=GUSTAVUS-26-HOCKEY" placement="camp-hero" text="Try it Free with 45 Days of Pro &rarr;" %}
             </div>
             <p style="margin-top:1rem; font-size:0.9rem; color: var(--text-secondary);">No credit card, nothing to cancel. The code applies automatically when you sign up from this page. Or {% include xpress-cta.html placement="camp-hero-try" text="poke around first, no account needed" class="camp-try-link" style="color: var(--accent-hover); text-decoration: underline;" %}.</p>
         </div>
@@ -152,8 +152,8 @@ last_modified_at: 2026-07-08
     <div class="container" style="max-width: 640px; margin: 0 auto;">
         <h2 class="section-title" style="margin-bottom: 1.5rem;">What Scout Elite actually does</h2>
         <div style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; display: flex; flex-direction: column; gap: 1rem;">
-            <p>It turns the coaching busywork that eats your evenings into minutes. Game film becomes clips, clips become team reviews parents and players watch on their phones, and the AI assistant drafts your game reports, player development plans, and practice plans from a few sentences in plain English. It learns your team as the season goes, so what it drafts sounds like your bench, not a template.</p>
-            <p>Every piece works on its own, in any order. Use what fits your season and skip the rest. Wondering how it stacks up against HUDL? <a href="/hudl-alternative/" style="color: var(--accent-hover);">Here's my honest take.</a></p>
+            <p>It turns the coaching busywork that eats your evenings into minutes. Game film becomes clips, clips become team reviews parents and players watch, and the AI assistant drafts your game reports, player development plans, and practice plans from a few sentences in plain English. It learns your team as the season goes, so what it drafts sounds like your bench, not a template.</p>
+            <p>Every piece works on its own, in any order. Use what fits your season and skip the rest.</p>
             <p style="margin-top: 0.5rem;"><strong style="color:var(--text-primary);">If you'd rather read the thinking behind it, start with these:</strong></p>
         </div>
         <ul style="list-style: none; padding: 0; margin: 1.25rem 0 0 0; display: flex; flex-direction: column; gap: 1rem;">
@@ -183,10 +183,10 @@ last_modified_at: 2026-07-08
         <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 1.25rem; padding: 2.5rem 2rem; text-align: center;">
             <p style="font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:0.75rem;">For camp families</p>
             <div style="font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 2.4rem; font-weight: 700; letter-spacing: 0.18em; color: var(--accent-hover); margin-bottom: 0.75rem;">GUSTAVUS-26-HOCKEY</div>
-            <p style="color: var(--text-primary); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem;">90 days of Pro, on me. No credit card.</p>
+            <p style="color: var(--text-primary); font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem;">45 days of Pro, on me. No credit card.</p>
             <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 480px; margin: 0 auto 1.25rem auto;">No catch. Honest feedback from coaches like you is worth more to me than $13 a month. Tell me what's broken and what's missing.</p>
             <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.65; max-width: 480px; margin: 0 auto 1.75rem auto;">One click below and the code applies automatically when you create your account. Signing up on a different device? Enter the code under <strong style="color:var(--text-primary);">Account &rarr; Subscription</strong>.</p>
-            {% include xpress-cta.html dest="/account/register?promo=GUSTAVUS-26-HOCKEY" placement="camp-code" text="Try it Free with 90 Days of Pro &rarr;" %}
+            {% include xpress-cta.html dest="/account/register?promo=GUSTAVUS-26-HOCKEY" placement="camp-code" text="Try it Free with 45 Days of Pro &rarr;" %}
         </div>
     </div>
 </section>
