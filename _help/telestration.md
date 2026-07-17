@@ -4,7 +4,7 @@ title: "Using Telestration (Drawing on Video)"
 description: "Learn how to use Scout Elite's telestration tools to draw annotations directly on video frames during clip review."
 permalink: /help/telestration/
 category: clip-projects
-order: 3
+order: 4
 tier: solo
 last_updated: 2026-04-06
 ---

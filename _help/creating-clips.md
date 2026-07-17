@@ -6,12 +6,14 @@ permalink: /help/creating-clips/
 category: clip-projects
 order: 2
 tier: solo
-last_updated: 2026-04-06
+last_updated: 2026-07-16
 ---
 
 Clips are the building blocks of your video analysis workflow. Each clip captures a specific moment from your game footage that you can tag, annotate, and include in team Reviews.
 
 > **This feature requires a Solo subscription.** [Learn about our plans](/help/subscription-plans/).
+
+> **Watching the game live or in one pass?** [Quick Clipping](/help/quick-clipping/) marks moments with one tap or a keystroke without pausing playback. This article covers the precise, dialog-based way to create clips.
 
 ## Creating a Clip
 
@@ -34,10 +36,10 @@ The timeline bar shows colored segments for each clip in the current video. This
 
 ## Clip Best Practices
 
-- **Include context** — set your in point 2-3 seconds before the key moment so viewers understand what's happening
-- **Keep clips focused** — 10-30 seconds is ideal for most game situations
-- **Use descriptive names** — "Power play goal - Alex" is better than "Clip 12"
-- **Clip as you watch** — it's more efficient to create clips in a single pass through the video than to make multiple passes
+- **Include context**: set your in point 2-3 seconds before the key moment so viewers understand what's happening
+- **Keep clips focused**: 10-30 seconds is ideal for most game situations
+- **Use descriptive names**: "Power play goal - Alex" is better than "Clip 12"
+- **Clip as you watch**: it's more efficient to create clips in a single pass through the video than to make multiple passes
 
 ## Browsing All Clips
 
@@ -51,6 +53,7 @@ To see clips across all your projects:
   <h3>Related Articles</h3>
   <ul>
     <li><a href="/help/creating-clip-projects/">Creating a Clip Project</a></li>
+    <li><a href="/help/quick-clipping/">Quick Clipping: Mark Moments as You Watch</a></li>
     <li><a href="/help/tagging-clips/">Tagging and Annotating Clips</a></li>
     <li><a href="/help/creating-reviews/">Creating a Review</a></li>
   </ul>
