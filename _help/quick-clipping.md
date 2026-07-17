@@ -26,17 +26,23 @@ Phones show clip projects in a view-only layout, so the strip is a desktop and t
 
 ## Keyboard shortcuts
 
-Marking is fastest when your hands never leave the keyboard.
+Marking is fastest when your hands never leave the keyboard. The **?** button in the strip shows this list any time.
 
-**Type the tag's short code.** If your tags have codes (see [Tag Libraries](/help/tag-libraries/)), just type one: as you type, matching buttons light up and the rest dim. The moment your typing matches exactly one tag, the mark fires. Typing "B", "O", "T" marks Breakout Turnover the instant you hit T.
+**Type the tag's code, or its name.** Just start typing: as you type, matching buttons light up and the rest dim. The moment your typing matches exactly one tag, the mark fires. With codes (see [Tag Libraries](/help/tag-libraries/)), "B", "O", "T" marks Breakout Turnover the instant you hit T. Tags without codes match on their name, spaces ignored, so "S", "H" marks Shot from the built-in library.
 
-- **Enter** commits when your typing exactly matches a code that could also be the start of a longer one (type "BO", press Enter to mark BO rather than continuing to BOT)
+- **Enter** commits when your typing exactly matches a tag that could also be the start of a longer one (type "BO", press Enter to mark BO rather than continuing to BOT)
 - **Backspace** edits what you've typed; **Esc** clears it
 - Numeric codes work too: with codes like "64", typing 6 then 4 marks it
 
-**Number keys 1 through 8** mark the first eight tags in the strip. These fire only when no tag code starts with that digit, so they mainly serve libraries without short codes (each of the first eight buttons shows its number).
+**Number keys 1 through 8** mark the first eight tags in the strip (each shows its number).
 
-Shortcuts never fire while you're typing in a text field, and they leave the spacebar (play/pause) alone.
+**Player controls** work alongside marking:
+
+- **Spacebar** plays and pauses
+- **Left and right arrows** skip back or forward 5 seconds (a quick indicator over the video confirms the jump)
+- **Up and down arrows** change the playback speed, from one-tenth speed for teaching moments up to 10x for skimming a period. The speed button in the player controls does the same by clicking, and shows the current speed.
+
+Shortcuts never fire while you're typing in a text field.
 
 ## What gets captured: the capture window
 
