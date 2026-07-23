@@ -407,8 +407,8 @@ image: /img/how-it-works/review-clips-jr-falcons.jpg
                 <p class="story-step__body">You come home with a handful of new clips, and you know how it goes: the moment you want to show someone, you can never find them. Upload them instead and they're organized by game and tagged by skill, so the clip you want to send their coach is a search, not a scroll. Want stats too? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app tracks shifts and goals while you watch.</p>
             </div>
             <div class="story-step">
-                <div class="story-step__day">Mark it up</div>
-                <p class="story-step__body">Draw right on the frame: circle the open lane, arrow where the feet should have gone. The markup saves with the clip, so the point is still there when your player watches it later.</p>
+                <div class="story-step__day">File it away</div>
+                <p class="story-step__body">Drop each clip into a folder: one for the season, one for tryouts, one for each kid if you have a few playing. That's the whole job. No editing, no timeline, nothing to learn. Just a library where the good stuff stays findable for years.</p>
             </div>
             <div class="story-step">
                 <div class="story-step__day">The record</div>
