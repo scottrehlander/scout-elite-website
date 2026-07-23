@@ -338,7 +338,7 @@ sitemap: false
 
             <div class="persona-story__kicker">Viewing everything your coach shares is free, forever, and a free account includes your first three AI reports. If you want the full creation toolkit, plans start at $4.99 a month.</div>
             <div class="persona-story__cta">
-                {% include xpress-cta.html dest="/account/register" placement="hiw2-story-parent" text="Sign Up Free" %}
+                {% include xpress-cta.html placement="hiw2-story-parent" text="Try It Free &rarr; No Signup" %}
             </div>
         </div>
     </div>
