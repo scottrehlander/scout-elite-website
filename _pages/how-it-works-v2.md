@@ -316,7 +316,7 @@ sitemap: false
             <button class="persona-tab" role="tab" aria-selected="false" id="tab-parent" aria-controls="story-parent" onclick="showPersona('parent')">
                 <span class="persona-tab__where">In the stands</span>
                 <span class="persona-tab__name">Hockey Parent</span>
-                <p class="persona-tab__hook">My kid plays. I film the games and want to help at home.</p>
+                <p class="persona-tab__hook">I'm at every game and want to build on what the coach is teaching.</p>
             </button>
         </div>
 
