@@ -1,488 +1,554 @@
 ---
 layout: default
-title: "How Scout Elite Works: Video, Reports & Playbooks for Coaches"
-description: "The complete Scout Elite workflow — live game tagging, video clipping, team reviews, interactive playbooks, and AI player reports. Built for youth hockey coaches."
+title: "How Scout Elite Works: For Team Coaches, Skills Coaches & Parents"
+description: "Pick your spot at the rink and see what a week with Scout Elite looks like for a team coach, a skills coach, or a hockey parent. AI-assisted video, reports, practice plans, and playbooks."
 permalink: /how-it-works/
-last_modified_at: 2026-07-03
+last_modified_at: 2026-07-23
+image: /img/how-it-works/review-clips-jr-falcons.jpg
 ---
 
+<style>
+/* Persona picker + stories, used only on this page. */
+.persona-picker {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    max-width: 920px;
+    margin: 0 auto;
+}
+.persona-tab {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1.4rem;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.persona-tab:hover {
+    border-color: rgba(0, 153, 255, 0.4);
+    transform: translateY(-2px);
+}
+.persona-tab.active {
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-sm);
+}
+.persona-tab__where {
+    display: block;
+    color: var(--accent-hover);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.45rem;
+}
+.persona-tab__name {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+}
+.persona-tab__hook {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin: 0;
+}
+.persona-story {
+    display: none;
+    max-width: 720px;
+    margin: 3rem auto 0 auto;
+}
+.persona-story.active {
+    display: block;
+}
+.persona-story__title {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.persona-story__lede {
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto 2.5rem auto;
+}
+.story-step {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.75rem;
+}
+.story-step__day {
+    flex-shrink: 0;
+    width: 120px;
+    text-align: right;
+    color: var(--accent-hover);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 0.35rem;
+    line-height: 1.4;
+}
+.story-step__body {
+    flex: 1;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin: 0;
+    border-left: 2px solid var(--border-color);
+    padding-left: 1.5rem;
+    padding-bottom: 0.25rem;
+}
+.story-step__body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+.story-step__body a {
+    color: var(--accent-hover);
+}
+.persona-story__kicker {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.4rem;
+    margin: 2rem 0;
+}
+.persona-story__cta {
+    text-align: center;
+    margin-top: 2rem;
+}
+@media (max-width: 640px) {
+    .story-step {
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    .story-step__day {
+        width: auto;
+        text-align: left;
+        padding-top: 0;
+    }
+}
+
+/* Learns-your-team + toolbox cards */
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.learn-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.75rem 1.5rem;
+}
+.learn-card strong {
+    color: var(--accent-hover);
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+.learn-card h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+.learn-card p {
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin: 0;
+}
+.toolbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.toolbox-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 1.6rem 1.5rem;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.toolbox-card:hover {
+    border-color: rgba(0, 153, 255, 0.4);
+    transform: translateY(-2px);
+}
+.toolbox-card h3 {
+    color: var(--text-primary);
+    font-size: 1.05rem;
+    margin-bottom: 0.45rem;
+}
+.toolbox-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0 0 0.75rem 0;
+}
+.toolbox-card a {
+    color: var(--accent-hover);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Screenshot figures: one framing language for every product visual. */
+.shot {
+    margin: 0;
+}
+.shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+.shot figcaption {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 0.8rem;
+}
+.shot figcaption::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    flex-shrink: 0;
+}
+.story-shot {
+    margin: 2rem 0 2.5rem calc(120px + 1.5rem);
+}
+@media (max-width: 640px) {
+    .story-shot {
+        margin-left: 0;
+    }
+}
+.learn-shot {
+    max-width: 880px;
+    margin: 2.75rem auto 0 auto;
+}
+.learn-shot figcaption {
+    justify-content: center;
+}
+
+/* Split hero */
+.hero-split {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+.hero-split__copy {
+    flex: 1 1 360px;
+    min-width: 300px;
+    max-width: 560px;
+    text-align: left;
+}
+.hero-split__visual {
+    flex: 1 1 380px;
+    min-width: 280px;
+    position: relative;
+}
+.hero-split__visual::before {
+    content: "";
+    position: absolute;
+    inset: -14%;
+    background: radial-gradient(closest-side, rgba(0, 153, 255, 0.14), transparent 72%);
+    pointer-events: none;
+}
+</style>
+
+<!-- Hero -->
+<section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 3rem 0; overflow: hidden;">
+    <div class="container hero-split">
+        <div class="hero-split__copy">
+            <p style="color: var(--accent-hover); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.1rem;">Review. Plan. Develop. Repeat.</p>
+            <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 0.5em;">The coaching you love, minus the evenings you don't.</h1>
+            <p class="hero-subtitle" style="font-size: 1.15em; color: var(--text-secondary); margin: 0 0 2em 0;">Scout Elite is an AI-assisted workspace for youth hockey. It takes the film sessions, player reports, practice plans, and playbook upkeep off your plate. Every tool works on its own, in any order, and the whole thing gets smarter the more you use it.</p>
+            {% include xpress-cta.html placement="hiw2-hero" text="Try It Now &rarr; No Signup" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; box-shadow:var(--shadow-sm);" %}
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
+        </div>
+        <div class="hero-split__visual">
+            <figure class="shot">
+                <img src="/img/how-it-works/review-clips-jr-falcons.jpg" alt="A Scout Elite Review: game video beside categorized goal clips, each with the coach's notes and tags" width="1600" height="828" loading="eager">
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- Persona picker -->
+<section id="find-yourself" style="background: var(--secondary-bg); padding: 4rem 0;">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">Everyone's at the same rink. Pick your spot.</h2>
+            <p class="section-subtitle" style="max-width: 560px; margin: 0 auto;">Scout Elite looks different depending on where you stand on game day. Find yourself, then read what a normal week looks like.</p>
+        </div>
+
+        <div class="persona-picker" role="tablist" aria-label="Choose your role">
+            <button class="persona-tab active" role="tab" aria-selected="true" id="tab-team-coach" aria-controls="story-team-coach" onclick="showPersona('team-coach')">
+                <span class="persona-tab__where">Behind the bench</span>
+                <span class="persona-tab__name">Team Coach</span>
+                <p class="persona-tab__hook">I run the team. Games, practices, the group chat, all of it.</p>
+            </button>
+            <button class="persona-tab" role="tab" aria-selected="false" id="tab-skills-coach" aria-controls="story-skills-coach" onclick="showPersona('skills-coach')">
+                <span class="persona-tab__where">In the film room</span>
+                <span class="persona-tab__name">Skills Coach</span>
+                <p class="persona-tab__hook">I develop players one on one: video analysis, training, small groups.</p>
+            </button>
+            <button class="persona-tab" role="tab" aria-selected="false" id="tab-parent" aria-controls="story-parent" onclick="showPersona('parent')">
+                <span class="persona-tab__where">In the stands</span>
+                <span class="persona-tab__name">Hockey Parent</span>
+                <p class="persona-tab__hook">I'm at every game and want to build on what the coach is teaching.</p>
+            </button>
+        </div>
+
+        <!-- Team coach story -->
+        <div class="persona-story active" id="story-team-coach" role="tabpanel" aria-labelledby="tab-team-coach">
+            <h3 class="persona-story__title">A week behind the bench</h3>
+            <p class="persona-story__lede">You coach because you love the game. The job, though, is film, reports, plans, and messages, and it all lands on weeknights. Here's the same week with Scout Elite.</p>
+
+            <div class="story-step">
+                <div class="story-step__day">Saturday,<br>after the game</div>
+                <p class="story-step__body">A parent filmed from the stands, same as always. Your assistant ran <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> on their phone and tapped moments as they happened: the blown coverage on their second goal, the breakout that finally clicked in the third. Every tap is already attached to the game clock.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Saturday night</div>
+                <p class="story-step__body">Upload the video and import the tagged events. <strong>Clips create themselves</strong> at the right moments. You skim them on the couch, trim a couple, and draw an arrow on the play where words won't cut it. No help at the rink that day? Mark moments yourself as you watch, or let AI clip detection find the plays.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Sunday</div>
+                <p class="story-step__body">Build the <strong><a href="/features/video/">Review</a></strong>. Defensemen get the defensive-zone clips, forwards get the forecheck, everyone gets the goals. Share it and the team watches on their phones before Monday's skate. Nobody sits through forty minutes of full game.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Monday</div>
+                <p class="story-step__body">Ask the AI for the <strong><a href="/features/ai-reports/">game report</a></strong>. You tell it the score and what you saw, it drafts a clean writeup while you chat, and you fix anything in plain English. Parents actually read these.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Tuesday</div>
+                <p class="story-step__body">Practice time. The <strong><a href="/features/practice-planning/">practice assistant</a></strong> has read your reports and your tagged clips, so it already knows the breakout keeps dying on the wall. It drafts a timed session that attacks it, with real rink diagrams, and skips the drills you just ran last week. Print the sheet for the bench.</p>
+            </div>
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/community-drill-library.jpg" alt="The Scout Elite community drill library: hockey drills with hand-drawn rink diagrams, filterable by category and age" width="1600" height="1000" loading="lazy">
+                <figcaption>Tuesday's plan pulls from a drill library with real diagrams, your own drills and the community's.</figcaption>
+            </figure>
+
+            <div class="story-step">
+                <div class="story-step__day">All season</div>
+                <p class="story-step__body">Your systems live in a <strong><a href="/features/playbooks/">Playbook</a></strong>: diagrams, real clips from your own games, and notes on one page. Tweak the forecheck in October and the whole team sees the update. No new whiteboard photo in the group chat.</p>
+            </div>
+
+            <div class="persona-story__kicker">None of this is a required sequence. Plenty of coaches start with just clips and reviews, or just practice plans. Each tool stands alone. They're simply better together.</div>
+            <div class="persona-story__cta">
+                {% include xpress-cta.html placement="hiw2-story-coach" text="Run a Week Like This &rarr; No Signup" %}
+            </div>
+        </div>
+
+        <!-- Skills coach story -->
+        <div class="persona-story" id="story-skills-coach" role="tabpanel" aria-labelledby="tab-skills-coach">
+            <h3 class="persona-story__title">A week in the film room</h3>
+            <p class="persona-story__lede">Some weeks you're on the ice, some weeks it's all remote. Either way your product is progress the athlete can feel and the parent can see, and Scout Elite is where all of it lives.</p>
+
+            <div class="story-step">
+                <div class="story-step__day">Film arrives</div>
+                <p class="story-step__body">A client's parent shares weekend game footage with you, or sends files you drop into your <strong>video library</strong>. You clip the shifts that matter for what you're teaching and tag them by skill, so every clip is findable next month, not just this week.</p>
+            </div>
+
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/clip-creator-tag-strip.jpg" alt="The Scout Elite Clip Creator: game video with a strip of hockey event tags and a panel of tagged goal clips" width="1600" height="836" loading="lazy">
+                <figcaption>The film, cut into tagged clips you can still find in March.</figcaption>
+            </figure>
+
+            <div class="story-step">
+                <div class="story-step__day">The breakdown</div>
+                <p class="story-step__body">Build the athlete's <strong>Review</strong> from anywhere: frame by frame, <strong>telestration arrows</strong> over the exact edge work you mean, your notes on every clip. Share the link and they watch it with their parents that night. They see it instead of just hearing it.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Session day</div>
+                <p class="story-step__body">Rink-side or on a call, you teach straight from the clips. And the Review stays up after the session ends, so the lesson keeps working between visits.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">The report</div>
+                <p class="story-step__body">Ask the AI for a <strong><a href="/features/ai-reports/">player report</a></strong> while it's fresh: what you worked on, what to do before next time. Reports build a season-long history of each athlete that parents can look back through, which is exactly the progress they're paying you to show.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">All year</div>
+                <p class="story-step__body">Your library compounds. Clips, <strong><a href="/features/practice-planning/">drills</a></strong>, reviews, and reports stay organized in one system and reusable for the next athlete with the same problem. Scout Elite becomes your knowledgebase, and the way your teaching reaches every client.</p>
+            </div>
+
+            <div class="persona-story__kicker">One system for every client: the analysis, the drills, the reports. Reusable for the next athlete, referenceable by parents, and always yours. Scout Elite reads and writes an open drill format, so nothing you build is locked in.</div>
+            <div class="persona-story__cta">
+                {% include xpress-cta.html placement="hiw2-story-skills" text="Try It Free &rarr; No Signup" %}
+            </div>
+        </div>
+
+        <!-- Parent story -->
+        <div class="persona-story" id="story-parent" role="tabpanel" aria-labelledby="tab-parent">
+            <h3 class="persona-story__title">A season from the stands</h3>
+            <p class="persona-story__lede">Your camera roll tells the story: random short clips of your kid being brilliant, and a few of the moments that drove you crazy. Scout Elite gives all of it somewhere to go.</p>
+
+            <div class="story-step">
+                <div class="story-step__day">Game day</div>
+                <p class="story-step__body">You come home with a handful of new clips, and you know how it goes: the moment you want to show someone, you can never find them. Upload them instead and they're organized by game and tagged by skill, so the clip you want to send their coach is a search, not a scroll. Want stats too? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app tracks shifts and goals while you watch.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Mark it up</div>
+                <p class="story-step__body">Draw right on the frame: circle the open lane, arrow where the feet should have gone. The markup saves with the clip, so the point is still there when your player watches it later.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">The record</div>
+                <p class="story-step__body">The backbone is the <strong><a href="/features/ai-reports/">player development report</a></strong>. Tell the AI what you saw and "what should they work on?" gets a real answer: specific things to practice in the driveway, written down, theirs. Keep making them and you have a season-long record of progress, and when a report calls out wall battles, the clips you tagged wall battles are sitting right next to it.</p>
+            </div>
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/ai-player-report-chat.jpg" alt="A Scout Elite AI player report: a parent's plain notes in a chat on the left, a drafted development plan with strengths and areas of focus on the right" width="1600" height="1000" loading="lazy">
+                <figcaption>Plain notes go in on the left. A development plan comes out on the right.</figcaption>
+            </figure>
+
+            <div class="story-step">
+                <div class="story-step__day">From the coach</div>
+                <p class="story-step__body">When the coach shares a <strong>Review</strong> or a report, it lands in the same place, free to view. Set the coach's reports beside your own and you're seeing the same player from the bench and the stands.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Tryout season</div>
+                <p class="story-step__body">All those saved clips become a <strong>highlight reel</strong> you can compile and share with anyone. A season of evidence, three minutes long.</p>
+            </div>
+
+            <div class="persona-story__kicker">None of this depends on your coach using Scout Elite. Viewing everything a coach does share is free, forever, and a free account includes your first three AI reports. The full creation toolkit starts at $4.99 a month.</div>
+            <div class="persona-story__cta">
+                {% include xpress-cta.html placement="hiw2-story-parent" text="Try It Free &rarr; No Signup" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Learns your team -->
+<section style="background: var(--primary-bg); padding: 4rem 0;">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">It learns your team as you go</h2>
+            <p class="section-subtitle" style="max-width: 600px; margin: 0 auto;">No extra data entry. The evidence is the coaching you already did.</p>
+        </div>
+        <div class="learn-grid">
+            <div class="learn-card">
+                <strong>You coach normally</strong>
+                <h3>Reports and tagged clips pile up</h3>
+                <p>Write game reports, tag moments, thumbs-up the drills that worked. That's it. Every one of them is evidence about your team.</p>
+            </div>
+            <div class="learn-card">
+                <strong>Scout Elite keeps score</strong>
+                <h3>Recurring problems get ranked</h3>
+                <p>It pulls the patterns out of your own reports and clips and ranks them by how often they show up, how recently, and how much they hurt.</p>
+            </div>
+            <div class="learn-card">
+                <strong>Every draft starts closer</strong>
+                <h3>Plans target what's real</h3>
+                <p>The next practice attacks your top priorities with drills you haven't just run. Reports remember your players. Nothing starts from a blank page.</p>
+            </div>
+        </div>
+        <figure class="shot learn-shot">
+            <img src="/img/how-it-works/practice-plan-development-loop.jpg" alt="The Scout Elite practice planner: timed warmup and breakout sections on the left, the Development Loop drafting drill suggestions with rationale on the right" width="1720" height="1075" loading="lazy">
+            <figcaption>The Development Loop drafting a practice from one sentence: breakouts keep dying on the wall.</figcaption>
+        </figure>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 620px; margin: 2.5rem auto 0 auto;">That's the difference between a template and a tool that knows your team: your practices come from your games, not someone else's. Read more about <a href="/blog/player-development-loop/" style="color: var(--accent-hover);">the development loop</a>.</p>
+    </div>
+</section>
+
+<!-- Toolbox -->
+<section style="background: var(--secondary-bg); padding: 4rem 0;">
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+            <h2 class="section-title">The whole toolbox</h2>
+            <p class="section-subtitle" style="max-width: 540px; margin: 0 auto;">Six tools, one place. Start with any of them.</p>
+        </div>
+        <div class="toolbox-grid">
+            <div class="toolbox-card">
+                <h3>Video, Clips &amp; Reviews</h3>
+                <p>Upload film, mark moments as you watch or import them from the rink, and share short, focused reviews.</p>
+                <a href="/features/video/">Video &amp; Reviews &rarr;</a>
+            </div>
+            <div class="toolbox-card">
+                <h3>AI Reports</h3>
+                <p>Game reports and player development plans drafted in a chat, refined in plain English.</p>
+                <a href="/features/ai-reports/">AI Reports &rarr;</a>
+            </div>
+            <div class="toolbox-card">
+                <h3>Practice Plans &amp; Drills</h3>
+                <p>Timed sessions with real rink diagrams, drafted from your own game data, printable for the bench.</p>
+                <a href="/features/practice-planning/">Practice Planning &rarr;</a>
+            </div>
+            <div class="toolbox-card">
+                <h3>Playbooks</h3>
+                <p>Diagrams, real game clips, and coaching notes in one living document the whole team can see.</p>
+                <a href="/features/playbooks/">Playbooks &rarr;</a>
+            </div>
+            <div class="toolbox-card">
+                <h3>Scout Elite Live</h3>
+                <p>Free mobile app. Tap events at the rink, get stats and a game report, feed clips automatically.</p>
+                <a href="/scout-elite-live/">Scout Elite Live &rarr;</a>
+            </div>
+            <div class="toolbox-card">
+                <h3>Teams &amp; Sharing</h3>
+                <p>Share to the whole roster in a click. Free for players and parents to view everything.</p>
+                <a href="/features/teams/">Teams &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why + final CTA -->
+<section style="background: var(--primary-bg); padding: 4rem 0;">
+    <div class="container" style="max-width: 760px;">
+        <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center;">
+            <h2 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 0.75rem;">Built by parent coaches, for parent coaches</h2>
+            <p style="color: var(--text-secondary); line-height: 1.65; margin: 0 0 1.75rem 0;">Scout Elite exists because these tools shouldn't be exclusive to programs with video staff and big budgets. It's free for players and parents, coaches start at $4.99 a month, and every paid plan comes with a 14-day free trial.</p>
+            {% include xpress-cta.html placement="hiw2-final" text="Try Scout Elite Free &rarr; No Signup" %}
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);"><a href="/#pricing" style="color: var(--accent-hover);">See pricing</a></p>
+        </div>
+    </div>
+</section>
 
 <script>
-    function startTeamCoachTour() {
-        introJs.tour().setOptions({
-            steps: [
-            {
-                title: 'Video Upload',
-                element: document.querySelector('[data-intro="video-sharing"]'),
-                intro: "<strong>Start with Live Game Videos</strong><br /> Upload game video to your Video Library or ask others to upload and share it with you. You can include both full game videos and shorter individual clips."
-            },
-            { 
-                title: 'Create a Clip Project',
-                element: document.querySelector('[data-intro="clip-sessions"]'),
-                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to annotate and tag new clips."
-            },
-            { 
-                title: 'Create Your Clips',
-                element: document.querySelector('[data-intro="manual-clipping"]'),
-                intro: "<strong>Find Key Moments</strong><br /> Use advanced clipping tools to find important moments and annotate them by adding a description and tags."
-            },
-            { 
-                title: 'Automatic Clipping <small>(optional)</small>',
-                element: document.querySelector('[data-intro="automatic-clipping"]'),
-                intro: "<strong>Scout Elite Live</strong><br /> If <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a> was used to track game events, ask your helpers to publish the game from their mobile devices and share it with you. Import the game events and notes into a Clip Project to automatically create clips for your game video."
-            },
-            { 
-                title: 'Organize Clips for Review',
-                element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review. Use this Review as a guide for live presentation or share it for the team to review on their own time. Reviews remain accessible forever and can be used as a tool to direct learning in the future."
-            },
-            {
-                title: 'Document Your System with a Playbook',
-                element: document.querySelector('[data-intro="playbooks"]'),
-                intro: "<strong>Teach the System</strong><br /> Use <a target=\"_blank\" href=\"/features/playbooks/\">Playbooks</a> to combine sport-specific diagrams, real-game video clips, and coaching notes into one living document. Share it with the team so everyone references the same source of truth all season."
-            },
-            {
-                title: 'Draft Reports with the AI Assistant',
-                element: document.querySelector('[data-intro="ai-reports"]'),
-                intro: "<strong>Game &amp; Player Reports in Minutes</strong><br /> After review, use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Reports</a> to chat your way to a polished post-game breakdown or a personal development plan for any player &mdash; without staring at a blank doc on a Sunday night."
-            },
-            {
-                title: 'Plan the Next Practice',
-                element: document.querySelector('[data-intro="practice-plans"]'),
-                intro: "<strong>From Game Takeaways to the Next Skate</strong><br /> Use <a target=\"_blank\" href=\"/features/practice-planning/\">Practice Planning</a> to draft a timed session built around what the game showed you. The assistant pulls from a drill library with rink diagrams &mdash; print it for the bench or run it live at the rink."
-            },
-            ]
-        }).onComplete(function() {
-            setTimeout(showTrialModal, 500);
-        }).start();
-    }
-
-    function startParentTour() {
-        introJs.tour().setOptions({
-            steps: [
-            {
-                title: 'Video Upload',
-                element: document.querySelector('[data-intro="video-sharing"]'),
-                intro: "<strong>Start with Live Game Videos or Clips</strong><br /> Upload video to your Video Library and share it with others. You can include both full game videos and shorter individual clips."
-            },
-            { 
-                title: 'Clip Projects',
-                element: document.querySelector('[data-intro="clip-sessions"]'),
-                intro: "<strong>Create Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to create your clips that can be used to direct the learning of your athlete or build comprehensive highlight reels."
-            },
-            { 
-                title: 'Scout Elite Live',
-                element: document.querySelector('[data-intro="sel-game-reports"]'),
-                intro: "<strong>Track Important Moments</strong><br /> Use <a target=\"_blank\" href=\"/scout-elite-live/\">Scout Elite Live</a>, a free mobile app, to track your team and athlete's performance. Take notes on key moments.<br/><br/> Publish the game to view and share the game report and use it to automatically import clips."
-            },
-            { 
-                title: 'Reviews',
-                element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Organize Your Clips</strong><br /> Reviews organize your clips and can act as an anchor for discussion with your athlete. Use it as a tool to positively reinforce good behaviors and direct their learning. Capture the important team dynamics and share these moments with the rest of our team to help build a positive team culture."
-            },
-            {
-                title: 'Player Development Reports',
-                element: document.querySelector('[data-intro="ai-reports"]'),
-                intro: "<strong>A Plan for Your Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to generate a personal development plan &mdash; things they can do on their own outside of practice (stick handling, shooting, study). It&rsquo;s the answer to &ldquo;what should they work on?&rdquo; already written down."
-            }
-            ]
-        }).onComplete(function() {
-            setTimeout(showTrialModal, 500);
-        }).start();
-    }
-    function startSkillsCoachTour() {
-        introJs.tour().setOptions({
-            steps: [
-            {
-                title: 'Video Upload',
-                element: document.querySelector('[data-intro="video-sharing"]'),
-                intro: "<strong>Start with Live Game Videos</strong><br /> Ask your client to sign up for Scout Elite to share their videos with you, or have them send you the videos for you to add to your personal Video Library."
-            },
-            { 
-                title: 'Create a Clip Project',
-                element: document.querySelector('[data-intro="clip-sessions"]'),
-                intro: "<strong>Create the Clips</strong><br /> For any videos that have the potential for more than just a single clip, add them to a Clip Project. Use the project to annotate and tag new clips."
-            },
-            { 
-                title: 'Organize Clips for Review',
-                element: document.querySelector('[data-intro="review-sessions"]'),
-                intro: "<strong>Prepare for Review</strong><br /> Once you have all your clips, add them to a Review and share it with your client. Use this Review as a guide for your live presentation. Reviews remain accessible forever, so your clients can review it themselves later and you can reference them in future discussions."
-            },
-            {
-                title: 'Hand Off a Development Plan',
-                element: document.querySelector('[data-intro="ai-reports"]'),
-                intro: "<strong>Take-Home Work for Each Athlete</strong><br /> Use <a target=\"_blank\" href=\"/features/ai-reports/\">AI Player Reports</a> to draft a personalized at-home development plan after each session. It turns your one-hour session into a week of focused practice between visits."
-            },
-            {
-                title: 'Plan Your Next Session',
-                element: document.querySelector('[data-intro="practice-plans"]'),
-                intro: "<strong>Build Each Session in Minutes</strong><br /> Use <a target=\"_blank\" href=\"/features/practice-planning/\">Practice Planning</a> to draft a timed session from a drill library with rink diagrams. Tune it to what each athlete needs, then print it or run it live on the ice."
-            }
-            ]
-        }).onComplete(function() {
-            setTimeout(showTrialModal, 500);
-        }).start();
-    }
-
-    // Modal functions
-    function showTrialModal() {
-        const modal = document.getElementById('trial-modal');
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function hideTrialModal() {
-        const modal = document.getElementById('trial-modal');
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-
-    // Add event listeners when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        const modal = document.getElementById('trial-modal');
-        const closeBtn = modal.querySelector('.modal-close');
-        
-        closeBtn.addEventListener('click', hideTrialModal);
-        
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                hideTrialModal();
-            }
-        });
-        
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                hideTrialModal();
-            }
-        });
+function showPersona(id) {
+    document.querySelectorAll('.persona-tab').forEach(function(tab) {
+        var active = tab.getAttribute('aria-controls') === 'story-' + id;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
     });
+    document.querySelectorAll('.persona-story').forEach(function(panel) {
+        panel.classList.toggle('active', panel.id === 'story-' + id);
+    });
+    if (history.replaceState) {
+        history.replaceState(null, '', '#' + id);
+    }
+    // On phones the picker cards fill the screen; bring the story into view.
+    if (window.matchMedia('(max-width: 700px)').matches) {
+        var panel = document.getElementById('story-' + id);
+        if (panel) {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+}
+function applyPersonaHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById('story-' + hash)) {
+        showPersona(hash);
+    }
+}
+document.addEventListener('DOMContentLoaded', applyPersonaHash);
+window.addEventListener('hashchange', applyPersonaHash);
 </script>
-
-<!-- Trial Modal -->
-<div id="trial-modal" class="modal-overlay">
-    <div class="modal-content">
-        <button class="modal-close" onclick="hideTrialModal()">&times;</button>
-        <h2 class="modal-title">Ready to Coach Smarter?</h2>
-        <p>Scout Elite closes the loop on player development. Clip the game, run a focused review, then let the AI assistant turn what you saw into player reports, practice plans, and playbooks your whole team can use.</p>
-        <p>Whether you're coaching individual athletes or managing an entire squad, Scout Elite handles the busywork so you can spend your time actually coaching.</p>
-        
-        <div class="modal-features">
-            <div class="modal-feature">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>14-day free trial</strong></div>
-            </div>
-            <div class="modal-feature">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Video clipping &amp; reviews</strong> - Full games to focused team sessions</div>
-            </div>
-            <div class="modal-feature">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>AI player reports</strong> - A development plan for every athlete</div>
-            </div>
-            <div class="modal-feature">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Practice plans</strong> - Timed sessions with drills and rink diagrams</div>
-            </div>
-            <div class="modal-feature">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Playbooks</strong> - Diagrams, video, and notes in one living document</div>
-            </div>
-            <div class="modal-feature">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--accent-hover)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:2px;"><polyline points="20 6 9 17 4 12"/></svg>
-                <div><strong>Scout Elite Live included</strong> - Free companion app for iOS &amp; Android</div>
-            </div>
-        </div>
-        
-        <div class="modal-cta">
-            {% include xpress-cta.html placement="trial-modal-cta" text="Try It Now &rarr; No Signup" class="cta-button" onclick="hideTrialModal()" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);" %}
-        </div>
-    </div>
-</div>
-
-<!-- Hero Section -->
-<section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 0 0 !important;">
-    <div class="container" style="display:flex; flex-wrap:wrap; align-items:center; gap:48px;">
-        <div class="hero-content" style="flex:1 1 340px; min-width:260px; max-width:540px; text-align:left;" data-intro="call-to-action">
-            <h1 class="hero-title" style="font-size:2.5em; margin-bottom:0.5em; color:var(--text-primary);">One Platform. Every Step of Player Development.</h1>
-            <p class="hero-subtitle" style="font-size:1.25em; margin-bottom:2em; color:var(--text-secondary); max-width:540px;">Scout Elite connects every step of your player development workflow, from live game tagging and video clipping to focused team reviews, interactive playbooks, and AI-generated player reports.</p>
-            {% include xpress-cta.html placement="hero-cta" text="Try It Now &rarr; No Signup" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; transition:all 0.3s ease; box-shadow:var(--shadow-sm);" %}
-        </div>
-        <div class="hero-visual" style="flex:1 1 340px; min-width:220px; max-width:540px; text-align:center;">
-            <img src="/img/Scout-Elite-how-it-works-hero.png"
-                 alt="Scout Elite Video Analysis Workflow"
-                 style="width:100%; max-width:480px; height:auto; border-radius:1rem; padding:0.5rem; margin:0 auto; display:block;">
-        </div>
-    </div>
-</section>
-
-<!-- Role Tour Icons -->
-<section style="padding: 4rem 0; background: var(--secondary-bg);">
-    <div class="container">
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-            <h2 class="section-title">How Scout Elite Works</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Choose your role to explore features designed for you by parent coaches with a step-by-step walkthrough.</p>
-        </div>
-        
-        <div style="display:flex; justify-content:center; align-items:stretch; gap:2rem; flex-wrap:wrap; max-width:800px; margin:0 auto;">
-            <button class="tour-btn" onclick="startTeamCoachTour()" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); cursor:pointer; transition:all 0.3s ease; flex:1; min-width:200px; max-width:240px; box-shadow:var(--shadow-sm); height:200px;">
-                <div class="tour-btn-inner">
-                    <div class="tour-btn-front">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                        <span style="color:var(--text-primary); font-weight:600; font-size:1.1rem; text-align:center;">Team Coach</span>
-                    </div>
-                    <div class="tour-btn-back">
-                        <h3>Team Coach</h3>
-                        <p>Manage team-wide video reviews, coordinate with assistants, and create comprehensive game analysis for the entire squad.</p>
-                    </div>
-                </div>
-            </button>
-
-            <button class="tour-btn" onclick="startSkillsCoachTour()" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); cursor:pointer; transition:all 0.3s ease; flex:1; min-width:200px; max-width:240px; box-shadow:var(--shadow-sm); height:200px;">
-                <div class="tour-btn-inner">
-                    <div class="tour-btn-front">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                        <span style="color:var(--text-primary); font-weight:600; font-size:1.1rem; text-align:center;">Skills Coach</span>
-                    </div>
-                    <div class="tour-btn-back">
-                        <h3>Skills Coach</h3>
-                        <p>Work one-on-one with athletes to analyze technique, create focused clip projects, and track individual skill development progress.</p>
-                    </div>
-                </div>
-            </button>
-                        
-            <button class="tour-btn" onclick="startParentTour()" style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); cursor:pointer; transition:all 0.3s ease; flex:1; min-width:200px; max-width:240px; box-shadow:var(--shadow-sm); height:200px;">
-                <div class="tour-btn-inner">
-                    <div class="tour-btn-front">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="var(--text-primary)" class="bi bi-people" viewBox="0 0 16 16">
-                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
-                        </svg>
-                        <span style="color:var(--text-primary); font-weight:600; font-size:1.1rem; text-align:center;">Parent</span>
-                    </div>
-                    <div class="tour-btn-back">
-                        <h3>Parent</h3>
-                        <p>Stay connected with your team's progress, contribute by sharing moments, and maintain personal highlight reels for your athletes.</p>
-                    </div>
-                </div>
-            </button>
-        </div>
-    </div>
-</section>
-
-<section class="explore-process" style="padding: 4rem 0; margin-bottom:2.5rem;">
-    <div class="container">
-        <div class="section-header" style="text-align:center;">
-            <h2 class="section-title">An End-to-End Solution</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Event capture can be a collaborative effort, allowing anyone to contribute valuable footage. All data is seamlessly shared with the coaching staff, who review key clips and moments, then approve a final Review for distribution to the team.</p>
-        </div>
-        <div class="analysis-method-img-container" style="width:100%; max-width:940px; margin:0 auto; text-align:center;">
-            <img src="/img/Scout-Elite-video-analysis-workflow.png"
-                alt="Scout Elite Video Analysis Workflow"
-                style="width:100%; max-width:900px; height:auto; border-radius:1rem; padding:0.5rem; margin:0 auto; display:block;">
-        </div>
-    </div>
-</section>
-
-<!-- Capture Events Section -->
-<section class="capture-events" style="background: var(--primary-bg); padding: 2rem 0; margin-bottom:2.5rem;">
-    <div class="container" style="max-width:900px; margin:0 auto;">
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-            <h2 class="section-title">Capture Events</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Flexible options to prepare for review</p>
-        </div>
-        
-        <!-- Mobile App Option -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="automatic-clipping">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-phone" viewBox="0 0 16 16">
-                <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Automatic Collaborative Clipping</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Use <a href="/scout-elite-live/">Scout Elite Live</a>, our free mobile app for iOS and Android, to log events and custom notes as the game unfolds. Event markers are shared with coaches and automatically linked to video clips, which can later be edited and annotated by analysts or coaching staff. Events captured by anyone can be combined into a single clip project for review.</p>
-            </div>
-        </div>
-
-        <!-- Video Clip Projects Option -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;" data-intro="manual-clipping">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-video3" viewBox="0 0 16 16">
-                    <path d="M14 9.5a2 2 0 1 1-4 0 2 2 0 0 1 4 0m-6 5.7c0 .8.8.8.8.8h6.4s.8 0 .8-.8-.8-3.2-4-3.2-4 2.4-4 3.2"/>
-                    <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h5.243c.122-.326.295-.668.526-1H2a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v7.81c.353.23.656.496.91.783Q16 12.312 16 12V4a2 2 0 0 0-2-2z"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Manual Video Clipping</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Work directly with game video using intuitive playback controls. Jump to key moments in 5 and 30 second increments, to create clips from a full game in just minutes. Clips are always editable, and the original footage remains intact in case you missed the tail end or lead-up to a play.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Review and Organize Section -->
-<section class="review-organize" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
-    <div class="container" style="max-width:900px; margin:0 auto;">
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-            <h2 class="section-title">Review and Organize</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Build the raw material in Clip Projects, then curate it into focused Reviews for the team.</p>
-        </div>
-        
-        <!-- Clip Projects -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="clip-sessions">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="6" width="20" height="12" rx="2" fill="white"/>
-                    <circle cx="8" cy="12" r="2" fill="#3B82F6"/>
-                    <rect x="12" y="10" width="6" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="12" y="12" width="8" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="12" y="14" width="4" height="1" rx="0.5" fill="#3B82F6"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Clip Projects</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Create clips from full or partial game videos. Tag clips, add notes and telestrations, trim start and end times, and organize your content. Videos from your library can be combined into a single session, and sessions can be shared with other coaches for collaborative editing.</p>
-            </div>
-        </div>
-
-        <!-- Reviews -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="review-sessions">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="5" width="18" height="14" rx="2" fill="white"/>
-                    <rect x="6" y="8" width="4" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="6" y="10" width="8" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="6" y="12" width="6" height="1" rx="0.5" fill="#3B82F6"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Reviews</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Coaches compile clips into focused Reviews for team viewing. Only the selected clips are included to maintain focus. Add supplementary videos from skills coaches or professionals, categorize content, and order your clips for clear flow.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Coach & Develop Section -->
-<section class="coach-develop" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
-    <div class="container" style="max-width:900px; margin:0 auto;">
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-            <h2 class="section-title">Coach &amp; Develop</h2>
-            <p class="section-subtitle" style="max-width:600px; margin:0 auto;">Game review is half the picture. Playbooks teach the system, AI Reports tell each player what to work on, and Practice Plans turn it all into the next skate.</p>
-        </div>
-
-        <!-- Playbooks -->
-        <div style="display:flex; align-items:flex-start; gap:24px; margin-bottom:3rem; flex-wrap:wrap;" data-intro="playbooks">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="12" cy="12" rx="9" ry="6" stroke="white" stroke-width="1.8" fill="none"/>
-                    <circle cx="12" cy="12" r="1.6" fill="white"/>
-                    <path d="M5 12 L19 12" stroke="white" stroke-width="1.2" stroke-dasharray="2 2"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Playbooks <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Build a structured, document-style playbook that combines <a href="/features/playbooks/">sport-specific diagrams, embedded video clips, and rich text</a>. Replace the whiteboard photos in your group chat with a living system the whole team can reference all season &mdash; and update whenever you tweak it.</p>
-            </div>
-        </div>
-
-        <!-- AI Reports -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;" data-intro="ai-reports">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 5 H16 a2 2 0 0 1 2 2 V14 a2 2 0 0 1 -2 2 H9 L5 20 V16 H4 a2 2 0 0 1 -2 -2 V7 a2 2 0 0 1 2 -2 z" stroke="white" stroke-width="1.6" fill="none"/>
-                    <circle cx="7" cy="11" r="0.9" fill="white"/>
-                    <circle cx="10.5" cy="11" r="0.9" fill="white"/>
-                    <circle cx="14" cy="11" r="0.9" fill="white"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">AI Reports <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Chat your way to a polished <a href="/features/ai-reports/">Game Report or Player Development Plan</a>. Tell the AI the score and what happened &mdash; or what a specific player needs to work on &mdash; and a structured document drafts itself in a live preview as you talk. Refine in plain English. Save and share.</p>
-            </div>
-        </div>
-
-        <!-- Practice Planning -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;" data-intro="practice-plans">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="6" y="4" width="12" height="16" rx="1.5" fill="white"/>
-                    <rect x="9" y="2.5" width="6" height="3.5" rx="1" fill="white" stroke="#3B82F6" stroke-width="1"/>
-                    <rect x="8.5" y="9" width="7" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="8.5" y="12" width="7" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="8.5" y="15" width="4" height="1" rx="0.5" fill="#3B82F6"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Practice Plans <span style="font-size:0.65rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; vertical-align:middle;">New</span></h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Close the loop with <a href="/features/practice-planning/">Practice Planning</a>. The practice assistant reads the takeaways from your game reports and drafts a timed session that targets them &mdash; pulling from a drill library with real rink diagrams. Print a clean sheet for the bench, run it live from your phone, and share it with your staff.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Share your Review Section -->
-<section class="share-review" style="background: var(--primary-bg); padding: 1rem 0; margin-bottom:2.5rem;">
-    <div class="container" style="max-width:900px; margin:0 auto;">
-        <div class="section-header" style="text-align:center; margin-bottom:3rem;">
-            <h2 class="section-title">Share with Your Team</h2>
-            <p class="section-subtitle" style="max-width:540px; margin:0 auto;">Collaborate and share with your team to direct learning</p>
-        </div>
-        
-        <!-- Session Sharing -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap;">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-share" viewBox="0 0 16 16">
-                <path d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Analysis Reviews</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Clip Projects can be shared with anyone in the analyst role. Some teams stop here and just share the Clip Projects with their team live and in-person or via a screen sharing app.  Targeted Reviews can be created by and shared with anyone and are read-only for anyone in the athlete role.</p>
-            </div>
-        </div>
-
-        <!-- Scout Elite Live Report Sharing -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;" data-intro="sel-game-reports">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="14" rx="2" fill="white"/>
-                    <rect x="5" y="7" width="3" height="6" rx="0.5" fill="#3B82F6"/>
-                    <rect x="9" y="9" width="3" height="4" rx="0.5" fill="#3B82F6"/>
-                    <rect x="13" y="6" width="3" height="7" rx="0.5" fill="#3B82F6"/>
-                    <circle cx="18" cy="8" r="1" fill="#3B82F6"/>
-                    <rect x="5" y="15" width="14" height="0.5" fill="#3B82F6"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Game Reports and Live Events</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Share published games tracked with the <a href="/scout-elite-live/">Scout Elite Live</a> mobile app. Each shared game includes a comprehensive report with stats and analytics that recipients can view. Shared game events can also be used to automatically generate video clips from the corresponding game footage.</p>
-            </div>
-        </div>
-
-        <!-- Video Sharing -->
-        <div style="display:flex; align-items:flex-start; gap:24px; flex-wrap:wrap; margin-top:3rem;"  data-intro="video-sharing">
-            <div style="flex-shrink:0; width:64px; height:64px; background:#3B82F6; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-top:4px;">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="2" y="6" width="20" height="12" rx="2" fill="white"/>
-                    <polygon points="9,10 9,14 13,12" fill="#3B82F6"/>
-                    <circle cx="17" cy="9" r="1.5" fill="#3B82F6"/>
-                    <rect x="4" y="16" width="3" height="1" rx="0.5" fill="#3B82F6"/>
-                    <rect x="8" y="16" width="5" height="1" rx="0.5" fill="#3B82F6"/>
-                </svg>
-            </div>
-            <div style="flex:1; min-width:280px;">
-                <h3 style="color:var(--text-primary); font-size:1.3em; margin-bottom:0.5em; font-weight:600;">Videos</h3>
-                <p style="color:var(--text-secondary); font-size:1.1em; line-height:1.6; margin:0;">Share uploaded videos directly with your team or specific individuals. These shared videos serve as the foundation for clipping and review activities, allowing recipients to create their own clips and analysis sessions from the shared content.</p>
-            </div>
-        </div>
-    </div>
-</section>
