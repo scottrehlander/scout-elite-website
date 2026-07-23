@@ -279,7 +279,7 @@ image: /img/how-it-works/review-clips-jr-falcons.jpg
     <div class="container hero-split">
         <div class="hero-split__copy">
             <p style="color: var(--accent-hover); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.1rem;">Review. Plan. Develop. Repeat.</p>
-            <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 0.5em;">The coaching you love, minus the evenings you don't.</h1>
+            <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 0.5em;">What a week of coaching looks like with Scout Elite.</h1>
             <p class="hero-subtitle" style="font-size: 1.15em; color: var(--text-secondary); margin: 0 0 2em 0;">Scout Elite is an AI-assisted workspace for youth hockey. It takes the film sessions, player reports, practice plans, and playbook upkeep off your plate. Every tool works on its own, in any order, and the whole thing gets smarter the more you use it.</p>
             {% include xpress-cta.html placement="hiw2-hero" text="Try It Now &rarr; No Signup" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; box-shadow:var(--shadow-sm);" %}
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
@@ -361,7 +361,7 @@ image: /img/how-it-works/review-clips-jr-falcons.jpg
 
         <!-- Skills coach story -->
         <div class="persona-story" id="story-skills-coach" role="tabpanel" aria-labelledby="tab-skills-coach">
-            <h3 class="persona-story__title">A week in the film room</h3>
+            <h3 class="persona-story__title">Every family's data, finally organized.</h3>
             <p class="persona-story__lede">Some weeks you're on the ice, some weeks it's all remote. Either way your product is progress the athlete can feel and the parent can see, and Scout Elite is where all of it lives.</p>
 
             <div class="story-step">
