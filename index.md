@@ -86,7 +86,7 @@ utm_campaign: homepage
     <div class="container" style="max-width:860px;">
         <div style="background:var(--card-bg); border:1px solid var(--border-color); border-radius:var(--radius-lg); padding:2rem 2.5rem; text-align:center;">
             <h2 style="color:var(--text-primary); font-size:1.4rem; margin-bottom:0.75rem;">Built by parent coaches, for parent coaches</h2>
-            <p style="color:var(--text-secondary); line-height:1.6; margin:0;">Scout Elite exists because video analysis and AI coaching tools shouldn't be exclusive to elite programs with big budgets. That's why it's free for players and parents, and coaches start at $4.99 a month.</p>
+            <p style="color:var(--text-secondary); line-height:1.6; margin:0;">Scout Elite exists because video analysis and AI coaching tools shouldn't be exclusive to elite programs with big budgets. That's why viewing is free for players and parents, and the full creation toolkit starts at $4.99 a month, coach or parent.</p>
         </div>
     </div>
 </section>
@@ -98,7 +98,7 @@ utm_campaign: homepage
     <div class="container">
         <div class="section-header" style="text-align:center; margin-bottom:2.5rem;">
             <h2 class="section-title">Pricing</h2>
-            <p class="section-subtitle">Free for players and parents to view. Coaches start at $4.99/mo. Every paid plan includes a 14-day free trial.</p>
+            <p class="section-subtitle">Free to view everything shared with you. Creation tools start at $4.99/mo, coach or parent. Every paid plan includes a 14-day free trial.</p>
             <p style="margin-top:0.75rem;"><a href="https://xpress.scout-elite.com/try?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-intro" target="_blank" rel="noopener" data-try-placement="pricing-intro" style="color:var(--accent-hover); font-weight:600;">Or try the full app first &mdash; no signup needed &rarr;</a></p>
         </div>
         <!-- Stacked tier cards (mobile only). -->
@@ -126,7 +126,7 @@ utm_campaign: homepage
                 <div class="pricing-card__header">
                     <div class="pricing-card__tier">Solo</div>
                     <div class="pricing-card__price">$4.99<span class="pricing-card__price-unit">/mo</span></div>
-                    <p class="pricing-card__tagline">For individual coaches and analysts who want the full creation toolkit.</p>
+                    <p class="pricing-card__tagline">For coaches and parents who want the full creation toolkit.</p>
                     <span class="pricing-card__trial">14-day free trial</span>
                 </div>
                 <p class="pricing-card__includes-label">Everything in Starter, plus:</p>

@@ -515,7 +515,7 @@ image: /img/how-it-works/review-clips-jr-falcons.jpg
     <div class="container" style="max-width: 760px;">
         <div style="background: var(--card-bg); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2.5rem; text-align: center;">
             <h2 style="color: var(--text-primary); font-size: 1.5rem; margin-bottom: 0.75rem;">Built by parent coaches, for parent coaches</h2>
-            <p style="color: var(--text-secondary); line-height: 1.65; margin: 0 0 1.75rem 0;">Scout Elite exists because these tools shouldn't be exclusive to programs with video staff and big budgets. It's free for players and parents, coaches start at $4.99 a month, and every paid plan comes with a 14-day free trial.</p>
+            <p style="color: var(--text-secondary); line-height: 1.65; margin: 0 0 1.75rem 0;">Scout Elite exists because these tools shouldn't be exclusive to programs with video staff and big budgets. Viewing everything shared with you is free, the full creation toolkit starts at $4.99 a month whether you're a coach or a parent, and every paid plan comes with a 14-day free trial.</p>
             {% include xpress-cta.html placement="hiw2-final" text="Try Scout Elite Free &rarr; No Signup" %}
             <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);"><a href="/#pricing" style="color: var(--accent-hover);">See pricing</a></p>
         </div>
