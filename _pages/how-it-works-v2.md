@@ -418,7 +418,7 @@ sitemap: false
             </div>
             <div class="story-step">
                 <div class="story-step__day">At home</div>
-                <p class="story-step__body">"What should they work on?" finally has a real answer. An <strong><a href="/features/ai-reports/">AI player development report</a></strong> turns what happened in games into things to practice in the driveway: specific, written down, theirs.</p>
+                <p class="story-step__body">"What should they work on?" finally has a real answer. An <strong><a href="/features/ai-reports/">AI player development report</a></strong> turns what happened in games into things to practice in the driveway: specific, written down, theirs. Keep making them as the season goes and you have your own record of their development, one you can set beside the coach's reports or keep entirely for yourselves.</p>
             </div>
             <figure class="shot story-shot">
                 <img src="/img/how-it-works/ai-player-report-chat.jpg" alt="A Scout Elite AI player report: the coach's plain notes in a chat on the left, a drafted development plan with strengths and areas of focus on the right" width="1600" height="1000" loading="lazy">
@@ -430,7 +430,7 @@ sitemap: false
                 <p class="story-step__body">Compile the best clips from the whole year into a <strong>highlight reel</strong> you can share with anyone.</p>
             </div>
 
-            <div class="persona-story__kicker">Viewing everything your coach shares is free, forever, and a free account includes your first three AI reports. If you want the full creation toolkit, plans start at $4.99 a month.</div>
+            <div class="persona-story__kicker">None of this depends on your coach using Scout Elite. Viewing everything a coach does share is free, forever, and a free account includes your first three AI reports. The full creation toolkit starts at $4.99 a month.</div>
             <div class="persona-story__cta">
                 {% include xpress-cta.html placement="hiw2-story-parent" text="Try It Free &rarr; No Signup" %}
             </div>
