@@ -115,8 +115,8 @@ utm_campaign: homepage
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> View shared clips, reviews &amp; playbooks</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Scout Elite Live mobile app</li>
                     <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> 1 starter <a href="/help/creating-playbooks/" style="color:inherit;">Playbook</a> (3 sections)</li>
-                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/features/practice-planning/" style="color:inherit;">Practice planner</a> &mdash; 3 plans + drill library<span class="pricing-card__new">New</span></li>
-                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/help/creating-reports/" style="color:inherit;">AI Game &amp; Player Reports</a> &mdash; 3 reports<span class="pricing-card__new">New</span></li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/features/practice-planning/" style="color:inherit;">Practice planner</a> &mdash; create 3 plans + drill library<span class="pricing-card__new">New</span></li>
+                    <li><span class="pricing-card__check"><svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 10.5l3.5 3.5L15 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> <a href="/help/creating-reports/" style="color:inherit;">AI Game &amp; Player Reports</a> &mdash; create 3 reports<span class="pricing-card__new">New</span></li>
                 </ul>
                 <a href="https://xpress.scout-elite.com/account/register?utm_source=scout-elite&utm_medium=website&utm_campaign=homepage&utm_content=pricing-starter" class="pricing-card__cta pricing-card__cta--secondary" data-try-placement="pricing-starter">Sign Up Free</a>
             </div>
@@ -231,7 +231,7 @@ utm_campaign: homepage
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;"><a href="/help/creating-reports/" style="color:inherit; border-bottom:1px dotted var(--text-secondary);">AI Reports</a> (Game + Player) <span style="font-size:0.75rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:600;">NEW</span></td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">3 reports</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">Create 3 reports</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
                     </tr>
@@ -242,7 +242,7 @@ utm_campaign: homepage
                     </tr>
                     <tr>
                         <td style="text-align:left; padding:14px 12px; font-weight:500; background:none;"><a href="/features/practice-planning/" style="color:inherit; border-bottom:1px dotted var(--text-secondary);">Practice plans</a> <span style="font-size:0.75rem; background: rgba(0,153,255,0.15); color: var(--accent-hover); padding:2px 8px; border-radius:999px; margin-left:6px; font-weight:600;">NEW</span></td>
-                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">3 plans</td>
+                        <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color); font-size:0.85rem;">Create 3 plans</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
                         <td style="text-align:center; background: var(--card-bg); border-bottom: 1px solid var(--border-color);">Unlimited</td>
                     </tr>
