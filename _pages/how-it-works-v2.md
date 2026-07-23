@@ -203,16 +203,94 @@ sitemap: false
     font-weight: 600;
     font-size: 0.9rem;
 }
+
+/* Screenshot figures: one framing language for every product visual. */
+.shot {
+    margin: 0;
+}
+.shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+}
+.shot figcaption {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 0.8rem;
+}
+.shot figcaption::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    flex-shrink: 0;
+}
+.story-shot {
+    margin: 2rem 0 2.5rem calc(120px + 1.5rem);
+}
+@media (max-width: 640px) {
+    .story-shot {
+        margin-left: 0;
+    }
+}
+.learn-shot {
+    max-width: 880px;
+    margin: 2.75rem auto 0 auto;
+}
+.learn-shot figcaption {
+    justify-content: center;
+}
+
+/* Split hero */
+.hero-split {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+.hero-split__copy {
+    flex: 1 1 360px;
+    min-width: 300px;
+    max-width: 560px;
+    text-align: left;
+}
+.hero-split__visual {
+    flex: 1 1 380px;
+    min-width: 280px;
+    position: relative;
+}
+.hero-split__visual::before {
+    content: "";
+    position: absolute;
+    inset: -14%;
+    background: radial-gradient(closest-side, rgba(0, 153, 255, 0.14), transparent 72%);
+    pointer-events: none;
+}
 </style>
 
 <!-- Hero -->
-<section class="hero hero--centered" style="background: var(--primary-bg); padding: var(--space-20) 0 3rem 0;">
-    <div class="container" style="max-width: 760px; text-align: center;">
-        <p style="color: var(--accent-hover); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.1rem;">Review. Plan. Develop. Repeat.</p>
-        <h1 class="hero-title" style="font-size: 2.6em; margin-bottom: 0.5em;">The coaching you love, minus the evenings you don't.</h1>
-        <p class="hero-subtitle" style="font-size: 1.2em; color: var(--text-secondary); margin: 0 auto 2em auto; max-width: 640px;">Scout Elite is an AI-assisted workspace for youth hockey. It takes the film sessions, player reports, practice plans, and playbook upkeep off your plate. Every tool works on its own, in any order, and the whole thing gets smarter the more you use it.</p>
-        {% include xpress-cta.html placement="hiw2-hero" text="Try It Now &rarr; No Signup" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; box-shadow:var(--shadow-sm);" %}
-        <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
+<section class="hero" style="background: var(--primary-bg); padding: var(--space-20) 0 3rem 0; overflow: hidden;">
+    <div class="container hero-split">
+        <div class="hero-split__copy">
+            <p style="color: var(--accent-hover); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 1.1rem;">Review. Plan. Develop. Repeat.</p>
+            <h1 class="hero-title" style="font-size: 2.5em; margin-bottom: 0.5em;">The coaching you love, minus the evenings you don't.</h1>
+            <p class="hero-subtitle" style="font-size: 1.15em; color: var(--text-secondary); margin: 0 0 2em 0;">Scout Elite is an AI-assisted workspace for youth hockey. It takes the film sessions, player reports, practice plans, and playbook upkeep off your plate. Every tool works on its own, in any order, and the whole thing gets smarter the more you use it.</p>
+            {% include xpress-cta.html placement="hiw2-hero" text="Try It Now &rarr; No Signup" class="cta-button" style="display:inline-block; background:var(--accent-primary); color:white; padding:1rem 2rem; border-radius:var(--radius-md); font-weight:600; font-size:1.1rem; text-decoration:none; box-shadow:var(--shadow-sm);" %}
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">No credit card. No upload required. Loads a real game review in your browser in under a minute.</p>
+        </div>
+        <div class="hero-split__visual">
+            <figure class="shot">
+                <img src="/img/how-it-works/review-clips-jr-falcons.jpg" alt="A Scout Elite Review: game video beside categorized goal clips, each with the coach's notes and tags" width="1600" height="828" loading="eager">
+            </figure>
+        </div>
     </div>
 </section>
 
@@ -255,6 +333,11 @@ sitemap: false
                 <div class="story-step__day">Saturday night</div>
                 <p class="story-step__body">Upload the video and import the tagged events. <strong>Clips create themselves</strong> at the right moments. You skim them on the couch, trim a couple, and draw an arrow on the play where words won't cut it. No help at the rink that day? Mark moments yourself as you watch, or let AI clip detection find the plays.</p>
             </div>
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/clip-import-scout-elite-live.jpg" alt="A Scout Elite clip project: game video with an event timeline and goal clips imported from Scout Elite Live" width="1600" height="668" loading="lazy">
+                <figcaption>Saturday night: the moments tagged at the rink are already clips, lined up on the timeline.</figcaption>
+            </figure>
+
             <div class="story-step">
                 <div class="story-step__day">Sunday</div>
                 <p class="story-step__body">Build the <strong><a href="/features/video/">Review</a></strong>. Defensemen get the defensive-zone clips, forwards get the forecheck, everyone gets the goals. Share it and the team watches on their phones before Monday's skate. Nobody sits through forty minutes of full game.</p>
@@ -299,6 +382,11 @@ sitemap: false
                 <div class="story-step__day">Between clients</div>
                 <p class="story-step__body">Your drills live in a <strong><a href="/features/practice-planning/">drill library</a></strong> with proper diagrams, not in a notes app. Import the ones you built in CoachThem or Ice Hockey Systems, browse what other coaches publish, and reuse your best sessions as templates.</p>
             </div>
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/community-drill-library.jpg" alt="The Scout Elite community drill library: hockey drills with hand-drawn rink diagrams, filterable by category and age" width="1600" height="1000" loading="lazy">
+                <figcaption>The drill library: real diagrams, coaching points, and what other coaches actually run.</figcaption>
+            </figure>
+
             <div class="story-step">
                 <div class="story-step__day">Next season</div>
                 <p class="story-step__body">Everything compounds. Every client's clips, reviews, and reports stay in one place, so "remember what we fixed last spring" is a link, not a memory.</p>
@@ -331,6 +419,11 @@ sitemap: false
                 <div class="story-step__day">At home</div>
                 <p class="story-step__body">"What should they work on?" finally has a real answer. An <strong><a href="/features/ai-reports/">AI player development report</a></strong> turns what happened in games into things to practice in the driveway: specific, written down, theirs.</p>
             </div>
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/ai-player-report-chat.jpg" alt="A Scout Elite AI player report: the coach's plain notes in a chat on the left, a drafted development plan with strengths and areas of focus on the right" width="1600" height="1000" loading="lazy">
+                <figcaption>Plain notes go in on the left. A development plan comes out on the right.</figcaption>
+            </figure>
+
             <div class="story-step">
                 <div class="story-step__day">Tryout season</div>
                 <p class="story-step__body">Compile the best clips from the whole year into a <strong>highlight reel</strong> you can share with anyone.</p>
@@ -368,6 +461,10 @@ sitemap: false
                 <p>The next practice attacks your top priorities with drills you haven't just run. Reports remember your players. Nothing starts from a blank page.</p>
             </div>
         </div>
+        <figure class="shot learn-shot">
+            <img src="/img/how-it-works/practice-plan-development-loop.jpg" alt="The Scout Elite practice planner: timed warmup and breakout sections on the left, the Development Loop drafting drill suggestions with rationale on the right" width="1720" height="1075" loading="lazy">
+            <figcaption>The Development Loop drafting a practice from one sentence: breakouts keep dying on the wall.</figcaption>
+        </figure>
         <p style="text-align: center; color: var(--text-secondary); max-width: 620px; margin: 2.5rem auto 0 auto;">That's the difference between a template and a tool that knows your team: your practices come from your games, not someone else's. Read more about <a href="/blog/player-development-loop/" style="color: var(--accent-hover);">the development loop</a>.</p>
     </div>
 </section>
@@ -438,6 +535,13 @@ function showPersona(id) {
     });
     if (history.replaceState) {
         history.replaceState(null, '', '#' + id);
+    }
+    // On phones the picker cards fill the screen; bring the story into view.
+    if (window.matchMedia('(max-width: 700px)').matches) {
+        var panel = document.getElementById('story-' + id);
+        if (panel) {
+            panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     }
 }
 function applyPersonaHash() {
