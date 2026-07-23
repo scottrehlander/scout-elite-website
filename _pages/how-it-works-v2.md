@@ -402,32 +402,32 @@ sitemap: false
         <!-- Parent story -->
         <div class="persona-story" id="story-parent" role="tabpanel" aria-labelledby="tab-parent">
             <h3 class="persona-story__title">A season from the stands</h3>
-            <p class="persona-story__lede">You're at every game anyway. Scout Elite turns the hours you already spend at the rink into something your player can actually use.</p>
+            <p class="persona-story__lede">You're at every game, and half of them are on your phone. Scout Elite turns what you already have into a real record of your player's development.</p>
 
             <div class="story-step">
                 <div class="story-step__day">Game day</div>
-                <p class="story-step__body">Run <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong>, the free mobile app, and tap the moments that matter: shifts, goals, that backcheck nobody else noticed. Publish the game and you've got a <strong>report with stats and a scoring log</strong> to share.</p>
+                <p class="story-step__body">You come home with a few clips on your phone, same as every weekend. Upload them and they're finally organized: by game, by skill, tagged, so "that backcheck from November" is a search, not a scroll through your camera roll. Want stats too? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app tracks shifts and goals while you watch.</p>
             </div>
             <div class="story-step">
-                <div class="story-step__day">That night</div>
-                <p class="story-step__body">If someone filmed the game, your taps line up with the video and become clips automatically. Your kid's shifts, without scrubbing through the whole game.</p>
+                <div class="story-step__day">Mark it up</div>
+                <p class="story-step__body">Draw right on the frame: circle the open lane, arrow where the feet should have gone. The markup saves with the clip, so the point is still there when your player watches it later.</p>
             </div>
             <div class="story-step">
-                <div class="story-step__day">From the coach</div>
-                <p class="story-step__body">When the coach shares a <strong>Review</strong>, your player watches focused clips on their phone. It's the coach's voice making the point, which lands better than yours from the front seat.</p>
-            </div>
-            <div class="story-step">
-                <div class="story-step__day">At home</div>
-                <p class="story-step__body">"What should they work on?" finally has a real answer. An <strong><a href="/features/ai-reports/">AI player development report</a></strong> turns what happened in games into things to practice in the driveway: specific, written down, theirs. Keep making them as the season goes and you have your own record of their development, one you can set beside the coach's reports or keep entirely for yourselves.</p>
+                <div class="story-step__day">The record</div>
+                <p class="story-step__body">The backbone is the <strong><a href="/features/ai-reports/">player development report</a></strong>. Tell the AI what you saw and "what should they work on?" gets a real answer: specific things to practice in the driveway, written down, theirs. Keep making them and you have a season-long record of progress, and when a report calls out wall battles, the clips you tagged wall battles are sitting right next to it.</p>
             </div>
             <figure class="shot story-shot">
-                <img src="/img/how-it-works/ai-player-report-chat.jpg" alt="A Scout Elite AI player report: the coach's plain notes in a chat on the left, a drafted development plan with strengths and areas of focus on the right" width="1600" height="1000" loading="lazy">
+                <img src="/img/how-it-works/ai-player-report-chat.jpg" alt="A Scout Elite AI player report: a parent's plain notes in a chat on the left, a drafted development plan with strengths and areas of focus on the right" width="1600" height="1000" loading="lazy">
                 <figcaption>Plain notes go in on the left. A development plan comes out on the right.</figcaption>
             </figure>
 
             <div class="story-step">
+                <div class="story-step__day">From the coach</div>
+                <p class="story-step__body">When the coach shares a <strong>Review</strong> or a report, it lands in the same place, free to view. Set the coach's reports beside your own and you're seeing the same player from the bench and the stands.</p>
+            </div>
+            <div class="story-step">
                 <div class="story-step__day">Tryout season</div>
-                <p class="story-step__body">Compile the best clips from the whole year into a <strong>highlight reel</strong> you can share with anyone.</p>
+                <p class="story-step__body">All those saved clips become a <strong>highlight reel</strong> you can compile and share with anyone. A season of evidence, three minutes long.</p>
             </div>
 
             <div class="persona-story__kicker">None of this depends on your coach using Scout Elite. Viewing everything a coach does share is free, forever, and a free account includes your first three AI reports. The full creation toolkit starts at $4.99 a month.</div>
