@@ -309,9 +309,9 @@ sitemap: false
                 <p class="persona-tab__hook">I run the team. Games, practices, the group chat, all of it.</p>
             </button>
             <button class="persona-tab" role="tab" aria-selected="false" id="tab-skills-coach" aria-controls="story-skills-coach" onclick="showPersona('skills-coach')">
-                <span class="persona-tab__where">On the ice</span>
+                <span class="persona-tab__where">In the film room</span>
                 <span class="persona-tab__name">Skills Coach</span>
-                <p class="persona-tab__hook">I train players one on one and build my own drills.</p>
+                <p class="persona-tab__hook">I develop players one on one: video analysis, training, small groups.</p>
             </button>
             <button class="persona-tab" role="tab" aria-selected="false" id="tab-parent" aria-controls="story-parent" onclick="showPersona('parent')">
                 <span class="persona-tab__where">In the stands</span>
@@ -333,11 +333,6 @@ sitemap: false
                 <div class="story-step__day">Saturday night</div>
                 <p class="story-step__body">Upload the video and import the tagged events. <strong>Clips create themselves</strong> at the right moments. You skim them on the couch, trim a couple, and draw an arrow on the play where words won't cut it. No help at the rink that day? Mark moments yourself as you watch, or let AI clip detection find the plays.</p>
             </div>
-            <figure class="shot story-shot">
-                <img src="/img/how-it-works/clip-import-scout-elite-live.jpg" alt="A Scout Elite clip project: game video with an event timeline and goal clips imported from Scout Elite Live" width="1600" height="668" loading="lazy">
-                <figcaption>Saturday night: the moments tagged at the rink are already clips, lined up on the timeline.</figcaption>
-            </figure>
-
             <div class="story-step">
                 <div class="story-step__day">Sunday</div>
                 <p class="story-step__body">Build the <strong><a href="/features/video/">Review</a></strong>. Defensemen get the defensive-zone clips, forwards get the forecheck, everyone gets the goals. Share it and the team watches on their phones before Monday's skate. Nobody sits through forty minutes of full game.</p>
@@ -350,6 +345,11 @@ sitemap: false
                 <div class="story-step__day">Tuesday</div>
                 <p class="story-step__body">Practice time. The <strong><a href="/features/practice-planning/">practice assistant</a></strong> has read your reports and your tagged clips, so it already knows the breakout keeps dying on the wall. It drafts a timed session that attacks it, with real rink diagrams, and skips the drills you just ran last week. Print the sheet for the bench.</p>
             </div>
+            <figure class="shot story-shot">
+                <img src="/img/how-it-works/community-drill-library.jpg" alt="The Scout Elite community drill library: hockey drills with hand-drawn rink diagrams, filterable by category and age" width="1600" height="1000" loading="lazy">
+                <figcaption>Tuesday's plan pulls from a drill library with real diagrams, your own drills and the community's.</figcaption>
+            </figure>
+
             <div class="story-step">
                 <div class="story-step__day">All season</div>
                 <p class="story-step__body">Your systems live in a <strong><a href="/features/playbooks/">Playbook</a></strong>: diagrams, real clips from your own games, and notes on one page. Tweak the forecheck in October and the whole team sees the update. No new whiteboard photo in the group chat.</p>
@@ -363,36 +363,37 @@ sitemap: false
 
         <!-- Skills coach story -->
         <div class="persona-story" id="story-skills-coach" role="tabpanel" aria-labelledby="tab-skills-coach">
-            <h3 class="persona-story__title">A week on the ice</h3>
-            <p class="persona-story__lede">Your product is progress the athlete can feel and the parent can see. Scout Elite makes both visible, and keeps every client's work in one place.</p>
+            <h3 class="persona-story__title">A week in the film room</h3>
+            <p class="persona-story__lede">Some weeks you're on the ice, some weeks it's all remote. Either way your product is progress the athlete can feel and the parent can see, and Scout Elite is where all of it lives.</p>
 
             <div class="story-step">
-                <div class="story-step__day">Before the session</div>
-                <p class="story-step__body">A client's parent shares game footage with you, or sends files you drop into your <strong>video library</strong>. You skim and clip the shifts that matter for what you're teaching, and tag them so they're easy to find again.</p>
+                <div class="story-step__day">Film arrives</div>
+                <p class="story-step__body">A client's parent shares weekend game footage with you, or sends files you drop into your <strong>video library</strong>. You clip the shifts that matter for what you're teaching and tag them by skill, so every clip is findable next month, not just this week.</p>
             </div>
-            <div class="story-step">
-                <div class="story-step__day">In the session</div>
-                <p class="story-step__body">Pull the clips up rink-side. Frame by frame, <strong>telestration arrows</strong> over the exact edge work you mean. The athlete sees it instead of just hearing it.</p>
-            </div>
-            <div class="story-step">
-                <div class="story-step__day">After the session</div>
-                <p class="story-step__body">Ask the AI for a <strong><a href="/features/ai-reports/">player report</a></strong> while it's fresh: what you worked on, what to do at home before next week. Your one hour becomes a week of directed practice, and the parent gets a document worth paying for.</p>
-            </div>
-            <div class="story-step">
-                <div class="story-step__day">Between clients</div>
-                <p class="story-step__body">Your drills live in a <strong><a href="/features/practice-planning/">drill library</a></strong> with proper diagrams, not in a notes app. Import the ones you built in CoachThem or Ice Hockey Systems, browse what other coaches publish, and reuse your best sessions as templates.</p>
-            </div>
+
             <figure class="shot story-shot">
-                <img src="/img/how-it-works/community-drill-library.jpg" alt="The Scout Elite community drill library: hockey drills with hand-drawn rink diagrams, filterable by category and age" width="1600" height="1000" loading="lazy">
-                <figcaption>The drill library: real diagrams, coaching points, and what other coaches actually run.</figcaption>
+                <img src="/img/how-it-works/clip-import-scout-elite-live.jpg" alt="A Scout Elite clip project: game video cut into tagged clips on an event timeline" width="1600" height="668" loading="lazy">
+                <figcaption>The film, cut down to the shifts that matter, tagged so you can find them again.</figcaption>
             </figure>
 
             <div class="story-step">
-                <div class="story-step__day">Next season</div>
-                <p class="story-step__body">Everything compounds. Every client's clips, reviews, and reports stay in one place, so "remember what we fixed last spring" is a link, not a memory.</p>
+                <div class="story-step__day">The breakdown</div>
+                <p class="story-step__body">Build the athlete's <strong>Review</strong> from anywhere: frame by frame, <strong>telestration arrows</strong> over the exact edge work you mean, your notes on every clip. Share the link and they watch it with their parents that night. They see it instead of just hearing it.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">Session day</div>
+                <p class="story-step__body">Rink-side or on a call, you teach straight from the clips. And the Review stays up after the session ends, so the lesson keeps working between visits.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">The report</div>
+                <p class="story-step__body">Ask the AI for a <strong><a href="/features/ai-reports/">player report</a></strong> while it's fresh: what you worked on, what to do before next time. Reports build a season-long history of each athlete that parents can look back through, which is exactly the progress they're paying you to show.</p>
+            </div>
+            <div class="story-step">
+                <div class="story-step__day">All year</div>
+                <p class="story-step__body">Your library compounds. Clips, <strong><a href="/features/practice-planning/">drills</a></strong>, reviews, and reports stay organized in one system and reusable for the next athlete with the same problem. Scout Elite becomes your knowledgebase, and the way your teaching reaches every client.</p>
             </div>
 
-            <div class="persona-story__kicker">Your drills are yours. Scout Elite reads and writes an open drill format, so what you build here is never locked in.</div>
+            <div class="persona-story__kicker">One system for every client: the analysis, the drills, the reports. Reusable for the next athlete, referenceable by parents, and always yours. Scout Elite reads and writes an open drill format, so nothing you build is locked in.</div>
             <div class="persona-story__cta">
                 {% include xpress-cta.html placement="hiw2-story-skills" text="Try It Free &rarr; No Signup" %}
             </div>
