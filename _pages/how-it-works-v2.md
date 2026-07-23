@@ -372,8 +372,8 @@ sitemap: false
             </div>
 
             <figure class="shot story-shot">
-                <img src="/img/how-it-works/clip-import-scout-elite-live.jpg" alt="A Scout Elite clip project: game video cut into tagged clips on an event timeline" width="1600" height="668" loading="lazy">
-                <figcaption>The film, cut down to the shifts that matter, tagged so you can find them again.</figcaption>
+                <img src="/img/how-it-works/clip-creator-tag-strip.jpg" alt="The Scout Elite Clip Creator: game video with a strip of hockey event tags and a panel of tagged goal clips" width="1600" height="836" loading="lazy">
+                <figcaption>The film, cut into tagged clips you can still find in March.</figcaption>
             </figure>
 
             <div class="story-step">
@@ -402,11 +402,11 @@ sitemap: false
         <!-- Parent story -->
         <div class="persona-story" id="story-parent" role="tabpanel" aria-labelledby="tab-parent">
             <h3 class="persona-story__title">A season from the stands</h3>
-            <p class="persona-story__lede">You're at every game, and half of them are on your phone. Scout Elite turns what you already have into a real record of your player's development.</p>
+            <p class="persona-story__lede">Your camera roll tells the story: random short clips of your kid being brilliant, and a few of the moments that drove you crazy. Scout Elite gives all of it somewhere to go.</p>
 
             <div class="story-step">
                 <div class="story-step__day">Game day</div>
-                <p class="story-step__body">You come home with a few clips on your phone, same as every weekend. Upload them and they're finally organized: by game, by skill, tagged, so "that backcheck from November" is a search, not a scroll through your camera roll. Want stats too? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app tracks shifts and goals while you watch.</p>
+                <p class="story-step__body">You come home with a handful of new clips, and you know how it goes: the moment you want to show someone, you can never find them. Upload them instead and they're organized by game and tagged by skill, so the clip you want to send their coach is a search, not a scroll. Want stats too? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app tracks shifts and goals while you watch.</p>
             </div>
             <div class="story-step">
                 <div class="story-step__day">Mark it up</div>
