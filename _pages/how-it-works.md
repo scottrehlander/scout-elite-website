@@ -404,7 +404,7 @@ image: /img/how-it-works/review-clips-jr-falcons.jpg
 
             <div class="story-step">
                 <div class="story-step__day">Game day</div>
-                <p class="story-step__body">You come home with a handful of new clips, and you know how it goes: the moment you want to show someone, you can never find them. Upload them instead and they're organized by game and tagged by skill, so the clip you want to send their coach is a search, not a scroll. Want stats too? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app tracks shifts and goals while you watch.</p>
+                <p class="story-step__body">You come home with a handful of new clips, and you know how it goes: the moment you want to show someone, you can never find them. Upload them instead and they're organized by game and tagged by skill, so the clip you want to send their coach is a search, not a scroll. Want to track moments live? The free <strong><a href="/scout-elite-live/">Scout Elite Live</a></strong> app helps tracks the moments you'll want to remember.</p>
             </div>
             <div class="story-step">
                 <div class="story-step__day">File it away</div>
