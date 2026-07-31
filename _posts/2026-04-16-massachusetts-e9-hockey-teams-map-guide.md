@@ -1,9 +1,10 @@
 ﻿---
 layout: post
-display_title: "Massachusetts Youth Hockey Teams: E9 Organizations Map and Guide"
-title: "Youth Hockey Organizations in MA: E9 Guide & Map"
-description: "Interactive map and parent guide to the 17 E9 youth hockey organizations in Massachusetts. Home bases, competitive snapshots, and what the E9 landscape actually looks like."
+display_title: "E9 Hockey: All 17 Massachusetts Organizations, Mapped and Rated"
+title: "E9 Hockey: All 17 Teams, Mapped (2026 Parent Guide)"
+description: "E9 hockey, mapped: every Massachusetts organization in the Elite 9 Hockey League, with home bases and MHR competitive snapshots. A parent's guide to who's who in the E9."
 date: 2026-04-16
+last_modified_at: 2026-07-30
 categories: [insights]
 tags: [E9 hockey, Elite 9 Hockey League, Massachusetts youth hockey, boys hockey, Massachusetts hockey teams, youth hockey teams Massachusetts, youth hockey organizations in MA, youth hockey in New England, E9 map, hockey clubs Massachusetts, youth hockey guide]
 author: "Coach Scott"
