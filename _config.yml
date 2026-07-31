@@ -19,6 +19,17 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
+# GitHub Pages renders extensionless-frontmatter .md too (jekyll-optional-front-matter),
+# so internal notes must be excluded or they get indexed by Google.
+exclude:
+  - "Reference Material"
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
 defaults:
   - scope:
       path: "img"

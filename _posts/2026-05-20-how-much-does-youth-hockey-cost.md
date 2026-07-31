@@ -4,6 +4,13 @@ display_title: "What Does Youth Hockey Really Cost? A Complete Parent's Guide (2
 title: "How Much Does Youth Hockey Cost? House to AAA, By Region (2025–26)"
 description: "What youth hockey really costs in 2025–26: house to AAA to prep school, by level and region across the U.S. and Canada. The hidden costs clubs don't put in the tuition email - and what actually drives the bill."
 date: 2026-05-20
+redirect_from:
+  - "/Reference Material/Blog/youth-hockey-cost/youth-hockey-costs-blog-post/"
+  - "/Reference Material/Blog/youth-hockey-cost/youth-hockey-costs-blog-post.html"
+  - "/Reference Material/Blog/youth-hockey-cost/youth-hockey-cost-research/"
+  - "/Reference Material/Blog/youth-hockey-cost/youth-hockey-cost-research.html"
+  - "/Reference Material/Blog/youth-hockey-cost/youth-hockey-cost-research-supplement/"
+  - "/Reference Material/Blog/youth-hockey-cost/youth-hockey-cost-research-supplement.html"
 categories: [insights]
 tags: [youth hockey cost, how much does youth hockey cost, travel hockey cost, AAA hockey cost, house hockey cost, youth hockey cost by state, youth hockey cost Canada, youth hockey budget, youth hockey parent guide, youth hockey levels explained, club hockey cost, youth hockey registration fees, youth hockey travel team cost, youth hockey cost per year]
 author: "Coach Scott"

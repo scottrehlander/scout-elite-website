@@ -4,6 +4,9 @@ display_title: "Minnesota Youth Hockey Explained: The Complete Parent's Guide"
 title: "Minnesota Youth Hockey Explained: Associations, Tier I, and AAA Clubs Guide"
 description: "How youth hockey actually works in Minnesota: the community association system that runs the winter, the June-July tryout calendar, the fall Tier I high-performance leagues, and the spring/summer AAA club scene. With a club map, costs, and source-backed data for parents."
 date: 2026-06-08
+redirect_from:
+  - "/Reference Material/Blog/mn-districts-map-handoff/"
+  - "/Reference Material/Blog/mn-districts-map-handoff.html"
 categories: [insights]
 tags: [Minnesota youth hockey, Minnesota Hockey, Minnesota youth hockey associations, Minnesota AAA hockey, Minnesota Tier 1 hockey, Minnesota Made hockey, Minnesota Machine hockey, Minnesota Blades hockey, Minnesota Steel hockey, Shattuck-St Mary's hockey, Minnesota spring summer hockey, Minnesota hockey clubs, Squirt Peewee Bantam, youth hockey Minnesota, Minnesota hockey districts, State of Hockey, Minnesota hockey map, Minnesota hockey tryouts, Minnesota girls youth hockey]
 author: "Coach Scott"
