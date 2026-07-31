@@ -10,8 +10,8 @@ tags: [E9 hockey, Elite 9 Hockey League, E9 standings, E9 schedule, E9 parity, E
 author: "Coach Scott"
 excerpt: "A new E9 season is coming. Here's the one-page orientation: how the divisions got decided in May, where the schedule and standings actually live, what changed for 2026-27, and what any of it means for your player."
 image:
-  path: /img/blog/hockey-sticks-ice.jpg
-  alt: "Hockey sticks resting on the ice before a game"
+  path: /img/blog/e9-season-guide-2026-27.jpg
+  alt: "E9 Hockey 2026-27 season guide: the four division tiers (White North, White South, Blue, Red) as a ladder with a parity round arrow, over rink line art"
 permalink: /blog/e9-hockey-season-guide/
 ---
 
