@@ -153,7 +153,7 @@
           row.push(0);
           dirtyLeft++;
           var strokes = [];
-          for (var s = 0; s < 3; s++) {
+          for (var s = 0; s < 5; s++) {
             var ax = 5 + rand() * (T - 14), ay = 5 + rand() * (T - 14);
             strokes.push([ax, ay, ax + 4 + rand() * (T - 16), ay + (rand() - 0.5) * 12]);
           }
@@ -421,26 +421,40 @@
     ctx.closePath();
   }
 
+  function drawBoard(x, y) {
+    var px = x * T, py = y * T;
+    // dasher-board white so blockers can never be missed on the dark ice
+    ctx.fillStyle = '#dde5ec';
+    ctx.fillRect(px, py, T, T);
+    // bevel: light top-left, shaded bottom-right, so it reads as raised
+    ctx.fillStyle = 'rgba(255,255,255,0.55)';
+    ctx.fillRect(px, py, T, 2);
+    ctx.fillRect(px, py, 2, T);
+    ctx.fillStyle = 'rgba(0,0,0,0.22)';
+    ctx.fillRect(px, py + T - 2, T, 2);
+    ctx.fillRect(px + T - 2, py, 2, T);
+    // red kickplate along every edge that faces the ice
+    ctx.fillStyle = C.danger;
+    if (!isWall(x, y - 1)) ctx.fillRect(px, py, T, 5);
+    if (!isWall(x, y + 1)) ctx.fillRect(px, py + T - 5, T, 5);
+    if (!isWall(x - 1, y)) ctx.fillRect(px, py, 5, T);
+    if (!isWall(x + 1, y)) ctx.fillRect(px + T - 5, py, 5, T);
+  }
+
   function drawTiles() {
     for (var y = 0; y < ROWS; y++) {
       for (var x = 0; x < COLS; x++) {
         var px = x * T, py = y * T;
         var v = grid[y][x];
-        if (v === 2) {
-          // boards / net / bench
-          ctx.fillStyle = C.bg;
-          ctx.fillRect(px, py, T, T);
-          ctx.strokeStyle = C.line;
-          ctx.lineWidth = 2;
-          ctx.strokeRect(px + 2, py + 2, T - 4, T - 4);
-        } else if (v === 0) {
+        if (v === 2) continue; // boards painted last, on top of the grid
+        if (v === 0) {
           // scuffed ice
           ctx.fillStyle = C.bgDeep;
           ctx.fillRect(px, py, T, T);
           var strokes = scratches[x + ',' + y];
           if (strokes) {
             ctx.strokeStyle = C.dim;
-            ctx.globalAlpha = 0.28;
+            ctx.globalAlpha = 0.42;
             ctx.lineWidth = 1;
             for (var s = 0; s < strokes.length; s++) {
               ctx.beginPath();
@@ -451,12 +465,14 @@
             ctx.globalAlpha = 1;
           }
         } else {
-          // clean ice with a subtle sheen
+          // clean ice: brighter, with a cool gloss and a diagonal sheen
           ctx.fillStyle = C.surface;
           ctx.fillRect(px, py, T, T);
-          ctx.fillStyle = 'rgba(255,255,255,0.10)';
+          ctx.fillStyle = 'rgba(255,255,255,0.12)';
           ctx.fillRect(px, py, T, T);
-          ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+          ctx.fillStyle = 'rgba(140,200,255,0.07)';
+          ctx.fillRect(px, py, T, T);
+          ctx.strokeStyle = 'rgba(255,255,255,0.07)';
           ctx.lineWidth = 5;
           ctx.beginPath();
           ctx.moveTo(px + 7, py + T - 7);
@@ -465,7 +481,7 @@
         }
       }
     }
-    // faint tile grid over the ice
+    // faint tile grid over the ice (boards go on top of it)
     ctx.strokeStyle = C.line;
     ctx.globalAlpha = 0.25;
     ctx.lineWidth = 1;
@@ -476,6 +492,12 @@
       ctx.beginPath(); ctx.moveTo(0, gy * T); ctx.lineTo(W, gy * T); ctx.stroke();
     }
     ctx.globalAlpha = 1;
+    // boards last so nothing draws over them
+    for (var by = 0; by < ROWS; by++) {
+      for (var bx = 0; bx < COLS; bx++) {
+        if (grid[by][bx] === 2) drawBoard(bx, by);
+      }
+    }
   }
 
   function drawFlashes() {
