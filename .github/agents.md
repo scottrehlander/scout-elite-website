@@ -193,6 +193,19 @@ Any line that appears in the output is a hardcoded xpress link without UTM cover
 - `getting-started.md` — help content
 - `agents.md` — this file
 
+## Hidden games arcade (/games/) — 2026-08-12
+Seven touch-first hockey game prototypes for playtesting, live in prod but hidden: no nav/footer links, `sitemap: false` + `noindex: true` frontmatter on every page (the layout emits the robots meta). Do not link them from public pages without Scott's say-so.
+
+- Pages in `_pages/games/*.html` plus the `index.md` arcade menu. Each page sets `arcade: true`, which makes `_layouts/default.html` load `styles/games.css`.
+- Shared helper `scripts/games/arcade.js`: DPR-aware canvas scaling, unified touch input, localStorage bests, seeded PRNG, local day key. Each game is one page + one ES5 IIFE in `scripts/games/`, colors via `Arcade.colors` (CSS vars only, never hardcoded hex).
+- The games: Keep It In (blue-line pinch timing), Breakaway, Shootout (goalie learns your shot tendencies across visits), Coach's Challenge (frame-scrub offside calls), The Telestrator (draw a route, players run it literally), Zamboni (ice-slide resurfacing puzzle), The Daily Faceoff (daily word game fed by `_data/hockey_glossary.json`).
+- **Breakaway is the flagship candidate** and most developed: top-down deke dodger, score-based (passes +5, slick tricks +15, epic +30, goals +50), 17 named trick moves tiered by how late you deke (ring telegraph on threats: green = slick window, gold = epic), three defender archetypes (plodder/regular/burner) whose closing speed stays constant across levels by design, 600m levels ending in a goalie showdown with an auto-released shot, a one-time explainer pause at the first net, and tap-zone chevrons. All tuning constants sit at the top of `scripts/games/breakaway.js`.
+- Testing pattern: headless Chromium (playwright-core, see Browser checks above) driving the Docker `jekyll serve` on :4000 with a tap-bot; for showdown/level testing, temporarily sed `LEVEL_LEN` from 600 to 120 and restore it after.
+- Games pages carry no xpress CTAs, so the UTM audit does not flag them.
+
+### Games backlog
+- **Systems (turn-based, 2 players):** the puck moves between zones; each turn both players secretly pick the system they will run for that situation, then the game resolves success from the matchup odds plus a random roll. Examples: the team in the offensive zone *without* the puck picks a forecheck (1-2-2, 2-1-2, ...) while the puck team picks a breakout path (up the wall, center swing, stretch pass); with the puck in the o-zone you pick how to generate a chance (cycle, point shot, slot drive) while the defenders pick a d-zone coverage (man, zone, box+1). Same shape in every zone. Idea logged 2026-08-12.
+
 ## Current state (2026-07-23)
 - `/how-it-works/` is the persona-story page (shipped, replaced the intro.js tour page): split hero, three second-person "week" narratives deep-linkable via `#team-coach` / `#skills-coach` / `#parent`, screenshot figures via the page-scoped `.shot` component, Development Loop section. intro.js was removed from `_layouts/default.html` — don't reintroduce it.
 - Nav order: How it Works sits directly after Home.
