@@ -16,7 +16,7 @@
   var DEF_R = 12;
   var HIT_DIST = 20;          // collision distance (radii sum minus forgiveness)
   var BASE_SPEED = 250;       // world scroll px/s
-  var RAMP = 7;               // world speed gain per second
+  var RAMP = 4.5;             // world speed gain per second
   var MAX_SPEED = 620;
   var DEKE_VX = 680;          // deke burst velocity
   var DEKE_DECAY = 12;        // how fast the burst bleeds off
@@ -30,10 +30,32 @@
   var PAIRS_AFTER = 250;      // meters before defender gates appear
   var PAIR_CHANCE = 0.25;
   var PAIR_HALF_GAP = 72;     // half distance between gate defenders
+
+  /* defender archetypes: big slow bodies, regulars, and burners */
+  var DEF_TYPES = [
+    { w: 0.30, mul: 0.78, r: 13.5, agility: 0.85 }, // plodder
+    { w: 0.45, mul: 1.00, r: 12.0, agility: 1.00 }, // regular
+    { w: 0.25, mul: 1.28, r: 10.5, agility: 1.20 }  // burner
+  ];
+  // attackers close at the same rate no matter the level: your reaction
+  // window stays constant, levels add pressure via density and tracking
+  var DEF_CLOSING = BASE_SPEED * 0.55 + 130;
+  /* levels: survive the stretch, finish on the goalie, ramp and repeat */
+  var LEVEL_LEN = 600;        // meters of open ice before the goalie showdown
+  var GOAL_PTS = 50;          // scoring on the breakaway
+  var GOALIE_R = 13;
+  var GOALIE_STEER = 150;     // lateral tracking, +15 per level
+  var GOALIE_LUNGE = 280;     // dive speed cap, +15 per level
+  var SHOT_TTI = 0.15;        // the shot releases this close to the net
+  var OPEN_GAP = 28;          // lateral daylight needed at release to score
+  var SAVE_LINES = ['Glove save.', 'Blocker. Robbed.', 'Pads. Denied.', 'He read it all the way.'];
+  var LEVEL_SPEED_STEP = 50;  // world speed floor bump per level
+  var LEVEL_SPAWN_TIGHTEN = 0.95; // spawn interval multiplier per level
+
   var PASS_PTS = 5;           // every defender you beat
   var NEAR_MISS_X = 46;       // close shave without a tagged deke
   var NEAR_MISS_BONUS = 5;
-  var MILESTONE_BUMP = 8;
+  var MILESTONE_BUMP = 5;
 
   /* trick dekes: the later you leave it (time-to-impact when you tapped),
      the flashier the move and the bigger the bonus. The ring on a defender
@@ -71,15 +93,19 @@
   var BEST_KEY = 'breakaway-score';
   var scoreEl = document.getElementById('score');
   var distEl = document.getElementById('dist');
+  var levelEl = document.getElementById('level');
   var bestEl = document.getElementById('best');
   var overlay = document.getElementById('overlay');
   var overlayTitle = document.getElementById('overlay-title');
   var overlayMsg = document.getElementById('overlay-msg');
   var overlayBtn = document.getElementById('overlay-btn');
 
-  var state = 'idle'; // idle | playing | over
+  var state = 'idle'; // idle | playing | howto | over
+  var howtoShown = false; // the goalie explainer, once per page load
   var speed, dist, worldPos, spawnTimer, nextMilestone;
   var score, beaten;
+  var level, levelStart, phase, net, goalie, levelupT; // phase: run | showdown | levelup
+  var shot; // the showdown release in flight, null otherwise
   var player, defenders, particles, floaters;
 
   bestEl.textContent = Arcade.best(BEST_KEY);
@@ -100,18 +126,33 @@
     nextMilestone = 100;
     score = 0;
     beaten = 0;
+    level = 1;
+    levelStart = 0;
+    phase = 'run';
+    net = null;
+    goalie = null;
+    shot = null;
+    levelupT = 0;
     player = { x: W / 2, vx: 0, cooldown: 0, lean: 0, trick: null };
     defenders = [];
     particles = [];
     floaters = [];
     scoreEl.textContent = '0';
     distEl.textContent = '0';
+    levelEl.textContent = '1';
   }
 
   function start() {
     reset();
     state = 'playing';
     overlay.hidden = true;
+    overlay.style.background = '';
+  }
+
+  function resume() {
+    state = 'playing';
+    overlay.hidden = true;
+    overlay.style.background = '';
   }
 
   function gameOver() {
@@ -120,7 +161,7 @@
     bestEl.textContent = Arcade.best(BEST_KEY);
     overlayTitle.textContent = 'Lined up and finished';
     overlayMsg.textContent = (newBest ? 'New best: ' : '')
-      + score + ' points. Beat ' + beaten + ' defenders over ' + Math.floor(dist) + ' m.'
+      + score + ' points. Level ' + level + ', ' + beaten + ' defenders beaten over ' + Math.floor(dist) + ' m.'
       + (newBest ? '' : ' Best is ' + Arcade.best(BEST_KEY) + '.');
     overlayBtn.textContent = 'Another rush';
     overlay.hidden = false;
@@ -152,6 +193,15 @@
         d.dekeTti = (d.dekeTti === undefined) ? tti : Math.min(d.dekeTti, tti);
       }
     }
+
+    // same for the goalie on a showdown
+    if (goalie && !shot && phase === 'showdown' && goalie.y < PLAYER_Y) {
+      var gtti = (PLAYER_Y - goalie.y) / (speed * 0.55);
+      var gImpactX = goalie.x + (goalie.committed ? goalie.vx * gtti : 0);
+      if (Math.abs(gImpactX - player.x) < TRICK_THREAT_X) {
+        goalie.dekeTti = (goalie.dekeTti === undefined) ? gtti : Math.min(goalie.dekeTti, gtti);
+      }
+    }
     for (var i = 0; i < 6; i++) {
       particles.push({
         x: player.x - dir * 8, y: PLAYER_Y + 6 + Math.random() * 6,
@@ -165,17 +215,26 @@
     // bias spawns toward the player so tracking starts honest
     var x = player.x + (Math.random() * 2 - 1) * 130;
     x = Math.max(MIN_X + 10, Math.min(MAX_X - 10, x));
+
+    // roll an archetype by weight
+    var roll = Math.random(), type = DEF_TYPES[DEF_TYPES.length - 1];
+    for (var i = 0, acc = 0; i < DEF_TYPES.length; i++) {
+      acc += DEF_TYPES[i].w;
+      if (roll < acc) { type = DEF_TYPES[i]; break; }
+    }
+
     defenders.push({
       x: x, y: -30,
       vx: 0,
-      vy: speed * 0.55 + 130 + ramp01() * 60,
+      vy: DEF_CLOSING * type.mul,
+      r: type.r, agility: type.agility, fast: type.mul > 1.1,
       committed: false, gate: false, missed: false
     });
   }
 
   function spawnGate() {
     var cx = MIN_X + 60 + Math.random() * (MAX_X - MIN_X - 120);
-    var vy = speed * 0.55 + 110;
+    var vy = DEF_CLOSING - 20;
     [-1, 1].forEach(function (side) {
       defenders.push({
         x: cx + side * PAIR_HALF_GAP, y: -30,
@@ -212,13 +271,36 @@
       if (player.trick.t > player.trick.dur) player.trick = null;
     }
 
-    // spawning
-    spawnTimer -= dt;
-    if (spawnTimer <= 0 && defenders.length < SPAWN_MAX) {
-      if (dist > PAIRS_AFTER && Math.random() < PAIR_CHANCE) spawnGate();
-      else spawnDefender();
-      var interval = Math.max(0.55, 1.3 - ramp01() * 0.6);
-      spawnTimer = interval * (0.85 + Math.random() * 0.4);
+    // level phases
+    if (phase === 'run' && dist - levelStart >= LEVEL_LEN) {
+      phase = 'showdown';
+      floaters.push({ x: W / 2, y: 200, text: 'BREAKAWAY!', t: 0, life: 1.1, color: C.accentHover, size: 24 });
+    } else if (phase === 'showdown') {
+      updateShowdown(dt);
+    } else if (phase === 'levelup') {
+      if (net) { net.y += speed * 0.6 * dt; if (net.y > H + 80) net = null; }
+      if (goalie) { goalie.y += speed * 0.6 * dt; if (goalie.y > H + 60) goalie = null; }
+      levelupT -= dt;
+      if (levelupT <= 0) {
+        level++;
+        levelStart = dist;
+        speed = Math.max(speed, Math.min(BASE_SPEED + (level - 1) * LEVEL_SPEED_STEP, MAX_SPEED));
+        phase = 'run';
+        spawnTimer = 1.0;
+        levelEl.textContent = String(level);
+        floaters.push({ x: W / 2, y: 200, text: 'LEVEL ' + level, t: 0, life: 1.1, color: C.accentHover, size: 26 });
+      }
+    }
+
+    // spawning (open ice only)
+    if (phase === 'run') {
+      spawnTimer -= dt;
+      if (spawnTimer <= 0 && defenders.length < SPAWN_MAX) {
+        if (dist > PAIRS_AFTER && Math.random() < PAIR_CHANCE) spawnGate();
+        else spawnDefender();
+        var interval = Math.max(0.45, Math.max(0.55, 1.3 - ramp01() * 0.6) * Math.pow(LEVEL_SPAWN_TIGHTEN, level - 1));
+        spawnTimer = interval * (0.85 + Math.random() * 0.4);
+      }
     }
 
     // defenders
@@ -228,18 +310,21 @@
     for (var i = defenders.length - 1; i >= 0; i--) {
       var d = defenders[i];
 
+      var st = steer * (d.agility || 1);
+      var lg = lungeMax * (d.agility || 1);
+
       if (!d.committed) {
         if (d.y < PLAYER_Y - COMMIT_DIST) {
           // still hunting: steer toward the puck carrier
           var dx = player.x - d.x;
-          var step = Math.min(Math.abs(dx), steer * dt);
+          var step = Math.min(Math.abs(dx), st * dt);
           d.x += Math.sign(dx) * step;
-          d.vx = Math.sign(dx) * steer;
+          d.vx = Math.sign(dx) * st;
         } else {
           // commit: aim at where you are RIGHT NOW and live with it
           d.committed = true;
           var timeToYou = Math.max((PLAYER_Y - d.y) / d.vy, 0.12);
-          d.vx = Math.max(-lungeMax, Math.min(lungeMax, (player.x - d.x) / timeToYou));
+          d.vx = Math.max(-lg, Math.min(lg, (player.x - d.x) / timeToYou));
           d.vy *= 1.12;
         }
       } else if (!d.gate) {
@@ -249,9 +334,10 @@
       if (d.x < MIN_X - 4) d.x = MIN_X - 4;
       if (d.x > MAX_X + 4) d.x = MAX_X + 4;
 
-      // collision
+      // collision, sized to the defender's body
       var ddx = d.x - player.x, ddy = d.y - PLAYER_Y;
-      if (ddx * ddx + ddy * ddy < HIT_DIST * HIT_DIST) { gameOver(); return; }
+      var hd = (d.r || DEF_R) + PLAYER_R - 3;
+      if (ddx * ddx + ddy * ddy < hd * hd) { gameOver(); return; }
 
       // beaten: he's past you. Base points for every defender, trick bonus
       // on top when you deked while he had you lined up (no distance
@@ -291,6 +377,47 @@
       if (d.y > H + 40) defenders.splice(i, 1);
     }
 
+    // the shot in flight, and its result
+    if (shot) {
+      shot.t += dt;
+      if (!shot.resolved && shot.t >= shot.dur) {
+        shot.resolved = true;
+        shot.fx = 0.5;
+        if (shot.goal) {
+          var gBonus = 0, gMove = null;
+          if (goalie && goalie.dekeTti !== undefined && goalie.dekeTti <= TRICK_EPIC_TTI) {
+            gMove = EPIC_MOVES[Math.floor(Math.random() * EPIC_MOVES.length)];
+            gBonus = TRICK_EPIC_PTS;
+          } else if (goalie && goalie.dekeTti !== undefined && goalie.dekeTti <= TRICK_SLICK_TTI) {
+            gMove = SLICK_MOVES[Math.floor(Math.random() * SLICK_MOVES.length)];
+            gBonus = TRICK_SLICK_PTS;
+          }
+          addScore(GOAL_PTS + gBonus);
+          if (gMove) player.trick = { kind: gMove.kind, t: 0, dur: 0.6, dir: player.dekeDir || 1 };
+          floaters.push({
+            x: W / 2, y: PLAYER_Y - 90,
+            text: gMove ? gMove.name + '  GOAL! +' + (GOAL_PTS + gBonus) : 'GOAL! +' + GOAL_PTS,
+            t: 0, life: 1.4, color: C.warning, size: 24
+          });
+          Arcade.vibrate(60);
+          levelupT = 1.7;
+        } else {
+          floaters.push({
+            x: W / 2, y: PLAYER_Y - 80,
+            text: SAVE_LINES[Math.floor(Math.random() * SAVE_LINES.length)],
+            t: 0, life: 1.2, color: C.dim, size: 17
+          });
+          Arcade.vibrate(30);
+          levelupT = 1.4;
+        }
+        phase = 'levelup';
+      }
+      if (shot.resolved) {
+        shot.fx -= dt;
+        if (shot.fx <= 0) shot = null;
+      }
+    }
+
     // particles and floaters
     for (var p = particles.length - 1; p >= 0; p--) {
       var pt = particles[p];
@@ -304,6 +431,70 @@
       fl.t += dt;
       fl.y -= 24 * dt;
       if (fl.t > fl.life) floaters.splice(f, 1);
+    }
+  }
+
+  function updateShowdown(dt) {
+    // let the last backcheckers flush out, then the net comes to you
+    if (!net && defenders.length === 0) {
+      net = { y: -100 };
+      goalie = { x: W / 2, y: -84, vx: 0, committed: false, done: false };
+    }
+    if (!net) return;
+
+    var vy = speed * 0.55;
+    net.y += vy * dt;
+    goalie.y = net.y + 16;
+
+    // first time at the net: freeze the moment and explain the finish
+    if (!howtoShown && net.y > 40) {
+      howtoShown = true;
+      state = 'howto';
+      overlay.style.background = 'rgba(10, 10, 10, 0.62)';
+      overlayTitle.textContent = 'Breakaway!';
+      overlayMsg.textContent = 'The goalie mirrors your every move. The moment his ring turns gold he commits to his dive, and that is your window: deke, and the shot fires far side on its own when you reach the hash marks. Ring still green? Chain dekes to drag him out of position first.';
+      overlayBtn.textContent = 'Finish it';
+      overlay.hidden = false;
+      return;
+    }
+
+    // after the release, he just finishes his slide while the puck flies
+    if (shot) {
+      if (goalie.committed) goalie.x += goalie.vx * dt * 0.6;
+      if (goalie.x < MIN_X) goalie.x = MIN_X;
+      if (goalie.x > MAX_X) goalie.x = MAX_X;
+      return;
+    }
+
+    var tti = (PLAYER_Y - goalie.y) / vy;
+    if (!goalie.committed) {
+      if (tti > TRICK_EPIC_TTI) {
+        // squares up: mirrors you across the ice with a bit of lag
+        var gdx = player.x - goalie.x;
+        var gs = GOALIE_STEER + (level - 1) * 15;
+        goalie.x += Math.sign(gdx) * Math.min(Math.abs(gdx), gs * dt);
+      } else {
+        // the ring just went gold: he sells out on where you are right now
+        goalie.committed = true;
+        var lunge = GOALIE_LUNGE + (level - 1) * 15;
+        goalie.vx = Math.max(-lunge, Math.min(lunge, (player.x - goalie.x) / Math.max(tti - SHOT_TTI, 0.1)));
+      }
+    } else {
+      goalie.x += goalie.vx * dt;
+    }
+    if (goalie.x < MIN_X) goalie.x = MIN_X;
+    if (goalie.x > MAX_X) goalie.x = MAX_X;
+
+    // the release: at the hash marks the shot goes, daylight or not
+    if (tti <= SHOT_TTI) {
+      var gap = Math.abs(goalie.x - player.x);
+      var side = Math.sign(player.x - goalie.x) || player.dekeDir || 1;
+      shot = {
+        t: 0, dur: 0.24, resolved: false, fx: 0,
+        sx: player.x, sy: PLAYER_Y - 23,
+        goal: gap >= OPEN_GAP,
+        relTx: side * 22
+      };
     }
   }
 
@@ -361,7 +552,142 @@
     });
   }
 
+  function drawNet() {
+    if (!net) return;
+    var cx = W / 2, gl = net.y;
+    // goal line
+    ctx.fillStyle = C.danger;
+    ctx.globalAlpha = 0.5;
+    ctx.fillRect(BOARD_W, gl - 2, W - BOARD_W * 2, 4);
+    ctx.globalAlpha = 1;
+    // crease
+    ctx.fillStyle = C.accent;
+    ctx.globalAlpha = 0.25;
+    ctx.beginPath();
+    ctx.arc(cx, gl, 30, 0, Math.PI);
+    ctx.fill();
+    ctx.globalAlpha = 1;
+    // frame and mesh sit behind the goal line
+    ctx.strokeStyle = C.text;
+    ctx.lineWidth = 3;
+    ctx.strokeRect(cx - 32, gl - 26, 64, 26);
+    ctx.strokeStyle = C.dim;
+    ctx.lineWidth = 1;
+    for (var i = 1; i < 4; i++) {
+      ctx.beginPath();
+      ctx.moveTo(cx - 32 + i * 16, gl - 26);
+      ctx.lineTo(cx - 32 + i * 16, gl);
+      ctx.stroke();
+    }
+    ctx.beginPath();
+    ctx.moveTo(cx - 32, gl - 13);
+    ctx.lineTo(cx + 32, gl - 13);
+    ctx.stroke();
+  }
+
+  function drawGoalie() {
+    if (!goalie) return;
+
+    // same ring language as the defenders: green = slick window, gold = epic
+    if (!shot && phase === 'showdown' && goalie.y < PLAYER_Y && state === 'playing') {
+      var tti = (PLAYER_Y - goalie.y) / (speed * 0.55);
+      var impactX = goalie.x + (goalie.committed ? goalie.vx * tti : 0);
+      if (tti <= TRICK_SLICK_TTI && Math.abs(impactX - player.x) < TRICK_THREAT_X) {
+        var epic = tti <= TRICK_EPIC_TTI;
+        var pulse = 1 + 0.08 * Math.sin(worldPos * 0.06);
+        ctx.strokeStyle = epic ? C.warning : C.success;
+        ctx.globalAlpha = epic ? 0.9 : 0.6;
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(goalie.x, goalie.y, (GOALIE_R + 6) * pulse, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    // paddle down across the ice
+    ctx.strokeStyle = C.text;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(goalie.x - 15, goalie.y + 12);
+    ctx.lineTo(goalie.x + 15, goalie.y + 12);
+    ctx.stroke();
+
+    ctx.fillStyle = C.text;
+    ctx.beginPath();
+    ctx.arc(goalie.x, goalie.y, GOALIE_R, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = C.bgDeep;
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  function drawShot() {
+    if (!shot) return;
+    // target follows the world: far corner of the net on a goal, the goalie's
+    // body on a save
+    var tx, ty;
+    if (shot.goal) {
+      tx = W / 2 + shot.relTx;
+      ty = (net ? net.y : shot.sy) - 13;
+    } else if (goalie) {
+      tx = goalie.x;
+      ty = goalie.y;
+    } else {
+      tx = shot.sx;
+      ty = shot.sy - 60;
+    }
+
+    var t01 = Math.min(shot.t / shot.dur, 1);
+    var e = 1 - (1 - t01) * (1 - t01); // ease out
+    var px = shot.sx + (tx - shot.sx) * e;
+    var py = shot.sy + (ty - shot.sy) * e;
+
+    if (!shot.resolved) {
+      ctx.strokeStyle = C.text;
+      ctx.globalAlpha = 0.5;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(shot.sx + (px - shot.sx) * 0.55, shot.sy + (py - shot.sy) * 0.55);
+      ctx.lineTo(px, py);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = C.text;
+      ctx.beginPath();
+      ctx.arc(px, py, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+    } else if (shot.fx > 0) {
+      // mesh ripple on a goal, catch flash on a save
+      var k = 1 - shot.fx / 0.5;
+      ctx.strokeStyle = shot.goal ? C.warning : C.dim;
+      ctx.globalAlpha = 1 - k;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(tx, ty, 8 + k * 22, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+      if (shot.goal) {
+        ctx.fillStyle = C.text;
+        ctx.beginPath();
+        ctx.arc(tx, ty, 4.5, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
   function drawDefender(d) {
+    var r = d.r || DEF_R;
+
+    // burners get a speed trail so you can read them coming
+    if (d.fast) {
+      ctx.strokeStyle = C.dim;
+      ctx.globalAlpha = 0.35;
+      ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(d.x - 4, d.y - r - 6); ctx.lineTo(d.x - 4, d.y - r - 18); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(d.x + 4, d.y - r - 10); ctx.lineTo(d.x + 4, d.y - r - 22); ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+
     // stick: aimed at you while hunting, locked along the lunge once committed
     var ang;
     if (d.gate) ang = Math.PI / 2;
@@ -377,7 +703,7 @@
 
     ctx.fillStyle = C.dim;
     ctx.beginPath();
-    ctx.arc(d.x, d.y, DEF_R, 0, Math.PI * 2);
+    ctx.arc(d.x, d.y, r, 0, Math.PI * 2);
     ctx.fill();
     ctx.strokeStyle = C.bgDeep;
     ctx.lineWidth = 2;
@@ -395,7 +721,7 @@
         ctx.globalAlpha = epic ? 0.9 : 0.6;
         ctx.lineWidth = 3;
         ctx.beginPath();
-        ctx.arc(d.x, d.y, (DEF_R + 6) * pulse, 0, Math.PI * 2);
+        ctx.arc(d.x, d.y, ((d.r || DEF_R) + 6) * pulse, 0, Math.PI * 2);
         ctx.stroke();
         ctx.globalAlpha = 1;
       }
@@ -614,6 +940,7 @@
 
   function draw() {
     drawRink();
+    drawNet();
 
     ctx.fillStyle = C.text;
     particles.forEach(function (pt) {
@@ -623,7 +950,9 @@
     ctx.globalAlpha = 1;
 
     defenders.forEach(drawDefender);
+    drawGoalie();
     if (state !== 'idle') drawPlayer();
+    drawShot();
 
     ctx.textAlign = 'center';
     floaters.forEach(function (fl) {
@@ -640,8 +969,15 @@
   });
   Arcade.onKey(['ArrowLeft', 'a', 'A'], function () { deke(-1); });
   Arcade.onKey(['ArrowRight', 'd', 'D'], function () { deke(1); });
-  Arcade.onKey([' ', 'Enter'], function () { if (state !== 'playing') start(); });
-  overlayBtn.addEventListener('click', start);
+  Arcade.onKey([' ', 'Enter'], function () {
+    if (state === 'howto') resume();
+    else if (state !== 'playing') start();
+  });
+  overlayBtn.addEventListener('click', function () {
+    if (state === 'howto') resume();
+    else start();
+  });
+  Arcade.onTap(overlay, function () { if (state === 'howto') resume(); });
 
   reset();
   Arcade.loop(function (dt) {
