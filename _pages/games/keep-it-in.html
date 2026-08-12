@@ -1,0 +1,34 @@
+---
+layout: default
+title: "Keep It In — Scout Elite Arcade"
+description: "Prototype arcade game: time your pinch at the blue line."
+permalink: /games/keep-it-in/
+sitemap: false
+noindex: true
+arcade: true
+---
+
+<div class="arcade-wrap">
+  <a class="arcade-back" href="/games/">&larr; Arcade</a>
+  <h1 class="arcade-title">Keep It In <span class="proto-badge">Prototype</span></h1>
+  <p class="game-help">They keep rimming the puck around the boards to clear the zone. You run the points. Tap the left or right side right as the puck slides into the pinch zone. Let one out and the shift is over.</p>
+
+  <div class="game-hud">
+    <span>Kept in <strong id="score">0</strong></span>
+    <span>Best <strong id="best">0</strong></span>
+  </div>
+
+  <div class="game-stage">
+    <canvas id="game"></canvas>
+    <div class="game-overlay" id="overlay">
+      <h2 id="overlay-title">Keep It In</h2>
+      <p id="overlay-msg">Tap the side the puck is on, right in the pinch zone.</p>
+      <button class="game-btn" id="overlay-btn" type="button">Start</button>
+    </div>
+  </div>
+
+  <p class="game-help" style="margin-top: var(--space-3);">Phone: tap left or right half of the ice. Keyboard: left and right arrows, or A and D.</p>
+</div>
+
+<script src="/scripts/games/arcade.js"></script>
+<script src="/scripts/games/keep-it-in.js"></script>

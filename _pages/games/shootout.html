@@ -1,0 +1,49 @@
+---
+layout: default
+title: "Shootout — Scout Elite Arcade"
+description: "Prototype arcade game."
+permalink: /games/shootout/
+sitemap: false
+noindex: true
+arcade: true
+---
+
+<div class="arcade-wrap">
+  <a class="arcade-back" href="/games/">&larr; Arcade</a>
+  <h1 class="arcade-title">Shootout <span class="proto-badge">Prototype</span></h1>
+  <p class="game-help">Penalty shots against a goalie who keeps a book on you. Wait for the release meter, then tap the spot you want: high glove, high blocker, low corners, or the five-hole. Hit the green window or he reads it. Mix up your spots, he remembers them between visits.</p>
+
+  <div class="game-hud">
+    <span>Goals <strong id="score">0</strong></span>
+    <span>Saves left <strong id="saves">3</strong></span>
+    <span>Best <strong id="best">0</strong></span>
+  </div>
+
+  <div class="game-stage">
+    <canvas id="game"></canvas>
+    <div class="game-overlay" id="overlay">
+      <h2 id="overlay-title">Shootout</h2>
+      <p id="overlay-msg">Time the green window, tap your spot. Three saves ends the run.</p>
+      <p class="shootout-book" id="overlay-book" hidden></p>
+      <div class="game-btn-row">
+        <button class="game-btn" id="overlay-btn" type="button">Start</button>
+        <button class="game-btn game-btn--ghost" id="wipe-btn" type="button" hidden>Wipe his scouting report</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="game-help" style="margin-top: var(--space-3);">Phone: tap a spot in the net while the meter is live. Keyboard: 1 glove high, 2 blocker high, 3 glove low, 4 blocker low, 5 five-hole.</p>
+</div>
+
+<style>
+  .shootout-book {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    font-style: italic;
+    max-width: 36ch;
+    margin-bottom: 0;
+  }
+</style>
+
+<script src="/scripts/games/arcade.js"></script>
+<script src="/scripts/games/shootout.js"></script>

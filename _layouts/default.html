@@ -28,6 +28,12 @@
     {% if page.url == '/hockey-glossary/' %}
     <link rel="stylesheet" href="{{ '/styles/post.css' | relative_url }}">
     {% endif %}
+    {% if page.arcade %}
+    <link rel="stylesheet" href="{{ '/styles/games.css' | relative_url }}">
+    {% endif %}
+    {% if page.noindex %}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif %}
     {% if page.layout == 'post' or page.categories contains 'blog' or page.categories contains 'features' or page.categories contains 'tutorials' or page.categories contains 'tips' or page.categories contains 'updates' %}
     <link rel="stylesheet" href="{{ '/styles/post.css' | relative_url }}">
     {% endif %}

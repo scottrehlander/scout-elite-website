@@ -1,0 +1,35 @@
+---
+layout: default
+title: "Breakaway — Scout Elite Arcade"
+description: "Prototype arcade game."
+permalink: /games/breakaway/
+sitemap: false
+noindex: true
+arcade: true
+---
+
+<div class="arcade-wrap">
+  <a class="arcade-back" href="/games/">&larr; Arcade</a>
+  <h1 class="arcade-title">Breakaway <span class="proto-badge">Prototype</span></h1>
+  <p class="game-help">You are flying up ice with the puck and the whole team is backchecking. Defenders hunt you down and commit to the hit. Tap left or right to deke and leave them sliding past. When a backchecker has you lined up, a ring lights up around him: green means a slick move is on the table, gold means the filthy stuff, spinoramas and between the legs, for the big bonus. Every defender you beat scores points, and the tricks pay the big bonuses. One clean hit and the rush is over.</p>
+
+  <div class="game-hud">
+    <span>Score <strong id="score">0</strong></span>
+    <span>Distance <strong id="dist">0</strong> m</span>
+    <span>Best <strong id="best">0</strong></span>
+  </div>
+
+  <div class="game-stage">
+    <canvas id="game"></canvas>
+    <div class="game-overlay" id="overlay">
+      <h2 id="overlay-title">Breakaway</h2>
+      <p id="overlay-msg">They track you until they commit. Deke late for style points.</p>
+      <button class="game-btn" id="overlay-btn" type="button">Start</button>
+    </div>
+  </div>
+
+  <p class="game-help" style="margin-top: var(--space-3);">Phone: tap the left or right side of the ice to deke that way. Keyboard: left and right arrows, or A and D.</p>
+</div>
+
+<script src="/scripts/games/arcade.js"></script>
+<script src="/scripts/games/breakaway.js"></script>
