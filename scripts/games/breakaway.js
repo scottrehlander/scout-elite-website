@@ -98,15 +98,18 @@
   var overlay = document.getElementById('overlay');
   var overlayTitle = document.getElementById('overlay-title');
   var overlayMsg = document.getElementById('overlay-msg');
+  var overlayControls = document.getElementById('overlay-controls');
   var overlayBtn = document.getElementById('overlay-btn');
 
   var state = 'idle'; // idle | playing | howto | over
   var howtoShown = false; // the goalie explainer, once per page load
+  var howtoAt = 0;        // when it appeared; dismissable after 0.5s
   var speed, dist, worldPos, spawnTimer, nextMilestone;
   var score, beaten;
   var level, levelStart, phase, net, goalie, levelupT; // phase: run | showdown | levelup
   var shot; // the showdown release in flight, null otherwise
   var player, defenders, particles, floaters;
+  var arrowFlash = { '-1': 0, '1': 0 }; // tap-zone chevrons light up on use
 
   bestEl.textContent = Arcade.best(BEST_KEY);
 
@@ -159,6 +162,7 @@
     state = 'over';
     var newBest = Arcade.saveBest(BEST_KEY, score);
     bestEl.textContent = Arcade.best(BEST_KEY);
+    overlayControls.hidden = true;
     overlayTitle.textContent = 'Lined up and finished';
     overlayMsg.textContent = (newBest ? 'New best: ' : '')
       + score + ' points. Level ' + level + ', ' + beaten + ' defenders beaten over ' + Math.floor(dist) + ' m.'
@@ -180,6 +184,7 @@
     player.lean = dir;
     player.trick = null;
     player.dekeDir = dir;
+    arrowFlash[String(dir)] = 0.25;
     Arcade.vibrate(10);
 
     // tag every committed defender that was genuinely about to hit us:
@@ -266,6 +271,8 @@
     if (player.x > MAX_X) { player.x = MAX_X; player.vx = 0; }
     if (player.cooldown > 0) player.cooldown -= dt;
     player.lean *= Math.pow(0.001, dt); // settle back upright
+    arrowFlash['-1'] = Math.max(0, arrowFlash['-1'] - dt);
+    arrowFlash['1'] = Math.max(0, arrowFlash['1'] - dt);
     if (player.trick) {
       player.trick.t += dt;
       if (player.trick.t > player.trick.dur) player.trick = null;
@@ -450,7 +457,9 @@
     if (!howtoShown && net.y > 40) {
       howtoShown = true;
       state = 'howto';
+      howtoAt = performance.now();
       overlay.style.background = 'rgba(10, 10, 10, 0.62)';
+      overlayControls.hidden = true;
       overlayTitle.textContent = 'Breakaway!';
       overlayMsg.textContent = 'The goalie mirrors your every move. The moment his ring turns gold he commits to his dive, and that is your window: deke, and the shot fires far side on its own when you reach the hash marks. Ring still green? Chain dekes to drag him out of position first.';
       overlayBtn.textContent = 'Finish it';
@@ -938,6 +947,28 @@
     ctx.restore();
   }
 
+  function drawTapArrows() {
+    if (state !== 'playing' && state !== 'howto') return;
+    [-1, 1].forEach(function (dir) {
+      var x = dir === -1 ? 46 : W - 46;
+      var y = 482;
+      var flash = arrowFlash[String(dir)];
+      ctx.strokeStyle = C.text;
+      ctx.globalAlpha = 0.16 + (flash / 0.25) * 0.4;
+      ctx.lineWidth = 5;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      ctx.moveTo(x - dir * 8, y - 12);
+      ctx.lineTo(x + dir * 8, y);
+      ctx.lineTo(x - dir * 8, y + 12);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+      ctx.lineCap = 'butt';
+      ctx.lineJoin = 'miter';
+    });
+  }
+
   function draw() {
     drawRink();
     drawNet();
@@ -951,6 +982,7 @@
 
     defenders.forEach(drawDefender);
     drawGoalie();
+    drawTapArrows();
     if (state !== 'idle') drawPlayer();
     drawShot();
 
@@ -969,15 +1001,20 @@
   });
   Arcade.onKey(['ArrowLeft', 'a', 'A'], function () { deke(-1); });
   Arcade.onKey(['ArrowRight', 'd', 'D'], function () { deke(1); });
+  function tryDismissHowto() {
+    if (state === 'howto' && performance.now() - howtoAt >= 500) resume();
+  }
+
   Arcade.onKey([' ', 'Enter'], function () {
-    if (state === 'howto') resume();
+    if (state === 'howto') tryDismissHowto();
     else if (state !== 'playing') start();
   });
   overlayBtn.addEventListener('click', function () {
-    if (state === 'howto') resume();
+    if (state === 'howto') tryDismissHowto();
     else start();
   });
-  Arcade.onTap(overlay, function () { if (state === 'howto') resume(); });
+  Arcade.onTap(overlay, function () { tryDismissHowto(); });
+  document.addEventListener('keydown', tryDismissHowto);
 
   reset();
   Arcade.loop(function (dt) {
