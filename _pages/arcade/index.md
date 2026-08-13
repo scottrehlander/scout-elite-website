@@ -10,8 +10,8 @@ arcade: true
 
 <div class="arcade-wrap arcade-wrap--wide">
   <p class="arcade-eyebrow">Scout Elite Arcade</p>
-  <h1 class="arcade-title">Rink Games</h1>
-  <p class="game-help">Hockey games you can play with one thumb. Scores and progress save on your device only.</p>
+  <h1 class="arcade-title">Compete-level: Activated</h1>
+  <p class="game-help">Hockey games you can play with one thumb. Scores and progress save on your device.</p>
 
   <section class="arcade-section">
     <h2 class="arcade-section__title">Ready to play</h2>
@@ -39,7 +39,7 @@ arcade: true
 
   <section class="arcade-section">
     <h2 class="arcade-section__title">Prototypes <span class="proto-badge">Rough and unfinished</span></h2>
-    <p class="arcade-section__note">These are early experiments. Expect rough edges, missing polish, and ideas that may not work yet. If you play one, tell us what landed and what did not: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback here</a>.</p>
+    <p class="arcade-section__note">These are early experiments. Expect rough edges, missing polish, and ideas that may not work yet. If you see potential and want us to keep working to make it better: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback here</a>.</p>
     <ul class="arcade-grid">
       <li><a class="arcade-card arcade-card--proto" href="/arcade/keep-it-in/">
         <span class="arcade-card__icon">🥅</span>
