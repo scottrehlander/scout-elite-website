@@ -442,7 +442,14 @@
       if (!wordCorrect(w)) pick = w;
     }
     if (!pick) pick = puzzle.words[((idx + step) % n + n) % n];
-    sel = { x: pick.cells[0].x, y: pick.cells[0].y, dir: pick.dir };
+    // Land on the entry's first EMPTY square. Its opening square is often
+    // already filled by a crossing, and landing there means a keystroke that
+    // was already in flight overwrites a letter you had right.
+    var at = 0;
+    for (var c = 0; c < pick.cells.length; c++) {
+      if (!fill[pick.cells[c].x + ',' + pick.cells[c].y]) { at = c; break; }
+    }
+    sel = { x: pick.cells[at].x, y: pick.cells[at].y, dir: pick.dir };
     startTimer();
     renderAll();
   }
