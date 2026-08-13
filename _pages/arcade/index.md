@@ -16,7 +16,7 @@ arcade: true
   <section class="arcade-section">
     <h2 class="arcade-section__title">Featured game</h2>
     <a class="arcade-featured" href="/arcade/crossword/">
-      <span class="arcade-featured__icon" aria-hidden="true">🧩</span>
+      <img class="arcade-featured__shot" src="/img/arcade/crossword.jpg" alt="" width="893" height="558" loading="lazy">
       <span class="arcade-featured__body">
         <span class="arcade-featured__name">Rink Crossword <span class="arcade-featured__badge">New puzzle daily</span></span>
         <span class="arcade-featured__desc">A fresh mini crossword every day, clued from the hockey glossary. Everyone gets the same grid, so compare your time with the rest of the bench. A painless way to pick up the language coaches actually use.</span>
@@ -29,13 +29,13 @@ arcade: true
     <h2 class="arcade-section__title">Ready to play</h2>
     <ul class="arcade-grid">
       <li><a class="arcade-card" href="/arcade/breakaway/">
-        <span class="arcade-card__icon">🏒</span>
+        <img class="arcade-card__shot" src="/img/arcade/breakaway.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Breakaway</span>
         <p class="arcade-card__desc">An endless rush up ice. Backcheckers hunt you down, so deke late and pull off the filthy stuff. Levels end one on one with the goalie.</p>
         <span class="arcade-card__controls">Tap left or right to deke</span>
       </a></li>
       <li><a class="arcade-card" href="/arcade/zamboni/">
-        <span class="arcade-card__icon">🧊</span>
+        <img class="arcade-card__shot" src="/img/arcade/zamboni.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Zamboni</span>
         <p class="arcade-card__desc">Resurface every tile in as few passes as you can. The machine slides until something stops it. 25 levels, and par is always the perfect solve.</p>
         <span class="arcade-card__controls">Swipe or tap the arrows</span>
@@ -48,25 +48,25 @@ arcade: true
     <p class="arcade-section__note">These are early experiments. Expect rough edges, missing polish, and ideas that may not work yet. If you see potential and want us to keep working to make it better: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback here</a>.</p>
     <ul class="arcade-grid">
       <li><a class="arcade-card arcade-card--proto" href="/arcade/keep-it-in/">
-        <span class="arcade-card__icon">🥅</span>
+        <img class="arcade-card__shot" src="/img/arcade/keep-it-in.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Keep It In <span class="arcade-card__chip">Prototype</span></span>
         <p class="arcade-card__desc">You're the point. They keep rimming pucks out of the zone. Time your pinch.</p>
         <span class="arcade-card__controls">Tap left or right side</span>
       </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/shootout/">
-        <span class="arcade-card__icon">🎯</span>
+        <img class="arcade-card__shot" src="/img/arcade/shootout.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Shootout <span class="arcade-card__chip">Prototype</span></span>
         <p class="arcade-card__desc">Pick your corner. The goalie studies your habits and starts cheating.</p>
         <span class="arcade-card__controls">Tap a target when the meter is green</span>
       </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/coaches-challenge/">
-        <span class="arcade-card__icon">📹</span>
+        <img class="arcade-card__shot" src="/img/arcade/coaches-challenge.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Coach's Challenge <span class="arcade-card__chip">Prototype</span></span>
         <p class="arcade-card__desc">Scrub the replay, step it frame by frame, and make the offside call.</p>
         <span class="arcade-card__controls">Scrub, then call it</span>
       </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/telestrator/">
-        <span class="arcade-card__icon">✏️</span>
+        <img class="arcade-card__shot" src="/img/arcade/telestrator.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">The Telestrator <span class="arcade-card__chip">Prototype</span></span>
         <p class="arcade-card__desc">Draw the route. Your skater runs exactly what you drew. Exactly.</p>
         <span class="arcade-card__controls">Drag to draw</span>
