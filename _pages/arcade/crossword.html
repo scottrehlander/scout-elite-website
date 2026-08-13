@@ -8,52 +8,67 @@ noindex: true
 arcade: true
 ---
 
-<div class="arcade-wrap">
-  <a class="arcade-back" href="/arcade/">&larr; Arcade</a>
-  <h1 class="arcade-title">Rink Crossword</h1>
-  <p class="game-help">A fresh mini crossword every day, built from the hockey glossary. Clues are the definitions with the answer blacked out. Multi-word answers run together with no spaces. Same puzzle for everyone, so compare times.</p>
-
-  <div class="game-hud">
-    <span id="cw-label">Daily <strong id="cw-num">#1</strong></span>
-    <span>Time <strong id="cw-time">0:00</strong></span>
-    <span>Words <strong id="cw-progress">0/0</strong></span>
+<div class="arcade-wrap cw-wrap">
+  <div class="cw-head">
+    <a class="arcade-back cw-back" href="/arcade/">&larr; Arcade</a>
+    <h1 class="arcade-title cw-title">Rink Crossword</h1>
   </div>
 
-  <div class="cw-board" id="cw-board"></div>
+  <!-- Play screen. On a phone this is sized to the viewport so the board and
+       the keys are usable together; on desktop it just flows. -->
+  <div class="cw-screen">
+    <div class="game-hud cw-hud">
+      <span id="cw-label">Daily <strong id="cw-num">#1</strong></span>
+      <span>Time <strong id="cw-time">0:00</strong></span>
+      <span>Words <strong id="cw-progress">0/0</strong></span>
+    </div>
 
-  <div class="cw-cluebar" id="cw-cluebar">Tap a square to start.</div>
+    <div class="cw-boardwrap">
+      <div class="cw-board" id="cw-board"></div>
+    </div>
 
-  <div class="cw-keyboard" id="cw-keyboard"></div>
+    <div class="cw-cluebar">
+      <button class="cw-cluenav" id="cw-prev" type="button" aria-label="Previous clue">&lsaquo;</button>
+      <span class="cw-cluetext" id="cw-cluetext">Tap a square to start.</span>
+      <button class="cw-cluenav" id="cw-next" type="button" aria-label="Next clue">&rsaquo;</button>
+    </div>
 
-  <div class="game-btn-row">
-    <button class="game-btn game-btn--ghost" id="cw-check" type="button">Check</button>
-    <button class="game-btn game-btn--ghost" id="cw-reveal-cell" type="button">Reveal square</button>
-    <button class="game-btn game-btn--ghost" id="cw-reveal-all" type="button">Give up</button>
+    <div class="cw-keyboard" id="cw-keyboard"></div>
+
+    <div class="cw-done" id="cw-done" hidden>
+      <h2 id="cw-done-title">Solved!</h2>
+      <p id="cw-done-msg"></p>
+      <div class="game-btn-row">
+        <button class="game-btn" id="cw-share" type="button">Copy result</button>
+        <button class="game-btn game-btn--ghost" id="cw-practice" type="button">Random puzzle</button>
+      </div>
+    </div>
   </div>
 
-  <div class="cw-done" id="cw-done" hidden>
-    <h2 id="cw-done-title">Solved!</h2>
-    <p id="cw-done-msg"></p>
+  <div class="cw-below">
     <div class="game-btn-row">
-      <button class="game-btn" id="cw-share" type="button">Copy result</button>
-      <button class="game-btn game-btn--ghost" id="cw-practice" type="button">Random puzzle</button>
+      <button class="game-btn game-btn--ghost" id="cw-check" type="button">Check</button>
+      <button class="game-btn game-btn--ghost" id="cw-reveal-cell" type="button">Reveal square</button>
+      <button class="game-btn game-btn--ghost" id="cw-reveal-all" type="button">Give up</button>
     </div>
+
+    <div class="cw-clues">
+      <div>
+        <h3>Across</h3>
+        <ol id="cw-across"></ol>
+      </div>
+      <div>
+        <h3>Down</h3>
+        <ol id="cw-down"></ol>
+      </div>
+    </div>
+
+    <p class="game-help">A fresh mini crossword every day, built from the hockey glossary. Clues are the definitions with the answer blacked out, and multi-word answers run together with no spaces. Same puzzle for everyone, so compare times.</p>
+
+    <p class="game-help">Tap a square to select, tap again to switch direction. Use the arrows on the clue bar to move between clues, or tap any clue in the lists above.</p>
+
+    <p class="cw-glossary-note">Every answer comes from the <a href="/hockey-glossary/">Hockey Glossary</a>, where all of these terms are defined in plain language. Good for a nudge when a clue will not click, and worth a read either way.</p>
   </div>
-
-  <div class="cw-clues">
-    <div>
-      <h3>Across</h3>
-      <ol id="cw-across"></ol>
-    </div>
-    <div>
-      <h3>Down</h3>
-      <ol id="cw-down"></ol>
-    </div>
-  </div>
-
-  <p class="game-help" style="margin-top: var(--space-3);">Tap a square to select, tap again to switch direction. Type with the keys above or a real keyboard. Tap a clue to jump to it.</p>
-
-  <p class="cw-glossary-note">Every answer comes from the <a href="/hockey-glossary/">Hockey Glossary</a>, where all of these terms are defined in plain language. Good for a nudge when a clue will not click, and worth a read either way.</p>
 </div>
 
 <style>
@@ -61,7 +76,7 @@ arcade: true
     display: grid;
     gap: 2px;
     justify-content: center;
-    margin: 0 auto var(--space-3);
+    margin: 0 auto;
     touch-action: manipulation;
   }
   .cw-cell {
@@ -103,26 +118,56 @@ arcade: true
     color: #4a5865;
   }
   .cw-cell.is-selected .cw-num { color: #dbeafc; }
-  .cw-cluebar {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    color: var(--text-primary);
-    font-size: var(--font-size-sm);
-    padding: var(--space-2) var(--space-3);
-    text-align: center;
-    min-height: 3.4em;
+
+  .cw-boardwrap {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: var(--space-3);
   }
+
+  /* The clue sits next to your thumbs rather than up by the grid: while you
+     are typing, your eyes are already down at the keyboard. */
+  .cw-cluebar {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-1);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-3);
+  }
+  .cw-cluetext {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    line-height: 1.35;
+    padding: var(--space-2) 0;
+    min-height: 3.2em;
+  }
+  .cw-cluenav {
+    flex: 0 0 auto;
+    width: 42px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cw-cluenav:active { background: var(--secondary-bg); color: var(--text-primary); }
+
   .cw-keyboard {
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: center;
-    margin-bottom: var(--space-2);
   }
   .cw-krow { display: flex; gap: 5px; justify-content: center; width: 100%; }
   .cw-key {
@@ -142,16 +187,20 @@ arcade: true
   }
   .cw-key:active { background: var(--accent-primary); }
   .cw-key--wide { max-width: 64px; flex: 1.6; }
+  /* the class sets display, so [hidden] needs to win explicitly */
+  .cw-keyboard[hidden] { display: none; }
+
   .cw-done {
     background: var(--card-bg);
     border: 1px solid var(--accent-primary);
     border-radius: var(--radius-lg);
     padding: var(--space-4);
     text-align: center;
-    margin-bottom: var(--space-4);
   }
   .cw-done h2 { margin-bottom: var(--space-2); }
   .cw-done p { margin-bottom: 0; }
+
+  .cw-below { margin-top: var(--space-6); }
   .cw-clues { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-4); }
   .cw-clues h3 { font-size: var(--font-size-base); margin-bottom: var(--space-2); }
   .cw-clues ol { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: var(--space-2); }
@@ -161,6 +210,9 @@ arcade: true
     line-height: 1.45;
     cursor: pointer;
   }
+  .cw-clues li strong { color: var(--text-primary); }
+  .cw-clues li.is-done { opacity: 0.45; text-decoration: line-through; }
+  .cw-clues li.is-active { color: var(--text-primary); }
   .cw-glossary-note {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -171,11 +223,61 @@ arcade: true
     padding: var(--space-3);
     margin-top: var(--space-3);
   }
-  .cw-clues li strong { color: var(--text-primary); }
-  .cw-clues li.is-done { opacity: 0.45; text-decoration: line-through; }
-  .cw-clues li.is-active { color: var(--text-primary); }
-  @media (max-width: 480px) {
+
+  /* ---- phone: the puzzle becomes an app screen ----
+     Fixed-height column, so the board scales into whatever is left over after
+     the HUD, clue bar and keys. Nothing in here scrolls. Everything else on
+     the page sits below the fold. */
+  @media (max-width: 768px) {
+    .cw-wrap {
+      padding-top: var(--space-3);
+      padding-bottom: var(--space-8);
+    }
+    .cw-head {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-3);
+      margin-bottom: var(--space-2);
+    }
+    .cw-back { margin-bottom: 0; }
+    .cw-title { font-size: 1.15rem; margin-bottom: 0; }
+
+    .cw-screen {
+      display: flex;
+      flex-direction: column;
+      /* --chrome-h is the try-strip plus fixed header; the small head row
+         above is allowed to scroll away. */
+      height: calc(100dvh - var(--chrome-h) - 62px);
+      min-height: 430px;
+    }
+    .cw-hud { margin-bottom: var(--space-2); }
+    .cw-boardwrap {
+      flex: 1;
+      min-height: 0;
+      margin-bottom: var(--space-2);
+    }
+    .cw-cluebar { margin-bottom: var(--space-2); }
+    .cw-cluetext { min-height: 2.9em; }
     .cw-clues { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 380px) {
+    .cw-key { height: 42px; font-size: 0.95rem; }
+  }
+
+  /* Short screens (SE-sized): buy the board back some height by tightening
+     the furniture around it, so the squares stay tappable. */
+  @media (max-width: 768px) and (max-height: 720px) {
+    .cw-key { height: 38px; }
+    .cw-keyboard { gap: 4px; }
+    .cw-krow { gap: 4px; }
+    .cw-cluetext {
+      min-height: 2.4em;
+      font-size: var(--font-size-xs);
+      padding: var(--space-1) 0;
+    }
+    .cw-hud { font-size: var(--font-size-xs); }
+    .cw-screen { min-height: 0; }
   }
 </style>
 

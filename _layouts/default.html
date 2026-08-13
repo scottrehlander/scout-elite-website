@@ -150,7 +150,9 @@
     </main>
     
     <!-- Newsletter Signup (Footer) -->
-    {% unless page.url == '/support/' %}
+    <!-- Arcade pages skip the newsletter block: it also loads reCAPTCHA, whose
+         floating badge sits over the game controls in the bottom corner. -->
+    {% unless page.url == '/support/' or page.arcade %}
     <section class="newsletter-signup footer-newsletter">
       <div class="container">
         <div class="newsletter-content">
