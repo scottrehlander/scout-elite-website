@@ -224,6 +224,18 @@
     margin-left: var(--space-2);
 }
 
+.arcade-featured__shot {
+    display: block;
+    flex: 0 0 auto;
+    width: 240px;
+    height: auto;
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background: var(--secondary-bg);
+}
+
 .arcade-featured__body {
     display: flex;
     flex-direction: column;
@@ -275,6 +287,7 @@
         margin-left: 0;
         font-size: 2.6rem;
     }
+    .arcade-featured__shot { width: 100%; }
     .arcade-featured__name { font-size: var(--font-size-xl); }
     .arcade-featured__badge {
         margin-left: 0;
@@ -318,6 +331,20 @@
     font-size: 1.8rem;
     display: block;
     margin-bottom: var(--space-2);
+}
+
+/* Real screenshot of the game, bled to the card edges. Regenerate with
+   Reference Material/capture-arcade-thumbs.js after any visual change. */
+.arcade-card__shot {
+    display: block;
+    width: calc(100% + var(--space-4) * 2);
+    height: auto;
+    margin: calc(var(--space-4) * -1) calc(var(--space-4) * -1) var(--space-3);
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    border-radius: calc(var(--radius-lg) - 1px) calc(var(--radius-lg) - 1px) 0 0;
+    background: var(--secondary-bg);
 }
 
 .arcade-card__name {

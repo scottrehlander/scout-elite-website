@@ -111,8 +111,8 @@ var SHOTS = [
     }
   },
   {
-    slug: 'keep-it-in', url: 'arcade/keep-it-in/', focus: 0.8,
-    play: async function (page) { await start(page); await sleep(3100); }
+    slug: 'keep-it-in', url: 'arcade/keep-it-in/', focus: 0.85,
+    play: async function (page) { await start(page); await sleep(2600); }
   },
   {
     slug: 'shootout', url: 'arcade/shootout/', focus: 0.45,
@@ -123,23 +123,29 @@ var SHOTS = [
     play: async function (page) { await start(page); await sleep(1600); }
   },
   {
-    slug: 'telestrator', url: 'arcade/telestrator/', focus: 0.5,
+    slug: 'telestrator', url: 'arcade/telestrator/', focus: 0.5, fit: 'contain',
     play: async function (page) {
       await start(page);
-      await sleep(500);
-      var box = await page.locator('canvas').first().boundingBox();
-      var at = function (fx, fy) { return [box.x + box.width * fx, box.y + box.height * fy]; };
-      var p0 = at(0.5, 0.88);
-      await page.mouse.move(p0[0], p0[1]);
-      await page.mouse.down();
-      await sleep(80);
-      for (var i = 1; i <= 14; i++) {
-        var pt = at(0.5 + Math.sin(i / 4) * 0.18, 0.88 - i * 0.045);
-        await page.mouse.move(pt[0], pt[1]);
-        await sleep(45);
-      }
-      await page.mouse.up();
-      await sleep(500);
+      await sleep(400);
+      await page.evaluate(async function () {
+        var cv = document.querySelector('canvas');
+        var r = cv.getBoundingClientRect();
+        var fire = function (type, fx, fy) {
+          cv.dispatchEvent(new PointerEvent(type, {
+            bubbles: true, cancelable: true, pointerId: 1, pointerType: 'mouse',
+            isPrimary: true, buttons: 1,
+            clientX: r.left + r.width * fx, clientY: r.top + r.height * fy
+          }));
+        };
+        var wait = function (ms) { return new Promise(function (res) { setTimeout(res, ms); }); };
+        fire('pointerdown', 0.5, 0.88);
+        for (var i = 1; i <= 14; i++) {
+          fire('pointermove', 0.5 + Math.sin(i / 4) * 0.18, 0.88 - i * 0.045);
+          await wait(35);
+        }
+        fire('pointerup', 0.5 + Math.sin(3.5) * 0.18, 0.88 - 14 * 0.045);
+      });
+      await sleep(400);
     }
   }
 ];
@@ -153,9 +159,12 @@ var SHOTS = [
     var shot = SHOTS[i];
     if (ONLY.length && ONLY.indexOf(shot.slug) === -1) continue;
 
+    // 'contain' clips are wider than the board, so the viewport has to be
+    // wide enough to hold them; they need no extra pixel scale.
+    var scale = shot.fit === 'contain' ? 1 : SCALE;
     var ctx = await browser.newContext({
-      viewport: { width: 900, height: 1000 },
-      deviceScaleFactor: SCALE
+      viewport: { width: 1400, height: 1100 },
+      deviceScaleFactor: scale
     });
     var page = await ctx.newPage();
     var errs = [];
@@ -163,6 +172,8 @@ var SHOTS = [
 
     try {
       await page.goto(BASE + '/' + shot.url, { waitUntil: 'load' });
+      // the fixed header/try-strip would paint over the top of a tall board
+      await page.addStyleTag({ content: '.header,.try-strip{display:none!important}' });
       await sleep(500);
       await shot.play(page);
 
@@ -188,7 +199,7 @@ var SHOTS = [
       var out = path.join(OUT_DIR, shot.slug + '.jpg');
       await page.screenshot({ clip: clip, path: out, type: 'jpeg', quality: QUALITY });
       var kb = (fs.statSync(out).size / 1024).toFixed(0);
-      console.log('  ok  ' + shot.slug + '.jpg  ' + Math.round(cw * SCALE) + 'x' + Math.round(ch * SCALE) + '  ' + kb + 'kb' +
+      console.log('  ok  ' + shot.slug + '.jpg  ' + Math.round(cw * scale) + 'x' + Math.round(ch * scale) + '  ' + kb + 'kb' +
         (errs.length ? '  [page errors: ' + errs.join('; ') + ']' : ''));
     } catch (e) {
       failures++;
