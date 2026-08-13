@@ -44,6 +44,7 @@ LAN preview from other machines: `http://n8n-1:4000`.
 ```
 _pages/           # Main site pages (features/, how-it-works.md, etc.)
 _pages/features/  # Feature sub-pages (practice-planning.md, ai-reports.md, playbooks.md, video.md, teams.md)
+_pages/arcade/    # Hockey games (unlisted, noindex) — see the Arcade section
 _landing-pages/   # Persona landing pages (coach, parent, skills coach)
 _posts/           # Blog posts
 _help/            # Help / knowledge base articles
@@ -51,7 +52,9 @@ _includes/        # Liquid partials
 _layouts/         # Page templates (default.html, post.html, kb-article.html)
 styles/           # CSS files (main.css is the primary one)
 scripts/          # JS files
+scripts/games/    # One IIFE per arcade game + the shared arcade.js helper
 img/              # Images and favicons
+Reference Material/  # Excluded from the build; dev tooling (e.g. zamboni-solver.js)
 _config.yml       # Jekyll config — collections, plugins, permalink rules
 Gemfile           # Ruby dependencies
 index.md          # Homepage
@@ -193,25 +196,47 @@ Any line that appears in the output is a hardcoded xpress link without UTM cover
 - `getting-started.md` — help content
 - `agents.md` — this file
 
-## Hidden games arcade (/arcade/) — 2026-08-13
-Seven touch-first hockey games. Unlisted rather than secret: `sitemap: false` + `noindex: true` frontmatter on every page (the layout emits the robots meta), so they stay out of search, but a small gamepad icon in the nav links to `/arcade/` (2026-08-13, at Scott's request). The icon is `.nav-arcade` in `_layouts/default.html`: icon only on desktop, icon plus a "Rink Games" label inside the mobile drawer where a bare icon would read as a mistake. The arcade lived at `/games/` for one day (2026-08-12); those URLs were deliberately left to 404 rather than redirected, since nothing was indexed or linked.
+## Arcade (/arcade/) — 2026-08-13
+Seven touch-first hockey games. **Unlisted, not secret:** every page carries `sitemap: false` + `noindex: true` (the layout emits the robots meta) so they stay out of search, but a small gamepad icon in the nav links to `/arcade/`. Don't "helpfully" remove that link on the grounds that the arcade is hidden. The arcade lived at `/games/` for one day (2026-08-12); those URLs were deliberately left to 404 rather than redirected, since nothing was indexed or linked.
 
-- Pages in `_pages/arcade/*.html` plus the `index.md` arcade menu. Each page sets `arcade: true`, which makes `_layouts/default.html` load `styles/games.css`.
-- Shared helper `scripts/games/arcade.js`: DPR-aware canvas scaling, unified touch input, localStorage bests, seeded PRNG, local day key. Each game is one page + one ES5 IIFE in `scripts/games/`, colors via `Arcade.colors` (CSS vars only, never hardcoded hex).
-- **Two tiers on the index, and the distinction is deliberate.** "Ready to play" holds the finished games (Breakaway, Zamboni, Rink Crossword): no prototype badge anywhere on their pages. "Prototypes" holds Keep It In, Shootout, Coach's Challenge, and The Telestrator: dashed cards with a `.arcade-card__chip` badge, and each page carries a `.proto-notice` banner linking to the feedback board at `https://scout-elite.supahub.com/en`. Promote a game by moving its card up, dropping its `.proto-notice`, and clearing its title badge.
-- The games: Keep It In (blue-line pinch timing), Breakaway, Shootout (goalie learns your shot tendencies across visits), Coach's Challenge (frame-scrub offside calls), The Telestrator (draw a route, players run it literally), Zamboni (ice-slide resurfacing puzzle), Rink Crossword.
-- **Rink Crossword** builds a criss-cross grid in the browser from `_data/hockey_glossary.json`, seeded by the local date (day 0 = 2026-08-13), so it needs no generation step and picks up new glossary terms automatically on the next deploy. Clues are the definitions with the answer redacted, and any *other* answer in the same grid is redacted too so one clue cannot give away another. Two rules to preserve if you touch the generator: the phone-sized grid cap (`MAX_W`/`MAX_H`) is enforced *during* word placement, never as an after-the-fact rejection, so retries chase quality instead of falling back to an oversized board; and the whole puzzle object is saved to localStorage with the player's progress, so a glossary change shipped mid-solve cannot rearrange a board someone already started. Verify changes by simulating a few hundred days headlessly (word-count distribution, max grid width) rather than eyeballing one day. On phones the puzzle is an app screen (`.cw-screen`, a viewport-height flex column) so the board and keys are usable together; cells fit against both axes, not width alone. There is no Check button: the green shading on a fully correct entry is the only correctness signal, deliberately. Typing past the end of an entry jumps to the next unsolved clue, so the cursor can never park on a filled square (that was a real bug, 2026-08-13).
-- Zamboni visual convention (2026-08-12, after a contrast complaint): blockers render as white dasher-board tiles with a red kickplate on every ice-facing edge, painted after the grid lines so they always pop against the dark ice. Keep obstacle contrast high in any new levels or games.
-- Zamboni has 25 levels (verified optimal par 4 up to 21). **Every level and its par is machine-proved by `Reference Material/zamboni-solver.js`** (exact BFS over position + remaining-scuff state, same slide rules as the game; it parses the LEVELS array straight out of `scripts/games/zamboni.js`). Run `node 'Reference Material/zamboni-solver.js'` after ANY level change: it exits nonzero on an unsolvable level or a par that is not optimal. Level-select buttons are generated from the LEVELS array, so adding levels needs no HTML edit. New levels are easiest to make with a slide-walk generator (scuff exactly what k random slides sweep, then let the solver compute true par).
-- **Breakaway is the flagship candidate** and most developed: top-down deke dodger, score-based (passes +5, slick tricks +15, epic +30, goals +50), 17 named trick moves tiered by how late you deke (ring telegraph on threats: green = slick window, gold = epic), three defender archetypes (plodder/regular/burner) whose closing speed stays constant across levels by design, 600m levels ending in a goalie showdown with an auto-released shot, a one-time explainer pause at the first net, and tap-zone chevrons. All tuning constants sit at the top of `scripts/games/breakaway.js`.
-- Testing pattern: headless Chromium (playwright-core, see Browser checks above) driving the Docker `jekyll serve` on :4000 with a tap-bot; for showdown/level testing, temporarily sed `LEVEL_LEN` from 600 to 120 and restore it after.
-- Games pages carry no xpress CTAs, so the UTM audit does not flag them.
-- **Analytics (GA4).** `Arcade.trackPlay(game)` fires `arcade_play` once per page load, from the first *meaningful input* in each game (a deke, a pinch, a slide, a typed letter), never from page load or a Start button, so a real play is distinguishable from a visit. `Arcade.trackDone(game, params)` fires `arcade_complete` on a genuine finish: crossword solve (with `mode`, `puzzle`, `seconds`, `words`, and `revealed` so help-free solves can be segmented), Zamboni level clear (`level`, `moves`, `par`, `stars`), Breakaway run end (`score`, `level`, `beaten`, `meters`). Every game passes a `game` param, so one event name covers the arcade and breaks down by game. gtag only loads on production builds, so all of it no-ops locally and is wrapped in try/catch: analytics must never break a game. **To see the params in GA4 reports you must register them as custom dimensions in the GA4 admin** (they show up in DebugView and BigQuery regardless). Test by stubbing `window.gtag` in headless Chromium and asserting on the captured calls.
+**Rink Crossword is the flagship.** Breakaway and Zamboni are the other two finished games; the rest are prototypes.
+
+### Arcade conventions
+- Pages in `_pages/arcade/*.html` plus the `index.md` menu. Each page sets `arcade: true`, which makes `_layouts/default.html` load `styles/games.css` **and skip the footer newsletter block** — that block loads reCAPTCHA, whose floating badge parks over the game controls. Removing it at the source also avoids the reCAPTCHA attribution obligation that hiding the badge would create.
+- Shared helper `scripts/games/arcade.js`: DPR-aware canvas scaling, unified touch input, localStorage bests, seeded PRNG, local day key, analytics. Each game is one page + one ES5 IIFE in `scripts/games/`, colors via `Arcade.colors` (CSS vars only, never hardcoded hex).
+- Nav icon is `.nav-arcade` in `_layouts/default.html`: icon only on desktop, icon plus an "Arcade" label inside the mobile drawer, where a bare icon would read as a rendering bug.
+- **Three tiers on the index, and the distinctions are deliberate.** "Featured game" is a single promoted title in a full-width `.arcade-featured` card (currently Rink Crossword); it is hand-picked, not rotated, and the featured game is *not* repeated in the grid below. "Ready to play" holds the other finished games, with no prototype badge anywhere on their pages. "Prototypes" holds the rest: dashed cards with a `.arcade-card__chip` badge, plus a `.proto-notice` banner on each page linking to the feedback board at `https://scout-elite.supahub.com/en`. To promote a game out of prototypes: move its card up, drop its `.proto-notice`, and clear its title badge. To change the featured game: swap the `.arcade-featured` block and move the outgoing one back into the grid.
+- **Analytics (GA4).** `Arcade.trackPlay(game)` fires `arcade_play` once per page load from the first *meaningful input* (a deke, a pinch, a slide, a typed letter), never from page load or a Start button, so a real play is distinguishable from a visit. `Arcade.trackDone(game, params)` fires `arcade_complete` on a genuine finish. Every event carries a `game` param, so one event name covers the arcade and breaks down per game. gtag only loads on production builds, so it all no-ops locally, and calls are wrapped: analytics must never break a game. **Params only reach GA4 reports once registered as custom dimensions in the GA4 admin** (DebugView and BigQuery see them regardless).
+- Arcade pages carry no xpress CTAs, so the UTM audit does not flag them.
+- Testing pattern: headless Chromium (playwright-core, see Browser checks above) driving the Docker `jekyll serve` on :4000 with a tap-bot. Stub `window.gtag` and assert on captured calls to test analytics. For Breakaway showdowns, temporarily sed `LEVEL_LEN` from 600 to 120 and restore it after.
+
+### Rink Crossword (flagship)
+Builds a criss-cross grid in the browser from `_data/hockey_glossary.json`, seeded by the local date (day 0 = 2026-08-13). No generation step, no cron: it picks up new glossary terms automatically on the next deploy. Clues are the definitions with the answer redacted, and any *other* answer in the same grid is redacted too, so one clue cannot hand over another. Rules worth preserving:
+- The phone-sized grid cap (`MAX_W`/`MAX_H`) is enforced **during** word placement, never as an after-the-fact rejection, so retries chase quality instead of falling back to an oversized board.
+- The whole puzzle object is saved to localStorage with the player's progress, so a glossary change shipped mid-solve cannot rearrange a board someone already started.
+- On phones the puzzle is an app screen (`.cw-screen`, a viewport-height flex column) so board and keys are usable together; cells fit against **both** axes, not width alone.
+- There is no Check button. Green shading on a fully correct entry is the only correctness signal, deliberately.
+- Typing past the end of an entry jumps to the next unsolved clue, so the cursor can never park on a filled square (that was a real bug, 2026-08-13).
+- Verify generator changes by simulating a few hundred days headlessly (word-count distribution, max grid width), never by eyeballing one day.
+- `arcade_complete` params: `mode`, `puzzle`, `seconds`, `words`, `revealed` (0 = solved without help).
+
+### Breakaway
+Top-down deke dodger, score-based (passes +5, slick tricks +15, epic +30, goals +50). 17 named trick moves tiered by how late you deke, with a ring telegraph on threats (green = slick window, gold = epic). Three defender archetypes (plodder/regular/burner) whose closing speed stays **constant across levels by design**, so the reaction window never shrinks; levels escalate via spawn density and lateral tracking instead. 600m levels end in a goalie showdown with an auto-released shot. One-time explainer pause at the first net; tap-zone chevrons mark the deke zones. All tuning constants sit at the top of `scripts/games/breakaway.js`. `arcade_complete` params: `score`, `level`, `beaten`, `meters`.
+
+### Zamboni
+Ice-slide resurfacing puzzle, 25 levels (optimal par 4 up to 21). **Every level and its par is machine-proved by `Reference Material/zamboni-solver.js`** (exact BFS over position + remaining-scuff state, same slide rules as the game; it parses the LEVELS array straight out of `scripts/games/zamboni.js`). Run `node 'Reference Material/zamboni-solver.js'` after ANY level change: it exits nonzero on an unsolvable level or a non-optimal par. Level-select buttons are generated from the LEVELS array, so adding levels needs no HTML edit. New levels are easiest to make with a slide-walk generator (scuff exactly what k random slides sweep, then let the solver compute true par). Visual convention (2026-08-12, after a contrast complaint): blockers render as white dasher-board tiles with a red kickplate on every ice-facing edge, painted after the grid lines so they always pop against the dark ice. **Keep obstacle contrast high in any new levels or games.** `arcade_complete` params: `level`, `moves`, `par`, `stars`.
+
+### Prototypes
+Keep It In (blue-line pinch timing), Shootout (goalie learns your shot tendencies across visits, persisted), Coach's Challenge (frame-scrub offside calls), The Telestrator (draw a route, players run it literally). Play events only, no completion events.
 
 ### Games backlog
 - **Systems (turn-based, 2 players):** the puck moves between zones; each turn both players secretly pick the system they will run for that situation, then the game resolves success from the matchup odds plus a random roll. Examples: the team in the offensive zone *without* the puck picks a forecheck (1-2-2, 2-1-2, ...) while the puck team picks a breakout path (up the wall, center swing, stretch pass); with the puck in the o-zone you pick how to generate a chance (cycle, point shot, slot drive) while the defenders pick a d-zone coverage (man, zone, box+1). Same shape in every zone. Idea logged 2026-08-12.
 
-## Current state (2026-07-23)
+## Current state (2026-08-13)
+- The arcade shipped and is live at `/arcade/`, linked from the nav. See the Arcade section above.
+- Nav order: Home, How it Works, Features, Pricing, Support, Help, Blog, then the arcade icon, then Try Free / Log In.
+
+## Earlier state (2026-07-23)
 - `/how-it-works/` is the persona-story page (shipped, replaced the intro.js tour page): split hero, three second-person "week" narratives deep-linkable via `#team-coach` / `#skills-coach` / `#parent`, screenshot figures via the page-scoped `.shot` component, Development Loop section. intro.js was removed from `_layouts/default.html` — don't reintroduce it.
 - Nav order: How it Works sits directly after Home.
 - Homepage pricing advertises the Starter report/plan creation caps. The app enforces the 3-report Starter cap on its `staging` branch (`46a7e37`); **promotion to app prod (`master`) was still pending as of 2026-07-23** — until then prod under-promises (free users get more than advertised).

@@ -197,6 +197,93 @@
     margin-bottom: 0;
 }
 
+/* Featured game: one promoted title, full width above the grid */
+.arcade-featured {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5, 1.25rem);
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--secondary-bg) 100%);
+    border: 1px solid var(--accent-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6) var(--space-4);
+    color: var(--text-primary);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.arcade-featured:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: var(--text-primary);
+}
+
+.arcade-featured__icon {
+    font-size: 3.2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: var(--space-2);
+}
+
+.arcade-featured__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.arcade-featured__name {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.arcade-featured__badge {
+    display: inline-block;
+    background: var(--accent-primary);
+    color: #fff;
+    border-radius: 999px;
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 2px 10px;
+    vertical-align: middle;
+    margin-left: var(--space-2);
+    white-space: nowrap;
+}
+
+.arcade-featured__desc {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.55;
+}
+
+.arcade-featured__cta {
+    color: var(--accent-hover);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 560px) {
+    .arcade-featured {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-3);
+        padding: var(--space-4);
+    }
+    .arcade-featured__icon {
+        margin-left: 0;
+        font-size: 2.6rem;
+    }
+    .arcade-featured__name { font-size: var(--font-size-xl); }
+    .arcade-featured__badge {
+        margin-left: 0;
+        margin-top: var(--space-2);
+        display: block;
+        width: fit-content;
+    }
+}
+
 /* Arcade index cards */
 .arcade-grid {
     display: grid;

@@ -14,6 +14,18 @@ arcade: true
   <p class="game-help">Hockey games you can play with one thumb. Scores and progress save on your device.</p>
 
   <section class="arcade-section">
+    <h2 class="arcade-section__title">Featured game</h2>
+    <a class="arcade-featured" href="/arcade/crossword/">
+      <span class="arcade-featured__icon" aria-hidden="true">🧩</span>
+      <span class="arcade-featured__body">
+        <span class="arcade-featured__name">Rink Crossword <span class="arcade-featured__badge">New puzzle daily</span></span>
+        <span class="arcade-featured__desc">A fresh mini crossword every day, clued from the hockey glossary. Everyone gets the same grid, so compare your time with the rest of the bench. A painless way to pick up the language coaches actually use.</span>
+        <span class="arcade-featured__cta">Play today's puzzle &rarr;</span>
+      </span>
+    </a>
+  </section>
+
+  <section class="arcade-section">
     <h2 class="arcade-section__title">Ready to play</h2>
     <ul class="arcade-grid">
       <li><a class="arcade-card" href="/arcade/breakaway/">
@@ -27,12 +39,6 @@ arcade: true
         <span class="arcade-card__name">Zamboni</span>
         <p class="arcade-card__desc">Resurface every tile in as few passes as you can. The machine slides until something stops it. 25 levels, and par is always the perfect solve.</p>
         <span class="arcade-card__controls">Swipe or tap the arrows</span>
-      </a></li>
-      <li><a class="arcade-card" href="/arcade/crossword/">
-        <span class="arcade-card__icon">🧩</span>
-        <span class="arcade-card__name">Rink Crossword</span>
-        <p class="arcade-card__desc">A fresh mini crossword every day, clued from the hockey glossary. Same puzzle for everyone, so compare times.</p>
-        <span class="arcade-card__controls">Tap a square and type</span>
       </a></li>
     </ul>
   </section>
