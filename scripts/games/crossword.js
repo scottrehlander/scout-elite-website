@@ -454,12 +454,23 @@
     renderAll();
   }
 
+  function wordFull(word) {
+    for (var i = 0; i < word.cells.length; i++) {
+      if (!fill[word.cells[i].x + ',' + word.cells[i].y]) return false;
+    }
+    return true;
+  }
+
   function typeLetter(ch) {
     if (!sel || finished) return;
     var key = sel.x + ',' + sel.y;
     fill[key] = ch;
     delete marks[key];
-    advance(1, true);
+    // Finished the entry? Move on to the next clue that still needs work,
+    // rather than parking on the last square and overwriting it.
+    var word = wordAt(sel.x, sel.y, sel.dir);
+    if (word && wordFull(word)) gotoWord(1);
+    else advance(1, true);
     afterInput();
   }
 
@@ -487,6 +498,9 @@
     var j = idx + step;
     if (skipFilled) {
       while (j < word.cells.length && fill[word.cells[j].x + ',' + word.cells[j].y]) j++;
+      // Nothing empty left ahead: fall back to a plain step so the cursor
+      // always moves instead of sticking on the square you just typed.
+      if (j >= word.cells.length) j = idx + step;
     }
     if (j >= 0 && j < word.cells.length) {
       sel = { x: word.cells[j].x, y: word.cells[j].y, dir: sel.dir };
@@ -534,7 +548,7 @@
       showDone(false);
       Arcade.vibrate(60);
     } else {
-      clueBarEl.textContent = 'Every square is filled, but something is off. Try Check.';
+      clueBarEl.textContent = 'Every square is filled, but something is off. The green entries are the ones you have right.';
     }
   }
 
@@ -565,7 +579,6 @@
     Object.keys(cellEls).forEach(function (key) {
       var cell = cellEls[key];
       cell.querySelector('.cw-letter').textContent = fill[key] || '';
-      cell.classList.toggle('is-wrong', marks[key] === 'wrong');
       cell.classList.toggle('is-revealed', marks[key] === 'revealed');
       cell.classList.toggle('is-solved', !!solvedCells[key]);
       cell.classList.toggle('is-selected', !!(sel && key === sel.x + ',' + sel.y));
@@ -594,20 +607,12 @@
   }
 
   // ---- buttons
-  document.getElementById('cw-check').addEventListener('click', function () {
-    if (finished) return;
-    Object.keys(fill).forEach(function (key) {
-      if (fill[key] !== puzzle.letterAt[key]) marks[key] = 'wrong';
-    });
-    renderAll();
-  });
-
   document.getElementById('cw-reveal-cell').addEventListener('click', function () {
     if (!sel || finished) return;
     var key = sel.x + ',' + sel.y;
     fill[key] = puzzle.letterAt[key];
     marks[key] = 'revealed';
-    advance(1, true);
+    advance(1, false); // plain step: never teleport across the grid
     afterInput();
   });
 

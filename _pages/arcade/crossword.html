@@ -47,7 +47,6 @@ arcade: true
 
   <div class="cw-below">
     <div class="game-btn-row">
-      <button class="game-btn game-btn--ghost" id="cw-check" type="button">Check</button>
       <button class="game-btn game-btn--ghost" id="cw-reveal-cell" type="button">Reveal square</button>
       <button class="game-btn game-btn--ghost" id="cw-reveal-all" type="button">Give up</button>
     </div>
@@ -105,8 +104,6 @@ arcade: true
   .cw-cell.is-word.is-solved.is-active-word { background: #a3ddb2; }
   .cw-cell.is-word.is-selected,
   .cw-cell.is-word.is-solved.is-selected { background: var(--accent-hover); color: #fff; }
-  .cw-cell.is-wrong .cw-letter { color: var(--danger); }
-  .cw-cell.is-selected.is-wrong .cw-letter { color: #ffd7dc; }
   .cw-cell.is-revealed .cw-letter { color: var(--accent-secondary); }
   .cw-cell.is-selected.is-revealed .cw-letter { color: #fff; }
   .cw-num {
