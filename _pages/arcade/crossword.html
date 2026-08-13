@@ -1,0 +1,184 @@
+---
+layout: default
+title: "Rink Crossword — Scout Elite Arcade"
+description: "Prototype daily hockey crossword."
+permalink: /arcade/crossword/
+sitemap: false
+noindex: true
+arcade: true
+---
+
+<div class="arcade-wrap">
+  <a class="arcade-back" href="/arcade/">&larr; Arcade</a>
+  <h1 class="arcade-title">Rink Crossword <span class="proto-badge">Prototype</span></h1>
+  <p class="game-help">A fresh mini crossword every day, built from the hockey glossary. Clues are the definitions with the answer blacked out. Multi-word answers run together with no spaces. Same puzzle for everyone, so compare times.</p>
+
+  <div class="game-hud">
+    <span id="cw-label">Daily <strong id="cw-num">#1</strong></span>
+    <span>Time <strong id="cw-time">0:00</strong></span>
+    <span>Words <strong id="cw-progress">0/0</strong></span>
+  </div>
+
+  <div class="cw-board" id="cw-board"></div>
+
+  <div class="cw-cluebar" id="cw-cluebar">Tap a square to start.</div>
+
+  <div class="cw-keyboard" id="cw-keyboard"></div>
+
+  <div class="game-btn-row">
+    <button class="game-btn game-btn--ghost" id="cw-check" type="button">Check</button>
+    <button class="game-btn game-btn--ghost" id="cw-reveal-cell" type="button">Reveal square</button>
+    <button class="game-btn game-btn--ghost" id="cw-reveal-all" type="button">Give up</button>
+  </div>
+
+  <div class="cw-done" id="cw-done" hidden>
+    <h2 id="cw-done-title">Solved!</h2>
+    <p id="cw-done-msg"></p>
+    <div class="game-btn-row">
+      <button class="game-btn" id="cw-share" type="button">Copy result</button>
+      <button class="game-btn game-btn--ghost" id="cw-practice" type="button">Random puzzle</button>
+    </div>
+  </div>
+
+  <div class="cw-clues">
+    <div>
+      <h3>Across</h3>
+      <ol id="cw-across"></ol>
+    </div>
+    <div>
+      <h3>Down</h3>
+      <ol id="cw-down"></ol>
+    </div>
+  </div>
+
+  <p class="game-help" style="margin-top: var(--space-3);">Tap a square to select, tap again to switch direction. Type with the keys above or a real keyboard. Tap a clue to jump to it.</p>
+
+  <p class="cw-glossary-note">Every answer comes from the <a href="/hockey-glossary/">Hockey Glossary</a>, where all of these terms are defined in plain language. Good for a nudge when a clue will not click, and worth a read either way.</p>
+</div>
+
+<style>
+  .cw-board {
+    display: grid;
+    gap: 2px;
+    justify-content: center;
+    margin: 0 auto var(--space-3);
+    touch-action: manipulation;
+  }
+  .cw-cell {
+    position: relative;
+    background: #dde5ec;
+    border-radius: 3px;
+    color: #10151a;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+    transition: background 0.18s ease;
+  }
+  .cw-cell--void {
+    background: transparent;
+    cursor: default;
+  }
+  .cw-cell.is-word { background: #e9eff5; }
+  .cw-cell.is-word.is-active-word { background: #b7d4ee; }
+  /* a word reads as solved the moment every one of its letters is right */
+  .cw-cell.is-word.is-solved { background: #bfe8c9; }
+  .cw-cell.is-word.is-solved.is-active-word { background: #a3ddb2; }
+  .cw-cell.is-word.is-selected,
+  .cw-cell.is-word.is-solved.is-selected { background: var(--accent-hover); color: #fff; }
+  .cw-cell.is-wrong .cw-letter { color: var(--danger); }
+  .cw-cell.is-selected.is-wrong .cw-letter { color: #ffd7dc; }
+  .cw-cell.is-revealed .cw-letter { color: var(--accent-secondary); }
+  .cw-cell.is-selected.is-revealed .cw-letter { color: #fff; }
+  .cw-num {
+    position: absolute;
+    top: 1px;
+    left: 3px;
+    font-size: 0.5em;
+    font-weight: 600;
+    color: #4a5865;
+  }
+  .cw-cell.is-selected .cw-num { color: #dbeafc; }
+  .cw-cluebar {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    padding: var(--space-2) var(--space-3);
+    text-align: center;
+    min-height: 3.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-3);
+  }
+  .cw-keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: var(--space-2);
+  }
+  .cw-krow { display: flex; gap: 5px; justify-content: center; width: 100%; }
+  .cw-key {
+    flex: 1;
+    max-width: 42px;
+    min-width: 24px;
+    height: 46px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cw-key:active { background: var(--accent-primary); }
+  .cw-key--wide { max-width: 64px; flex: 1.6; }
+  .cw-done {
+    background: var(--card-bg);
+    border: 1px solid var(--accent-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
+    text-align: center;
+    margin-bottom: var(--space-4);
+  }
+  .cw-done h2 { margin-bottom: var(--space-2); }
+  .cw-done p { margin-bottom: 0; }
+  .cw-clues { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-4); }
+  .cw-clues h3 { font-size: var(--font-size-base); margin-bottom: var(--space-2); }
+  .cw-clues ol { list-style: none; padding-left: 0; display: flex; flex-direction: column; gap: var(--space-2); }
+  .cw-clues li {
+    color: var(--text-secondary);
+    font-size: var(--font-size-xs);
+    line-height: 1.45;
+    cursor: pointer;
+  }
+  .cw-glossary-note {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    padding: var(--space-3);
+    margin-top: var(--space-3);
+  }
+  .cw-clues li strong { color: var(--text-primary); }
+  .cw-clues li.is-done { opacity: 0.45; text-decoration: line-through; }
+  .cw-clues li.is-active { color: var(--text-primary); }
+  @media (max-width: 480px) {
+    .cw-clues { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>window.HOCKEY_GLOSSARY = {{ site.data.hockey_glossary | jsonify }};</script>
+<script src="/scripts/games/arcade.js"></script>
+<script src="/scripts/games/crossword.js"></script>
