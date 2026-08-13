@@ -246,15 +246,29 @@
 
   var puzzle, mode, puzzleNum, fill, marks, sel, seconds, timerOn, finished, cellEls, clueEls;
 
+  /* A stored puzzle has to be self-contained: the glossary it was built from
+     can change under us at any deploy. */
+  function usablePuzzle(p) {
+    return !!(p && p.w && p.h && p.letterAt && p.numbers &&
+      p.words && p.words.length && p.words[0].cells && p.words[0].answer);
+  }
+
   function startDaily() {
     var day = daysSinceEpoch();
     puzzleNum = day + 1;
     mode = 'daily';
     var saved = Arcade.recall(STORE_KEY, null);
     var resume = saved && saved.day === day ? saved : null;
-    boot(generate(20260800 + day * 131), resume);
+    // Reuse the exact grid this device was already shown today. Regenerating
+    // would rebuild the board from the current glossary, and a term added by a
+    // deploy would rearrange the squares under a half-finished solve.
+    var reused = resume && usablePuzzle(resume.puzzle);
+    boot(reused ? resume.puzzle : generate(20260800 + day * 131), resume);
     labelEl.firstChild.textContent = 'Daily ';
     numEl.textContent = '#' + puzzleNum;
+    // Freeze a newly generated grid right away, so it survives a deploy even
+    // if the player has not typed anything yet.
+    if (!reused && puzzle) persist(false);
   }
 
   function startPractice() {
@@ -291,9 +305,9 @@
   }
 
   function persist(revealedAll) {
-    if (mode !== 'daily') return;
+    if (mode !== 'daily' || !puzzle) return;
     Arcade.store(STORE_KEY, {
-      day: daysSinceEpoch(), fill: fill, seconds: seconds,
+      day: daysSinceEpoch(), puzzle: puzzle, fill: fill, seconds: seconds,
       done: finished, revealed: !!revealedAll
     });
   }
