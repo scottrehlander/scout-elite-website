@@ -182,6 +182,7 @@
 
   function shoot(zone) {
     if (state !== 'live') return;
+    Arcade.trackPlay('shootout');
     var clean = Math.abs(cursorPos - 0.5) <= GREEN_HALF;
     shotZone = zone;
     coverZone = pickCoverZone(); // his read comes from the book as it stood

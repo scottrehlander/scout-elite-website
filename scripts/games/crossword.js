@@ -463,6 +463,7 @@
 
   function typeLetter(ch) {
     if (!sel || finished) return;
+    Arcade.trackPlay('crossword');
     var key = sel.x + ',' + sel.y;
     fill[key] = ch;
     delete marks[key];
@@ -546,6 +547,15 @@
       finished = true;
       persist(false);
       showDone(false);
+      var revealedCount = 0;
+      Object.keys(marks).forEach(function (k) { if (marks[k] === 'revealed') revealedCount++; });
+      Arcade.trackDone('crossword', {
+        mode: mode,               // daily | practice
+        puzzle: puzzleNum,
+        seconds: seconds,
+        words: puzzle.words.length,
+        revealed: revealedCount   // 0 means solved without help
+      });
       Arcade.vibrate(60);
     } else {
       clueBarEl.textContent = 'Every square is filled, but something is off. The green entries are the ones you have right.';

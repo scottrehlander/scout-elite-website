@@ -177,6 +177,7 @@
 
   function makeCall(saidOffside) {
     if (!canDrive()) return;
+    Arcade.trackPlay('coaches-challenge');
     playing = false;
     if (saidOffside === round.offside) {
       state = 'verdict';

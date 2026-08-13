@@ -81,6 +81,7 @@
 
   function pinch(lane) {
     if (state !== 'playing') return;
+    Arcade.trackPlay('keep-it-in');
     var d = dmen[String(lane)];
     if (d.cooldown > 0) return;
     d.lungeT = 0.22;

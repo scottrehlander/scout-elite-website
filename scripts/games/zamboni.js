@@ -488,6 +488,7 @@
 
   function tryMove(dx, dy) {
     if (phase !== 'play') return;
+    Arcade.trackPlay('zamboni');
     facing = { x: dx, y: dy };
     var cells = slideCells(zx, zy, dx, dy);
     if (!cells.length) { shakeT = 0.12; Arcade.vibrate(8); return; }
@@ -517,6 +518,7 @@
     if (!rec) rec = save.levels[key] = { best: moves, stars: stars };
     if (moves < rec.best) rec.best = moves;
     if (stars > rec.stars) rec.stars = stars;
+    Arcade.trackDone('zamboni', { level: levelIndex + 1, moves: moves, par: par, stars: stars });
     var isLast = levelIndex === LEVELS.length - 1;
     if (!isLast && save.unlocked < levelIndex + 2) save.unlocked = levelIndex + 2;
     Arcade.store(STORE_KEY, save);

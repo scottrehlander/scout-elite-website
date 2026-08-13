@@ -160,6 +160,7 @@
 
   function gameOver() {
     state = 'over';
+    Arcade.trackDone('breakaway', { score: score, level: level, beaten: beaten, meters: Math.floor(dist) });
     var newBest = Arcade.saveBest(BEST_KEY, score);
     bestEl.textContent = Arcade.best(BEST_KEY);
     overlayControls.hidden = true;
@@ -179,6 +180,7 @@
 
   function deke(dir) {
     if (state !== 'playing' || player.cooldown > 0) return;
+    Arcade.trackPlay('breakaway');
     player.vx = dir * DEKE_VX;
     player.cooldown = DEKE_COOLDOWN;
     player.lean = dir;

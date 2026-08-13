@@ -21,6 +21,19 @@
    Arcade.dayKey()          integer like 20260812 (local date), for
                             daily-seeded games.
    Arcade.vibrate(ms)       haptic tick on phones, no-op elsewhere.
+
+   Analytics (GA4). gtag only loads on production builds, so all three of
+   these are no-ops locally and must never throw:
+   Arcade.trackPlay(game)   fires `arcade_play` the FIRST time a visitor
+                            actually does something in a game, so a real
+                            play is distinguishable from a page view.
+                            Call it from the first meaningful input, not
+                            from page load or a Start button.
+   Arcade.trackDone(game, params)
+                            fires `arcade_complete` when a run/level/puzzle
+                            is genuinely finished.
+   Arcade.track(name, params)
+                            any other event.
    ============================================================ */
 
 window.Arcade = (function () {
@@ -156,6 +169,32 @@ window.Arcade = (function () {
     if (navigator.vibrate) navigator.vibrate(ms);
   }
 
+  /* ---- analytics ---- */
+  var playedThisLoad = {};
+
+  function track(name, params) {
+    if (typeof window.gtag !== 'function') return; // no analytics off production
+    try {
+      window.gtag('event', name, params || {});
+    } catch (err) {
+      /* analytics must never break the game */
+    }
+  }
+
+  function trackPlay(game, params) {
+    if (playedThisLoad[game]) return; // once per page load
+    playedThisLoad[game] = true;
+    var p = params || {};
+    p.game = game;
+    track('arcade_play', p);
+  }
+
+  function trackDone(game, params) {
+    var p = params || {};
+    p.game = game;
+    track('arcade_complete', p);
+  }
+
   return {
     colors: colors,
     setupCanvas: setupCanvas,
@@ -168,6 +207,9 @@ window.Arcade = (function () {
     recall: recall,
     seededRand: seededRand,
     dayKey: dayKey,
-    vibrate: vibrate
+    vibrate: vibrate,
+    track: track,
+    trackPlay: trackPlay,
+    trackDone: trackDone
   };
 })();

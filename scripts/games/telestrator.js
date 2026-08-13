@@ -249,6 +249,7 @@
 
   function runIt() {
     if (state !== 'ready') return;
+    Arcade.trackPlay('telestrator');
     resetActors();
     state = 'run';
     showButtons(false, false, false);
