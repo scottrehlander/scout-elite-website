@@ -232,7 +232,7 @@
 
   // ---- DOM
   var boardEl = document.getElementById('cw-board');
-  var clueBarEl = document.getElementById('cw-cluebar');
+  var clueBarEl = document.getElementById('cw-cluetext');
   var keyboardEl = document.getElementById('cw-keyboard');
   var numEl = document.getElementById('cw-num');
   var labelEl = document.getElementById('cw-label');
@@ -245,6 +245,7 @@
   var doneMsgEl = document.getElementById('cw-done-msg');
 
   var puzzle, mode, puzzleNum, fill, marks, sel, seconds, timerOn, finished, cellEls, clueEls;
+  var lastCell = 0; // last fitted cell size, so refits are idempotent
 
   /* A stored puzzle has to be self-contained: the glossary it was built from
      can change under us at any deploy. */
@@ -292,6 +293,7 @@
     finished = !!(resume && resume.done);
     timerOn = false;
     doneEl.hidden = true;
+    keyboardEl.hidden = false;
     buildBoard();
     buildClues();
     renderAll();
@@ -313,15 +315,23 @@
   }
 
   // ---- board / keyboard construction
+  /* Size cells to fit BOTH axes. On a phone the board lives in a flex row that
+     owns the leftover height between the HUD and the clue bar, so height is
+     usually the binding constraint, not width. */
   function cellSize() {
-    var avail = Math.min(boardEl.parentElement.clientWidth, 480) - (puzzle.w - 1) * 2;
-    return Math.min(44, Math.floor(avail / puzzle.w));
+    var wrap = boardEl.parentElement;
+    var availW = Math.min(wrap.clientWidth, 480) - (puzzle.w - 1) * 2;
+    var byW = Math.floor(availW / puzzle.w);
+    var h = wrap.clientHeight;
+    var byH = h > 40 ? Math.floor((h - (puzzle.h - 1) * 2) / puzzle.h) : 44;
+    return Math.max(16, Math.min(44, byW, byH));
   }
 
   function buildBoard() {
     boardEl.innerHTML = '';
     cellEls = {};
     var s = cellSize();
+    lastCell = s;
     boardEl.style.gridTemplateColumns = 'repeat(' + puzzle.w + ', ' + s + 'px)';
     for (var y = 0; y < puzzle.h; y++) {
       for (var x = 0; x < puzzle.w; x++) {
@@ -419,6 +429,24 @@
     renderAll();
   }
 
+  /* Clue bar arrows. Prefer the next clue you have not finished, so the arrows
+     walk you through the work rather than parking on solved entries. */
+  function gotoWord(step) {
+    if (!puzzle || finished) return;
+    var n = puzzle.words.length;
+    var cur = sel ? wordAt(sel.x, sel.y, sel.dir) : null;
+    var idx = cur ? puzzle.words.indexOf(cur) : (step > 0 ? -1 : 0);
+    var pick = null;
+    for (var i = 1; i <= n && !pick; i++) {
+      var w = puzzle.words[((idx + step * i) % n + n) % n];
+      if (!wordCorrect(w)) pick = w;
+    }
+    if (!pick) pick = puzzle.words[((idx + step) % n + n) % n];
+    sel = { x: pick.cells[0].x, y: pick.cells[0].y, dir: pick.dir };
+    startTimer();
+    renderAll();
+  }
+
   function toggleDir() {
     if (!sel) return;
     var other = sel.dir === 'across' ? 'down' : 'across';
@@ -511,6 +539,7 @@
   }
 
   function showDone(revealedAll) {
+    keyboardEl.hidden = true; // the keys have no job once the grid is done
     doneEl.hidden = false;
     doneTitleEl.textContent = revealedAll ? 'Revealed' : 'Solved!';
     doneMsgEl.textContent = revealedAll
@@ -609,17 +638,34 @@
   });
 
   document.getElementById('cw-practice').addEventListener('click', startPractice);
+  document.getElementById('cw-prev').addEventListener('click', function () { gotoWord(-1); });
+  document.getElementById('cw-next').addEventListener('click', function () { gotoWord(1); });
 
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     if (/^[a-zA-Z]$/.test(e.key)) { e.preventDefault(); typeLetter(e.key.toUpperCase()); }
     else if (e.key === 'Backspace') { e.preventDefault(); backspace(); }
     else if (e.key === ' ') { e.preventDefault(); toggleDir(); }
+    else if (e.key === 'Tab') { e.preventDefault(); gotoWord(e.shiftKey ? -1 : 1); }
   });
 
-  window.addEventListener('resize', function () {
-    if (puzzle) { buildBoard(); renderAll(); }
-  });
+  /* Rebuild only when the fitted cell size actually changes, so rotation, the
+     dvh shuffle when mobile browser chrome hides, and a clue bar growing a
+     line all reflow the board without looping. */
+  function refitBoard() {
+    if (!puzzle) return;
+    var s = cellSize();
+    if (s === lastCell) return;
+    lastCell = s;
+    buildBoard();
+    renderAll();
+  }
+
+  window.addEventListener('resize', refitBoard);
+  window.addEventListener('orientationchange', function () { setTimeout(refitBoard, 250); });
+  if (window.ResizeObserver) {
+    new ResizeObserver(refitBoard).observe(boardEl.parentElement);
+  }
 
   // ---- go
   buildKeyboard();
