@@ -36,9 +36,7 @@
   /* ---- tuning ---- */
   var GRAV = 620;                   // px/s^2
   var TAP_VY = -336;                // a tap sets rise, it does not stack
-  var VX_BASE = 122;                // horizontal speed, never decays
-  var VX_STEP = 4;                  // +per goal, so it tightens as you go
-  var VX_MAX = 146;
+  var VX_SPEED = 122;               // horizontal speed: fixed, never ramps or decays
   var ICE_BOUNCE = 0.5;
   var START_TIME = 18;
   var GOAL_TIME = 4;
@@ -59,7 +57,7 @@
   var overlayBtn = document.getElementById('overlay-btn');
 
   var state = 'idle';               // idle | playing | over
-  var puck, net, timeLeft, score, goals, bars, multiplier, vxMag;
+  var puck, net, timeLeft, score, goals, bars, multiplier;
   var floaters = [], rings = [], flash = null, iceMarks = [];
 
   // one net, which slides to its next spot after every goal
@@ -68,17 +66,43 @@
     return pad + Math.random() * (W - pad * 2);
   }
 
-  function moveNet() {
-    var next;
-    do { next = netHome(); } while (Math.abs(next - net.x) < 90);
-    net.targetX = next;
-    net.targetY = NET_Y_MIN + Math.random() * (NET_Y_MAX - NET_Y_MIN);
+  /* Would the puck drop straight into a net at (nx, ny) from where it is now,
+     with no tap on the way? Pure look-ahead over the same physics; it changes
+     nothing, it only lets us place the next net somewhere that has to be
+     earned with at least one hop. */
+  function reachableWithoutTap(nx, ny, vx) {
+    var sx = puck.x, sy = puck.y, svx = vx, svy = puck.vy;
+    var step = 1 / 60;
+    for (var i = 0; i < 420; i++) {
+      var prev = sy;
+      svy += GRAV * step;
+      sx += svx * step;
+      sy += svy * step;
+      if (sx - PUCK_R < RINK_X0) { sx = RINK_X0 + PUCK_R; svx = Math.abs(svx); }
+      else if (sx + PUCK_R > RINK_X1) { sx = RINK_X1 - PUCK_R; svx = -Math.abs(svx); }
+      if (prev <= ny && sy > ny && svy > 0 && Math.abs(sx - nx) <= NET_W / 2 - PUCK_R) return true;
+      if (sy > DECK_Y) return false;   // decked before it ever got there
+    }
+    return false;
+  }
+
+  function pickNextNet() {
+    var fallback = null;
+    for (var i = 0; i < 60; i++) {
+      var nx = netHome();
+      var ny = NET_Y_MIN + Math.random() * (NET_Y_MAX - NET_Y_MIN);
+      if (Math.abs(nx - net.x) < 90) continue;
+      var vx = (nx >= puck.x ? 1 : -1) * VX_SPEED;
+      if (!fallback) fallback = { x: nx, y: ny, vx: vx };
+      if (!reachableWithoutTap(nx, ny, vx)) return { x: nx, y: ny, vx: vx };
+    }
+    return fallback || { x: netHome(), y: NET_Y_MIN, vx: VX_SPEED };
   }
 
   function spawnPuck() {
     puck = {
       x: W / 2 + (Math.random() * 60 - 30), y: 120,
-      vx: (Math.random() < 0.5 ? -1 : 1) * vxMag, vy: 0,
+      vx: (Math.random() < 0.5 ? -1 : 1) * VX_SPEED, vy: 0,
       spin: 0, onIce: false
     };
   }
@@ -86,7 +110,6 @@
   function reset() {
     score = 0; goals = 0; bars = 0; multiplier = 1;
     timeLeft = START_TIME;
-    vxMag = VX_BASE;
     floaters = []; rings = []; iceMarks = []; flash = null;
     net = { x: netHome(), y: NET_Y_MAX - 30, glow: 0 };
     net.targetX = net.x;
@@ -140,10 +163,11 @@
     // the goal is worth one; the multiplier you have built is what pays
     var pts = GOAL_PTS * multiplier;
     score += pts;
-    // only a clean one down the middle advances the multiplier
-    if (barDown) multiplier = Math.min(multiplier + 1, MULT_CAP);
+    /* Only a clean one down the middle advances the multiplier. Scoring off
+       centre still counts for points but wipes it, so a scruffy goal costs you
+       the run you were building. */
+    multiplier = barDown ? Math.min(multiplier + 1, MULT_CAP) : 1;
     timeLeft += barDown ? BAR_TIME : GOAL_TIME;
-    vxMag = Math.min(vxMag + VX_STEP, VX_MAX);
 
     floaters.push({
       x: W / 2, y: 200,
@@ -166,10 +190,12 @@
     puck.y = net.y - PUCK_R - 2;
     puck.vy = POP_VY;
     puck.onIce = false;
-    // pick where the net is headed first, then kick the puck that way, so the
-    // rebound sends you toward the next chance instead of away from it
-    moveNet();
-    puck.vx = (net.targetX >= puck.x ? 1 : -1) * Math.max(Math.abs(puck.vx), 74);
+    /* Place the next net where the pop alone cannot reach it, so every goal
+       has to be set up with at least one tap, then kick the puck that way. */
+    var nxt = pickNextNet();
+    net.targetX = nxt.x;
+    net.targetY = nxt.y;
+    puck.vx = nxt.vx;
     syncHud();
   }
 
@@ -261,6 +287,12 @@
       }
     }
 
+    /* Horizontal speed is fixed by design. The rounded corners reflect the
+       whole velocity vector, which would otherwise leave the puck crawling or
+       tearing sideways depending on the angle it clipped, so the magnitude is
+       pinned straight back and only the direction survives. */
+    puck.vx = (puck.vx >= 0 ? 1 : -1) * VX_SPEED;
+
     // an unseen ceiling, so a keen tapper cannot lose the puck off the top
     if (puck.y - PUCK_R < 2) {
       puck.y = 2 + PUCK_R;
@@ -305,15 +337,23 @@
         puck.y + PUCK_R > nTop && puck.y - PUCK_R < nBot) {
       var inOff = puck.x - net.x;
       var inA = Math.abs(inOff);
-      if (inA <= nHalf - PUCK_R) {
+      // only a puck on its way DOWN has gone in; coming up from below is the
+      // back of the net, which is solid
+      if (inA <= nHalf - PUCK_R && puck.vy > 0) {
         scoreGoal(net, inA <= NET_W * CENTRE_FRAC);
         return;
       }
-      // clipped a post: send it back out the near side
-      if ((puck.x + PUCK_R) - nLeft < nRight - (puck.x - PUCK_R)) {
-        puck.x = nLeft - PUCK_R; puck.vx = -Math.abs(puck.vx);
+      if (inA > nHalf - PUCK_R) {
+        // clipped a post: send it back out the near side
+        if ((puck.x + PUCK_R) - nLeft < nRight - (puck.x - PUCK_R)) {
+          puck.x = nLeft - PUCK_R; puck.vx = -Math.abs(puck.vx);
+        } else {
+          puck.x = nRight + PUCK_R; puck.vx = Math.abs(puck.vx);
+        }
       } else {
-        puck.x = nRight + PUCK_R; puck.vx = Math.abs(puck.vx);
+        // rising into the back of the net: knocked straight back down
+        puck.y = nBot + PUCK_R;
+        puck.vy = Math.abs(puck.vy) * 0.5 + 30;
       }
       rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 5, r1: 16, color: C.danger });
     }
@@ -358,17 +398,17 @@
     // end-zone faceoff circles, set just up ice of the goal line
     ctx.strokeStyle = C.danger;
     ctx.lineWidth = 2;
-    var dotY = goalLineY - 64;
+    var dotY = goalLineY - 104;
     var dots = [{ x: 92, y: dotY }, { x: W - 92, y: dotY }];
     for (var i = 0; i < dots.length; i++) {
       ctx.globalAlpha = 0.38;
       ctx.beginPath();
-      ctx.arc(dots[i].x, dots[i].y, 44, 0, Math.PI * 2);
+      ctx.arc(dots[i].x, dots[i].y, 50, 0, Math.PI * 2);
       ctx.stroke();
       ctx.globalAlpha = 0.6;
       ctx.fillStyle = C.danger;
       ctx.beginPath();
-      ctx.arc(dots[i].x, dots[i].y, 4, 0, Math.PI * 2);
+      ctx.arc(dots[i].x, dots[i].y, 5, 0, Math.PI * 2);
       ctx.fill();
     }
 
