@@ -32,18 +32,18 @@
 
   /* ---- tuning ---- */
   var GRAV = 620;                   // px/s^2
-  var TAP_VY = -300;                // a tap sets rise, it does not stack
-  var VX_BASE = 104;                // horizontal speed, never decays
+  var TAP_VY = -336;                // a tap sets rise, it does not stack
+  var VX_BASE = 122;                // horizontal speed, never decays
   var VX_STEP = 4;                  // +per goal, so it tightens as you go
-  var VX_MAX = 178;
+  var VX_MAX = 196;
   var ICE_BOUNCE = 0.5;
-  var START_TIME = 35;
+  var START_TIME = 18;
   var GOAL_TIME = 4;
   var BAR_TIME = 5;
-  var GOAL_PTS = 100;
-  var BAR_PTS = 250;
-  var MULT_CAP = 8;
-  var CENTRE_FRAC = 0.19;           // this share either side of centre = bar down
+  var GOAL_PTS = 1;                 // a goal is worth one, the multiplier does the rest
+  var MULT_CAP = 50;
+  var BAR_BUMP = 2;                 // a bar down advances the multiplier faster
+  var CENTRE_FRAC = 0.15;           // this share either side of centre = bar down
   var NET_SLIDE = 300;              // px/s the net travels to its next spot
   var POP_VY = -292;                // how hard the mesh spits the puck back out
 
@@ -135,10 +135,10 @@
   function scoreGoal(net, barDown) {
     goals++;
     if (barDown) bars++;
-    var pts = (barDown ? BAR_PTS : GOAL_PTS) * multiplier;
+    // the goal is worth one; the multiplier you have built is what pays
+    var pts = GOAL_PTS * multiplier;
     score += pts;
-    // only a clean one down the middle builds the multiplier
-    if (barDown) multiplier = Math.min(multiplier + 1, MULT_CAP);
+    multiplier = Math.min(multiplier + (barDown ? BAR_BUMP : 1), MULT_CAP);
     timeLeft += barDown ? BAR_TIME : GOAL_TIME;
     vxMag = Math.min(vxMag + VX_STEP, VX_MAX);
 
@@ -149,8 +149,8 @@
       color: barDown ? C.warning : C.success,
       size: barDown ? 25 : 18
     });
-    if (barDown && multiplier > 1) {
-      floaters.push({ x: W / 2, y: 232, text: 'multiplier x' + multiplier, t: 0, life: 0.9, color: C.accentHover, size: 15 });
+    if (multiplier > 1) {
+      floaters.push({ x: W / 2, y: 232, text: 'now x' + multiplier, t: 0, life: 0.9, color: C.accentHover, size: 15 });
     }
     rings.push({ x: net.x, y: net.y, t: 0, dur: 0.6, r0: 10, r1: 64, color: barDown ? C.warning : C.success });
     flash = { t: 0, dur: 0.22, color: barDown ? C.warning : C.success };
@@ -160,11 +160,13 @@
     // the mesh spits it back out, which is what a real puck does, so the same
     // puck stays in play and there is nothing to reset
     puck.x = net.x;
-    puck.y = net.y + NET_D * 0.5;
+    puck.y = net.y - PUCK_R - 2;
     puck.vy = POP_VY;
-    puck.vx = (puck.vx >= 0 ? 1 : -1) * Math.max(Math.abs(puck.vx) * 0.85, 55);
     puck.onIce = false;
+    // pick where the net is headed first, then kick the puck that way, so the
+    // rebound sends you toward the next chance instead of away from it
     moveNet();
+    puck.vx = (net.targetX >= puck.x ? 1 : -1) * Math.max(Math.abs(puck.vx), 74);
     syncHud();
   }
 
@@ -250,6 +252,24 @@
       if (a <= half + PUCK_R) {
         offThePost(off);
       }
+    }
+
+    /* Everything but the mouth is solid, so the puck cannot pass through the
+       net. A clean drop scores above and never reaches this. */
+    var nLeft = net.x - NET_W / 2, nRight = net.x + NET_W / 2;
+    var nTop = net.y, nBot = net.y + NET_D;
+    if (puck.x + PUCK_R > nLeft && puck.x - PUCK_R < nRight &&
+        puck.y + PUCK_R > nTop && puck.y - PUCK_R < nBot) {
+      var pL = (puck.x + PUCK_R) - nLeft;
+      var pR = nRight - (puck.x - PUCK_R);
+      var pT = (puck.y + PUCK_R) - nTop;
+      var pB = nBot - (puck.y - PUCK_R);
+      var least = Math.min(pL, pR, pT, pB);
+      if (least === pL) { puck.x = nLeft - PUCK_R; puck.vx = -Math.abs(puck.vx); }
+      else if (least === pR) { puck.x = nRight + PUCK_R; puck.vx = Math.abs(puck.vx); }
+      else if (least === pT) { puck.y = nTop - PUCK_R; puck.vy = -Math.abs(puck.vy) * 0.6 - 20; }
+      else { puck.y = nBot + PUCK_R; puck.vy = Math.abs(puck.vy) * 0.6 + 20; }
+      rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 5, r1: 16, color: C.danger });
     }
 
     // ice
@@ -405,7 +425,7 @@
     ctx.rotate(puck.spin);
     ctx.fillStyle = '#1b1b1b';
     ctx.beginPath();
-    ctx.ellipse(0, 0, PUCK_R, PUCK_R * 0.84, 0, 0, Math.PI * 2);
+    ctx.arc(0, 0, PUCK_R, 0, Math.PI * 2);
     ctx.fill();
     ctx.strokeStyle = '#f2f2f2';
     ctx.lineWidth = 2;
