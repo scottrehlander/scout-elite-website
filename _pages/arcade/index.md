@@ -15,14 +15,14 @@ arcade: true
 
   <section class="arcade-section">
     <h2 class="arcade-section__title">Featured game</h2>
-    <a class="arcade-featured" href="/arcade/crossword/">
+    <div class="arcade-featured">
       <img class="arcade-featured__shot" src="/img/arcade/crossword.jpg" alt="" width="893" height="558" loading="lazy">
       <span class="arcade-featured__body">
         <span class="arcade-featured__name">Rink Crossword <span class="arcade-featured__badge">New puzzle daily</span></span>
-        <span class="arcade-featured__desc">A fresh mini crossword every day, clued from the hockey glossary. Everyone gets the same grid, so compare your time with the rest of the bench. A painless way to pick up the language coaches actually use.</span>
-        <span class="arcade-featured__cta">Play today's puzzle &rarr;</span>
+        <span class="arcade-featured__desc">A fresh mini crossword every day, clued from the <a class="arcade-featured__link" href="/hockey-glossary/">Scout Elite Hockey Glossary</a>. Everyone gets the same grid, so compare your time with the rest of the bench. A painless way to pick up the language coaches actually use.</span>
+        <a class="arcade-featured__cta" href="/arcade/crossword/">Play today's puzzle &rarr;</a>
       </span>
-    </a>
+    </div>
   </section>
 
   <section class="arcade-section">

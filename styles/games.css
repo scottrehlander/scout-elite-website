@@ -197,8 +197,12 @@
     margin-bottom: 0;
 }
 
-/* Featured game: one promoted title, full width above the grid */
+/* Featured game: one promoted title, full width above the grid.
+   The card is a div, not a link, so the description can carry its own link.
+   The CTA stretches an invisible layer over the whole card to keep it
+   clickable, and the inline link sits above that layer. */
 .arcade-featured {
+    position: relative;
     display: flex;
     align-items: center;
     gap: var(--space-5, 1.25rem);
@@ -274,6 +278,26 @@
     color: var(--accent-hover);
     font-weight: 600;
     font-size: var(--font-size-sm);
+}
+
+.arcade-featured__cta::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-lg);
+}
+
+.arcade-featured__link {
+    position: relative;
+    z-index: 1;
+    color: var(--accent-hover);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.arcade-featured__link:hover {
+    color: var(--text-primary);
 }
 
 @media (max-width: 560px) {
