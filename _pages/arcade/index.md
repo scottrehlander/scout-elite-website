@@ -40,6 +40,12 @@ arcade: true
         <p class="arcade-card__desc">Resurface every tile in as few passes as you can. The machine slides until something stops it. 25 levels, and par is always the perfect solve.</p>
         <span class="arcade-card__controls">Swipe or tap the arrows</span>
       </a></li>
+      <li><a class="arcade-card" href="/arcade/bar-down/">
+        <img class="arcade-card__shot" src="/img/arcade/bar-down.jpg" alt="" width="720" height="450" loading="lazy">
+        <span class="arcade-card__name">Bar Down</span>
+        <p class="arcade-card__desc">A net lying mouth up, seen from above. Tap to keep the puck alive and drop it dead centre before the clock dies.</p>
+        <span class="arcade-card__controls">Tap to lift</span>
+      </a></li>
     </ul>
   </section>
 
@@ -47,12 +53,6 @@ arcade: true
     <h2 class="arcade-section__title">Prototypes <span class="proto-badge">Rough and unfinished</span></h2>
     <p class="arcade-section__note">These are early experiments. Expect rough edges, missing polish, and ideas that may not work yet. If you see potential and want us to keep working to make it better: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback here</a>.</p>
     <ul class="arcade-grid">
-      <li><a class="arcade-card arcade-card--proto" href="/arcade/bar-down/">
-        <img class="arcade-card__shot" src="/img/arcade/bar-down.jpg" alt="" width="720" height="450" loading="lazy">
-        <span class="arcade-card__name">Bar Down <span class="arcade-card__chip">Prototype</span></span>
-        <p class="arcade-card__desc">A net lying mouth up, seen from above. Tap to keep the puck alive and drop it dead centre before the clock dies.</p>
-        <span class="arcade-card__controls">Tap to lift</span>
-      </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/keep-it-in/">
         <img class="arcade-card__shot" src="/img/arcade/keep-it-in.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Keep It In <span class="arcade-card__chip">Prototype</span></span>

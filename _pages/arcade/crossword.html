@@ -14,6 +14,8 @@ arcade: true
     <h1 class="arcade-title cw-title">Rink Crossword</h1>
   </div>
 
+  <p class="cw-source">Every answer comes from the <a href="/hockey-glossary/">Scout Elite Hockey Glossary</a>. Stuck? Look it up.</p>
+
   <!-- Play screen. On a phone this is sized to the viewport so the board and
        the keys are usable together; on desktop it just flows. -->
   <div class="cw-screen">
@@ -66,7 +68,7 @@ arcade: true
 
     <p class="game-help">Tap a square to select, tap again to switch direction. Use the arrows on the clue bar to move between clues, or tap any clue in the lists above.</p>
 
-    <p class="cw-glossary-note">Every answer comes from the <a href="/hockey-glossary/">Hockey Glossary</a>, where all of these terms are defined in plain language. Good for a nudge when a clue will not click, and worth a read either way.</p>
+    <p class="cw-glossary-note">The <a href="/hockey-glossary/">Scout Elite Hockey Glossary</a> defines every one of these terms in plain language. Worth a read even when you are not stuck.</p>
   </div>
 </div>
 
@@ -115,6 +117,22 @@ arcade: true
     color: #4a5865;
   }
   .cw-cell.is-selected .cw-num { color: #dbeafc; }
+
+  .cw-source {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.35;
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+  .cw-source a { font-weight: 600; }
 
   .cw-boardwrap {
     display: flex;
@@ -238,17 +256,38 @@ arcade: true
     }
     .cw-back { margin-bottom: 0; }
     .cw-title { font-size: 1.15rem; margin-bottom: 0; }
+    .cw-source {
+      font-size: var(--font-size-xs);
+      padding: var(--space-2);
+      margin-bottom: var(--space-2);
+    }
 
     .cw-screen {
       display: flex;
       flex-direction: column;
       /* --chrome-h is the try-strip plus fixed header; the small head row
          above is allowed to scroll away. */
-      height: calc(100dvh - var(--chrome-h) - 62px);
+      height: calc(100dvh - var(--chrome-h) - 116px);
       min-height: 430px;
     }
     .cw-hud { margin-bottom: var(--space-2); }
-    .cw-boardwrap {
+    .cw-source {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--accent-primary);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.35;
+    padding: var(--space-2) var(--space-3);
+    margin-bottom: var(--space-3);
+  }
+  .cw-source a { font-weight: 600; }
+
+  .cw-boardwrap {
       flex: 1;
       min-height: 0;
       margin-bottom: var(--space-2);
@@ -265,6 +304,14 @@ arcade: true
   /* Short screens (SE-sized): buy the board back some height by tightening
      the furniture around it, so the squares stay tappable. */
   @media (max-width: 768px) and (max-height: 720px) {
+    /* short screens: the credit line stays, but pays rent */
+    .cw-source {
+      font-size: 0.68rem;
+      padding: 3px var(--space-2);
+      margin-bottom: 4px;
+      line-height: 1.25;
+    }
+    .cw-screen { height: calc(100dvh - var(--chrome-h) - 92px); }
     .cw-key { height: 38px; }
     .cw-keyboard { gap: 4px; }
     .cw-krow { gap: 4px; }

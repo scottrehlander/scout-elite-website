@@ -10,9 +10,8 @@ arcade: true
 
 <div class="arcade-wrap">
   <a class="arcade-back" href="/arcade/">&larr; Arcade</a>
-  <h1 class="arcade-title">Bar Down <span class="arcade-card__chip">Prototype</span></h1>
-  <p class="proto-notice"><strong>This one is a prototype.</strong> Rough edges, missing polish, and half-formed ideas are all expected. If you play it, tell us what worked and what did not: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback</a>.</p>
-  <p class="game-help">You are looking straight down at a net lying mouth-up. Tap to keep the puck in the air; it never stops moving sideways and it ricochets off the boards, so line it up and let it drop in. Every goal is worth a single point, and your multiplier is what makes it count: it climbs by one with every goal, up to 50x. Straight down the middle is a bar down, which advances it twice as fast. The pipe is solid, so clipping a post pings it back out. Score and the mesh spits the same puck straight back to you while the net slides somewhere new, so play never stops. The clock is the only thing that can end you: every goal buys three seconds, but it never banks past ten, so you can never coast on a lead.</p>
+  <h1 class="arcade-title">Bar Down</h1>
+  <p class="game-help">Tap to lift the puck and drop it into the net. Dead centre is a bar down, the only thing that builds your multiplier; score off centre and you lose it. Every goal buys 3 seconds, capped at 10.</p>
 
   <div class="game-hud">
     <span>Score <strong id="score">0</strong></span>
@@ -24,12 +23,12 @@ arcade: true
     <canvas id="game"></canvas>
     <div class="game-overlay" id="overlay">
       <h2 id="overlay-title">Bar Down</h2>
-      <p id="overlay-msg">Tap to lift the puck. Drop it in the net before the clock runs out, and aim for the middle: that is a bar down, and it builds your multiplier twice as fast.</p>
+      <p id="overlay-msg">Tap to lift the puck. Drop it in the net, dead centre for a bar down.</p>
       <button class="game-btn" id="overlay-btn" type="button">Drop the puck</button>
     </div>
   </div>
 
-  <p class="game-help" style="margin-top: var(--space-3);">Phone: tap anywhere on the ice. Keyboard: space or the up arrow. Dead centre is a bar down and builds the multiplier twice as fast. Hit a post and it comes back out.</p>
+  <p class="game-help" style="margin-top: var(--space-3);">Tap anywhere on the ice. Keyboard: space or up arrow.</p>
 </div>
 
 <script src="/scripts/games/arcade.js"></script>
