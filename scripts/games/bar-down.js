@@ -21,14 +21,16 @@
   var ctx = Arcade.setupCanvas(canvas, W, H, 480);
 
   /* ---- geometry ---- */
-  var BOARD_W = 10;                 // side boards
-  var GLASS_Y = 54;                 // top of the glass: the puck cannot leave
-  var ICE_Y = 486;                  // where a miss lands
-  var PUCK_R = 8;
+  var BOARD_W = 9;                  // board thickness
+  var RINK_X0 = BOARD_W, RINK_X1 = W - BOARD_W;
+  var RINK_Y0 = 16, RINK_Y1 = H - 16;
+  var CORNER_R = 62;                // the rounded corners of an end zone
+  var DECK_Y = RINK_Y1 - 70;        // contact below this counts as decking it
+  var PUCK_R = 6;
   var NET_W = 96;                   // mouth width
   var NET_D = 34;                   // how deep the mesh reads below the mouth
-  var NET_Y_MIN = 250;              // the net roams within this band
-  var NET_Y_MAX = 430;
+  var NET_Y_MIN = 200;              // the net roams within this band
+  var NET_Y_MAX = 390;
 
   /* ---- tuning ---- */
   var GRAV = 620;                   // px/s^2
@@ -42,7 +44,6 @@
   var BAR_TIME = 5;
   var GOAL_PTS = 1;                 // a goal is worth one, the multiplier does the rest
   var MULT_CAP = 50;
-  var BAR_BUMP = 2;                 // a bar down advances the multiplier faster
   var CENTRE_FRAC = 0.15;           // this share either side of centre = bar down
   var NET_SLIDE = 300;              // px/s the net travels to its next spot
   var POP_VY = -292;                // how hard the mesh spits the puck back out
@@ -62,7 +63,7 @@
 
   // one net, which slides to its next spot after every goal
   function netHome() {
-    var pad = BOARD_W + NET_W / 2 + 8;
+    var pad = RINK_X0 + NET_W / 2 + 26;
     return pad + Math.random() * (W - pad * 2);
   }
 
@@ -75,7 +76,7 @@
 
   function spawnPuck() {
     puck = {
-      x: W / 2 + (Math.random() * 60 - 30), y: 140,
+      x: W / 2 + (Math.random() * 60 - 30), y: 120,
       vx: (Math.random() < 0.5 ? -1 : 1) * vxMag, vy: 0,
       spin: 0, onIce: false
     };
@@ -86,7 +87,7 @@
     timeLeft = START_TIME;
     vxMag = VX_BASE;
     floaters = []; rings = []; iceMarks = []; flash = null;
-    net = { x: netHome(), y: NET_Y_MAX - 20, glow: 0 };
+    net = { x: netHome(), y: NET_Y_MAX - 30, glow: 0 };
     net.targetX = net.x;
     net.targetY = net.y;
     spawnPuck();
@@ -138,7 +139,8 @@
     // the goal is worth one; the multiplier you have built is what pays
     var pts = GOAL_PTS * multiplier;
     score += pts;
-    multiplier = Math.min(multiplier + (barDown ? BAR_BUMP : 1), MULT_CAP);
+    // only a clean one down the middle advances the multiplier
+    if (barDown) multiplier = Math.min(multiplier + 1, MULT_CAP);
     timeLeft += barDown ? BAR_TIME : GOAL_TIME;
     vxMag = Math.min(vxMag + VX_STEP, VX_MAX);
 
@@ -182,7 +184,7 @@
 
   function missed() {
     if (multiplier > 1) {
-      floaters.push({ x: puck.x, y: ICE_Y - 40, text: 'multiplier gone', t: 0, life: 0.8, color: C.dim, size: 13 });
+      floaters.push({ x: puck.x, y: Math.max(120, puck.y - 30), text: 'multiplier gone', t: 0, life: 0.8, color: C.dim, size: 13 });
     }
     multiplier = 1;
     syncHud();
@@ -222,22 +224,58 @@
     puck.y += puck.vy * dt;
     puck.spin += puck.vx * dt * 0.05;
 
-    // glass, so an eager tapper gets the puck back instead of losing it
-    if (puck.y - PUCK_R < GLASS_Y) {
-      puck.y = GLASS_Y + PUCK_R;
-      puck.vy = Math.abs(puck.vy) * 0.5 + 40;
-      rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 6, r1: 16, color: C.dim });
+    /* Boards. The zone is a rounded rectangle, so the corners are quarter
+       circles the puck curls around rather than square walls it slaps into.
+       Contact low in the zone counts as decking it and wipes the multiplier. */
+    var cxs = puck.x < RINK_X0 + CORNER_R ? RINK_X0 + CORNER_R
+            : puck.x > RINK_X1 - CORNER_R ? RINK_X1 - CORNER_R : null;
+    var cys = puck.y < RINK_Y0 + CORNER_R ? RINK_Y0 + CORNER_R
+            : puck.y > RINK_Y1 - CORNER_R ? RINK_Y1 - CORNER_R : null;
+    var hit = false, hitY = puck.y;
+
+    if (cxs !== null && cys !== null) {
+      // in a corner: constrain to the arc
+      var ddx = puck.x - cxs, ddy = puck.y - cys;
+      var dist = Math.sqrt(ddx * ddx + ddy * ddy);
+      var lim = CORNER_R - PUCK_R;
+      if (dist > lim && dist > 0) {
+        var nx = ddx / dist, ny = ddy / dist;
+        puck.x = cxs + nx * lim;
+        puck.y = cys + ny * lim;
+        var dot = puck.vx * nx + puck.vy * ny;
+        puck.vx -= 2 * dot * nx;
+        puck.vy -= 2 * dot * ny;
+        puck.vx *= 0.98; puck.vy *= 0.72;
+        hit = true; hitY = puck.y;
+      }
+    } else {
+      if (puck.x - PUCK_R < RINK_X0) {
+        puck.x = RINK_X0 + PUCK_R; puck.vx = Math.abs(puck.vx); hit = true;
+      } else if (puck.x + PUCK_R > RINK_X1) {
+        puck.x = RINK_X1 - PUCK_R; puck.vx = -Math.abs(puck.vx); hit = true;
+      }
+      if (puck.y - PUCK_R < RINK_Y0) {
+        puck.y = RINK_Y0 + PUCK_R; puck.vy = Math.abs(puck.vy) * 0.5 + 40; hit = true; hitY = puck.y;
+      } else if (puck.y + PUCK_R > RINK_Y1) {
+        puck.y = RINK_Y1 - PUCK_R;
+        puck.vy = -Math.abs(puck.vy) * ICE_BOUNCE;
+        if (Math.abs(puck.vy) < 40) puck.vy = 0;
+        hit = true; hitY = puck.y;
+      }
     }
 
-    // side boards
-    if (puck.x - PUCK_R < BOARD_W) {
-      puck.x = BOARD_W + PUCK_R;
-      puck.vx = Math.abs(puck.vx);
-      rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 6, r1: 16, color: C.dim });
-    } else if (puck.x + PUCK_R > W - BOARD_W) {
-      puck.x = W - BOARD_W - PUCK_R;
-      puck.vx = -Math.abs(puck.vx);
-      rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 6, r1: 16, color: C.dim });
+    if (hit) {
+      rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 5, r1: 15, color: C.dim });
+      if (hitY > DECK_Y) {
+        if (!puck.onIce) {
+          puck.onIce = true;
+          iceMarks.push({ x: puck.x, y: puck.y + PUCK_R + 3, t: 0 });
+          if (iceMarks.length > 12) iceMarks.shift();
+          missed();
+        }
+      } else {
+        puck.onIce = false;
+      }
     }
 
     /* Crossing the mouth on the way down. The red pipe is solid: clip a post
@@ -254,35 +292,29 @@
       }
     }
 
-    /* Everything but the mouth is solid, so the puck cannot pass through the
-       net. A clean drop scores above and never reaches this. */
-    var nLeft = net.x - NET_W / 2, nRight = net.x + NET_W / 2;
+    /* The posts and the back are solid; the top face is NOT, because looking
+       down at a net the top face is the opening. Anything that ends up inside
+       the mouth has gone in. */
+    var nHalf = NET_W / 2;
+    var nLeft = net.x - nHalf, nRight = net.x + nHalf;
     var nTop = net.y, nBot = net.y + NET_D;
     if (puck.x + PUCK_R > nLeft && puck.x - PUCK_R < nRight &&
         puck.y + PUCK_R > nTop && puck.y - PUCK_R < nBot) {
-      var pL = (puck.x + PUCK_R) - nLeft;
-      var pR = nRight - (puck.x - PUCK_R);
-      var pT = (puck.y + PUCK_R) - nTop;
-      var pB = nBot - (puck.y - PUCK_R);
-      var least = Math.min(pL, pR, pT, pB);
-      if (least === pL) { puck.x = nLeft - PUCK_R; puck.vx = -Math.abs(puck.vx); }
-      else if (least === pR) { puck.x = nRight + PUCK_R; puck.vx = Math.abs(puck.vx); }
-      else if (least === pT) { puck.y = nTop - PUCK_R; puck.vy = -Math.abs(puck.vy) * 0.6 - 20; }
-      else { puck.y = nBot + PUCK_R; puck.vy = Math.abs(puck.vy) * 0.6 + 20; }
+      var inOff = puck.x - net.x;
+      var inA = Math.abs(inOff);
+      if (inA <= nHalf - PUCK_R) {
+        scoreGoal(net, inA <= NET_W * CENTRE_FRAC);
+        return;
+      }
+      // clipped a post: send it back out the near side
+      if ((puck.x + PUCK_R) - nLeft < nRight - (puck.x - PUCK_R)) {
+        puck.x = nLeft - PUCK_R; puck.vx = -Math.abs(puck.vx);
+      } else {
+        puck.x = nRight + PUCK_R; puck.vx = Math.abs(puck.vx);
+      }
       rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 5, r1: 16, color: C.danger });
     }
 
-    // ice
-    if (puck.y + PUCK_R > ICE_Y) {
-      puck.y = ICE_Y - PUCK_R;
-      if (puck.vy > 60) {
-        iceMarks.push({ x: puck.x, t: 0 });
-        if (iceMarks.length > 12) iceMarks.shift();
-      }
-      puck.vy = -puck.vy * ICE_BOUNCE;
-      if (Math.abs(puck.vy) < 40) puck.vy = 0;
-      if (!puck.onIce) { puck.onIce = true; missed(); }
-    }
     for (var m = iceMarks.length - 1; m >= 0; m--) {
       iceMarks[m].t += dt;
       if (iceMarks[m].t > 1.4) iceMarks.splice(m, 1);
@@ -291,52 +323,89 @@
 
   /* ---- drawing ---- */
 
+  function roundedPath(x0, y0, x1, y1, r) {
+    ctx.beginPath();
+    ctx.moveTo(x0 + r, y0);
+    ctx.lineTo(x1 - r, y0);
+    ctx.arcTo(x1, y0, x1, y0 + r, r);
+    ctx.lineTo(x1, y1 - r);
+    ctx.arcTo(x1, y1, x1 - r, y1, r);
+    ctx.lineTo(x0 + r, y1);
+    ctx.arcTo(x0, y1, x0, y1 - r, r);
+    ctx.lineTo(x0, y0 + r);
+    ctx.arcTo(x0, y0, x0 + r, y0, r);
+    ctx.closePath();
+  }
+
+  /* An end zone seen from above: rounded boards all the way round, with the
+     markings you would actually find down there. */
   function drawRink() {
-    ctx.fillStyle = C.surface;
+    ctx.fillStyle = C.bgDeep;
     ctx.fillRect(0, 0, W, H);
 
-    // crowd band
-    ctx.fillStyle = C.bg;
-    ctx.fillRect(0, 0, W, GLASS_Y - 8);
-    ctx.strokeStyle = C.line;
-    ctx.lineWidth = 1;
-    ctx.globalAlpha = 0.5;
-    for (var cx = 8; cx < W; cx += 13) {
-      ctx.beginPath(); ctx.moveTo(cx, 10); ctx.lineTo(cx, GLASS_Y - 16); ctx.stroke();
+    // the sheet
+    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    ctx.fillStyle = C.surface;
+    ctx.fill();
+
+    ctx.save();
+    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    ctx.clip();
+
+    // faceoff circles and dots
+    ctx.strokeStyle = C.danger;
+    ctx.globalAlpha = 0.42;
+    ctx.lineWidth = 2;
+    var dots = [{ x: 96, y: 172 }, { x: W - 96, y: 172 }];
+    for (var i = 0; i < dots.length; i++) {
+      ctx.beginPath();
+      ctx.arc(dots[i].x, dots[i].y, 46, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.globalAlpha = 0.6;
+      ctx.beginPath();
+      ctx.arc(dots[i].x, dots[i].y, 4, 0, Math.PI * 2);
+      ctx.fillStyle = C.danger;
+      ctx.fill();
+      ctx.globalAlpha = 0.42;
     }
+
+    // goal line across the low end, and a blue line up top
+    ctx.globalAlpha = 0.5;
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(RINK_X0, DECK_Y); ctx.lineTo(RINK_X1, DECK_Y);
+    ctx.stroke();
+    ctx.strokeStyle = C.accent;
+    ctx.lineWidth = 7;
+    ctx.globalAlpha = 0.42;
+    ctx.beginPath();
+    ctx.moveTo(RINK_X0, RINK_Y0 + 34); ctx.lineTo(RINK_X1, RINK_Y0 + 34);
+    ctx.stroke();
     ctx.globalAlpha = 1;
 
-    // glass line
-    ctx.strokeStyle = C.line;
-    ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(0, GLASS_Y); ctx.lineTo(W, GLASS_Y); ctx.stroke();
-
-    // side boards with a red kickplate facing the ice
-    ctx.fillStyle = '#dde5ec';
-    ctx.fillRect(0, GLASS_Y, BOARD_W, H - GLASS_Y);
-    ctx.fillRect(W - BOARD_W, GLASS_Y, BOARD_W, H - GLASS_Y);
-    ctx.fillStyle = C.danger;
-    ctx.fillRect(BOARD_W - 3, GLASS_Y, 3, H - GLASS_Y);
-    ctx.fillRect(W - BOARD_W, GLASS_Y, 3, H - GLASS_Y);
-
-    // the ice, where a miss lands
-    ctx.fillStyle = '#e9eff5';
-    ctx.fillRect(BOARD_W, ICE_Y, W - BOARD_W * 2, H - ICE_Y);
-    ctx.strokeStyle = C.danger;
-    ctx.lineWidth = 2;
-    ctx.beginPath(); ctx.moveTo(BOARD_W, ICE_Y); ctx.lineTo(W - BOARD_W, ICE_Y); ctx.stroke();
-
+    // scuff where the puck has been decked
     ctx.strokeStyle = C.muted;
     ctx.lineWidth = 2;
-    for (var i = 0; i < iceMarks.length; i++) {
-      var mk = iceMarks[i];
+    for (var m = 0; m < iceMarks.length; m++) {
+      var mk = iceMarks[m];
       ctx.globalAlpha = 0.4 * (1 - mk.t / 1.4);
       ctx.beginPath();
-      ctx.moveTo(mk.x - 9, ICE_Y + 9);
-      ctx.lineTo(mk.x + 9, ICE_Y + 9);
+      ctx.moveTo(mk.x - 9, mk.y);
+      ctx.lineTo(mk.x + 9, mk.y);
       ctx.stroke();
     }
     ctx.globalAlpha = 1;
+    ctx.restore();
+
+    // the boards themselves, white with a red kickplate on the ice side
+    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    ctx.strokeStyle = '#dde5ec';
+    ctx.lineWidth = BOARD_W * 2;
+    ctx.stroke();
+    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    ctx.strokeStyle = C.danger;
+    ctx.lineWidth = 3;
+    ctx.stroke();
   }
 
   /* A hockey net seen from directly above: you are looking into the mouth and
@@ -448,28 +517,6 @@
     ctx.stroke();
     ctx.globalAlpha = 1;
 
-    /* Where it will cross the mouths, so choosing a net is a decision rather
-       than a guess. Same physics as update(), boards included. */
-    if (state === 'playing' && puck.vy > 0) {
-      var t = 0, sx = puck.x, sy = puck.y, svx = puck.vx, svy = puck.vy;
-      while (sy < net.y && t < 2.5) {
-        svy += GRAV * (1 / 60);
-        sx += svx * (1 / 60);
-        sy += svy * (1 / 60);
-        if (sx - PUCK_R < BOARD_W) { sx = BOARD_W + PUCK_R; svx = Math.abs(svx); }
-        else if (sx + PUCK_R > W - BOARD_W) { sx = W - BOARD_W - PUCK_R; svx = -Math.abs(svx); }
-        t += 1 / 60;
-      }
-      ctx.fillStyle = C.accentHover;
-      ctx.globalAlpha = 0.5;
-      ctx.beginPath();
-      ctx.moveTo(sx, net.y - 12);
-      ctx.lineTo(sx - 5, net.y - 22);
-      ctx.lineTo(sx + 5, net.y - 22);
-      ctx.closePath();
-      ctx.fill();
-      ctx.globalAlpha = 1;
-    }
   }
 
   function draw() {
