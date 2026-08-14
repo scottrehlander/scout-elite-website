@@ -50,7 +50,7 @@ arcade: true
       <li><a class="arcade-card arcade-card--proto" href="/arcade/bar-down/">
         <img class="arcade-card__shot" src="/img/arcade/bar-down.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Bar Down <span class="arcade-card__chip">Prototype</span></span>
-        <p class="arcade-card__desc">Tap to keep the puck up, ride it off the boards, and drop it in under the bar before the clock dies.</p>
+        <p class="arcade-card__desc">Two nets, mouth up. Tap to keep the puck alive and drop it dead centre before the clock dies.</p>
         <span class="arcade-card__controls">Tap to lift</span>
       </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/keep-it-in/">

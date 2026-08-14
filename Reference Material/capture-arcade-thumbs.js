@@ -111,7 +111,7 @@ var SHOTS = [
     }
   },
   {
-    slug: 'bar-down', url: 'arcade/bar-down/', focus: 0.62,
+    slug: 'bar-down', url: 'arcade/bar-down/', focus: 0.82,
     play: async function (page) {
       await start(page);
       // a human-ish rhythm long enough to get a goal and a streak on screen
