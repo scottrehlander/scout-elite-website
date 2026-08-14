@@ -37,7 +37,7 @@
   var GRAV = 620;                   // px/s^2
   var TAP_VY = -336;                // a tap sets rise, it does not stack
   var VX_SPEED = 122;               // horizontal speed: fixed, never ramps or decays
-  var ICE_BOUNCE = 0.5;
+  var ICE_BOUNCE = 0.3;             // dead enough that decking it cannot bounce back over the goal line
   var START_TIME = 18;
   var GOAL_TIME = 4;
   var BAR_TIME = 5;
@@ -104,9 +104,13 @@
   }
 
   function spawnPuck() {
+    /* Out to one side AND drifting further out, so the opening drop heads for
+       the boards rather than falling straight into the centred net: the first
+       goal has to be earned with a tap like every other. */
+    var side = Math.random() < 0.5 ? -1 : 1;
     puck = {
-      x: W / 2 + (Math.random() * 60 - 30), y: 120,
-      vx: (Math.random() < 0.5 ? -1 : 1) * VX_SPEED, vy: 0,
+      x: W / 2 + side * (92 + Math.random() * 30), y: 120,
+      vx: side * VX_SPEED, vy: 0,
       spin: 0, onIce: false
     };
   }
@@ -261,7 +265,8 @@
        is never drawn). Contact low in the zone decks it. */
     var cornerCX = puck.x < RINK_X0 + CORNER_R ? RINK_X0 + CORNER_R
                  : puck.x > RINK_X1 - CORNER_R ? RINK_X1 - CORNER_R : null;
-    var hit = false, hitY = puck.y;
+    var hit = false, hitY = puck.y, sideHit = false;
+    var preVy = puck.vy;
 
     if (cornerCX !== null && puck.y > RINK_Y1 - CORNER_R) {
       var ccy = RINK_Y1 - CORNER_R;
@@ -280,9 +285,9 @@
       }
     } else {
       if (puck.x - PUCK_R < RINK_X0) {
-        puck.x = RINK_X0 + PUCK_R; puck.vx = Math.abs(puck.vx); hit = true;
+        puck.x = RINK_X0 + PUCK_R; puck.vx = Math.abs(puck.vx); hit = true; sideHit = true;
       } else if (puck.x + PUCK_R > RINK_X1) {
-        puck.x = RINK_X1 - PUCK_R; puck.vx = -Math.abs(puck.vx); hit = true;
+        puck.x = RINK_X1 - PUCK_R; puck.vx = -Math.abs(puck.vx); hit = true; sideHit = true;
       }
       if (puck.y + PUCK_R > RINK_Y1) {
         puck.y = RINK_Y1 - PUCK_R;
@@ -305,7 +310,12 @@
     }
 
     if (hit) {
-      rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 5, r1: 15, color: C.dim });
+      /* Only ring on a real impact. A puck rolling along the boards re-contacts
+         every frame, which was firing a ring per frame and stacking up as a
+         column of growing white circles. */
+      if (sideHit || Math.abs(preVy) > 120) {
+        rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 5, r1: 15, color: C.dim });
+      }
       if (hitY > DECK_Y) {
         if (!puck.onIce) {
           puck.onIce = true;
@@ -473,7 +483,7 @@
      read as a hockey goal at a glance, which the last version had backwards. */
   function drawNet(n) {
     var net = n;
-    var fade = netMoving() ? 0.5 : 1;
+    var fade = netMoving() ? 0.22 : 1;
     var x = net.x, halfW = NET_W / 2;
     var top = net.y, bot = net.y + NET_D;
 
