@@ -23,7 +23,8 @@
   /* ---- geometry ---- */
   var BOARD_W = 9;                  // board thickness
   var RINK_X0 = BOARD_W, RINK_X1 = W - BOARD_W;
-  var RINK_Y0 = 16, RINK_Y1 = H - 16;
+  var RINK_Y0 = 0;                  // open at the top: the zone runs on into neutral ice
+  var RINK_Y1 = H - 16;
   var CORNER_R = 62;                // the rounded corners of an end zone
   var DECK_Y = RINK_Y1 - 70;        // contact below this counts as decking it
   var PUCK_R = 6;
@@ -37,7 +38,7 @@
   var TAP_VY = -336;                // a tap sets rise, it does not stack
   var VX_BASE = 122;                // horizontal speed, never decays
   var VX_STEP = 4;                  // +per goal, so it tightens as you go
-  var VX_MAX = 196;
+  var VX_MAX = 146;
   var ICE_BOUNCE = 0.5;
   var START_TIME = 18;
   var GOAL_TIME = 4;
@@ -224,24 +225,22 @@
     puck.y += puck.vy * dt;
     puck.spin += puck.vx * dt * 0.05;
 
-    /* Boards. The zone is a rounded rectangle, so the corners are quarter
-       circles the puck curls around rather than square walls it slaps into.
-       Contact low in the zone counts as decking it and wipes the multiplier. */
-    var cxs = puck.x < RINK_X0 + CORNER_R ? RINK_X0 + CORNER_R
-            : puck.x > RINK_X1 - CORNER_R ? RINK_X1 - CORNER_R : null;
-    var cys = puck.y < RINK_Y0 + CORNER_R ? RINK_Y0 + CORNER_R
-            : puck.y > RINK_Y1 - CORNER_R ? RINK_Y1 - CORNER_R : null;
+    /* Boards. The end boards are rounded, the sides run straight up and the
+       top is open into the neutral zone (a ceiling keeps the puck in play but
+       is never drawn). Contact low in the zone decks it. */
+    var cornerCX = puck.x < RINK_X0 + CORNER_R ? RINK_X0 + CORNER_R
+                 : puck.x > RINK_X1 - CORNER_R ? RINK_X1 - CORNER_R : null;
     var hit = false, hitY = puck.y;
 
-    if (cxs !== null && cys !== null) {
-      // in a corner: constrain to the arc
-      var ddx = puck.x - cxs, ddy = puck.y - cys;
+    if (cornerCX !== null && puck.y > RINK_Y1 - CORNER_R) {
+      var ccy = RINK_Y1 - CORNER_R;
+      var ddx = puck.x - cornerCX, ddy = puck.y - ccy;
       var dist = Math.sqrt(ddx * ddx + ddy * ddy);
       var lim = CORNER_R - PUCK_R;
       if (dist > lim && dist > 0) {
         var nx = ddx / dist, ny = ddy / dist;
-        puck.x = cxs + nx * lim;
-        puck.y = cys + ny * lim;
+        puck.x = cornerCX + nx * lim;
+        puck.y = ccy + ny * lim;
         var dot = puck.vx * nx + puck.vy * ny;
         puck.vx -= 2 * dot * nx;
         puck.vy -= 2 * dot * ny;
@@ -254,14 +253,18 @@
       } else if (puck.x + PUCK_R > RINK_X1) {
         puck.x = RINK_X1 - PUCK_R; puck.vx = -Math.abs(puck.vx); hit = true;
       }
-      if (puck.y - PUCK_R < RINK_Y0) {
-        puck.y = RINK_Y0 + PUCK_R; puck.vy = Math.abs(puck.vy) * 0.5 + 40; hit = true; hitY = puck.y;
-      } else if (puck.y + PUCK_R > RINK_Y1) {
+      if (puck.y + PUCK_R > RINK_Y1) {
         puck.y = RINK_Y1 - PUCK_R;
         puck.vy = -Math.abs(puck.vy) * ICE_BOUNCE;
         if (Math.abs(puck.vy) < 40) puck.vy = 0;
         hit = true; hitY = puck.y;
       }
+    }
+
+    // an unseen ceiling, so a keen tapper cannot lose the puck off the top
+    if (puck.y - PUCK_R < 2) {
+      puck.y = 2 + PUCK_R;
+      puck.vy = Math.abs(puck.vy) * 0.5 + 30;
     }
 
     if (hit) {
@@ -323,63 +326,64 @@
 
   /* ---- drawing ---- */
 
-  function roundedPath(x0, y0, x1, y1, r) {
+  /* The zone outline: straight sides running off the top into neutral ice,
+     rounded end boards at the bottom. Left open at the top on purpose. */
+  function rinkPath() {
     ctx.beginPath();
-    ctx.moveTo(x0 + r, y0);
-    ctx.lineTo(x1 - r, y0);
-    ctx.arcTo(x1, y0, x1, y0 + r, r);
-    ctx.lineTo(x1, y1 - r);
-    ctx.arcTo(x1, y1, x1 - r, y1, r);
-    ctx.lineTo(x0 + r, y1);
-    ctx.arcTo(x0, y1, x0, y1 - r, r);
-    ctx.lineTo(x0, y0 + r);
-    ctx.arcTo(x0, y0, x0 + r, y0, r);
-    ctx.closePath();
+    ctx.moveTo(RINK_X0, -4);
+    ctx.lineTo(RINK_X0, RINK_Y1 - CORNER_R);
+    ctx.arcTo(RINK_X0, RINK_Y1, RINK_X0 + CORNER_R, RINK_Y1, CORNER_R);
+    ctx.lineTo(RINK_X1 - CORNER_R, RINK_Y1);
+    ctx.arcTo(RINK_X1, RINK_Y1, RINK_X1, RINK_Y1 - CORNER_R, CORNER_R);
+    ctx.lineTo(RINK_X1, -4);
   }
 
-  /* An end zone seen from above: rounded boards all the way round, with the
-     markings you would actually find down there. */
   function drawRink() {
     ctx.fillStyle = C.bgDeep;
     ctx.fillRect(0, 0, W, H);
 
     // the sheet
-    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    rinkPath();
+    ctx.closePath();
     ctx.fillStyle = C.surface;
     ctx.fill();
 
     ctx.save();
-    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    rinkPath();
+    ctx.closePath();
     ctx.clip();
 
-    // faceoff circles and dots
+    var goalLineY = DECK_Y;
+
+    // end-zone faceoff circles, set just up ice of the goal line
     ctx.strokeStyle = C.danger;
-    ctx.globalAlpha = 0.42;
     ctx.lineWidth = 2;
-    var dots = [{ x: 96, y: 172 }, { x: W - 96, y: 172 }];
+    var dotY = goalLineY - 64;
+    var dots = [{ x: 92, y: dotY }, { x: W - 92, y: dotY }];
     for (var i = 0; i < dots.length; i++) {
+      ctx.globalAlpha = 0.38;
       ctx.beginPath();
-      ctx.arc(dots[i].x, dots[i].y, 46, 0, Math.PI * 2);
+      ctx.arc(dots[i].x, dots[i].y, 44, 0, Math.PI * 2);
       ctx.stroke();
       ctx.globalAlpha = 0.6;
+      ctx.fillStyle = C.danger;
       ctx.beginPath();
       ctx.arc(dots[i].x, dots[i].y, 4, 0, Math.PI * 2);
-      ctx.fillStyle = C.danger;
       ctx.fill();
-      ctx.globalAlpha = 0.42;
     }
 
-    // goal line across the low end, and a blue line up top
-    ctx.globalAlpha = 0.5;
+    // goal line, and the blue line away up at the top of the zone
+    ctx.globalAlpha = 0.55;
+    ctx.strokeStyle = C.danger;
     ctx.lineWidth = 3;
     ctx.beginPath();
-    ctx.moveTo(RINK_X0, DECK_Y); ctx.lineTo(RINK_X1, DECK_Y);
+    ctx.moveTo(RINK_X0, goalLineY); ctx.lineTo(RINK_X1, goalLineY);
     ctx.stroke();
+    ctx.globalAlpha = 0.4;
     ctx.strokeStyle = C.accent;
     ctx.lineWidth = 7;
-    ctx.globalAlpha = 0.42;
     ctx.beginPath();
-    ctx.moveTo(RINK_X0, RINK_Y0 + 34); ctx.lineTo(RINK_X1, RINK_Y0 + 34);
+    ctx.moveTo(RINK_X0, 26); ctx.lineTo(RINK_X1, 26);
     ctx.stroke();
     ctx.globalAlpha = 1;
 
@@ -397,12 +401,13 @@
     ctx.globalAlpha = 1;
     ctx.restore();
 
-    // the boards themselves, white with a red kickplate on the ice side
-    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    // the boards: white with a red kickplate, and no top rail
+    rinkPath();
     ctx.strokeStyle = '#dde5ec';
     ctx.lineWidth = BOARD_W * 2;
+    ctx.lineCap = 'butt';
     ctx.stroke();
-    roundedPath(RINK_X0, RINK_Y0, RINK_X1, RINK_Y1, CORNER_R);
+    rinkPath();
     ctx.strokeStyle = C.danger;
     ctx.lineWidth = 3;
     ctx.stroke();
