@@ -111,6 +111,14 @@ var SHOTS = [
     }
   },
   {
+    slug: 'bar-down', url: 'arcade/bar-down/', focus: 0.82,
+    play: async function (page) {
+      await start(page);
+      // a human-ish rhythm long enough to get a goal and a streak on screen
+      for (var i = 0; i < 7; i++) { await tap(page, 0.5, 0.4); await sleep(1150); }
+    }
+  },
+  {
     slug: 'keep-it-in', url: 'arcade/keep-it-in/', focus: 0.85,
     play: async function (page) { await start(page); await sleep(2600); }
   },

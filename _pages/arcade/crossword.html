@@ -14,6 +14,7 @@ arcade: true
     <h1 class="arcade-title cw-title">Rink Crossword</h1>
   </div>
 
+
   <!-- Play screen. On a phone this is sized to the viewport so the board and
        the keys are usable together; on desktop it just flows. -->
   <div class="cw-screen">
@@ -62,11 +63,13 @@ arcade: true
       </div>
     </div>
 
+    <p class="game-help cw-clue-note">Need help? All words can be found in the <a href="/hockey-glossary/">Scout Elite Glossary</a>.</p>
+
     <p class="game-help">A fresh mini crossword every day, built from the hockey glossary. Clues are the definitions with the answer blacked out, and multi-word answers run together with no spaces. Same puzzle for everyone, so compare times.</p>
 
     <p class="game-help">Tap a square to select, tap again to switch direction. Use the arrows on the clue bar to move between clues, or tap any clue in the lists above.</p>
 
-    <p class="cw-glossary-note">Every answer comes from the <a href="/hockey-glossary/">Hockey Glossary</a>, where all of these terms are defined in plain language. Good for a nudge when a clue will not click, and worth a read either way.</p>
+    <p class="game-help">Need help? All words can be found in the <a href="/hockey-glossary/">Scout Elite Glossary</a>.</p>
   </div>
 </div>
 
@@ -207,19 +210,14 @@ arcade: true
     line-height: 1.45;
     cursor: pointer;
   }
+  .cw-clue-note {
+    margin-top: var(--space-4);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border-color);
+  }
   .cw-clues li strong { color: var(--text-primary); }
   .cw-clues li.is-done { opacity: 0.45; text-decoration: line-through; }
   .cw-clues li.is-active { color: var(--text-primary); }
-  .cw-glossary-note {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-left: 3px solid var(--accent-primary);
-    border-radius: var(--radius-md);
-    color: var(--text-secondary);
-    font-size: var(--font-size-sm);
-    padding: var(--space-3);
-    margin-top: var(--space-3);
-  }
 
   /* ---- phone: the puzzle becomes an app screen ----
      Fixed-height column, so the board scales into whatever is left over after
@@ -238,16 +236,6 @@ arcade: true
     }
     .cw-back { margin-bottom: 0; }
     .cw-title { font-size: 1.15rem; margin-bottom: 0; }
-
-    .cw-screen {
-      display: flex;
-      flex-direction: column;
-      /* --chrome-h is the try-strip plus fixed header; the small head row
-         above is allowed to scroll away. */
-      height: calc(100dvh - var(--chrome-h) - 62px);
-      min-height: 430px;
-    }
-    .cw-hud { margin-bottom: var(--space-2); }
     .cw-boardwrap {
       flex: 1;
       min-height: 0;

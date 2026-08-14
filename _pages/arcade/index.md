@@ -40,6 +40,12 @@ arcade: true
         <p class="arcade-card__desc">Resurface every tile in as few passes as you can. The machine slides until something stops it. 25 levels, and par is always the perfect solve.</p>
         <span class="arcade-card__controls">Swipe or tap the arrows</span>
       </a></li>
+      <li><a class="arcade-card" href="/arcade/bar-down/">
+        <img class="arcade-card__shot" src="/img/arcade/bar-down.jpg" alt="" width="720" height="450" loading="lazy">
+        <span class="arcade-card__name">Bar Down</span>
+        <p class="arcade-card__desc">A net lying mouth up, seen from above. Tap to keep the puck alive and drop it dead center before the clock dies.</p>
+        <span class="arcade-card__controls">Tap to lift</span>
+      </a></li>
     </ul>
   </section>
 

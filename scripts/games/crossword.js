@@ -322,9 +322,23 @@
     var wrap = boardEl.parentElement;
     var availW = Math.min(wrap.clientWidth, 480) - (puzzle.w - 1) * 2;
     var byW = Math.floor(availW / puzzle.w);
-    var h = wrap.clientHeight;
-    var byH = h > 40 ? Math.floor((h - (puzzle.h - 1) * 2) / puzzle.h) : 44;
-    return Math.max(16, Math.min(44, byW, byH));
+    var byH = 44;
+
+    /* On a phone, work out the height left for the board by subtracting its
+       siblings from the play screen, rather than reading the wrapper. The
+       wrapper is a flex child that an oversized board inflates, so measuring
+       it just feeds the board's own size back in and it never shrinks. */
+    if (screenEl && window.innerWidth <= 768) {
+      var used = 0;
+      var kids = screenEl.children;
+      for (var i = 0; i < kids.length; i++) {
+        if (kids[i] === wrap || kids[i].hidden) continue;
+        used += kids[i].getBoundingClientRect().height + 10;
+      }
+      var avail = screenEl.clientHeight - used - 4;
+      byH = Math.floor((avail - (puzzle.h - 1) * 2) / puzzle.h);
+    }
+    return Math.max(14, Math.min(44, byW, byH));
   }
 
   function buildBoard() {
@@ -674,7 +688,20 @@
   /* Rebuild only when the fitted cell size actually changes, so rotation, the
      dvh shuffle when mobile browser chrome hides, and a clue bar growing a
      line all reflow the board without looping. */
+  /* Size the play screen from the real distance to the bottom of the viewport
+     rather than a dvh calc with a magic offset: dvh does not always match the
+     actual viewport, and the offset had to be re-guessed every time anything
+     above the board changed height. */
+  var screenEl = document.querySelector('.cw-screen');
+  function fitScreen() {
+    if (!screenEl) return;
+    if (window.innerWidth > 768) { screenEl.style.height = ''; return; }
+    var top = screenEl.getBoundingClientRect().top + (window.scrollY || 0);
+    screenEl.style.height = Math.max(300, window.innerHeight - top - 6) + 'px';
+  }
+
   function refitBoard() {
+    fitScreen();
     if (!puzzle) return;
     var s = cellSize();
     if (s === lastCell) return;
