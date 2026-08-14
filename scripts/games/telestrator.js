@@ -21,23 +21,25 @@
 
   // ---- tuning ----
   var SKATE_SPEED = 150;              // px/s along the route
-  var LEAD = 0.35;                    // defenders aim this many seconds ahead
   var POKE_DIST = 15;                 // defender within this of skater = turnover
   var BLOCK_DIST = 11;                // body within this of the shot line = block
   var SHOT_SPEED = 620;               // puck trace speed, px/s
   var MIN_SEG = 2.5;                  // min sampled segment while drawing
 
-  // ---- levels: skater start, defender starts, pursuit speed, ink budget ----
+  /* Levels: skater start, defender starts, pursuit speed, ink budget, and how
+     far ahead defenders aim. `lead` is the cruel dial: at 0 they chase where
+     you ARE, which you can outrun; above 0 they cut off where you are GOING.
+     Early levels are pure chase on purpose, so the first wins come easily. */
   var LEVELS = [
-    { ink: 700, dspeed: 0,   start: { x: 180, y: 430 },
+    { ink: 780, dspeed: 0,   lead: 0,    start: { x: 180, y: 430 },
       defs: [{ x: 180, y: 235 }] },
-    { ink: 640, dspeed: 105, start: { x: 120, y: 430 },
+    { ink: 780, dspeed: 86,  lead: 0,    start: { x: 120, y: 430 },
       defs: [{ x: 126, y: 225 }, { x: 234, y: 225 }] },
-    { ink: 580, dspeed: 118, start: { x: 240, y: 430 },
+    { ink: 700, dspeed: 104, lead: 0.15, start: { x: 240, y: 430 },
       defs: [{ x: 126, y: 215 }, { x: 234, y: 215 }] },
-    { ink: 520, dspeed: 126, start: { x: 180, y: 435 },
+    { ink: 620, dspeed: 118, lead: 0.28, start: { x: 180, y: 435 },
       defs: [{ x: 104, y: 210 }, { x: 256, y: 210 }, { x: 180, y: 140 }] },
-    { ink: 460, dspeed: 135, start: { x: 130, y: 435 },
+    { ink: 560, dspeed: 132, lead: 0.35, start: { x: 130, y: 435 },
       defs: [{ x: 104, y: 205 }, { x: 256, y: 205 }, { x: 180, y: 135 }] }
   ];
 
@@ -71,6 +73,9 @@
   var goalie = { x: NET_CX };
   var shot = null;
 
+  var preview = null;        // read of the drawn route, recomputed when it changes
+  var previewDirty = false;
+  var lastAttempt = null;    // { route, x, y, kind } — the try that just failed
   var resultTitle = '', resultSub = '';
   var effects = [];   // expanding rings {x, y, t, dur, r0, r1, color}
   var flash = null;   // full-canvas flash {t, dur, color}
@@ -153,6 +158,7 @@
     route.push(p);
     inkUsed += d;
     cum.push(inkUsed);
+    previewDirty = true;
     updateInk();
   }
 
@@ -213,6 +219,83 @@
   canvas.addEventListener('pointerup', endStroke);
   canvas.addEventListener('pointercancel', endStroke);
 
+  /* ---- read the play before you run it ----
+     The run is fully deterministic, so the same rules can be stepped forward
+     over the drawn route to show what WILL happen: where the defenders end up
+     when you arrive, and where a poke check catches you. Without this the
+     player is predicting a chase they cannot see, which is guessing, not
+     coaching. */
+  function previewRoute() {
+    var total = routeTotal();
+    if (total < 8) return null;
+
+    var sim = {
+      defs: level.defs.map(function (d) { return { x: d.x, y: d.y }; }),
+      goalie: NET_CX
+    };
+    var dt = 1 / 60;
+    var dist = 0;
+    var poke = null;
+    var trails = sim.defs.map(function (d) { return [{ x: d.x, y: d.y }]; });
+
+    while (dist < total && !poke) {
+      dist = Math.min(dist + SKATE_SPEED * dt, total);
+      var pos = pointAt(dist);
+
+      var want = Math.min(NET_CX + GOALIE_RANGE, Math.max(NET_CX - GOALIE_RANGE, pos.x));
+      var gd = want - sim.goalie;
+      var gmax = GOALIE_SPEED * dt;
+      sim.goalie += Math.max(-gmax, Math.min(gmax, gd));
+
+      if (level.dspeed > 0) {
+        var aim = pointAt(Math.min(dist + SKATE_SPEED * (level.lead || 0), total));
+        for (var j = 0; j < sim.defs.length; j++) {
+          var df = sim.defs[j];
+          var ddx = aim.x - df.x, ddy = aim.y - df.y;
+          var dl = Math.sqrt(ddx * ddx + ddy * ddy);
+          if (dl > 0.5) {
+            var step = Math.min(level.dspeed * dt, dl);
+            df.x += ddx / dl * step;
+            df.y += ddy / dl * step;
+          }
+          if (trails[j].length < 400) trails[j].push({ x: df.x, y: df.y });
+        }
+      }
+
+      for (var k = 0; k < sim.defs.length; k++) {
+        var sx = sim.defs[k].x - pos.x, sy = sim.defs[k].y - pos.y;
+        if (Math.sqrt(sx * sx + sy * sy) <= POKE_DIST) {
+          poke = { x: pos.x, y: pos.y, dist: dist };
+          break;
+        }
+      }
+    }
+
+    // where the shot would go from the end of the route
+    var end = route[route.length - 1];
+    var target = sim.goalie >= NET_CX
+      ? { x: POST_L + 6, y: GOAL_Y }
+      : { x: POST_R - 6, y: GOAL_Y };
+    var blocked = false;
+    if (!poke) {
+      var blockers = sim.defs.slice();
+      blockers.push({ x: sim.goalie, y: GOALIE_Y });
+      for (var b = 0; b < blockers.length; b++) {
+        if (pointSegDist(blockers[b].x, blockers[b].y, end.x, end.y, target.x, target.y).d <= BLOCK_DIST) {
+          blocked = true;
+          break;
+        }
+      }
+    }
+
+    return {
+      poke: poke, blocked: blocked, trails: trails,
+      defs: sim.defs.map(function (d) { return { x: d.x, y: d.y }; }),
+      goalie: sim.goalie,
+      shot: { ax: end.x, ay: end.y, bx: target.x, by: target.y }
+    };
+  }
+
   // ---- level flow ----
 
   function resetActors() {
@@ -229,6 +312,7 @@
     levelIx = ix;
     level = LEVELS[ix];
     route = []; cum = []; inkUsed = 0;
+    preview = null; previewDirty = false; lastAttempt = null;
     resetActors();
     resultTitle = ''; resultSub = '';
     effects = []; flash = null;
@@ -240,6 +324,7 @@
 
   function redraw() {
     route = []; cum = []; inkUsed = 0;
+    preview = null; previewDirty = false;
     resetActors();
     resultTitle = ''; resultSub = '';
     state = 'draw';
@@ -291,8 +376,9 @@
   function turnover() {
     state = 'result';
     puckOnStick = false;
+    lastAttempt = { route: route.slice(), x: skater.x, y: skater.y, kind: 'poke' };
     resultTitle = 'Turnover.';
-    resultSub = 'Poke check. He ran exactly what you drew.';
+    resultSub = 'Poke check. Redraw around the X.';
     effects.push({ x: skater.x, y: skater.y, t: 0, dur: 0.5, r0: 10, r1: 42, color: C.danger });
     flash = { t: 0, dur: 0.25, color: C.danger };
     Arcade.vibrate(60);
@@ -300,6 +386,8 @@
   }
 
   function blockedResult() {
+    var bp = shotPuckPos();
+    lastAttempt = { route: route.slice(), x: bp.x, y: bp.y, kind: 'block' };
     state = 'result';
     resultTitle = 'Blocked.';
     resultSub = shot.blockedBy === 'goalie'
@@ -312,6 +400,7 @@
 
   function goalResult() {
     state = 'result';
+    lastAttempt = null;
     var frac = 1 - inkUsed / level.ink;
     var stars = frac >= 0.25 ? 3 : frac >= 0.10 ? 2 : 1;
     if (stars > earned[levelIx]) earned[levelIx] = stars;
@@ -372,6 +461,10 @@
   // ---- simulation ----
 
   function update(dt) {
+    if (previewDirty && (state === 'draw' || state === 'ready')) {
+      previewDirty = false;
+      preview = previewRoute();
+    }
     for (var i = effects.length - 1; i >= 0; i--) {
       effects[i].t += dt;
       if (effects[i].t > effects[i].dur) effects.splice(i, 1);
@@ -398,9 +491,9 @@
       var gmax = GOALIE_SPEED * dt;
       goalie.x += Math.max(-gmax, Math.min(gmax, gd));
 
-      // defenders chase a point 0.35s ahead on the route
+      // defenders chase a point level.lead seconds ahead on the route
       if (level.dspeed > 0) {
-        var aim = pointAt(Math.min(runDist + SKATE_SPEED * LEAD, total));
+        var aim = pointAt(Math.min(runDist + SKATE_SPEED * (level.lead || 0), total));
         for (var j = 0; j < defs.length; j++) {
           var df = defs[j];
           var ddx = aim.x - df.x, ddy = aim.y - df.y;
@@ -519,6 +612,93 @@
     ctx.strokeStyle = C.line;
     ctx.lineWidth = 3;
     ctx.stroke();
+  }
+
+  /* The attempt that just failed, left on the ice while you draw the next one:
+     a faint line and an X where it broke down. Redrawing from a blank sheet
+     taught you nothing. */
+  function drawLastAttempt() {
+    if (!lastAttempt || (state !== 'draw' && state !== 'ready')) return;
+    var r = lastAttempt.route;
+    ctx.save();
+    ctx.globalAlpha = 0.3;
+    ctx.strokeStyle = C.dim;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([3, 5]);
+    ctx.beginPath();
+    ctx.moveTo(r[0].x, r[0].y);
+    for (var i = 1; i < r.length; i++) ctx.lineTo(r[i].x, r[i].y);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.globalAlpha = 0.55;
+    ctx.strokeStyle = C.danger;
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(lastAttempt.x - 6, lastAttempt.y - 6); ctx.lineTo(lastAttempt.x + 6, lastAttempt.y + 6);
+    ctx.moveTo(lastAttempt.x + 6, lastAttempt.y - 6); ctx.lineTo(lastAttempt.x - 6, lastAttempt.y + 6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  /* The read: where the defence ends up if you run this line. */
+  function drawPreview() {
+    if (!preview || (state !== 'draw' && state !== 'ready')) return;
+    ctx.save();
+
+    // pursuit paths, faint
+    ctx.globalAlpha = 0.22;
+    ctx.strokeStyle = C.dim;
+    ctx.lineWidth = 1.5;
+    for (var t = 0; t < preview.trails.length; t++) {
+      var tr = preview.trails[t];
+      if (tr.length < 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(tr[0].x, tr[0].y);
+      for (var i = 1; i < tr.length; i++) ctx.lineTo(tr[i].x, tr[i].y);
+      ctx.stroke();
+    }
+
+    // ghosts of the defence at the moment you arrive
+    ctx.setLineDash([3, 3]);
+    ctx.lineWidth = 2;
+    ctx.globalAlpha = 0.75;
+    ctx.strokeStyle = preview.poke ? C.danger : C.dim;
+    for (var d = 0; d < preview.defs.length; d++) {
+      ctx.beginPath();
+      ctx.arc(preview.defs[d].x, preview.defs[d].y, 11, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.strokeStyle = C.dim;
+    ctx.beginPath();
+    ctx.rect(preview.goalie - GOALIE_W / 2, GOALIE_Y - GOALIE_H / 2, GOALIE_W, GOALIE_H);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    if (preview.poke) {
+      // he gets you here
+      ctx.globalAlpha = 1;
+      ctx.strokeStyle = C.danger;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(preview.poke.x, preview.poke.y, 13, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(preview.poke.x - 6, preview.poke.y - 6); ctx.lineTo(preview.poke.x + 6, preview.poke.y + 6);
+      ctx.moveTo(preview.poke.x + 6, preview.poke.y - 6); ctx.lineTo(preview.poke.x - 6, preview.poke.y + 6);
+      ctx.stroke();
+    } else {
+      // the shot this line sets up
+      ctx.globalAlpha = 0.8;
+      ctx.setLineDash([5, 5]);
+      ctx.lineWidth = 2;
+      ctx.strokeStyle = preview.blocked ? C.warning : C.success;
+      ctx.beginPath();
+      ctx.moveTo(preview.shot.ax, preview.shot.ay);
+      ctx.lineTo(preview.shot.bx, preview.shot.by);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    ctx.restore();
   }
 
   function drawRoute() {
@@ -654,6 +834,8 @@
 
   function draw() {
     drawRink();
+    drawLastAttempt();
+    drawPreview();
     drawRoute();
     drawDefenders();
     drawGoalie();
