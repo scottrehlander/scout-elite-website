@@ -61,6 +61,10 @@
   var floaters = [], rings = [], flash = null, iceMarks = [];
 
   // one net, which slides to its next spot after every goal
+  function netMoving() {
+    return Math.abs(net.targetX - net.x) > 1 || Math.abs(net.targetY - net.y) > 1;
+  }
+
   function netHome() {
     var pad = RINK_X0 + NET_W / 2 + 26;
     return pad + Math.random() * (W - pad * 2);
@@ -111,7 +115,8 @@
     score = 0; goals = 0; bars = 0; multiplier = 1;
     timeLeft = START_TIME;
     floaters = []; rings = []; iceMarks = []; flash = null;
-    net = { x: netHome(), y: NET_Y_MAX - 30, glow: 0 };
+    // a net starts where a net belongs: centred, crossbar on the goal line
+    net = { x: W / 2, y: DECK_Y, glow: 0 };
     net.targetX = net.x;
     net.targetY = net.y;
     spawnPuck();
@@ -313,6 +318,16 @@
       }
     }
 
+    /* A net still sliding into place is not playable yet: it draws as a ghost
+       and nothing collides with it until it has settled. */
+    if (netMoving()) {
+      for (var mm = iceMarks.length - 1; mm >= 0; mm--) {
+        iceMarks[mm].t += dt;
+        if (iceMarks[mm].t > 1.4) iceMarks.splice(mm, 1);
+      }
+      return;
+    }
+
     /* Crossing the mouth on the way down. The red pipe is solid: clip a post
        and it pings back out instead of counting. */
     if (prevY <= net.y && puck.y > net.y && puck.vy > 0) {
@@ -458,10 +473,12 @@
      read as a hockey goal at a glance, which the last version had backwards. */
   function drawNet(n) {
     var net = n;
+    var fade = netMoving() ? 0.5 : 1;
     var x = net.x, halfW = NET_W / 2;
     var top = net.y, bot = net.y + NET_D;
 
     // the throat, darkening as it goes back
+    ctx.globalAlpha = fade;
     var grad = ctx.createLinearGradient(0, top, 0, bot);
     grad.addColorStop(0, 'rgba(8,10,13,0.94)');
     grad.addColorStop(1, 'rgba(20,26,32,0.82)');
@@ -478,7 +495,7 @@
     ctx.save();
     ctx.clip();
     ctx.strokeStyle = '#ffffff';
-    ctx.globalAlpha = 0.34;
+    ctx.globalAlpha = 0.34 * fade;
     ctx.lineWidth = 1;
     for (var gx = -halfW; gx <= halfW; gx += 9) {
       ctx.beginPath();
@@ -497,9 +514,9 @@
 
     // the centre lane: where a bar down lives
     ctx.fillStyle = C.warning;
-    ctx.globalAlpha = 0.16 + net.glow * 0.34;
+    ctx.globalAlpha = (0.16 + net.glow * 0.34) * fade;
     ctx.fillRect(x - NET_W * CENTRE_FRAC, top + 2, NET_W * CENTRE_FRAC * 2, NET_D - 4);
-    ctx.globalAlpha = 0.7;
+    ctx.globalAlpha = 0.7 * fade;
     ctx.strokeStyle = C.warning;
     ctx.lineWidth = 1.5;
     ctx.setLineDash([4, 4]);
@@ -508,7 +525,7 @@
     ctx.moveTo(x + NET_W * CENTRE_FRAC, top); ctx.lineTo(x + NET_W * CENTRE_FRAC, bot);
     ctx.stroke();
     ctx.setLineDash([]);
-    ctx.globalAlpha = 1;
+    ctx.globalAlpha = fade;
 
     // red pipe: the posts and the bar, seen from above
     ctx.strokeStyle = net.glow > 0 ? '#ff5566' : C.danger;
@@ -524,7 +541,7 @@
     ctx.moveTo(x - halfW, top); ctx.lineTo(x - halfW + 7, bot);
     ctx.moveTo(x + halfW, top); ctx.lineTo(x + halfW - 7, bot);
     ctx.stroke();
-    ctx.globalAlpha = 0.75;
+    ctx.globalAlpha = 0.75 * fade;
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(x - halfW + 7, bot); ctx.lineTo(x + halfW - 7, bot);
