@@ -185,6 +185,13 @@
     // a goal buys time, but the clock never banks more than the cap
     timeLeft = Math.min(timeLeft + GOAL_TIME, TIME_CAP);
 
+    /* A buzzer beater puts time back on the clock, so the run is alive again:
+       come out of the horn and give the player their taps back. */
+    if (state === 'horn' && timeLeft > 0) {
+      state = 'playing';
+      floaters.push({ x: W / 2, y: 172, text: 'STILL ALIVE', t: 0, life: 1, color: C.success, size: 19 });
+    }
+
     floaters.push({
       x: W / 2, y: 200,
       text: barDown ? 'BAR DOWN!  +' + pts : '+' + pts,
