@@ -38,7 +38,7 @@
   var TAP_VY = -336;                // a tap sets rise, it does not stack
   var VX_SPEED = 122;               // horizontal speed: fixed, never ramps or decays
   var ICE_BOUNCE = 0.3;             // dead enough that decking it cannot bounce back over the goal line
-  var START_TIME = 18;
+  var START_TIME = 9;
   var GOAL_TIME = 4;
   var BAR_TIME = 5;
   var GOAL_PTS = 1;                 // a goal is worth one, the multiplier does the rest
@@ -96,11 +96,12 @@
       var nx = netHome();
       var ny = NET_Y_MIN + Math.random() * (NET_Y_MAX - NET_Y_MIN);
       if (Math.abs(nx - net.x) < 90) continue;
-      var vx = (nx >= puck.x ? 1 : -1) * VX_SPEED;
+      // the puck leaves AWAY from the net, so that is the path to test
+      var vx = (nx >= puck.x ? -1 : 1) * VX_SPEED;
       if (!fallback) fallback = { x: nx, y: ny, vx: vx };
       if (!reachableWithoutTap(nx, ny, vx)) return { x: nx, y: ny, vx: vx };
     }
-    return fallback || { x: netHome(), y: NET_Y_MIN, vx: VX_SPEED };
+    return fallback || { x: netHome(), y: NET_Y_MIN, vx: -VX_SPEED };
   }
 
   function spawnPuck() {
@@ -200,7 +201,9 @@
     puck.vy = POP_VY;
     puck.onIce = false;
     /* Place the next net where the pop alone cannot reach it, so every goal
-       has to be set up with at least one tap, then kick the puck that way. */
+       has to be set up with at least one tap, then kick the puck the OTHER
+       way: the puck and the net separate, and you have to bring them back
+       together. */
     var nxt = pickNextNet();
     net.targetX = nxt.x;
     net.targetY = nxt.y;
