@@ -28,7 +28,7 @@
   var CORNER_R = 62;                // the rounded corners of an end zone
   var DECK_Y = RINK_Y1 - 70;        // contact below this counts as decking it
   var PUCK_R = 6;
-  var NET_W = 96;                   // mouth width
+  var NET_W = 78;                   // mouth width
   var NET_D = 34;                   // how deep the mesh reads below the mouth
   var NET_Y_MIN = 200;              // the net roams within this band
   var NET_Y_MAX = 390;
