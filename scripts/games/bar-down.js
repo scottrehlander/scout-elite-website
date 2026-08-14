@@ -56,7 +56,7 @@
   var overlayMsg = document.getElementById('overlay-msg');
   var overlayBtn = document.getElementById('overlay-btn');
 
-  var state = 'idle';               // idle | playing | over
+  var state = 'idle';               // idle | playing | horn | over
   var puck, net, timeLeft, score, goals, bars, multiplier;
   var floaters = [], rings = [], flash = null, iceMarks = [];
 
@@ -163,8 +163,13 @@
     Arcade.vibrate(8);
   }
 
-  Arcade.onTap(canvas, function () { if (state === 'playing') tap(); else start(); });
-  Arcade.onKey([' ', 'ArrowUp', 'Enter'], function () { if (state === 'playing') tap(); else start(); });
+  function press() {
+    if (state === 'playing') tap();
+    else if (state === 'idle' || state === 'over') start();
+    // during 'horn' the puck plays out on its own: input is ignored
+  }
+  Arcade.onTap(canvas, press);
+  Arcade.onKey([' ', 'ArrowUp', 'Enter'], press);
   overlayBtn.addEventListener('click', start);
 
   function scoreGoal(net, barDown) {
@@ -243,11 +248,21 @@
     if (flash) { flash.t += dt; if (flash.t > flash.dur) flash = null; }
     if (net && net.glow > 0) net.glow = Math.max(0, net.glow - dt);
 
-    if (state !== 'playing') return;
+    if (state !== 'playing' && state !== 'horn') return;
 
-    timeLeft -= dt;
-    if (timeLeft <= 0) { timeLeft = 0; syncHud(); gameOver(); return; }
-    syncHud();
+    if (state === 'playing') {
+      timeLeft -= dt;
+      if (timeLeft <= 0) {
+        /* Horn. Taps stop here, but the puck is still live: it plays out and
+           a shot already on its way in still counts. The run ends when the
+           puck finally hits the ice. */
+        timeLeft = 0;
+        state = 'horn';
+        floaters.push({ x: W / 2, y: 150, text: 'HORN', t: 0, life: 1.2, color: C.danger, size: 26 });
+        Arcade.vibrate(40);
+      }
+      syncHud();
+    }
 
     // the net slides to wherever it is headed next
     var ndx = net.targetX - net.x, ndy = net.targetY - net.y;
@@ -325,12 +340,18 @@
           puck.onIce = true;
           iceMarks.push({ x: puck.x, y: puck.y + PUCK_R + 3, t: 0 });
           if (iceMarks.length > 12) iceMarks.shift();
+          if (state === 'horn') { gameOver(); return; }
           missed();
         }
       } else {
         puck.onIce = false;
       }
     }
+
+    /* If the horn has gone and the puck is down, that is the run. This also
+       catches the case where it was already resting when time expired, which
+       the deck transition alone would never fire. */
+    if (state === 'horn' && puck.onIce) { gameOver(); return; }
 
     /* A net still sliding into place is not playable yet: it draws as a ghost
        and nothing collides with it until it has settled. */
