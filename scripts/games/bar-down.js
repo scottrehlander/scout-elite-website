@@ -39,8 +39,8 @@
   var VX_SPEED = 122;               // horizontal speed: fixed, never ramps or decays
   var ICE_BOUNCE = 0.3;             // dead enough that decking it cannot bounce back over the goal line
   var START_TIME = 9;
-  var GOAL_TIME = 4;
-  var BAR_TIME = 5;
+  var GOAL_TIME = 3;                // seconds a goal buys
+  var TIME_CAP = 10;                // the clock never banks past this
   var GOAL_PTS = 1;                 // a goal is worth one, the multiplier does the rest
   var MULT_CAP = 50;
   var CENTRE_FRAC = 0.15;           // this share either side of centre = bar down
@@ -177,7 +177,8 @@
        centre still counts for points but wipes it, so a scruffy goal costs you
        the run you were building. */
     multiplier = barDown ? Math.min(multiplier + 1, MULT_CAP) : 1;
-    timeLeft += barDown ? BAR_TIME : GOAL_TIME;
+    // a goal buys time, but the clock never banks more than the cap
+    timeLeft = Math.min(timeLeft + GOAL_TIME, TIME_CAP);
 
     floaters.push({
       x: W / 2, y: 200,
