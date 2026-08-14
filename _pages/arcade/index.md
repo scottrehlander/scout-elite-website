@@ -43,7 +43,7 @@ arcade: true
       <li><a class="arcade-card" href="/arcade/bar-down/">
         <img class="arcade-card__shot" src="/img/arcade/bar-down.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Bar Down</span>
-        <p class="arcade-card__desc">A net lying mouth up, seen from above. Tap to keep the puck alive and drop it dead centre before the clock dies.</p>
+        <p class="arcade-card__desc">A net lying mouth up, seen from above. Tap to keep the puck alive and drop it dead center before the clock dies.</p>
         <span class="arcade-card__controls">Tap to lift</span>
       </a></li>
     </ul>

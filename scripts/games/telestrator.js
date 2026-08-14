@@ -640,7 +640,7 @@
     ctx.restore();
   }
 
-  /* The read: where the defence ends up if you run this line. */
+  /* The read: where the defense ends up if you run this line. */
   function drawPreview() {
     if (!preview || (state !== 'draw' && state !== 'ready')) return;
     ctx.save();
@@ -658,7 +658,7 @@
       ctx.stroke();
     }
 
-    // ghosts of the defence at the moment you arrive
+    // ghosts of the defense at the moment you arrive
     ctx.setLineDash([3, 3]);
     ctx.lineWidth = 2;
     ctx.globalAlpha = 0.75;

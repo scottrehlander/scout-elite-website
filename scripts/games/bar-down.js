@@ -43,7 +43,7 @@
   var TIME_CAP = 10;                // the clock never banks past this
   var GOAL_PTS = 1;                 // a goal is worth one, the multiplier does the rest
   var MULT_CAP = 50;
-  var CENTRE_FRAC = 0.15;           // this share either side of centre = bar down
+  var CENTER_FRAC = 0.15;           // this share either side of center = bar down
   var NET_SLIDE = 300;              // px/s the net travels to its next spot
   var POP_VY = -292;                // how hard the mesh spits the puck back out
 
@@ -106,7 +106,7 @@
 
   function spawnPuck() {
     /* Out to one side AND drifting further out, so the opening drop heads for
-       the boards rather than falling straight into the centred net: the first
+       the boards rather than falling straight into the centerd net: the first
        goal has to be earned with a tap like every other. */
     var side = Math.random() < 0.5 ? -1 : 1;
     puck = {
@@ -120,7 +120,7 @@
     score = 0; goals = 0; bars = 0; multiplier = 1;
     timeLeft = START_TIME;
     floaters = []; rings = []; iceMarks = []; flash = null;
-    // a net starts where a net belongs: centred, crossbar on the goal line
+    // a net starts where a net belongs: centerd, crossbar on the goal line
     net = { x: W / 2, y: DECK_Y, glow: 0 };
     net.targetX = net.x;
     net.targetY = net.y;
@@ -174,7 +174,7 @@
     var pts = GOAL_PTS * multiplier;
     score += pts;
     /* Only a clean one down the middle advances the multiplier. Scoring off
-       centre still counts for points but wipes it, so a scruffy goal costs you
+       center still counts for points but wipes it, so a scruffy goal costs you
        the run you were building. */
     multiplier = barDown ? Math.min(multiplier + 1, MULT_CAP) : 1;
     // a goal buys time, but the clock never banks more than the cap
@@ -348,7 +348,7 @@
       var off = puck.x - net.x;
       var a = Math.abs(off), half = NET_W / 2;
       if (a <= half - PUCK_R) {
-        scoreGoal(net, a <= NET_W * CENTRE_FRAC);
+        scoreGoal(net, a <= NET_W * CENTER_FRAC);
         return;
       }
       if (a <= half + PUCK_R) {
@@ -369,7 +369,7 @@
       // only a puck on its way DOWN has gone in; coming up from below is the
       // back of the net, which is solid
       if (inA <= nHalf - PUCK_R && puck.vy > 0) {
-        scoreGoal(net, inA <= NET_W * CENTRE_FRAC);
+        scoreGoal(net, inA <= NET_W * CENTER_FRAC);
         return;
       }
       if (inA > nHalf - PUCK_R) {
@@ -526,17 +526,17 @@
     ctx.restore();
     ctx.globalAlpha = 1;
 
-    // the centre lane: where a bar down lives
+    // the center lane: where a bar down lives
     ctx.fillStyle = C.warning;
     ctx.globalAlpha = (0.16 + net.glow * 0.34) * fade;
-    ctx.fillRect(x - NET_W * CENTRE_FRAC, top + 2, NET_W * CENTRE_FRAC * 2, NET_D - 4);
+    ctx.fillRect(x - NET_W * CENTER_FRAC, top + 2, NET_W * CENTER_FRAC * 2, NET_D - 4);
     ctx.globalAlpha = 0.7 * fade;
     ctx.strokeStyle = C.warning;
     ctx.lineWidth = 1.5;
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
-    ctx.moveTo(x - NET_W * CENTRE_FRAC, top); ctx.lineTo(x - NET_W * CENTRE_FRAC, bot);
-    ctx.moveTo(x + NET_W * CENTRE_FRAC, top); ctx.lineTo(x + NET_W * CENTRE_FRAC, bot);
+    ctx.moveTo(x - NET_W * CENTER_FRAC, top); ctx.lineTo(x - NET_W * CENTER_FRAC, bot);
+    ctx.moveTo(x + NET_W * CENTER_FRAC, top); ctx.lineTo(x + NET_W * CENTER_FRAC, bot);
     ctx.stroke();
     ctx.setLineDash([]);
     ctx.globalAlpha = fade;
