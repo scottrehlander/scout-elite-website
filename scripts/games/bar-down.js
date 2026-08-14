@@ -1,10 +1,16 @@
 /* Bar Down — one-touch puck juggling against a clock.
 
-   The camera looks down on two nets lying mouth-up, so the puck drops into
-   them the way a ball drops through a hoop. Tap to loft it, ride it off the
-   boards, and pick your net. Straight down the middle of a mouth is a bar
-   down: it pays double AND builds the multiplier, so the clean shot is the
-   whole game. Goals buy time, and only the clock can end a run.
+   The camera looks down on a net lying mouth-up, so the puck drops into it
+   the way a ball drops through a hoop. Tap to loft it, ride it off the
+   boards, and drop it in. Straight down the middle is a bar down: it pays
+   double AND builds the multiplier, so the clean shot is the whole game.
+
+   One puck, all run. Scoring pops it back out off the mesh, which is what a
+   real puck does and means play never stops to reset; the net then slides
+   away to a new spot. The red pipe is solid, so clipping a post pings the
+   puck back out rather than counting.
+
+   Goals buy time, and only the clock can end a run.
    Prototype for the Scout Elite Arcade. */
 (function () {
   'use strict';
@@ -19,9 +25,10 @@
   var GLASS_Y = 54;                 // top of the glass: the puck cannot leave
   var ICE_Y = 486;                  // where a miss lands
   var PUCK_R = 8;
-  var NET_W = 84;                   // mouth width
+  var NET_W = 96;                   // mouth width
   var NET_D = 34;                   // how deep the mesh reads below the mouth
-  var NET_Y = 418;                  // the mouth plane both nets sit on
+  var NET_Y_MIN = 250;              // the net roams within this band
+  var NET_Y_MAX = 430;
 
   /* ---- tuning ---- */
   var GRAV = 620;                   // px/s^2
@@ -30,13 +37,15 @@
   var VX_STEP = 4;                  // +per goal, so it tightens as you go
   var VX_MAX = 178;
   var ICE_BOUNCE = 0.5;
-  var START_TIME = 30;
-  var GOAL_TIME = 3.5;
+  var START_TIME = 35;
+  var GOAL_TIME = 4;
   var BAR_TIME = 5;
   var GOAL_PTS = 100;
   var BAR_PTS = 250;
   var MULT_CAP = 8;
-  var CENTRE_FRAC = 0.17;           // this share either side of centre = bar down
+  var CENTRE_FRAC = 0.19;           // this share either side of centre = bar down
+  var NET_SLIDE = 300;              // px/s the net travels to its next spot
+  var POP_VY = -292;                // how hard the mesh spits the puck back out
 
   var BEST_KEY = 'bar-down';
   var scoreEl = document.getElementById('score');
@@ -48,15 +57,20 @@
   var overlayBtn = document.getElementById('overlay-btn');
 
   var state = 'idle';               // idle | playing | over
-  var puck, nets, timeLeft, score, goals, bars, multiplier, vxMag, celebrate;
+  var puck, net, timeLeft, score, goals, bars, multiplier, vxMag;
   var floaters = [], rings = [], flash = null, iceMarks = [];
 
-  function placeNets() {
-    // two mouths, one on each half, so there is always a choice to make
-    nets = [
-      { x: 68 + Math.random() * 56, glow: 0 },
-      { x: W - 68 - Math.random() * 56, glow: 0 }
-    ];
+  // one net, which slides to its next spot after every goal
+  function netHome() {
+    var pad = BOARD_W + NET_W / 2 + 8;
+    return pad + Math.random() * (W - pad * 2);
+  }
+
+  function moveNet() {
+    var next;
+    do { next = netHome(); } while (Math.abs(next - net.x) < 90);
+    net.targetX = next;
+    net.targetY = NET_Y_MIN + Math.random() * (NET_Y_MAX - NET_Y_MIN);
   }
 
   function spawnPuck() {
@@ -71,9 +85,10 @@
     score = 0; goals = 0; bars = 0; multiplier = 1;
     timeLeft = START_TIME;
     vxMag = VX_BASE;
-    celebrate = 0;
     floaters = []; rings = []; iceMarks = []; flash = null;
-    placeNets();
+    net = { x: netHome(), y: NET_Y_MAX - 20, glow: 0 };
+    net.targetX = net.x;
+    net.targetY = net.y;
     spawnPuck();
     syncHud();
   }
@@ -137,12 +152,30 @@
     if (barDown && multiplier > 1) {
       floaters.push({ x: W / 2, y: 232, text: 'multiplier x' + multiplier, t: 0, life: 0.9, color: C.accentHover, size: 15 });
     }
-    rings.push({ x: net.x, y: NET_Y, t: 0, dur: 0.6, r0: 10, r1: 64, color: barDown ? C.warning : C.success });
+    rings.push({ x: net.x, y: net.y, t: 0, dur: 0.6, r0: 10, r1: 64, color: barDown ? C.warning : C.success });
     flash = { t: 0, dur: 0.22, color: barDown ? C.warning : C.success };
     net.glow = 0.6;
     Arcade.vibrate(barDown ? 55 : 28);
-    celebrate = 0.42;
+
+    // the mesh spits it back out, which is what a real puck does, so the same
+    // puck stays in play and there is nothing to reset
+    puck.x = net.x;
+    puck.y = net.y + NET_D * 0.5;
+    puck.vy = POP_VY;
+    puck.vx = (puck.vx >= 0 ? 1 : -1) * Math.max(Math.abs(puck.vx) * 0.85, 55);
+    puck.onIce = false;
+    moveNet();
     syncHud();
+  }
+
+  function offThePost(off) {
+    puck.y = net.y - PUCK_R - 1;
+    puck.vy = -Math.abs(puck.vy) * 0.62 - 30;
+    puck.vx = (off >= 0 ? 1 : -1) * Math.max(Math.abs(puck.vx), 70);
+    net.glow = 0.3;
+    rings.push({ x: net.x + off, y: net.y, t: 0, dur: 0.34, r0: 5, r1: 26, color: C.danger });
+    floaters.push({ x: net.x + off, y: net.y - 26, text: 'off the post', t: 0, life: 0.6, color: C.danger, size: 13 });
+    Arcade.vibrate(18);
   }
 
   function missed() {
@@ -164,11 +197,7 @@
       if (rings[r].t > rings[r].dur) rings.splice(r, 1);
     }
     if (flash) { flash.t += dt; if (flash.t > flash.dur) flash = null; }
-    if (nets) {
-      for (var n = 0; n < nets.length; n++) {
-        if (nets[n].glow > 0) nets[n].glow = Math.max(0, nets[n].glow - dt);
-      }
-    }
+    if (net && net.glow > 0) net.glow = Math.max(0, net.glow - dt);
 
     if (state !== 'playing') return;
 
@@ -176,10 +205,13 @@
     if (timeLeft <= 0) { timeLeft = 0; syncHud(); gameOver(); return; }
     syncHud();
 
-    if (celebrate > 0) {
-      celebrate -= dt;
-      if (celebrate <= 0) { placeNets(); spawnPuck(); }
-      return;
+    // the net slides to wherever it is headed next
+    var ndx = net.targetX - net.x, ndy = net.targetY - net.y;
+    var nd = Math.sqrt(ndx * ndx + ndy * ndy);
+    if (nd > 1) {
+      var step = Math.min(NET_SLIDE * dt, nd);
+      net.x += ndx / nd * step;
+      net.y += ndy / nd * step;
     }
 
     var prevY = puck.y;
@@ -206,14 +238,17 @@
       rings.push({ x: puck.x, y: puck.y, t: 0, dur: 0.22, r0: 6, r1: 16, color: C.dim });
     }
 
-    // in the net: falling across the mouth plane, inside a mouth
-    if (prevY <= NET_Y && puck.y > NET_Y && puck.vy > 0) {
-      for (var i = 0; i < nets.length; i++) {
-        var off = puck.x - nets[i].x;
-        if (Math.abs(off) <= NET_W / 2) {
-          scoreGoal(nets[i], Math.abs(off) <= NET_W * CENTRE_FRAC);
-          return;
-        }
+    /* Crossing the mouth on the way down. The red pipe is solid: clip a post
+       and it pings back out instead of counting. */
+    if (prevY <= net.y && puck.y > net.y && puck.vy > 0) {
+      var off = puck.x - net.x;
+      var a = Math.abs(off), half = NET_W / 2;
+      if (a <= half - PUCK_R) {
+        scoreGoal(net, a <= NET_W * CENTRE_FRAC);
+        return;
+      }
+      if (a <= half + PUCK_R) {
+        offThePost(off);
       }
     }
 
@@ -264,7 +299,7 @@
     ctx.fillRect(BOARD_W - 3, GLASS_Y, 3, H - GLASS_Y);
     ctx.fillRect(W - BOARD_W, GLASS_Y, 3, H - GLASS_Y);
 
-    // the ice below the nets, where a miss lands
+    // the ice, where a miss lands
     ctx.fillStyle = '#e9eff5';
     ctx.fillRect(BOARD_W, ICE_Y, W - BOARD_W * 2, H - ICE_Y);
     ctx.strokeStyle = C.danger;
@@ -287,9 +322,10 @@
   /* A hockey net seen from directly above: you are looking into the mouth and
      down at the mesh. Red pipe with white mesh is the pairing that makes it
      read as a hockey goal at a glance, which the last version had backwards. */
-  function drawNet(net) {
+  function drawNet(n) {
+    var net = n;
     var x = net.x, halfW = NET_W / 2;
-    var top = NET_Y, bot = NET_Y + NET_D;
+    var top = net.y, bot = net.y + NET_D;
 
     // the throat, darkening as it goes back
     var grad = ctx.createLinearGradient(0, top, 0, bot);
@@ -396,7 +432,7 @@
        than a guess. Same physics as update(), boards included. */
     if (state === 'playing' && puck.vy > 0) {
       var t = 0, sx = puck.x, sy = puck.y, svx = puck.vx, svy = puck.vy;
-      while (sy < NET_Y && t < 2.5) {
+      while (sy < net.y && t < 2.5) {
         svy += GRAV * (1 / 60);
         sx += svx * (1 / 60);
         sy += svy * (1 / 60);
@@ -407,9 +443,9 @@
       ctx.fillStyle = C.accentHover;
       ctx.globalAlpha = 0.5;
       ctx.beginPath();
-      ctx.moveTo(sx, NET_Y - 12);
-      ctx.lineTo(sx - 5, NET_Y - 22);
-      ctx.lineTo(sx + 5, NET_Y - 22);
+      ctx.moveTo(sx, net.y - 12);
+      ctx.lineTo(sx - 5, net.y - 22);
+      ctx.lineTo(sx + 5, net.y - 22);
       ctx.closePath();
       ctx.fill();
       ctx.globalAlpha = 1;
@@ -418,7 +454,7 @@
 
   function draw() {
     drawRink();
-    if (nets) for (var i = 0; i < nets.length; i++) drawNet(nets[i]);
+    if (net) drawNet(net);
     if (puck && state !== 'idle') drawPuck();
 
     for (var r = 0; r < rings.length; r++) {
@@ -443,11 +479,11 @@
       ctx.globalAlpha = 1;
     }
 
-    if (state === 'playing' && goals === 0 && nets) {
+    if (state === 'playing' && goals === 0 && net) {
       ctx.globalAlpha = 0.55 + 0.45 * Math.sin(Date.now() / 260);
       ctx.fillStyle = C.warning;
       ctx.font = '700 13px Inter, sans-serif';
-      ctx.fillText('drop it straight down the middle', W / 2, NET_Y - 46);
+      ctx.fillText('drop it straight down the middle', W / 2, Math.max(96, net.y - 46));
       ctx.globalAlpha = 1;
     }
 
