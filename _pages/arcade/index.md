@@ -56,7 +56,7 @@ arcade: true
       <li><a class="arcade-card arcade-card--proto" href="/arcade/shootout/">
         <img class="arcade-card__shot" src="/img/arcade/shootout.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Shootout <span class="arcade-card__chip">Prototype</span></span>
-        <p class="arcade-card__desc">Pick your corner. The goalie studies your habits and starts cheating.</p>
+        <p class="arcade-card__desc">Pick your corner. The goalie studies your habits and gets better with more shots.</p>
         <span class="arcade-card__controls">Tap a target when the meter is green</span>
       </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/coaches-challenge/">
