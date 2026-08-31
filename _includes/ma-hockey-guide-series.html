@@ -17,6 +17,13 @@
       {% endif %}
     </li>
     <li>
+      {% if include.current == "divisions" %}
+        <strong>Division list: E9 2026-27 Divisions: Every Team, by Birth Year</strong>
+      {% else %}
+        <a href="/blog/e9-divisions-by-team/">Division list: E9 2026-27 Divisions: Every Team, by Birth Year</a>
+      {% endif %}
+    </li>
+    <li>
       {% if include.current == "rankings" %}
         <strong>Regional rankings: Top New England Boys Hockey Programs Ranked at 10U, 12U & 14U</strong>
       {% else %}
