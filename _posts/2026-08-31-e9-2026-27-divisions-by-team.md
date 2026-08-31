@@ -10,8 +10,8 @@ tags: [E9 hockey, Elite 9 Hockey League, E9 divisions, E9 2026-27, E9 teams, E9 
 author: "Coach Scott"
 excerpt: "Every E9 team, sorted into its 2026-27 division. 29 boys groups, 5 girls groups, and a map showing how far outside Massachusetts the league now reaches."
 image:
-  path: /img/blog/e9-season-guide-2026-27.jpg
-  alt: "E9 Hockey 2026-27 divisions: the division tiers as a ladder with a parity round arrow, over rink line art"
+  path: /img/blog/e9-divisions-2026-27.jpg
+  alt: "E9 Divisions 2026-27: a grid of birth years from 2012 to Mite, each row showing its Elite, White, Blue and Red divisions as colored chips, over rink line art"
 permalink: /blog/e9-divisions-by-team/
 ---
 

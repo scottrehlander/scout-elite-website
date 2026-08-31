@@ -10,6 +10,14 @@ The Scout Elite app source lives at `../scout-elite` (sibling directory). When y
 - `src/app/components/FeatureGate.tsx` — which actions gate at which tier
 - `supabase/migrations/` — schema, the source of truth for what a feature stores/can do
 
+## League data — ground truth for hockey posts
+Standings, schedules and division placements on `elite9hockey.com` are **JS-rendered inside a `widgets.vahockey.com` iframe**. WebFetch returns only the nav shell and will look like the page is empty. To actually read them: render the page with headless Chromium (see Browser checks below), pull the iframe `src`, then load that URL directly and dump `document.body.innerText`.
+- The widget's `season` param is the **ending** year: `2027` = the 2026-27 season. Swap it to diff one season against another — that is how the 2026-27 restructure was *proved* rather than assumed (2025-26 had no Elite tier).
+- `league=e9bhl` boys, `league=E9G` girls. In the text dump, group headers are division names and the rows beneath them are teams; parse, don't transcribe.
+- Publish **placements** (fixed for a season) and link out for **live standings** (they change). Placement tables stay accurate; copied standings rot.
+- Name decoding: `- E` / `- S` are a club's Elite and Select teams, `T1` / `T2` the girls equivalent, and `Giants - West` / `Giants East` are branches of 95 Giants, not separate clubs. Watch the collisions: Express (Walpole) vs Westchester Express (NY), Winter Club vs Lovell Academy.
+- The 2026-27 E9 spans six states (MA, NH, VT, RI, ME, NY). Don't assume a club is in Massachusetts.
+
 ## Stack
 - **Jekyll** (Ruby). No Node.js, no npm, no build pipeline.
 - **Plugins:** `jekyll-seo-tag`, `jekyll-sitemap`, `jekyll-redirect-from`
@@ -38,6 +46,8 @@ LAN preview from other machines: `http://n8n-1:4000`.
 
 **Resizing/compressing images:** no ImageMagick, `sharp`, or Python PIL on the n8n-1 box — `npm i jimp@0.22` in a scratch dir (`Jimp.read` → `crop`/`resize`/`quality(80)` → `writeAsync`); on Windows use PowerShell `System.Drawing` (GDI+). Hero/OG images → ~1200-1600px-wide JPG.
 
+**Generating blog hero/OG art:** author it as an HTML/SVG page and screenshot it with headless Chromium at `deviceScaleFactor: 2`, then downscale to **1600x840** with jimp (`RESIZE_BICUBIC`, quality 86) — that 2x-then-downscale step is what keeps the type crisp. House style is set by `img/blog/e9-season-guide-2026-27.jpg` and `img/blog/e9-divisions-2026-27.jpg`: near-black ground, faint rink line art (center circle, blue/red lines, faceoff circles) under heavy italic Inter 900 with `scaleX(.94)`, an outlined-stroke year, and a data motif on the right. Vary the composition between posts so sibling articles don't look duplicated.
+
 **Capturing app screenshots (marketing assets):** run `npm run dev` in `../scout-elite` (hits QA Supabase) and drive headless Chromium via `playwright-core`. Login mirrors `../scout-elite/tests/e2e/auth.setup.ts` (choice screen → "Sign in with Email" → labeled fields; creds in `../scout-elite/.env.local`). Seed pretty tutorial content with `POST /api/onboarding/start-tour` per tour. Dismiss tour popups before shooting. Web-ready derivatives live in `img/how-it-works/` (source PNGs stay untracked in `img/app-screenshots/2026-07-candidates/`).
 
 ## Directory structure
@@ -59,6 +69,13 @@ _config.yml       # Jekyll config — collections, plugins, permalink rules
 Gemfile           # Ruby dependencies
 index.md          # Homepage
 ```
+
+## Blog post conventions
+- **Map posts** inline Leaflet from unpkg in the post body (no build step). `_posts/2026-06-08-minnesota-youth-hockey-explained-parent-guide.md` is the most evolved example: an `L.layerGroup` per category, an `L.control.layers` toggle, and a hand-rolled bottom-right legend. Always carry the "approximate organizational bases, not every rink" caveat. Verify markers/tiles render at 1280px **and** 375px.
+- Adding a post to the Massachusetts series means adding an entry to `_includes/ma-hockey-guide-series.html` and passing `current="<key>"` from the post.
+- `{% include map-cta.html %}` is the mid-post CTA used in the league and map guides.
+- **Guard against cannibalization in the E9 cluster** (~40% of site impressions). The split as of 2026-08-31: `/blog/e9-hockey-season-guide/` owns what the divisions *mean*, `/blog/e9-divisions-by-team/` owns *which team is in which*, `/blog/2026/04/16/massachusetts-e9-hockey-teams-map-guide/` owns MA organizations plus MHR ratings. Prefer updating one of those to minting a fifth E9 URL, and when a live page has gone factually wrong, fix it in place rather than publishing the correction elsewhere.
+- Season-specific reference posts still get evergreen `/blog/<slug>/` permalinks with no year, so they accrue authority across seasons and get refreshed in place.
 
 ## Frontmatter conventions
 Every page needs at minimum:
@@ -241,6 +258,7 @@ Keep It In (blue-line pinch timing), Shootout (goalie learns your shot tendencie
 - The arcade is live at `/arcade/`, linked from the nav. See the Arcade section above.
 - Four finished games (Rink Crossword featured, plus Breakaway, Zamboni, Bar Down) and four prototypes (Keep It In, Shootout, Coach's Challenge, The Telestrator).
 - Nav order: Home, How it Works, Features, Pricing, Support, Help, Blog, then the arcade icon, then Try Free / Log In.
+- **E9 content (2026-08-31):** the league restructured for 2026-27 (new Elite tier above White, tier count varies by birth year, six-state footprint). `/blog/e9-hockey-season-guide/` was rewritten for it and `/blog/e9-divisions-by-team/` shipped as the placement list. **Known stale:** the season guide's hero image `img/blog/e9-season-guide-2026-27.jpg` still shows the retired White North / White South / Blue / Red ladder. Two open verifications: girls U10 is published with a North group only, and the `- E` / `- S` = Elite / Select reading is inferred from placement patterns, not confirmed by the league.
 
 ## Earlier state (2026-07-23)
 - `/how-it-works/` is the persona-story page (shipped, replaced the intro.js tour page): split hero, three second-person "week" narratives deep-linkable via `#team-coach` / `#skills-coach` / `#parent`, screenshot figures via the page-scoped `.shot` component, Development Loop section. intro.js was removed from `_layouts/default.html` — don't reintroduce it.
