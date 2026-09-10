@@ -1,0 +1,6 @@
+20130912185739 200 http://scout-elite.com
+20240423150935 301 https://www.scout-elite.com/
+20241222133539 301 http://scout-elite.com/
+20250119170938 200 https://scout-elite.com/
+20250223102156 301 http://scout-elite.com/
+20250713150302 301 http://scout-elite.com/
