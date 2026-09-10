@@ -1,0 +1,52 @@
+---
+layout: default
+title: "Grind Line — Watch (dev)"
+description: "Two AI coaches play Grind Line against each other, continuously, showing what was called and why."
+permalink: /arcade/grind-line-watch/
+sitemap: false
+noindex: true
+arcade: true
+---
+
+<div class="arcade-wrap">
+  <a class="arcade-back" href="/arcade/grind-line/">&larr; Grind Line</a>
+  <h1 class="arcade-title">Grind Line &mdash; Watch or Play</h1>
+  <p class="proto-notice"><strong>Development surface.</strong> Two AI coaches play each other continuously. Hit <strong>Blue: AI</strong> to take the blue bench yourself and call the plays; hit it again to hand it back mid-game. Every beat shows what was called, what happened, and why. Unlisted on purpose.</p>
+
+  <div class="gl-w-benches">
+    <div class="gl-w-bench gl-w-bench--us" id="coach-a"></div>
+    <div class="gl-w-bench gl-w-bench--them" id="coach-b"></div>
+  </div>
+  <p class="gl-w-score" id="score"></p>
+  <p class="gl-w-prompt" id="beatname"></p>
+
+  <div class="game-stage">
+    <canvas id="game"></canvas>
+    <div class="gl-panel" id="adjust" hidden></div>
+  </div>
+
+  <div class="gl-w-controls">
+    <button class="game-btn gl-w-btn" id="btn-side" type="button">Blue: AI</button>
+    <button class="game-btn gl-w-btn" id="btn-pause" type="button">Pause</button>
+    <button class="game-btn gl-w-btn" id="btn-speed" type="button">1&times;</button>
+    <button class="game-btn gl-w-btn" id="btn-mute" type="button" data-on="1">Sound off</button>
+    <button class="game-btn gl-w-btn" id="btn-new" type="button">New game</button>
+  </div>
+
+  <div class="gl-w-log" id="log"></div>
+</div>
+
+<script>
+window.GL_DATA = {
+  beats:     {{ site.data.gl.beats     | jsonify }},
+  systems:   {{ site.data.gl.systems   | jsonify }},
+  matchups:  {{ site.data.gl.matchups  | jsonify }},
+  traits:    {{ site.data.gl.traits    | jsonify }},
+  coaches:   {{ site.data.gl.coaches   | jsonify }}
+};
+</script>
+<script src="/scripts/games/arcade.js"></script>
+<script src="/scripts/games/grind-line/engine.js"></script>
+<script src="/scripts/games/grind-line/coach.js"></script>
+<script src="/scripts/games/grind-line/render.js"></script>
+<script src="/scripts/games/grind-line/watch.js"></script>

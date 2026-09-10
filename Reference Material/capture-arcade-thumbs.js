@@ -72,6 +72,13 @@ async function start(page) {
    overlay. `focus` is where the interesting band sits vertically, 0 = top. */
 var SHOTS = [
   {
+    slug: 'grind-line', url: 'arcade/grind-line/', focus: 0.5, fit: 'contain',
+    play: async function (page) {
+      await start(page);
+      await sleep(1500);          // beat sets up, coverage shades, options appear
+    }
+  },
+  {
     slug: 'breakaway', url: 'arcade/breakaway/', focus: 0.62,
     play: async function (page) {
       await start(page);

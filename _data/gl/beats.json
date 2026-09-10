@@ -1,0 +1,349 @@
+{
+ "DZ.us.retrieval": {
+  "name": "Breakout",
+  "call": "breakout",
+  "vsPhase": "forecheck",
+  "options": [
+   {
+    "id": "wall",
+    "label": "Up the wall",
+    "tags": [
+     "wall",
+     "heavy"
+    ]
+   },
+   {
+    "id": "middle",
+    "label": "Centre swing",
+    "tags": [
+     "middle",
+     "skill"
+    ]
+   },
+   {
+    "id": "weak",
+    "label": "Weak side",
+    "tags": [
+     "weak",
+     "patient"
+    ]
+   },
+   {
+    "id": "rim",
+    "label": "Rim it",
+    "tags": [
+     "safe"
+    ]
+   }
+  ],
+  "wear": {
+   "usD": 7,
+   "usF": 4
+  }
+ },
+ "DZ.us.established": {
+  "name": "Regroup",
+  "call": "breakout",
+  "vsPhase": "forecheck",
+  "options": [
+   {
+    "id": "dtod",
+    "label": "D-to-D",
+    "tags": [
+     "patient",
+     "weak"
+    ]
+   },
+   {
+    "id": "quick",
+    "label": "Quick up",
+    "tags": [
+     "speed"
+    ]
+   },
+   {
+    "id": "hold",
+    "label": "Hold it",
+    "tags": [
+     "patient",
+     "safe"
+    ]
+   }
+  ],
+  "wear": {
+   "usD": 5,
+   "usF": 4
+  }
+ },
+ "DZ.them.established": {
+  "name": "D-zone defend",
+  "call": "dzone",
+  "vsPhase": "ozone",
+  "options": [
+   {
+    "id": "collapse",
+    "label": "Collapse",
+    "tags": [
+     "safe"
+    ]
+   },
+   {
+    "id": "pressure",
+    "label": "Pressure",
+    "tags": [
+     "heavy",
+     "speed"
+    ]
+   },
+   {
+    "id": "boxout",
+    "label": "Box out",
+    "tags": [
+     "heavy"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 11,
+   "usD": 9
+  }
+ },
+ "DZ.them.rush": {
+  "name": "Rush defend",
+  "call": "dzone",
+  "vsPhase": "entry",
+  "options": [
+   {
+    "id": "gapup",
+    "label": "Close the gap",
+    "tags": [
+     "heavy",
+     "speed"
+    ]
+   },
+   {
+    "id": "funnel",
+    "label": "Funnel wide",
+    "tags": [
+     "patient",
+     "safe"
+    ]
+   },
+   {
+    "id": "block",
+    "label": "Block the lane",
+    "tags": [
+     "safe"
+    ]
+   }
+  ],
+  "wear": {
+   "usD": 9,
+   "usF": 5
+  }
+ },
+ "DZ.loose.battle": {
+  "name": "Puck battle",
+  "call": null,
+  "vsPhase": null,
+  "options": [
+   {
+    "id": "body",
+    "label": "Body on him",
+    "tags": [
+     "heavy"
+    ]
+   },
+   {
+    "id": "stick",
+    "label": "Stick lift",
+    "tags": [
+     "skill"
+    ]
+   },
+   {
+    "id": "support",
+    "label": "Support",
+    "tags": [
+     "patient"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 5,
+   "usD": 5
+  }
+ },
+ "NZ.us.rush": {
+  "name": "Zone entry",
+  "call": "entry",
+  "vsPhase": "nz",
+  "options": [
+   {
+    "id": "carry",
+    "label": "Carry it in",
+    "tags": [
+     "middle",
+     "skill"
+    ]
+   },
+   {
+    "id": "wide",
+    "label": "Drive wide",
+    "tags": [
+     "speed",
+     "weak"
+    ]
+   },
+   {
+    "id": "chip",
+    "label": "Chip it in",
+    "tags": [
+     "safe"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 5
+  }
+ },
+ "NZ.them.rush": {
+  "name": "Neutral defend",
+  "call": "nz",
+  "vsPhase": "entry",
+  "options": [
+   {
+    "id": "standup",
+    "label": "Stand up",
+    "tags": [
+     "heavy"
+    ]
+   },
+   {
+    "id": "backoff",
+    "label": "Back off",
+    "tags": [
+     "patient",
+     "safe"
+    ]
+   },
+   {
+    "id": "angle",
+    "label": "Angle to the wall",
+    "tags": [
+     "speed",
+     "wall"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 5,
+   "usD": 4
+  }
+ },
+ "OZ.us.rush": {
+  "name": "Rush chance",
+  "call": "entry",
+  "vsPhase": "dzone",
+  "options": [
+   {
+    "id": "shoot",
+    "label": "Shoot it",
+    "tags": [
+     "safe"
+    ]
+   },
+   {
+    "id": "drive",
+    "label": "Drive the net",
+    "tags": [
+     "heavy",
+     "speed"
+    ]
+   },
+   {
+    "id": "delay",
+    "label": "Delay",
+    "tags": [
+     "patient",
+     "skill"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 5,
+   "themD": 7
+  }
+ },
+ "OZ.us.established": {
+  "name": "O-zone cycle",
+  "call": "ozone",
+  "vsPhase": "dzone",
+  "options": [
+   {
+    "id": "lowhigh",
+    "label": "Low to high",
+    "tags": [
+     "patient",
+     "skill"
+    ]
+   },
+   {
+    "id": "slot",
+    "label": "Slot pass",
+    "tags": [
+     "middle",
+     "skill"
+    ]
+   },
+   {
+    "id": "cycle",
+    "label": "Cycle the wall",
+    "tags": [
+     "wall",
+     "heavy"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 7,
+   "themD": 11,
+   "themF": 5
+  }
+ },
+ "OZ.them.retrieval": {
+  "name": "Forecheck",
+  "call": "forecheck",
+  "vsPhase": "breakout",
+  "options": [
+   {
+    "id": "press",
+    "label": "Press hard",
+    "tags": [
+     "heavy",
+     "speed"
+    ]
+   },
+   {
+    "id": "contain",
+    "label": "Contain",
+    "tags": [
+     "patient",
+     "safe"
+    ]
+   },
+   {
+    "id": "lanes",
+    "label": "Take the lanes",
+    "tags": [
+     "safe",
+     "middle"
+    ]
+   }
+  ],
+  "wear": {
+   "usF": 9,
+   "themD": 11
+  }
+ }
+}

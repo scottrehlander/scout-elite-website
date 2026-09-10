@@ -420,3 +420,91 @@
 .proto-notice strong {
     color: var(--text-primary);
 }
+
+/* ---- Grind Line -------------------------------------------------- */
+.gl-panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 10, 10, 0.92);
+    border-radius: var(--radius-md);
+    z-index: 5;
+}
+.gl-panel[hidden] { display: none; }
+.gl-adjust-inner { width: 100%; max-width: 340px; padding: var(--space-4); text-align: center; }
+.gl-adjust-head {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 var(--space-3);
+}
+.gl-chips {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+}
+.gl-chip {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: var(--space-2);
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-family: inherit;
+    cursor: pointer;
+    text-align: left;
+}
+.gl-chip:active { transform: translateY(1px); }
+.gl-chip-ph {
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+.gl-chip-sys { font-size: 0.8rem; font-weight: 600; }
+
+/* ---- Grind Line: watch (dev surface) ----------------------------- */
+.gl-w-benches { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); margin-bottom: var(--space-2); }
+.gl-w-bench {
+    display: flex; flex-direction: column; gap: 2px;
+    padding: var(--space-2) var(--space-3);
+    background: var(--card-bg); border: 1px solid var(--border-color);
+    border-left-width: 3px; border-radius: var(--radius-md);
+}
+.gl-w-bench--us { border-left-color: var(--accent-primary); }
+.gl-w-bench--them { border-left-color: var(--danger); }
+.gl-w-name { font-weight: 700; font-size: var(--font-size-sm); }
+.gl-w-style { font-size: 0.66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); }
+.gl-w-sys { font-size: 0.68rem; color: var(--text-secondary); line-height: 1.35; }
+.gl-w-score { text-align: center; font-weight: 700; font-size: var(--font-size-sm);
+    color: var(--text-secondary); margin: 0 0 var(--space-2); font-variant-numeric: tabular-nums; }
+.gl-w-controls { display: flex; flex-wrap: wrap; gap: var(--space-2); justify-content: center; margin: var(--space-3) 0; }
+.gl-w-btn { padding: 8px 14px; font-size: 0.8rem; }
+.gl-w-log {
+    max-height: 240px; overflow-y: auto;
+    background: var(--secondary-bg); border: 1px solid var(--border-color);
+    border-radius: var(--radius-md); padding: var(--space-2);
+    font-size: 0.72rem; line-height: 1.5;
+}
+.gl-w-line { padding: 2px 4px; border-left: 2px solid transparent; }
+.gl-w-good { border-left-color: var(--success); }
+.gl-w-bad { border-left-color: var(--danger); }
+.gl-w-adj { border-left-color: var(--warning); color: var(--warning); font-weight: 600; }
+.gl-w-head { color: var(--text-primary); font-weight: 700; margin: var(--space-2) 0 2px; }
+.gl-w-beat { display: inline-block; min-width: 8.5em; color: var(--text-muted);
+    text-transform: uppercase; font-size: 0.62rem; letter-spacing: .07em; }
+.gl-w-out { color: var(--text-secondary); }
+.gl-w-why { display: block; margin-left: 8.5em; color: var(--text-muted); font-style: italic; }
+.gl-w-fo { border-left-color: var(--accent-hover); color: var(--text-primary); }
+.gl-w-btn--on { background: var(--success); }
+.gl-w-prompt {
+    text-align: center; margin: 0 0 var(--space-2);
+    font-size: var(--font-size-sm); color: var(--text-primary);
+    min-height: 1.4em; font-weight: 600;
+}

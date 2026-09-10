@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Grind Line — chained beats + camera</title>
+<style>
+  :root{ --primary-bg:#0a0a0a; --border-color:#333; --text-primary:#fff; --text-secondary:#b3b3b3;
+         --accent-hover:#0099ff; --font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--primary-bg);color:var(--text-primary);
+    font-family:var(--font-family);-webkit-text-size-adjust:100%;overflow:hidden;height:100%;overscroll-behavior:none;}
+  #wrap{display:flex;flex-direction:column;align-items:center;height:100dvh;height:100vh}
+  #top{flex:0 0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;padding:6px 10px;gap:8px}
+  #ttl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);font-weight:700;white-space:nowrap}
+  #ttl b{color:var(--accent-hover)}
+  #zone{font-size:11px;color:#6b8aaa;white-space:nowrap;font-weight:700;letter-spacing:.1em}
+  #mute{background:none;border:1px solid var(--border-color);color:var(--text-secondary);
+    border-radius:6px;font-size:11px;padding:3px 8px;cursor:pointer;font-family:inherit}
+  #stage{flex:1 1 auto;display:flex;align-items:center;justify-content:center;width:100%;min-height:0}
+  canvas{display:block;touch-action:manipulation;border-radius:10px}
+  #bot{flex:0 0 auto;width:100%;padding:8px 10px 14px;text-align:center;min-height:78px}
+  #line{font-size:13px;line-height:1.35;color:var(--text-secondary);margin:0 auto 8px;max-width:520px;min-height:34px;font-style:italic}
+  #line b{color:var(--text-primary);font-style:normal}
+  button.act{background:#007acc;color:#fff;border:0;border-radius:8px;font:600 14px/1 var(--font-family);
+    padding:11px 20px;cursor:pointer;margin:0 4px}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="top">
+    <div id="ttl">Grind&nbsp;Line</div>
+    <div id="zone">D-ZONE</div>
+    <button id="mute">sound on</button>
+  </div>
+  <div id="stage"><canvas id="c"></canvas></div>
+  <div id="bot">
+    <p id="line">Their <b>1-2-2</b> is set. Shaded ice is theirs. Find the seam.</p>
+    <div id="btns" class="hide"><button class="act" id="again">Run the shift again</button></div>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+/* ------------------------------------------------------------------ *
+ * Grind Line - chained beats + scrolling camera (throwaway #2).
+ *
+ * Question this one answers: does the play FLOW? Three beats
+ * (breakout -> neutral -> o-zone), one tap each, no menus in between,
+ * camera panning end to end. Success continues the possession,
+ * failure ends the shift. That asymmetry is the point.
+ *
+ * World is the full 200ft sheet, your net at the bottom, theirs at the
+ * top, and the orientation NEVER flips. Vertical is stretched ~1.35x
+ * against horizontal so players stay legible on a phone; the camera
+ * shows half the sheet at a time.
+ * ------------------------------------------------------------------ */
+
+var VW=100, VH=160;                 // viewport in world units
+var WT=8, WB=328;                   // world top/bottom (end boards)
+var THEIR_GOAL=26, THEIR_BLUE=128, CENTRE=168, OUR_BLUE=208, OUR_GOAL=310;
+var RL=2, RR=94;                    // rink left/right
+
+var cv=document.getElementById('c'), ctx=cv.getContext('2d');
+var scale=1, shakeX=0, shakeY=0, cam=160, camTo=160;
+
+var COL={ ice:'#0c0d10', line:'rgba(255,255,255,.10)', blue:'#2f6fb5', red:'#8d3038',
+  us:'#0d84d8', usDim:'#0a4a78', them:'#d63b47', themDim:'#7d2830',
+  puck:'#e9e9ee', good:'#28a745', warn:'#ffc107' };
+
+/* ---------------------------- audio ------------------------------- */
+var AC=null, muted=false;
+function ac(){ if(!AC){ try{AC=new (window.AudioContext||window.webkitAudioContext)();}catch(e){} }
+  if(AC&&AC.state==='suspended')AC.resume(); return AC; }
+function noise(d){ var a=ac(); if(!a)return null; var n=Math.floor(a.sampleRate*d),
+  b=a.createBuffer(1,n,a.sampleRate), g=b.getChannelData(0);
+  for(var i=0;i<n;i++)g[i]=(Math.random()*2-1)*(1-i/n);
+  var s=a.createBufferSource(); s.buffer=b; return s; }
+function thud(p){ if(muted)return; var a=ac(); if(!a)return; var t=a.currentTime;
+  var s=noise(.3); if(s){ var lp=a.createBiquadFilter(); lp.type='lowpass';
+    lp.frequency.setValueAtTime(1900*p,t); lp.frequency.exponentialRampToValueAtTime(180,t+.22);
+    var g=a.createGain(); g.gain.setValueAtTime(.55*p,t); g.gain.exponentialRampToValueAtTime(.001,t+.3);
+    s.connect(lp); lp.connect(g); g.connect(a.destination); s.start(t); }
+  var o=a.createOscillator(), og=a.createGain(); o.type='sine';
+  o.frequency.setValueAtTime(150*p,t); o.frequency.exponentialRampToValueAtTime(38,t+.2);
+  og.gain.setValueAtTime(.7*p,t); og.gain.exponentialRampToValueAtTime(.001,t+.26);
+  o.connect(og); og.connect(a.destination); o.start(t); o.stop(t+.3); }
+function tone(f,v,d,type){ if(muted)return; var a=ac(); if(!a)return; var t=a.currentTime;
+  var o=a.createOscillator(), g=a.createGain(); o.type=type||'triangle';
+  o.frequency.setValueAtTime(f,t); g.gain.setValueAtTime(v,t);
+  g.gain.exponentialRampToValueAtTime(.001,t+(d||.09));
+  o.connect(g); g.connect(a.destination); o.start(t); o.stop(t+(d||.09)+.02); }
+function chime(){ tone(660,.16,.13); setTimeout(function(){tone(880,.16,.16);},95);
+  setTimeout(function(){tone(1174,.14,.24);},190); }
+function horn(){ if(muted)return; tone(233,.22,.85,'sawtooth'); tone(311,.18,.85,'sawtooth');
+  setTimeout(function(){ tone(466,.16,.6,'sawtooth'); },140); }
+
+/* ---------------------------- helpers ----------------------------- */
+function clamp(v,a,b){return v<a?a:v>b?b:v;}
+function seg(t,a,b){return clamp((t-a)/(b-a),0,1);}
+function easeOut(u){return 1-Math.pow(1-u,3);}
+function easeIO(u){return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;}
+function L(a,b,u){return a+(b-a)*u;}
+function P(a,b,u){return [L(a[0],b[0],u), L(a[1],b[1],u)];}
+
+/* ---------------------------- the shift --------------------------- */
+/* Three beats. Each: where everyone stands, what the defence takes
+ * away, and three things you can do with the puck. */
+var BEATS=[
+{ key:'breakout', zone:'D-ZONE', cam:168,
+  say:'Their <b>1-2-2</b> is set. Shaded ice is theirs. Find the seam.',
+  puck:[38,312],
+  us:{D1:[38,312],D2:[66,306],LW:[14,278],C:[48,268],RW:[82,262]},
+  them:{F1:[34,302],F2:[17,266],F3:[58,252],XD1:[30,212],XD2:[66,212]},
+  cover:{F1:{ox:-2,oy:-2,rx:15,ry:13}, F2:{ox:-3,oy:4,rx:11,ry:15},
+         F3:{ox:-8,oy:10,rx:17,ry:14}, XD1:{ox:0,oy:0,rx:24,ry:8}, XD2:{ox:0,oy:0,rx:24,ry:8}},
+  opts:[
+   {id:'WALL',label:'WALL',spot:[14,278],lx:14,ly:290,verdict:'bad',
+    closer:'F2',closerTo:[17,274],stamp:['BIG HIT','clean shoulder, into the wall',COL.warn],power:1,wear:'+ D WEAR',
+    line:'<b>Nowhere to go.</b> F2 never left that wall. Your winger wore it with his back to the ice.'},
+   {id:'MIDDLE',label:'MIDDLE',spot:[48,268],lx:48,ly:280,verdict:'bad',
+    closer:'F3',closerTo:[50,266],stamp:['PICKED OFF','the middle was never open',COL.them],power:.5,wear:'+ D WEAR',
+    line:'<b>Straight into it.</b> A 1-2-2 exists to own the middle. Two sticks on him before it arrived.'},
+   {id:'WEAK',label:'WEAK SIDE',spot:[82,262],lx:82,ly:274,verdict:'good',
+    stamp:['CLEAN EXIT','they were all on the strong side',COL.good],
+    line:'<b>Reverse, and gone.</b> F1 committed low, middle shaded, far wall untouched.'}
+  ]},
+
+{ key:'neutral', zone:'NEUTRAL', cam:88,
+  say:'Through the middle. <b>Their D are standing up at the line.</b>',
+  puck:[82,206],
+  us:{D1:[40,244],D2:[62,248],LW:[18,200],C:[50,194],RW:[82,206]},
+  them:{F1:[46,236],F2:[26,222],F3:[58,214],XD1:[38,140],XD2:[58,140]},
+  cover:{XD1:{ox:2,oy:-6,rx:19,ry:16}, XD2:{ox:-2,oy:-6,rx:19,ry:16},
+         F1:{ox:0,oy:6,rx:12,ry:10}, F2:{ox:0,oy:4,rx:10,ry:9}, F3:{ox:0,oy:4,rx:10,ry:9}},
+  opts:[
+   {id:'CARRY',label:'CARRY IT IN',spot:[48,152],lx:48,ly:164,verdict:'bad',
+    closer:'XD1',closerTo:[46,150],stamp:['STOOD UP','right into a tight gap',COL.them],power:.8,wear:'+ F WEAR',
+    line:'<b>Stood up at the line.</b> Tight gap, no speed through the middle. They pinched it off at the blue.'},
+   {id:'CHIP',label:'CHIP IN',spot:[70,112],lx:70,ly:100,verdict:'meh',
+    stamp:['IN DEEP','safe, but you gave it up',COL.warn],
+    line:'<b>Chipped it past them.</b> Safe. In deep, but no possession, and now you have to go win it back.'},
+   {id:'WIDE',label:'DRIVE WIDE',spot:[88,150],lx:80,ly:162,verdict:'good',
+    stamp:['IN WITH SPEED','outside the gap',COL.good],
+    line:'<b>Around the outside.</b> They were tight in the middle and flat-footed wide. Entry with possession.'}
+  ]},
+
+{ key:'ozone', zone:'O-ZONE', cam:8,
+  say:'In the zone. <b>They have collapsed into the house.</b>',
+  puck:[84,92],
+  us:{D1:[36,120],D2:[62,120],LW:[20,72],C:[48,58],RW:[84,92]},
+  them:{F1:[48,72],F2:[30,64],F3:[64,64],XD1:[40,50],XD2:[56,50]},
+  cover:{XD1:{ox:0,oy:0,rx:13,ry:11}, XD2:{ox:0,oy:0,rx:13,ry:11},
+         F1:{ox:0,oy:0,rx:12,ry:11}, F2:{ox:0,oy:0,rx:10,ry:10}, F3:{ox:0,oy:0,rx:10,ry:10}},
+  opts:[
+   {id:'SLOT',label:'SLOT PASS',spot:[48,58],lx:22,ly:42,verdict:'bad',
+    closer:'XD1',closerTo:[46,56],stamp:['BLOCKED','the house was full',COL.them],power:.6,wear:'+ F WEAR',
+    line:'<b>Into a full house.</b> Five of them inside the dots. That pass had nowhere to land.'},
+   {id:'DRIVE',label:'DRIVE THE NET',spot:[60,42],lx:75,ly:60,verdict:'bad',
+    closer:'XD2',closerTo:[58,44],stamp:['WALLED OFF','no lane to the net',COL.them],power:.8,wear:'+ F WEAR',
+    line:'<b>Walled off.</b> You drove into two defencemen who were already standing exactly there.'},
+   {id:'POINT',label:'LOW TO HIGH',spot:[62,120],lx:62,ly:132,verdict:'goal',
+    pass2:[48,23], stamp:['GOAL','point shot through the screen',COL.good],
+    line:'<b>Low to high.</b> They collapsed so hard nobody was within twenty feet of the point. Shot through the screen.'}
+  ]}
+];
+
+/* ------------------------------ state ----------------------------- */
+var beat=0, phase='decide', pt=0, chosen=null, S=null;
+var fx=[], flash=null, stamp=null, wear=null, pulse=null, hitstop=0, board=null;
+var log=[];
+
+var panFrom=null, target=null;
+function setupBeat(i,animate){
+  var B=BEATS[i], t={};
+  for(var k in B.us) t[k]=B.us[k].slice();
+  for(var k2 in B.them) t[k2]=B.them[k2].slice();
+  t.puck=B.puck.slice();
+  target=t;
+  panFrom = (animate && S) ? S : null;
+  if(panFrom){ S={}; for(var k3 in t) S[k3]=(panFrom[k3]||t[k3]).slice(); }
+  else S=t;
+  camTo=B.cam;
+  document.getElementById('zone').textContent=B.zone;
+  say(B.say);
+}
+function say(h){ document.getElementById('line').innerHTML=h; }
+function reset(){
+  beat=0; phase='decide'; pt=0; chosen=null; log=[];
+  fx=[]; flash=null; stamp=null; wear=null; pulse=null; board=null; hitstop=0;
+  cam=BEATS[0].cam; setupBeat(0,false);
+  document.getElementById('btns').classList.add('hide');
+}
+function addFx(x,y,n,spd,col,life,rad){
+  for(var i=0;i<n;i++){ var a=Math.random()*6.283, s=spd*(.3+Math.random());
+    fx.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:life*(.45+Math.random()*.85),
+             m:life,col:col,r:(rad||1)*(.35+Math.random()*.85)}); }
+}
+function bang(x,y,power,st,who){
+  flash={x:x,y:y,t:0,max:power*15}; stamp={txt:st[0],sub:st[1],col:st[2],t:0};
+  hitstop=power*105; shakeX=7*power; shakeY=4*power; thud(power);
+  addFx(x,y,Math.round(13*power),.115,'#ffffff',360,.62);
+  addFx(x,y,Math.round(8*power),.062,st[2],620,.7);
+  if(who) pulse={key:who,t:0};
+}
+
+/* --------------------------- beat resolve ------------------------- */
+/* One generic script, data-driven, deliberately short - no epilogues. */
+function resolve(t){
+  var o=chosen, from=BEATS[beat].puck;
+  if(t<380){ S.puck=P(from,o.spot,easeOut(seg(t,0,380))); if(t<20)tone(760,.08,.05); }
+  else S.puck=o.spot.slice();
+
+  if(o.closer){
+    var c=BEATS[beat].them[o.closer], u=seg(t,180,540);
+    S[o.closer]=P(c,o.closerTo,u*u);
+  }
+  if(o.verdict==='bad'){
+    if(t>=540 && !stamp){
+      bang(o.spot[0],o.spot[1],o.power,o.stamp,o.closer);
+      if(o.spot[0]<22) board={y:o.spot[1],t:0};
+      wear={txt:o.wear,x:clamp(o.spot[0]+16,20,80),y:o.spot[1]+6,t:0};
+    }
+    if(t>=540){ var k=easeOut(seg(t,540,1000));
+      S.puck=P(o.spot,[o.spot[0]+9,o.spot[1]+9],k); }
+    return t>1150;
+  }
+  if(o.verdict==='goal'){
+    if(t>=380 && t<820){ S.puck=P(o.spot,o.spot,0); }
+    if(t>=820){ S.puck=P(o.spot,o.pass2,easeOut(seg(t,820,1180))); if(t<840)tone(980,.1,.07); }
+    if(t>=1180 && !stamp){ bang(o.pass2[0],o.pass2[1],.9,o.stamp,null); horn();
+      addFx(o.pass2[0],o.pass2[1],22,.09,COL.good,800,.9); }
+    return t>1750;
+  }
+  if(t>=420 && !stamp){ stamp={txt:o.stamp[0],sub:o.stamp[1],col:o.stamp[2],t:0};
+    flash={x:o.spot[0],y:o.spot[1],t:0,max:10}; chime(); }
+  return t>1000;
+}
+
+/* ---------------------------- drawing ----------------------------- */
+function rr(x,y,w,h,r){ ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath(); }
+function rinkPath(){ rr(RL,WT,RR-RL,WB-WT,14); }
+function drawRink(){
+  ctx.fillStyle=COL.ice; rinkPath(); ctx.fill();
+  ctx.save(); rinkPath(); ctx.clip();
+  ctx.globalAlpha=.55; ctx.lineWidth=1.7;
+  ctx.strokeStyle=COL.blue;
+  [THEIR_BLUE,OUR_BLUE].forEach(function(y){ ctx.beginPath(); ctx.moveTo(RL,y); ctx.lineTo(RR,y); ctx.stroke(); });
+  ctx.strokeStyle=COL.red; ctx.beginPath(); ctx.moveTo(RL,CENTRE); ctx.lineTo(RR,CENTRE); ctx.stroke();
+  ctx.lineWidth=1.0;
+  [THEIR_GOAL,OUR_GOAL].forEach(function(y){ ctx.beginPath(); ctx.moveTo(RL,y); ctx.lineTo(RR,y); ctx.stroke(); });
+  ctx.globalAlpha=1;
+  ctx.strokeStyle=COL.line; ctx.lineWidth=.7;
+  var spots=[[23,58],[73,58],[23,160],[73,160],[23,176],[73,176],[23,278],[73,278]];
+  for(var i=0;i<spots.length;i++){
+    if(i>=2&&i<=5){ ctx.fillStyle=COL.line; ctx.beginPath(); ctx.arc(spots[i][0],spots[i][1],1.1,0,6.283); ctx.fill(); continue; }
+    ctx.beginPath(); ctx.arc(spots[i][0],spots[i][1],12,0,6.283); ctx.stroke();
+    ctx.fillStyle=COL.line; ctx.beginPath(); ctx.arc(spots[i][0],spots[i][1],1,0,6.283); ctx.fill();
+  }
+  ctx.beginPath(); ctx.arc(48,CENTRE,12,0,6.283); ctx.stroke();
+  // creases + nets
+  ctx.strokeStyle='rgba(47,111,181,.45)'; ctx.lineWidth=.8;
+  ctx.beginPath(); ctx.arc(48,THEIR_GOAL,8,0,Math.PI); ctx.stroke();
+  ctx.beginPath(); ctx.arc(48,OUR_GOAL,8,Math.PI,0); ctx.stroke();
+  ctx.strokeStyle='rgba(214,59,71,.85)'; ctx.lineWidth=1.2;
+  ctx.beginPath(); ctx.rect(43.5,THEIR_GOAL-5.5,9,5.5); ctx.stroke();
+  ctx.beginPath(); ctx.rect(43.5,OUR_GOAL,9,5.5); ctx.stroke();
+  ctx.restore();
+  ctx.strokeStyle='rgba(255,255,255,.17)'; ctx.lineWidth=1.1; rinkPath(); ctx.stroke();
+}
+function blob(cx,cy,rx,ry,a){
+  ctx.save(); ctx.translate(cx,cy); ctx.scale(rx/ry,1);
+  var g=ctx.createRadialGradient(0,0,0,0,0,ry);
+  g.addColorStop(0,'rgba(214,59,71,'+a+')');
+  g.addColorStop(.62,'rgba(214,59,71,'+(a*.82)+')');
+  g.addColorStop(.88,'rgba(214,59,71,'+(a*.34)+')');
+  g.addColorStop(1,'rgba(214,59,71,0)');
+  ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,ry,0,6.283); ctx.fill();
+  ctx.strokeStyle='rgba(230,90,100,'+(a*.5)+')'; ctx.lineWidth=.55;
+  ctx.beginPath(); ctx.arc(0,0,ry*.9,0,6.283); ctx.stroke(); ctx.restore();
+}
+function drawCover(dt,mul){
+  if(pulse){ pulse.t+=dt; if(pulse.t>700) pulse=null; }
+  var C=BEATS[beat].cover;
+  ctx.save(); rinkPath(); ctx.clip();
+  for(var k in C){ var c=C[k], p=S[k]; if(!p) continue;
+    var a=.5*mul; if(pulse&&pulse.key===k) a+=.55*(1-pulse.t/700);
+    blob(p[0]+c.ox,p[1]+c.oy,c.rx,c.ry,a); }
+  ctx.restore();
+}
+function plate(x,y,w,h,r,a){ ctx.fillStyle='rgba(6,7,10,'+(a||.8)+')'; rr(x-w/2,y-h/2,w,h,r||1.6); ctx.fill(); }
+function drawOpts(t){
+  var pu=.5+.5*Math.sin(t/260), O=BEATS[beat].opts;
+  for(var i=0;i<O.length;i++){ var o=O[i];
+    ctx.save(); ctx.globalAlpha=.22+.12*pu; ctx.strokeStyle='#cfd6e0'; ctx.lineWidth=.8;
+    ctx.setLineDash([2.4,2.4]); ctx.beginPath();
+    ctx.moveTo(S.puck[0],S.puck[1]); ctx.lineTo(o.spot[0],o.spot[1]); ctx.stroke(); ctx.restore();
+    ctx.save(); ctx.globalAlpha=.75; ctx.strokeStyle='#e8edf4'; ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.arc(o.spot[0],o.spot[1],7.4+pu,0,6.283); ctx.stroke(); ctx.restore();
+    ctx.font='800 3.6px Inter,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    plate(o.lx,o.ly,ctx.measureText(o.label).width+5,5.8,1.6,.84);
+    ctx.fillStyle='rgba(255,255,255,.93)'; ctx.fillText(o.label,o.lx,o.ly);
+  }
+}
+function drawPlayer(p,col,dim,lab,ghost){
+  ctx.globalAlpha=ghost?.42:1;
+  ctx.fillStyle=dim; ctx.beginPath(); ctx.arc(p[0],p[1]+.8,4.2,0,6.283); ctx.fill();
+  ctx.fillStyle=col; ctx.beginPath(); ctx.arc(p[0],p[1],4.0,0,6.283); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,.95)'; ctx.font='700 3.2px Inter,sans-serif';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(lab,p[0],p[1]+.2);
+  ctx.globalAlpha=1;
+}
+function drawFx(dt){
+  for(var i=fx.length-1;i>=0;i--){ var f=fx[i]; f.l-=dt;
+    if(f.l<=0){ fx.splice(i,1); continue; }
+    f.x+=f.vx*dt; f.y+=f.vy*dt; f.vx*=.962; f.vy*=.962;
+    ctx.globalAlpha=clamp(f.l/f.m,0,1)*.85; ctx.fillStyle=f.col;
+    ctx.beginPath(); ctx.arc(f.x,f.y,f.r*(f.l/f.m),0,6.283); ctx.fill(); }
+  ctx.globalAlpha=1;
+}
+function drawFlash(dt){ if(!flash)return; flash.t+=dt;
+  if(flash.t>200){flash=null;return;} var u=flash.t/200;
+  ctx.save(); ctx.globalAlpha=(1-u)*(1-u); ctx.strokeStyle='#fff'; ctx.lineWidth=3.4*(1-u)+.3;
+  ctx.beginPath(); ctx.arc(flash.x,flash.y,2+flash.max*easeOut(u),0,6.283); ctx.stroke();
+  ctx.strokeStyle=COL.warn; ctx.lineWidth=1.6*(1-u);
+  ctx.beginPath(); ctx.arc(flash.x,flash.y,1+flash.max*.55*easeOut(u),0,6.283); ctx.stroke(); ctx.restore(); }
+function drawBoard(dt){ if(!board)return; board.t+=dt;
+  if(board.t>420){board=null;return;} var u=board.t/420;
+  ctx.save(); ctx.globalAlpha=(1-u)*.7; ctx.strokeStyle='#fff'; ctx.lineWidth=.5+1.5*(1-u);
+  ctx.beginPath(); ctx.arc(RL,board.y,5+u*9,-1.15,1.15); ctx.stroke(); ctx.restore(); }
+function drawWear(dt){ if(!wear)return; wear.t+=dt;
+  if(wear.t>1300){wear=null;return;}
+  ctx.save(); ctx.globalAlpha=clamp(1-wear.t/1300,0,1)*clamp(wear.t/120,0,1);
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.font='800 3.9px Inter,sans-serif';
+  var y=wear.y-(wear.t/1300)*10;
+  plate(wear.x,y,ctx.measureText(wear.txt).width+4,5.6,1.6,.7);
+  ctx.fillStyle=COL.warn; ctx.fillText(wear.txt,wear.x,y); ctx.restore(); }
+/* stamp is screen-space: it must not scroll away with the camera */
+function drawStamp(dt){ if(!stamp)return; stamp.t+=dt;
+  var u=easeOut(clamp(stamp.t/190,0,1)), sc=L(1.45,1,u);
+  var a=clamp(stamp.t/90,0,1)*clamp(2.6-stamp.t/1250,0,1); if(a<=0)return;
+  ctx.save(); ctx.globalAlpha=a;
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.font='900 7px Inter,sans-serif';
+  var tw=ctx.measureText(stamp.txt).width*sc;
+  var y=cam+22;
+  plate(50,y,Math.max(tw,50)+11,15,2.5,.86);
+  ctx.save(); ctx.translate(50,y-2.4); ctx.scale(sc,sc); ctx.fillStyle=stamp.col;
+  ctx.fillText(stamp.txt,0,0); ctx.restore();
+  ctx.fillStyle='rgba(255,255,255,.78)'; ctx.font='600 3.0px Inter,sans-serif';
+  ctx.fillText(stamp.sub,50,y+4.2); ctx.restore(); }
+
+function draw(dt,t){
+  ctx.save();
+  if(shakeX>.05||shakeY>.05){ ctx.translate((Math.random()-.5)*shakeX,(Math.random()-.5)*shakeY);
+    shakeX*=.86; shakeY*=.86; }
+  ctx.clearRect(-12,-12,VW+24,VH+24);
+  ctx.translate(0,-cam);
+  drawRink();
+  drawCover(dt, (phase==='resolve'||phase==='pan'||phase==='over')?.45:1);
+  if(phase==='decide') drawOpts(t);
+  drawBoard(dt);
+  var B=BEATS[beat];
+  for(var k in B.them) if(S[k]) drawPlayer(S[k],COL.them,COL.themDim,k.charAt(0)==='X'?'D':k,k.charAt(0)==='X'&&beat!==2);
+  for(var k2 in B.us) if(S[k2]) drawPlayer(S[k2],COL.us,COL.usDim,k2==='D1'||k2==='D2'?'D':k2);
+  ctx.fillStyle='#000'; ctx.beginPath(); ctx.arc(S.puck[0],S.puck[1],2.1,0,6.283); ctx.fill();
+  ctx.fillStyle=COL.puck; ctx.beginPath(); ctx.arc(S.puck[0],S.puck[1],1.5,0,6.283); ctx.fill();
+  drawFlash(dt); drawFx(dt); drawWear(dt);
+  drawStamp(dt);                 // pinned to the viewport, not the ice
+  ctx.restore();
+}
+
+/* ------------------------------ loop ------------------------------ */
+var last=0, panT=0;
+function frame(now){
+  requestAnimationFrame(frame);
+  var dt=Math.min(now-last,50); last=now;
+  cam += (camTo-cam)*Math.min(dt/110,1);        // camera always chases
+
+  if(hitstop>0){ hitstop-=dt; draw(dt,pt); return; }
+  pt+=dt;
+
+  if(phase==='resolve'){
+    if(resolve(pt)){
+      var v=chosen.verdict;
+      log.push({beat:BEATS[beat].zone, opt:chosen.label, v:v});
+      if(v==='bad'||v==='goal'){ finish(v); }
+      else { phase='pan'; pt=0; beat++; setupBeat(beat,true); }
+    }
+  } else if(phase==='pan'){
+    var u=easeIO(seg(pt,0,430));                 // everyone skates up ice with the camera
+    if(panFrom) for(var k in target) S[k]=P(panFrom[k]||target[k], target[k], u);
+    if(pt>430){ phase='decide'; pt=0; stamp=null; panFrom=null; }
+  }
+  draw(dt,pt);
+}
+function finish(v){
+  phase='over'; pt=0;
+  var good=0; for(var i=0;i<log.length;i++) if(log[i].v==='good'||log[i].v==='goal') good++;
+  var head = v==='goal' ? '<b>GOAL.</b> Three reads, three beats, no whistle in between. '
+                        : '<b>Shift over.</b> ';
+  say(head + chosen.line + ' <span style="color:#6b8aaa">(' + good + '/' + log.length + ' reads)</span>');
+  document.getElementById('btns').classList.remove('hide');
+  setTimeout(fit,0);
+}
+
+/* ---------------------------- input ------------------------------- */
+function pick(o){ if(phase!=='decide')return; chosen=o; phase='resolve'; pt=0; fx=[]; stamp=null;
+  ac(); say('&nbsp;'); }
+cv.addEventListener('pointerdown',function(e){
+  ac();
+  if(phase==='decide'){
+    var r=cv.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width*VW, y=(e.clientY-r.top)/r.height*VH + cam;
+    var O=BEATS[beat].opts, bo=null, bd=1e9;
+    for(var i=0;i<O.length;i++){
+      var d=Math.min(Math.hypot(O[i].spot[0]-x,O[i].spot[1]-y),
+                     Math.hypot(O[i].lx-x,O[i].ly-y));
+      if(d<bd){bd=d;bo=O[i];} }
+    if(bd<15) pick(bo);
+  } else if(phase==='over') reset();
+});
+window.addEventListener('keydown',function(e){
+  var O=BEATS[beat].opts;
+  if(e.key>='1'&&e.key<='3'&&O[+e.key-1]) pick(O[+e.key-1]);
+  if(e.key===' '){ e.preventDefault(); if(phase==='over') reset(); } });
+document.getElementById('again').onclick=reset;
+document.getElementById('mute').onclick=function(){ muted=!muted;
+  this.textContent=muted?'sound off':'sound on'; if(!muted)ac(); };
+
+/* ----------------------------- layout ----------------------------- */
+function fit(){
+  var top=document.getElementById('top').offsetHeight;
+  var bot=document.getElementById('bot').offsetHeight;
+  var availH=window.innerHeight-top-bot-10, availW=window.innerWidth-16;
+  var w=Math.min(availW, availH*(VW/VH)); if(w<200)w=Math.max(200,availW);
+  var h=w*(VH/VW);
+  var dpr=Math.min(window.devicePixelRatio||1,2.5);
+  cv.style.width=w+'px'; cv.style.height=h+'px';
+  cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr);
+  scale=w/VW; ctx.setTransform(dpr*scale,0,0,dpr*scale,0,0);
+}
+window.addEventListener('resize',fit);
+fit(); reset(); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

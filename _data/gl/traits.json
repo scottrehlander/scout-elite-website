@@ -1,0 +1,65 @@
+{
+ "fast": {
+  "name": "Fast",
+  "boosts": {
+   "speed": 11,
+   "weak": 5
+  }
+ },
+ "heavy": {
+  "name": "Heavy",
+  "boosts": {
+   "heavy": 12,
+   "wall": 6
+  }
+ },
+ "skilled": {
+  "name": "Skilled hands",
+  "boosts": {
+   "skill": 12,
+   "middle": 5
+  }
+ },
+ "smart": {
+  "name": "High hockey IQ",
+  "boosts": {
+   "patient": 10,
+   "safe": 6
+  }
+ },
+ "young-d": {
+  "name": "Young D",
+  "boosts": {
+   "speed": 6
+  },
+  "penalties": {
+   "patient": -6
+  }
+ },
+ "vet-d": {
+  "name": "Veteran D",
+  "boosts": {
+   "patient": 8,
+   "safe": 5
+  },
+  "penalties": {
+   "speed": -5
+  }
+ },
+ "deep": {
+  "name": "Deep bench",
+  "recover": {
+   "usF": 1.35
+  }
+ },
+ "top-heavy": {
+  "name": "Top heavy",
+  "recover": {
+   "usF": 0.8
+  },
+  "boosts": {
+   "skill": 6,
+   "speed": 4
+  }
+ }
+}

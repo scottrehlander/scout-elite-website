@@ -1,0 +1,41 @@
+{
+ "marchetti": {
+  "name": "Coach Marchetti",
+  "blurb": "Runs it heavy and hunts hits.",
+  "systems": {
+   "forecheck": "2-1-2",
+   "nz": "stand-up",
+   "dzone": "press",
+   "entry": "dump-chase",
+   "ozone": "net-front",
+   "breakout": "wheel"
+  },
+  "adapt": 0.2
+ },
+ "delacroix": {
+  "name": "Coach Delacroix",
+  "blurb": "Patient, structured, gives you nothing in the middle.",
+  "systems": {
+   "forecheck": "trap",
+   "nz": "clog",
+   "dzone": "collapse",
+   "entry": "carry-in",
+   "ozone": "point-shot",
+   "breakout": "controlled"
+  },
+  "adapt": 0.35
+ },
+ "okonkwo": {
+  "name": "Coach Okonkwo",
+  "blurb": "Reads you fast and changes the look.",
+  "systems": {
+   "forecheck": "1-2-2",
+   "nz": "back-off",
+   "dzone": "man",
+   "entry": "wide-drive",
+   "ozone": "cycle",
+   "breakout": "quick-up"
+  },
+  "adapt": 0.55
+ }
+}

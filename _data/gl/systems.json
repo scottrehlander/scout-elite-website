@@ -1,0 +1,261 @@
+{
+ "1-2-2": {
+  "name": "1-2-2 Forecheck",
+  "phase": "forecheck",
+  "takes": [
+   "middle",
+   "wall"
+  ],
+  "concedes": [
+   "weak"
+  ],
+  "boosts": {
+   "patient": 6,
+   "middle": 4
+  }
+ },
+ "2-1-2": {
+  "name": "2-1-2 Heavy",
+  "phase": "forecheck",
+  "takes": [
+   "wall",
+   "weak"
+  ],
+  "concedes": [
+   "middle"
+  ],
+  "boosts": {
+   "heavy": 8,
+   "speed": 4
+  }
+ },
+ "trap": {
+  "name": "1-3-1 Trap",
+  "phase": "forecheck",
+  "takes": [
+   "middle",
+   "speed"
+  ],
+  "concedes": [
+   "wall"
+  ],
+  "boosts": {
+   "patient": 8,
+   "safe": 5
+  }
+ },
+ "wheel": {
+  "name": "Wheel",
+  "phase": "breakout",
+  "takes": [
+   "wall"
+  ],
+  "concedes": [
+   "middle"
+  ],
+  "boosts": {
+   "speed": 6
+  }
+ },
+ "quick-up": {
+  "name": "Quick Up",
+  "phase": "breakout",
+  "takes": [
+   "speed"
+  ],
+  "concedes": [
+   "patient"
+  ],
+  "boosts": {
+   "speed": 8,
+   "middle": 3
+  }
+ },
+ "controlled": {
+  "name": "Controlled",
+  "phase": "breakout",
+  "takes": [
+   "patient"
+  ],
+  "concedes": [
+   "speed"
+  ],
+  "boosts": {
+   "patient": 8,
+   "weak": 5
+  }
+ },
+ "stand-up": {
+  "name": "Stand Up at the Line",
+  "phase": "nz",
+  "takes": [
+   "middle",
+   "speed"
+  ],
+  "concedes": [
+   "wall",
+   "weak"
+  ],
+  "boosts": {
+   "heavy": 6
+  }
+ },
+ "back-off": {
+  "name": "Back Off",
+  "phase": "nz",
+  "takes": [
+   "weak",
+   "wall"
+  ],
+  "concedes": [
+   "middle"
+  ],
+  "boosts": {
+   "patient": 6,
+   "safe": 4
+  }
+ },
+ "clog": {
+  "name": "Clog the Middle",
+  "phase": "nz",
+  "takes": [
+   "middle"
+  ],
+  "concedes": [
+   "wall",
+   "weak"
+  ],
+  "boosts": {
+   "safe": 7
+  }
+ },
+ "collapse": {
+  "name": "Collapse the House",
+  "phase": "dzone",
+  "takes": [
+   "middle",
+   "heavy"
+  ],
+  "concedes": [
+   "patient"
+  ],
+  "boosts": {
+   "safe": 8
+  }
+ },
+ "man": {
+  "name": "Man on Man",
+  "phase": "dzone",
+  "takes": [
+   "patient",
+   "weak"
+  ],
+  "concedes": [
+   "speed"
+  ],
+  "boosts": {
+   "heavy": 5,
+   "speed": 4
+  }
+ },
+ "press": {
+  "name": "Pressure",
+  "phase": "dzone",
+  "takes": [
+   "patient",
+   "wall"
+  ],
+  "concedes": [
+   "speed",
+   "middle"
+  ],
+  "boosts": {
+   "heavy": 7,
+   "speed": 5
+  }
+ },
+ "carry-in": {
+  "name": "Carry It In",
+  "phase": "entry",
+  "takes": [
+   "safe"
+  ],
+  "concedes": [
+   "heavy"
+  ],
+  "boosts": {
+   "skill": 6,
+   "middle": 4
+  }
+ },
+ "dump-chase": {
+  "name": "Dump and Chase",
+  "phase": "entry",
+  "takes": [
+   "skill"
+  ],
+  "concedes": [
+   "safe"
+  ],
+  "boosts": {
+   "heavy": 7,
+   "wall": 4
+  }
+ },
+ "wide-drive": {
+  "name": "Wide Drive",
+  "phase": "entry",
+  "takes": [
+   "middle"
+  ],
+  "concedes": [
+   "wall"
+  ],
+  "boosts": {
+   "speed": 8,
+   "weak": 4
+  }
+ },
+ "cycle": {
+  "name": "Cycle",
+  "phase": "ozone",
+  "takes": [
+   "speed"
+  ],
+  "concedes": [
+   "patient"
+  ],
+  "boosts": {
+   "wall": 7,
+   "heavy": 4
+  }
+ },
+ "net-front": {
+  "name": "Net Front",
+  "phase": "ozone",
+  "takes": [
+   "patient"
+  ],
+  "concedes": [
+   "safe"
+  ],
+  "boosts": {
+   "heavy": 7,
+   "middle": 4
+  }
+ },
+ "point-shot": {
+  "name": "Point Shots",
+  "phase": "ozone",
+  "takes": [
+   "heavy"
+  ],
+  "concedes": [
+   "middle"
+  ],
+  "boosts": {
+   "patient": 6,
+   "safe": 4
+  }
+ }
+}

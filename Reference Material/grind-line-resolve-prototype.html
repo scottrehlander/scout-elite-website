@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Grind Line — shift resolve prototype</title>
+<style>
+  :root{
+    --primary-bg:#0a0a0a; --secondary-bg:#1a1a1a; --card-bg:#2a2a2a;
+    --border-color:#333; --text-primary:#fff; --text-secondary:#b3b3b3;
+    --accent-primary:#007acc; --accent-hover:#0099ff;
+    --success:#28a745; --warning:#ffc107; --danger:#dc3545;
+    --font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--primary-bg);color:var(--text-primary);
+    font-family:var(--font-family);-webkit-text-size-adjust:100%;overflow:hidden;
+    height:100%;overscroll-behavior:none;}
+  #wrap{display:flex;flex-direction:column;align-items:center;height:100dvh;height:100vh;}
+  #top{flex:0 0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;
+    padding:6px 10px;gap:8px;}
+  #ttl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);
+    font-weight:700;white-space:nowrap;}
+  #ttl b{color:var(--accent-hover)}
+  #meta{font-size:11px;color:#6b8aaa;font-variant-numeric:tabular-nums;white-space:nowrap}
+  #mute{background:none;border:1px solid var(--border-color);color:var(--text-secondary);
+    border-radius:6px;font-size:11px;padding:3px 8px;cursor:pointer;font-family:inherit}
+  #stage{flex:1 1 auto;display:flex;align-items:center;justify-content:center;width:100%;min-height:0}
+  canvas{display:block;touch-action:manipulation;border-radius:10px}
+  #bot{flex:0 0 auto;width:100%;padding:8px 10px 14px;text-align:center;min-height:74px}
+  #line{font-size:13px;line-height:1.35;color:var(--text-secondary);margin:0 auto 8px;max-width:520px;
+    min-height:34px;font-style:italic}
+  #line b{color:var(--text-primary);font-style:normal}
+  button.act{background:var(--accent-primary);color:#fff;border:0;border-radius:8px;
+    font:600 14px/1 var(--font-family);padding:11px 20px;cursor:pointer;margin:0 4px}
+  button.act.ghost{background:transparent;border:1px solid var(--border-color);color:var(--text-secondary)}
+  button.act:active{transform:translateY(1px)}
+  .hide{display:none!important}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="top">
+    <div id="ttl">Grind&nbsp;Line · <b>shift resolve</b></div>
+    <div id="meta">watched <span id="cnt">0</span>&times;</div>
+    <button id="mute">sound on</button>
+  </div>
+  <div id="stage"><canvas id="c"></canvas></div>
+  <div id="bot">
+    <p id="line">Their <b>1-2-2 forecheck</b> is set. You have the puck behind your net. Pick your outlet.</p>
+    <div id="btns" class="hide">
+      <button class="act" id="again">Run it again</button>
+      <button class="act ghost" id="other">Different outlet</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+'use strict';
+
+/* ------------------------------------------------------------------ *
+ * Grind Line - shift resolve prototype (throwaway).
+ * Answers one question: is a system resolving, with a hit in it,
+ * fun to WATCH on the fifth viewing? Nothing here is production code.
+ *
+ * Scenario: you break out of your own end against a 1-2-2 forecheck.
+ * The 1-2-2 takes away the middle and the strong-side wall by design,
+ * so the weak side (D-to-D, then up) is the hockey answer.
+ *   WALL   -> F2 is sitting on it. Big clean hit, turnover.
+ *   MIDDLE -> the 1-2-2 protects the middle. Picked off.
+ *   WEAK   -> F1 committed low, middle shaded. Clean exit.
+ *
+ * Rink is scaled off real proportions so the d-zone dominates the frame:
+ * 11ft behind the net, 64ft goal line to blue, 25ft blue to centre.
+ * ------------------------------------------------------------------ */
+
+var W = 100, H = 160;
+var cv = document.getElementById('c'), ctx = cv.getContext('2d');
+var scale = 1, shakeX = 0, shakeY = 0;
+
+var COL = {
+  ice:'#0c0d10', line:'rgba(255,255,255,.10)', blue:'#2f6fb5', red:'#8d3038',
+  us:'#0d84d8', usDim:'#0a4a78', them:'#d63b47', themDim:'#7d2830',
+  puck:'#e9e9ee', good:'#28a745', warn:'#ffc107'
+};
+
+/* ---------------------------- audio ------------------------------- */
+var AC=null, muted=false;
+function ac(){ if(!AC){ try{ AC=new (window.AudioContext||window.webkitAudioContext)(); }catch(e){} }
+  if(AC&&AC.state==='suspended') AC.resume(); return AC; }
+function noise(dur){ var a=ac(); if(!a) return null;
+  var n=Math.floor(a.sampleRate*dur), b=a.createBuffer(1,n,a.sampleRate), d=b.getChannelData(0);
+  for(var i=0;i<n;i++) d[i]=(Math.random()*2-1)*(1-i/n);
+  var s=a.createBufferSource(); s.buffer=b; return s; }
+function thud(power){
+  if(muted) return; var a=ac(); if(!a) return; var t=a.currentTime;
+  var s=noise(.30); if(s){ var lp=a.createBiquadFilter(); lp.type='lowpass';
+    lp.frequency.setValueAtTime(1900*power,t); lp.frequency.exponentialRampToValueAtTime(180,t+.22);
+    var g=a.createGain(); g.gain.setValueAtTime(.55*power,t); g.gain.exponentialRampToValueAtTime(.001,t+.30);
+    s.connect(lp); lp.connect(g); g.connect(a.destination); s.start(t); }
+  var o=a.createOscillator(), og=a.createGain(); o.type='sine';
+  o.frequency.setValueAtTime(150*power,t); o.frequency.exponentialRampToValueAtTime(38,t+.20);
+  og.gain.setValueAtTime(.7*power,t); og.gain.exponentialRampToValueAtTime(.001,t+.26);
+  o.connect(og); og.connect(a.destination); o.start(t); o.stop(t+.3);
+}
+function tick(f,vol,dur){
+  if(muted) return; var a=ac(); if(!a) return; var t=a.currentTime;
+  var o=a.createOscillator(), g=a.createGain(); o.type='triangle';
+  o.frequency.setValueAtTime(f,t);
+  g.gain.setValueAtTime(vol,t); g.gain.exponentialRampToValueAtTime(.001,t+(dur||.09));
+  o.connect(g); g.connect(a.destination); o.start(t); o.stop(t+(dur||.09)+.02);
+}
+function chime(){ if(muted) return; tick(660,.16,.13); setTimeout(function(){tick(880,.16,.16);},95);
+  setTimeout(function(){tick(1174,.14,.24);},190); }
+
+/* --------------------------- geometry ----------------------------- */
+var BOARD_T=3, BOARD_B=155, GOAL_Y=140, BLUE_Y=48, RED_Y=6;
+
+function fit(){
+  var top=document.getElementById('top').offsetHeight;
+  var bot=document.getElementById('bot').offsetHeight;
+  var availH=window.innerHeight-top-bot-10, availW=window.innerWidth-16;
+  var w=Math.min(availW, availH*(W/H)); if(w<200)w=Math.max(200,availW);
+  var h=w*(H/W);
+  var dpr=Math.min(window.devicePixelRatio||1,2.5);
+  cv.style.width=w+'px'; cv.style.height=h+'px';
+  cv.width=Math.round(w*dpr); cv.height=Math.round(h*dpr);
+  scale=w/W;
+  ctx.setTransform(dpr*scale,0,0,dpr*scale,0,0);
+}
+window.addEventListener('resize',fit);
+
+/* ---------------------------- helpers ----------------------------- */
+function clamp(v,a,b){ return v<a?a:v>b?b:v; }
+function seg(t,a,b){ return clamp((t-a)/(b-a),0,1); }
+function ease(u){ return u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2; }
+function easeOut(u){ return 1-Math.pow(1-u,3); }
+function lerp(a,b,u){ return a+(b-a)*u; }
+function P(a,b,u){ return [lerp(a[0],b[0],u), lerp(a[1],b[1],u)]; }
+
+/* --------------------------- the shift ---------------------------- */
+function baseState(){
+  return {
+    D1:[50,148], D2:[68,138], LW:[16,112], C:[50,104], RW:[84,100],
+    F1:[42,118], F2:[20,98], F3:[60,88], XD1:[32,46], XD2:[68,46],
+    puck:[50,148], fx:[], flash:null, board:null, stamp:null, wear:null,
+    speed:0, hitOn:false, pulse:null
+  };
+}
+/* What each defender takes away. Offsets hang off the player's live
+ * position so the shading breathes as they drift. This IS the read:
+ * shaded ice is theirs, the seam is whatever they left dark. */
+var COVER = {
+  F1: {ox:-2, oy:-1, rx:16, ry:13},   // deep man, angled to the strong side
+  F2: {ox:-3, oy: 4,  rx:12, ry:16},  // sitting on the strong wall
+  F3: {ox:-8, oy:10, rx:18, ry:15},   // owns the middle
+  XD1:{ox: 0, oy: 0,  rx:26, ry:8},   // the back two hold the line
+  XD2:{ox: 0, oy: 0,  rx:26, ry:8}
+};
+
+var LANES = {
+  WALL:  {at:'LW', label:'WALL',      lx:16, ly:122},
+  MIDDLE:{at:'C',  label:'MIDDLE',    lx:50, ly:114},
+  WEAK:  {at:'RW', label:'WEAK SIDE', lx:84, ly:110}
+};
+
+var S=baseState();
+var phase='set', pt=0, choice=null, lastChoice=null, hitstop=0, watched=0;
+
+function say(html){ document.getElementById('line').innerHTML=html; }
+function reset(keep){
+  S=baseState(); phase='set'; pt=0; hitstop=0; shakeX=shakeY=0;
+  choice=keep?lastChoice:null;
+  document.getElementById('btns').classList.add('hide');
+  say('Their <b>1-2-2 forecheck</b> is set. You have the puck behind your net. Pick your outlet.');
+}
+function addFx(x,y,n,spd,col,life,rad){
+  for(var i=0;i<n;i++){
+    var a=Math.random()*Math.PI*2, s=spd*(.3+Math.random()*1.0);
+    S.fx.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:life*(.45+Math.random()*.85),
+               m:life,col:col,r:(rad||1)*(.35+Math.random()*.85)});
+  }
+}
+function impact(x,y,power,label,sub,col){
+  S.flash={x:x,y:y,t:0,max:power*16};
+  S.stamp={txt:label,sub:sub,t:0,col:col};
+  hitstop=power*110; shakeX=7*power; shakeY=4*power; thud(power);
+  addFx(x,y,Math.round(13*power),.115,'#ffffff',360,.62);
+  addFx(x,y,Math.round(8*power),.062,col,620,.7);
+}
+
+/* ------------------------- phase updates -------------------------- */
+function updateSet(t){
+  var u=ease(seg(t,0,1200));
+  S.D1=P([50,148],[38,143],u); S.puck=S.D1.slice();
+  S.F1=P([42,118],[34,133],u);
+  S.F2=P([20,98],[19,102],u);
+  if(t>=1400){ phase='decide'; pt=0; tick(520,.10,.07);
+    say('Shaded ice is theirs. <b>Find the seam.</b>'); }
+}
+function updateDecide(t){
+  var b=Math.sin(t/380)*0.6;
+  S.F1=[34+b*.5,133]; S.C=[50,104+b]; S.LW=[16,112-b*.6]; S.RW=[84,100+b*.7];
+  if(t>2900 && !choice) pick('WALL',true);
+}
+
+function updateWall(t){
+  var d=S;
+  if(t<420){ d.puck=P([38,143],[16,112],easeOut(seg(t,0,420))); if(t<20)tick(760,.08,.05); }
+  d.LW=P([16,112],[15,106],ease(seg(t,380,900)));            // turns up ice, back to pressure
+  var fu=seg(t,300,880); d.F2=P([19,102],[19,104.5],fu*fu);  // winds up and closes
+  if(t>=880 && !d.stamp){
+    d.hitOn=true; d.pulse={key:'F2',t:0};
+    impact(16.5,105,1,'BIG HIT','clean shoulder, into the wall',COL.warn);
+    d.board={y:107,t:0};
+    d.wear={txt:'+ D WEAR',x:32,y:112,t:0};
+  }
+  if(t>=880){
+    var k=easeOut(seg(t,880,1450));
+    d.LW=P([15,106],[7.5,110],k);        // driven into the boards
+    d.F2=P([19,104.5],[13.5,106],k);     // finishes the check, stays outside him
+    d.puck=P([16.5,105],[27,116],easeOut(seg(t,880,1300)));
+  }
+  if(t>=1500){
+    var m=easeOut(seg(t,1500,2400));
+    d.puck=P([27,116],[46,120],m);
+    d.F3=P([60,88],[47,117],m);
+  }
+  return t>2550;
+}
+
+function updateMiddle(t){
+  var d=S;
+  if(t<400){ d.puck=P([38,143],[50,104],easeOut(seg(t,0,400))); if(t<20)tick(760,.08,.05); }
+  d.C=P([50,104],[49,101],ease(seg(t,0,400)));
+  var fu=seg(t,120,430); d.F3=P([60,88],[52,99],fu*fu);       // steps into the lane
+  if(t>=430 && !d.stamp){ d.pulse={key:'F3',t:0};
+    impact(51,100,.5,'PICKED OFF','the middle was never open',COL.them); }
+  if(t>=430){
+    var k=easeOut(seg(t,430,1500));
+    d.puck=P([51,100],[57,114],k); d.F3=P([52,99],[57,112],k); d.C=P([49,101],[46,96],k);
+  }
+  return t>1950;
+}
+
+function updateWeak(t){
+  var d=S;
+  if(t<380){ d.puck=P([38,143],[68,138],easeOut(seg(t,0,380))); if(t<20)tick(700,.08,.05); }
+  else if(t<820){ d.D2=P([68,138],[76,126],ease(seg(t,380,820))); d.puck=d.D2.slice(); }
+  else if(t<1180){ d.puck=P([76,126],[84,100],easeOut(seg(t,820,1180))); if(t<840)tick(880,.09,.06); }
+  else { d.RW=P([84,100],[80,40],easeOut(seg(t,1180,2300))); d.puck=d.RW.slice();
+         d.speed=1-seg(t,2050,2400); }
+  d.F1=P([34,133],[38,139],ease(seg(t,200,1400)));            // stuck low, beaten
+  d.F2=P([19,102],[25,114],ease(seg(t,400,1600)));
+  d.F3=P([60,88],[63,100],ease(seg(t,500,1600)));
+  d.XD1=P([32,46],[30,38],ease(seg(t,1300,2300)));
+  d.XD2=P([68,46],[70,36],ease(seg(t,1300,2300)));
+  if(t>=1620 && !d.stamp){
+    d.stamp={txt:'CLEAN EXIT',sub:'out with speed, 3 on 2',t:0,col:COL.good};
+    S.flash={x:80,y:48,t:0,max:11}; shakeX=2; shakeY=1; chime();
+    addFx(80,48,14,.055,COL.good,560,.8);
+  }
+  return t>2450;
+}
+
+var BRANCH={WALL:updateWall, MIDDLE:updateMiddle, WEAK:updateWeak};
+var RESULT={
+  WALL:{line:'<b>Nowhere to go.</b> F2 never left that wall. Your winger took it with his back to the ice and wore it. Their puck now, and your D just paid for it.'},
+  MIDDLE:{line:'<b>Straight into it.</b> A 1-2-2 exists to own the middle. The centre had two sticks on him before the pass even arrived.'},
+  WEAK:{line:'<b>Reverse, and gone.</b> F1 was committed low and the middle was shaded, so the far wall was the one thing they had not covered. Out clean, with numbers.'}
+};
+
+/* ---------------------------- drawing ----------------------------- */
+function roundRect(x,y,w,h,r){
+  ctx.beginPath();
+  ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y); ctx.quadraticCurveTo(x+w,y,x+w,y+r);
+  ctx.lineTo(x+w,y+h-r); ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);
+  ctx.lineTo(x+r,y+h); ctx.quadraticCurveTo(x,y+h,x,y+h-r);
+  ctx.lineTo(x,y+r); ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+}
+function drawRink(){
+  ctx.fillStyle=COL.ice; roundRect(2,BOARD_T,W-4,BOARD_B-BOARD_T,12); ctx.fill();
+  ctx.save(); roundRect(2,BOARD_T,W-4,BOARD_B-BOARD_T,12); ctx.clip();
+  ctx.globalAlpha=.55; ctx.lineWidth=1.7; ctx.strokeStyle=COL.blue;
+  ctx.beginPath(); ctx.moveTo(2,BLUE_Y); ctx.lineTo(W-2,BLUE_Y); ctx.stroke();
+  ctx.strokeStyle=COL.red;
+  ctx.beginPath(); ctx.moveTo(2,RED_Y); ctx.lineTo(W-2,RED_Y); ctx.stroke();
+  ctx.lineWidth=1.0;
+  ctx.beginPath(); ctx.moveTo(2,GOAL_Y); ctx.lineTo(W-2,GOAL_Y); ctx.stroke();
+  ctx.globalAlpha=1;
+  ctx.strokeStyle=COL.line; ctx.lineWidth=.7;
+  var spots=[[24,108],[76,108],[24,26],[76,26]];
+  for(var i=0;i<spots.length;i++){
+    ctx.beginPath(); ctx.arc(spots[i][0],spots[i][1],12,0,6.284); ctx.stroke();
+    ctx.fillStyle=COL.line; ctx.beginPath(); ctx.arc(spots[i][0],spots[i][1],1,0,6.284); ctx.fill();
+  }
+  ctx.strokeStyle='rgba(47,111,181,.45)'; ctx.lineWidth=.8;
+  ctx.beginPath(); ctx.arc(50,GOAL_Y,8,Math.PI,0); ctx.stroke();
+  ctx.strokeStyle='rgba(214,59,71,.85)'; ctx.lineWidth=1.2;
+  ctx.beginPath(); ctx.rect(45.5,GOAL_Y,9,5.5); ctx.stroke();
+  ctx.restore();
+  ctx.strokeStyle='rgba(255,255,255,.17)'; ctx.lineWidth=1.1;
+  roundRect(2,BOARD_T,W-4,BOARD_B-BOARD_T,12); ctx.stroke();
+}
+function drawBoardFlex(dt){
+  if(!S.board) return; var b=S.board; b.t+=dt;
+  if(b.t>420){ S.board=null; return; }
+  var u=b.t/420;
+  ctx.save(); ctx.globalAlpha=(1-u)*.7; ctx.strokeStyle='#ffffff'; ctx.lineWidth=.5+1.5*(1-u);
+  ctx.beginPath(); ctx.arc(2,b.y,5+u*9,-1.15,1.15); ctx.stroke(); ctx.restore();
+}
+function drawFlash(dt){
+  if(!S.flash) return; var f=S.flash; f.t+=dt;
+  if(f.t>200){ S.flash=null; return; }
+  var u=f.t/200;                                    // short pop, or it reads as a faceoff circle
+  ctx.save(); ctx.globalAlpha=(1-u)*(1-u);
+  ctx.strokeStyle='#ffffff'; ctx.lineWidth=3.4*(1-u)+.3;
+  ctx.beginPath(); ctx.arc(f.x,f.y,2+f.max*easeOut(u),0,6.284); ctx.stroke();
+  ctx.strokeStyle=COL.warn; ctx.lineWidth=1.6*(1-u);
+  ctx.beginPath(); ctx.arc(f.x,f.y,1+f.max*.55*easeOut(u),0,6.284); ctx.stroke();
+  ctx.restore();
+}
+function drawPlayer(p,col,dim,label,ghost){
+  ctx.globalAlpha=ghost?.42:1;
+  ctx.fillStyle=dim; ctx.beginPath(); ctx.arc(p[0],p[1]+.8,4.2,0,6.284); ctx.fill();
+  ctx.fillStyle=col; ctx.beginPath(); ctx.arc(p[0],p[1],4.0,0,6.284); ctx.fill();
+  ctx.fillStyle='rgba(255,255,255,.95)'; ctx.font='700 3.3px Inter,sans-serif';
+  ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(label,p[0],p[1]+.2);
+  ctx.globalAlpha=1;
+}
+function plate(x,y,w,h,r,a){
+  ctx.fillStyle='rgba(6,7,10,'+(a||.78)+')'; roundRect(x-w/2,y-h/2,w,h,r||1.6); ctx.fill();
+}
+function blob(cx,cy,rx,ry,a){
+  ctx.save(); ctx.translate(cx,cy); ctx.scale(rx/ry,1);
+  var g=ctx.createRadialGradient(0,0,0,0,0,ry);
+  g.addColorStop(0,   'rgba(214,59,71,'+a+')');          // hold the fill out to the
+  g.addColorStop(.62, 'rgba(214,59,71,'+(a*.82)+')');    // edge so it reads as territory,
+  g.addColorStop(.88, 'rgba(214,59,71,'+(a*.34)+')');    // not as a soft glow
+  g.addColorStop(1,   'rgba(214,59,71,0)');
+  ctx.fillStyle=g; ctx.beginPath(); ctx.arc(0,0,ry,0,6.284); ctx.fill();
+  ctx.strokeStyle='rgba(230,90,100,'+(a*.55)+')'; ctx.lineWidth=.6*(ry/rx>1?1:ry/rx);
+  ctx.beginPath(); ctx.arc(0,0,ry*.9,0,6.284); ctx.stroke();
+  ctx.restore();
+}
+function drawCover(dt,mul){
+  if(S.pulse){ S.pulse.t+=dt; if(S.pulse.t>700) S.pulse=null; }
+  ctx.save(); roundRect(2,BOARD_T,W-4,BOARD_B-BOARD_T,12); ctx.clip();
+  for(var k in COVER){
+    var c=COVER[k], p=S[k], a=.52*mul;
+    if(S.pulse && S.pulse.key===k) a += .55*(1-S.pulse.t/700);   // you threw it into that
+    blob(p[0]+c.ox, p[1]+c.oy, c.rx, c.ry, a);
+  }
+  ctx.restore();
+}
+function drawLanes(t){
+  var pulse=.5+.5*Math.sin(t/260);
+  for(var k in LANES){
+    var L=LANES[k], p=S[L.at];
+    ctx.save();
+    ctx.globalAlpha=.22+.12*pulse; ctx.strokeStyle='#cfd6e0';
+    ctx.lineWidth=.8; ctx.setLineDash([2.4,2.4]);
+    ctx.beginPath(); ctx.moveTo(S.puck[0],S.puck[1]); ctx.lineTo(p[0],p[1]); ctx.stroke();
+    ctx.restore();
+    ctx.save(); ctx.globalAlpha=.72; ctx.strokeStyle='#e8edf4'; ctx.lineWidth=1.2;
+    ctx.beginPath(); ctx.arc(p[0],p[1],7.4+pulse*1.0,0,6.284); ctx.stroke(); ctx.restore();
+    ctx.font='800 3.6px Inter,sans-serif'; ctx.textAlign='center'; ctx.textBaseline='middle';
+    var w=ctx.measureText(L.label).width+4;
+    plate(L.lx,L.ly,w,5.6,1.6,.82);
+    ctx.fillStyle='rgba(255,255,255,.92)'; ctx.fillText(L.label,L.lx,L.ly);
+  }
+  var left=clamp(1-(pt/2900),0,1);
+  ctx.fillStyle='rgba(255,255,255,.10)'; ctx.fillRect(14,BOARD_B-6,W-28,1.4);
+  ctx.fillStyle=left<.3?COL.them:'#0099ff'; ctx.fillRect(14,BOARD_B-6,(W-28)*left,1.4);
+}
+function drawSpeed(){
+  if(!S.speed) return;
+  ctx.save(); ctx.globalAlpha=.5*S.speed; ctx.strokeStyle='#9fd4ff'; ctx.lineWidth=.8;
+  for(var i=0;i<5;i++){ var off=(i-2)*1.9, y=S.RW[1]+8+i*3.4;
+    ctx.beginPath(); ctx.moveTo(S.RW[0]+off,y); ctx.lineTo(S.RW[0]+off,y+6); ctx.stroke(); }
+  ctx.restore();
+}
+function drawFx(dt){
+  for(var i=S.fx.length-1;i>=0;i--){
+    var f=S.fx[i]; f.l-=dt;
+    if(f.l<=0){ S.fx.splice(i,1); continue; }
+    f.x+=f.vx*dt; f.y+=f.vy*dt; f.vx*=.962; f.vy*=.962;
+    ctx.globalAlpha=clamp(f.l/f.m,0,1)*.85; ctx.fillStyle=f.col;
+    ctx.beginPath(); ctx.arc(f.x,f.y,f.r*(f.l/f.m),0,6.284); ctx.fill();
+  }
+  ctx.globalAlpha=1;
+}
+function drawStamp(dt){
+  if(!S.stamp) return; var s=S.stamp; s.t+=dt;
+  var u=easeOut(clamp(s.t/190,0,1)), sc=lerp(1.45,1,u);
+  var a=clamp(s.t/90,0,1)*clamp(2.6-s.t/1150,0,1);
+  if(a<=0) return;
+  ctx.save(); ctx.globalAlpha=a;
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.font='900 7px Inter,sans-serif';
+  var tw=ctx.measureText(s.txt).width*sc;
+  plate(50,26,Math.max(tw,50)+11,15,2.5,.86);
+  ctx.save(); ctx.translate(50,23.5); ctx.scale(sc,sc);
+  ctx.fillStyle=s.col; ctx.fillText(s.txt,0,0); ctx.restore();
+  ctx.fillStyle='rgba(255,255,255,.78)'; ctx.font='600 3.0px Inter,sans-serif';
+  ctx.fillText(s.sub,50,30.2);
+  ctx.restore();
+}
+function drawWear(dt){
+  if(!S.wear) return; var w=S.wear; w.t+=dt;
+  if(w.t>1300){ S.wear=null; return; }
+  ctx.save(); ctx.globalAlpha=clamp(1-w.t/1300,0,1)*clamp(w.t/120,0,1);
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.font='800 3.9px Inter,sans-serif';
+  plate(w.x,w.y-(w.t/1300)*10,ctx.measureText(w.txt).width+4,5.6,1.6,.7);
+  ctx.fillStyle=COL.warn; ctx.fillText(w.txt,w.x,w.y-(w.t/1300)*10);
+  ctx.restore();
+}
+
+function draw(dt,t){
+  ctx.save();
+  if(shakeX>0.05||shakeY>0.05){
+    ctx.translate((Math.random()-.5)*shakeX,(Math.random()-.5)*shakeY);
+    shakeX*=.86; shakeY*=.86;
+  }
+  ctx.clearRect(-12,-12,W+24,H+24);
+  drawRink();
+  drawCover(dt, phase==='resolve'||phase==='result' ? .45 : 1);
+  if(phase==='decide') drawLanes(t);
+  drawSpeed(); drawBoardFlex(dt);
+
+  drawPlayer(S.F1,COL.them,COL.themDim,'F1');
+  if(!S.hitOn) drawPlayer(S.F2,COL.them,COL.themDim,'F2');
+  drawPlayer(S.F3,COL.them,COL.themDim,'F3');
+  drawPlayer(S.XD1,COL.them,COL.themDim,'D',true);
+  drawPlayer(S.XD2,COL.them,COL.themDim,'D',true);
+  drawPlayer(S.D1,COL.us,COL.usDim,'D');
+  drawPlayer(S.D2,COL.us,COL.usDim,'D');
+  drawPlayer(S.LW,COL.us,COL.usDim,'LW');
+  drawPlayer(S.C ,COL.us,COL.usDim,'C');
+  drawPlayer(S.RW,COL.us,COL.usDim,'RW');
+  if(S.hitOn) drawPlayer(S.F2,COL.them,COL.themDim,'F2');  // hitter reads on top of the victim
+
+  ctx.fillStyle='#000'; ctx.beginPath(); ctx.arc(S.puck[0],S.puck[1],2.1,0,6.284); ctx.fill();
+  ctx.fillStyle=COL.puck; ctx.beginPath(); ctx.arc(S.puck[0],S.puck[1],1.5,0,6.284); ctx.fill();
+
+  drawFlash(dt); drawFx(dt); drawWear(dt); drawStamp(dt);
+
+  ctx.textAlign='left'; ctx.textBaseline='top';
+  ctx.fillStyle='rgba(214,59,71,.8)'; ctx.font='800 3.1px Inter,sans-serif';
+  ctx.fillText('THEIR FORECHECK: 1-2-2',6,BOARD_T+3);
+  ctx.restore();
+}
+
+/* ------------------------------ loop ------------------------------ */
+var last=0;
+function frame(now){
+  requestAnimationFrame(frame);
+  var dt=Math.min(now-last,50); last=now;
+  if(hitstop>0){ hitstop-=dt; draw(dt,pt); return; }   // freeze the play, never the effects
+  pt+=dt;
+  if(phase==='set') updateSet(pt);
+  else if(phase==='decide') updateDecide(pt);
+  else if(phase==='resolve' && BRANCH[choice](pt)){
+    phase='result'; watched++;
+    document.getElementById('cnt').textContent=watched;
+    say(RESULT[choice].line);
+    document.getElementById('btns').classList.remove('hide');
+    setTimeout(fit,0);
+  }
+  draw(dt,pt);
+}
+
+/* ---------------------------- input ------------------------------- */
+function pick(id,auto){
+  if(phase!=='decide') return;
+  choice=id; lastChoice=id; phase='resolve'; pt=0; S.fx.length=0; ac();
+  say(auto?'<b>No call.</b> Panic play, up the wall.':'&nbsp;');
+}
+cv.addEventListener('pointerdown',function(e){
+  ac();
+  if(phase==='decide'){
+    var r=cv.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width*W, y=(e.clientY-r.top)/r.height*H;
+    var bk=null,bd=1e9;
+    for(var k in LANES){ var p=S[LANES[k].at], d=Math.hypot(p[0]-x,p[1]-y);
+      var d2=Math.hypot(LANES[k].lx-x,LANES[k].ly-y);
+      d=Math.min(d,d2); if(d<bd){bd=d;bk=k;} }
+    if(bd<14) pick(bk);
+  } else if(phase==='result') reset(false);
+});
+window.addEventListener('keydown',function(e){
+  if(e.key==='1')pick('WALL'); if(e.key==='2')pick('MIDDLE'); if(e.key==='3')pick('WEAK');
+  if(e.key===' '){ e.preventDefault(); if(phase==='result') replay(); }
+});
+function replay(){
+  reset(true);
+  var iv=setInterval(function(){ if(phase==='decide'){ clearInterval(iv); pick(lastChoice); } },16);
+}
+document.getElementById('again').onclick=replay;
+document.getElementById('other').onclick=function(){ reset(false); };
+document.getElementById('mute').onclick=function(){
+  muted=!muted; this.textContent=muted?'sound off':'sound on'; if(!muted) ac(); };
+
+fit(); reset(false); requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

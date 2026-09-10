@@ -1,0 +1,47 @@
+---
+layout: default
+title: "Grind Line — Scout Elite Arcade"
+description: "Read the forecheck, call the play, watch the shift resolve. A hockey systems game."
+permalink: /arcade/grind-line/
+sitemap: false
+noindex: true
+arcade: true
+---
+
+<div class="arcade-wrap">
+  <a class="arcade-back" href="/arcade/">&larr; Arcade</a>
+  <h1 class="arcade-title">Grind Line</h1>
+  <p class="proto-notice"><strong>This one is a prototype.</strong> Rough edges, missing polish, and half-formed ideas are all expected. If you play it, tell us what worked and what did not: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback</a>.</p>
+  <p class="game-help">Shaded ice is covered. Find the seam, tap the play.</p>
+
+  <div class="game-hud">
+    <span id="beatname">Breakout</span>
+  </div>
+
+  <div class="game-stage">
+    <canvas id="game"></canvas>
+    <div class="game-overlay" id="overlay">
+      <h2 id="overlay-title">Grind Line</h2>
+      <p id="overlay-msg">Twelve shifts. Read what they take away and go where they are not.</p>
+      <button class="game-btn" id="overlay-btn" type="button">Drop the puck</button>
+    </div>
+    <div class="gl-panel" id="adjust" hidden></div>
+  </div>
+
+  <p class="game-help" id="line" style="margin-top: var(--space-3); min-height: 2.6em;">Twelve shifts. Read what they take away.</p>
+  <p class="game-help">Play never stops for a menu: you keep calling it whether you have the puck or not, and your standing calls can only change at a whistle. Watch the wear bars, tired legs lose battles. Keyboard: 1, 2, 3.</p>
+</div>
+
+<script>
+window.GL_DATA = {
+  beats:     {{ site.data.gl.beats     | jsonify }},
+  systems:   {{ site.data.gl.systems   | jsonify }},
+  matchups:  {{ site.data.gl.matchups  | jsonify }},
+  traits:    {{ site.data.gl.traits    | jsonify }},
+  coaches:   {{ site.data.gl.coaches   | jsonify }}
+};
+</script>
+<script src="/scripts/games/arcade.js"></script>
+<script src="/scripts/games/grind-line/engine.js"></script>
+<script src="/scripts/games/grind-line/render.js"></script>
+<script src="/scripts/games/grind-line/game.js"></script>

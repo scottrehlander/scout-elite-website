@@ -53,6 +53,12 @@ arcade: true
     <h2 class="arcade-section__title">Prototypes <span class="proto-badge">Rough and unfinished</span></h2>
     <p class="arcade-section__note">These are early experiments. Expect rough edges, missing polish, and ideas that may not work yet. If you see potential and want us to keep working to make it better: <a href="https://scout-elite.supahub.com/en" target="_blank" rel="noopener">share feedback here</a>.</p>
     <ul class="arcade-grid">
+      <li><a class="arcade-card arcade-card--proto" href="/arcade/grind-line/">
+        <img class="arcade-card__shot" src="/img/arcade/grind-line.jpg" alt="" width="720" height="450" loading="lazy">
+        <span class="arcade-card__name">Grind Line <span class="arcade-card__chip">Prototype</span></span>
+        <p class="arcade-card__desc">Shaded ice is covered. Read the forecheck, call the play, and keep calling it whether you have the puck or not.</p>
+        <span class="arcade-card__controls">Tap the open lane</span>
+      </a></li>
       <li><a class="arcade-card arcade-card--proto" href="/arcade/keep-it-in/">
         <img class="arcade-card__shot" src="/img/arcade/keep-it-in.jpg" alt="" width="720" height="450" loading="lazy">
         <span class="arcade-card__name">Keep It In <span class="arcade-card__chip">Prototype</span></span>

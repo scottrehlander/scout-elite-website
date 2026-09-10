@@ -1,0 +1,720 @@
+{
+ "DZ.us.retrieval": {
+  "wall": {
+   "base": {
+    "ADVANCE": 40,
+    "HOLD": 15,
+    "DUMP": 10,
+    "TURNOVER": 25,
+    "COUNTER": 10
+   },
+   "vs": {
+    "1-2-2": {
+     "ADVANCE": -25,
+     "TURNOVER": 18,
+     "COUNTER": 7
+    },
+    "2-1-2": {
+     "ADVANCE": -18,
+     "TURNOVER": 12,
+     "COUNTER": 6
+    },
+    "trap": {
+     "ADVANCE": 16,
+     "TURNOVER": -10,
+     "COUNTER": -6
+    }
+   }
+  },
+  "middle": {
+   "base": {
+    "ADVANCE": 42,
+    "HOLD": 15,
+    "DUMP": 5,
+    "TURNOVER": 25,
+    "COUNTER": 13
+   },
+   "vs": {
+    "1-2-2": {
+     "ADVANCE": -28,
+     "TURNOVER": 14,
+     "COUNTER": 14
+    },
+    "2-1-2": {
+     "ADVANCE": 10,
+     "TURNOVER": -6,
+     "COUNTER": -4
+    },
+    "trap": {
+     "ADVANCE": -30,
+     "TURNOVER": 15,
+     "COUNTER": 15
+    }
+   }
+  },
+  "weak": {
+   "base": {
+    "ADVANCE": 44,
+    "HOLD": 18,
+    "DUMP": 5,
+    "TURNOVER": 23,
+    "COUNTER": 10
+   },
+   "vs": {
+    "1-2-2": {
+     "ADVANCE": 24,
+     "TURNOVER": -15,
+     "COUNTER": -9
+    },
+    "2-1-2": {
+     "ADVANCE": 20,
+     "TURNOVER": -12,
+     "COUNTER": -8
+    },
+    "trap": {
+     "ADVANCE": -6,
+     "TURNOVER": 4,
+     "COUNTER": 2
+    }
+   }
+  },
+  "rim": {
+   "base": {
+    "ADVANCE": 14,
+    "HOLD": 10,
+    "DUMP": 55,
+    "TURNOVER": 19,
+    "COUNTER": 2
+   },
+   "vs": {
+    "1-2-2": {
+     "DUMP": 5,
+     "TURNOVER": -4
+    },
+    "2-1-2": {
+     "DUMP": -8,
+     "TURNOVER": 8
+    },
+    "trap": {
+     "DUMP": 8,
+     "TURNOVER": -6
+    }
+   }
+  }
+ },
+ "DZ.us.established": {
+  "dtod": {
+   "base": {
+    "ADVANCE": 38,
+    "HOLD": 32,
+    "DUMP": 4,
+    "TURNOVER": 18,
+    "COUNTER": 8
+   },
+   "vs": {
+    "1-2-2": {
+     "ADVANCE": 10,
+     "TURNOVER": -6
+    },
+    "2-1-2": {
+     "ADVANCE": -16,
+     "TURNOVER": 12,
+     "COUNTER": 6
+    },
+    "trap": {
+     "ADVANCE": -10,
+     "HOLD": 12,
+     "TURNOVER": -2
+    }
+   }
+  },
+  "quick": {
+   "base": {
+    "ADVANCE": 46,
+    "HOLD": 14,
+    "DUMP": 5,
+    "TURNOVER": 23,
+    "COUNTER": 12
+   },
+   "vs": {
+    "1-2-2": {
+     "ADVANCE": -8,
+     "TURNOVER": 6
+    },
+    "2-1-2": {
+     "ADVANCE": 14,
+     "TURNOVER": -8,
+     "COUNTER": -4
+    },
+    "trap": {
+     "ADVANCE": -24,
+     "TURNOVER": 12,
+     "COUNTER": 12
+    }
+   }
+  },
+  "hold": {
+   "base": {
+    "ADVANCE": 20,
+    "HOLD": 52,
+    "DUMP": 6,
+    "TURNOVER": 12,
+    "WHISTLE": 6,
+    "COUNTER": 4
+   },
+   "vs": {
+    "1-2-2": {
+     "HOLD": 6,
+     "ADVANCE": -2
+    },
+    "2-1-2": {
+     "HOLD": -14,
+     "TURNOVER": 10,
+     "COUNTER": 6
+    },
+    "trap": {
+     "HOLD": 12,
+     "ADVANCE": -6,
+     "WHISTLE": 4
+    }
+   }
+  }
+ },
+ "DZ.them.established": {
+  "collapse": {
+   "base": {
+    "TURNOVER": 34,
+    "HOLD": 30,
+    "CHANCE": 28,
+    "WHISTLE": 8
+   },
+   "vs": {
+    "cycle": {
+     "TURNOVER": -8,
+     "CHANCE": 8
+    },
+    "net-front": {
+     "TURNOVER": -12,
+     "CHANCE": 12
+    },
+    "point-shot": {
+     "TURNOVER": 12,
+     "CHANCE": -12
+    }
+   }
+  },
+  "pressure": {
+   "base": {
+    "TURNOVER": 40,
+    "HOLD": 20,
+    "CHANCE": 32,
+    "WHISTLE": 4,
+    "PENALTY": 4
+   },
+   "vs": {
+    "cycle": {
+     "TURNOVER": -14,
+     "CHANCE": 14
+    },
+    "net-front": {
+     "TURNOVER": 8,
+     "CHANCE": -6
+    },
+    "point-shot": {
+     "TURNOVER": 10,
+     "CHANCE": -10
+    }
+   }
+  },
+  "boxout": {
+   "base": {
+    "TURNOVER": 30,
+    "HOLD": 34,
+    "CHANCE": 28,
+    "WHISTLE": 8
+   },
+   "vs": {
+    "cycle": {
+     "TURNOVER": 6,
+     "CHANCE": -6
+    },
+    "net-front": {
+     "TURNOVER": 14,
+     "CHANCE": -14
+    },
+    "point-shot": {
+     "TURNOVER": -10,
+     "CHANCE": 10
+    }
+   }
+  }
+ },
+ "DZ.them.rush": {
+  "gapup": {
+   "base": {
+    "TURNOVER": 42,
+    "CHANCE": 34,
+    "HOLD": 14,
+    "PENALTY": 6,
+    "WHISTLE": 4
+   },
+   "vs": {
+    "carry-in": {
+     "TURNOVER": 16,
+     "CHANCE": -16
+    },
+    "dump-chase": {
+     "TURNOVER": -10,
+     "CHANCE": 6
+    },
+    "wide-drive": {
+     "TURNOVER": -14,
+     "CHANCE": 14
+    }
+   }
+  },
+  "funnel": {
+   "base": {
+    "TURNOVER": 34,
+    "CHANCE": 30,
+    "HOLD": 28,
+    "WHISTLE": 8
+   },
+   "vs": {
+    "carry-in": {
+     "TURNOVER": -6,
+     "CHANCE": 6
+    },
+    "dump-chase": {
+     "TURNOVER": 8,
+     "CHANCE": -8
+    },
+    "wide-drive": {
+     "TURNOVER": 14,
+     "CHANCE": -14
+    }
+   }
+  },
+  "block": {
+   "base": {
+    "TURNOVER": 30,
+    "CHANCE": 26,
+    "HOLD": 30,
+    "WHISTLE": 14
+   },
+   "vs": {
+    "carry-in": {
+     "TURNOVER": 8,
+     "CHANCE": -8
+    },
+    "dump-chase": {
+     "TURNOVER": -8,
+     "CHANCE": 4,
+     "HOLD": 4
+    },
+    "wide-drive": {
+     "TURNOVER": -4,
+     "CHANCE": 4
+    }
+   }
+  }
+ },
+ "DZ.loose.battle": {
+  "body": {
+   "base": {
+    "TURNOVER": 46,
+    "HOLD": 20,
+    "CHANCE": 18,
+    "WHISTLE": 10,
+    "PENALTY": 6
+   },
+   "vs": {}
+  },
+  "stick": {
+   "base": {
+    "TURNOVER": 42,
+    "HOLD": 26,
+    "CHANCE": 20,
+    "WHISTLE": 12
+   },
+   "vs": {}
+  },
+  "support": {
+   "base": {
+    "TURNOVER": 38,
+    "HOLD": 34,
+    "CHANCE": 16,
+    "WHISTLE": 12
+   },
+   "vs": {}
+  }
+ },
+ "NZ.us.rush": {
+  "carry": {
+   "base": {
+    "ADVANCE": 44,
+    "HOLD": 14,
+    "DUMP": 8,
+    "TURNOVER": 22,
+    "COUNTER": 12
+   },
+   "vs": {
+    "stand-up": {
+     "ADVANCE": -26,
+     "TURNOVER": 14,
+     "COUNTER": 14
+    },
+    "back-off": {
+     "ADVANCE": 20,
+     "TURNOVER": -12,
+     "COUNTER": -6
+    },
+    "clog": {
+     "ADVANCE": -22,
+     "TURNOVER": 14,
+     "COUNTER": 10
+    }
+   }
+  },
+  "wide": {
+   "base": {
+    "ADVANCE": 44,
+    "HOLD": 12,
+    "DUMP": 10,
+    "TURNOVER": 22,
+    "COUNTER": 12
+   },
+   "vs": {
+    "stand-up": {
+     "ADVANCE": 22,
+     "TURNOVER": -13,
+     "COUNTER": -9
+    },
+    "back-off": {
+     "ADVANCE": -10,
+     "TURNOVER": 6,
+     "COUNTER": 4
+    },
+    "clog": {
+     "ADVANCE": 16,
+     "TURNOVER": -10,
+     "COUNTER": -6
+    }
+   }
+  },
+  "chip": {
+   "base": {
+    "ADVANCE": 12,
+    "HOLD": 8,
+    "DUMP": 60,
+    "TURNOVER": 17,
+    "COUNTER": 3
+   },
+   "vs": {
+    "stand-up": {
+     "DUMP": 10,
+     "TURNOVER": -7
+    },
+    "back-off": {
+     "DUMP": -10,
+     "TURNOVER": 8
+    },
+    "clog": {
+     "DUMP": 8,
+     "TURNOVER": -6
+    }
+   }
+  }
+ },
+ "NZ.them.rush": {
+  "standup": {
+   "base": {
+    "TURNOVER": 38,
+    "ADVANCE": 28,
+    "HOLD": 16,
+    "COUNTER": 8,
+    "PENALTY": 6,
+    "WHISTLE": 4
+   },
+   "vs": {
+    "carry-in": {
+     "TURNOVER": 16,
+     "ADVANCE": -16
+    },
+    "dump-chase": {
+     "ADVANCE": 10,
+     "TURNOVER": -8
+    },
+    "wide-drive": {
+     "ADVANCE": 18,
+     "TURNOVER": -16
+    }
+   }
+  },
+  "backoff": {
+   "base": {
+    "TURNOVER": 22,
+    "ADVANCE": 48,
+    "HOLD": 20,
+    "COUNTER": 4,
+    "WHISTLE": 6
+   },
+   "vs": {
+    "carry-in": {
+     "ADVANCE": 12,
+     "TURNOVER": -10
+    },
+    "dump-chase": {
+     "TURNOVER": 8,
+     "ADVANCE": -8
+    },
+    "wide-drive": {
+     "TURNOVER": 10,
+     "ADVANCE": -10
+    }
+   }
+  },
+  "angle": {
+   "base": {
+    "TURNOVER": 32,
+    "ADVANCE": 36,
+    "HOLD": 18,
+    "COUNTER": 8,
+    "WHISTLE": 6
+   },
+   "vs": {
+    "carry-in": {
+     "TURNOVER": 6,
+     "ADVANCE": -6
+    },
+    "dump-chase": {
+     "TURNOVER": 12,
+     "ADVANCE": -12
+    },
+    "wide-drive": {
+     "ADVANCE": 12,
+     "TURNOVER": -12
+    }
+   }
+  }
+ },
+ "OZ.us.rush": {
+  "shoot": {
+   "base": {
+    "CHANCE": 54,
+    "HOLD": 22,
+    "TURNOVER": 16,
+    "COUNTER": 8
+   },
+   "vs": {
+    "collapse": {
+     "CHANCE": -12,
+     "TURNOVER": 8
+    },
+    "man": {
+     "CHANCE": 8,
+     "TURNOVER": -6
+    },
+    "press": {
+     "CHANCE": 6,
+     "TURNOVER": -4
+    }
+   }
+  },
+  "drive": {
+   "base": {
+    "CHANCE": 50,
+    "HOLD": 16,
+    "TURNOVER": 22,
+    "COUNTER": 12
+   },
+   "vs": {
+    "collapse": {
+     "CHANCE": -18,
+     "TURNOVER": 12,
+     "COUNTER": 6
+    },
+    "man": {
+     "CHANCE": -6,
+     "TURNOVER": 6
+    },
+    "press": {
+     "CHANCE": 14,
+     "TURNOVER": -10,
+     "COUNTER": -4
+    }
+   }
+  },
+  "delay": {
+   "base": {
+    "CHANCE": 40,
+    "HOLD": 36,
+    "TURNOVER": 16,
+    "COUNTER": 8
+   },
+   "vs": {
+    "collapse": {
+     "CHANCE": 14,
+     "HOLD": -6,
+     "TURNOVER": -8
+    },
+    "man": {
+     "CHANCE": -12,
+     "TURNOVER": 10
+    },
+    "press": {
+     "CHANCE": -10,
+     "TURNOVER": 8,
+     "COUNTER": 4
+    }
+   }
+  }
+ },
+ "OZ.us.established": {
+  "lowhigh": {
+   "base": {
+    "CHANCE": 44,
+    "HOLD": 34,
+    "TURNOVER": 14,
+    "COUNTER": 8
+   },
+   "vs": {
+    "collapse": {
+     "CHANCE": 18,
+     "TURNOVER": -12,
+     "COUNTER": -6
+    },
+    "man": {
+     "CHANCE": -10,
+     "TURNOVER": 8
+    },
+    "press": {
+     "CHANCE": -12,
+     "TURNOVER": 8,
+     "COUNTER": 6
+    }
+   }
+  },
+  "slot": {
+   "base": {
+    "CHANCE": 46,
+    "HOLD": 22,
+    "TURNOVER": 20,
+    "COUNTER": 12
+   },
+   "vs": {
+    "collapse": {
+     "CHANCE": -22,
+     "TURNOVER": 14,
+     "COUNTER": 10
+    },
+    "man": {
+     "CHANCE": -8,
+     "TURNOVER": 6
+    },
+    "press": {
+     "CHANCE": 12,
+     "TURNOVER": -8,
+     "COUNTER": -4
+    }
+   }
+  },
+  "cycle": {
+   "base": {
+    "CHANCE": 38,
+    "HOLD": 40,
+    "TURNOVER": 15,
+    "COUNTER": 7
+   },
+   "vs": {
+    "collapse": {
+     "CHANCE": -6,
+     "HOLD": 8
+    },
+    "man": {
+     "CHANCE": 14,
+     "TURNOVER": -8
+    },
+    "press": {
+     "CHANCE": -14,
+     "TURNOVER": 10,
+     "COUNTER": 6
+    }
+   }
+  }
+ },
+ "OZ.them.retrieval": {
+  "press": {
+   "base": {
+    "ADVANCE": 28,
+    "TURNOVER": 32,
+    "HOLD": 10,
+    "CHANCE": 12,
+    "COUNTER": 10,
+    "PENALTY": 8
+   },
+   "vs": {
+    "wheel": {
+     "TURNOVER": 12,
+     "ADVANCE": -10
+    },
+    "quick-up": {
+     "ADVANCE": 16,
+     "TURNOVER": -14
+    },
+    "controlled": {
+     "TURNOVER": 10,
+     "ADVANCE": -10
+    }
+   }
+  },
+  "contain": {
+   "base": {
+    "ADVANCE": 42,
+    "TURNOVER": 20,
+    "HOLD": 18,
+    "CHANCE": 6,
+    "COUNTER": 10,
+    "WHISTLE": 4
+   },
+   "vs": {
+    "wheel": {
+     "ADVANCE": 10,
+     "TURNOVER": -8
+    },
+    "quick-up": {
+     "TURNOVER": 10,
+     "ADVANCE": -10
+    },
+    "controlled": {
+     "ADVANCE": 12,
+     "TURNOVER": -10
+    }
+   }
+  },
+  "lanes": {
+   "base": {
+    "ADVANCE": 34,
+    "TURNOVER": 26,
+    "HOLD": 16,
+    "CHANCE": 8,
+    "COUNTER": 12,
+    "WHISTLE": 4
+   },
+   "vs": {
+    "wheel": {
+     "ADVANCE": 8,
+     "TURNOVER": -8
+    },
+    "quick-up": {
+     "TURNOVER": 12,
+     "ADVANCE": -12
+    },
+    "controlled": {
+     "ADVANCE": 10,
+     "TURNOVER": -10
+    }
+   }
+  }
+ }
+}
