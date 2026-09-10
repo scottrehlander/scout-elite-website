@@ -3,3 +3,4 @@ Gemfile.lock
 
 # Generated GSC/GA4 pulls (data, not source)
 Reference Material/analytics/out/
+__pycache__/
