@@ -65,7 +65,7 @@ Why? These players:
 
 ### 4. Junior Hockey Is Part of the Path to College
 
-For players with college hockey aspirations, Coach Greg was clear: **junior hockey is now the standard route**, even for prep school players.
+For players with college hockey aspirations, Coach Greg was clear: **junior hockey is now the standard route**, even for [prep school](/blog/isl-prep-school-hockey-guide/) players.
 
 The timeline typically includes:
 - Playing competitive high school hockey (public or prep)

@@ -26,7 +26,7 @@ For decades, competitive youth hockey in the Boston area was organized under the
 
 At some point, the top programs in the BHL decided they wanted something more - a true elite-tier league where only the best competed. So a group of the strongest clubs broke off and formed the **Elite 9 Hockey League**, or **E9**. These "charter" organizations - programs like the Valley Junior Warriors, Boston Advantage, and East Coast Wizards - founded the league and held protected spots that guaranteed them entry every season. ([More on the founding of the E9](https://icehockey.fandom.com/wiki/Elite_9_Hockey_League){:target="_blank" rel="noopener"})
 
-Around the same time - and in part as a response to the same dynamics - the **Eastern Hockey Federation (EHF)** was formed. The EHF also drew its founding members from top programs in the region. The result: **two elite leagues operating in the same geographic footprint**, each with its own culture, structure, and identity. Both leagues have produced players who've gone on to major junior, prep school, and college hockey. The competition, at the top, is genuinely world-class for youth hockey.
+Around the same time - and in part as a response to the same dynamics - the **Eastern Hockey Federation (EHF)** was formed. The EHF also drew its founding members from top programs in the region. The result: **two elite leagues operating in the same geographic footprint**, each with its own culture, structure, and identity. Both leagues have produced players who've gone on to major junior, [prep school](/blog/isl-prep-school-hockey-guide/), and college hockey. The competition, at the top, is genuinely world-class for youth hockey.
 
 
 ## The EHF: Structure and What You Need to Know
