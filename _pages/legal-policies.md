@@ -12,31 +12,51 @@ permalink: /legal-policies/
 
         <details>
         <summary>Privacy Policy</summary>
+        <p><em>Last updated: October 20, 2026</em></p>
         <p>
-            This Privacy Policy describes how Scout Elite ("we", "our", or "us") collects, uses, and shares information when you use
-            our web application <strong>Scout Elite Xpress</strong> and our mobile applications <strong>Scout Elite Live</strong>.
+            This policy describes how Scout Elite ("we", "us") collects, uses and shares information when you use our web
+            application <strong>Scout Elite Xpress</strong> (scout-elite.com) and our mobile app <strong>Scout Elite Live</strong>.
         </p>
 
         <h3>Information We Collect</h3>
         <ul>
-            <li><strong>Account Information:</strong> Registration details such as name, email, and password.</li>
-            <li><strong>User-Generated Content:</strong> Videos, clips, descriptions, and live event data.</li>
-            <li><strong>Usage and Device Information:</strong> Collected via third parties for analytics and error monitoring.</li>
+            <li><strong>Account information:</strong> your name, email address and password, or the name and email Google or Apple give us when you sign in with them. Scout Elite Live can be used without an account.</li>
+            <li><strong>Content you create:</strong> videos and clips you upload, reviews, reports, practice plans, playbooks, drills, rosters (player numbers and names), and the games you track and choose to publish or back up.</li>
+            <li><strong>Team information:</strong> the teams you join and their members' names and emails, visible to the team.</li>
+            <li><strong>Notifications:</strong> if you allow notifications in Scout Elite Live, a push token for your device, linked to your account.</li>
+            <li><strong>Usage information:</strong> which screens and features are used, with a random install ID, your account ID when signed in, the app version and the platform. We use Google Analytics to measure this. In Scout Elite Live you can turn it off in Settings ("Share usage stats").</li>
+            <li><strong>Diagnostics:</strong> crash reports and performance data (device model, operating system, app version), sent without your name, email or account ID.</li>
         </ul>
 
         <h3>How We Use Information</h3>
         <ul>
-            <li>Provide, operate, and improve the Services.</li>
-            <li>Allow you to upload, store, and share videos, clips, and game events.</li>
-            <li>Monitor usage and analyze trends.</li>
-            <li>Communicate with you about updates and features.</li>
+            <li>To provide the services: sign-in, syncing and backing up your games, showing your content and what others share with you, and sending notifications you've allowed.</li>
+            <li>To understand usage and fix problems.</li>
+            <li>To communicate with you about your account, shares and invitations, and updates.</li>
         </ul>
+        <p>We do not sell your information, show ads, or track you across other companies' apps or websites.</p>
+
+        <h3>Service Providers</h3>
+        <p>
+            We use service providers who process data on our behalf, under contracts that limit their use of it: hosting and
+            database, video storage and delivery, sign-in (including Apple and Google sign-in), usage analytics (Google Analytics),
+            crash reporting, push notifications, payment processing and email delivery. They may not use your information for
+            their own purposes.
+        </p>
+
+        <h3>Retention and Deletion</h3>
+        <p>
+            We keep your information while your account is active. You can delete your account in Scout Elite Live
+            (Profile &gt; Delete account) or at <a href="https://xpress.scout-elite.com/account/delete">xpress.scout-elite.com/account/delete</a>.
+            We end your sessions right away and delete your account and its content within 30 days. Games tracked without an
+            account stay only on your phone.
+        </p>
 
         <h3>Children’s Privacy</h3>
-        <p>Services are intended for users 13+ only. Under-13 athlete accounts must be managed by a coach, parent, or guardian.</p>
+        <p>The services are intended for users 13 and older. Accounts for younger athletes must be managed by a coach, parent or guardian.</p>
 
         <h3>Contact</h3>
-        <p>Email: <a href="/support/">Scout Elite Support</a></p>
+        <p><a href="/support/">Scout Elite Support</a></p>
         </details>
 
         <details>
