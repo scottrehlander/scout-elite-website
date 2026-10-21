@@ -8,7 +8,7 @@ permalink: /legal-policies/
 <section class="how-to-use" style="background: var(--primary-bg); padding: 64px 0;">
     <div class="container">
         <h1>Scout Elite Legal Policies</h1>
-        <p>Effective Date: September 2025</p>
+        <p>Last updated: October 20, 2026</p>
 
         <details>
         <summary>Privacy Policy</summary>
@@ -71,7 +71,7 @@ permalink: /legal-policies/
         <p>You retain ownership of content you upload. By uploading, you grant us a license to host, process, and display it for providing the Services.</p>
 
         <h3>Paid Services</h3>
-        <p>We offer paid tiers such as <strong>Analyst</strong> and <strong>Athlete</strong>. Fees, renewals, and billing terms are presented at purchase.</p>
+        <p>We offer paid plans, <strong>Solo</strong> and <strong>Pro</strong>, on scout-elite.com. Prices, renewals and billing terms are shown before you buy. Scout Elite Live is free and has no in-app purchases.</p>
 
         <h3>Prohibited Uses</h3>
         <ul>
@@ -93,13 +93,10 @@ permalink: /legal-policies/
         <details>
         <summary>Refund and Availability Policy</summary>
         <h3>Subscriptions and Payments</h3>
-        <p>Payments are required at the time of purchase. Terms vary by purchase channel.</p>
+        <p>Plans are bought on scout-elite.com and paid at the time of purchase. Scout Elite Live has no in-app purchases.</p>
 
-        <h3>Purchases Through App Stores</h3>
-        <p>Subscriptions purchased via Apple App Store or Google Play are subject to their billing and refund policies. Refunds must be requested directly from Apple or Google.</p>
-
-        <h3>Purchases Through Our Website</h3>
-        <p>Website subscription purchases are final except as required by law. Refunds may be granted at our discretion.</p>
+        <h3>Refunds</h3>
+        <p>Subscription purchases are final except as required by law. Refunds may be granted at our discretion.</p>
 
         <h3>Availability</h3>
         <p>We strive for reliable Services but cannot guarantee uninterrupted access. Temporary downtime does not entitle users to refunds or credits.</p>
