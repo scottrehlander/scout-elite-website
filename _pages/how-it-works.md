@@ -498,7 +498,7 @@ image: /img/how-it-works/review-clips-jr-falcons.jpg
             </div>
             <div class="toolbox-card">
                 <h3>Scout Elite Live</h3>
-                <p>Free mobile app. Tap events at the rink, get stats and a game report, feed clips automatically.</p>
+                <p>Free mobile app. Track games live (even offline), get stats and a game report, feed clips automatically, and open your reviews, plans and playbooks at the rink.</p>
                 <a href="/scout-elite-live/">Scout Elite Live &rarr;</a>
             </div>
             <div class="toolbox-card">

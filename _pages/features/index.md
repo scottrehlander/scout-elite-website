@@ -101,7 +101,7 @@ utm_campaign: features-index
             </a>
             <a href="/scout-elite-live/" class="features-index-card">
                 <h2>Scout Elite Live</h2>
-                <p>The free mobile app for tagging events as they happen. Auto-clip your game video by importing the live-tagged moments. iOS and Android.</p>
+                <p>The free hockey app. Track games live, even with no signal, and open your video reviews, practice plans and playbooks at the rink. Tracked games feed your clips and game reports. iOS and Android.</p>
                 <span class="features-index-card__link">Explore Scout Elite Live &rarr;</span>
             </a>
             <a href="/features/video/" class="features-index-card">

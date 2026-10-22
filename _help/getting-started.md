@@ -38,7 +38,7 @@ The sidebar on the left provides access to every area of Scout Elite:
 - **Clip Creator** — browse and manage your Clip Projects
 - **Clip Search** — search across all your clips
 - **Reviews** — create and manage team Reviews
-- **Scout Elite Live** — view game reports from the mobile companion app
+- **Scout Elite Live** — games tracked with the free Scout Elite Live app
 - **Analysis Hub** — visualize game event statistics
 - **Account** — manage your profile, subscription, tag libraries, and teams
 

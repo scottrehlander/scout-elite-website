@@ -260,7 +260,7 @@ last_modified_at: 2026-05-28
             </a>
             <a href="/scout-elite-live/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none;">
                 <strong style="color: var(--accent-hover);">Scout Elite Live &rarr;</strong>
-                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Tag events on your phone, auto-clip the game video.</p>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Track games live, even offline. Your reviews and plans at the rink.</p>
             </a>
             <a href="/features/video/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none;">
                 <strong style="color: var(--accent-hover);">Video &amp; Reviews &rarr;</strong>

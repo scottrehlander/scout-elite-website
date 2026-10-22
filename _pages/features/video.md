@@ -308,7 +308,7 @@ last_modified_at: 2026-05-28
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; max-width: 960px; margin: 0 auto;">
             <a href="/scout-elite-live/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
                 <strong style="color: var(--accent-hover);">Scout Elite Live &rarr;</strong>
-                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Tag events on your phone, auto-clip the game video.</p>
+                <p style="margin: 0.4rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">Track games live, even offline. Your reviews and plans at the rink.</p>
             </a>
             <a href="/features/playbooks/" style="display: block; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 0.75rem; color: var(--text-primary); text-decoration: none; transition: border-color 0.2s ease;">
                 <strong style="color: var(--accent-hover);">Playbooks &rarr;</strong>

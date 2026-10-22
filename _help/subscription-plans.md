@@ -22,7 +22,7 @@ Scout Elite offers three subscription tiers designed to grow with your needs. Ev
 | Create clips & tag them | — | ✅ | ✅ |
 | Telestration (draw on video) | — | ✅ | ✅ |
 | Create Reviews | — | ✅ | ✅ |
-| Scout Elite Live (personal) | — | ✅ | ✅ |
+| Scout Elite Live (personal) | ✅ | ✅ | ✅ |
 | Tag libraries | — | ✅ | ✅ |
 | Share videos, clips & reviews | — | — | ✅ |
 | Create & manage teams | — | — | ✅ |

@@ -1,5 +1,5 @@
 ---
-description: "Free iOS and Android app for youth hockey coaches. Tag game events in real time and auto-sync clips to your video library for instant review."
+description: "Free hockey game tracker for iOS and Android. Track games live, even with no signal, then open your Scout Elite video reviews, practice plans and playbooks at the rink."
 layout: default
 title: Scout Elite Live Mobile App
 permalink: /scout-elite-live/
@@ -10,7 +10,7 @@ permalink: /scout-elite-live/
     <div class="container">
         <div class="hero-content">
             <h1 class="hero-title">Scout Elite Live</h1>
-            <p class="hero-subtitle">Tag events as they happen to auto-clip your game video. Deliver focused, engaging reviews for every player.</p>
+            <p class="hero-subtitle">Track every shift and every shot from the bench or the stands, even with no signal. Then open your video reviews, practice plans and playbooks right at the rink.</p>
             <div class="hero-cta">
                 <div style="display:flex; flex-direction:row; gap:18px; align-items:center; width:100%; max-width:480px; margin:0 auto;">
                     <a href="https://play.google.com/store/apps/details?id=com.scout_elite.live" target="_blank" rel="noopener" style="flex:1;">
@@ -21,12 +21,12 @@ permalink: /scout-elite-live/
                     </a>
                 </div>
                 <div style="margin-top: 1.25rem; text-align:center; width:100%;">
-                    <span style="display:inline-block; background:var(--card-bg); color:#fff; font-weight:600; border-radius:20px; padding:6px 18px; font-size:1rem; letter-spacing:0.5px;cursor: default">Free Download - Unlimited Use</span>
+                    <span style="display:inline-block; background:var(--card-bg); color:#fff; font-weight:600; border-radius:20px; padding:6px 18px; font-size:1rem; letter-spacing:0.5px;cursor: default">Free. No account needed to track.</span>
                 </div>
             </div>
         </div>
         <div class="hero-visual">
-            <img src="/img/Header for website SEL.png" alt="Scout Elite Live" class="hero-image" style="max-width: 480px; width: 100%; border-radius: 1rem;" />
+            <img src="/img/live/hero.jpg" alt="Scout Elite Live on three phones: a video review, the live game tracker and a practice plan" class="hero-image" style="max-width: 560px; width: 100%; border-radius: 1rem;" />
         </div>
     </div>
 </section>
@@ -35,21 +35,33 @@ permalink: /scout-elite-live/
 <section class="features" style="background: var(--secondary-bg);">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Live Game Tools That Save Time</h2>
-            <p class="section-subtitle">From real-time event tagging to targeted review workflows, Scout Elite Live streamlines the path from game to insight.</p>
+            <h2 class="section-title">Your Game Day, in One App</h2>
+            <p class="section-subtitle">A fast tracker for the game, and everything from your Scout Elite account in your pocket for the rest of the week.</p>
         </div>
         <div class="features-grid">
             <div class="feature-card">
-                <h3 class="feature-title">Real-time Tagging</h3>
-                <p class="feature-description">Track goals, penalties, breakouts, and custom notes during the game so nothing gets missed and post-game review is effortless.</p>
+                <h3 class="feature-title">Track the Game Live</h3>
+                <p class="feature-description">Log a goal in three taps: scorer, assists and who was on the ice. Shots, scoring chances, faceoffs, penalties and turnovers for both teams, with big buttons made for cold hands.</p>
             </div>
             <div class="feature-card">
-                <h3 class="feature-title">Auto-Clip Your Video</h3>
-                <p class="feature-description">Import live-tagged events into your sessions to generate clips instantly. Spend time coaching, not scrubbing video.</p>
+                <h3 class="feature-title">No Signal? Keep Tracking.</h3>
+                <p class="feature-description">Everything saves on your phone, so nothing waits on the rink's Wi-Fi. No account needed to track; sign in with a free account and your games back up when you're online again.</p>
             </div>
             <div class="feature-card">
-                <h3 class="feature-title">Share & Collaborate</h3>
-                <p class="feature-description">Parents can share games with coaches for analysis. Feedback returns with clear, actionable guidance for improvement.</p>
+                <h3 class="feature-title">See the Game in Numbers</h3>
+                <p class="feature-description">A game report by period, a scoring report with everyone on the ice for each goal, and player stats for both teams before the ice is cleaned.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Re-watch Every Goal</h3>
+                <p class="feature-description">Open your video reviews and clip playlists on your phone. Turn it sideways for full screen.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Plans and Playbooks at the Rink</h3>
+                <p class="feature-description">Practice plans with drill diagrams and times, and playbooks with your systems, ready between shifts. Drills, scouting reports and game reports are there too.</p>
+            </div>
+            <div class="feature-card">
+                <h3 class="feature-title">Your Whole Staff on the Same Page</h3>
+                <p class="feature-description">Accept team invitations, see everything your coaches share with you, and get a notification when something new arrives. Tracked games feed clips and AI game reports on the web.</p>
             </div>
         </div>
     </div>
@@ -60,17 +72,19 @@ permalink: /scout-elite-live/
     <div class="container">
         <div class="section-header">
             <h2 class="section-title">In-App Screenshots</h2>
-            <p class="section-subtitle">A quick look at Scout Elite Live in action.</p>
+            <p class="section-subtitle">A quick look at the new Scout Elite Live.</p>
         </div>
         <div style="position:relative;">
             <button class="glider-prev" aria-label="Previous" style="position:absolute; left:0; top:50%; transform:translateY(-50%); z-index:2; background:var(--secondary-bg); color:var(--text-primary); border:none; font-size:2rem; border-radius:50%; width:40px; height:40px; cursor:pointer;">‹</button>
             <div class="glider" style="margin:0 48px;">
-                <div class="glider-slide"><img src="/img/scout-elite-title.png" alt="App screenshot 1" /></div>
-                <div class="glider-slide"><img src="/img/scout-elite-screenshot1.png" alt="App screenshot 2" /></div>
-                <div class="glider-slide"><img src="/img/scout-elite-screenshot2.png" alt="App screenshot 3" /></div>
-                <div class="glider-slide"><img src="/img/scout-elite-screenshot3.png" alt="App screenshot 4" /></div>
-                <div class="glider-slide"><img src="/img/scout-elite-screenshot4.png" alt="App screenshot 5" /></div>
-                <div class="glider-slide"><img src="/img/scout-elite-screenshot-5.png" alt="App screenshot 6" /></div>
+                <div class="glider-slide"><img src="/img/live/01-track.jpg" alt="Track every shift. Every shot." loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/02-goal.jpg" alt="Log a goal in three taps" loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/03-offline.jpg" alt="No signal? Keep tracking." loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/04-stats.jpg" alt="See the game in numbers" loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/05-video.jpg" alt="Re-watch every goal" loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/06-playbook.jpg" alt="Your playbook, on the bench" loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/07-plans.jpg" alt="Practice plans ready at the rink" loading="lazy" /></div>
+                <div class="glider-slide"><img src="/img/live/08-staff.jpg" alt="Your whole staff on the same page" loading="lazy" /></div>
             </div>
             <button class="glider-next" aria-label="Next" style="position:absolute; right:0; top:50%; transform:translateY(-50%); z-index:2; background:var(--secondary-bg); color:var(--text-primary); border:none; font-size:2rem; border-radius:50%; width:40px; height:40px; cursor:pointer;">›</button>
             <div class="glider-dots" style="text-align:center; margin-top:1.5rem;"></div>
