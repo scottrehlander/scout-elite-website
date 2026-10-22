@@ -26,7 +26,7 @@ permalink: /scout-elite-live/
             </div>
         </div>
         <div class="hero-visual">
-            <img src="/img/live/hero.jpg" alt="Scout Elite Live on three phones: a video review, the live game tracker and a practice plan" class="hero-image" style="max-width: 560px; width: 100%; border-radius: 1rem;" />
+            <img src="/img/live/hero.png" alt="Scout Elite Live on three phones: a video review, the live game tracker and a practice plan" class="hero-image" style="max-width: 560px; width: 100%;" />
         </div>
     </div>
 </section>
