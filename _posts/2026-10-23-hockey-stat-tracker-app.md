@@ -174,7 +174,7 @@ Most coaches and parents I talk to track games one of four ways. Here's how they
 
 A few honest notes on that table:
 
-- **If your program already pays for Hudl, keep it.** A human-tagged breakdown is a good product, and it's the right call for a program with a video budget. It's a different job from live tracking: you get the numbers after you upload film, not on the bench. I wrote up the longer comparison in [Scout Elite vs HUDL](/hudl-alternative/).
+- **Already paying for Hudl? Compare before you renew.** A human-tagged breakdown gets you numbers after you upload film, not on the bench, and it's an add-on to a team plan that Hudl quotes per team. Scout Elite covers live tracking, clips, AI game reports, practice plans and playbooks in one place, from free up to $12.99 a month. The side-by-side is in [Scout Elite vs HUDL](/hudl-alternative/).
 - **Team-management apps** are great at schedules, availability and messaging, and live scoring is a nice extra for families following along. They aren't built to help you develop players from what happened in the game.
 - **Single-purpose stat apps** vary a lot, and some are good trackers. Where they stop is the end of the game: the numbers sit in the app, disconnected from your video, your reports and your practice plans.
 - **Paper still works.** If a notebook and a pencil get you to an honest picture of the game, use them. The point is the picture, not the tool.
