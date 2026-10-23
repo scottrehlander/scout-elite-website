@@ -143,7 +143,7 @@ Publish the game and it's on scout-elite.com too, with charts of events over gam
 - **Clips without scrubbing.** Every event you tracked has a time, so you can import a game's events into a clip project and get clips at the moments they happened. (Video upload and clip projects are on the Solo plan.)
 - **AI game reports with the stats already in.** Pick the Live game as a source when you create a game report, describe the game in a few sentences, and the AI drafts the report with the numbers included. It learns your team over the season, so the reports get sharper as you go.
 
-A good split for a youth team: a parent or assistant tracks the game in the app, shares it, and the coach has the stats, the clips and a draft report waiting without having touched a clipboard.
+A good split for a youth team: a parent or assistant tracks the game in the app and shares it (sharing is part of the Pro plan), and the coach has the stats, the clips and a draft report waiting without having touched a clipboard.
 
 ### Your whole Scout Elite account, at the rink
 
@@ -199,7 +199,7 @@ iPhone, iPad and Android phones and tablets.
 No. Games from the previous version come with you when you update.
 
 **Can a parent track and share with the coach?**
-Yes. Anyone can track a game; publish it with a free account and share it with the coach or the team from scout-elite.com.
+Anyone can track a game for free, and a free account backs it up. Sharing a published game with the coach or the team from scout-elite.com is part of the Pro plan.
 
 ### Try it this weekend
 
