@@ -4,7 +4,7 @@ display_title: "ISL Hockey: All 16 Independent School League Schools, Mapped"
 title: "Massachusetts Prep School Hockey: All 16 ISL Schools, Mapped"
 description: "Prep school hockey in Massachusetts: all 16 Independent School League schools mapped, what Keller and Eberhart mean, and how ISL fits into NEPSAC."
 date: 2026-09-09
-last_modified_at: 2026-09-10
+last_modified_at: 2026-11-04
 categories: [insights]
 tags: [ISL hockey, Independent School League, prep school hockey, NEPSAC hockey, New England prep hockey, Massachusetts prep schools, Keller Division, Eberhart Division, high school hockey, youth hockey in New England, boys hockey, girls hockey, youth hockey parent guide]
 author: "Coach Scott"
@@ -156,17 +156,9 @@ Enrollment figures, day/boarding classification and division alignment come from
 
 ## How ISL Hockey Fits Into NEPSAC
 
-The ISL is one conference inside **NEPSAC**, the New England Preparatory School Athletic Council, which is what runs the actual championships. Your ISL team's season ends in a NEPSAC bracket, not an ISL one.
+The ISL is one conference inside **NEPSAC**, the New England Preparatory School Athletic Council, which is what runs the actual championships. Your ISL team's season ends in a NEPSAC bracket, not an ISL one: the **Elite 8** (Stuart/Corkery, the best eight teams regardless of school size), or the **Large School** (Martin/Earl) or **Small School** (Piatelli/Simmons) bracket.
 
-NEPSAC sorts boys hockey into three postseason tournaments, each an eight-team field:
-
-| Tournament | Also called | What it is |
-|---|---|---|
-| **Stuart/Corkery** | Elite 8 | The open bracket. The best eight teams in New England prep, regardless of school size. |
-| **Martin/Earl** | Large School | The large-school bracket for teams not pulled into the Elite 8. |
-| **Piatelli/Simmons** | Small School | The small-school bracket. |
-
-NEPSAC classifies by student body size, and the ISL classifies by boys enrollment, so the two do not line up cleanly. That is not a bug anyone is fixing. It is just something to know before you assume a division tells you a level.<sup><a href="#sources">†</a></sup>
+NEPSAC splits schools into Large and Small by boys' enrollment, and redoes the split every season. The ISL's Keller and Eberhart divisions are the league's own alignment, so the two do not line up cleanly. That is not a bug anyone is fixing. It is just something to know before you assume a division tells you a level.<sup><a href="#sources">†</a></sup> How the brackets get seeded, and every other league that feeds them, is in the [NEPSAC guide](/blog/nepsac-prep-hockey-guide/).
 
 ### What that looked like in 2026
 
@@ -188,9 +180,9 @@ Look at that table again with the division column in mind. Eberhart, the "small 
 
 ## The Girls Side
 
-Thirteen ISL schools field girls varsity hockey, and unlike the boys, **there is no Keller/Eberhart split**. It is one division.<sup><a href="#sources">†</a></sup>
+Thirteen ISL schools field girls varsity hockey. Twelve of them play the ISL girls' schedule, and unlike the boys, **there is no Keller/Eberhart split**. It is one division.<sup><a href="#sources">†</a></sup>
 
-Brooks, BB&N, Governor's, Groton, Lawrence, Middlesex, Milton, Nobles, Rivers, St. George's, St. Mark's, Tabor, and Thayer.
+Brooks, BB&N, Governor's, Groton, Lawrence, Middlesex, Milton, Nobles, St. George's, St. Mark's, Tabor, and Thayer. The thirteenth, Rivers, is not in the ISL girls' standings; U.S. Hockey Report lists its girls' team as an independent.
 
 It also does not get the attention it deserves relative to its results. In 2025-26, **Nobles went 27-1-0** and took the No. 1 seed in the girls Elite 8 (the Chuck Vernon tournament), losing 5-4 in overtime in the semifinals to eventual champion Loomis Chaffee. **Tabor**, seeded seventh, knocked off No. 2 Phillips Andover 2-1 in overtime in the quarterfinals before losing its own semifinal 3-2. Two ISL schools in the last four of New England's top girls bracket.<sup><a href="#sources">†</a></sup>
 

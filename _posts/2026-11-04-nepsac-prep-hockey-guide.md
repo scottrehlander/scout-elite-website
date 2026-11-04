@@ -2,7 +2,7 @@
 layout: post
 display_title: "NEPSAC Hockey: Every New England Prep School Team, Mapped"
 title: "New England Prep School Hockey: Every NEPSAC School, Mapped"
-description: "Every NEPSAC prep hockey school mapped by league, which leagues allow postgraduates, how the Elite 8 and Large/Small brackets are picked, and who actually wins."
+description: "All 85 NEPSAC prep and boarding school hockey teams, mapped and listed by state: which leagues take postgraduates, how the Elite 8 is picked, and who wins."
 date: 2026-11-04
 last_modified_at: 2026-11-04
 categories: [insights]
@@ -11,7 +11,7 @@ author: "Coach Scott"
 excerpt: "Prep hockey is not one league. It is 85 schools in about ten leagues with different rules, and one of those rules decides how old the kid across from yours is. Every NEPSAC school mapped, plus how the playoffs actually get picked."
 image:
   path: /img/blog/nepsac-prep-hockey-guide.jpg
-  alt: "NEPSAC prep hockey guide: New England prep school hockey leagues and the three-bracket postseason over rink line art"
+  alt: "NEPSAC hockey guide: the three boys' prep brackets, Elite 8, Large School and Small School, with their 2025-26 champions over rink line art"
 permalink: /blog/nepsac-prep-hockey-guide/
 ---
 
@@ -303,7 +303,7 @@ The plain-language takeaway: **more than half of a team's RPI is its opponents' 
 
 To be eligible at all, a boys' team must play at least 15 games against NEPSAC hockey teams and no more than 35 games in total, scrimmages included.<sup><a href="#sources">5</a></sup> The quarterfinals are the Wednesday after the regular season ends, the semifinals that Saturday, and the finals that Sunday. The 2026 boys' finals were on March 8 at UConn.<sup><a href="#sources">8</a></sup> NEPSAC had not published the 2027 dates when this was written.
 
-The girls' Elite 8 is the **Chuck Vernon** tournament, with the **Patsy Odden** (Large) and **Dorothy Howard** (Small) tournaments alongside it. The girls' format began in 2020; before that, girls' prep hockey had Division 1 and Division 2 tournaments.<sup><a href="#sources">8,11</a></sup> Hockey Journal reports that the girls' Elite 8 is also picked with the JSPR system.<sup><a href="#sources">16</a></sup>
+The girls' Elite 8 is the **Chuck Vernon** tournament, with the **Patsy Odden** (Large) and **Dorothy Howard** (Small) tournaments alongside it. The girls' format began in 2020; before that, girls' prep hockey had Division 1 and Division 2 tournaments.<sup><a href="#sources">8,11</a></sup> The girls' selection works the same way. The top 24 eligible teams go to the postseason: the top 8 by JSPR, regardless of size, play the Chuck Vernon, the next 8 Large schools by RPI play the Patsy Odden, and the next 8 Small schools play the Dorothy Howard. A team needs at least 15 games and no more than 35.<sup><a href="#sources">16,18</a></sup> That description comes from girlsprephockey.us, which says its standings are its own reading of the league rules, because the girls' by-laws are not published online.
 
 ## Who Actually Wins
 
@@ -352,7 +352,6 @@ The girls' calendar has a shape worth knowing before your daughter's first winte
 
 Not every "tournament" is a bracket. The Exeter Invitational in December 2025 ran eight teams through three games each over a weekend, with no final.<sup><a href="#sources">15</a></sup> If you want to watch a lot of girls' prep hockey in one place, the holiday weekend is the one.
 
-<!-- TODO (Scott saving girlsprephockey.us 2026 league standings): add girls' league membership for Williston, Deerfield, Exeter, Andover, Cushing; reconcile ISL girls count (ISL post says 13, roster says 12 with Rivers girls listed independent by USHR). -->
 
 ## Choosing a School: What to Ask
 
@@ -426,5 +425,7 @@ That is what we built Scout Elite for: coaches and parents turning game video in
 16. ["Girls Elite 8 Forecast: Who Will Make the Top Prep Tournament?"](https://hockeyjournal.com/girls-elite-8-forecast-who-will-make-the-top-prep-tournament/){:target="_blank" rel="noopener"} New England Hockey Journal, February 16, 2024. The JSPR system for the girls' Elite 8.
 
 17. Boarding/day and coed status: each school's own published description (About, Fast Facts or Admissions pages), or the NAIS school directory where the school's site does not say. The full list, with a source for every school, is available on request.
+
+18. girlsprephockey.us, ["2026 League Standings."](https://girlsprephockey.us/seasons/43/standings){:target="_blank" rel="noopener"} The 2025-26 girls' standings for all 59 teams and the girls' postseason selection rules. The site says its standings are "calculated based on interpretation of league rules, and may not reflect official league standings."
 
 {% include ma-hockey-guide-series.html current="nepsac" %}
