@@ -45,8 +45,19 @@ Exeter 4 Brewster 2, Kimball Union 10 Greenwich CDS 0, Exeter 1 Hill 1 (OT). So 
 showcase weekends of three games, not knockout brackets (at least this one; check others before
 generalizing).
 
-## Not yet used
+## League standings (saved by Scott 2026-11-04)
 
-The site also has per-season league standings, college commitments and honors back to 2015. The
-standings pages would close the girls' league gaps in `nepsac-brackets.md` (Williston, Deerfield,
-Exeter, Andover, Cushing: league UNKNOWN), if Scott saves them.
+`girls-standings-2025-26.tsv`: https://girlsprephockey.us/seasons/43/standings, all 59 teams with record,
+W%, RPI and the site's L/S label. It is one league-wide table with **no conference column**, so it does not
+settle girls' conference membership (the Williston/Deerfield/Exeter/Andover/Cushing labels stay as USHR has
+them, source 12). What it does give, verbatim: "Teams must play a minimum of 15 games, and a maximum of 35
+games"; "The top 24 teams (after removing ASC and AFF teams) will play in the New England Postseason
+Tournament"; "Chuck Vernon (Open) Tournament: League teams ranked 1 through 8, any school size. Ranked by
+JSPR"; "Patsy Odden Tournament: next 8 schools classified as 'Large'. Ranked by RPI"; "Dorothy Howard
+Tournament: next 8 schools classified as 'Small'. Ranked by RPI." Caveat on the page: "League standings are
+calculated based on interpretation of league rules, and may not reflect official league standings."
+
+**ISL girls count (settled):** USHR's ISL girls' standings list 12 teams for 2025-26
+(https://girls.ushr.com/neprep/standings/2025/isl) and 2026-27 (.../2026/isl); Rivers is not among them.
+Rivers fields a girls' team (14-7-4 in 2025-26 above). ISL post corrected to "Thirteen ... Twelve of them
+play the ISL girls' schedule".

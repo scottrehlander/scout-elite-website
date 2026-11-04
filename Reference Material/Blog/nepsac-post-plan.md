@@ -1,7 +1,8 @@
 # Backlog: the NEPSAC post
 
 **Status:** requested by Scott 2026-09-10, right after the ISL guide shipped. Research done 2026-11-04
-(`nepsac-research/`, see §7); outline next, for Scott's OK before drafting.
+(`nepsac-research/`, see §7). Drafted 2026-11-04 on branch `draft/nepsac-post` with the hero image and the
+ISL post trim/corrections; awaiting Scott's read before publish.
 **Target:** new post in `_posts/`, evergreen permalink, suggested `/blog/nepsac-prep-hockey-guide/`.
 **Why:** the [ISL guide](/blog/isl-prep-school-hockey-guide/) leans on NEPSAC in three places
 (the three-bracket postseason, the classification mismatch, the 2026 results table) and links out
@@ -124,6 +125,10 @@ Learned the hard way during the ISL pass:
 - Run the UTM audit and verify the map at 1280 **and** 375.
 
 ## 7. Research results (2026-11-04)
+
+**Scott (2026-11-04): make it clear the post was researched in November 2026 and that every result is
+from the prior (2025-26) season.** Outline approved; section 8 ("what to ask") in; girls' season as one
+compact calendar table, not tournament-by-tournament results.
 
 Files in `nepsac-research/`, every claim with a URL, a verbatim quote and VERIFIED/SECONDARY/UNKNOWN:
 `nepsac-pg-rules.md`, `nepsac-brackets.md`, `nepsac-schools.csv` (82 schools, geocoded) +

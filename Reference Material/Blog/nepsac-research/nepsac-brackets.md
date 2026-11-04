@@ -166,7 +166,7 @@ Girls' Elite tally (6 tournaments): ISL (Nobles) 2, Founders (Loomis) 2, Willist
 - Girls' association 2026-27 presidents: Christa Talbot Syfu (Williston) and Claudia Asano Barcomb (Governor's) (VERIFIED, NEPSGIHA page).
 
 ## Gaps
-1. Girls' by-laws not linked on nepsac.org, so the girls' classification rule, minimum games and selection criteria are unconfirmed (JSPR for the girls' Elite 8 is SECONDARY, 2024).
+1. Girls' by-laws not linked on nepsac.org, so the girls' classification rule is unconfirmed. Selection (top 8 by JSPR; next 8 Large and next 8 Small by RPI; 15-35 games) is now SECONDARY from girlsprephockey.us 2026 standings (see `girls-tournaments-2025-26.md`), no longer only the 2024 Hockey Journal line.
 2. 2027 tournament dates and venues are not published (Mar 7, 2027 final is an inference).
 3. The boys' conference column uses 2022-23 alignments for all years. Girls' conferences are mostly unconfirmed.
 4. The 2009 boys' bracket and pre-2020 girls' Division 1 champions were not compiled.
