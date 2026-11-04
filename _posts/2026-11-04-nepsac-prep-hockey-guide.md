@@ -150,8 +150,8 @@ Every school with a boys' or girls' varsity prep team in 2026-27. The map opens 
 		[42.2909, -71.2885, "Girls only", "Independent", "Dana Hall", "Wellesley, MA", "Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Boarding and day, girls. NEPSAC member."]
 	];
 	var VIEWS = {
-		boys: {key: 2, title: "Boys' league", tag: 'boys', labels: {'Girls only': 'Girls-only schools'}, colors: {"ISL Keller": "#a51c30", "ISL Eberhart": "#0b5cab", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#c2255c", "Two Nations Prep": "#1098ad", "Independent": "#495057", "Girls only": "#f08c00"}},
-		girls: {key: 3, title: "Girls' league", tag: 'girls', colors: {"ISL": "#a51c30", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#c2255c", "Vaillancourt": "#1098ad", "Independent": "#495057", "Outside prep leagues": "#adb5bd"}}
+		boys: {key: 2, title: "Boys' league", tag: 'boys', labels: {'Girls only': 'Girls-only schools'}, colors: {"ISL Keller": "#a51c30", "ISL Eberhart": "#0b5cab", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#8b5a2b", "Two Nations Prep": "#1098ad", "Independent": "#495057", "Girls only": "#f08c00"}},
+		girls: {key: 3, title: "Girls' league", tag: 'girls', colors: {"ISL": "#a51c30", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#8b5a2b", "Vaillancourt": "#1098ad", "Independent": "#495057", "Outside prep leagues": "#adb5bd"}}
 	};
 
 	function marker(r, color) {
