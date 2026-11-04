@@ -30,7 +30,9 @@ If you are here for the ISL specifically, the [ISL guide](/blog/isl-prep-school-
 
 **NEPSAC** (the New England Preparatory School Athletic Council) is not a league you play a regular season in. It is the body that sets eligibility rules for its member schools and runs the championships.<sup><a href="#sources">1</a></sup>
 
-The regular season happens in the **leagues**: the ISL, the Founders and Housatonic schools, the Lakes Region, the Holt, the FAA, the Two Nations Prep league, and a large group of independents that schedule on their own. Your league is your regular season. NEPSAC is your postseason.
+The regular season happens in the **leagues**: the [ISL](https://www.islsports.org/boys-ice-hockey/){:target="_blank" rel="noopener"}, the [Founders](https://thefoundersleague.org/){:target="_blank" rel="noopener"} and [Housatonic](https://ushr.com/neprep/standings/2026/housatonic){:target="_blank" rel="noopener"} schools, the [Lakes Region](https://ushr.com/neprep/standings/2026/lakes-region){:target="_blank" rel="noopener"}, the [Holt](https://ushr.com/neprep/standings/2026/holt-conference){:target="_blank" rel="noopener"}, the [FAA](https://www.faasports.org/sports/hockey-boys){:target="_blank" rel="noopener"}, the [Two Nations Prep](https://ushr.com/neprep/standings/2026/two-nations-prep){:target="_blank" rel="noopener"} league, and a large group of independents that schedule on their own. Your league is your regular season. NEPSAC is your postseason.
+
+The ISL, the Founders League and the FAA run their own websites, and those links go there. We could not find an official site for the Housatonic, Lakes Region, Holt or Two Nations Prep leagues (NEPSAC's own league directory lists none for the Lakes Region), so those links go to each league's standings on U.S. Hockey Report.<sup><a href="#sources">1,12</a></sup>
 
 Three things about that structure matter more than anything else on this page:
 
@@ -224,7 +226,7 @@ A few things the table does not show:
 - **"Independent" is not a weaker tier.** It just means the school schedules on its own instead of inside a conference. Andover, Exeter, Cushing, Dexter Southfield, Williston, Berkshire and Winchendon are all independents, and independents have won 13 NEPSAC boys' titles since 2010.<sup><a href="#sources">8</a></sup>
 - **Founders vs. Housatonic.** The Founders League is a Connecticut all-sports conference. For boys' hockey, its eight schools play in the Housatonic league with Deerfield and Salisbury, and NEPSAC's boys' hockey by-laws list the Housatonic, not the Founders, as the league.<sup><a href="#sources">5</a></sup>
 - **The FAA is the one most guides miss.** It is an all-sports conference of independent day schools in Fairfield County and Westchester, and it runs its own boys' and girls' hockey leagues. Greenwich Country Day won the 2026 boys' title, beating Kingswood Oxford 4-3 in overtime.<sup><a href="#sources">13,14</a></sup> None of the FAA boys' teams is on NEPSAC's 2026-27 boys' tournament list, so their season ends with the FAA tournament. The FAA girls' teams are on the girls' list and can play both.<sup><a href="#sources">6,7</a></sup>
-- **The girls' leagues are not the same as the boys'.** Some schools play girls' hockey in a different league, or in a girls-only one like the Vaillancourt Conference (formed in 2023).<sup><a href="#sources">1</a></sup> The map popups show each school's girls' league.
+- **The girls' leagues are not the same as the boys'.** Some schools play girls' hockey in a different league, or in a girls-only one like the [Vaillancourt Conference](https://sites.google.com/view/vaillancourtconference/home){:target="_blank" rel="noopener"} (formed in 2023).<sup><a href="#sources">1</a></sup> The map popups show each school's girls' league.
 
 ### Schools by state
 
