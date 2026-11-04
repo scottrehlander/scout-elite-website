@@ -44,11 +44,11 @@ Three things about that structure matter more than anything else on this page:
 
 ## The Map
 
-Every school with a boys' or girls' varsity prep team in 2026-27. The map opens on all 85 schools, colored by boys' league, with girls-only schools in their own color. **Switch to "Girls' teams only"** to see the 66 schools with a girls' varsity team, colored by girls' league. Click any school for both leagues, whether it boards, and whether it is a full NEPSAC member. Use the layer control (top right) to show one league at a time.
+Every school with a boys' or girls' varsity prep team in 2026-27. The map opens on all 85 schools, colored by boys' league, with girls-only schools in their own color. **Switch to "Girls"** to see the 66 schools with a girls' varsity team, colored by girls' league. Click any school for both leagues, whether it boards, and whether it is a full NEPSAC member. Use the layer control (top right) to show one league at a time.
 
 <div id="nepsac-view" role="group" aria-label="Map view" style="display:flex;gap:8px;flex-wrap:wrap;margin:1.5em 0 0.6em">
-	<button type="button" data-view="boys" aria-pressed="true" style="padding:0.45em 1em;border-radius:6px;border:1px solid #007acc;background:#007acc;color:#fff;font-weight:600;cursor:pointer">All 85 schools, by boys' league</button>
-	<button type="button" data-view="girls" aria-pressed="false" style="padding:0.45em 1em;border-radius:6px;border:1px solid #007acc;background:transparent;color:inherit;font-weight:600;cursor:pointer">Girls' teams only (66), by girls' league</button>
+	<button type="button" data-view="boys" aria-pressed="true" style="padding:0.45em 1em;border-radius:6px;border:1px solid #007acc;background:#007acc;color:#fff;font-weight:600;cursor:pointer">Boys</button>
+	<button type="button" data-view="girls" aria-pressed="false" style="padding:0.45em 1em;border-radius:6px;border:1px solid #007acc;background:transparent;color:inherit;font-weight:600;cursor:pointer">Girls</button>
 </div>
 <div id="nepsac-map" style="height: 600px; width: 100%; border-radius: 8px; margin: 0 0 1.5em; z-index: 1;"></div>
 
@@ -343,7 +343,7 @@ Girls' Elite 8 (Chuck Vernon) champions since it began: Noble and Greenough (202
 
 ## What a Girls' Prep Season Looks Like
 
-First, which schools: 66 of the 85 schools on the map field a girls' varsity team. [Switch the map to "Girls' teams only"](#nepsac-view) to see just those, colored by girls' league, and the state-by-state list marks the 19 that don't.
+First, which schools: 66 of the 85 schools on the map field a girls' varsity team. [Switch the map to "Girls"](#nepsac-view) to see just those, colored by girls' league, and the state-by-state list marks the 19 that don't.
 
 The girls' calendar has a shape worth knowing before your daughter's first winter. In 2025-26, 20 tournaments were on it:<sup><a href="#sources">15</a></sup>
 
