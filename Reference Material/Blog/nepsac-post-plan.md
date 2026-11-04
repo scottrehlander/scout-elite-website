@@ -1,6 +1,7 @@
 # Backlog: the NEPSAC post
 
-**Status:** requested by Scott 2026-09-10, right after the ISL guide shipped. Next up.
+**Status:** requested by Scott 2026-09-10, right after the ISL guide shipped. Research done 2026-11-04
+(`nepsac-research/`, see §7); outline next, for Scott's OK before drafting.
 **Target:** new post in `_posts/`, evergreen permalink, suggested `/blog/nepsac-prep-hockey-guide/`.
 **Why:** the [ISL guide](/blog/isl-prep-school-hockey-guide/) leans on NEPSAC in three places
 (the three-bracket postseason, the classification mismatch, the 2026 results table) and links out
@@ -94,7 +95,7 @@ Learned the hard way during the ISL pass:
 | Source | Status |
 |---|---|
 | `nepsac.org` | works, plain fetch. Leagues list + tournament/postseason pages |
-| `hockeyjournal.com` (NEHJ) | **WebFetch gets 403.** Works with `curl -A "Mozilla/5.0 (Macintosh...) Chrome/128.0"`. Article body sits in `<article>`; first ~2 paragraphs plus the full results block render for free, the per-team analysis is paywalled |
+| `hockeyjournal.com` (NEHJ) | WebFetch worked on 2026-11-04 (it 403'd in September). If it blocks again, skip it: **never spoof a browser User-Agent to get past a bot check.** First ~2 paragraphs plus the results block are free, the per-team analysis is paywalled |
 | `ushr.com` | team/league lists render free; **standings and rankings are subscriber-only** |
 | `islsports.org` | works. Its archived standings links now point at a migrated Arbiter platform and are dead, do not link them |
 | `rschoolstats.com` | dead, migrated to Arbiter. Do not cite |
@@ -121,3 +122,37 @@ Learned the hard way during the ISL pass:
   columns; vary the composition so the two do not read as duplicates. A conference-count or
   bracket-tree motif would work.
 - Run the UTM audit and verify the map at 1280 **and** 375.
+
+## 7. Research results (2026-11-04)
+
+Files in `nepsac-research/`, every claim with a URL, a verbatim quote and VERIFIED/SECONDARY/UNKNOWN:
+`nepsac-pg-rules.md`, `nepsac-brackets.md`, `nepsac-schools.csv` (82 schools, geocoded) +
+`nepsac-schools-notes.md`. Key quotes spot-checked against the source documents.
+
+**What changed from the plan above:**
+- **The PG section is simpler than §3 assumed.** Only two leagues publish a PG rule: the ISL bans
+  PGs, the MAPL allows "a limited number" with a July 1 age cutoff. Every other league publishes
+  nothing, so NEPSAC's rule is the only written limit: 19 or younger on September 1 (2023-24
+  handbook, newest found; same wording on nepsac.org today). NEPSAC's documents never mention PGs.
+- **Classification is a median split, not a threshold:** boys' schools "divided evenly based upon
+  male enrollment in grades 9-12 prior to the start of the season" (NEPSIHA by-laws 2-25-26).
+  Lists move yearly: Cushing won the 2026 Large bracket and is Small for 2026-27.
+- **Elite 8 selection** = top 16 by RPI (25% own win %, 21% opponents', 54% opponents' opponents')
+  into a pairwise comparison (JSPR); Large/Small filled by RPI. Min 15 league games, max 35.
+- **Champions 2010-2026:** boys' Elite 8 won by Housatonic schools 8 times (Salisbury 5, Avon 3),
+  Lakes Region 4 (all KUA), ISL 2. 2020 was played; 2021 had no tournament. Conference labels are
+  SECONDARY (2022-23 previews applied backwards).
+- **82 schools** (75 boys' teams, 59 girls'), 66 in New England. Kingswood Oxford's league disagrees
+  between nepsac.org and USHR. St. Paul's left the ISL in 2017 over financial aid, not PGs.
+
+**Search evidence for the angle (GSC, 16 months, see the 2026-11-04 SEO review):** we already get
+impressions with zero clicks, ranking 10-30, for "how do i choose between new england prep schools",
+"best hockey boarding school new england nepsac", "top ice hockey boarding schools new england",
+"hockey prep schools in new england", "boarding school with two ice rinks nepsac". Autocomplete:
+"best prep schools for hockey in new england", "hockey prep schools massachusetts / new hampshire /
+connecticut / maine", "nepsac hockey", "nepsac schools". So the post should also serve the
+*choosing* parent, not only explain the structure.
+
+**Before publishing:** spot-check boarding/day and coed columns on school sites (from the agent's
+general knowledge, not cited); confirm Kingswood Oxford's hockey league; the girls' by-laws are
+unlinked, so girls' classification and selection are SECONDARY.
