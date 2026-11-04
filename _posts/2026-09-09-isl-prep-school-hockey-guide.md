@@ -42,9 +42,13 @@ All 16 schools field boys varsity hockey. Thirteen field girls varsity hockey (t
 
 ## The Map
 
-Sixteen campuses. Use the toggle to separate the two boys hockey divisions. Click a marker for the town, division, and what kind of school it is.
+Sixteen campuses. The map opens on the boys' side, split into the two divisions; **switch to "Girls"** for the 13 schools with a girls' varsity team. Click a marker for the town, the league or division, and what kind of school it is.
 
-<div id="isl-map" style="height: 560px; width: 100%; border-radius: 8px; margin: 1.5em 0; z-index: 1;"></div>
+<div id="isl-view" role="group" aria-label="Map view" style="display:flex;gap:8px;flex-wrap:wrap;margin:1.5em 0 0.6em">
+	<button type="button" data-view="boys" aria-pressed="true" style="padding:0.45em 1.2em;border-radius:6px;border:1px solid #007acc;background:#007acc;color:#fff;font-weight:600;cursor:pointer">Boys</button>
+	<button type="button" data-view="girls" aria-pressed="false" style="padding:0.45em 1.2em;border-radius:6px;border:1px solid #007acc;background:transparent;color:inherit;font-weight:600;cursor:pointer">Girls</button>
+</div>
+<div id="isl-map" style="height: 560px; width: 100%; border-radius: 8px; margin: 0 0 1.5em; z-index: 1;"></div>
 
 <script>
 (function() {
@@ -55,64 +59,73 @@ Sixteen campuses. Use the toggle to separate the two boys hockey divisions. Clic
 		maxZoom: 13
 	}).addTo(map);
 
-	function marker(lat, lng, color, name, town, note) {
-		return L.circleMarker([lat, lng], {
-			radius: 8,
-			fillColor: color,
-			color: '#ffffff',
-			weight: 2,
-			opacity: 1,
-			fillOpacity: 0.9
-		}).bindPopup(
-			'<strong>' + name + '</strong><br>' + town +
-			'<br><span style="font-size:0.92em">' + note + '</span>'
-		);
+	// [lat, lng, boys' division, girls' league (null = no girls' varsity), name, town, boys popup note, girls popup note]
+	var S = [
+		[42.4065, -71.1801, "Keller", null, "Belmont Hill School", "Belmont, MA", "Keller Division. Boys only, day school, 471 students. Elite 8 team in 2026.", ""],
+		[42.7502, -70.8981, "Keller", "ISL", "The Governor's Academy", "Byfield, MA", "Keller Division. Boarding, 405 students. Founded 1763, the oldest boarding school in New England.", "Girls: ISL (one division). Boys: Keller Division.<br>Boarding, 405 students."],
+		[42.6042, -71.5667, "Keller", "ISL", "Lawrence Academy", "Groton, MA", "Keller Division. Boarding, 424 students. 2018 NEPSAC champions.", "Girls: ISL (one division). Boys: Keller Division.<br>Boarding, 424 students."],
+		[42.256, -71.0705, "Keller", "ISL", "Milton Academy", "Milton, MA", "Keller Division. Boarding, 471 students. Co-hosts the Flood-Marr and Harrington tournaments.", "Girls: ISL (one division). Boys: Keller Division.<br>Boarding, 471 students."],
+		[42.2595, -71.1839, "Keller", "ISL", "Noble and Greenough School", "Dedham, MA", "Keller Division. Day-primary, 518 students. Girls team went 27-1-0 in 2025-26.", "Girls: ISL (one division). Boys: Keller Division.<br>Day-primary, 518 students. Girls team went 27-1-0 in 2025-26."],
+		[42.2694, -71.2067, "Keller", null, "St. Sebastian's School", "Needham, MA", "Keller Division. Boys only, day school, 380 students. No. 4 seed in the 2026 Elite 8.", ""],
+		[41.7063, -70.7692, "Keller", "ISL", "Tabor Academy", "Marion, MA", "Keller Division. Boarding, 507 students. Top seed in the 2026 Large School bracket.", "Girls: ISL (one division). Boys: Keller Division.<br>Boarding, 507 students."],
+		[42.2076, -71.0066, "Keller", "ISL", "Thayer Academy", "Braintree, MA", "Keller Division. Day school, 496 students. Two Hobey Baker winners among its alumni.", "Girls: ISL (one division). Boys: Keller Division.<br>Day school, 496 students."],
+		[42.3727, -71.135, "Eberhart", "ISL", "Buckingham Browne &amp; Nichols", "Cambridge, MA", "Eberhart Division. Day school, 525 students, the largest in the league.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Day school, 525 students, the largest in the league."],
+		[42.7075, -71.0883, "Eberhart", "ISL", "Brooks School", "North Andover, MA", "Eberhart Division. Boarding, 353 students. Won the NEPSAC Large School title in 2015.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 353 students."],
+		[42.5947, -71.5993, "Eberhart", "ISL", "Groton School", "Groton, MA", "Eberhart Division. Boarding, 351 students. Joined the ISL in 1972.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 351 students."],
+		[42.4967, -71.3686, "Eberhart", "ISL", "Middlesex School", "Concord, MA", "Eberhart Division. Boarding, 402 students.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 402 students."],
+		[42.3244, -71.3264, "Eberhart", "Outside the ISL", "The Rivers School", "Weston, MA", "Eberhart Division. Day school, 382 students. Sent three players to the USA Hockey NTDP in 2025.", "Girls: not in the ISL girls&#x27; standings (USHR lists the team as independent). Boys: Eberhart Division.<br>Day school, 382 students."],
+		[42.2761, -71.1581, "Eberhart", null, "The Roxbury Latin School", "West Roxbury, MA", "Eberhart Division. Boys only, day school, 219 students. Founded 1645, the oldest school in continuous existence in North America.", ""],
+		[41.4883, -71.2713, "Eberhart", "ISL", "St. George's School", "Middletown, RI", "Eberhart Division. Boarding, 380 students. The only ISL school outside Massachusetts.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 380 students."],
+		[42.3095, -71.5298, "Eberhart", "ISL", "St. Mark's School", "Southborough, MA", "Eberhart Division. Boarding, 380 students. 24-3-0 and the 2026 Elite 8 runner-up.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 380 students."]
+	];
+	var VIEWS = {
+		boys: {key: 2, note: 6, title: 'ISL Boys Hockey', groups: [['Keller', 'Keller Division', '#a51c30'], ['Eberhart', 'Eberhart Division', '#0b5cab']]},
+		girls: {key: 3, note: 7, title: 'ISL Girls Hockey', groups: [['ISL', 'ISL girls (one division)', '#7048e8'], ['Outside the ISL', 'Outside the ISL girls&#x27; standings', '#868e96']]}
+	};
+
+	function marker(r, color, note) {
+		return L.circleMarker([r[0], r[1]], {
+			radius: 8, fillColor: color, color: '#ffffff', weight: 2, opacity: 1, fillOpacity: 0.9
+		}).bindPopup('<strong>' + r[4] + '</strong><br>' + r[5] + '<br><span style="font-size:0.92em">' + r[note] + '</span>');
 	}
 
-	var KEL = '#a51c30';
-	var EBE = '#0b5cab';
-
-	var keller = L.layerGroup([
-		marker(42.4065, -71.1801, KEL, 'Belmont Hill School', 'Belmont, MA', 'Keller Division. Boys only, day school, 471 students. Elite 8 team in 2026.'),
-		marker(42.7502, -70.8981, KEL, "The Governor's Academy", 'Byfield, MA', 'Keller Division. Boarding, 405 students. Founded 1763, the oldest boarding school in New England.'),
-		marker(42.6042, -71.5667, KEL, 'Lawrence Academy', 'Groton, MA', 'Keller Division. Boarding, 424 students. 2018 NEPSAC champions.'),
-		marker(42.2560, -71.0705, KEL, 'Milton Academy', 'Milton, MA', 'Keller Division. Boarding, 471 students. Co-hosts the Flood-Marr and Harrington tournaments.'),
-		marker(42.2595, -71.1839, KEL, 'Noble and Greenough School', 'Dedham, MA', 'Keller Division. Day-primary, 518 students. Girls team went 27-1-0 in 2025-26.'),
-		marker(42.2694, -71.2067, KEL, "St. Sebastian's School", 'Needham, MA', 'Keller Division. Boys only, day school, 380 students. No. 4 seed in the 2026 Elite 8.'),
-		marker(41.7063, -70.7692, KEL, 'Tabor Academy', 'Marion, MA', 'Keller Division. Boarding, 507 students. Top seed in the 2026 Large School bracket.'),
-		marker(42.2076, -71.0066, KEL, 'Thayer Academy', 'Braintree, MA', 'Keller Division. Day school, 496 students. Two Hobey Baker winners among its alumni.')
-	]);
-
-	var eberhart = L.layerGroup([
-		marker(42.3727, -71.1350, EBE, 'Buckingham Browne &amp; Nichols', 'Cambridge, MA', 'Eberhart Division. Day school, 525 students, the largest in the league.'),
-		marker(42.7075, -71.0883, EBE, 'Brooks School', 'North Andover, MA', 'Eberhart Division. Boarding, 353 students. Won the NEPSAC Large School title in 2015.'),
-		marker(42.5947, -71.5993, EBE, 'Groton School', 'Groton, MA', 'Eberhart Division. Boarding, 351 students. Joined the ISL in 1972.'),
-		marker(42.4967, -71.3686, EBE, 'Middlesex School', 'Concord, MA', 'Eberhart Division. Boarding, 402 students.'),
-		marker(42.3244, -71.3264, EBE, 'The Rivers School', 'Weston, MA', 'Eberhart Division. Day school, 382 students. Sent three players to the USA Hockey NTDP in 2025.'),
-		marker(42.2761, -71.1581, EBE, 'The Roxbury Latin School', 'West Roxbury, MA', 'Eberhart Division. Boys only, day school, 219 students. Founded 1645, the oldest school in continuous existence in North America.'),
-		marker(41.4883, -71.2713, EBE, "St. George's School", 'Middletown, RI', 'Eberhart Division. Boarding, 380 students. The only ISL school outside Massachusetts.'),
-		marker(42.3095, -71.5298, EBE, "St. Mark's School", 'Southborough, MA', "Eberhart Division. Boarding, 380 students. 24-3-0 and the 2026 Elite 8 runner-up.")
-	]);
-
-	keller.addTo(map);
-	eberhart.addTo(map);
-
-	L.control.layers(null, {
-		'<span style="color:#a51c30;font-weight:600">Keller Division</span>': keller,
-		'<span style="color:#0b5cab;font-weight:600">Eberhart Division</span>': eberhart
-	}, { collapsed: false }).addTo(map);
-
-	var legend = L.control({position: 'bottomright'});
-	legend.onAdd = function() {
-		var div = L.DomUtil.create('div', '');
-		div.style.cssText = 'background:white;padding:10px 14px;border-radius:6px;font-size:0.82em;line-height:1.7;box-shadow:0 1px 5px rgba(0,0,0,0.2)';
-		div.innerHTML =
-			'<strong style="display:block;margin-bottom:4px;color:#222">ISL Boys Hockey</strong>' +
-			'<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#a51c30;margin-right:6px;vertical-align:middle"></span><span style="color:#222">Keller Division</span><br>' +
-			'<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#0b5cab;margin-right:6px;vertical-align:middle"></span><span style="color:#222">Eberhart Division</span>';
-		return div;
-	};
-	legend.addTo(map);
+	var current = [], control = null, legend = null;
+	function show(name) {
+		var v = VIEWS[name], overlays = {};
+		current.forEach(function(g) { map.removeLayer(g); });
+		if (control) map.removeControl(control);
+		if (legend) map.removeControl(legend);
+		current = [];
+		v.groups.forEach(function(gr) {
+			var rows = S.filter(function(r) { return r[v.key] === gr[0]; });
+			var g = L.layerGroup(rows.map(function(r) { return marker(r, gr[2], v.note); })).addTo(map);
+			current.push(g);
+			overlays['<span style="color:' + gr[2] + ';font-weight:600">' + gr[1] + ' [' + rows.length + ']</span>'] = g;
+		});
+		control = L.control.layers(null, overlays, { collapsed: false }).addTo(map);
+		legend = L.control({position: 'bottomright'});
+		legend.onAdd = function() {
+			var div = L.DomUtil.create('div', '');
+			div.style.cssText = 'background:white;padding:10px 14px;border-radius:6px;font-size:0.82em;line-height:1.7;box-shadow:0 1px 5px rgba(0,0,0,0.2)';
+			var h = '<strong style="display:block;margin-bottom:4px;color:#222">' + v.title + '</strong>';
+			v.groups.forEach(function(gr) {
+				h += '<span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:' + gr[2] + ';margin-right:6px;vertical-align:middle"></span><span style="color:#222">' + gr[1] + '</span><br>';
+			});
+			div.innerHTML = h;
+			return div;
+		};
+		legend.addTo(map);
+		document.querySelectorAll('#isl-view button').forEach(function(b) {
+			var on = b.getAttribute('data-view') === name;
+			b.setAttribute('aria-pressed', on ? 'true' : 'false');
+			b.style.background = on ? '#007acc' : 'transparent';
+			b.style.color = on ? '#fff' : 'inherit';
+		});
+	}
+	document.querySelectorAll('#isl-view button').forEach(function(b) {
+		b.addEventListener('click', function() { show(b.getAttribute('data-view')); });
+	});
+	show('boys');
 })();
 </script>
 
