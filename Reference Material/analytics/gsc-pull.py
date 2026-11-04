@@ -52,6 +52,31 @@ def resolve_site(svc):
 
 
 def query(svc, site, start, end, dims, limit=25000, exclude_country=()):
+    """Rows for `dims`, minus the excluded countries.
+
+    Don't filter with country notEquals: once a country filter (or dimension) is in play GSC
+    drops low-volume page x country rows for privacy, so a notEquals filter silently loses
+    most blog traffic (2026-10: 97 of 445 page clicks survived). Instead pull the unfiltered
+    rows and subtract the rows for the excluded countries alone, which are large enough to
+    survive. Position stays the unfiltered value (it can't be subtracted)."""
+    rows = _query(svc, site, start, end, dims, limit)
+    if not exclude_country:
+        return rows
+    regex = "^(" + "|".join(exclude_country) + ")$"
+    drop = {tuple(r["keys"]): r for r in _query(svc, site, start, end, dims, limit, regex)}
+    out = []
+    for r in rows:
+        d = drop.get(tuple(r["keys"]))
+        if d:
+            c, i = r["clicks"] - d["clicks"], r["impressions"] - d["impressions"]
+            if i <= 0:
+                continue
+            r = {**r, "clicks": c, "impressions": i, "ctr": c / i}
+        out.append(r)
+    return out
+
+
+def _query(svc, site, start, end, dims, limit=25000, country_regex=None):
     """Page through the Search Analytics API. GSC caps a single response at 25k rows."""
     rows, start_row = [], 0
     while True:
@@ -62,11 +87,10 @@ def query(svc, site, start, end, dims, limit=25000, exclude_country=()):
             "startRow": start_row,
             "dataState": "final",
         }
-        if exclude_country:
-            body["dimensionFilterGroups"] = [{
-                "groupType": "and",
-                "filters": [{"dimension": "country", "operator": "notEquals",
-                             "expression": c} for c in exclude_country]}]
+        if country_regex:
+            body["dimensionFilterGroups"] = [{"filters": [{
+                "dimension": "country", "operator": "includingRegex",
+                "expression": country_regex}]}]
         resp = svc.searchanalytics().query(siteUrl=site, body=body).execute()
         batch = resp.get("rows", [])
         rows += batch
