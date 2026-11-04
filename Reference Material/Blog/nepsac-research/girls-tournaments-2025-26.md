@@ -57,7 +57,12 @@ JSPR"; "Patsy Odden Tournament: next 8 schools classified as 'Large'. Ranked by 
 Tournament: next 8 schools classified as 'Small'. Ranked by RPI." Caveat on the page: "League standings are
 calculated based on interpretation of league rules, and may not reflect official league standings."
 
-**ISL girls count (settled):** USHR's ISL girls' standings list 12 teams for 2025-26
-(https://girls.ushr.com/neprep/standings/2025/isl) and 2026-27 (.../2026/isl); Rivers is not among them.
-Rivers fields a girls' team (14-7-4 in 2025-26 above). ISL post corrected to "Thirteen ... Twelve of them
-play the ISL girls' schedule".
+**ISL girls count: 13, Rivers included (corrected 2026-11-04).** First pass said 12 because USHR's ISL girls'
+standings (2025-26 and 2026-27) omit Rivers and USHR labels the team "NEPSGIHA Independent". That is USHR's
+outlier. Against it: (1) girlsprephockey.us's Rivers team page (saved by Scott, `NEPSAC Girls Prep Ice
+Hockey-rivers.html`) shows League = the ISL logo, linked to https://www.islsports.org/girls-ice-hockey/#standings;
+(2) Rivers' 2025-26 regular season (https://girls.ushr.com/neprep/team/scores/2025/309) has a game against all
+12 other ISL girls' teams (Tabor, Brooks, St. George's, Nobles, BB&N, Groton, Thayer, Milton, Middlesex,
+St. Mark's, Governor's, Lawrence); (3) Rivers players won ISL All-League honors in 2025
+(https://www.rivers.org/news-detail?pk=1379083) and 2019 (https://www.rivers.org/news-detail?pk=1013675).
+Lesson: USHR's girls' league labels can be wrong; girlsprephockey.us team pages carry the league logo.

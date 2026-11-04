@@ -75,7 +75,7 @@ Every school with a boys' or girls' varsity prep team in 2026-27. The map opens 
 		[42.7075, -71.0883, "ISL Eberhart", "ISL", "Brooks", "North Andover, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
 		[42.5931, -71.5865, "ISL Eberhart", "ISL", "Groton", "Groton, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
 		[42.4956, -71.3688, "ISL Eberhart", "ISL", "Middlesex", "Concord, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
-		[42.3235, -71.3254, "ISL Eberhart", "Independent", "Rivers", "Weston, MA", "Boys: ISL Eberhart. Girls: Independent.<br>Day, coed. NEPSAC member."],
+		[42.3235, -71.3254, "ISL Eberhart", "ISL", "Rivers", "Weston, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Day, coed. NEPSAC member."],
 		[42.276, -71.1566, "ISL Eberhart", null, "Roxbury Latin", "West Roxbury, MA", "Boys: ISL Eberhart. Girls: no girls varsity.<br>Day, boys. NEPSAC member."],
 		[41.4919, -71.2736, "ISL Eberhart", "ISL", "St. George&#x27;s", "Middletown, RI", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
 		[42.3095, -71.5298, "ISL Eberhart", "ISL", "St. Mark&#x27;s", "Southborough, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],

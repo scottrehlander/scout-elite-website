@@ -73,14 +73,14 @@ Sixteen campuses. The map opens on the boys' side, split into the two divisions;
 		[42.7075, -71.0883, "Eberhart", "ISL", "Brooks School", "North Andover, MA", "Eberhart Division. Boarding, 353 students. Won the NEPSAC Large School title in 2015.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 353 students."],
 		[42.5947, -71.5993, "Eberhart", "ISL", "Groton School", "Groton, MA", "Eberhart Division. Boarding, 351 students. Joined the ISL in 1972.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 351 students."],
 		[42.4967, -71.3686, "Eberhart", "ISL", "Middlesex School", "Concord, MA", "Eberhart Division. Boarding, 402 students.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 402 students."],
-		[42.3244, -71.3264, "Eberhart", "Outside the ISL", "The Rivers School", "Weston, MA", "Eberhart Division. Day school, 382 students. Sent three players to the USA Hockey NTDP in 2025.", "Girls: not in the ISL girls&#x27; standings (USHR lists the team as independent). Boys: Eberhart Division.<br>Day school, 382 students."],
+		[42.3244, -71.3264, "Eberhart", "ISL", "The Rivers School", "Weston, MA", "Eberhart Division. Day school, 382 students. Sent three players to the USA Hockey NTDP in 2025.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Day school, 382 students."],
 		[42.2761, -71.1581, "Eberhart", null, "The Roxbury Latin School", "West Roxbury, MA", "Eberhart Division. Boys only, day school, 219 students. Founded 1645, the oldest school in continuous existence in North America.", ""],
 		[41.4883, -71.2713, "Eberhart", "ISL", "St. George's School", "Middletown, RI", "Eberhart Division. Boarding, 380 students. The only ISL school outside Massachusetts.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 380 students."],
 		[42.3095, -71.5298, "Eberhart", "ISL", "St. Mark's School", "Southborough, MA", "Eberhart Division. Boarding, 380 students. 24-3-0 and the 2026 Elite 8 runner-up.", "Girls: ISL (one division). Boys: Eberhart Division.<br>Boarding, 380 students."]
 	];
 	var VIEWS = {
 		boys: {key: 2, note: 6, title: 'ISL Boys Hockey', groups: [['Keller', 'Keller Division', '#a51c30'], ['Eberhart', 'Eberhart Division', '#0b5cab']]},
-		girls: {key: 3, note: 7, title: 'ISL Girls Hockey', groups: [['ISL', 'ISL girls (one division)', '#7048e8'], ['Outside the ISL', 'Outside the ISL girls&#x27; standings', '#868e96']]}
+		girls: {key: 3, note: 7, title: 'ISL Girls Hockey', groups: [['ISL', 'ISL girls (one division)', '#7048e8']]}
 	};
 
 	function marker(r, color, note) {
@@ -193,9 +193,9 @@ Look at that table again with the division column in mind. Eberhart, the "small 
 
 ## The Girls Side
 
-Thirteen ISL schools field girls varsity hockey. Twelve of them play the ISL girls' schedule, and unlike the boys, **there is no Keller/Eberhart split**. It is one division.<sup><a href="#sources">†</a></sup>
+Thirteen ISL schools field girls varsity hockey, and unlike the boys, **there is no Keller/Eberhart split**. It is one division.<sup><a href="#sources">†</a></sup>
 
-Brooks, BB&N, Governor's, Groton, Lawrence, Middlesex, Milton, Nobles, St. George's, St. Mark's, Tabor, and Thayer. The thirteenth, Rivers, is not in the ISL girls' standings; U.S. Hockey Report lists its girls' team as an independent.
+Brooks, BB&N, Governor's, Groton, Lawrence, Middlesex, Milton, Nobles, Rivers, St. George's, St. Mark's, Tabor, and Thayer.
 
 It also does not get the attention it deserves relative to its results. In 2025-26, **Nobles went 27-1-0** and took the No. 1 seed in the girls Elite 8 (the Chuck Vernon tournament), losing 5-4 in overtime in the semifinals to eventual champion Loomis Chaffee. **Tabor**, seeded seventh, knocked off No. 2 Phillips Andover 2-1 in overtime in the quarterfinals before losing its own semifinal 3-2. Two ISL schools in the last four of New England's top girls bracket.<sup><a href="#sources">†</a></sup>
 

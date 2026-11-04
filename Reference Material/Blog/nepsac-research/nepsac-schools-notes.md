@@ -64,7 +64,7 @@ Associates: Nichols (NY), Hill and Wyoming Seminary (PA), Lawrenceville (NJ), Cu
   Hill are MAISAD schools that also play Holt; Mount St. Charles is SENEISAA but plays NEPSIHA Independent; South
   Kent is in the Housatonic Valley league but plays as Other Independent. Girls hockey has its own groupings
   (Vaillancourt Conference, per both nepsac.org and USHR).
-- **Rivers girls** are an ISL school's team, but USHR girls lists them under NEPSGIHA Independent, not ISL.
+- **Rivers girls** play in the ISL (girlsprephockey.us team page, full ISL schedule, All-League honors); USHR girls wrongly lists them under NEPSGIHA Independent. Corrected 2026-11-04.
 - **ISL divisions:** Wikipedia's ISL page (as of 2023-24) has the same Keller/Eberhart split as USHR 2026-27, and
   says St. Paul's moved from the ISL to the Lakes Region. USHR 2026-27 is the newer source.
 - **Moses Brown and North Yarmouth** are NEPSAC associate members, not full members. USHR stars them as affiliates
