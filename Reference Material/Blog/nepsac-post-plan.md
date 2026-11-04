@@ -142,8 +142,21 @@ Files in `nepsac-research/`, every claim with a URL, a verbatim quote and VERIFI
 - **Champions 2010-2026:** boys' Elite 8 won by Housatonic schools 8 times (Salisbury 5, Avon 3),
   Lakes Region 4 (all KUA), ISL 2. 2020 was played; 2021 had no tournament. Conference labels are
   SECONDARY (2022-23 previews applied backwards).
-- **82 schools** (75 boys' teams, 59 girls'), 66 in New England. Kingswood Oxford's league disagrees
-  between nepsac.org and USHR. St. Paul's left the ISL in 2017 over financial aid, not PGs.
+- **85 schools** (80 boys' teams, 66 girls') after the FAA pass. St. Paul's left the ISL in 2017
+  over financial aid, not PGs.
+- **The FAA (Fairchester Athletic Association) is a hockey league USHR doesn't group**, so the first
+  roster missed it (`nepsac-roster-fixes.md`, 19 corrections + 3 schools). Boys: Greenwich Country
+  Day, Kingswood Oxford, Rye Country Day, St. Luke's, Hamden Hall, King, plus Harvey on the schedule.
+  Girls: Greenwich Academy, GCDS, Rye, Sacred Heart, King. KO's own page: "competes in the FAA and
+  NEPSAC leagues"; 13 of its 18 games in 2025-26 were FAA, none Holt (MHR's "NE Prep - Holt" listing
+  for KO is unsupported; MHR blocks automated fetches, so not checked there). **No FAA boys' team is
+  on NEPSAC's 2026-27 boys' classification list** (they play the FAA tournament, not NEPSAC's); the
+  FAA girls' teams are on the girls' list.
+- **Boarding/day and coed are cited per school** (`nepsac-school-types.csv`: 69 from the school's own
+  site, the rest NAIS or Boarding School Review); five first-pass values were wrong (Belmont Hill,
+  Berwick, North Yarmouth, South Kent, Culver).
+- **Girls' tournaments:** girlsprephockey.us lists many, but it blocks AI fetches (robots.txt
+  disallows ClaudeBot), so it's not read; Scott pastes from it if wanted.
 
 **Search evidence for the angle (GSC, 16 months, see the 2026-11-04 SEO review):** we already get
 impressions with zero clicks, ranking 10-30, for "how do i choose between new england prep schools",
@@ -153,6 +166,6 @@ impressions with zero clicks, ranking 10-30, for "how do i choose between new en
 connecticut / maine", "nepsac hockey", "nepsac schools". So the post should also serve the
 *choosing* parent, not only explain the structure.
 
-**Before publishing:** spot-check boarding/day and coed columns on school sites (from the agent's
-general knowledge, not cited); confirm Kingswood Oxford's hockey league; the girls' by-laws are
-unlinked, so girls' classification and selection are SECONDARY.
+**Before publishing:** the girls' by-laws are unlinked, so girls' classification and selection are
+SECONDARY; Harvey's FAA league status is soft (on the schedule, standings from 2026-27 per Hamden
+Hall); St. Luke's girls' team is unconfirmed.
