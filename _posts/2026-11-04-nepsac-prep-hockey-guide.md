@@ -44,9 +44,13 @@ Three things about that structure matter more than anything else on this page:
 
 ## The Map
 
-Every school with a boys' or girls' varsity prep team in 2026-27, colored by its boys' league. Girls-only schools have their own color. Click any school for its girls' league, whether it boards, and whether it is a full NEPSAC member. Use the layer control (top right) to show one league at a time.
+Every school with a boys' or girls' varsity prep team in 2026-27. The map opens on all 85 schools, colored by boys' league, with girls-only schools in their own color. **Switch to "Girls' teams only"** to see the 66 schools with a girls' varsity team, colored by girls' league. Click any school for both leagues, whether it boards, and whether it is a full NEPSAC member. Use the layer control (top right) to show one league at a time.
 
-<div id="nepsac-map" style="height: 600px; width: 100%; border-radius: 8px; margin: 1.5em 0; z-index: 1;"></div>
+<div id="nepsac-view" role="group" aria-label="Map view" style="display:flex;gap:8px;flex-wrap:wrap;margin:1.5em 0 0.6em">
+	<button type="button" data-view="boys" aria-pressed="true" style="padding:0.45em 1em;border-radius:6px;border:1px solid #007acc;background:#007acc;color:#fff;font-weight:600;cursor:pointer">All 85 schools, by boys' league</button>
+	<button type="button" data-view="girls" aria-pressed="false" style="padding:0.45em 1em;border-radius:6px;border:1px solid #007acc;background:transparent;color:inherit;font-weight:600;cursor:pointer">Girls' teams only (66), by girls' league</button>
+</div>
+<div id="nepsac-map" style="height: 600px; width: 100%; border-radius: 8px; margin: 0 0 1.5em; z-index: 1;"></div>
 
 <script>
 (function() {
@@ -57,149 +61,145 @@ Every school with a boys' or girls' varsity prep team in 2026-27, colored by its
 		maxZoom: 13
 	}).addTo(map);
 
-	function marker(lat, lng, color, name, town, note) {
-		return L.circleMarker([lat, lng], {
-			radius: 7,
-			fillColor: color,
-			color: '#ffffff',
-			weight: 2,
-			opacity: 1,
-			fillOpacity: 0.9
-		}).bindPopup(
-			'<strong>' + name + '</strong><br>' + town +
-			'<br><span style="font-size:0.92em">' + note + '</span>'
-		);
+	// [lat, lng, boys' league (map color), girls' league (null = no girls' varsity), name, town, popup note]
+	var S = [
+		[42.406, -71.1826, "ISL Keller", null, "Belmont Hill", "Belmont, MA", "Boys: ISL Keller. Girls: no girls varsity.<br>5-day boarding and day, boys. NEPSAC member."],
+		[42.7501, -70.9023, "ISL Keller", "ISL", "Governor&#x27;s", "Byfield, MA", "Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.6033, -71.5643, "ISL Keller", "ISL", "Lawrence Academy", "Groton, MA", "Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.254, -71.0712, "ISL Keller", "ISL", "Milton", "Milton, MA", "Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.2595, -71.1839, "ISL Keller", "ISL", "Noble &amp; Greenough", "Dedham, MA", "Boys: ISL Keller. Girls: ISL.<br>5-day boarding and day, coed. NEPSAC member."],
+		[42.2694, -71.2067, "ISL Keller", null, "St. Sebastian&#x27;s", "Needham, MA", "Boys: ISL Keller. Girls: no girls varsity.<br>Day, boys. NEPSAC member."],
+		[41.7088, -70.7677, "ISL Keller", "ISL", "Tabor", "Marion, MA", "Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.2076, -71.0066, "ISL Keller", "ISL", "Thayer", "Braintree, MA", "Boys: ISL Keller. Girls: ISL.<br>Day, coed. NEPSAC member."],
+		[42.3712, -71.1356, "ISL Eberhart", "ISL", "BB&amp;N", "Cambridge, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Day, coed. NEPSAC member."],
+		[42.7075, -71.0883, "ISL Eberhart", "ISL", "Brooks", "North Andover, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.5931, -71.5865, "ISL Eberhart", "ISL", "Groton", "Groton, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.4956, -71.3688, "ISL Eberhart", "ISL", "Middlesex", "Concord, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.3235, -71.3254, "ISL Eberhart", "Independent", "Rivers", "Weston, MA", "Boys: ISL Eberhart. Girls: Independent.<br>Day, coed. NEPSAC member."],
+		[42.276, -71.1566, "ISL Eberhart", null, "Roxbury Latin", "West Roxbury, MA", "Boys: ISL Eberhart. Girls: no girls varsity.<br>Day, boys. NEPSAC member."],
+		[41.4919, -71.2736, "ISL Eberhart", "ISL", "St. George&#x27;s", "Middletown, RI", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[42.3095, -71.5298, "ISL Eberhart", "ISL", "St. Mark&#x27;s", "Southborough, MA", "Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member."],
+		[41.7804, -72.835, "Housatonic", null, "Avon Old Farms", "Avon, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member."],
+		[41.4584, -72.8013, "Housatonic", "Housatonic", "Choate", "Wallingford, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[42.5438, -72.6093, "Housatonic", "Housatonic", "Deerfield", "Deerfield, MA", "Boys: Housatonic. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[41.9417, -73.4405, "Housatonic", "Housatonic", "Hotchkiss", "Lakeville, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[41.7273, -73.4866, "Housatonic", "Housatonic", "Kent", "Kent, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[41.8407, -72.6393, "Housatonic", "Housatonic", "Loomis Chaffee", "Windsor, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[42.0029, -73.392, "Housatonic", null, "Salisbury", "Salisbury, CT", "Boys: Housatonic. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member."],
+		[41.6063, -73.1264, "Housatonic", "Housatonic", "Taft", "Watertown, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[41.572, -73.5898, "Housatonic", null, "Trinity-Pawling", "Pawling, NY", "Boys: Founders League school, plays Housatonic hockey. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member."],
+		[41.892, -72.7955, "Housatonic", "Housatonic", "Westminster", "Simsbury, CT", "Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member."],
+		[43.5807, -71.2071, "Lakes Region", "Lakes Region", "Brewster Academy", "Wolfeboro, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.7672, -71.6667, "Lakes Region", "Lakes Region", "Holderness", "Holderness, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.5448, -72.2554, "Lakes Region", "Lakes Region", "Kimball Union", "Meriden, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.6074, -71.6531, "Lakes Region", "Lakes Region", "New Hampton", "New Hampton, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.4509, -71.8242, "Lakes Region", "Lakes Region", "Proctor", "Andover, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.1897, -71.5788, "Lakes Region", "Lakes Region", "St. Paul&#x27;s", "Concord, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding, coed. NEPSAC member."],
+		[43.4462, -71.5882, "Lakes Region", "Lakes Region", "Tilton", "Tilton, NH", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.1462, -72.5127, "Lakes Region", "Lakes Region", "Vermont Academy", "Saxtons River, VT", "Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member."],
+		[43.2304, -70.8019, "Holt", "Independent", "Berwick", "South Berwick, ME", "Boys: Holt. Girls: Independent.<br>5-day and 7-day boarding and day, coed. NEPSAC member."],
+		[44.201, -70.41, "Holt", "Holt", "Hebron", "Hebron, ME", "Boys: Holt. Girls: Holt.<br>Boarding and day, coed. NEPSAC member."],
+		[44.4012, -70.0051, "Holt", "Vaillancourt", "Kents Hill", "Readfield, ME", "Boys: Holt. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member."],
+		[42.6401, -70.8824, "Holt", "Holt", "Pingree", "South Hamilton, MA", "Boys: Holt. Girls: Holt.<br>Day, coed. NEPSAC member."],
+		[41.6023, -71.2709, "Holt", "Independent", "Portsmouth Abbey", "Portsmouth, RI", "Boys: Holt. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[42.2528, -71.791, "Holt", "Vaillancourt", "Worcester Academy", "Worcester, MA", "Boys: Holt. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member."],
+		[43.7985, -70.1863, "Holt", "Vaillancourt", "North Yarmouth Academy", "Yarmouth, ME", "Boys: Holt. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[41.7593, -72.735, "FAA", null, "Kingswood Oxford", "West Hartford, CT", "Boys: FAA. Girls: no girls varsity.<br>Day, coed. NEPSAC member."],
+		[41.1923, -73.4965, "FAA", null, "St. Luke&#x27;s", "New Canaan, CT", "Boys: FAA. Girls: no girls varsity.<br>Day, coed. NEPSAC member."],
+		[41.05, -73.6147, "FAA", "FAA", "Greenwich Country Day", "Greenwich, CT", "Boys: FAA. Girls: FAA.<br>Day, coed. NEPSAC member."],
+		[40.9895, -73.6805, "FAA", "FAA", "Rye Country Day", "Rye, NY", "Boys: FAA. Girls: FAA.<br>Day, coed. NEPSAC member."],
+		[41.1108, -73.5339, "FAA", "FAA", "King School", "Stamford, CT", "Boys: FAA. Girls: FAA.<br>Day, coed. NEPSAC member."],
+		[41.3418, -72.9139, "FAA", null, "Hamden Hall Country Day School", "Hamden, CT", "Boys: FAA. Girls: no girls varsity.<br>Day, coed. NEPSAC member."],
+		[41.2578, -73.6644, "FAA", "Outside prep leagues", "Harvey School", "Katonah, NY", "Boys: FAA. Girls: Independent (outside prep leagues).<br>Day and 5-day boarding (grades 9-12), coed. NEPSAC member."],
+		[42.646, -73.7873, "Two Nations Prep", null, "Albany Academy", "Albany, NY", "Boys: Two Nations Prep. Girls: no girls varsity.<br>Day, coed. NEPSAC member."],
+		[45.3726, -71.8391, "Two Nations Prep", null, "Bishop&#x27;s College School", "Sherbrooke, QC", "Boys: Two Nations Prep. Girls: no girls varsity.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[40.2454, -75.6341, "Two Nations Prep", "Independent", "The Hill School", "Pottstown, PA", "Boys: Two Nations Prep. Girls: Independent.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[40.2974, -74.7233, "Two Nations Prep", "Independent", "Lawrenceville", "Lawrenceville, NJ", "Boys: Two Nations Prep. Girls: Independent.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[42.9423, -78.8575, "Two Nations Prep", "Outside prep leagues", "Nichols", "Buffalo, NY", "Boys: Two Nations Prep. Girls: Independent (outside prep leagues).<br>Day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[43.1531, -79.2569, "Two Nations Prep", "Outside prep leagues", "Ridley College", "St. Catharines, ON", "Boys: Two Nations Prep. Girls: Independent (outside prep leagues).<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[45.0126, -72.0923, "Two Nations Prep", "Independent", "Stanstead College", "Stanstead, QC", "Boys: Two Nations Prep. Girls: Independent.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[43.6929, -79.4038, "Two Nations Prep", null, "Upper Canada College", "Toronto, ON", "Boys: Two Nations Prep. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[42.6518, -71.1294, "Independent", "Independent", "Andover", "Andover, MA", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[42.5315, -71.1275, "Independent", "Vaillancourt", "Austin Prep", "Reading, MA", "Boys: Independent. Girls: Vaillancourt.<br>Day, coed. NEPSAC member."],
+		[42.1165, -73.4159, "Independent", "Independent", "Berkshire", "Sheffield, MA", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[41.0369, -73.6371, "Independent", null, "Brunswick", "Greenwich, CT", "Boys: Independent. Girls: no girls varsity.<br>Day, boys. NEPSAC member."],
+		[41.5881, -73.4129, "Independent", "Independent", "Canterbury", "New Milford, CT", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[42.1717, -71.014, "Independent", null, "CATS Academy Boston", "Braintree, MA", "Boys: Independent. Girls: no girls varsity.<br>Boarding and day, coed. NEPSAC member."],
+		[42.6328, -71.9135, "Independent", "Independent", "Cushing", "Ashburnham, MA", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[42.3075, -71.1391, "Independent", "Independent", "Dexter Southfield", "Brookline, MA", "Boys: Independent. Girls: Independent.<br>Day, coed. NEPSAC member."],
+		[42.9777, -70.9412, "Independent", "Independent", "Exeter", "Exeter, NH", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[41.6293, -73.3097, "Independent", "Independent", "Frederick Gunn School", "Washington, CT", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[42.8571, -73.3439, "Independent", "Independent", "Hoosac", "Hoosick, NY", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[41.8451, -73.618, "Independent", "Independent", "Millbrook", "Millbrook, NY", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[41.9956, -71.5016, "Independent", "Independent", "Mount St. Charles", "Woonsocket, RI", "Boys: Independent. Girls: Independent.<br>Day, coed. NEPSAC member."],
+		[42.667, -72.487, "Independent", "Vaillancourt", "Northfield Mt. Hermon", "Gill, MA", "Boys: Independent. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member."],
+		[41.885, -71.9678, "Independent", "Vaillancourt", "Pomfret", "Pomfret, CT", "Boys: Independent. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member."],
+		[41.6793, -73.4811, "Independent", null, "South Kent", "South Kent, CT", "Boys: Independent. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member."],
+		[42.1253, -72.4382, "Independent", null, "Wilbraham &amp; Monson", "Wilbraham, MA", "Boys: Independent. Girls: no girls varsity.<br>7-day and 5-day boarding and day, coed. NEPSAC member."],
+		[42.2649, -72.6742, "Independent", "Independent", "Williston Northampton", "Easthampton, MA", "Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member."],
+		[42.6749, -72.0401, "Independent", "Outside prep leagues", "Winchendon", "Winchendon, MA", "Boys: Independent. Girls: Independent (outside prep leagues).<br>Boarding and day, coed. NEPSAC member."],
+		[41.8337, -71.3982, "Independent", "Outside prep leagues", "Moses Brown", "Providence, RI", "Boys: Independent. Girls: Independent (outside prep leagues).<br>Day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[46.8307, -71.3149, "Independent", null, "Académie Saint-Louis", "Quebec City, QC", "Boys: Independent. Girls: no girls varsity.<br>Day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[41.2248, -86.4028, "Independent", "Outside prep leagues", "Culver Academies", "Culver, IN", "Boys: Independent. Girls: Independent (outside prep leagues).<br>Boarding, coordinate. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[44.011, -79.4773, "Independent", null, "St. Andrew&#x27;s College", "Aurora, ON", "Boys: Independent. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[41.2647, -75.8973, "Independent", null, "Wyoming Seminary", "Kingston, PA", "Boys: Independent. Girls: no girls varsity.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments)."],
+		[41.0422, -73.6274, "Girls only", "FAA", "Greenwich Academy", "Greenwich, CT", "Girls&#x27; school (no boys&#x27; team). Girls: FAA.<br>Day, girls. NEPSAC member."],
+		[42.3457, -71.1919, "Girls only", "Independent", "Newton Country Day", "Newton, MA", "Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Day, girls. NEPSAC member."],
+		[41.0644, -73.6917, "Girls only", "FAA", "Sacred Heart Greenwich", "Greenwich, CT", "Girls&#x27; school (no boys&#x27; team). Girls: FAA.<br>Day, girls. NEPSAC member."],
+		[42.3403, -71.107, "Girls only", "Independent", "Winsor", "Boston, MA", "Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Day, girls. NEPSAC member."],
+		[42.2909, -71.2885, "Girls only", "Independent", "Dana Hall", "Wellesley, MA", "Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Boarding and day, girls. NEPSAC member."]
+	];
+	var VIEWS = {
+		boys: {key: 2, title: "Boys' league", tag: 'boys', labels: {'Girls only': 'Girls-only schools'}, colors: {"ISL Keller": "#a51c30", "ISL Eberhart": "#0b5cab", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#c2255c", "Two Nations Prep": "#1098ad", "Independent": "#495057", "Girls only": "#f08c00"}},
+		girls: {key: 3, title: "Girls' league", tag: 'girls', colors: {"ISL": "#a51c30", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#c2255c", "Vaillancourt": "#1098ad", "Independent": "#495057", "Outside prep leagues": "#adb5bd"}}
+	};
+
+	function marker(r, color) {
+		return L.circleMarker([r[0], r[1]], {
+			radius: 7, fillColor: color, color: '#ffffff', weight: 2, opacity: 1, fillOpacity: 0.9
+		}).bindPopup('<strong>' + r[4] + '</strong><br>' + r[5] + '<br><span style="font-size:0.92em">' + r[6] + '</span>');
 	}
 
-	var C = {"ISL Keller": "#a51c30", "ISL Eberhart": "#0b5cab", "Housatonic": "#2b8a3e", "Lakes Region": "#e8590c", "Holt": "#7048e8", "FAA": "#c2255c", "Two Nations Prep": "#1098ad", "Independent": "#495057", "Girls only": "#f08c00"};
-	var g_ISL_Keller = L.layerGroup([
-		marker(42.4060, -71.1826, C['ISL Keller'], 'Belmont Hill', 'Belmont, MA', 'Boys: ISL Keller. Girls: no girls varsity.<br>5-day boarding and day, boys. NEPSAC member.'),
-		marker(42.7501, -70.9023, C['ISL Keller'], 'Governor&#x27;s', 'Byfield, MA', 'Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.6033, -71.5643, C['ISL Keller'], 'Lawrence Academy', 'Groton, MA', 'Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.2540, -71.0712, C['ISL Keller'], 'Milton', 'Milton, MA', 'Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.2595, -71.1839, C['ISL Keller'], 'Noble &amp; Greenough', 'Dedham, MA', 'Boys: ISL Keller. Girls: ISL.<br>5-day boarding and day, coed. NEPSAC member.'),
-		marker(42.2694, -71.2067, C['ISL Keller'], 'St. Sebastian&#x27;s', 'Needham, MA', 'Boys: ISL Keller. Girls: no girls varsity.<br>Day, boys. NEPSAC member.'),
-		marker(41.7088, -70.7677, C['ISL Keller'], 'Tabor', 'Marion, MA', 'Boys: ISL Keller. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.2076, -71.0066, C['ISL Keller'], 'Thayer', 'Braintree, MA', 'Boys: ISL Keller. Girls: ISL.<br>Day, coed. NEPSAC member.')
-	]).addTo(map);
-	var g_ISL_Eberhart = L.layerGroup([
-		marker(42.3712, -71.1356, C['ISL Eberhart'], 'BB&amp;N', 'Cambridge, MA', 'Boys: ISL Eberhart. Girls: ISL.<br>Day, coed. NEPSAC member.'),
-		marker(42.7075, -71.0883, C['ISL Eberhart'], 'Brooks', 'North Andover, MA', 'Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.5931, -71.5865, C['ISL Eberhart'], 'Groton', 'Groton, MA', 'Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.4956, -71.3688, C['ISL Eberhart'], 'Middlesex', 'Concord, MA', 'Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.3235, -71.3254, C['ISL Eberhart'], 'Rivers', 'Weston, MA', 'Boys: ISL Eberhart. Girls: Independent.<br>Day, coed. NEPSAC member.'),
-		marker(42.2760, -71.1566, C['ISL Eberhart'], 'Roxbury Latin', 'West Roxbury, MA', 'Boys: ISL Eberhart. Girls: no girls varsity.<br>Day, boys. NEPSAC member.'),
-		marker(41.4919, -71.2736, C['ISL Eberhart'], 'St. George&#x27;s', 'Middletown, RI', 'Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.3095, -71.5298, C['ISL Eberhart'], 'St. Mark&#x27;s', 'Southborough, MA', 'Boys: ISL Eberhart. Girls: ISL.<br>Boarding and day, coed. NEPSAC member.')
-	]).addTo(map);
-	var g_Housatonic = L.layerGroup([
-		marker(41.7804, -72.8350, C['Housatonic'], 'Avon Old Farms', 'Avon, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member.'),
-		marker(41.4584, -72.8013, C['Housatonic'], 'Choate', 'Wallingford, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.5438, -72.6093, C['Housatonic'], 'Deerfield', 'Deerfield, MA', 'Boys: Housatonic. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.9417, -73.4405, C['Housatonic'], 'Hotchkiss', 'Lakeville, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.7273, -73.4866, C['Housatonic'], 'Kent', 'Kent, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.8407, -72.6393, C['Housatonic'], 'Loomis Chaffee', 'Windsor, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.0029, -73.3920, C['Housatonic'], 'Salisbury', 'Salisbury, CT', 'Boys: Housatonic. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member.'),
-		marker(41.6063, -73.1264, C['Housatonic'], 'Taft', 'Watertown, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.5720, -73.5898, C['Housatonic'], 'Trinity-Pawling', 'Pawling, NY', 'Boys: Founders League school, plays Housatonic hockey. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member.'),
-		marker(41.8920, -72.7955, C['Housatonic'], 'Westminster', 'Simsbury, CT', 'Boys: Founders League school, plays Housatonic hockey. Girls: Housatonic.<br>Boarding and day, coed. NEPSAC member.')
-	]).addTo(map);
-	var g_Lakes_Region = L.layerGroup([
-		marker(43.5807, -71.2071, C['Lakes Region'], 'Brewster Academy', 'Wolfeboro, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.7672, -71.6667, C['Lakes Region'], 'Holderness', 'Holderness, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.5448, -72.2554, C['Lakes Region'], 'Kimball Union', 'Meriden, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.6074, -71.6531, C['Lakes Region'], 'New Hampton', 'New Hampton, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.4509, -71.8242, C['Lakes Region'], 'Proctor', 'Andover, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.1897, -71.5788, C['Lakes Region'], 'St. Paul&#x27;s', 'Concord, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding, coed. NEPSAC member.'),
-		marker(43.4462, -71.5882, C['Lakes Region'], 'Tilton', 'Tilton, NH', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.1462, -72.5127, C['Lakes Region'], 'Vermont Academy', 'Saxtons River, VT', 'Boys: Lakes Region. Girls: Lakes Region.<br>Boarding and day, coed. NEPSAC member.')
-	]).addTo(map);
-	var g_Holt = L.layerGroup([
-		marker(43.2304, -70.8019, C['Holt'], 'Berwick', 'South Berwick, ME', 'Boys: Holt. Girls: Independent.<br>5-day and 7-day boarding and day, coed. NEPSAC member.'),
-		marker(44.2010, -70.4100, C['Holt'], 'Hebron', 'Hebron, ME', 'Boys: Holt. Girls: Holt.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(44.4012, -70.0051, C['Holt'], 'Kents Hill', 'Readfield, ME', 'Boys: Holt. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.6401, -70.8824, C['Holt'], 'Pingree', 'South Hamilton, MA', 'Boys: Holt. Girls: Holt.<br>Day, coed. NEPSAC member.'),
-		marker(41.6023, -71.2709, C['Holt'], 'Portsmouth Abbey', 'Portsmouth, RI', 'Boys: Holt. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.2528, -71.7910, C['Holt'], 'Worcester Academy', 'Worcester, MA', 'Boys: Holt. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(43.7985, -70.1863, C['Holt'], 'North Yarmouth Academy', 'Yarmouth, ME', 'Boys: Holt. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).')
-	]).addTo(map);
-	var g_FAA = L.layerGroup([
-		marker(41.7593, -72.7350, C['FAA'], 'Kingswood Oxford', 'West Hartford, CT', 'Boys: FAA. Girls: no girls varsity.<br>Day, coed. NEPSAC member.'),
-		marker(41.1923, -73.4965, C['FAA'], 'St. Luke&#x27;s', 'New Canaan, CT', 'Boys: FAA. Girls: no girls varsity.<br>Day, coed. NEPSAC member.'),
-		marker(41.0500, -73.6147, C['FAA'], 'Greenwich Country Day', 'Greenwich, CT', 'Boys: FAA. Girls: FAA.<br>Day, coed. NEPSAC member.'),
-		marker(40.9895, -73.6805, C['FAA'], 'Rye Country Day', 'Rye, NY', 'Boys: FAA. Girls: FAA.<br>Day, coed. NEPSAC member.'),
-		marker(41.1108, -73.5339, C['FAA'], 'King School', 'Stamford, CT', 'Boys: FAA. Girls: FAA.<br>Day, coed. NEPSAC member.'),
-		marker(41.3418, -72.9139, C['FAA'], 'Hamden Hall Country Day School', 'Hamden, CT', 'Boys: FAA. Girls: no girls varsity.<br>Day, coed. NEPSAC member.'),
-		marker(41.2578, -73.6644, C['FAA'], 'Harvey School', 'Katonah, NY', 'Boys: FAA. Girls: Independent (outside prep leagues).<br>Day and 5-day boarding (grades 9-12), coed. NEPSAC member.')
-	]).addTo(map);
-	var g_Two_Nations_Prep = L.layerGroup([
-		marker(42.6460, -73.7873, C['Two Nations Prep'], 'Albany Academy', 'Albany, NY', 'Boys: Two Nations Prep. Girls: no girls varsity.<br>Day, coed. NEPSAC member.'),
-		marker(45.3726, -71.8391, C['Two Nations Prep'], 'Bishop&#x27;s College School', 'Sherbrooke, QC', 'Boys: Two Nations Prep. Girls: no girls varsity.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(40.2454, -75.6341, C['Two Nations Prep'], 'The Hill School', 'Pottstown, PA', 'Boys: Two Nations Prep. Girls: Independent.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(40.2974, -74.7233, C['Two Nations Prep'], 'Lawrenceville', 'Lawrenceville, NJ', 'Boys: Two Nations Prep. Girls: Independent.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(42.9423, -78.8575, C['Two Nations Prep'], 'Nichols', 'Buffalo, NY', 'Boys: Two Nations Prep. Girls: Independent (outside prep leagues).<br>Day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(43.1531, -79.2569, C['Two Nations Prep'], 'Ridley College', 'St. Catharines, ON', 'Boys: Two Nations Prep. Girls: Independent (outside prep leagues).<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(45.0126, -72.0923, C['Two Nations Prep'], 'Stanstead College', 'Stanstead, QC', 'Boys: Two Nations Prep. Girls: Independent.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(43.6929, -79.4038, C['Two Nations Prep'], 'Upper Canada College', 'Toronto, ON', 'Boys: Two Nations Prep. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC associate member (not eligible for NEPSAC tournaments).')
-	]).addTo(map);
-	var g_Independent = L.layerGroup([
-		marker(42.6518, -71.1294, C['Independent'], 'Andover', 'Andover, MA', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.5315, -71.1275, C['Independent'], 'Austin Prep', 'Reading, MA', 'Boys: Independent. Girls: Vaillancourt.<br>Day, coed. NEPSAC member.'),
-		marker(42.1165, -73.4159, C['Independent'], 'Berkshire', 'Sheffield, MA', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.0369, -73.6371, C['Independent'], 'Brunswick', 'Greenwich, CT', 'Boys: Independent. Girls: no girls varsity.<br>Day, boys. NEPSAC member.'),
-		marker(41.5881, -73.4129, C['Independent'], 'Canterbury', 'New Milford, CT', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.1717, -71.0140, C['Independent'], 'CATS Academy Boston', 'Braintree, MA', 'Boys: Independent. Girls: no girls varsity.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.6328, -71.9135, C['Independent'], 'Cushing', 'Ashburnham, MA', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.3075, -71.1391, C['Independent'], 'Dexter Southfield', 'Brookline, MA', 'Boys: Independent. Girls: Independent.<br>Day, coed. NEPSAC member.'),
-		marker(42.9777, -70.9412, C['Independent'], 'Exeter', 'Exeter, NH', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.6293, -73.3097, C['Independent'], 'Frederick Gunn School', 'Washington, CT', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.8571, -73.3439, C['Independent'], 'Hoosac', 'Hoosick, NY', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.8451, -73.6180, C['Independent'], 'Millbrook', 'Millbrook, NY', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.9956, -71.5016, C['Independent'], 'Mount St. Charles', 'Woonsocket, RI', 'Boys: Independent. Girls: Independent.<br>Day, coed. NEPSAC member.'),
-		marker(42.6670, -72.4870, C['Independent'], 'Northfield Mt. Hermon', 'Gill, MA', 'Boys: Independent. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.8850, -71.9678, C['Independent'], 'Pomfret', 'Pomfret, CT', 'Boys: Independent. Girls: Vaillancourt.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.6793, -73.4811, C['Independent'], 'South Kent', 'South Kent, CT', 'Boys: Independent. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC member.'),
-		marker(42.1253, -72.4382, C['Independent'], 'Wilbraham &amp; Monson', 'Wilbraham, MA', 'Boys: Independent. Girls: no girls varsity.<br>7-day and 5-day boarding and day, coed. NEPSAC member.'),
-		marker(42.2649, -72.6742, C['Independent'], 'Williston Northampton', 'Easthampton, MA', 'Boys: Independent. Girls: Independent.<br>Boarding and day, coed. NEPSAC member.'),
-		marker(42.6749, -72.0401, C['Independent'], 'Winchendon', 'Winchendon, MA', 'Boys: Independent. Girls: Independent (outside prep leagues).<br>Boarding and day, coed. NEPSAC member.'),
-		marker(41.8337, -71.3982, C['Independent'], 'Moses Brown', 'Providence, RI', 'Boys: Independent. Girls: Independent (outside prep leagues).<br>Day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(46.8307, -71.3149, C['Independent'], 'Académie Saint-Louis', 'Quebec City, QC', 'Boys: Independent. Girls: no girls varsity.<br>Day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(41.2248, -86.4028, C['Independent'], 'Culver Academies', 'Culver, IN', 'Boys: Independent. Girls: Independent (outside prep leagues).<br>Boarding, coordinate. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(44.0110, -79.4773, C['Independent'], 'St. Andrew&#x27;s College', 'Aurora, ON', 'Boys: Independent. Girls: no girls varsity.<br>Boarding and day, boys. NEPSAC associate member (not eligible for NEPSAC tournaments).'),
-		marker(41.2647, -75.8973, C['Independent'], 'Wyoming Seminary', 'Kingston, PA', 'Boys: Independent. Girls: no girls varsity.<br>Boarding and day, coed. NEPSAC associate member (not eligible for NEPSAC tournaments).')
-	]).addTo(map);
-	var g_Girls_only = L.layerGroup([
-		marker(41.0422, -73.6274, C['Girls only'], 'Greenwich Academy', 'Greenwich, CT', 'Girls&#x27; school (no boys&#x27; team). Girls: FAA.<br>Day, girls. NEPSAC member.'),
-		marker(42.3457, -71.1919, C['Girls only'], 'Newton Country Day', 'Newton, MA', 'Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Day, girls. NEPSAC member.'),
-		marker(41.0644, -73.6917, C['Girls only'], 'Sacred Heart Greenwich', 'Greenwich, CT', 'Girls&#x27; school (no boys&#x27; team). Girls: FAA.<br>Day, girls. NEPSAC member.'),
-		marker(42.3403, -71.1070, C['Girls only'], 'Winsor', 'Boston, MA', 'Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Day, girls. NEPSAC member.'),
-		marker(42.2909, -71.2885, C['Girls only'], 'Dana Hall', 'Wellesley, MA', 'Girls&#x27; school (no boys&#x27; team). Girls: Independent.<br>Boarding and day, girls. NEPSAC member.')
-	]).addTo(map);
-	L.control.layers(null, {
-		'<span style="color:#a51c30;font-weight:600">ISL Keller (boys) [8]</span>': g_ISL_Keller,
-		'<span style="color:#0b5cab;font-weight:600">ISL Eberhart (boys) [8]</span>': g_ISL_Eberhart,
-		'<span style="color:#2b8a3e;font-weight:600">Housatonic (boys) [10]</span>': g_Housatonic,
-		'<span style="color:#e8590c;font-weight:600">Lakes Region (boys) [8]</span>': g_Lakes_Region,
-		'<span style="color:#7048e8;font-weight:600">Holt (boys) [7]</span>': g_Holt,
-		'<span style="color:#c2255c;font-weight:600">FAA (boys) [7]</span>': g_FAA,
-		'<span style="color:#1098ad;font-weight:600">Two Nations Prep (boys) [8]</span>': g_Two_Nations_Prep,
-		'<span style="color:#495057;font-weight:600">Independent (boys) [24]</span>': g_Independent,
-		'<span style="color:#f08c00;font-weight:600">Girls only girls schools [5]</span>': g_Girls_only
-	}, { collapsed: true }).addTo(map);
-
-	var legend = L.control({position: 'bottomright'});
-	legend.onAdd = function() {
-		var div = L.DomUtil.create('div', '');
-		div.style.cssText = 'background:white;padding:8px 12px;border-radius:6px;font-size:0.78em;line-height:1.6;box-shadow:0 1px 5px rgba(0,0,0,0.2)';
-		var h = '<strong style="display:block;margin-bottom:3px;color:#222">Boys league</strong>';
-		for (var k in C) {
-			h += '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + C[k] + ';margin-right:6px;vertical-align:middle"></span><span style="color:#222">' + k + '</span><br>';
+	var current = [], control = null, legend = null;
+	function show(name) {
+		var v = VIEWS[name];
+		current.forEach(function(g) { map.removeLayer(g); });
+		if (control) map.removeControl(control);
+		if (legend) map.removeControl(legend);
+		current = []; var overlays = {};
+		for (var k in v.colors) {
+			var rows = S.filter(function(r) { return r[v.key] === k; });
+			if (!rows.length) continue;
+			var g = L.layerGroup(rows.map(function(r) { return marker(r, v.colors[k]); })).addTo(map);
+			current.push(g);
+			var label = (v.labels && v.labels[k]) || (k + ' (' + v.tag + ')');
+			overlays['<span style="color:' + v.colors[k] + ';font-weight:600">' + label + ' [' + rows.length + ']</span>'] = g;
 		}
-		div.innerHTML = h;
-		return div;
-	};
-	// On phones the nine-row legend covers the map; the layer control (top right) shows the same colors.
-	if (window.innerWidth >= 600) legend.addTo(map);
+		control = L.control.layers(null, overlays, { collapsed: true }).addTo(map);
+		legend = L.control({position: 'bottomright'});
+		legend.onAdd = function() {
+			var div = L.DomUtil.create('div', '');
+			div.style.cssText = 'background:white;padding:8px 12px;border-radius:6px;font-size:0.78em;line-height:1.6;box-shadow:0 1px 5px rgba(0,0,0,0.2)';
+			var h = '<strong style="display:block;margin-bottom:3px;color:#222">' + v.title + '</strong>';
+			for (var k in v.colors) {
+				h += '<span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:' + v.colors[k] + ';margin-right:6px;vertical-align:middle"></span><span style="color:#222">' + ((v.labels && v.labels[k]) || k) + '</span><br>';
+			}
+			div.innerHTML = h;
+			return div;
+		};
+		// On phones the legend covers the map; the layer control (top right) shows the same colors.
+		if (window.innerWidth >= 600) legend.addTo(map);
+		document.querySelectorAll('#nepsac-view button').forEach(function(b) {
+			var on = b.getAttribute('data-view') === name;
+			b.setAttribute('aria-pressed', on ? 'true' : 'false');
+			b.style.background = on ? '#007acc' : 'transparent';
+			b.style.color = on ? '#fff' : 'inherit';
+		});
+	}
+	document.querySelectorAll('#nepsac-view button').forEach(function(b) {
+		b.addEventListener('click', function() { show(b.getAttribute('data-view')); });
+	});
+	show('boys');
 })();
 </script>
 
@@ -230,11 +230,11 @@ A few things the table does not show:
 
 ### Schools by state
 
-Every school on the map, by state. Girls-only schools are marked (girls). An asterisk marks a NEPSAC associate member, which plays NEPSAC schools but is not eligible for the NEPSAC tournaments.<sup><a href="#sources">2,5</a></sup>
+Every school on the map, by state. Girls-only schools are marked (girls), and the 19 schools with no girls' varsity team are marked (boys only). An asterisk marks a NEPSAC associate member, which plays NEPSAC schools but is not eligible for the NEPSAC tournaments.<sup><a href="#sources">2,5</a></sup>
 
-**Massachusetts (31):** Andover, Austin Prep, BB&N, Belmont Hill, Berkshire, Brooks, CATS Academy Boston, Cushing, Dana Hall (girls), Deerfield, Dexter Southfield, Governor's, Groton, Lawrence Academy, Middlesex, Milton, Newton Country Day (girls), Noble & Greenough, Northfield Mt. Hermon, Pingree, Rivers, Roxbury Latin, St. Mark's, St. Sebastian's, Tabor, Thayer, Wilbraham & Monson, Williston Northampton, Winchendon, Winsor (girls), Worcester Academy
+**Massachusetts (31):** Andover, Austin Prep, BB&N, Belmont Hill (boys only), Berkshire, Brooks, CATS Academy Boston (boys only), Cushing, Dana Hall (girls), Deerfield, Dexter Southfield, Governor's, Groton, Lawrence Academy, Middlesex, Milton, Newton Country Day (girls), Noble & Greenough, Northfield Mt. Hermon, Pingree, Rivers, Roxbury Latin (boys only), St. Mark's, St. Sebastian's (boys only), Tabor, Thayer, Wilbraham & Monson (boys only), Williston Northampton, Winchendon, Winsor (girls), Worcester Academy
 
-**Connecticut (20):** Avon Old Farms, Brunswick, Canterbury, Choate, Frederick Gunn School, Greenwich Academy (girls), Greenwich Country Day, Hamden Hall Country Day School, Hotchkiss, Kent, King School, Kingswood Oxford, Loomis Chaffee, Pomfret, Sacred Heart Greenwich (girls), Salisbury, South Kent, St. Luke's, Taft, Westminster
+**Connecticut (20):** Avon Old Farms (boys only), Brunswick (boys only), Canterbury, Choate, Frederick Gunn School, Greenwich Academy (girls), Greenwich Country Day, Hamden Hall Country Day School (boys only), Hotchkiss, Kent, King School, Kingswood Oxford (boys only), Loomis Chaffee, Pomfret, Sacred Heart Greenwich (girls), Salisbury (boys only), South Kent (boys only), St. Luke's (boys only), Taft, Westminster
 
 **New Hampshire (8):** Brewster Academy, Exeter, Holderness, Kimball Union, New Hampton, Proctor, St. Paul's, Tilton
 
@@ -244,17 +244,17 @@ Every school on the map, by state. Girls-only schools are marked (girls). An ast
 
 **Vermont (1):** Vermont Academy
 
-**New York (7):** Albany Academy, Harvey School, Hoosac, Millbrook, Nichols*, Rye Country Day, Trinity-Pawling
+**New York (7):** Albany Academy (boys only), Harvey School, Hoosac, Millbrook, Nichols*, Rye Country Day, Trinity-Pawling (boys only)
 
 **New Jersey (1):** Lawrenceville*
 
-**Pennsylvania (2):** The Hill School*, Wyoming Seminary*
+**Pennsylvania (2):** The Hill School*, Wyoming Seminary* (boys only)
 
 **Indiana (1):** Culver Academies*
 
-**Quebec (3):** Académie Saint-Louis*, Bishop's College School*, Stanstead College*
+**Quebec (3):** Académie Saint-Louis* (boys only), Bishop's College School* (boys only), Stanstead College*
 
-**Ontario (3):** Ridley College*, St. Andrew's College*, Upper Canada College*
+**Ontario (3):** Ridley College*, St. Andrew's College* (boys only), Upper Canada College* (boys only)
 
 ## The Age Question: Postgraduates and the September 1 Rule
 
@@ -342,6 +342,8 @@ What the table says:
 Girls' Elite 8 (Chuck Vernon) champions since it began: Noble and Greenough (2020, 2024), Williston Northampton (2022, 2023) and Loomis Chaffee (2025, 2026). Loomis beat Deerfield 5-1 in the 2026 final; Exeter won the 2026 Large School title and Groton the Small School title.<sup><a href="#sources">8,15</a></sup>
 
 ## What a Girls' Prep Season Looks Like
+
+First, which schools: 66 of the 85 schools on the map field a girls' varsity team. [Switch the map to "Girls' teams only"](#nepsac-view) to see just those, colored by girls' league, and the state-by-state list marks the 19 that don't.
 
 The girls' calendar has a shape worth knowing before your daughter's first winter. In 2025-26, 20 tournaments were on it:<sup><a href="#sources">15</a></sup>
 
