@@ -1,0 +1,164 @@
+<!doctype html>
+<!--
+  Source for /downloads/hockey-practice-plan-template.pdf (blog: /blog/hockey-practice-plan-template/).
+  Rebuild: node "Reference Material/Blog/practice-plan-template/build.mjs"
+  Two US Letter pages: 1) a timed practice plan, 2) a station-rotation plan.
+  Kept ink-light on purpose: coaches print this on a home printer.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hockey Practice Plan Template</title>
+<style>
+  @page { size: Letter; margin: 0.45in 0.5in; }
+  * { box-sizing: border-box; }
+  body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; color: #111; margin: 0; font-size: 9.5pt; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  header { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2.5px solid #111; padding-bottom: 5px; margin-bottom: 9px; }
+  h1 { font-size: 17pt; font-weight: 900; font-style: italic; letter-spacing: -0.01em; margin: 0; text-transform: uppercase; }
+  h1 span { color: #007acc; }
+  .brand { font-size: 8pt; color: #555; text-align: right; line-height: 1.3; }
+  .brand b { color: #007acc; }
+  .meta { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 6px 10px; margin-bottom: 8px; }
+  .field { border-bottom: 1px solid #999; padding-top: 11px; position: relative; min-height: 22px; }
+  .field label { position: absolute; top: 0; left: 0; font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #555; }
+  .checks { font-size: 8pt; padding-top: 12px; color: #333; }
+  .box { border: 1px solid #999; border-radius: 4px; padding: 4px 6px; position: relative; }
+  .box label { font-size: 6.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #555; display: block; }
+  .row2 { display: grid; grid-template-columns: 1.6fr 1fr; gap: 8px; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; }
+  th { font-size: 6.8pt; text-transform: uppercase; letter-spacing: 0.06em; text-align: left; color: #fff; background: #111; padding: 4px 5px; }
+  td { border: 1px solid #aaa; vertical-align: top; padding: 3px 5px; }
+  td.block { width: 17%; font-weight: 800; font-size: 8pt; }
+  td.block small { display: block; font-weight: 400; color: #666; font-size: 6.6pt; line-height: 1.25; margin-top: 2px; }
+  td.min { width: 7%; text-align: center; }
+  td.clock { width: 8%; }
+  td.drill { width: 34%; }
+  td.rink { width: 15%; padding: 2px; }
+  td.rink svg { width: 100%; height: auto; display: block; }
+  .plan td { height: 0.95in; }
+  .total { text-align: right; font-size: 8pt; padding: 4px 2px 0; }
+  .total b { display: inline-block; min-width: 0.6in; border-bottom: 1px solid #999; }
+  .post { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-top: 8px; }
+  .post .box { min-height: 0.75in; }
+  footer { margin-top: 6px; font-size: 6.8pt; color: #666; display: flex; justify-content: space-between; }
+  .stations { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+  .station { border: 1.5px solid #111; border-radius: 6px; padding: 5px 7px; min-height: 2.35in; display: grid; grid-template-columns: 1fr 1.75in; gap: 8px; align-items: start; }
+  .station h3 { margin: 0 0 3px; font-size: 9pt; font-weight: 900; text-transform: uppercase; font-style: italic; }
+  .station .lines div { border-bottom: 1px solid #bbb; height: 16px; font-size: 6.8pt; color: #555; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding-top: 4px; }
+  .station svg { width: 100%; }
+  .rot td { height: 0.3in; text-align: center; font-size: 8pt; }
+  .rot td:first-child { font-weight: 800; width: 16%; text-align: left; }
+  .hint { font-size: 7pt; color: #555; margin: 2px 0 6px; }
+</style>
+</head>
+<body>
+
+<!-- A half sheet of ice for drawing. viewBox: 200 wide (boards to centre), 85 tall. -->
+<template id="half-rink">
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg">
+  <path d="M197 2 H42 A40 40 0 0 0 2 42 V128 A40 40 0 0 0 42 168 H197" fill="none" stroke="#999" stroke-width="2"/>
+  <line x1="22" y1="2" x2="22" y2="168" stroke="#d33" stroke-width="1.2"/>
+  <line x1="150" y1="2" x2="150" y2="168" stroke="#36c" stroke-width="3"/>
+  <line x1="197" y1="2" x2="197" y2="168" stroke="#d33" stroke-width="2.5" stroke-dasharray="4 3"/>
+  <path d="M22 76 A9 9 0 0 1 22 94" fill="none" stroke="#36c" stroke-width="1"/>
+  <circle cx="64" cy="45" r="22" fill="none" stroke="#d33" stroke-width="1"/>
+  <circle cx="64" cy="125" r="22" fill="none" stroke="#d33" stroke-width="1"/>
+  <circle cx="64" cy="45" r="2" fill="#d33"/><circle cx="64" cy="125" r="2" fill="#d33"/>
+  <circle cx="168" cy="45" r="2" fill="#d33"/><circle cx="168" cy="125" r="2" fill="#d33"/>
+  <rect x="14" y="80" width="8" height="10" fill="none" stroke="#666" stroke-width="1"/>
+</svg>
+</template>
+
+<!-- PAGE 1: timed plan -->
+<section class="page">
+  <header>
+    <h1>Hockey Practice <span>Plan</span></h1>
+    <div class="brand">Free template from <b>Scout Elite</b><br>scout-elite.com/blog/hockey-practice-plan-template</div>
+  </header>
+
+  <div class="meta">
+    <div class="field"><label>Team</label></div>
+    <div class="field"><label>Age group</label></div>
+    <div class="field"><label>Date</label></div>
+    <div class="field"><label>Ice time (min)</label></div>
+    <div class="field"><label>Rink / sheet</label></div>
+    <div class="checks">&#9744; Full &nbsp; &#9744; Half &nbsp; &#9744; Stations</div>
+    <div class="field"><label>Players / goalies</label></div>
+    <div class="field"><label>Coaches on ice</label></div>
+  </div>
+
+  <div class="row2">
+    <div class="box" style="min-height:0.55in"><label>Today's focus (one or two things)</label></div>
+    <div class="box" style="min-height:0.55in"><label>Equipment (pucks, cones, nets, boards)</label></div>
+  </div>
+
+  <table class="plan">
+    <thead><tr><th>Block</th><th>Clock</th><th>Min</th><th>Drill &amp; setup</th><th>Coaching points (2 max)</th><th>Diagram</th></tr></thead>
+    <tbody>
+      <tr><td class="block">Warm-up<small>Skating, edges, touches. Moving within a minute of the whistle.</small></td><td class="clock"></td><td class="min"></td><td class="drill"></td><td></td><td class="rink" data-rink></td></tr>
+      <tr><td class="block">Skill 1<small>The skill today's focus needs most. Lots of reps, short lines.</small></td><td class="clock"></td><td class="min"></td><td class="drill"></td><td></td><td class="rink" data-rink></td></tr>
+      <tr><td class="block">Skill 2<small>Build on Skill 1: add a pass, a shot or a defender.</small></td><td class="clock"></td><td class="min"></td><td class="drill"></td><td></td><td class="rink" data-rink></td></tr>
+      <tr><td class="block">Small-area game<small>Compete in tight space. The focus shows up under pressure.</small></td><td class="clock"></td><td class="min"></td><td class="drill"></td><td></td><td class="rink" data-rink></td></tr>
+      <tr><td class="block">Team play<small>Breakouts, regroups, systems. Older ages get more time here.</small></td><td class="clock"></td><td class="min"></td><td class="drill"></td><td></td><td class="rink" data-rink></td></tr>
+      <tr><td class="block">Finish<small>A game they love, then a 30-second recap of the focus.</small></td><td class="clock"></td><td class="min"></td><td class="drill"></td><td></td><td class="rink" data-rink></td></tr>
+    </tbody>
+  </table>
+  <div class="total">Total minutes (should match ice time): <b>&nbsp;</b></div>
+
+  <div class="post">
+    <div class="box"><label>After practice: what worked</label></div>
+    <div class="box"><label>What didn't</label></div>
+    <div class="box"><label>Carry into next practice</label></div>
+  </div>
+
+  <footer><span>Tip: write the clock time each block starts. Transitions are where ice time disappears.</span><span>Or let Scout Elite draft it: xpress.scout-elite.com</span></footer>
+</section>
+
+<!-- PAGE 2: station rotation -->
+<section class="page">
+  <header>
+    <h1>Station <span>Rotation</span></h1>
+    <div class="brand">Free template from <b>Scout Elite</b><br>scout-elite.com/blog/hockey-practice-plan-template</div>
+  </header>
+
+  <div class="meta">
+    <div class="field"><label>Team</label></div>
+    <div class="field"><label>Age group</label></div>
+    <div class="field"><label>Date</label></div>
+    <div class="field"><label>Minutes per station</label></div>
+  </div>
+  <p class="hint">Split the group, give each station a coach, and rotate on a whistle. Keep every station to one skill, one setup and one coaching point, so a new group is working within seconds.</p>
+
+  <div class="stations">
+    <div class="station"><div><h3>Station 1</h3><div class="lines"><div>Skill</div><div>Setup</div><div></div><div>Coach</div><div>Coaching point</div><div></div></div></div><div data-rink></div></div>
+    <div class="station"><div><h3>Station 2</h3><div class="lines"><div>Skill</div><div>Setup</div><div></div><div>Coach</div><div>Coaching point</div><div></div></div></div><div data-rink></div></div>
+    <div class="station"><div><h3>Station 3</h3><div class="lines"><div>Skill</div><div>Setup</div><div></div><div>Coach</div><div>Coaching point</div><div></div></div></div><div data-rink></div></div>
+    <div class="station"><div><h3>Station 4</h3><div class="lines"><div>Skill</div><div>Setup</div><div></div><div>Coach</div><div>Coaching point</div><div></div></div></div><div data-rink></div></div>
+  </div>
+
+  <table class="rot">
+    <thead><tr><th>Group</th><th>Players</th><th>Rotation 1</th><th>Rotation 2</th><th>Rotation 3</th><th>Rotation 4</th></tr></thead>
+    <tbody>
+      <tr><td>Group A</td><td></td><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><td>Group B</td><td></td><td>2</td><td>3</td><td>4</td><td>1</td></tr>
+      <tr><td>Group C</td><td></td><td>3</td><td>4</td><td>1</td><td>2</td></tr>
+      <tr><td>Group D</td><td></td><td>4</td><td>1</td><td>2</td><td>3</td></tr>
+    </tbody>
+  </table>
+
+  <div class="row2" style="margin-top:8px">
+    <div class="box" style="min-height:0.8in"><label>Whole-group warm-up (before stations)</label></div>
+    <div class="box" style="min-height:0.8in"><label>Whole-group finish (after stations)</label></div>
+  </div>
+
+  <footer><span>Rotation clock: start ____ &nbsp; 1 ____ &nbsp; 2 ____ &nbsp; 3 ____ &nbsp; 4 ____ &nbsp; end ____</span><span>Or let Scout Elite draft it: xpress.scout-elite.com</span></footer>
+</section>
+
+<script>
+  const rink = document.getElementById('half-rink').innerHTML;
+  document.querySelectorAll('[data-rink]').forEach(el => { el.innerHTML = rink; });
+</script>
+</body>
+</html>

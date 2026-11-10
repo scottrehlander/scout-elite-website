@@ -128,6 +128,19 @@ def main():
         ("ga4-events",
          dict(dims=["eventName"], mets=["eventCount", "activeUsers"],
               order_by_metric="eventCount")),
+    ]
+    # Which site page and CTA produced each app-side conversion. The app is a separate
+    # data stream, so its session starts fresh on xpress (landing page /try, channel
+    # "Unassigned" because medium "website" matches no default channel rule). The CTA's
+    # UTMs survive into that session: utm_campaign = the site page slug, utm_content =
+    # the placement. Country is kept so bot countries (Singapore, China) can be dropped.
+    reports += [
+        (f"ga4-{ev}-by-cta",
+         dict(dims=["sessionCampaignName", "sessionManualAdContent", "country"],
+              mets=["eventCount"], dim_filter=("eventName", ev), order_by_metric="eventCount"))
+        for ev in ("try_flow_started", "account_created_from_anon", "sign_up", "purchase")
+    ]
+    reports += [
         # These need custom dimensions registered in GA4 admin; they fail soft.
         ("ga4-try-click-by-placement",
          dict(dims=["customEvent:placement"], mets=["eventCount"],
