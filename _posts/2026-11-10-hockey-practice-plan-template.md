@@ -11,7 +11,7 @@ author: "Coach Scott"
 excerpt: "Two printable sheets (a timed practice plan and a station rotation), sample plans for 8U, 10U, 12U and 14U, and the research behind how they are built."
 image:
   path: /img/blog/hockey-practice-plan-template.jpg
-  alt: "Hockey practice plan template: a 60-minute 12U practice broken into timed blocks"
+  alt: "Hockey practice plan template on a clipboard, filled in by hand for a 60-minute 12U practice"
 permalink: /blog/hockey-practice-plan-template/
 ---
 
