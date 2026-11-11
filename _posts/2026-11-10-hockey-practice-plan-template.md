@@ -75,7 +75,7 @@ Every coach has the same Tuesday night: practice is tomorrow, the ice is booked 
 
 ## Why It's Built This Way
 
-I didn't invent the fields. Hockey Canada evaluates coaches in its Development 1 certification against a checklist for the practice plan itself.<sup>[1]</sup> The plan should:
+I didn't invent the fields. Hockey Canada evaluates coaches in its Development 1 certification against a checklist for the practice plan itself.<sup><a href="#source-1">[1]</a></sup> The plan should:
 
 - "identif[y] a goal or a series of key elements"
 - include "date, time, location, number of athletes, level of athletes"
@@ -83,7 +83,7 @@ I didn't invent the fields. Hockey Canada evaluates coaches in its Development 1
 - show "Duration of the practice and each practice segment ... on a timeline"
 - list "key factors or teaching points that relate to the overall goal"
 
-Every one of those has a place on page 1. The **one or two things** limit on the focus box comes from USA Hockey's 12U Practice Planner: "Instead of a random collection of drills or games, practices should be developed with a common theme so that the focus is on improving one or two particular aspects of play."<sup>[2]</sup> The **two coaching points** cap is mine. Kids can carry two cues from the bench to the ice. Five get lost.
+Every one of those has a place on page 1. The **one or two things** limit on the focus box comes from USA Hockey's 12U Practice Planner: "Instead of a random collection of drills or games, practices should be developed with a common theme so that the focus is on improving one or two particular aspects of play."<sup><a href="#source-2">[2]</a></sup> The **two coaching points** cap is mine. Kids can carry two cues from the bench to the ice. Five get lost.
 
 The **clock column** is there because transitions are where an hour of ice quietly becomes 45 minutes of hockey. Write the time each block starts, and you'll see where it goes.
 
@@ -91,11 +91,11 @@ The **clock column** is there because transitions are where an hour of ice quiet
 
 Page 2 exists because the evidence for small spaces and many repetitions is consistent across both national federations and the independent research.
 
-**Games give each player very little puck time.** USA Hockey's 8U parent guide reports that "In a 60-minute hockey game between 6- to 8-year-old children, the average player had possession of the puck for 20.7 seconds," and that the youngest players "would require 180 games" to get 60 minutes of puck possession.<sup>[3]</sup> The guide credits the original work to George Kingston in 1976, replicated in a 2002 USA Hockey study. I couldn't find either study published, so treat the exact figures as USA Hockey's report rather than peer-reviewed data. The direction of the finding is backed up below.
+**Games give each player very little puck time.** USA Hockey's 8U parent guide reports that "In a 60-minute hockey game between 6- to 8-year-old children, the average player had possession of the puck for 20.7 seconds," and that the youngest players "would require 180 games" to get 60 minutes of puck possession.<sup><a href="#source-3">[3]</a></sup> The guide credits the original work to George Kingston in 1976, replicated in a 2002 USA Hockey study. I couldn't find either study published, so treat the exact figures as USA Hockey's report rather than peer-reviewed data. The direction of the finding is backed up below.
 
-**Smaller areas mean more touches and more shots.** In 2019-20 the Finnish and Swedish ice hockey associations tracked U8 to U14 players across game formats from an eighth of the ice up to full ice, with "Tracking chips ... placed inside the jerseys."<sup>[4]</sup> Their conclusion: "5v5 on full ice appears to be the most inefficient way if you want to optimize technical repetition," and "small area games may create about 5-8 times more shooting attempts in one shift for a single player." On full ice, "The players skate more but that skating tends to be more passive, without any puck touches." Hockey Canada's cross-ice materials report the same pattern for small-area play: "Individual Puck Touches – 2 x Greater," "Shots per player – 6 x greater," "Pass Receptions – 5 x Greater."<sup>[5]</sup> USA Hockey published a similar comparison from an NHL analytics team's tracking of 8U players in 2017, though without a published method.<sup>[6]</sup>
+**Smaller areas mean more touches and more shots.** In 2019-20 the Finnish and Swedish ice hockey associations tracked U8 to U14 players across game formats from an eighth of the ice up to full ice, with "Tracking chips ... placed inside the jerseys."<sup><a href="#source-4">[4]</a></sup> Their conclusion: "5v5 on full ice appears to be the most inefficient way if you want to optimize technical repetition," and "small area games may create about 5-8 times more shooting attempts in one shift for a single player." On full ice, "The players skate more but that skating tends to be more passive, without any puck touches." Hockey Canada's cross-ice materials report the same pattern for small-area play: "Individual Puck Touches – 2 x Greater," "Shots per player – 6 x greater," "Pass Receptions – 5 x Greater."<sup><a href="#source-5">[5]</a></sup> USA Hockey published a similar comparison from an NHL analytics team's tracking of 8U players in 2017, though without a published method.<sup><a href="#source-6">[6]</a></sup>
 
-**A good practice is more active than a game.** A peer-reviewed study fitted 17 nine- and ten-year-olds with accelerometers for one practice and one game. They spent "43.1% of their 70-min ice hockey practice" in moderate or harder activity, against "28.2% of their 80-min ice hockey game."<sup>[7]</sup> The sample is small (one team, one practice, one game), but it lines up with everything above: well-run practice is where the work gets done.
+**A good practice is more active than a game.** A peer-reviewed study fitted 17 nine- and ten-year-olds with accelerometers for one practice and one game. They spent "43.1% of their 70-min ice hockey practice" in moderate or harder activity, against "28.2% of their 80-min ice hockey game."<sup><a href="#source-7">[7]</a></sup> The sample is small (one team, one practice, one game), but it lines up with everything above: well-run practice is where the work gets done.
 
 That's why both federations put the ratio firmly on the practice side, and why page 2 splits the ice so every kid is busy.
 
@@ -105,15 +105,15 @@ Each plan below follows the structure of USA Hockey's own published sample pract
 
 | | 8U | 10U | 12U | 14U |
 |---|---|---|---|---|
-| Ice session | 50 min<sup>[8]</sup> | 60 min<sup>[9]</sup> | 60+ min<sup>[9]</sup> | 80 min<sup>[10]</sup> |
-| Practices : games per season | 34 to 40 practices, 16 to 20 cross-ice or half-ice games<sup>[8]</sup> | 75 to 80 : 20 to 25<sup>[9]</sup> | 80 to 90 : 30 to 35<sup>[9]</sup> | 120 to 130 : 40 to 50<sup>[11]</sup> |
-| Hockey Canada time on skills vs tactics (same age band) | 75% skills at U9<sup>[12]</sup> | 50% technical skills, 20% individual tactics (Atom)<sup>[13]</sup> | 45% technical, 25% individual tactics (Peewee)<sup>[13]</sup> | 40% technical, 15% individual tactics (Bantam)<sup>[13]</sup> |
+| Ice session | 50 min<sup><a href="#source-8">[8]</a></sup> | 60 min<sup><a href="#source-9">[9]</a></sup> | 60+ min<sup><a href="#source-9">[9]</a></sup> | 80 min<sup><a href="#source-10">[10]</a></sup> |
+| Practices : games per season | 34 to 40 practices, 16 to 20 cross-ice or half-ice games<sup><a href="#source-8">[8]</a></sup> | 75 to 80 : 20 to 25<sup><a href="#source-9">[9]</a></sup> | 80 to 90 : 30 to 35<sup><a href="#source-9">[9]</a></sup> | 120 to 130 : 40 to 50<sup><a href="#source-11">[11]</a></sup> |
+| Hockey Canada time on skills vs tactics (same age band) | 75% skills at U9<sup><a href="#source-12">[12]</a></sup> | 50% technical skills, 20% individual tactics (Atom)<sup><a href="#source-13">[13]</a></sup> | 45% technical, 25% individual tactics (Peewee)<sup><a href="#source-13">[13]</a></sup> | 40% technical, 15% individual tactics (Bantam)<sup><a href="#source-13">[13]</a></sup> |
 
-Two notes on the table. USA Hockey's 10U guide says plainly, "THERE SHOULD BE A 3-TO-1 PRACTICE-TO-GAME RATIO,"<sup>[9]</sup> while its 10U and 12U planners say "at least 2.5 practices to every one game."<sup>[2][14]</sup> Either way, games are the smaller number. Hockey Canada names its age groups differently (U9, Atom, Peewee, Bantam), so the last row puts each of its recommendations beside the closest US age group. Read it as guidance for the same stage of development, not a one-to-one match.
+Two notes on the table. USA Hockey's 10U guide says plainly, "THERE SHOULD BE A 3-TO-1 PRACTICE-TO-GAME RATIO,"<sup><a href="#source-9">[9]</a></sup> while its 10U and 12U planners say "at least 2.5 practices to every one game."<sup>[2][14]</sup> Either way, games are the smaller number. Hockey Canada names its age groups differently (U9, Atom, Peewee, Bantam), so the last row puts each of its recommendations beside the closest US age group. Read it as guidance for the same stage of development, not a one-to-one match.
 
 ### 8U: six zones, everyone moving
 
-USA Hockey's 8U guide describes the practice in one line: "Split the ice into 6 zones, with a different drill happening at each one. After 7–8 minutes, players switch zones until they have played in all 6."<sup>[3]</sup> Its 8U Practice Planner turns that into a sample session for 36 to 48 players:<sup>[15]</sup>
+USA Hockey's 8U guide describes the practice in one line: "Split the ice into 6 zones, with a different drill happening at each one. After 7–8 minutes, players switch zones until they have played in all 6."<sup><a href="#source-3">[3]</a></sup> Its 8U Practice Planner turns that into a sample session for 36 to 48 players:<sup><a href="#source-15">[15]</a></sup>
 
 - **Free puck time (5 min):** "Dump as many items as possible onto the ice and let players play."
 - **Six rotating stations (8 min each):** ball tag, skating, musical tires, a "mosh pit" team race, an obstacle course, and a 2v2 game.
@@ -122,7 +122,7 @@ That sample runs on a 60-minute slot. On a 50-minute ADM session, drop to 7 minu
 
 ### 10U: warm-up, four stations, a game
 
-USA Hockey's 10U planner lists its practice design principles as "FUN/Engaging, Looks like the game, Constant decision making, Lots of puck touches, Challenging," and says "The majority of your practice time at 10U should be spent on development of skills."<sup>[14]</sup> Its first sample practice is exactly 60 minutes:
+USA Hockey's 10U planner lists its practice design principles as "FUN/Engaging, Looks like the game, Constant decision making, Lots of puck touches, Challenging," and says "The majority of your practice time at 10U should be spent on development of skills."<sup><a href="#source-14">[14]</a></sup> Its first sample practice is exactly 60 minutes:
 
 - **Warm-up (10 min)**
 - **Station 1 (10 min):** net tag
@@ -133,17 +133,17 @@ USA Hockey's 10U planner lists its practice design principles as "FUN/Engaging, 
 
 ### 12U: same frame, more decisions
 
-The 12U sample keeps the frame and makes the stations competitive:<sup>[2]</sup>
+The 12U sample keeps the frame and makes the stations competitive:<sup><a href="#source-2">[2]</a></sup>
 
 - **Keep-away (8 min)**
 - **Four stations (10 min each):** 1v1 continuous, a gap control drill, 2v1 with a backchecker, 1v1 through a gate
 - **Transition game (12 min)**
 
-That's 60 minutes, and three of the four stations are small battles. USA Hockey's parent guide calls 12U "the golden age of skill development,"<sup>[9]</sup> so the stations should still be about the individual player, not the system.
+That's 60 minutes, and three of the four stations are small battles. USA Hockey's parent guide calls 12U "the golden age of skill development,"<sup><a href="#source-9">[9]</a></sup> so the stations should still be about the individual player, not the system.
 
 ### 14U: more team play, still mostly skills
 
-At 14U the ADM moves to 80-minute sessions, but the planner is clear that "the majority of practice time should be spent on improving individual skills and understanding concepts."<sup>[10]</sup> Its early-season, 60-minute sample:
+At 14U the ADM moves to 80-minute sessions, but the planner is clear that "the majority of practice time should be spent on improving individual skills and understanding concepts."<sup><a href="#source-10">[10]</a></sup> Its early-season, 60-minute sample:
 
 - **Free play (5 min)**
 - **Gretzky game (10 min):** 3v3 with a support player below the goal line
@@ -151,7 +151,7 @@ At 14U the ADM moves to 80-minute sessions, but the planner is clear that "the m
 - **Down low (11 min)**
 - **Net-front game (11 min)**
 
-The listed blocks add up to 58 of the 60 minutes, which is about what transitions cost. Hockey Canada puts its own limit on the team side at this age: "time spent on team tactics and team play should not exceed 50-60% of the practice."<sup>[13]</sup>
+The listed blocks add up to 58 of the 60 minutes, which is about what transitions cost. Hockey Canada puts its own limit on the team side at this age: "time spent on team tactics and team play should not exceed 50-60% of the practice."<sup><a href="#source-13">[13]</a></sup>
 
 ## Filling It In: A 10-Minute Routine
 
@@ -182,18 +182,18 @@ You can try it in your browser with no signup. A free account creates up to thre
 
 ## Sources
 
-1. Hockey Canada and the Coaching Association of Canada, *Development 1 Coach Evaluation Criteria*, version 1.0, 2019. [PDF](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Coaching/Downloads/2018/dev1-coach-evaluation-criteria-e.pdf)
-2. USA Hockey, *12-and-Under Practice Planner*, 2020. [PDF](https://cdn1.sportngin.com/attachments/document/1f47-3401796/12U_Practice_Planner_2020_FINAL.pdf)
-3. USA Hockey, *ADM 8U Parent Guide*, pp. 4-5. [PDF](https://portal.usahockey.com/cx/vice-president/hockey-development/8u_parent_guide.pdf)
-4. Lundby, J. and Väliaho, J., *Game Formats for Youth Hockey: Research by Finnish and Swedish Ice Hockey Association 2019-2020*, IIHF Growing the Game Fund, 2020. [PDF](https://blob.iihf.com/iihf-media/iihfmvc/media/downloads/sport%20files/development-guide/player-development-guide/sag-study-fihaandsiha_growingthegame_2020_6_17.pdf)
-5. Hockey Canada, *Small Area Games and Cross Ice Hockey*, 2020. [PDF](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Players/Downloads/2020/small-area-games-cross-ice-e.pdf)
-6. USA Hockey, "Video Quantifies Cross-Ice Advantages," May 30, 2017. [Article](https://www.usahockey.com/news_article/show/472676-video-quantifies-cross-ice-advantages)
-7. van den Berg, C. and Kolen, A. M., "Children in Organized Hockey: How Much Physical Activity Do They Really Get?" *International Journal of Exercise Science* 8(2): 184-191, 2015. [Article](https://digitalcommons.wku.edu/ijes/vol8/iss2/9)
-8. USA Hockey, *Recommended Youth Hockey Program Structure by Age Group*. [PDF](https://portal.usahockey.com/cx/president/hockey-devlopment/recommended_youth_hockey_program_structure.pdf)
-9. USA Hockey, *ADM 10U and 12U Parent Guide*. [PDF](https://portal.usahockey.com/cx/president/hockey-devlopment/10-12u_parent_guide.pdf)
-10. USA Hockey, *14-and-Under Practice Planner*, 2019. [PDF](https://cdn1.sportngin.com/attachments/document/02cd-3401802/14U_Practice_Planner_2019_FINAL.pdf)
-11. USA Hockey, *ADM 14U and 16U Parent Guide*. [PDF](https://portal.usahockey.com/cx/president/hockey-devlopment/14-16u_parent_guide.pdf)
-12. Hockey Canada, "Under 9 Coaches: Skills." [Page](https://video.hockeycanada.ca/en-ca/hockey-programs/coaching/under-9/coaches/skills)
-13. Hockey Canada, *Skills Development Program: Player Development Pyramid*. [PDF](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Players/Downloads/player_dev_LTPD_e.pdf)
-14. USA Hockey, *10-and-Under Practice Planner*, 2019. [PDF](https://cdn1.sportngin.com/attachments/document/6389-3401797/10U_Practice_Planner_2019_FINAL.pdf)
-15. USA Hockey, *8-and-Under Practice Planner*, 2019. [PDF](https://cdn1.sportngin.com/attachments/document/f615-3401794/8U_Practice_Planner_2019_FINAL.pdf)
+1. {: #source-1} Hockey Canada and the Coaching Association of Canada, *Development 1 Coach Evaluation Criteria*, version 1.0, 2019. [PDF](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Coaching/Downloads/2018/dev1-coach-evaluation-criteria-e.pdf)
+2. {: #source-2} USA Hockey, *12-and-Under Practice Planner*, 2020. [PDF](https://cdn1.sportngin.com/attachments/document/1f47-3401796/12U_Practice_Planner_2020_FINAL.pdf)
+3. {: #source-3} USA Hockey, *ADM 8U Parent Guide*, pp. 4-5. [PDF](https://portal.usahockey.com/cx/vice-president/hockey-development/8u_parent_guide.pdf)
+4. {: #source-4} Lundby, J. and Väliaho, J., *Game Formats for Youth Hockey: Research by Finnish and Swedish Ice Hockey Association 2019-2020*, IIHF Growing the Game Fund, 2020. [PDF](https://blob.iihf.com/iihf-media/iihfmvc/media/downloads/sport%20files/development-guide/player-development-guide/sag-study-fihaandsiha_growingthegame_2020_6_17.pdf)
+5. {: #source-5} Hockey Canada, *Small Area Games and Cross Ice Hockey*, 2020. [PDF](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Players/Downloads/2020/small-area-games-cross-ice-e.pdf)
+6. {: #source-6} USA Hockey, "Video Quantifies Cross-Ice Advantages," May 30, 2017. [Article](https://www.usahockey.com/news_article/show/472676-video-quantifies-cross-ice-advantages)
+7. {: #source-7} van den Berg, C. and Kolen, A. M., "Children in Organized Hockey: How Much Physical Activity Do They Really Get?" *International Journal of Exercise Science* 8(2): 184-191, 2015. [Article](https://digitalcommons.wku.edu/ijes/vol8/iss2/9)
+8. {: #source-8} USA Hockey, *Recommended Youth Hockey Program Structure by Age Group*. [PDF](https://portal.usahockey.com/cx/president/hockey-devlopment/recommended_youth_hockey_program_structure.pdf)
+9. {: #source-9} USA Hockey, *ADM 10U and 12U Parent Guide*. [PDF](https://portal.usahockey.com/cx/president/hockey-devlopment/10-12u_parent_guide.pdf)
+10. {: #source-10} USA Hockey, *14-and-Under Practice Planner*, 2019. [PDF](https://cdn1.sportngin.com/attachments/document/02cd-3401802/14U_Practice_Planner_2019_FINAL.pdf)
+11. {: #source-11} USA Hockey, *ADM 14U and 16U Parent Guide*. [PDF](https://portal.usahockey.com/cx/president/hockey-devlopment/14-16u_parent_guide.pdf)
+12. {: #source-12} Hockey Canada, "Under 9 Coaches: Skills." [Page](https://video.hockeycanada.ca/en-ca/hockey-programs/coaching/under-9/coaches/skills)
+13. {: #source-13} Hockey Canada, *Skills Development Program: Player Development Pyramid*. [PDF](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Players/Downloads/player_dev_LTPD_e.pdf)
+14. {: #source-14} USA Hockey, *10-and-Under Practice Planner*, 2019. [PDF](https://cdn1.sportngin.com/attachments/document/6389-3401797/10U_Practice_Planner_2019_FINAL.pdf)
+15. {: #source-15} USA Hockey, *8-and-Under Practice Planner*, 2019. [PDF](https://cdn1.sportngin.com/attachments/document/f615-3401794/8U_Practice_Planner_2019_FINAL.pdf)

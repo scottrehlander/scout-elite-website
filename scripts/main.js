@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                const headerHeight = document.querySelector('.header').getBoundingClientRect().bottom; // includes the .try-strip above it
+                const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight - 20;
                 
                 window.scrollTo({
                     top: targetPosition,
