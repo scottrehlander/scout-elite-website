@@ -77,11 +77,11 @@ Every coach has the same Tuesday night: practice is tomorrow, the ice is booked 
 
 I didn't invent the fields. Hockey Canada certifies its Development 1 coaches partly on the practice plan itself, using a written checklist: the [Development 1 Coach Evaluation Criteria](https://cdn.hockeycanada.ca/hockey-canada/Hockey-Programs/Coaching/Downloads/2018/dev1-coach-evaluation-criteria-e.pdf).<sup><a href="#source-1">[1]</a></sup> A plan meets it when it:
 
-- names a goal, or a few key elements to work on
-- records the date, time, location, and the number and level of players
-- splits the session into an introduction, warm-up, main part, cool-down and conclusion
-- puts the whole practice and each segment on a timeline, with durations
-- lists the teaching points that tie back to that goal
+- Names a goal, or a few key elements to work on
+- Records the date, time, location, and the number and level of players
+- Splits the session into an introduction, warm-up, main part, cool-down and conclusion
+- Puts the whole practice and each segment on a timeline, with durations
+- Lists the teaching points that tie back to that goal
 
 Every one of those has a place on page 1. The **one or two things** limit on the focus box comes from USA Hockey's 12U Practice Planner: "Instead of a random collection of drills or games, practices should be developed with a common theme so that the focus is on improving one or two particular aspects of play."<sup><a href="#source-2">[2]</a></sup> The **two coaching points** cap is mine. Kids can carry two cues from the bench to the ice. Five get lost.
 
@@ -109,7 +109,7 @@ Each plan below follows the structure of USA Hockey's own published sample pract
 | Practices : games per season | 34 to 40 practices, 16 to 20 cross-ice or half-ice games<sup><a href="#source-8">[8]</a></sup> | 75 to 80 : 20 to 25<sup><a href="#source-9">[9]</a></sup> | 80 to 90 : 30 to 35<sup><a href="#source-9">[9]</a></sup> | 120 to 130 : 40 to 50<sup><a href="#source-11">[11]</a></sup> |
 | Hockey Canada time on skills vs tactics (same age band) | 75% skills at U9<sup><a href="#source-12">[12]</a></sup> | 50% technical skills, 20% individual tactics (Atom)<sup><a href="#source-13">[13]</a></sup> | 45% technical, 25% individual tactics (Peewee)<sup><a href="#source-13">[13]</a></sup> | 40% technical, 15% individual tactics (Bantam)<sup><a href="#source-13">[13]</a></sup> |
 
-Two notes on the table. USA Hockey's 10U guide says plainly, "THERE SHOULD BE A 3-TO-1 PRACTICE-TO-GAME RATIO,"<sup><a href="#source-9">[9]</a></sup> while its 10U and 12U planners say "at least 2.5 practices to every one game."<sup><a href="#source-2">[2]</a><a href="#source-14">[14]</a></sup> Either way, games are the smaller number. Hockey Canada names its age groups differently (U9, U11, U13 and U15, still often called Atom, Peewee and Bantam above U9), so the last row puts each of its recommendations beside the closest US age group. Read it as guidance for the same stage of development, not a one-to-one match.
+Two notes on the table. USA Hockey's 10U guide says plainly, "There should be a 3-to-1 practice-to-game ratio,"<sup><a href="#source-9">[9]</a></sup> while its 10U and 12U planners say "at least 2.5 practices to every one game."<sup><a href="#source-2">[2]</a><a href="#source-14">[14]</a></sup> Either way, games are the smaller number. Hockey Canada names its age groups differently (U9, U11, U13 and U15, still often called Atom, Peewee and Bantam above U9), so the last row puts each of its recommendations beside the closest US age group. Read it as guidance for the same stage of development, not a one-to-one match.
 
 ### 8U (U9) Practice Plan: six zones, everyone moving
 
