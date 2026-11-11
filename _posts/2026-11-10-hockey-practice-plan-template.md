@@ -56,7 +56,7 @@ permalink: /blog/hockey-practice-plan-template/
 }
 </script>
 
-Every coach has the same Tuesday night: practice is tomorrow, the ice is booked for an hour, and the plan lives on the back of an envelope. This post gives you two printable sheets for that night, sample plans for 8U through 14U, and the research behind how they are laid out. It's free, with no email asked.
+Every coach has the same Tuesday night: practice is tomorrow, the ice is booked for an hour, and the plan is an idea still rolling around in your head. This post gives you two printable sheets for that night, sample plans for 8U through 14U, and the research behind how they are laid out. It's free, with no email asked.
 
 <div style="margin: 1.75em 0; text-align: center;">
   <a href="/downloads/hockey-practice-plan-template.pdf" class="btn btn-primary" style="font-size:1.15em;padding:0.7em 2em;" download>Download the free template (PDF) &darr;</a>
