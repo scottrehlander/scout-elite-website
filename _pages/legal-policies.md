@@ -10,7 +10,12 @@ permalink: /legal-policies/
         <h1>Scout Elite Legal Policies</h1>
         <p>Last updated: November 13, 2026</p>
 
-        <p>Our privacy policy has its own page: <a href="/privacy/">Scout Elite Privacy Policy</a>.</p>
+        <div style="border: 1px solid #007acc; border-radius: 8px; padding: 16px 20px; margin: 24px 0;">
+            <h2 style="margin-top: 0;">Privacy Policy</h2>
+            <p style="margin-bottom: 0;">Our Privacy Policy moved to its own page on November 13, 2026:
+            <a href="/privacy/"><strong>scout-elite.com/privacy/</strong></a>. It applies to scout-elite.com, xpress.scout-elite.com
+            and the Scout Elite Live app. This page now holds our Terms of Service and Refund Policy.</p>
+        </div>
 
         <details>
         <summary>Terms of Service</summary>
