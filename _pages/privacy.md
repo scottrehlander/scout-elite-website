@@ -3,13 +3,13 @@ layout: default
 title: "Scout Elite Privacy Policy"
 description: "How Scout Elite collects, uses, shares and protects your information, including the data we receive when you sign in with Google or Apple."
 permalink: /privacy/
-last_modified_at: 2026-10-27
+last_modified_at: 2026-11-13
 ---
 
 <section class="how-to-use" style="background: var(--primary-bg); padding: 64px 0;">
     <div class="container">
         <h1>Scout Elite Privacy Policy</h1>
-        <p><em>Last updated: October 27, 2026</em></p>
+        <p><em>Last updated: November 13, 2026</em></p>
         <p>
             This policy describes how Scout Elite ("we", "us") collects, uses, shares and protects information when you use our web
             application <strong>Scout Elite Xpress</strong> (xpress.scout-elite.com), our website (scout-elite.com) and our mobile app
@@ -24,7 +24,7 @@ last_modified_at: 2026-10-27
             <li><strong>Notifications:</strong> if you allow notifications in Scout Elite Live, a push token for your device, linked to your account.</li>
             <li><strong>Usage information:</strong> which screens and features are used, with a random install ID, your account ID when signed in, the app version and the platform. We use Google Analytics to measure this, which uses cookies on our websites. In Scout Elite Live you can turn it off in Settings ("Share usage stats").</li>
             <li><strong>Diagnostics:</strong> crash reports and performance data (device model, operating system, app version), sent without your name, email or account ID.</li>
-            <li><strong>Payments:</strong> when you buy a plan, our payment processor handles your card details. We receive only the status of your subscription, never your full card number.</li>
+            <li><strong>Payments:</strong> when you buy a plan on scout-elite.com, our payment processor handles your card details. When you subscribe in Scout Elite Live, Apple or Google handles the payment. Either way we receive only your subscription's status and history (which plan, when it started and renews, and purchase IDs), never your card number.</li>
         </ul>
 
         <h2>Sign in with Google</h2>
@@ -75,8 +75,8 @@ last_modified_at: 2026-10-27
         <p>
             We use service providers who process data on our behalf, under contracts that limit their use of it: hosting and
             database, video storage and delivery, sign-in (including Apple and Google sign-in), usage analytics (Google Analytics),
-            crash reporting, push notifications, payment processing and email delivery. They may not use your information for
-            their own purposes. We may also disclose information if the law requires it.
+            crash reporting, push notifications, payment processing, managing in-app subscriptions and email delivery. They may not
+            use your information for their own purposes. We may also disclose information if the law requires it.
         </p>
 
         <h2>How We Protect Information</h2>

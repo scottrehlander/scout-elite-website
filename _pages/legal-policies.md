@@ -1,5 +1,5 @@
 ---
-description: "Legal policies for Scout Elite Live"
+description: "Scout Elite Terms of Service and Refund Policy, for scout-elite.com and the Scout Elite Live app."
 layout: default
 title: Scout Elite Legal Policies
 permalink: /legal-policies/
@@ -8,56 +8,9 @@ permalink: /legal-policies/
 <section class="how-to-use" style="background: var(--primary-bg); padding: 64px 0;">
     <div class="container">
         <h1>Scout Elite Legal Policies</h1>
-        <p>Last updated: October 20, 2026</p>
+        <p>Last updated: November 13, 2026</p>
 
-        <details>
-        <summary>Privacy Policy</summary>
-        <p><em>Last updated: October 20, 2026</em></p>
-        <p>
-            This policy describes how Scout Elite ("we", "us") collects, uses and shares information when you use our web
-            application <strong>Scout Elite Xpress</strong> (scout-elite.com) and our mobile app <strong>Scout Elite Live</strong>.
-        </p>
-
-        <h3>Information We Collect</h3>
-        <ul>
-            <li><strong>Account information:</strong> your name, email address and password, or the name and email Google or Apple give us when you sign in with them. Scout Elite Live can be used without an account.</li>
-            <li><strong>Content you create:</strong> videos and clips you upload, reviews, reports, practice plans, playbooks, drills, rosters (player numbers and names), and the games you track and choose to publish or back up.</li>
-            <li><strong>Team information:</strong> the teams you join and their members' names and emails, visible to the team.</li>
-            <li><strong>Notifications:</strong> if you allow notifications in Scout Elite Live, a push token for your device, linked to your account.</li>
-            <li><strong>Usage information:</strong> which screens and features are used, with a random install ID, your account ID when signed in, the app version and the platform. We use Google Analytics to measure this. In Scout Elite Live you can turn it off in Settings ("Share usage stats").</li>
-            <li><strong>Diagnostics:</strong> crash reports and performance data (device model, operating system, app version), sent without your name, email or account ID.</li>
-        </ul>
-
-        <h3>How We Use Information</h3>
-        <ul>
-            <li>To provide the services: sign-in, syncing and backing up your games, showing your content and what others share with you, and sending notifications you've allowed.</li>
-            <li>To understand usage and fix problems.</li>
-            <li>To communicate with you about your account, shares and invitations, and updates.</li>
-        </ul>
-        <p>We do not sell your information, show ads, or track you across other companies' apps or websites.</p>
-
-        <h3>Service Providers</h3>
-        <p>
-            We use service providers who process data on our behalf, under contracts that limit their use of it: hosting and
-            database, video storage and delivery, sign-in (including Apple and Google sign-in), usage analytics (Google Analytics),
-            crash reporting, push notifications, payment processing and email delivery. They may not use your information for
-            their own purposes.
-        </p>
-
-        <h3>Retention and Deletion</h3>
-        <p>
-            We keep your information while your account is active. You can delete your account in Scout Elite Live
-            (Profile &gt; Delete account) or at <a href="https://xpress.scout-elite.com/account/delete">xpress.scout-elite.com/account/delete</a>.
-            We end your sessions right away and delete your account and its content within 30 days. Games tracked without an
-            account stay only on your phone.
-        </p>
-
-        <h3>Children’s Privacy</h3>
-        <p>The services are intended for users 13 and older. Accounts for younger athletes must be managed by a coach, parent or guardian.</p>
-
-        <h3>Contact</h3>
-        <p><a href="/support/">Scout Elite Support</a></p>
-        </details>
+        <p>Our privacy policy has its own page: <a href="/privacy/">Scout Elite Privacy Policy</a>.</p>
 
         <details>
         <summary>Terms of Service</summary>
@@ -71,7 +24,10 @@ permalink: /legal-policies/
         <p>You retain ownership of content you upload. By uploading, you grant us a license to host, process, and display it for providing the Services.</p>
 
         <h3>Paid Services</h3>
-        <p>We offer paid plans, <strong>Solo</strong> and <strong>Pro</strong>, on scout-elite.com. Prices, renewals and billing terms are shown before you buy. Scout Elite Live is free and has no in-app purchases.</p>
+        <p>We offer paid plans, <strong>Solo</strong> and <strong>Pro</strong>. You can buy them on scout-elite.com or, where available, in Scout Elite Live through the App Store or Google Play. A plan works everywhere you sign in with the same account. What each plan includes, its price and its billing terms are shown before you buy. Prices in the app may differ from the website.</p>
+        <p>Plans renew every month until you cancel. A plan bought on scout-elite.com is billed by us, and you cancel it in your account on scout-elite.com. A plan bought in the app is billed and renewed by Apple or Google: cancel it in your App Store or Google Play subscriptions at least 24 hours before it renews. After you cancel, you keep the plan until the end of the period you paid for. Deleting your Scout Elite account does not cancel a plan bought in the app.</p>
+        <p>If a plan comes with a free trial, it becomes a paid plan when the trial ends unless you cancel before then. If we change a price, we'll tell you before it applies to your plan.</p>
+        <p>If you got Scout Elite Live from the App Store, Apple's standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement</a> also applies.</p>
 
         <h3>Prohibited Uses</h3>
         <ul>
@@ -93,10 +49,11 @@ permalink: /legal-policies/
         <details>
         <summary>Refund and Availability Policy</summary>
         <h3>Subscriptions and Payments</h3>
-        <p>Plans are bought on scout-elite.com and paid at the time of purchase. Scout Elite Live has no in-app purchases.</p>
+        <p>Plans bought on scout-elite.com are paid when you buy them and each time they renew. Plans bought in Scout Elite Live are paid to Apple or Google.</p>
 
         <h3>Refunds</h3>
-        <p>Subscription purchases are final except as required by law. Refunds may be granted at our discretion.</p>
+        <p>Purchases on scout-elite.com are final except as required by law. We may grant refunds at our discretion; contact <a href="/support/">Support</a>.</p>
+        <p>Apple handles refunds for App Store purchases under its own policies, and we can't issue them: you can request one at <a href="https://reportaproblem.apple.com/">reportaproblem.apple.com</a>. For Google Play purchases, request a refund through Google Play, or contact <a href="/support/">Support</a>.</p>
 
         <h3>Availability</h3>
         <p>We strive for reliable Services but cannot guarantee uninterrupted access. Temporary downtime does not entitle users to refunds or credits.</p>
